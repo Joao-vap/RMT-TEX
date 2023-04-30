@@ -1,0 +1,39 @@
+%%%%%%%%%%%%%% General %%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[utf8]{inputenc}
+
+%language
+\usepackage[portuguese]{babel}
+
+%page layout
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+
+% footers and headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+%citations
+\usepackage{cite}
+
+%%%%%%%%%%%%%%%% graphicx %%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx}
+
+% include graphics path
+\graphicspath{ {images} }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% mathematics %%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{mathtools, amsmath}
+
+\DeclareMathOperator{\Tr}{Tr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% notation %%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\matriz}[1]{\hat#1}
+
+\newcommand{\many}[2]{$#1_1, #1_2, \dots, #1_#2$}
+
+\newcommand{\cmany}[3]{$#1_1 #3 #1_2 #3 \dots #3 #1_#2$}

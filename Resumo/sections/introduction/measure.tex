@@ -1,0 +1,103 @@
+Consideraremos no nosso estudo para referencia matrizes quadradas de entradas complexas com dimensão $N$. Nosso objetivo é afinal ter uma forma de mensurar a distribuição de autovalores e para isso, faremos os seguintes desenvolvimentos.
+
+Consideremos inicialmente um espaço de matrizes com entradas complexas $2N^2$ dimensional. Contido neste espaço temos um espaço de maior interesse correspondente ao espaço das matrizes \textit{hermitianas} de dimensão $N^2$. A escolha do subespaço está relacionada com o fato que matrizes hermitianas são diagonalizáveis e a distribuição de seus autovalores estará diretamente relacionada (com uma mudança de base) à distribuição do traço da matriz diagonalizada. Note que para a matriz diagonal ter a mesma medida que nossa matriz inicial, nossa medida deve ser invariável por rotação.
+
+Mais detalhadamente podemos escrever nossa matriz hermitiana $\matriz{H}$ como 
+
+\[
+\matriz{H} = \matriz{U} \matriz{\Lambda} \matriz{U}^{-1} \ , \ \matriz{\Lambda} = diag(\lambda_1, \dots, \lambda_2) \ , \ \matriz{U}\cdot\matriz{U}^* = I
+\]
+
+onde, claro, $\matriz{\Lambda}$ é diagonal de autovalores e $\matriz{U}$ é unitária e com colunas equivalentes aos autovetores de $\matriz{H}$. Em geral, o conjunto de matrizes degeneradas tem medida nula e não é uma preocupação. Um cuidado deve ser tomado. A correspondência $\matriz{H} \implies (\matriz{U} \ U(N), \matriz{\Lambda})$ não é injetora, podemos tomar $\matriz{U}_1 \matriz{\Lambda} \matriz{U}_1^{-1} = \matriz{U}_2 \matriz{\Lambda} \matriz{U}_2^{-1}$ se $\matriz{U}_1^{-1} \matriz{U}_2 = diag(e^i\phi_1, \dots, e^i\phi_N)$ para qualquer escolha de fases $(\phi_1, \dots, \phi_N)$. Para restringir nosso problema e tornar a função injetiva será necessário considerar as matrizes unitárias ao espaço de coset $U(N) / U(1) \times \dots \times U(1)$ \footnote{Não tenho muita ideia de espaços de Coset. Pelo que entendo, existe um espaço onde toda $\matriz{U}$ pode ser representada por $\matriz{U}_c \matriz{U}_d$, onde $\matriz{U}_c$ compõe o espaço de coset e $\matriz{U}_d$ é uma matriz diagonal unitária. Dessa forma matrizes equivalentes são aquelas que multiplicadas por $\matriz{U}_d$ tem um mesmo resultado.}. Uma outra restrição necessárias é ordenas os autovalores, ou seja, $\lambda_1 < \dots < \lambda_n$. Temos que reescrever agora a medida $d\mu(\matriz{H})$ em função de auvalores e da $\matriz{U}$ de autovetores.
+
+Para resumir o desenvolvimento, alguns resultados serão diretamente enunciados. Essa seção pode ser encontrada no relatório \cite{fyodorov2010introduction}. Em especial recuperaremos o elemento de distância e volume no subespaço que vamos tratar
+
+\begin{equation}
+	(ds)^2 = \Tr{d\matriz{H} d\matriz{H}^*} = \sum_{i} (dx_{ii})^2 + 2 \sum_{i < j} \left[(dx_{ij})^2 + (dy_{ij})^2 \right]
+	\label{eq: ds}
+\end{equation}
+
+\begin{equation}
+	d\mu(\matriz{H}) = 2^{\frac{N(N-1)}{2}} \prod_{i} dx_{ii} \prod_{i<j} dx_{ij} dy_{ij}
+	\label{eq: du}
+\end{equation}
+
+Ambos vem de um desenvolvimento da métrica do espaço discutido. Note que nossa medida de comprimento é invariante em respeito à automorfismos. Especificamente, se tomarmos os elementos \eqref{eq: ds} e \eqref{eq: du} na decomposição espectral, obteremos
+
+\begin{equation}
+	(ds)^2 = \sum_{i} (d\lambda)^2 + \sum_{i<j} (\lambda_i - \lambda_j)^2 \overline{\delta U_{ij}} \delta U_{ij}
+\end{equation}
+
+e
+
+\begin{equation}
+	d\mu(\matriz{H}) = \prod_{i < j} (\lambda_i - \lambda_j)^2 \prod_{i} d\lambda_i \times d\mu(\matriz{U})
+\end{equation}
+
+Tendo a medida de integração pronta, podemos definir uma F.D.P $\mathcal{P}(\matriz{H})$ neste espaço de matizes hermitianas tal que $\mathcal{P}(\matriz{H}) d\mu(\matriz{H})$ é a probabilidade da matriz $\matriz{H}$  estar no volume $d\mu(\matriz{H})$. Queremos que nossa função seja invariante à rotação, ou seja, $\mathcal{P}(\matriz{H}) = \mathcal{P}( \matriz{U}^* \matriz{H} \matriz{U})$.
+
+Conhecer os $N$ primeiros traços ($\Tr{\matriz{H}^n}$) de $\matriz{H}$ define unicamente o polinômio característico e junto com ele, os autovalores. Especificamente tomaremos 
+
+\begin{equation}
+	\mathcal{P}(\matriz{H}) = Ce^{-\Tr{Q(\matriz{H})}}
+	\label{eq: p}
+\end{equation}
+
+Onde $Q$ deve ser um polinômio de até ordem $2j \leq N$ suficiente para garantir a convergência de
+
+\[
+	\mathcal{Z}_n = \int_{\mathcal{H}_n} e^{-\Tr{Q(\matriz{M})}} d\matriz{M} 
+\]
+
+Comumente uma condição suficiente é
+
+\[
+	\lim_{x \rightarrow \pm \infty} \frac{Q(x)}{\ln{(1+x^2)}} = \infty
+\]
+
+Mas em especial, se tomarmos
+
+\[
+	Q(x) = ax^2 + bx + c
+\]
+
+
+Nossa medida tomará a forma
+
+\begin{align}	
+	\mathcal{P}(\matriz{H}) & = e^{-a \left[ \sum_{i} x_{ii}^2 + 2 \sum_{i < j} [x_{ij}^2 + y_{ij}^2] \right] } e^{-b \sum_{i} x_{ii}} e^{-c N} \\
+	& = e^{-cN} \prod_{i=1}^{N} \left( e^{-ax^2_{ii}-bx_{ii}} \right) \prod_{i<j} e^{-2ax^2_{ij}} \prod_{i<j} e^{-2ay^2_{ij}}
+\end{align}
+
+Onde podemos notar que a distribuição de probabilidade da matriz $\matriz{H}$ pode ser representados por fatores independentes, cada um de forma gaussiana. Para este potencial, temos uma conexão entre as matrizes de entrada independentes e as matrizes invariáveis por rotação. Lembre-se que para as variáveis serem independentes $\mathcal{P}$ deve ter a forma $\mathcal{P} = Ce^{-\left( a\Tr{\matriz{H}^2} + b\Tr{\matriz{H}} + cN \right)}$ para constantes $a>0, b, c$. Em nota, sabemos então
+
+\[
+e^{\Tr{V(\matriz{H})}}  d\mu(\matriz{H}) = e^{-\sum_{j} V(\lambda_j)}  \prod_{i < j} (\lambda_i - \lambda_j)^2 d\mu(\lambda) d\mu(\matriz{U})
+\]
+
+ou mais geralmente para o ensemble com 
+
+\[
+	\frac{1}{{\mathcal{\tilde{Z}}}_n} e^{\Tr{(V(\matriz{M}))}} dM
+\]
+
+Dado $\lambda_j$ os autovalores
+
+\[
+	\Tr{(V(\matriz{M}))} = -\sum_{j=1}^{n} V(\lambda_j)
+\]
+
+e finalmente podemos escrever
+
+\begin{align}
+	E[f]& = \int_{\mathcal{H}_n} f(\matriz{M}) e^{-\Tr{(Q(\matriz{M}))}} d\matriz{M} \\
+	&  = \frac{1}{\mathcal{Z}} \int \dots \int f(\lambda_1, \dots, \lambda_n) \prod_{i < j} (\lambda_i - \lambda_j)^2 \prod_{j=1}^{n} e^{-Q(\lambda_j)} d\lambda_1 \dots d\lambda_n
+\end{align}
+
+Assim, a probabilidade conjunta nas matrizes induz uma densidade de probabilidade de autovalores
+
+\[
+	\frac{1}{\mathcal{Z}_n} \prod_{i<j} (\lambda_i - \lambda_j)^2 \prod_{j=1}^{n} e^{Q(\lambda_j)}
+\]
+
+Alguns resultados foram resgatadas da nota do autor em \cite{ArnoLectureNotes}.{\tiny }

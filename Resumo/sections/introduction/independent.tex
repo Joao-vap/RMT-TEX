@@ -1,0 +1,21 @@
+Consideremos matrizes com entradas independentes. Qual a função densidade de probabilidade (F.P.D.) da matriz simétrica $\matriz{H_s}$? Devemos fazer separadamente a diagonal da seção triangular que formos usar e teremos
+
+\[
+\rho((\matriz{H_s})_{11}, \dots, (\matriz{H_s})_{NN}) = \prod_{i=1}^{N} \left[ \frac{e^{\frac{-(H_s)^2_{ii}}{2}}}{2\pi} \right] \prod_{i<j} \left[ \frac{e^{-(H_s)^2_{ij}}}{\sqrt{\pi}} \right]
+\]
+
+Podemos também definir a distribuição para os autovalores de uma matriz Gaussiana de dimensão $N$ como \footnote{Esse resultado é não óbvio e deve ser discutido em breve.}
+
+\begin{equation}
+	\rho(x_1, \dots, x_N) = \frac{1}{\mathcal{Z_{N, \beta}}} e^{-\frac{1}{2} \sum_{i=1}^{N} x_i^2} \prod_{j<k} | x_j - x_k |^{\beta}
+\end{equation}
+
+onde a constante de normalização é dada por
+
+\[
+\mathcal{Z_{N, \beta}} = (2\pi)^\frac{N}{2} \prod_{j=1}^{N} \frac{\Gamma(1+ j\frac{\beta}{2})}{\Gamma(1+ \frac{\beta}{2})}
+\]
+
+Para ressaltar um pouco do jargão, $\beta$ é denominado \textit{Dyson Index} que em suma se refere à "dimensão" das suas entradas na matriz. $1$ para GOE, $2$ para GUE e $4$ para GSE.
+
+Algumas observações sobre essa expressão são interessantes. Note que o fator exponencial deve matar qualquer chance de uma matriz com autovalor alto. Ao mesmo tempo o fator de dependência deve matar qualquer configuração com autovalores muito próximos entre si. Existe um efeito de repelência entre autovalores na expressão.

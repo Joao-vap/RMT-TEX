@@ -1,0 +1,27 @@
+\subsection{Shannon-Quem?}
+
+O uso da p.d.f gaussiana pode ser justificado de algumas formas. Uma primeira abordagem a ser explorada é a de maximização entrópica ou minimização de informação similar aos trabalhos de Shannon-Kinchin. Definiremos uma grandeza $\mathcal{I}[\mathcal{P}(\matriz{H})]$ associada à uma p.d.f tal que:
+
+\[
+	\mathcal{I}[\mathcal{P}(\matriz{H})] = - \int d\mu (\matriz{H}) \mathcal{P}(\matriz{H}) \ln{\mathcal{P}(\matriz{H})} 		
+\]
+
+Que é uma extensão natural da definição discreta de informação $- \sum_{l=1}^{m} p_m \ln{p_m}$. Agora argumentaremos algo parecido com os argumentos usados em termodinâmica de maximização de entropia. Diremos que a incerteza sobre as matrizes será máxima, ou seja, teremos a maior aleatoriedade das matrizes quando a entropia for maximizada e a informação, minimizada. Assim como na entropia física impomos um vínculo de energia constante, aqui faremos algo do tipo $E(\Tr{\matriz{H}}) = b$ e $E((\Tr{\matriz{H}})^2) = a > 0$. Vamos introduzir esses vinculos como multiplicadores de lagrange com multiplicadores $v_1$ e $v_2$. 
+
+\[
+	\mathcal{I}[\mathcal{P}(\matriz{H})] = - \int d\mu (\matriz{H}) \mathcal{P}(\matriz{H}) \left( \ln{\mathcal{P}(\matriz{H})} - v_1 \Tr{\matriz{H}} - v_2 \Tr{\matriz{H}}^2 \right)	
+\]	
+
+que tem diferencial
+
+\[
+\delta \mathcal{I}[\mathcal{P}(\matriz{H})] = - \int d\mu (\matriz{H})  \delta \mathcal{P}(\matriz{H}) \left( 1 + \ln{\mathcal{P}(\matriz{H})} - v_1 \Tr{\matriz{H}} - v_2 \Tr{\matriz{H}}^2 \right)	= 0
+\]
+
+Que só vai ser mínimo se 
+
+\[
+	\mathcal{P}(\matriz{H}) \propto e^{ - v_1 \Tr{\matriz{H}} - v_2 \Tr{\matriz{H}}^2}
+\]
+
+Onde os multiplicadores são unicamente definidos pelas constantes do vínculo. Esse fato motiva de alguma forma o estudo da p.d.f gaussiana para as matrizes.

@@ -1,0 +1,125 @@
+\subsection{O teorema}
+
+Exploraremos os caminhos não cruzantes providos por processos de Markov. Considere uma partícula de movendo com uma regra qualquer, vamos descrever esse movimento de forma que denotaremos $p_t(a;x)$ a densidade de probabilidade de transição; isto é, a chance uma partícula em $a$ ir para $x$ em um próximo momento. Um teorema clássico enuncia a probabilidade de um certo número de caminhos não se intersectarem passado um tempo $t$.
+
+O teorema diz: Considere $X_1(t), \dots, X_n(t)$ cópias independentes de um processo forte de Markov com caminhos condicionados tais que
+
+\[
+	X_j(0) = a_j
+\] 
+
+onde \cmany{a}{n}{<} são valores dados. Notamos novamente $p_t(x, y)$ ser a densidade do processo de transição. Vamos definir regiões \many{E}{n} onde $E$'s vizinhos não se intersectam. Temos
+
+\[
+	\int_{E_1} \dots \int_{E_n} \det{[p_t(a_i, x_j)]^{n}_{i,j=1}} dx_1 \dots dx_n
+\]
+
+vai ser a probabilidade de que os caminhos não tenham se intersectados no intervalo de tempo $[0, t]$ e $X_j(t)$ nos intervalos correspondentes. A demonstração está em \cite{ArnoLectureNotes}. Note que temos
+
+\[
+\int_{E_1} \dots \int_{E_n} \det{[p_t(a_i, x_j)]^{n}_{i,j=1}}  dx_1 \dots dx_n
+\]
+
+\begin{align}
+	& = \int_{E_1} \dots \int_{E_n}
+	\begin{vmatrix}
+		p_t(a_1, x_1) 	& p_t(a_2, x_1) 	 & \dots	& p_t(a_{n-1}, x_1) 	& p_t(a_n, x_1) \\
+		p_t(a_1, x_2) 	& p_t(a_2, x_2) 	 & \dots 	&  p_t(a_{n-1}, x_2)				&  p_t(a_n, x_2) \\
+		\vdots 			& \vdots 			 & \vdots 	& \vdots 				& \vdots \\
+		p_t(a_1, x_{n-1}) & p_t(a_2, x_{n-1})& \dots 	&  	p_t(a_{n-1}, x_{n-1})	& p_t(a_n, x_{n-1}) \\
+		p_t(a_1, x_n) 	& p_t(a_2, x_n) 	 & \dots  	& p_t(a_{n-1}, x_n) 	& p_t(a_n, x_n)
+	\end{vmatrix} dx_1 \dots dx_n \\ 
+	& = \sum_{\sigma}sgn(\sigma) \prod_{j=1}^{n} p_t(a_j, E_{\sigma(j)}) \\
+	& = \sum_{\sigma} sgn(\sigma) \mathcal{P}(A_\sigma)
+	\label{eq: detInd}
+\end{align}
+
+Onde denotamos
+
+\[
+	p_t(a_j, E_{\sigma(j)}) = \int_{E_j} p_t(a_i, x_j) dx_j
+\]
+
+$\sigma$ é uma permutação de ${1, \dots, n}$ e $A_{\sigma}$ é o evento que $X_j(t) \in E_{\sigma(j)}$ para todo $j$. Os caminhos devem ser independentes para \ref{eq: detInd}.
+
+De alguma forma o determinada permuta os caminhos em todas ordens possíveis e calcula a probabilidade de todos se manterem nos intervalos adequados. Um exemplo de baixas dimensões pode mostrar que
+
+
+\begin{align}
+	&
+	\begin{vmatrix}
+		p_t(a_1, x_1) & p_t(a_2, x_1) & p_t(a_3, x_1) \\
+		p_t(a_1, x_2) & p_t(a_2, x_2) & p_t(a_3, x_2) \\
+		p_t(a_1, x_3) & p_t(a_2, x_3) & p_t(a_3, x_3)
+	\end{vmatrix} =\\
+	&
+	+ p_t(a_1, x_1) p_t(a_2, x_2) p_t(a_3, x_3)  \\
+	&
+	+ p_t(a_2, x_1) p_t(a_3, x_2) p_t(a_1, x_3) \\
+	&
+	+ p_t(a_3, x_1) p_t(a_1, x_2) p_t(a_2, x_3) \\
+	& 
+	- p_t(a_3, x_1) p_t(a_2, x_2) p_t(a_1, x_3) \\
+	&
+	-  p_t(a_2, x_1) p_t(a_1, x_2) p_t(a_3, x_3) \\
+	&
+	- p_t(a_1, x_1) p_t(a_3, x_2) p_t(a_2, x_3)
+\end{align}
+
+Logo
+
+\begin{align}
+	\int_{E_1} \dots \int_{E_n} \det{[p_t(a_i, x_j)]^{n}_{i,j=1}}  dx_1 \dots dx_n  = 
+	&
+	+ p_t(a_1, E_1) p_t(a_2, E_2) p_t(a_3, E_3)  \\
+	&
+	+ p_t(a_2, E_1) p_t(a_3, E_2) p_t(a_1, E_3) \\
+	&
+	+ p_t(a_3, E_1) p_t(a_1, E_2) p_t(a_2, E_3) \\
+	& 
+	- p_t(a_3, E_1) p_t(a_2, E_2) p_t(a_1, E_3) \\
+	&
+	-  p_t(a_2, E_1) p_t(a_1, E_2) p_t(a_3, E_3) \\
+	&
+	- p_t(a_1, E_1) p_t(a_3, E_2) p_t(a_2, E_3)
+\end{align}
+
+Onde somamos os casos onde as partículas se matém ordenadas e subtraímos os casos onde elas se cruzam.
+
+
+\subsection{Consequências}
+
+Considere $n$ cópias do processo de Markov condicionado para começar em $t=0$ nas determinadas posições \cmany{a}{n}{<}. Se condicionarmos estes processos para não intersectar no intervalo $[0,t]$, o teorema vai nos dizer que os caminhos em um tempo $t$ vão ter uma densidade de probabilidade conjunta
+
+\[
+	\frac{1}{\mathcal{Z}_n} \det{[p_t(a_i, x_j)]^{n}_{i,j=1}}
+\]
+
+Mas este não pode ser considerado um processo pontual determinado. Não é expresso por um produto de determinantes. Isso pode ser ajeitado se considerarmos um tempo $T > t$ no nosso processo. Tomaremos \many{b}{n} posições finais e condicionaremos os caminhos a não intersectar no intervalo $[0, T]$ com $X_j(0) = a_j$ e $X_j(T) = b_j$ para todos. É possível mostrar que a distribuição conjunta deles será
+
+\[
+	\frac{1}{\mathcal{Z}_n'} \det{[p_t(a_i, x_j)]^{n}_{i,j=1}} \det{[p_{T-t}(x_i, b_j)]^{n}_{i,j=1}}
+\]
+
+Que será biortogonal com as funções
+
+\[
+	f_j = p_t(a_j, x) \ ; \ g_j = p_{T-t}(x, b_j)
+\]
+
+E nosso caso de interesse é quando $a_j \rightarrow a$ e $b_j \rightarrow b$. Note que usando as duas funções podemos forçar que o movimento browniano se inicie em um ponto e encerre em outro determinado. Em uma, reverteremos o tempo e, nos limites $0$ e $T$, forçaremos que apenas uma das funções seja predominante de forma que a posição inicial de cada uma prevaleça. Podemos impor a posição inicial e final do movimento. No caso browniano teremos
+
+\[
+	p_t(a, x) = \frac{1}{\sqrt{2\pi t}} e^{-\frac{(x-a)^2}{2t}}
+\]
+
+No caso dos limites de $a$ e $b$ ficamos com
+
+\[
+	f_j = F_{j-1}(x)e^{-\frac{(x-a)^2}{2t}} \ ; \ g_j = G_{j-1}(x)e^{-\frac{(x-b)^2}{2(T-t)}}
+\]
+
+onde $F$ e $G$ são polinômios em $x$  de grau $j-1$. Este processo podemos escalar e transladar para uma versão do GUE $n \times n$.
+
+
+
