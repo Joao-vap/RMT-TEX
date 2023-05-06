@@ -1,0 +1,130 @@
+Um processo pontual pode ser interpretado como um conjunto aleatório de pontos ou como a medida de probabilidade associada a esse conjunto. Um processo pontual possui $n$ pontos se
+
+\[
+\mathcal{P}(\# X=n) = 1
+\]
+
+Onde $X$ é um conjunto enumerável de $\mathcal{X}$ ($\mathbb{R}$, $\mathbb{Z}$ ou um subconjunto destes). O conjunto de todas configurações possíveis é denominado $Conf(\mathcal{X})$. Se $P(x_1, \dots, x_n)$ é uma função de densidade de probabilidade em $\mathbb{R}^n$ invariante por permutações
+
+\[
+	\mathbb{R}^n \rightarrow Conf(\mathbb{R})
+\]
+\[
+	(x_1, \dots, x_n) \mapsto X = {x_1, \dots, x_n}
+\]
+
+define naturalmente um processo pontual com $n$ pontos.
+
+\subsection{Poisson \& fries}
+
+Tome $\set{N(t)}$ o número de eventos no intervalo de tempo $]0,t]$. $\set{N(t)}$  é um processo estocástico (de contagem). Se o processo de Poisson possui $\lambda > 0$, para um elemento fiox do espaço amostral a variável aleatória $N$ assume valor $k$ no tempo $t$ com probabilidade
+
+\begin{equation}
+	\mathcal{P}[N(t) = k] = \frac{(\lambda t)^k e^{-\lambda t}}{k!}
+\end{equation}
+
+Onde $\lambda$ é o número esperado de chagadas por unidade de tempo. Agora, como um processo pontual, a probabilidade de n eventos no intervalo $]a,b]$ é
+
+\[
+	\mathcal{P}(N]a,b] = n) =  \frac{(\lambda (b-a))^n e^{-\lambda (b-a)}}{n!}
+\]
+
+Podemos usar a independência de cada evento de Poisson em intervalos disjuntos para escrever
+
+\[
+	\mathcal{P}(N]a_1,b_1] = n_1, \dots, N]a_k,b_k] = n_k) = \prod_{i=1}^{k} \frac{(\lambda (b_i-a_i))^n_i e^{-\lambda (b_i-a_i)}}{n_i!}
+\]
+
+Podemos escrever para uma função $f$ mensurável em $\mathbb{R}$
+
+\[
+	\sum_{x_i \in \mathcal{X}} f(x_i) = \int f(x) dN(x)
+\]
+
+Onde a medida dN é
+
+\[
+	dN(x) = \sum_{x_i \in \mathcal{X}} \delta_{x_i} (x)
+\]
+
+Onde notamos que podemos interpretar tanto quanto uma soma de um processo pontual quanto uma medida de probabilidade.
+
+
+\subsection{Funcão Correlação}
+
+Definimos uma variável aleatória $N$ anteriormente. Naturalmente, poderíamos estar interessados em sua esperança. Mais especificamente, podemos procurar a esperança do número de pontos de uma ocnfiguração dentro de um intervalo $A \subset \mathbb{R}$.
+
+\[
+	A \mapsto \mathbb{E}[N(A)] = \mathbb{E}[\#(A \cap X)]	
+\]
+
+Que pode ser interpretada como uma medida com densidade $p_1$
+
+\begin{equation}
+	\mathbb{E}[\#(A \cap X)] = \int_{A} p_1(x) dx
+	\label{eq: p1}
+\end{equation}
+
+A equação \ref{eq: p1} é conhecida como \textit{função de correlação de 1 ponto}. Em grosso modo, $p_1(x)$ é a probabilidade de haver um ponto da configuração entre $x$ e $x+dx$. Seja um configuração simples $X = \set{x_1, \dots, x_n}$ e intervalos disjuntos na reta \many{A}{n},
+
+\[
+	\int_A \dots \int_A \rho_n(x_1, \dots, x_n) dx_1, \dots, dx_n = \mathbb{E} \left( \prod_{j=1}^{k} \# (X \cap A_j) \right) 
+\]
+
+é o número esperado de n-uplas (\many{x}{n}) $\in A_1 \times \dots \times A_n$ tais que $x_i \in A_i, i=1,\dots,n$. Seja $\mathbb{P}(x_1, \dots, x_n)$ uma densidade de probabilidade em $\mathbb{R}^n$, então o processo pontual de n pontos gerado possui funções de correlação dadas por
+
+\[
+	p_k(x_1, \dots, x_k) = \frac{n!}{(n-k)!} \int \dots \int \mathbb{P}(x_1, \dots, x_n) dx_{k+1}\dots dx_n
+\]
+
+
+\subsection{Pontual Determinante}
+
+Um processo pontual vai ser chamado determinante se dada uma função de correlação $\rho_n$, existe um núcleo $K(x, y)$ conhecido como núcleo de correlação tal que
+
+\begin{equation}
+	\rho_n(x_1, \dots, x_n) = det[K(x_i, x_j)]_{i,j=1}^{n}
+	\label{eq: pontualdet}
+\end{equation}
+
+onde
+
+\[
+[K(x_i,x_j)]_{i,j=1}^{n} = 
+\begin{bmatrix}
+	K(x_1, x_1) & K(x_1, x_2) & \dots & K(x_n, x_n) \\
+	K(x_2, x_1) & K(x_2, x_2) & \dots & K(x_n, x_n) \\
+	\vdots & \vdots & \ddots & \vdots \\
+	K(x_n, x_1) & K(x_n, x_2) & \dots & K(x_n, x_n)
+\end{bmatrix}
+\]
+
+Nos casos de baixa dimensão
+
+\[
+p_1(x_1) = K(x_1,x_1), \quad \quad p_2(x_1,x_2) =
+\begin{vmatrix}
+	K(x_1, x_1) & K(x_1, x_2) \\
+	K(x_2, x_1) & K(x_2, x_2)
+\end{vmatrix}
+\]
+
+Para que o núcleo satisfaça a equação \ref{eq: pontualdet} enunciaremos um resultado de interesse.
+
+\begin{theorem}
+	Seja K um núcleo tal que
+	\begin{enumerate}[label=(\alph*)]
+		\item $\int K(x,x) = n \in \mathbb{N}$,
+		\item Para todo \many{x}{n} $\in \mathbb{R}$, o determinante é não negativo
+		\item K possui a propriedade de \textbf{núcleo reprodutor}, isto é;
+		\[
+		K(x,y) = \int_{-\infty}^{\infty} K(x,s) K(s,y) ds
+		\]
+		Então
+		\[
+		P(x_1,\dots, x_n) = \frac{1}{n!} det[K(x_i, x_j)]_{i,j=1}^{n}
+		\]
+		será uma densidade de probabilidade em $\mathbb{R}$ cujo processo de n pontos associado é determinante.
+	\end{enumerate}
+\end{theorem}
+

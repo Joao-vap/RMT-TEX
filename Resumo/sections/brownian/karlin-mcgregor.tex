@@ -40,7 +40,7 @@ Onde denotamos
 	p_t(a_j, E_{\sigma(j)}) = \int_{E_j} p_t(a_i, x_j) dx_j
 \]
 
-$\sigma$ é uma permutação de ${1, \dots, n}$ e $A_{\sigma}$ é o evento que $X_j(t) \in E_{\sigma(j)}$ para todo $j$. Os caminhos devem ser independentes para \ref{eq: detInd}.
+$\sigma$ é uma permutação de ${1, \dots, n}$ e $A_{\sigma}$ é o evento que $X_j(t) \in E_{\sigma(j)}$ para todo $j$. Os caminhos devem ser independentes para \eqref{eq: detInd}.
 
 De alguma forma o determinada permuta os caminhos em todas ordens possíveis e calcula a probabilidade de todos se manterem nos intervalos adequados. Um exemplo de baixas dimensões pode mostrar que
 
@@ -113,13 +113,71 @@ E nosso caso de interesse é quando $a_j \rightarrow a$ e $b_j \rightarrow b$. N
 	p_t(a, x) = \frac{1}{\sqrt{2\pi t}} e^{-\frac{(x-a)^2}{2t}}
 \]
 
-No caso dos limites de $a$ e $b$ ficamos com
+No caso dos limites de $a_i \rightarrow a$ e $b_j \rightarrow b$ ficamos, por consequência que quando mais de um $a_i$ ou $b_j$ convergem ao mesmo ponto teremos $\mathcal{Z} \rightarrow 0$ pela sua dependência destes termos (eles não serão mais 'ortogonais', pontos distintos). Aplicando L'Hôpital
+
+\[
+	det\left[ \frac{\partial^{i-1}}{\partial a^{i-1}} p_t(a_i, x_j) \right]_{i,j=1}^{n} 
+\] 
+
+Onde
+
+\[
+	\frac{\partial^{i-1}}{\partial a^{i-1}} p_t(a_i,x_j) = \left[ \left( \frac{x_j - a_i}{t} \right)^{i-1} + O(x^{i-2}) \right] p_t(a_i,x_j)
+\]
+
+Que nos permite afirmar que o determinante é proporcional à
+
+\[
+	\det{[x_{j}^{i-1}]}^{n}_{i,j=1} \prod_{j=1}^{n} e^{-\frac{x_j^2 - 2ax_j}{2t}}
+\]
+
+Analogamente para o outro determinante
+
+\[
+	\det{[x_{j}^{i-1}]}^{n}_{i,j=1} \prod_{j=1}^{n} e^{-\frac{x_j^2 - 2bx_j}{2(T-t)}}
+\]
+
+Ou seja;
 
 \[
 	f_j = F_{j-1}(x)e^{-\frac{(x-a)^2}{2t}} \ ; \ g_j = G_{j-1}(x)e^{-\frac{(x-b)^2}{2(T-t)}}
 \]
 
-onde $F$ e $G$ são polinômios em $x$  de grau $j-1$. Este processo podemos escalar e transladar para uma versão do GUE $n \times n$.
+onde $F$ e $G$ são polinômios em $x$  de grau $j-1$. Tomaremos agora o limite em que $a,b \rightarrow 0$. Reescrevemos a distribuição conjunta destes pontos
+
+\begin{align}
+	P(x_1, \dots, x_n)
+	& = \frac{1}{\mathcal{Z}_n} \det{[p_t(a_i, x_j)]^{n}_{i,j=1}} \det{[p_{T-t}(x_i, b_j)]^{n}_{i,j=1}} \\
+	& = \frac{1}{\mathcal{Z}_n} \det{[x_{j}^{i-1}]}^{n}_{i,j=1} \prod_{j=1}^{n} e^{-\frac{x_j^2}{2t}} \det{[x_{j}^{i-1}]}^{n}_{i,j=1} \prod_{j=1}^{n} e^{-\frac{x_j^2}{2(T-t)}} \\
+	& =\frac{1}{\mathcal{Z}_n} \det{[x_{j}^{i-1}]}^{n}_{i,j=1} \det{[x_{j}^{i-1}]}^{n}_{i,j=1} \prod_{j=1}^{n} e^{-\frac{T x_j^2}{2t(T-t)}}
+\end{align}
+
+Relembrando a equação \eqref{eq: weyl}, podemos interpretar esta distribuição como uma distribuição de autovalores em um espaço de matrizes hermitianas do GUE com entradas de variância $\sigma^2 = \frac{2t(T-t)}{T}$ e média $\mu = 0$. De forma que poderemos simular a evolução destes movimentos brownianos com o sistema de matrizes descrito.
+
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			enlargelimits=true,
+			width=0.8\textwidth,
+			title={Dyson Bridge},
+			legend pos=north west,
+			ymajorgrids=true,
+			xmajorgrids=true,
+			grid style=dashed,
+			yticklabel pos=left,
+			xlabel={Time},
+			ylabel={Y},
+			]
+			
+			\foreach \p in {0,...,19} {
+					\addplot+[solid,mark=none]
+					table [col sep=comma]
+					{data/brownian/b\p};	
+			}
+			
+		\end{axis}
+	\end{tikzpicture}
+\end{center} 
 
 
 

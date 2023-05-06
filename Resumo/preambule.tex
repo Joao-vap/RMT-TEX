@@ -1,5 +1,6 @@
 %%%%%%%%%%%%%% General %%%%%%%%%%%%%%%%%%%%%%%
 
+
 \usepackage[utf8]{inputenc}
 
 %language
@@ -15,12 +16,23 @@
 %citations
 \usepackage{cite}
 
+%enumerate
+\usepackage{enumitem}
+
+%references link
+\usepackage{hyperref}
+
 %%%%%%%%%%%%%%%% graphicx %%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{graphicx}
 
+\usepackage{tikz,pgfplots}
+
 % include graphics path
 \graphicspath{ {images} }
+% create external plots
+\usepgfplotslibrary{external} 
+\tikzexternalize
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%% mathematics %%%%%%%%%%%%%%%%%%%%%
@@ -28,6 +40,9 @@
 \usepackage{mathtools, amsmath}
 
 \DeclareMathOperator{\Tr}{Tr}
+
+% import set notation
+\usepackage{amsfonts}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%% notation %%%%%%%%%%%%%%%%%%%%%%
@@ -37,3 +52,15 @@
 \newcommand{\many}[2]{$#1_1, #1_2, \dots, #1_#2$}
 
 \newcommand{\cmany}[3]{$#1_1 #3 #1_2 #3 \dots #3 #1_#2$}
+
+\newcommand{\set}[1]{\{#1\}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Theorem %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{lemma}{Lema}
+\newtheorem{theorem}[lemma]{Teorema}
+\newtheorem{corolary}[lemma]{Corolário}
+\newtheorem{definition}[lemma]{Definição}
+\newtheorem{conjecture}[lemma]{Conjectura}
+\newtheorem{proposition}[lemma]{Preposição}
