@@ -1,12 +1,14 @@
 \begin{thebibliography}{1}
 
-\bibitem{ArnoLectureNotes}
-Lecture notes on riemann-hilbert problems and multiple orthogonal polynomials.
-
 \bibitem{fyodorov2010introduction}
 Yan~V. Fyodorov.
 \newblock Introduction to the random matrix theory: Gaussian unitary ensemble
   and beyond, 2010.
+
+\bibitem{ArnoLectureNotes}
+Arno Kuijlaars.
+\newblock Lecture notes on riemann-hilbert problems and multiple orthogonal
+  polynomials.
 
 \bibitem{Livan_2018}
 Giacomo Livan, Marcel Novaes, and Pierpaolo Vivo.

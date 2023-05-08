@@ -1,0 +1,38 @@
+Existe uma aproximação a se fazer no logaritmo de somas assintóticas que pode ser de interesse. Assuma
+
+\[
+	S = \sum_{i=1}^{M} a_i
+\]  
+
+Se $a_i(N) \sim e^{\phi_i N}$ ou $\log{(a_i)} \approx \phi_i N$, podemos afirmar
+
+\[
+	\log{(S)} \sim \log{(a_{max})}
+\]
+
+Para demonstrar isso, notamos
+
+\[
+	a_{max} < S < M_{a_max}
+\]
+\[
+	\frac{\log{(a_{max})}}{N} < \frac{\log{S}}{N} < \frac{\log{(a_{max})}}{N} + \frac{\log{M}}{N}
+\]
+
+Ou seja, desde que $\frac{\log{M}}{N} \rightarrow 0$. Isto ocorrerá desde que $M$ seja sub-exponencial. Contudo \textbf{NOTE} que dizer
+
+\[
+	\log{(n!)} \sim n \log{n} - n
+\]
+
+Não implica que
+
+\[
+	n! \sim ! \left( \frac{n}{e}\right)^n 
+\]
+
+Em algumas situações é possível afirmar contudo
+
+\[
+	n! \sim \left( \frac{n}{e}\right)^n \sqrt{2\pi n}
+\]

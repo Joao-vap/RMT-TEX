@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{n}{n\PYGZus{}particles} \PYG{o}{=} \PYG{l+m+mi}{20}
+\PYG{n}{steps} \PYG{o}{=} \PYG{l+m+mi}{1000}
+
+\PYG{k}{def} \PYG{n+nf}{GUE}\PYG{p}{(}\PYG{n}{N}\PYG{p}{,} \PYG{n}{sigma} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{mu} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{escale} \PYG{o}{=} \PYG{k+kc}{False}\PYG{p}{):}
+    \PYG{n}{beta} \PYG{o}{=} \PYG{l+m+mi}{2}
+    \PYG{n}{A} \PYG{o}{=} \PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randn}\PYG{p}{(}\PYG{n}{N}\PYG{p}{,}\PYG{n}{N}\PYG{p}{)} \PYG{o}{*} \PYG{n}{sigma} \PYG{o}{+} \PYG{n}{mu}\PYG{p}{)}\PYG{o}{+} \PYG{l+m+mi}{1}\PYG{n}{j}\PYG{o}{*}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randn}\PYG{p}{(}\PYG{n}{N}\PYG{p}{,}\PYG{n}{N}\PYG{p}{)} \PYG{o}{*} \PYG{n}{sigma} \PYG{o}{+} \PYG{n}{mu}\PYG{p}{)}
+    \PYG{n}{A} \PYG{o}{=} \PYG{p}{(}\PYG{n}{A} \PYG{o}{+} \PYG{n}{A}\PYG{o}{.}\PYG{n}{T}\PYG{o}{.}\PYG{n}{conj}\PYG{p}{())}\PYG{o}{/}\PYG{l+m+mi}{2}
+    \PYG{n}{eig} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{eigvalsh}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{escale}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n}{eig}\PYG{o}{/}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{N}\PYG{o}{*}\PYG{n}{beta}\PYG{p}{))}
+    \PYG{k}{return} \PYG{n}{eig}
+
+\PYG{n}{eig\PYGZus{}GUE} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{n\PYGZus{}particles}\PYG{p}{)}
+
+\PYG{n}{final\PYGZus{}time} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{n}{dt} \PYG{o}{=} \PYG{n}{final\PYGZus{}time}\PYG{o}{/}\PYG{n}{steps}
+\PYG{n}{Memory} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{((}\PYG{n}{steps}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{n\PYGZus{}particles}\PYG{p}{))}
+
+\PYG{k}{for} \PYG{n}{step} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{steps}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{):}
+    \PYG{n}{partial\PYGZus{}time} \PYG{o}{=} \PYG{n}{step} \PYG{o}{*} \PYG{n}{dt}
+    \PYG{n}{sigma} \PYG{o}{=} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{partial\PYGZus{}time}\PYG{o}{*}\PYG{p}{(}\PYG{n}{final\PYGZus{}time}\PYG{o}{\PYGZhy{}}\PYG{n}{partial\PYGZus{}time}\PYG{p}{)}\PYG{o}{/}\PYG{n}{final\PYGZus{}time}
+    \PYG{n}{mu} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{n}{eig\PYGZus{}GUE} \PYG{o}{=} \PYG{n}{GUE}\PYG{p}{(}\PYG{n}{n\PYGZus{}particles}\PYG{p}{,} \PYG{n}{sigma} \PYG{o}{=} \PYG{n}{sigma}\PYG{p}{,} \PYG{n}{mu} \PYG{o}{=} \PYG{n}{mu}\PYG{p}{,} \PYG{n}{escale} \PYG{o}{=} \PYG{k+kc}{False}\PYG{p}{)}
+    \PYG{n}{eig\PYGZus{}order} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{argsort}\PYG{p}{(}\PYG{n}{eig\PYGZus{}GUE}\PYG{p}{)}
+    \PYG{n}{Memory}\PYG{p}{[}\PYG{n}{step}\PYG{p}{,:]} \PYG{o}{=} \PYG{n}{eig\PYGZus{}GUE}\PYG{p}{[}\PYG{n}{eig\PYGZus{}order}\PYG{p}{]}
+
+\PYG{n}{np}\PYG{o}{.}\PYG{n}{savetxt}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Memory.txt\PYGZsq{}}\PYG{p}{,} \PYG{n}{Memory}\PYG{p}{)}
+\end{Verbatim}
