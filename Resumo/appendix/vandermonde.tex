@@ -1,0 +1,53 @@
+A formulação nos diz
+
+\begin{equation}
+	|V| = \prod_{1\leq i < j \leq n} (\alpha_j - \alpha_i)
+\end{equation}
+
+Note que podemos iniciar com uma matriz $n\cdot n$. Seja $c_i$ a coluna $i$, multiplicamos a coluna $c_i$ por $-\alpha_1$ e somamos com a coluna $c_{i+1}$
+
+\[
+V = 
+\begin{bmatrix}
+	1 & \alpha_1 & \alpha_1^2 & \dots & \alpha_1^{n-1} \\
+	1 & \alpha_2 & \alpha_2^2 & \dots & \alpha_2^{n-1} \\
+	1 & \alpha_3 & \alpha_3^3 & \dots & \alpha_3^{n-1} \\
+	\vdots & \vdots & \vdots & \ddots & \vdots \\
+	1 & \alpha_n & \alpha_n^2 & \dots & \alpha_n^{n-1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+	1 & 0 & 0 & \dots & 0 \\
+	1 & \alpha_2 - \alpha_1 & \alpha_2(\alpha_2 - \alpha_1) & \dots & \alpha_2^{n-2}(\alpha_2 - \alpha_1) \\
+	1 & \alpha_3 - \alpha_1& \alpha_3(\alpha_3 - \alpha_1) & \dots & \alpha_3^{n-2} (\alpha_3 - \alpha_1)\\
+	\vdots & \vdots & \vdots & \ddots & \vdots \\
+	1 & \alpha_n- \alpha_1 & \alpha_n(\alpha_n - \alpha_1) & \dots & \alpha_n^{n-2}(\alpha_n - \alpha_1)
+\end{bmatrix}
+\]
+
+Utilizando do Teorema de Laplace, o determinante vai ser definido simplesmente por
+
+\[
+|V| =
+	\begin{vmatrix}
+		\alpha_2 - \alpha_1 & \alpha_2(\alpha_2 - \alpha_1) & \dots & \alpha_2^{n-2}(\alpha_2 - \alpha_1) \\
+		\alpha_3 - \alpha_1& \alpha_3(\alpha_3 - \alpha_1) & \dots & \alpha_3^{n-2} (\alpha_3 - \alpha_1)\\
+		\vdots & \vdots & \ddots & \vdots \\
+		\alpha_n- \alpha_1 & \alpha_n(\alpha_n - \alpha_1) & \dots & \alpha_n^{n-2}(\alpha_n - \alpha_1)
+	\end{vmatrix}
+\]
+
+De onde é claro, podemos fatorar os coeficientes e ter
+
+\[
+|V| = (\alpha_2 - \alpha_1)(\alpha_3 - \alpha_1)\dots(\alpha_n - \alpha_1)
+\begin{vmatrix}
+	1 & \alpha_2 & \alpha_2^2 & \dots & \alpha_2^{n-2} \\
+	1 & \alpha_3 & \alpha_3^2 & \dots & \alpha_3^{n-2} \\
+	1 & \alpha_4 & \alpha_4^3 & \dots & \alpha_4^{n-2} \\
+	\vdots & \vdots & \vdots & \ddots & \vdots \\
+	1 & \alpha_n & \alpha_n^2 & \dots & \alpha_n^{n-2}
+\end{vmatrix}
+\]
+
+E assim por diante.

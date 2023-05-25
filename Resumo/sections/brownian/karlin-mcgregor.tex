@@ -113,7 +113,62 @@ E nosso caso de interesse é quando $a_j \rightarrow a$ e $b_j \rightarrow b$. N
 	p_t(a, x) = \frac{1}{\sqrt{2\pi t}} e^{-\frac{(x-a)^2}{2t}}
 \]
 
-No caso dos limites de $a_i \rightarrow a$ e $b_j \rightarrow b$ ficamos, por consequência que quando mais de um $a_i$ ou $b_j$ convergem ao mesmo ponto teremos $\mathcal{Z} \rightarrow 0$ pela sua dependência destes termos (eles não serão mais 'ortogonais', pontos distintos). Aplicando L'Hôpital
+No caso dos limites de $a_i \rightarrow a$ e $b_j \rightarrow b$ ficamos, por consequência que quando mais de um $a_i$ ou $b_j$ convergem ao mesmo ponto teremos $\mathcal{Z} \rightarrow 0$ pela sua dependência destes termos (eles não serão mais 'ortogonais', pontos distintos). Por exemplo, para o limite
+
+\[
+	\lim_{a_n \rightarrow a_{n-1}} \frac{\det{[p_t(a_i, x_j)]^{n}_{i,j=1}} \det{[p_{T-t}(x_i, b_j)]^{n}_{i,j=1}}}{\mathcal{Z}_n'}
+\]
+
+
+Queremos aplicar L'Hôpital para resolver a indeterminação. Para o determinante podemos notar que
+
+\begin{align*}
+	\frac{\partial}{\partial a_n}
+	\begin{vmatrix}
+		p_t(a_1, x_1) & \dots & p_t(a_1, x_n) \\
+		\vdots &\ddots & \vdots \\
+		p_t(a_n, x_1) & \dots & p_t(a_n, x_n)
+	\end{vmatrix} =
+	& 	\frac{\partial}{\partial a_n} [
+	p_t(a_n, x_1)
+	\begin{vmatrix}
+		\dots
+	\end{vmatrix}
+	 + \dots +
+	 p_t(a_n, x_n)
+	 \begin{vmatrix}
+	 	\dots
+	 \end{vmatrix}
+	] \\
+	& [
+	\frac{\partial}{\partial a_n} p_t(a_n, x_1)
+	\begin{vmatrix}
+		\dots
+	\end{vmatrix}
+	+ \dots +
+	\frac{\partial}{\partial a_n} p_t(a_n, x_n)
+	\begin{vmatrix}
+		\dots
+	\end{vmatrix}
+	] \\
+	& = \begin{vmatrix}
+		p_t(a_1, x_1) & \dots & p_t(a_1, x_n) \\
+		\vdots &\ddots & \vdots \\
+		\frac{\partial}{\partial a_n} p_t(a_n, x_1) & \dots & \frac{\partial}{\partial a_n} p_t(a_n, x_n)
+	\end{vmatrix}
+\end{align*}
+
+No limite que estamos tratando:
+
+\[
+\begin{vmatrix}
+	p_t(a_1, x_1) & \dots & p_t(a_1, x_n) \\
+	\vdots &\ddots & \vdots \\
+	\frac{\partial}{\partial a_{n-1}} p_t(a_{n-1}, x_1) & \dots & \frac{\partial}{\partial a_{n-1}} p_t(a_{n-1}, x_n)
+\end{vmatrix}
+\]
+
+Para que todos $a_i \rightarrow a$ precisamos ainda fazer $a_{n-1} \rightarrow a_{n-2}$, $a_{n-2} \rightarrow a_{n-3}$ e assim por diante. Se fizermos assim, terminaremos com
 
 \[
 	det\left[ \frac{\partial^{i-1}}{\partial a^{i-1}} p_t(a_i, x_j) \right]_{i,j=1}^{n} 
@@ -122,7 +177,7 @@ No caso dos limites de $a_i \rightarrow a$ e $b_j \rightarrow b$ ficamos, por co
 Onde
 
 \[
-	\frac{\partial^{i-1}}{\partial a^{i-1}} p_t(a_i,x_j) = \left[ \left( \frac{x_j - a_i}{t} \right)^{i-1} + O(x^{i-2}) \right] p_t(a_i,x_j)
+	\frac{\partial^{i-1}}{\partial a^{i-1}} p_t(a_i,x_j) = \left[ \left( \frac{x_j - a_i}{t} \right)^{i-1} + O\left( \frac{x_j - a_i}{t} \right)^{i-2} \right] p_t(a_i,x_j)
 \]
 
 Que nos permite afirmar que o determinante é proporcional à
@@ -131,7 +186,7 @@ Que nos permite afirmar que o determinante é proporcional à
 	\det{[x_{j}^{i-1}]}^{n}_{i,j=1} \prod_{j=1}^{n} e^{-\frac{x_j^2 - 2ax_j}{2t}}
 \]
 
-Analogamente para o outro determinante
+quando $a_i \rightarrow 0$. Analogamente para o outro determinante
 
 \[
 	\det{[x_{j}^{i-1}]}^{n}_{i,j=1} \prod_{j=1}^{n} e^{-\frac{x_j^2 - 2bx_j}{2(T-t)}}
@@ -151,6 +206,12 @@ onde $F$ e $G$ são polinômios em $x$  de grau $j-1$. Tomaremos agora o limite 
 	& = \frac{1}{\mathcal{Z}_n} \det{[x_{j}^{i-1}]}^{n}_{i,j=1} \prod_{j=1}^{n} e^{-\frac{x_j^2}{2t}} \det{[x_{j}^{i-1}]}^{n}_{i,j=1} \prod_{j=1}^{n} e^{-\frac{x_j^2}{2(T-t)}} \\
 	& =\frac{1}{\mathcal{Z}_n} \det{[x_{j}^{i-1}]}^{n}_{i,j=1} \det{[x_{j}^{i-1}]}^{n}_{i,j=1} \prod_{j=1}^{n} e^{-\frac{T x_j^2}{2t(T-t)}}
 \end{align}
+
+Onde o último passo é dado pelo valor do determinante de Vandermonde discutido no apêndice \ref{apdx: vandermonde} tal que
+
+\[
+	P(x_1, \dots, x_n)=\frac{1}{\mathcal{Z}_n} \prod_{1\leq i < j \leq n} (x_j - x_i)^2 \prod_{j=1}^{n} e^{-\frac{T x_j^2}{2t(T-t)}}
+\] 
 
 Relembrando a equação \eqref{eq: weyl}, podemos interpretar esta distribuição como uma distribuição de autovalores em um espaço de matrizes hermitianas do GUE com entradas de variância $\sigma^2 = \frac{2t(T-t)}{T}$ e média $\mu = 0$. De forma que poderemos simular a evolução destes movimentos brownianos com o sistema de matrizes descrito.
 
@@ -187,6 +248,8 @@ bgcolor=white,
 fontsize=\footnotesize,
 linenos
 ]{Python}{code/DysonBridge.py}
+
+Uma outra pergunta sem resposta para mim é: Como simular sistemas com dois pontos finais? Nesse caso pudemos retirar matrizes com entradas independentes porquê a distribuição era relacionada à $e^{\alpha H^2}$, mas agora teremos algo do tipo $e^{\alpha H^2 + H_0}$. Como fazer isso?
 
 
 

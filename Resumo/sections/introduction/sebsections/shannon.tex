@@ -1,0 +1,149 @@
+Podemos fazer algo um pouco mais matemático. Definiremos a entropia de Shannon, que dá origem às expressões entrópicas gerais para qualquer ensemble.
+
+\[
+\mathcal{S} = -k_b \sum_{i} p_i \log{p_i}
+\]
+
+\subsubsection{Um vínculo}
+
+Se impormos um vínculo do tipo
+
+\[
+\sum_{i} p_i = 1
+\]
+
+Podemos usar os multiplicadores de Lagrange para realizar a maximização da nossa função. Pela definição, escrevemos:
+
+\[
+S({p_i}, \lambda) \equiv k_b \sum_{i=1}^{N} p_i \log{(p_i)} - \lambda \left( \sum_{i=1}^{N}p_i -1 \right) 
+\]
+
+Com diferencial
+
+\[
+\delta S = - k_b \sum_{i=1}^{N} \left( p_i \log{p_i} + \frac{p_i}{p_i} \delta p_i \right) - \lambda \sum_{i=1}^{N}\delta p_i
+\]
+
+Resolveremos agora o sistema
+
+\[
+\begin{cases}
+	\delta S = 0 \\
+	\sum_{i} p_i = 1
+\end{cases}
+\]
+
+ou seja,
+
+\[
+\begin{cases}
+	-k_b (\log{p_i} + 1) - \lambda \\
+	\sum_{i} p_i = 1
+\end{cases}
+\]
+
+Note que $p_i = cte \ \forall i$. Teremos então $p_i = \frac{1}{N}$. A entropia neste caso será 
+
+\[
+S({p_i}^*) = - k_b \sum_{i=1}^{N} \left( \frac{1}{N} \log{\frac{1}{N}} \right) = k_b \log{N}
+\]
+
+\subsubsection{Dois vínculos}
+
+Faremos agora a implicação de um novo vínculo
+
+\[
+\sum_{\sigma} p_\sigma E_\sigma = U
+\]
+
+Desenvolvendo a equação
+
+\[
+S({p_i}, \lambda_1, \lambda_2) \equiv k_b \sum_{i=1}^{N} p_i \log{(p_i)} - \lambda_1 \left( \sum_{i=1}^{N}p_i -1 \right)  - \lambda_2 \left( \sum_\sigma  p_\sigma E_\sigma - U \right) 
+\]
+
+Chegaremos no sistema
+
+
+\[
+\begin{cases}
+	-k_b (\log{p_i} + 1) - \lambda_1 - \lambda_2 E_\sigma  = 0\\
+	\sum_{\sigma} p_i = 1 \\
+	\sum_{\sigma} p_\sigma E_\sigma = U
+\end{cases}
+\]
+
+E finalmente, da primeira equação tiramos
+
+\[
+p_\sigma = e^{A E_\sigma + B} = M e^{-\beta E_\sigma}
+\]
+
+De forma que podemos reescrever
+
+\[
+1 = \sum_\sigma M e^{-\beta E_\sigma} = M \sum_\sigma e^{-\beta E_\sigma}
+\]
+
+Onde nomearemos $M = \frac{1}{\sum_{\sigma}e^{-\beta E_\sigma}} = \frac{1}{\mathcal{Z}}$ \textbf{função partição}. Falta apenas definir $\beta$ em
+
+\[
+p_\sigma = \frac{e^{-\beta E_\sigma}}{Z}
+\]
+
+Para $\beta$ podemos aplicar o último vínculo (da temperatura térmica)
+
+\[
+U = \sum_\sigma p_\sigma E_\sigma = \sum_\sigma \left( \frac{1}{Z} e^{-\beta E_\sigma} \right) E_\sigma = \frac{1}{Z} \sum_\sigma E_\sigma e^{-\beta E_\sigma}
+\]
+
+\[
+-\frac{1}{Z} \frac{\partial }{ \partial \beta} \left( \sum_\sigma e^{-\beta E_\sigma} \right) = -\frac{1}{\mathcal{Z}} \frac{\partial Z}{\partial \beta} = - \frac{\partial (\log{Z})}{\partial \beta}
+\]
+
+De alguma forma esta equação transcendental nos define $\beta$.
+
+\subsubsection{Três vínculos}
+
+Introduziremos um terceiro novo vínculo
+
+\[
+	\sum_\sigma p_\sigma N_\sigma = N
+\]
+
+Da mesma forma, teremos que desenvolver a equação
+
+\[
+S({p_i}, \lambda_1, \lambda_2, \lambda_3) \equiv k_b \sum_{i=1}^{N} p_i \log{(p_i)} - \lambda_1 \left( \sum_{i=1}^{N}p_i -1 \right)  - \lambda_2 \left( \sum_\sigma  p_\sigma E_\sigma - U \right) - \lambda_3 \left( \sum_\sigma  p_\sigma N_\sigma - N \right) 
+\]
+
+Do sistema associado aos vínculos de Lagrange
+
+\[
+\begin{cases}
+	-k_b (\log{p_i} + 1) - \lambda_1 - \lambda_2 E_\sigma  - \lambda_3 N_\sigma = 0\\
+	\sum_{\sigma} p_i = 1 \\
+	\sum_{\sigma} p_\sigma E_\sigma = U \\
+	\sum_{\sigma} p_\sigma N_\sigma = N
+\end{cases}
+\]
+
+Da primeira equação tiramos
+
+\[
+p_\sigma = e^{A E_\sigma + B N_\sigma + C} = M e^{-\beta E_\sigma +\beta \mu N_\sigma}
+\]
+
+De forma que podemos reescrever
+
+\[
+1 = \sum_\sigma M e^{-\beta E_\sigma +\beta \mu N_\sigma} = M \sum_\sigma e^{-\beta E_\sigma +\beta \mu N_\sigma}
+\]
+
+Novamente nomearemos $Z$ em 
+
+\[
+	M = \frac{1}{\sum_\sigma e^{-\beta E_\sigma +\beta \mu N_\sigma}} = \frac{1}{Z}
+\]
+
+a função partição. As outras duas equações nos definem $\beta$ e $\mu$.
