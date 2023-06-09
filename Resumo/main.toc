@@ -1,28 +1,32 @@
 \babel@toc {portuguese}{}\relax 
 \contentsline {chapter}{\numberline {1}Introdução}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Física Estatística}{3}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Entropia de Shannon}{3}{subsection.1.1.1}%
-\contentsline {subsubsection}{Um vínculo}{3}{section*.2}%
-\contentsline {subsubsection}{Dois vínculos}{4}{section*.3}%
+\contentsline {section}{\numberline {1.1}Física e Mecânica Estatística}{2}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Entropia de Shannon}{2}{subsection.1.1.1}%
+\contentsline {subsubsection}{Um vínculo}{2}{section*.2}%
+\contentsline {subsubsection}{Dois vínculos}{3}{section*.3}%
 \contentsline {subsubsection}{Três vínculos}{4}{section*.4}%
-\contentsline {subsection}{\numberline {1.1.2}O ensemble Micro-Canônico}{5}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}O ensemble Canônico}{6}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}O ensemble Grão Canônico}{8}{subsection.1.1.4}%
-\contentsline {section}{\numberline {1.2}Porquê exponencial?}{9}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Shannon-Quem?}{9}{subsection.1.2.1}%
-\contentsline {section}{\numberline {1.3}Independência ou Morte}{10}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Uma medida à Hermitiana}{11}{section.1.4}%
-\contentsline {chapter}{\numberline {2}Movimento Browniano}{13}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Processo Pontual}{13}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Poisson \& fries}{13}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Funcão Correlação}{14}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Pontual Determinante}{14}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Emsemble Biortogonal}{15}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Karlin-McGregor}{15}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}O teorema}{15}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Consequências}{17}{subsection.2.3.2}%
-\contentsline {chapter}{\numberline {A}Transformação Legendre}{22}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Tangentes}{22}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Otimização}{22}{section.A.2}%
-\contentsline {chapter}{\numberline {B}Soma Assintóticas}{24}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Det Vandermonde}{25}{appendix.C}%
+\contentsline {subsection}{\numberline {1.1.2}O ensemble Micro-Canônico}{4}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}O ensemble Canônico}{5}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}O ensemble Grão Canônico}{7}{subsection.1.1.4}%
+\contentsline {chapter}{\numberline {2}Procura-se autovalores}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Porquê exponencial?}{11}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Shannon-Quem?}{11}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Independência ou Morte}{12}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Uma medida à Hermitiana}{13}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Movimento Browniano}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Processo Pontual}{15}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Poisson \& fries}{15}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Funcão Correlação}{16}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Pontual Determinantal}{16}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Emsemble Biortogonal}{17}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Karlin-McGregor}{17}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}O teorema}{17}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Consequências}{19}{subsection.3.3.2}%
+\contentsline {chapter}{\numberline {4}Coulombolas! Gases Aleatórios}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Hamiltonianozinho}{28}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Esquentem as Máquinas}{29}{section.4.2}%
+\contentsline {chapter}{\numberline {A}Transformação Legendre}{31}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Tangentes}{31}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Otimização}{31}{section.A.2}%
+\contentsline {chapter}{\numberline {B}Soma Assintóticas}{33}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Det Vandermonde}{34}{appendix.C}%

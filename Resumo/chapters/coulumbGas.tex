@@ -1,0 +1,35 @@
+Retomamos agora os resultados sobre a distribuição dos autovalores para matrizes hermitianas para introduzir o tópico principal deste resumo: Os Gases de Coulomb.
+
+Um dos primeiros resultados foi que para o ensemble do GUE, teríamos que
+
+\[
+	p(M) = \frac{1}{\mathcal{\tilde{Z}}_N} e^{-\Tr{\tilde{V}(M)}} dM
+\]
+
+Mas estamos mais interessados na distribuição relativa aos autovalores, que podemos expressar escrevendo o jacobiano da transformação,
+
+\[
+	p(\mmany{\lambda}{N}) =  \frac{1}{\mathcal{Z}_N} \prod_{i<j} (\lambda_i - \lambda_j)^\beta \prod_{i=1}^{N} e^{-V(\lambda_i)} d\lambda
+\]
+
+Onde 
+
+\[
+	\mathcal{Z}_N = \int_{R^N} \prod_{i<j} (\lambda_i - \lambda_j)^\beta \prod_{i=1}^{N} e^{-V(\lambda_i)} d\lambda
+\]
+
+Lembrando que devemos ter medida uniforme nos autovetores. Por isso podemos expressar apenas nos autovalores. Assim como na física, para resolver nosso Gás de Coulomb, vamos precisar minimizar a energia livre do nosso ensemble. Lembre-se que se trata do ensemble canônico e que devemos ter a energia livre de Helmholtz
+
+\[
+	F = -\frac{1}{k_b} \ln{(\mathcal{Z}_N)}
+\]
+
+Teremos que os estados mais prováveis serão aqueles em que for maximizada a expressão
+
+\begin{align*}
+	&\prod_{i<j} (\lambda_i - \lambda_j)^2 \prod_{i=1}^{N} e^{V(\lambda_i)} \\
+	& = \exp{\left[-N^2 \left( \frac{1}{N^2}\sum_{i\neq j}\log{\frac{1}{|\lambda_i - \lambda_j|}} + \frac{1}{N^2} \sum_{i=1}^{N} V(\lambda_i)  \right)\right]} \\
+	& = \exp{(-N^2 \mathcal{\tilde{H}}_N(\lambda) )}
+\end{align*}
+
+Que, como soma assintótica, importaremos apenas com o maior termo da soma de logs. E novamente como na física, vamos então precisar minimizar o Hamiltoniano do sistema $\mathcal{\tilde{H}}_N(\lambda)$!

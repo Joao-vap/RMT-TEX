@@ -249,7 +249,44 @@ fontsize=\footnotesize,
 linenos
 ]{Python}{code/DysonBridge.py}
 
-Uma outra pergunta sem resposta para mim é: Como simular sistemas com dois pontos finais? Nesse caso pudemos retirar matrizes com entradas independentes porquê a distribuição era relacionada à $e^{\alpha H^2}$, mas agora teremos algo do tipo $e^{\alpha H^2 + H_0}$. Como fazer isso?
+Uma outra pergunta sem resposta para mim é: Como simular sistemas com dois pontos finais? Nesse caso pudemos retirar matrizes com entradas independentes porquê a distribuição era relacionada à $e^{\alpha H^2}$, mas agora teremos algo do tipo $e^{\alpha H^2 + H_0}$. Como fazer isso? Podemos tomar duas abordagens temporárias.
+
+\begin{enumerate}
+	\item Múltiplos movimentos independentes com finais distintos ordenando os autovalores para participar de cada um dos grupos.
+	
+	\inputminted[
+	frame=lines,
+	framesep=2mm,
+	baselinestretch=1.2,
+	bgcolor=white,
+	fontsize=\footnotesize,
+	linenos
+	]{Python}{code/BrownianMultFinalOpt1.py}
+	
+	\includegraphics[width=\textwidth]{nonintersectBrownianPart-M1}
+
+
+	\item Múltiplos movimentos selecionando simulações onde os autovalores não se intersectem.
+	
+	\inputminted[
+	frame=lines,
+	framesep=2mm,
+	baselinestretch=1.2,
+	bgcolor=white,
+	fontsize=\footnotesize,
+	linenos
+	]{Python}{code/BrownianMultFinalOpt2.py} 
+	
+	\includegraphics[width=\textwidth]{nonintersectBrownianPart-M2}
+	
+	
+\end{enumerate}
+
+Por fim, podemos mostrar o formato geral destes modelos que tratamos acima.
+
+\includegraphics[width=\textwidth]{nonintersectBrownianPart}
+
+
 
 
 

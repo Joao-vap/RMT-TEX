@@ -5,12 +5,12 @@ steps = 1000
 
 def GUE(N, sigma = 1, mu = 0, escale = False):
     beta = 2
-    A = (np.random.randn(N,N) * sigma + mu)+ 1j*(np.random.randn(N,N) * sigma + mu)
+    A = np.random.randn(N,N) * sigma + 1j*np.random.randn(N,N)*sigma
     A = (A + A.T.conj())/2
     eig = np.linalg.eigvalsh(A)
     if escale:
-        return eig/(np.sqrt(N*beta))
-    return eig
+        return (eig + mu)/(np.sqrt(N*beta))
+    return eig + mu
 
 eig_GUE = np.zeros(n_particles)
 

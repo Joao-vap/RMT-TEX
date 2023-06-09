@@ -4,18 +4,45 @@ Consideremos matrizes com entradas independentes. Qual a função densidade de p
 \rho((\matriz{H_s})_{11}, \dots, (\matriz{H_s})_{NN}) = \prod_{i=1}^{N} \left[ \frac{e^{\frac{-(H_s)^2_{ii}}{2}}}{2\pi} \right] \prod_{i<j} \left[ \frac{e^{-(H_s)^2_{ij}}}{\sqrt{\pi}} \right]
 \]
 
-Podemos também definir a distribuição para os autovalores de uma matriz Gaussiana de dimensão $N$ como \footnote{Esse resultado é não óbvio e deve ser discutido em breve.}
+Que é a função distribuição da matriz. A desimetria da diagonal e da não diagonal nos permite escrever a distribuição como 
 
 \begin{equation}
-	\rho(x_1, \dots, x_N) = \frac{1}{\mathcal{Z_{N, \beta}}} e^{-\frac{1}{2} \sum_{i=1}^{N} x_i^2} \prod_{j<k} | x_j - x_k |^{\beta}
+	\mathcal{P}(\mathcal{H}) = C_2 e^{-\frac{1}{2\sigma^2} \Tr{\mathcal{H}^2}}
 \end{equation}
 
-onde a constante de normalização é dada por
+Mais geralmente
+
+\begin{equation}
+	\mathcal{P}(\mathcal{H}) = C_{\beta} e^{-\frac{\beta}{4\sigma^2} \Tr{\mathcal{H}^2}}
+\end{equation}
+
+Suponha que queremos derivar a equação da distribuição dos autovalores para tais matrizes. Começamos com $\mathcal{H}_{N\times N}$
 
 \[
-\mathcal{Z_{N, \beta}} = (2\pi)^\frac{N}{2} \prod_{j=1}^{N} \frac{\Gamma(1+ j\frac{\beta}{2})}{\Gamma(1+ \frac{\beta}{2})}
+\begin{bmatrix}
+	x_1 & x_{n+1} & \cdots & x_{2n} \\
+	x_{n+1} & x_2 & \vdots & \vdots \\
+	\vdots & \cdots & \ddots & \vdots \\
+	x_{2n} & \cdots & \cdots & x_n
+\end{bmatrix}
 \]
 
-Para ressaltar um pouco do jargão, $\beta$ é denominado \textit{Dyson Index} que em suma se refere à "dimensão" das suas entradas na matriz. $1$ para GOE, $2$ para GUE e $4$ para GSE.
+Notemos que teremos $\mmany{x}{n} \sim \mathcal{N}(0,1)$ e $x_{n+1}, \cdots, x_{n^2} \sim \mathcal{N}(0,\frac{1}{2})$. Qual a distribuição $p(s)$ de $s = \lambda_2 - \lambda_1$? Sabemos os autovalores soluções do polinômio característico
 
-Algumas observações sobre essa expressão são interessantes. Note que o fator exponencial deve matar qualquer chance de uma matriz com autovalor alto. Ao mesmo tempo o fator de dependência deve matar qualquer configuração com autovalores muito próximos entre si. Existe um efeito de repelência entre autovalores na expressão.
+\[
+	\lambda^2 - \Tr{\mathcal{H}_s} \lambda + \det{\mathcal{H}_s}
+\]
+
+O resultado será uma função $s(\mmany{x}{{n^2}})$. Para a qual escrevemos
+
+\[
+p(s) = \int_{-\infty}^{\infty} dx_1 \cdots dx_{n^2} \prod_{i=1}^{n} \frac{e^{-\frac{x_i^2}{2}}}{\sqrt{2\pi}} \prod_{i=n+1}^{n^2} \frac{e^{-x_i^2}}{\sqrt{\pi}} \delta(s - s(\mmany{x}{{n^2}}))
+\]
+
+Que, desenvolvido, chega à
+
+\[
+	p(s) = -\frac{s}{2} e^{-f(s^2)}
+\]
+
+Ou seja, teremos um resultado em que as partículas parecem se repelir!
