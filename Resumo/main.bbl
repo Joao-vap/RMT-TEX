@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{Chafa__2018}
+Djalil Chafaï and Gr{\'{e}}goire Ferr{\'{e}}.
+\newblock Simulating coulomb and log-gases with hybrid monte carlo algorithms.
+\newblock {\em Journal of Statistical Physics}, 174(3):692--714, nov 2018.
+
 \bibitem{fyodorov2010introduction}
 Yan~V. Fyodorov.
 \newblock Introduction to the random matrix theory: Gaussian unitary ensemble
@@ -20,5 +25,9 @@ M.L. MEHTA.
 \newblock Preface.
 \newblock In M.L. MEHTA, editor, {\em Random Matrices and the Statistical
   Theory of Energy Levels}. Academic Press, 1967.
+
+\bibitem{propp2002generalized}
+James Propp.
+\newblock Generalized domino-shuffling, 2002.
 
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.4.12)  24 MAY 2023 19:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.30)  11 AUG 2023 09:05
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -902,31 +902,8 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Cap\'{\i }tulo 1.
-(./chapters/introduction.tex
-
-LaTeX Warning: Reference `fig: lambdadist' on page 2 undefined on input line 10
-.
-
-The command '\includegraphics [width=0.8\linewidth ]{FullGaussianDensityEscaled
-.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable 
-this.
-
-LaTeX Warning: Citation `Livan_2018' on page 2 undefined on input line 17.
-
-
-LaTeX Warning: Citation `MEHTA1967v' on page 2 undefined on input line 17.
-
-) (./sections/introduction/fistat.tex) (./sections/introduction/sebsections/sha
-nnon.tex
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.4521pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.4521pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
-
-
+(./chapters/introduction.tex) (./sections/introduction/fistat.tex) (./sections/
+introduction/sebsections/shannon.tex
 Overfull \hbox (27.04999pt too wide) detected at line 118
 \OML/cmm/m/it/10.95 S\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; ^^U[]; ^^U[]; 
 ^^U[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^Q \OML/cmm/m/it/10.95 k[] [] p[
@@ -935,7 +912,6 @@ Overfull \hbox (27.04999pt too wide) detected at line 118
 ^^U[] []
  []
 
-) (./sections/introduction/subsections/microcanonico.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.4521pt, for example:
@@ -944,8 +920,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
+) (./sections/introduction/subsections/microcanonico.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
 ) (./sections/introduction/subsections/canonico.tex
 
 LaTeX Warning: Reference `apdx: legendre' on page 5 undefined on input line 1.
@@ -964,7 +949,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 LaTeX Warning: Reference `apdx: somaassin' on page 6 undefined on input line 88
 .
 
-) (./sections/introduction/sebsection/graocanonico.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.4521pt, for example:
@@ -973,6 +957,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
+) (./sections/introduction/sebsection/graocanonico.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
 
@@ -988,7 +973,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-) (./sections/introduction/exponential.tex
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.4521pt, for example:
@@ -997,8 +982,40 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-) (./sections/introduction/independent.tex) (./sections/introduction/measure.te
-x
+Cap\'{\i }tulo 2.
+(./chapters/distribuicoesS.tex
+
+LaTeX Warning: Reference `eq: dist geral gaussiana' on page 9 undefined on inpu
+t line 22.
+
+
+LaTeX Warning: Reference `fig: lambdadist' on page 9 undefined on input line 28
+.
+
+
+LaTeX Warning: Reference `fig: lambdadist' on page 9 undefined on input line 37
+.
+
+The command '\includegraphics [width=0.8\linewidth ]{FullGaussianDensityEscaled
+.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable 
+this.
+
+LaTeX Warning: Citation `Livan_2018' on page 10 undefined on input line 44.
+
+
+LaTeX Warning: Citation `MEHTA1967v' on page 10 undefined on input line 44.
+
+) (./sections/introduction/exponential.tex) (./sections/introduction/independen
+t.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+) (./sections/introduction/measure.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.4521pt, for example:
@@ -1008,14 +1025,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
 
-LaTeX Warning: Citation `fyodorov2010introduction' on page 10 undefined on inpu
+LaTeX Warning: Citation `fyodorov2010introduction' on page 12 undefined on inpu
 t line 13.
 
 
-LaTeX Warning: Reference `eq: ds' on page 10 undefined on input line 25.
+LaTeX Warning: Reference `eq: ds' on page 12 undefined on input line 25.
 
 
-LaTeX Warning: Reference `eq: du' on page 10 undefined on input line 25.
+LaTeX Warning: Reference `eq: du' on page 12 undefined on input line 25.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1026,7 +1043,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
 
-LaTeX Warning: Citation `ArnoLectureNotes' on page 11 undefined on input line 1
+LaTeX Warning: Citation `ArnoLectureNotes' on page 13 undefined on input line 1
 04.
 
 )
@@ -1038,13 +1055,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-Cap\'{\i }tulo 2.
+Cap\'{\i }tulo 3.
 (./chapters/brownian.tex) (./sections/brownian/pontual.tex
 
-LaTeX Warning: Reference `eq: p1' on page 13 undefined on input line 68.
+LaTeX Warning: Reference `eq: p1' on page 15 undefined on input line 68.
 
 
-LaTeX Warning: Reference `eq: pontualdet' on page 13 undefined on input line 11
+LaTeX Warning: Reference `eq: pontualdet' on page 15 undefined on input line 11
 2.
 
 
@@ -1066,11 +1083,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
 
-LaTeX Warning: Citation `ArnoLectureNotes' on page 15 undefined on input line 1
+LaTeX Warning: Citation `ArnoLectureNotes' on page 17 undefined on input line 1
 7.
 
 
-LaTeX Warning: Reference `eq: detInd' on page 15 undefined on input line 43.
+LaTeX Warning: Reference `eq: detInd' on page 17 undefined on input line 43.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1089,7 +1106,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
 
-LaTeX Warning: Reference `apdx: vandermonde' on page 17 undefined on input line
+LaTeX Warning: Reference `apdx: vandermonde' on page 19 undefined on input line
  210.
 
 
@@ -1101,11 +1118,127 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
 
-LaTeX Warning: Reference `eq: weyl' on page 18 undefined on input line 216.
+LaTeX Warning: Reference `eq: weyl' on page 20 undefined on input line 216.
 
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
-)
+) (./sections/brownian/simulacoes.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+The command '\includegraphics [scale=0.9]{images/nonintersectBrownianPart-2f}' 
+has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [scale=0.9]{images/nonintersectBrownianPart-M2-co
+utour}' has been optimized away. Use '/tikz/external/optimize=false' to disable
+ this.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+The command '\includegraphics [scale=0.9]{images/nonintersectBrownianPart-M2-t}
+' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+The command '\includegraphics [scale=0.7]{images/nonintersectBrownianPart-tracy
+widow05}' has been optimized away. Use '/tikz/external/optimize=false' to disab
+le this.
+The command '\includegraphics [scale=0.7]{images/nonintersectBrownianPart-tracy
+widow001}' has been optimized away. Use '/tikz/external/optimize=false' to disa
+ble this.
+The command '\includegraphics [scale=0.7]{images/nonintersectBrownianPart-tracy
+widow-1-05}' has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+The command '\includegraphics [scale=0.7]{images/nonintersectBrownianPart-tracy
+widow05-distreal}' has been optimized away. Use '/tikz/external/optimize=false'
+ to disable this.
+The command '\includegraphics [scale=0.7]{images/nonintersectBrownianPart-tracy
+widow001-distreal}' has been optimized away. Use '/tikz/external/optimize=false
+' to disable this.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+The command '\includegraphics [scale=0.7]{images/nonintersectBrownianPart-tracy
+widow-central_tmais}' has been optimized away. Use '/tikz/external/optimize=fal
+se' to disable this.
+The command '\includegraphics [scale=0.7]{images/nonintersectBrownianPart-tracy
+widow-central_tmenos}' has been optimized away. Use '/tikz/external/optimize=fa
+lse' to disable this.
+The command '\includegraphics [scale=0.7]{images/nonintersectBrownianPart-tracy
+widow-central}' has been optimized away. Use '/tikz/external/optimize=false' to
+ disable this.
+The command '\includegraphics [scale=0.7]{images/nonintersectBrownianPart-tracy
+widow-central-23}' has been optimized away. Use '/tikz/external/optimize=false'
+ to disable this.
+\openout6 = `main-figure4.dpth'.
+
+[25
+
+])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+Cap\'{\i }tulo 4.
+(./chapters/coulumbGas.tex) (./sections/coulombGas/hamilton.tex
+Overfull \hbox (6.70207pt too wide) detected at line 54
+[] \OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 ((^^H(\OML/cmm/m/it/10.95 s\OT1/cmr/
+m/n/10.95 ))\OML/cmm/m/it/10.95 ds \OT1/cmr/m/n/10.95 = [] \OML/cmm/m/it/10.95 
+f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )[] = [] \OML/cmm/
+m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )(^^H[]
+)[](\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 dx \OT1/cmr/m/
+n/10.95 = [] \OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1
+/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ^^^\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 
+x\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 dx \OT1/cmr/m/n/10.95 = [] \OML/cmm/m/
+it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )\OML/cmm
+/m/it/10.95 d \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )
+ []
+
+
+LaTeX Warning: Reference `eq::CoulombGas:: hamilton' on page 27 undefined on in
+put line 62.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+) (./sections/coulombGas/computingPhi.tex)
 No file main-figure4.bbl.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1117,11 +1250,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 Ap\^endice A.
 (./appendix/legendre.tex
-\openout6 = `main-figure4.dpth'.
-
-[19
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
 )
@@ -1142,19 +1272,18 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 35929 strings out of 478287
- 837303 string characters out of 5849289
- 1281937 words of memory out of 5000000
- 53488 multiletter control sequences out of 15000+600000
+ 35745 strings out of 478287
+ 833638 string characters out of 5849289
+ 1281938 words of memory out of 5000000
+ 53287 multiletter control sequences out of 15000+600000
  481899 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 93i,16n,95p,1473b,708s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on main-figure4.pdf (1 page, 20254 bytes).
+ 93i,16n,95p,1473b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on main-figure4.pdf (1 page, 1752 bytes).
 PDF statistics:
- 28 PDF objects out of 1000 (max. 8388607)
- 18 compressed objects within 1 object stream
+ 17 PDF objects out of 1000 (max. 8388607)
+ 12 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

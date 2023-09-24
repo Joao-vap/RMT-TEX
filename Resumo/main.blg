@@ -5,45 +5,45 @@ The style file: plain.bst
 Database file #1: references.bib
 Warning--entry type for "ArnoLectureNotes" isn't style-file defined
 --line 23 of file references.bib
-You've used 4 entries,
+You've used 6 entries,
             2118 wiz_defined-function locations,
-            518 strings with 4487 characters,
-and the built_in function-call counts, 967 in all, are:
-= -- 82
-> -- 43
+            530 strings with 4766 characters,
+and the built_in function-call counts, 1499 in all, are:
+= -- 134
+> -- 63
 < -- 0
-+ -- 17
-- -- 13
-* -- 43
-:= -- 172
-add.period$ -- 11
-call.type$ -- 4
-change.case$ -- 17
++ -- 25
+- -- 19
+* -- 77
+:= -- 259
+add.period$ -- 16
+call.type$ -- 6
+change.case$ -- 26
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 41
-empty$ -- 96
-format.name$ -- 13
-if$ -- 204
+cite$ -- 6
+duplicate$ -- 59
+empty$ -- 145
+format.name$ -- 19
+if$ -- 315
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 3
-newline$ -- 21
-num.names$ -- 10
-pop$ -- 35
+int.to.str$ -- 6
+missing$ -- 4
+newline$ -- 30
+num.names$ -- 14
+pop$ -- 47
 preamble$ -- 1
-purify$ -- 14
+purify$ -- 21
 quote$ -- 0
-skip$ -- 29
+skip$ -- 45
 stack$ -- 0
-substring$ -- 20
-swap$ -- 4
+substring$ -- 55
+swap$ -- 6
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 14
+type$ -- 22
 warning$ -- 0
-while$ -- 9
-width$ -- 5
-write$ -- 38
+while$ -- 15
+width$ -- 7
+write$ -- 57
 (There was 1 warning)

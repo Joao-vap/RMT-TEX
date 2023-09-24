@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.30)  9 JUN 2023 10:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.30)  8 SEP 2023 15:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1005,21 +1005,30 @@ e ignored
 <to be read again> 
                    \relax 
 l.16 \end{abstract}
-                    [1] (./main.toc)
+                    [1] (./main.tocpdfTeX warning (ext4): destination with the 
+same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.45 ...ine {B}Soma Assintóticas}{50}{appendix.B}
+                                                  % [1
+
+])
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.20 \chapter
-             {Introdução} [1
 
-]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[2]
 Cap\'{\i }tulo 1.
 (./chapters/introduction.tex) (./sections/introduction/fistat.tex)
-(./sections/introduction/sebsections/shannon.tex [2
+(./sections/introduction/sebsections/shannon.tex [3
 
 ]
 Overfull \hbox (27.04999pt too wide) detected at line 118
@@ -1038,7 +1047,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[3]) (./sections/introduction/subsections/microcanonico.tex
+[4]) (./sections/introduction/subsections/microcanonico.tex
 ===== Image 'main-figure0' is up-to-date. ======
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1048,7 +1057,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[4 <./main-figure0.pdf>]) (./sections/introduction/subsections/canonico.tex
+[5 <./main-figure0.pdf>]) (./sections/introduction/subsections/canonico.tex
 ===== Image 'main-figure1' is up-to-date. ======
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1058,7 +1067,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[5 <./main-figure1.pdf>]
+[6 <./main-figure1.pdf>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.4521pt, for example:
@@ -1067,7 +1076,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[6]) (./sections/introduction/sebsection/graocanonico.tex
+[7]) (./sections/introduction/sebsection/graocanonico.tex
 ===== Image 'main-figure2' is up-to-date. ======
 
 Overfull \hbox (77.79698pt too wide) detected at line 55
@@ -1082,7 +1091,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[7 <./main-figure2.pdf>]
+[8 <./main-figure2.pdf>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.4521pt, for example:
@@ -1091,7 +1100,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[8])
+[9])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.4521pt, for example:
@@ -1100,12 +1109,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[9]
+[10]
 Cap\'{\i }tulo 2.
-(./chapters/distribuicoesS.tex [10
+(./chapters/distribuicoesS.tex [11
 
 ]
-<images/FullGaussianDensityEscaled.png, id=280, 462.528pt x 346.896pt>
+<images/FullGaussianDensityEscaled.png, id=336, 462.528pt x 346.896pt>
 File: images/FullGaussianDensityEscaled.png Graphic file (type png)
 <use images/FullGaussianDensityEscaled.png>
 Package pdftex.def Info: images/FullGaussianDensityEscaled.png  used on input l
@@ -1120,7 +1129,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[11 <./images/FullGaussianDensityEscaled.png>])
+[12 <./images/FullGaussianDensityEscaled.png>])
 (./sections/introduction/independent.tex) (./sections/introduction/measure.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1130,7 +1139,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[12]
+[13]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.4521pt, for example:
@@ -1139,7 +1148,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[13])
+[14])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.4521pt, for example:
@@ -1148,9 +1157,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[14]
+[15]
 Cap\'{\i }tulo 3.
-(./chapters/brownian.tex) (./sections/brownian/pontual.tex [15
+(./chapters/brownian.tex) (./sections/brownian/pontual.tex [16
 
 ]
 
@@ -1161,17 +1170,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[16]) (./sections/brownian/biortogonal.tex)
+[17]) (./sections/brownian/biortogonal.tex)
 (./sections/brownian/karlin-mcgregor.tex
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.4521pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.4521pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
-
-[17]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.4521pt, for example:
@@ -1199,6 +1199,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
 [20]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[21]
 ===== Image 'main-figure3' is up-to-date. ======
 (./_minted-main/default.pygstyle)
 (./_minted-main/4346ACDF7246348C71BE39F09F44238B2E240C37B8EC4EE6B415AF4CFA723D5
@@ -1214,9 +1223,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[21 <./main-figure3.pdf>]
-(./_minted-main/580D19B5AC4EB194EC49BB35CFDFC407CF278CC18683C60B592D00DD36D0BB0
-D.pygtex)
+[22 <./main-figure3.pdf>]) (./sections/brownian/simulacoes.tex
+(./_minted-main/304250749C1D6F7620AE8521057C4C78BE185E59532A847C9035B64AD17A1B4
+C.pygtex)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.4521pt, for example:
@@ -1225,35 +1234,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[22]
-<images/nonintersectBrownianPart-M1.png, id=413, 1573.88pt x 914.41624pt>
-File: images/nonintersectBrownianPart-M1.png Graphic file (type png)
-<use images/nonintersectBrownianPart-M1.png>
-Package pdftex.def Info: images/nonintersectBrownianPart-M1.png  used on input 
-line 266.
-(pdftex.def)             Requested size: 426.79134pt x 247.9561pt.
-
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 266--267
-[][] 
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.4521pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.4521pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
-
-[23 <./images/nonintersectBrownianPart-M1.png>]
-(./_minted-main/B806DE3D8D0450CFD5BD20B103D49F734C4B7FFE88BA5915AD4511B8B605E42
-8.pygtex)
-Underfull \vbox (badness 10000) detected at line 278
- []
-
-
-Underfull \vbox (badness 10000) detected at line 278
- []
+[23]
+<images/nonintersectBrownianPart-2f.png, id=467, 462.528pt x 346.896pt>
+File: images/nonintersectBrownianPart-2f.png Graphic file (type png)
+<use images/nonintersectBrownianPart-2f.png>
+Package pdftex.def Info: images/nonintersectBrownianPart-2f.png  used on input 
+line 37.
+(pdftex.def)             Requested size: 416.27133pt x 312.2035pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1264,26 +1251,273 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
 [24]
-<images/nonintersectBrownianPart-M2.png, id=425, 1574.88374pt x 916.42375pt>
-File: images/nonintersectBrownianPart-M2.png Graphic file (type png)
-<use images/nonintersectBrownianPart-M2.png>
-Package pdftex.def Info: images/nonintersectBrownianPart-M2.png  used on input 
-line 280.
-(pdftex.def)             Requested size: 426.79134pt x 248.34665pt.
+<images/nonintersectBrownianPart-M2-coutour.png, id=473, 462.528pt x 346.896pt>
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 280--281
-[][] 
+File: images/nonintersectBrownianPart-M2-coutour.png Graphic file (type png)
+<use images/nonintersectBrownianPart-M2-coutour.png>
+Package pdftex.def Info: images/nonintersectBrownianPart-M2-coutour.png  used o
+n input line 53.
+(pdftex.def)             Requested size: 416.27133pt x 312.2035pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[25 <./images/nonintersectBrownianPart-2f.png>]
+(./_minted-main/AC9A5641B104350BE3FC52E94994A810471103B3DAF68DDCC2608563C9175DC
+2.pygtex)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[26 <./images/nonintersectBrownianPart-M2-coutour.png>]
+<images/nonintersectBrownianPart-M2-t.png, id=484, 462.528pt x 346.896pt>
+File: images/nonintersectBrownianPart-M2-t.png Graphic file (type png)
+<use images/nonintersectBrownianPart-M2-t.png>
+Package pdftex.def Info: images/nonintersectBrownianPart-M2-t.png  used on inpu
+t line 69.
+(pdftex.def)             Requested size: 416.27133pt x 312.2035pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[27]
+<images/nonintersectBrownianPart-tracywidow05.png, id=489, 462.528pt x 346.896p
+t>
+File: images/nonintersectBrownianPart-tracywidow05.png Graphic file (type png)
+<use images/nonintersectBrownianPart-tracywidow05.png>
+Package pdftex.def Info: images/nonintersectBrownianPart-tracywidow05.png  used
+ on input line 75.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[28 <./images/nonintersectBrownianPart-M2-t.png> <./images/nonintersectBrownian
+Part-tracywidow05.png>]
+<images/nonintersectBrownianPart-tracywidow001.png, id=496, 462.528pt x 346.896
+pt>
+File: images/nonintersectBrownianPart-tracywidow001.png Graphic file (type png)
+
+<use images/nonintersectBrownianPart-tracywidow001.png>
+Package pdftex.def Info: images/nonintersectBrownianPart-tracywidow001.png  use
+d on input line 81.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+<images/nonintersectBrownianPart-tracywidow-1-05.png, id=497, 462.528pt x 346.8
+96pt>
+File: images/nonintersectBrownianPart-tracywidow-1-05.png Graphic file (type pn
+g)
+<use images/nonintersectBrownianPart-tracywidow-1-05.png>
+Package pdftex.def Info: images/nonintersectBrownianPart-tracywidow-1-05.png  u
+sed on input line 86.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[29 <./images/nonintersectBrownianPart-tracywidow001.png> <./images/nonintersec
+tBrownianPart-tracywidow-1-05.png>]
+<images/nonintersectBrownianPart-tracywidow05-distreal.png, id=505, 462.528pt x
+ 346.896pt>
+File: images/nonintersectBrownianPart-tracywidow05-distreal.png Graphic file (t
+ype png)
+<use images/nonintersectBrownianPart-tracywidow05-distreal.png>
+Package pdftex.def Info: images/nonintersectBrownianPart-tracywidow05-distreal.
+png  used on input line 97.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+<images/nonintersectBrownianPart-tracywidow001-distreal.png, id=506, 462.528pt 
+x 346.896pt>
+File: images/nonintersectBrownianPart-tracywidow001-distreal.png Graphic file (
+type png)
+<use images/nonintersectBrownianPart-tracywidow001-distreal.png>
+Package pdftex.def Info: images/nonintersectBrownianPart-tracywidow001-distreal
+.png  used on input line 102.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+<images/nonintersectBrownianPart-tracywidow-central_tmais.png, id=507, 462.528p
+t x 346.896pt>
+File: images/nonintersectBrownianPart-tracywidow-central_tmais.png Graphic file
+ (type png)
+<use images/nonintersectBrownianPart-tracywidow-central_tmais.png>
+Package pdftex.def Info: images/nonintersectBrownianPart-tracywidow-central_tma
+is.png  used on input line 116.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[30 <./images/nonintersectBrownianPart-tracywidow05-distreal.png> <./images/non
+intersectBrownianPart-tracywidow001-distreal.png>]
+<images/nonintersectBrownianPart-tracywidow-central_tmenos.png, id=514, 462.528
+pt x 346.896pt>
+File: images/nonintersectBrownianPart-tracywidow-central_tmenos.png Graphic fil
+e (type png)
+<use images/nonintersectBrownianPart-tracywidow-central_tmenos.png>
+Package pdftex.def Info: images/nonintersectBrownianPart-tracywidow-central_tme
+nos.png  used on input line 119.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+<images/nonintersectBrownianPart-tracywidow-central.png, id=515, 462.528pt x 34
+6.896pt>
+File: images/nonintersectBrownianPart-tracywidow-central.png Graphic file (type
+ png)
+<use images/nonintersectBrownianPart-tracywidow-central.png>
+Package pdftex.def Info: images/nonintersectBrownianPart-tracywidow-central.png
+  used on input line 124.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[31 <./images/nonintersectBrownianPart-tracywidow-central_tmais.png> <./images/
+nonintersectBrownianPart-tracywidow-central_tmenos.png>]
+<images/nonintersectBrownianPart-tracywidow-central-23.png, id=522, 462.528pt x
+ 346.896pt>
+File: images/nonintersectBrownianPart-tracywidow-central-23.png Graphic file (t
+ype png)
+<use images/nonintersectBrownianPart-tracywidow-central-23.png>
+Package pdftex.def Info: images/nonintersectBrownianPart-tracywidow-central-23.
+png  used on input line 129.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+
+===== Image 'main-figure4' is up-to-date. ======
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[32 <./images/nonintersectBrownianPart-tracywidow-central.png> <./images/nonint
+ersectBrownianPart-tracywidow-central-23.png>]
+===== Image 'main-figure5' is up-to-date. ======
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[33 <./main-figure4.pdf> <./main-figure5.pdf>]
+===== Image 'main-figure6' is up-to-date. ======
+===== Image 'main-figure7' is up-to-date. ======
+===== Image 'main-figure8' is up-to-date. ======
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[34 <./main-figure6.pdf> <./main-figure7.pdf> <./main-figure8.pdf>]
+===== Image 'main-figure9' is up-to-date. ======
+===== Image 'main-figure10' is up-to-date. ======
+===== Image 'main-figure11' is up-to-date. ======
+===== Image 'main-figure12' is up-to-date. ======
+===== Image 'main-figure13' is up-to-date. ======
+
+(./_minted-main/A93B34209F2C2F944329745B58D40B080C1814505FE1BE1B507AD34091D7550
+0.pygtex)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[35 <./main-figure9.pdf> <./main-figure10.pdf> <./main-figure11.pdf> <./main-fi
+gure12.pdf> <./main-figure13.pdf>]
+Underfull \vbox (badness 10000) detected at line 306
  []
 
-<images/nonintersectBrownianPart.png, id=426, 462.528pt x 346.896pt>
-File: images/nonintersectBrownianPart.png Graphic file (type png)
-<use images/nonintersectBrownianPart.png>
-Package pdftex.def Info: images/nonintersectBrownianPart.png  used on input lin
-e 287.
-(pdftex.def)             Requested size: 426.79134pt x 320.11154pt.
 
-Overfull \hbox (17.0pt too wide) in paragraph at lines 287--288
-[][] 
+Underfull \vbox (badness 10000) detected at line 306
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[36]
+Underfull \vbox (badness 10000) detected at line 306
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 306
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[37]
+Underfull \vbox (badness 10000) detected at line 306
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 306
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[38]
+<images/AstecDiamond.png, id=583, 1445.4pt x 1445.4pt>
+File: images/AstecDiamond.png Graphic file (type png)
+<use images/AstecDiamond.png>
+Package pdftex.def Info: images/AstecDiamond.png  used on input line 311.
+(pdftex.def)             Requested size: 476.98347pt x 476.98347pt.
+
+Overfull \hbox (50.19214pt too wide) in paragraph at lines 311--312
+ [] 
  []
 
 )
@@ -1295,18 +1529,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[25 <./images/nonintersectBrownianPart-M2.png>]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.4521pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.4521pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
-
-[26 <./images/nonintersectBrownianPart.png>]
+[39 <./images/AstecDiamond.png>]
 Cap\'{\i }tulo 4.
-(./chapters/coulumbGas.tex) (./sections/coulombGas/hamilton.tex [27
+(./chapters/coulumbGas.tex) (./sections/coulombGas/hamilton.tex [40
 
 ]
 Overfull \hbox (6.70207pt too wide) detected at line 54
@@ -1330,7 +1555,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[28]) (./sections/coulombGas/computingPhi.tex) (./main.bbl
+[41])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.4521pt, for example:
@@ -1339,16 +1564,48 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[29]) [30
+[42]
+Cap\'{\i }tulo 5.
+(./chapters/article.tex) (./sections/article/intro.tex [43
+
+])
+(./sections/article/simulating.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[44]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[45]) (./main.bbl
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
+
+[46]) [47
 
 ]
 Ap\^endice A.
 (./appendix/legendre.tex
-===== Image 'main-figure4' is up-to-date. ======
-[31
+===== Image 'main-figure14' is up-to-date. ======
+[48
 
- <./main-figure4.pdf>]
-===== Image 'main-figure5' is up-to-date. ======
+ <./main-figure14.pdf>]
+===== Image 'main-figure15' is up-to-date. ======
 )
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1358,52 +1615,53 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.4521pt}.
 
-[32 <./main-figure5.pdf>]
+[49 <./main-figure15.pdf>]
 Ap\^endice B.
-(./appendix/somaassin.tex) [33
+(./appendix/somaassin.tex) [50
 
 ]
 Ap\^endice C.
-(./appendix/vandermonde.tex) [34
+(./appendix/vandermonde.tex) [51
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 22A95DC36C3D7BA55C29F3F6C381B98D;4253.
+(rerunfilecheck)             Checksum: 7F9F258FA63084C48F52918B2667D35D;5769.
  ) 
 Here is how much of TeX's memory you used:
- 36046 strings out of 478287
- 838674 string characters out of 5849289
- 1292659 words of memory out of 5000000
- 53424 multiletter control sequences out of 15000+600000
- 481766 words of font info for 75 fonts, out of 8000000 for 9000
+ 36252 strings out of 478287
+ 846796 string characters out of 5849289
+ 1302745 words of memory out of 5000000
+ 53560 multiletter control sequences out of 15000+600000
+ 482107 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,16n,92p,1439b,730s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-symbols/msbm10.pfb>
-Output written on main.pdf (36 pages, 1343563 bytes).
+ 89i,16n,92p,1439b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on main.pdf (53 pages, 3028009 bytes).
 PDF statistics:
- 626 PDF objects out of 1000 (max. 8388607)
- 506 compressed objects within 6 object streams
- 132 named destinations out of 1000 (max. 500000)
- 287 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 817 PDF objects out of 1000 (max. 8388607)
+ 646 compressed objects within 7 object streams
+ 167 named destinations out of 1000 (max. 500000)
+ 467 words of extra memory for PDF output out of 10000 (max. 10000000)
 

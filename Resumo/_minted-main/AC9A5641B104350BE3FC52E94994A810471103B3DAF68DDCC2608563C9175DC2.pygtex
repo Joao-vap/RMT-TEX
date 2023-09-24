@@ -1,0 +1,62 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{n}{n\PYGZus{}particles} \PYG{o}{=} \PYG{l+m+mi}{1000}
+\PYG{n}{n\PYGZus{}groups} \PYG{o}{=} \PYG{l+m+mi}{2}
+
+\PYG{k}{def} \PYG{n+nf}{Mod\PYGZus{}GUE}\PYG{p}{(}\PYG{n}{S}\PYG{p}{,} \PYG{n}{shift}\PYG{p}{,} \PYG{n}{N}\PYG{p}{,} \PYG{n}{sigma} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{mu} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{escale} \PYG{o}{=} \PYG{k+kc}{False}\PYG{p}{):}
+    \PYG{n}{beta} \PYG{o}{=} \PYG{l+m+mi}{2}
+    \PYG{n}{A} \PYG{o}{=} \PYG{n}{sigma} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randn}\PYG{p}{(}\PYG{n}{N}\PYG{p}{,}\PYG{n}{N}\PYG{p}{,)} \PYG{o}{+} \PYG{n}{sigma} \PYG{o}{*}\PYG{l+m+mi}{1}\PYG{n}{j}\PYG{o}{*}\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randn}\PYG{p}{(}\PYG{n}{N}\PYG{p}{,}\PYG{n}{N}\PYG{p}{)}
+    \PYG{n}{A} \PYG{o}{=} \PYG{p}{(}\PYG{n}{A} \PYG{o}{+} \PYG{n}{A}\PYG{o}{.}\PYG{n}{T}\PYG{o}{.}\PYG{n}{conj}\PYG{p}{())}\PYG{o}{/}\PYG{l+m+mi}{2}
+    \PYG{n}{A} \PYG{o}{=} \PYG{n}{A} \PYG{o}{+} \PYG{n}{S}\PYG{o}{*}\PYG{n}{shift}
+    \PYG{n}{eig} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{eigvalsh}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{escale}\PYG{p}{:}
+        \PYG{k}{return} \PYG{p}{(}\PYG{n}{eig}\PYG{o}{*}\PYG{n}{sigma} \PYG{o}{+} \PYG{n}{mu}\PYG{p}{)}\PYG{o}{/}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{N}\PYG{o}{*}\PYG{n}{beta}\PYG{p}{))}
+    \PYG{k}{return} \PYG{n}{eig}
+
+\PYG{k}{def} \PYG{n+nf}{USU}\PYG{p}{(}\PYG{n}{nGroups}\PYG{p}{,} \PYG{n}{n\PYGZus{}particles}\PYG{p}{):}
+    \PYG{c+c1}{\PYGZsh{} U is the unitary matrix with the e1, e2, ..., eN vectors as columns}
+    \PYG{c+c1}{\PYGZsh{} S is the diagonal matrix with the eigenvalues}
+
+    \PYG{n}{U} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{((}\PYG{n}{n\PYGZus{}particles}\PYG{p}{,} \PYG{n}{n\PYGZus{}particles}\PYG{p}{),} \PYG{n}{dtype} \PYG{o}{=} \PYG{n+nb}{complex}\PYG{p}{)}
+    \PYG{n}{S} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{((}\PYG{n}{n\PYGZus{}particles}\PYG{p}{,} \PYG{n}{n\PYGZus{}particles}\PYG{p}{),} \PYG{n}{dtype} \PYG{o}{=} \PYG{n+nb}{complex}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} fill U diagonal with 1\PYGZsq{}s}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n\PYGZus{}particles}\PYG{p}{):}
+        \PYG{n}{U}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}
+    
+    \PYG{c+c1}{\PYGZsh{} fill S diagonal with nGroups different values centered at 0}
+    \PYG{n}{divider} \PYG{o}{=} \PYG{n}{n\PYGZus{}particles}\PYG{o}{/}\PYG{n}{nGroups}
+    \PYG{n}{shift} \PYG{o}{=} \PYG{p}{(}\PYG{n}{nGroups}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n\PYGZus{}particles}\PYG{p}{):}
+        \PYG{n}{S}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{i}\PYG{o}{/}\PYG{n}{divider}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{shift}\PYG{p}{)} \PYG{o}{*} \PYG{l+m+mi}{10}
+
+    \PYG{k}{return} \PYG{n}{U}\PYG{p}{,} \PYG{n}{S}
+
+\PYG{k}{def} \PYG{n+nf}{isHermitian}\PYG{p}{(}\PYG{n}{A}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{allclose}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{A}\PYG{o}{.}\PYG{n}{T}\PYG{o}{.}\PYG{n}{conj}\PYG{p}{())}
+
+\PYG{k}{def} \PYG{n+nf}{sigma\PYGZus{}t}\PYG{p}{(}\PYG{n}{t}\PYG{p}{):}
+    \PYG{k}{return} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{t}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{t}\PYG{p}{)}
+
+\PYG{n}{U}\PYG{p}{,} \PYG{n}{S} \PYG{o}{=} \PYG{n}{USU}\PYG{p}{(}\PYG{n}{n\PYGZus{}groups}\PYG{p}{,} \PYG{n}{n\PYGZus{}particles}\PYG{p}{)}
+\PYG{n}{eig\PYGZus{}GUE} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{n\PYGZus{}particles}\PYG{p}{)}
+
+\PYG{n}{exps} \PYG{o}{=} \PYG{l+m+mi}{1000}
+
+\PYG{n}{Memory} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{((}\PYG{n}{exps}\PYG{p}{,} \PYG{n}{n\PYGZus{}particles}\PYG{p}{))}
+
+\PYG{k}{for} \PYG{n}{exp} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{exps}\PYG{p}{):}
+    \PYG{n}{partial\PYGZus{}time} \PYG{o}{=} \PYG{l+m+mf}{0.5}
+    \PYG{n}{sigma} \PYG{o}{=} \PYG{n}{sigma\PYGZus{}t}\PYG{p}{(}\PYG{n}{partial\PYGZus{}time}\PYG{p}{)}
+    \PYG{n}{shift} \PYG{o}{=} \PYG{n}{partial\PYGZus{}time}
+    \PYG{n}{mu} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{n}{eig\PYGZus{}GUE} \PYG{o}{=} \PYG{n}{Mod\PYGZus{}GUE}\PYG{p}{(}\PYG{n}{S}\PYG{p}{,} \PYG{n}{shift}\PYG{p}{,} \PYG{n}{n\PYGZus{}particles}\PYG{p}{,} \PYG{n}{sigma} \PYG{o}{=} \PYG{n}{sigma}\PYG{p}{,} \PYG{n}{mu} \PYG{o}{=} \PYG{n}{mu}\PYG{p}{,} \PYG{n}{escale} \PYG{o}{=} \PYG{k+kc}{False}\PYG{p}{)}
+    \PYG{n}{eig\PYGZus{}order} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{argsort}\PYG{p}{(}\PYG{n}{eig\PYGZus{}GUE}\PYG{p}{)}
+    \PYG{n}{Memory}\PYG{p}{[}\PYG{n}{exp}\PYG{p}{,:]} \PYG{o}{=} \PYG{n}{eig\PYGZus{}GUE}\PYG{p}{[}\PYG{n}{eig\PYGZus{}order}\PYG{p}{]}
+
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{exp}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} write Memory in file}
+\PYG{n}{np}\PYG{o}{.}\PYG{n}{savetxt}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Memory\PYGZus{}test.txt\PYGZsq{}}\PYG{p}{,} \PYG{n}{Memory}\PYG{p}{)}
+\end{Verbatim}

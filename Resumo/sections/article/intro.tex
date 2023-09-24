@@ -1,0 +1,62 @@
+Vamos esquematizar as notações a serem usadas. O artigo toma um subespaço $S$ de dimensão $d$ em $\mathbb{R}^n$. O subespaço toma a métrica de Lebesgue, denotado $dx$. O campo externo é denominado $V : S \mapsto \mathbb{R}$ e a interação entre partículas $W : S \mapsto (-\infty, \infty]$. Para qualquer $N \geq 2$ consideramos $P_N$ em $S^N = S \times \cdots \times S$ definida
+
+\[
+	P_N(dx) = \frac{e^{-\beta_N H_N(x_1,\cdots,x_N)}}{Z_N} dx_1 \cdots dx_N
+\]
+
+Onde $\beta_n > 0$ é uma constante e $Z_N$ é contante de normalização. Por último,
+
+\[
+	H_N(x_1, \cdots, x_N) = \frac{1}{N} \sum_{i=1}^{N} V(x_i) + \frac{1}{2N^2} \sum_{i\neq j} W(x_i - x_j)
+\]
+
+Note que $P_N$ é invariante por permutação e que $H_N$ depende somente da medida empírica
+
+\[
+	\mu_N = \frac{1}{N} \sum_{i=1}^{N} \delta_{x_i}
+\]
+
+Note que as partículas vivem em $S^N$ de dimensão $dN$.
+
+\subsection{Gases de Coulomb}
+
+Eu não entendo Gases de Coulomb. O importante aqui é notar que tomando o subespaço $S$ como um condutor em $\mathbb{R}^n$ e $W = g$, onde $g$ é o kernel de Coulomb ou função de Green em $\mathbb{R}^n$ onde
+
+\[
+	g(x) = 
+	\begin{cases}
+		\log \frac{1}{|x|} & se n = 2 \\
+		\frac{1}{|x|^{n-2}} & se n \geq 2
+	\end{cases}
+\]
+
+Em termos de física, interpretamos $H_N(\mmany{x}{N})$ é energia eletrostática da configuração dos $N$ elétrons em $\mathbb{R}^n$ contidos em $S$ nas posições \many{x}{N} em um campo externo de potencial $V$. $g$ expressa a repulsão de coulomb da interação entre dois corpos. $P_N$ pode ser visto como a medida de Boltzmann-Gibbs, com $\beta_N$ sendo o inverso da temperatura. $P_N$ é o denominado gás de Coulomb.
+
+\subsection{Log-Gases}
+
+Log-Gases são caracterizados pela escolha de $n=d$ e $W$ tal que
+
+\[
+	W(x) = \log \frac{1}{|x|} = - \frac{1}{2} \log(x_1^2 + \cdots + x_d^2)
+\]
+
+note que os gases coincidem quando $n=d=2$.
+
+\subsection{Medidas de Equilíbrio}
+
+É sabido que a medida empírica $\mu_N$ tende, quando $N \lim \infty$ para uma medida de probabilidade não aleatória
+
+\[
+	\mu^* = \arg \inf {\epsilon}
+\]
+
+sendo o minimizante único da função 'energia' $\epsilon$ convexa e semi continua definida por
+
+\[
+	\mu \mapsto \epsilon(\mu) = \int V d\mu + \int \int W(x-y) \mu(dx) \mu(dy)
+\]
+
+Se $W = g$ for o kernel de Coulomb, $\epsilon(\mu)$  é a energia  eletrostática da distribuição de cargas $\mu$.
+
+
+
