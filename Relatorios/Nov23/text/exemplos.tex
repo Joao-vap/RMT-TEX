@@ -14,7 +14,7 @@ Para estes ensembles vale o clássico resultado da medida de equilíbrio dada pe
 
 e teremos das simulações para os três ensembles e suas distribuições esperadas em \ref{fig: semicircle}.
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
 	\centering
 	\includegraphics[scale=0.45]{Assets/validationArticleAlg}
 	\caption{Validação para ensembles clássicos, utilizamos $200000$ passos registrando a cada $500$ a partir da metade dos passos. $\Delta t = 0.1$, $\gamma = 1$, $\alpha = 1.0$. Para replicar a semente foi $987991650$.}
@@ -35,9 +35,9 @@ Considere o potencial
 Onde $t > 0$ é escala e $\alpha \in \Z$. A medida de equilíbrio para $\alpha = 1$ é o semi-círculo de podemos validar na figura com a distribuição em vermelho. De qualquer forma, podemos observar os resultados das simulações para este potencial e notar o comportamento esperado e a distribuição teórica em vermelho para o semicírculo \ref{fig: monic}.
 
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
 	\centering
-	\includegraphics[scale=0.4]{Assets/validationArticleMonic}
+	\includegraphics[scale=0.45]{Assets/validationArticleMonic}
 	\caption{Validação para potencial mônico, $V(x) = \frac{t}{2 \alpha} x^{2\alpha}$. Utilizamos $1000000$ passos registrando a cada $500$ a partir da metade dos passos. $t = 1$, $\Delta t = 0.1$, $\gamma = 10$, $\alpha = 0.1$. Para replicar a semente foi $987991650$.}
 	\label{fig: monic}
 \end{figure}
@@ -80,9 +80,9 @@ Aqui observaremos pela primeira vez uma transição de estado. Teremos um ponto 
 Observamos o comportamento esperado e a distribuição teórica em vermelho em \ref{fig: quartic}. 
 
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
 	\centering
-		\includegraphics[scale=0.4]{Assets/validationArticleQuartic}
+		\includegraphics[scale=0.5]{Assets/validationArticleQuartic}
 		\caption{Validação para potencial quártico, $V(x) = \frac{1}{4} x^4 + \frac{1}{2} x^2$. Utilizamos $1000000$ passos registrando a cada $500$ a partir da metade dos passos. $\Delta t = 0.1$, $\gamma = 10$, $\alpha = 0.1$. Para replicar a semente usada é $987991650$.}
 		\label{fig: quartic}
 \end{figure}
