@@ -7,7 +7,7 @@ Especial interesse é disposto em uma classe específica de matrizes aleatórias
 onde $\beta$ tem relação com o tipo de matriz Gaussiana utilizada, tendo valor $1$ para o GOE, $2$ para o GUE e $4$ para o GSE, $Z_N$ é a constante de normalização, também chamada de função de partição, e $\dd\lambda_j$ é a medida de Lebesgue unidimensional. Essa expressão pode ser reescrita de forma mais interessante como uma medida de Gibbs, a saber
 %
 \begin{equation}\label{eigdist1}
-	P(\lambda_1, \ldots, \lambda_N)  = \frac{1}{Z_N} \ee^{-\beta H(\lambda_1,\cdots,\lambda_N)},\quad H(\lambda_1,\cdots,\lambda_N)\deff \sum_{j<k}\log\frac{1}{|\lambda_k - \lambda_j|}+\sum_{k}\lambda_k^2.
+	P(\lambda_1, \ldots, \lambda_N)  = \frac{1}{Z_N} \ee^{-\beta H(\lambda_1,\cdots,\lambda_N)},\quad H(\lambda_1,\cdots,\lambda_N)\deff \sum_{j<k}\log\frac{1}{|\lambda_k - \lambda_j|^\beta}+\sum_{k}\lambda_k^2.
 \end{equation}
 %
 Desta forma, fator $\beta$ pode - e deve - ser interpretado como temperatura inversa. Nesta representação, ele é o peso de Boltzmann e nossa distribuição é uma analogia à distribuição do sistema canônico da mecânica estatística. Nesta analogia, $H$ seria o Hamiltoniano do sistema que determina o potencial, energia cinética e da interação entre partículas.
@@ -15,7 +15,7 @@ Desta forma, fator $\beta$ pode - e deve - ser interpretado como temperatura inv
 A medida de Gibbs \eqref{eigdist1} admite uma extensão natural
 %
 \begin{equation}\label{eq:Gibbsgeneral}
-	P_V(\lambda_1,\hdots,\lambda_n)\deff \frac{1}{Z^V_N}\ee^{-\beta H_V(\lambda_1,\cdots, \lambda_n)},\quad H_V(\lambda_1,\cdots,\lambda_N)\deff  \sum_{j<k}\log\frac{1}{|\lambda_k - \lambda_j|}+\sum_{k}V(\lambda_k),
+	P_V(\lambda_1,\hdots,\lambda_n)\deff \frac{1}{Z^V_N}\ee^{-\beta H_V(\lambda_1,\cdots, \lambda_n)},\quad H_V(\lambda_1,\cdots,\lambda_N)\deff  \sum_{j<k}\log\frac{1}{|\lambda_k - \lambda_j|^\beta}+\sum_{k}V(\lambda_k),
 \end{equation}
 %
 onde $V:R\to R$ é uma função suficientemente regular. A escolha $V(x)=x^2$, obviamente, recupera \eqref{eigdist1}. A distribuição \eqref{eq:Gibbsgeneral} também descreve autovalores de modelos de matrizes aleatórias apropriados, mas agora as entradas já não são mais independentes.
