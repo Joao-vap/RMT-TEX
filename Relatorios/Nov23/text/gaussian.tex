@@ -1,0 +1,21 @@
+Especial interesse é disposto em uma classe específica de matrizes aleatórias, denominada \textit{Gaussian Ensemble} (abreviadame, em qualquer de suas três formas tradicionais:  \textit{Gaussian Orthogonal Ensemble} (abreviadamente GOE), \textit{Gaussian Unitary Ensemble} (GUE) e \textit{Gaussian Symplectic Ensemble} (GSE). As três formas se distinguem essencialmente pelo tipo de matrizes consideradas, a saber simétricas, unitárias ou unitárias auto-duais, com seus grupos de simetria associados, matrizes ortogonais, unitárias ou unitárias-simpléticas, respectivamente. Estes tipos de matrizes são especialmente interessantes pois possuem uma propriedade única: a distribuição conjunta das entradas é invariante pela ação do seu grupo de simetria e, simultaneamente, possuem entradas independentes, neste caso Gaussianas no corpo real, complexo ou quaterniônico para o GOE, GUE e GSE, respectivamente. Para seus autovalores autovalores, a distribuição assume a forma
+
+\begin{equation*}
+	p(\lambda_1, \ldots, \lambda_N) \prod_{i}^{N}\dd \lambda_i = \frac{1}{Z_N} \ee^{-\beta \sum_{k}\lambda_k^2}\prod_{j<k}|\lambda_k - \lambda_j|^\beta \prod_{i}^{N}\dd \lambda_i , \quad \lambda_1,\cdots, \lambda_N\in R,
+\end{equation*}
+%
+onde $\beta$ tem relação com o tipo de matriz Gaussiana utilizada, tendo valor $1$ para o GOE, $2$ para o GUE e $4$ para o GSE, $Z_N$ é a constante de normalização, também chamada de função de partição, e $\dd\lambda_j$ é a medida de Lebesgue unidimensional. Essa expressão pode ser reescrita de forma mais interessante como uma medida de Gibbs, a saber
+%
+\begin{equation}\label{eigdist1}
+	P(\lambda_1, \ldots, \lambda_N)  = \frac{1}{Z_N} \ee^{-\beta H(\lambda_1,\cdots,\lambda_N)},\quad H(\lambda_1,\cdots,\lambda_N)\deff \sum_{j<k}\log\frac{1}{|\lambda_k - \lambda_j|}+\sum_{k}\lambda_k^2.
+\end{equation}
+%
+Desta forma, fator $\beta$ pode - e deve - ser interpretado como temperatura inversa. Nesta representação, ele é o peso de Boltzmann e nossa distribuição é uma analogia à distribuição do sistema canônico da mecânica estatística. Nesta analogia, $H$ seria o Hamiltoniano do sistema que determina o potencial, energia cinética e da interação entre partículas.
+
+A medida de Gibbs \eqref{eigdist1} admite uma extensão natural
+%
+\begin{equation}\label{eq:Gibbsgeneral}
+	P_V(\lambda_1,\hdots,\lambda_n)\deff \frac{1}{Z^V_N}\ee^{-\beta H_V(\lambda_1,\cdots, \lambda_n)},\quad H_V(\lambda_1,\cdots,\lambda_N)\deff  \sum_{j<k}\log\frac{1}{|\lambda_k - \lambda_j|}+\sum_{k}V(\lambda_k),
+\end{equation}
+%
+onde $V:R\to R$ é uma função suficientemente regular. A escolha $V(x)=x^2$, obviamente, recupera \eqref{eigdist1}. A distribuição \eqref{eq:Gibbsgeneral} também descreve autovalores de modelos de matrizes aleatórias apropriados, mas agora as entradas já não são mais independentes.

@@ -17,6 +17,48 @@
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
 
+\DeclareMathOperator{\Tr}{Tr}
+
+\newcommand{\matriz}[1]{\hat#1}
+
+\newcommand{\many}[2]{$#1_1, #1_2, \dots, #1_#2$}
+
+\newcommand{\cmany}[3]{$#1_1 #3 #1_2 #3 \dots #3 #1_#2$}
+
+\newcommand{\mmany}[2]{#1_1, #1_2, \dots, #1_#2}
+
+\newcommand{\mcmany}[3]{#1_1 #3 #1_2 #3 \dots #3 #1_#2}
+
+\newcommand{\set}[1]{\{#1\}}
+
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\ai}{Ai}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\ee}{\rm e}
+\DeclareMathOperator{\supp}{supp}
+\renewcommand{\Re}{\mathop{\rm Re}}
+\newcommand{\res}{\mathop{\rm Res}}
+\renewcommand{\Im}{\mathop{\rm Im}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\boh}{\mathit{o}}
+\newcommand{\Boh}{\mathcal{O}}
+\newcommand{\bbp}{\bm K_{\mathrm{BBP}}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand*{\deff}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+			\hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+	=}
+\newcommand*{\revdeff}{=\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+			\hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+}
+
 \newcommand{\titulo}[1]{\def\meuTitulo{#1}}
 \newcommand{\tituloIngles}[1]{\def\meuTituloIngles{#1}}
 \newcommand{\numProjeto}[1]{\def\numFAP{#1}}
@@ -42,7 +84,6 @@
 \newcommand{\membroF}[1]{\def\nomeMembroF{#1}}
 
 \newcommand{\Figure}[1]{Figura~\ref{fig:#1}}
-\newcommand{\Table}[1] {Tabela~\ref{#1}}
 \newcommand{\Equation}[1] {Equa\c{c}\~ao~\ref{#1}}
 \newcommand{\addFigure}[3] { %Parametros scale, fig_name, caption 
     \begin{figure}[!hbt]
@@ -53,7 +94,6 @@
 }
 
 \newcommand{\geraTitulo}{
-\clearpage
 \begin{titlepage}
   \begin{center}
       \vspace*{-3cm}
@@ -87,7 +127,7 @@
         
         \hspace{2cm}
         
-        \includegraphics[scale=0.7]{Assets/CuteCircleWhite}
+        \includegraphics[scale=0.15]{Assets/CuteCircleWhite}
        
         \vfill
        
@@ -117,7 +157,8 @@
 \newcommand{\Resumo}[1]{
    \begin{otherlanguage}{portuguese}
        \addcontentsline{toc}{chapter}{Resumo}
-       \begin{abstract} \thispagestyle{plain} \setcounter{page}{2}
+       \begin{abstract}
+       	\setcounter{page}{2}
           #1
         \end{abstract}
    \end{otherlanguage} 
@@ -169,12 +210,11 @@
           \fi  
        \item Período de vigência:
             \begin{itemize}
-               \item[]\textbf{\periodRelat} 
+               \item[]\textbf{\periodVig} 
             \end{itemize}
        \item Período coberto por este relatório científico:
             \begin{itemize}
-               \item[]\textbf{\periodVig} 
+               \item[]\textbf{\periodRelat} 
             \end{itemize}
    \end{itemize}
-   \clearpage
 }
