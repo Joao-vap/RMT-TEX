@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.30)  15 OCT 2023 19:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.30)  9 NOV 2023 09:17
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -960,7 +960,7 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 8
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-<Assets/CuteCircleWhite.png, id=97, 1445.4pt x 1445.4pt>
+<Assets/CuteCircleWhite.png, id=105, 1445.4pt x 1445.4pt>
 File: Assets/CuteCircleWhite.png Graphic file (type png)
 <use Assets/CuteCircleWhite.png>
 Package pdftex.def Info: Assets/CuteCircleWhite.png  used on input line 89.
@@ -977,55 +977,51 @@ l.95 ...tado o comportamento destas simulações.}
 
 ] [2]
 Cap\'{\i }tulo 1.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 127
+LaTeX Font Info:    Trying to load font information for U+msa on input line 136
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 127
+LaTeX Font Info:    Trying to load font information for U+msb on input line 136
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./text/measure.tex
-[1
+) [1
 
+]
+Overfull \hbox (7.6334pt too wide) in paragraph at lines 176--177
+\T1/cmr/m/n/12 dos em []GitHub - Re-po-si-t�-rio Ge-ral[] (https://github.com/J
+oao-vap/RMT-Code/tree/main). 
+ []
 
-]) (./text/gaussian.tex [2]) (./text/equilibrio.tex [3]) (./text/exemplos.tex
-<Assets/validationArticleAlg.png, id=156, 968.418pt x 482.7636pt>
+(./text/measure.tex [2]) (./text/gaussian.tex [3]) (./text/equilibrio.tex
+[4]) (./text/exemplos.tex
+<Assets/validationArticleAlg.png, id=177, 968.418pt x 482.7636pt>
 File: Assets/validationArticleAlg.png Graphic file (type png)
 <use Assets/validationArticleAlg.png>
-Package pdftex.def Info: Assets/validationArticleAlg.png  used on input line 19
+Package pdftex.def Info: Assets/validationArticleAlg.png  used on input line 18
 .
 (pdftex.def)             Requested size: 435.78407pt x 217.24161pt.
-[4]
-<Assets/validationArticleMonic.png, id=167, 963.3591pt x 519.6213pt>
-File: Assets/validationArticleMonic.png Graphic file (type png)
-<use Assets/validationArticleMonic.png>
-Package pdftex.def Info: Assets/validationArticleMonic.png  used on input line 
-40.
-(pdftex.def)             Requested size: 433.5076pt x 233.82742pt.
- [5 <./Assets/validationArticleAlg.png>]
-<Assets/validationArticleQuartic.png, id=175, 878.0805pt x 505.1673pt>
-File: Assets/validationArticleQuartic.png Graphic file (type png)
-<use Assets/validationArticleQuartic.png>
-Package pdftex.def Info: Assets/validationArticleQuartic.png  used on input lin
-e 85.
-(pdftex.def)             Requested size: 439.03918pt x 252.58302pt.
-) (./text/simulacoes.tex [6 <./Assets/validationArticleMonic.png>] [7 <./Assets
-/validationArticleQuartic.png>]
-[8])
+ [5] [6 <./Assets/validationArticleAlg.png>]
+<Assets/validationArticleMonicQuarticTheo.png, id=194, 507.3354pt x 476.982pt>
+File: Assets/validationArticleMonicQuarticTheo.png Graphic file (type png)
+<use Assets/validationArticleMonicQuarticTheo.png>
+Package pdftex.def Info: Assets/validationArticleMonicQuarticTheo.png  used on 
+input line 78.
+(pdftex.def)             Requested size: 405.86887pt x 381.5861pt.
+)
+(./text/simulacoes.tex [7] [8 <./Assets/validationArticleMonicQuarticTheo.png>]
+[9])
 Cap\'{\i }tulo 2.
-[9]
-Cap\'{\i }tulo 3.
 [10] (./text/cronograma.tex)
-Cap\'{\i }tulo 4.
-(./text/eventos.tex
+Cap\'{\i }tulo 3.
+(./text/eventos.tex [11]
 Overfull \hbox (1.2498pt too wide) in paragraph at lines 5--14
 [][] 
  []
 
-<Assets/posterwhite.pdf, id=220, 2159.99966pt x 3840.00026pt>
+<Assets/posterwhite.pdf, id=235, 2159.99966pt x 3840.00026pt>
 File: Assets/posterwhite.pdf Graphic file (type pdf)
 <use Assets/posterwhite.pdf>
 Package pdftex.def Info: Assets/posterwhite.pdf  used on input line 20.
@@ -1034,7 +1030,7 @@ File: Assets/posterwhite.pdf Graphic file (type pdf)
 <use Assets/posterwhite.pdf>
 Package pdftex.def Info: Assets/posterwhite.pdf  used on input line 20.
 (pdftex.def)             Requested size: 2159.99443pt x 3839.99094pt.
-<Assets/posterwhite.pdf, id=223, page=1, 2159.99966pt x 3840.00026pt>
+<Assets/posterwhite.pdf, id=238, page=1, 2159.99966pt x 3840.00026pt>
 File: Assets/posterwhite.pdf Graphic file (type pdf)
 <use Assets/posterwhite.pdf, page 1>
 Package pdftex.def Info: Assets/posterwhite.pdf , page1 used on input line 20.
@@ -1043,7 +1039,7 @@ File: Assets/posterwhite.pdf Graphic file (type pdf)
 <use Assets/posterwhite.pdf, page 1>
 Package pdftex.def Info: Assets/posterwhite.pdf , page1 used on input line 20.
 (pdftex.def)             Requested size: 475.43211pt x 845.21284pt.
-[11]
+[12]
 File: Assets/posterwhite.pdf Graphic file (type pdf)
 <use Assets/posterwhite.pdf, page 1>
 Package pdftex.def Info: Assets/posterwhite.pdf , page1 used on input line 20.
@@ -1056,7 +1052,9 @@ File: Assets/posterwhite.pdf Graphic file (type pdf)
 <use Assets/posterwhite.pdf, page 1>
 Package pdftex.def Info: Assets/posterwhite.pdf , page1 used on input line 20.
 (pdftex.def)             Requested size: 475.43211pt x 845.21284pt.
- [12 <./Assets/posterwhite.pdf>]) (./principal.bbl
+ [13 <./Assets/posterwhite.pdf>])
+Cap\'{\i }tulo 4.
+(./principal.bbl [14]
 ! Missing } inserted.
 <inserted text> 
                 }
@@ -1068,20 +1066,20 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-) [13
+) [15
 
 ] (./principal.aux)
 Package rerunfilecheck Info: File `principal.out' has not changed.
-(rerunfilecheck)             Checksum: F249182C41D85C5A954C2828AF833078;3534.
+(rerunfilecheck)             Checksum: F824E41064BB5CC7535C3F4538C3E079;3960.
  ) 
 Here is how much of TeX's memory you used:
- 27846 strings out of 478287
- 525417 string characters out of 5849289
- 861613 words of memory out of 5000000
- 45460 multiletter control sequences out of 15000+600000
- 483545 words of font info for 60 fonts, out of 8000000 for 9000
+ 27860 strings out of 478287
+ 525385 string characters out of 5849289
+ 857691 words of memory out of 5000000
+ 45465 multiletter control sequences out of 15000+600000
+ 487541 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,17n,81p,1067b,520s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,17n,81p,1041b,520s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
 fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
@@ -1103,18 +1101,20 @@ ic/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 bx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/sha
 re/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1
 /public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfr
-m0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/shar
-e/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/
-public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt
-1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1728.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
-utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on principal.pdf (16 pages, 1468943 bytes).
+m0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/shar
+e/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/
+public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
+1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share
+/texmf/fonts/type1/public/cm-super/sftt1440.pfb></usr/share/texmf/fonts/type1/p
+ublic/cm-super/sfxc1728.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/cour
+ier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/times/utmri8a.pfb>
+Output written on principal.pdf (18 pages, 1443420 bytes).
 PDF statistics:
- 442 PDF objects out of 1000 (max. 8388607)
- 338 compressed objects within 4 object streams
- 60 named destinations out of 1000 (max. 500000)
- 237 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 472 PDF objects out of 1000 (max. 8388607)
+ 364 compressed objects within 4 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 248 words of extra memory for PDF output out of 10000 (max. 10000000)
 

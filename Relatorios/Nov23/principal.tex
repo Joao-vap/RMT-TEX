@@ -36,7 +36,7 @@
 \faculdade{Instituto de Ciências Matemáticas e de Computação (ICMC)}
 %
 %% Define o título do projeto.
-\titulo{Análise Assintótica de Sistemas de Partículas e Matrizes Aleatórias}
+\titulo{Matrizes aleatórias e simulação de gases de Coulomb}
 %
 %% Define a agencia de Fomento e a abreviatura. O primeiro argumento é o 
 %% nome por extenso e o segundo a abreviatura.
@@ -45,10 +45,10 @@
 %
 %% Define o tipo de relatório. Pode ser Anual ou Final.
 %% Não é obrigatório definir o tipo de relatório.
-\tipoRelatorio{Anual}
+\tipoRelatorio{semestral}
 %
 %% Define a modalidade de Projeto. Pode ser temático, regular, etc.
-\modalidadeProjeto{Auxílio à Pesquisa Regular}
+\modalidadeProjeto{iniciação científica}
 %
 %% Define o número do projeto.
 %% Não é obrigatório definir o número do projeto.
@@ -122,31 +122,6 @@
 	%%-----
 	%% Corpo do texto
 	%%-----
-	\chapter{Introdução à Matrizes Aleatórias}\label{chp:resumoProj} 
-	
-	Uma matriz aleatória é uma matriz cujas entradas são variáveis aleatórias, não necessariamente independentes tampouco de mesma distribuição. A princípio, de um ponto de vista puramente analítico, pode-se tratar uma matriz aleatória de tamanho $N\times N$ como um vetor aleatório de tamanho $N^2$. No entanto, as estruturas algébrico-geométricas presentes a matrizes, como multiplicação natural, interpretação como operadores, ou decomposições espectrais, trazem à matrizes aleatórias aplicações múltiplas. Em particular, sua relevância estende um ponto comum que compartilham com variáveis aleatórias: permitir descrições estatísticas a sistemas e fenômenos. 
-	
-	É comum modelar com matrizes aleatórias, por exemplo, operadores com perturbações aleatórias. De um ponto de vista físico, autovalores de um dado operador descrevem espectros de energia do sistema descrito. Na quântica, por exemplo, autovalores são as medidas observadas. Surge uma pergunta naturalmente: dada uma matriz aleatória $M$, o que podemos dizer sobre estatísticas de seus autovalores? Essa resposta, claro, depende de maneira altamente não trivial das distribuições das entradas.  
-	
-	\section{Distribuição dos Autovalores}
-	
-	\input{text/measure}
-	
-	\section{Ensembles Gaussianos}
-	
-	\input{text/gaussian}
-
-	\section{A medida de equilíbrio}
-	
-	\input{text/equilibrio}
-	
-	\section{Exemplos}
-	
-	\input{text/exemplos}
-	
-	\section{Simulações}
-	
-	\input{text/simulacoes}
 	
 	{\let\clearpage\relax \chapter{Realizações do período}}
 	\label{chp:realizacoes}
@@ -183,9 +158,51 @@
 		\end{tabular}
 	\end{center}
 	
+	\section{Produções}
+	
+	No período referido foi também submetido na plataforma do Arxiv o pre-print do artigo do qual sou co-autor. O arquivo pode ser encontrado em \href{https://doi.org/10.48550/arXiv.2310.17083}{A Central Theorem for intransitive dice} (https://doi.org/10.48550/arXiv.2310.17083).
+	
 	\section{Pesquisa}
 	
-	Durando os meses passados no período referente a esse relatório grande parte do esforço foi no estudo da bibliografia e conteúdo de interesse dentro da teoria de matrizes aleatórias. Para isso, permitiu-se exploração ampla de conceitos relacionados e implementação de algoritmos especiais em interesse ao aluno. Todos os resultados computacionais e implementações realizadas podem ser encontrados em \href{https://github.com/Joao-vap/RMT-Code/tree/main}{GitHub - Repositório Geral}. A outra atividade principal realizada foi a implementação do algoritmo descrito em \cite{Chafa__2018}, onde podemos simular algumas medidas de probabilidade relacionadas à ensembles clássicos para validar seu funcionamento. Aqui, como é possível ver em \ref{fig: semicircle}, simulamos a distribuição para a GOE, GUE e GSE. Podemos ver nas imagens a concordância das simulações com o método clássico utilizando autovalores de ensembles de matrizes aleatórias.
+	Durante os meses referentes a esse relatório grande parte do esforço foi no estudo da bibliografia e conteúdo de interesse dentro da teoria de matrizes aleatórias. Para isso, permitiu-se exploração ampla de conceitos relacionados e implementação de algoritmos especiais em interesse ao aluno. Alguns dos principais projetos foram nos temas
+	
+	\begin{itemize}
+		\item Simulação da distribuição de ensembles clássicos de matrizes aleatórias a serem explicitados no relatório (GUE, GOE, GSE);
+		\item Movimentos brownianos não interseccionantes e variações de interesse com múltiplos pontos finais da dinâmica;
+		\item Métodos de \textit{tilings} baseados em teoria de matrizes aleatórias, tais como o círculo ártico;
+		\item Processos de borda das dinâmicas anteriormente citadas e explicitação de distribuições como a Tracy Widow;
+	\end{itemize}
+	
+	Todos os resultados computacionais e implementações realizadas podem ser encontrados em \href{https://github.com/Joao-vap/RMT-Code/tree/main}{GitHub - Repositório Geral} (https://github.com/Joao-vap/RMT-Code/tree/main). 
+	
+	A outra principal atividade realizada foi a implementação do algoritmo descrito na referência \cite{Chafa__2018}, onde podemos simular algumas medidas de probabilidade relacionadas à ensembles clássicos para validar seu funcionamento. Como é possível ver em \ref{fig: semicircle}, simulamos a distribuição para a GOE, GUE e GSE. Podemos ver nas imagens a concordância das simulações com o método clássico utilizando autovalores de ensembles de matrizes aleatórias. Estendemos também os resultados para alguns potenciais de medida conhecida, mônico e quártico, ainda em validação numérica. 
+	
+	\section{Introdução à Matrizes Aleatórias}\label{chp:resumoProj} 
+	
+	Uma matriz aleatória é uma matriz cujas entradas são variáveis aleatórias, não necessariamente independentes tampouco de mesma distribuição. A princípio, de um ponto de vista puramente analítico, pode-se tratar uma matriz aleatória de tamanho $N\times N$ como um vetor aleatório de tamanho $N^2$. No entanto, as estruturas algébrico-geométricas presentes a matrizes, como multiplicação natural, interpretação como operadores, ou decomposições espectrais, trazem à matrizes aleatórias aplicações múltiplas. Em particular, sua relevância estende um ponto comum que compartilham com variáveis aleatórias: permitir descrições estatísticas a sistemas e fenômenos. 
+	
+	É comum modelar com matrizes aleatórias, por exemplo, operadores com perturbações aleatórias. De um ponto de vista físico, autovalores de um dado operador descrevem espectros de energia do sistema descrito. Na quântica, por exemplo, autovalores são as medidas observadas. Surge uma pergunta naturalmente: dada uma matriz aleatória $M$, o que podemos dizer sobre estatísticas de seus autovalores? Essa resposta, claro, depende de maneira altamente não trivial das distribuições das entradas.  
+	
+	\section{Distribuição dos Autovalores}
+	
+	\input{text/measure}
+	
+	\section{Ensembles Gaussianos}
+	
+	\input{text/gaussian}
+	
+	\section{A medida de equilíbrio}
+	
+	\input{text/equilibrio}
+	
+	\section{Exemplos}
+	
+	\input{text/exemplos}
+	
+	\section{Simulações de Gases}
+	\label{sec: simul}
+	
+	\input{text/simulacoes}
 
 	{\let\clearpage\relax \chapter{Plano de atividades}}\label{chp:plano}
 	
@@ -214,6 +231,10 @@
 	{\let\clearpage\relax \chapter{Participação em eventos científicos}}\label{chp:particEvento}
 	
 	\input{text/eventos}
+	
+	{\let\clearpage\relax \chapter{Outros trabalhos Preparados ou Submetidos}}\label{chp:trabalhos}
+	
+	Durante o período da bolsa foi também finalizado o trabalho intitulado 'A Central Limit Theorem for intransitive dice' co-autorado por mim. O arquivo se encontra disponível na plataforma Arxiv em \href{https://doi.org/10.48550/arXiv.2310.17083}{A Central Theorem for intransitive dice}\footnote{https://doi.org/10.48550/arXiv.2310.17083}.
 	
 	%%-----
 	%% Referências bibliográficas
