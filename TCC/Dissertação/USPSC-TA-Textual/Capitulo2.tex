@@ -1,0 +1,92 @@
+\chapter[Autodualidade generalizada]{Autodualidade generalizada}
+\label{autodulidade generalizada}
+
+Considere uma teoria de campos que possui uma carga topológica que admite representação integral da forma
+\begin{equation}
+    \centering
+    \mathcal{Q} = \dfrac{1}{2} \int d^{d}x \left [ \mathcal{A}_\alpha \ \tilde{\mathcal{A}}_\alpha^* + \mathcal{A}_\alpha^* \ \tilde{\mathcal{A}}_\alpha \right],
+    \label{cargatop}
+\end{equation}
+onde $\mathcal{A}_\alpha$ e $\tilde{\mathcal{A}}_\alpha$ são funcionais somente dos campos da teoria e das suas primeiras derivadas, onde $*$ se refere somente a conjugado e não transposto conjugado, $\alpha$ se refere a qualquer grupo de índices. O fato de $\mathcal{Q}$ ser topológico significa que ele é invariante por qualquer variação homotópica\footnote{Ou suave.} dos campos. Os campos serão representados por $\chi_\kappa$; eles podem ser escalares, vetoriais ou campos espinores, e o índice $\kappa$ segue a mesma lógica do índice $\alpha$ anterior. Os campos $\chi_\kappa$ serão considerados reais, ou seja, caso existam campos complexos $\chi_\kappa$ assume a parte real e imaginária desses campos.
+
+A invariância de $\mathcal{Q}$ sobre variações suaves dos campos leva à identidade
+\begin{equation}
+\begin{split}
+    \delta\mathcal{Q} = 0 \ \rightarrow \ \ \ &\fdv{\mathcal{A}_\alpha}{\chi_\kappa}\tilde{\mathcal{A}}_\alpha^* - \partial_\mu \left(\fdv{\mathcal{A}_\alpha}{\partial_\mu\chi_\kappa}\tilde{\mathcal{A}}_\alpha^* \right) + \mathcal{A}_\alpha\fdv{\tilde{\mathcal{A}}_\alpha^*}{\chi_\kappa} - \partial_\mu \left( \mathcal{A}_\alpha\fdv{\tilde{\mathcal{A}}_\alpha^*}{\partial_\mu\chi_\kappa} \right) +\\
+    & \fdv{\mathcal{A}_\alpha^*}{\chi_\kappa}\tilde{\mathcal{A}}_\alpha - \partial_\mu \left(\fdv{\mathcal{A}_\alpha^*}{\partial_\mu\chi_\kappa}\tilde{\mathcal{A}}_\alpha \right) + \mathcal{A}_\alpha^*\fdv{\tilde{\mathcal{A}}_\alpha}{\chi_\kappa} - \partial_\mu \left( \mathcal{A}_\alpha^*\fdv{\tilde{\mathcal{A}}_\alpha}{\partial_\mu\chi_\kappa} \right) = 0.
+\end{split}
+\label{identQ}
+\end{equation}
+
+Impondo as equações, de primeira ordem, de auto-dualidade nos campos
+\begin{equation}
+    \mathcal{A}_\alpha = \pm\tilde{\mathcal{A}}_\alpha \ ,  
+    \label{bps}
+\end{equation}
+
+junto com a identidade (\ref{identQ}), temos as equações
+\begin{equation}
+\begin{split}
+    &\fdv{\mathcal{A}_\alpha}{\chi_\kappa}{\mathcal{A}}_\alpha^* - \partial_\mu \left(\fdv{\mathcal{A}_\alpha}{\partial_\mu\chi_\kappa}{\mathcal{A}}_\alpha^* \right) + \mathcal{A}_\alpha\fdv{{\mathcal{A}}_\alpha^*}{\chi_\kappa} - \partial_\mu \left( \mathcal{A}_\alpha\fdv{{\mathcal{A}}_\alpha^*}{\partial_\mu\chi_\kappa} \right) +\\
+    & \fdv{\tilde{\mathcal{A}}_\alpha^*}{\chi_\kappa}\tilde{\mathcal{A}}_\alpha - \partial_\mu \left(\fdv{\tilde{\mathcal{A}}_\alpha^*}{\partial_\mu\chi_\kappa}\tilde{\mathcal{A}}_\alpha \right) + \tilde{\mathcal{A}}_\alpha^*\fdv{\tilde{\mathcal{A}}_\alpha}{\chi_\kappa} - \partial_\mu \left( \tilde{\mathcal{A}}_\alpha^*\fdv{\tilde{\mathcal{A}}_\alpha}{\partial_\mu\chi_\kappa} \right) = 0.
+\end{split}
+\label{ELident}
+\end{equation}
+
+Note que (\ref{ELident}) são as equações de Euler-Lagrange associadas ao funcional
+\begin{equation}
+    E = \dfrac{1}{2}\int d^d x \left[\mathcal{A}_\alpha \mathcal{A}_\alpha^* + \tilde{\mathcal{A}}_\alpha \tilde{\mathcal{A}}_\alpha^* \right].
+    \label{energia}
+\end{equation}
+
+Portanto, equações diferenciais de primeira ordem, em conjunto com identidades topológicas de segunda ordem, implicam as equações de Euler-Lagrange de segunda ordem. Além disso, se $E$ for positivo definido, então as soluções auto-duais saturam um limite inferior na energia da seguinte forma. De (\ref{bps}): $\mathcal{A}^2_\alpha = \tilde{\mathcal{A}}^2_\alpha = \pm\mathcal{A}_\alpha\tilde{\mathcal{A}}_\alpha$, (\ref{bps}) também implica $\mathcal{A}_\alpha\tilde{\mathcal{A}}_\alpha^* = \mathcal{A}^*_\alpha\tilde{\mathcal{A}}_\alpha$. Dessa forma, se $\mathcal{A}_\alpha\mathcal{A}^*_\alpha \geq 0$, e consequentemente $\tilde{\mathcal{A}}_\alpha\tilde{\mathcal{A}}^{*}_{\alpha} \geq 0$:
+\begin{equation}
+\begin{split}
+    \mathcal{A}_\alpha = \tilde{\mathcal{A}}_\alpha \ \ \ &\rightarrow \ \ \ \mathcal{Q} = \int d^d x  \ \mathcal{A}_\alpha\mathcal{A}_\alpha^*\\
+    \mathcal{A}_\alpha = -\tilde{\mathcal{A}}_\alpha \ \ \ &\rightarrow \ \ \ \mathcal{Q} = -\int d^dx \ \mathcal{A}_\alpha\mathcal{A}^*_\alpha.
+\end{split}
+\end{equation}
+
+Dessa forma, é possível reescrever o funcional de energia (\ref{energia}) como
+\begin{equation}
+    E = \dfrac{1}{2} \int d^dx \left[ \mathcal{A}_\alpha \mp \tilde{\mathcal{A}}_\alpha \right] \left[\mathcal{A}^*_\alpha \mp \tilde{\mathcal{A}}_\alpha^* \right] \pm \dfrac{1}{2} \int d^dx \left[\mathcal{A}_\alpha \tilde{\mathcal{A}}_\alpha^* + \mathcal{A}^*_\alpha \tilde{\mathcal{A}}_\alpha\right] \geq \abs{\mathcal{Q}} \ ,
+\end{equation}
+
+onde, para soluções auto-duais, vale a igualdade da relação
+\begin{equation}
+    E = \int d^dx \ \mathcal{A}_\alpha\mathcal{A}^*_\alpha = \int d^dx \ \tilde{\mathcal{A}}_\alpha\tilde{\mathcal{A}}_\alpha^* = \abs{\mathcal{Q}} \ .
+\end{equation}
+
+A forma de separar o integrando de $\mathcal{Q}$ em (\ref{cargatop}) é bastante arbitrária, mas feita essa escolha ainda é possível realizar uma transformação simples da seguinte forma:
+\begin{equation}
+    \mathcal{A}_\alpha \rightarrow \mathcal{A}_\alpha' = \mathcal{A}_\beta k_{\beta\alpha} \ ; \ \ \ \ \tilde{\mathcal{A}}^*_\alpha \rightarrow (\tilde{\mathcal{A}}'_\alpha)^* = k^{-1}_{\alpha\beta} \tilde{\mathcal{A}_\beta^*} \ .
+    \label{trasnf_geral}
+\end{equation}
+
+Essa transformação não muda a forma da carga topológica, portanto $\mathcal{Q}$ continua invariante por transformações homotópicas dos campos. Logo, o mesmo desenvolvimento anterior para os funcionais $\mathcal{A}_\alpha$ e $\tilde{\mathcal{A}}_\alpha$ pode ser repetido para os funcionais transformados $\mathcal{A}'_\alpha$ e $\tilde{\mathcal{A}}'_\alpha$. Assim, as novas equações de auto-dualidade são
+\begin{equation}
+    \mathcal{A}_\beta k_{\beta\alpha} = \pm (k^{-1}_{\alpha\beta})^*\tilde{\mathcal{A}}_\beta \ \ \ \rightarrow \ \ \ \mathcal{A}_\beta h_{\beta\alpha} = \pm \tilde{\mathcal{A}}_\alpha \ ,
+    \label{bps2}
+\end{equation}
+em que foi definida a matriz inversível e hermitiana:
+\begin{equation}
+    h \equiv kk^{\dag} \ .
+\end{equation}
+
+Junto com as identidades transformadas (\ref{identQ}), as novas equações de auto-dualidade (\ref{bps2}) implicam as equações de Euler-Lagrange do funcional
+\begin{equation}
+    E' = \dfrac{1}{2} \int d^dx \left[\mathcal{A}_\alpha h_{\alpha\beta} \mathcal{A}^*_\beta + \tilde{\mathcal{A}_\alpha}h^{-1}_{\alpha\beta} \tilde{\mathcal{A}}^*_\beta\right]
+    \label{energia2} \ .
+\end{equation}
+
+Note que a matriz $h$ pode introduzir novos campos na teoria sem mudar a carga topológica.
+
+Além disso, de (\ref{bps2}): $\mathcal{A}_\alpha h_{\alpha\beta} \mathcal{A}^*_\beta = \tilde{\mathcal{A}}_\alpha h^{-1}_{\alpha\beta}\tilde{\mathcal{A}}^*_\beta = \pm \mathcal{A}_\alpha\tilde{\mathcal{A}}^*_\alpha = \pm \mathcal{A}^*_\alpha\tilde{\mathcal{A}}_\alpha$. Portanto, se $\mathcal{A}_\beta h_{\beta\alpha}\mathcal{A}^*_\alpha \geq 0$, e consequentemente $\tilde{\mathcal{A}}_\alpha h^{-1}_{\alpha\beta}\tilde{\mathcal{A}}_\beta^* \geq 0$, o limite inferior na energia ($E'$ nesse caso) segue da mesma forma que anteriormente
+\begin{equation}
+\begin{split}
+    E' &= \dfrac{1}{2} \int d^dx \left[\mathcal{A}_\beta k_{\beta\alpha} \mp (k^{-1}_{\alpha\beta})^*\tilde{A}_\beta \right] \left[\mathcal{A}_\gamma^*k^*_{\gamma\alpha} \mp k^{-1}_{\alpha\gamma}\mathcal{A}^*_\gamma \right] \\[0.2cm]
+    &\pm \dfrac{1}{2} \int d^dx \left[\mathcal{A}_\alpha\tilde{\mathcal{A}}^*_\alpha + \mathcal{A}^*_\alpha \tilde{\mathcal{A}}_\alpha \right] \geq \abs{\mathcal{Q}} \ .
+\end{split}
+\end{equation}
+
+A seguir, serão examinadas algumas teorias em que são aplicadas as ideias discutidas nessa seção.

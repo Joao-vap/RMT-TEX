@@ -1,0 +1,70 @@
+% General Configs
+
+\documentclass[10pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+
+%------------------------------------------------------------
+% Configure Theme like things
+
+\usetheme{Szeged}
+\usecolortheme{sidebartab}
+\usefonttheme{structuresmallcapsserif}
+\setbeamercolor{lower separation line foot}{bg=}
+\setbeamercolor{separation line}{use=structure,bg=structure.fg!50!bg}
+
+
+%TOC
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamerfont{subsection in toc}{size=\small, shape=\itshape}
+
+%Templetae
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{note page}[compress]
+
+
+%------------------------------------------------------------
+%This block of code defines the information to appear in the
+%Title page
+\title[Matrizes Aleatórias e Simulação de Gases de Coulomb] %optional
+{Matrizes Aleatórias e Simulação de Gases de Coulomb}
+
+\subtitle{}
+
+\author[João V. A. Pimenta] % (optional)
+{João V. A. Pimenta\inst{1} \and Guilherme Silva\inst{2}}
+
+\institute[IFSC] % (optional)
+{
+	\inst{1}%
+	Instituto de Física de São Carlos - IFSC\\
+	Universidade de São Paulo - USP
+	\and
+	\inst{2}%
+	Insitituto de Ciências Matemáticas e de Computação - ICMC\\
+	Universidade de São Paulo - USP
+}
+
+\date[TCC 2024] % (optional)
+{Defesa de TCC em Física Computacional, Julho 2024}
+
+\logo{\includegraphics[height=0.5cm]{media/aesthetics/logotipoifsc}}
+
+%End of title page configuration block
+%------------------------------------------------------------
+
+
+
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the 
+%beginning of each section and highlights the current section:
+
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{Table of Contents}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+%------------------------------------------------------------

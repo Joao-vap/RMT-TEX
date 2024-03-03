@@ -1,0 +1,69 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: USPSC-TCC-modelo.aux
+The style file: USPSC-classe/abntex2-num-USPSC.bst
+A level-1 auxiliary file: USPSC-TA-PreTextual/USPSC-fichacatalografica.aux
+A level-1 auxiliary file: USPSC-TA-PreTextual/USPSC-Resumo.aux
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: abntex2-options.bib
+Database file #2: USPSC-bib/USPSC-modelo-references.bib
+Warning--I didn't find a database entry for "abnt-etal-cite"
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
++---------------------------------------------------------+
+| Estilo bibliográfico abntex2-num.bst versão v-1.9.7           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://www.abntex.net.br/                               |
++---------------------------------------------------------+
+You've used 11 entries,
+            6714 wiz_defined-function locations,
+            1210 strings with 9736 characters,
+and the built_in function-call counts, 3247 in all, are:
+= -- 310
+> -- 1
+< -- 1
++ -- 56
+- -- 1
+* -- 126
+:= -- 376
+add.period$ -- 0
+call.type$ -- 13
+change.case$ -- 33
+chr.to.int$ -- 5
+cite$ -- 0
+duplicate$ -- 37
+empty$ -- 480
+format.name$ -- 0
+if$ -- 930
+int.to.chr$ -- 10
+int.to.str$ -- 1
+missing$ -- 112
+newline$ -- 8
+num.names$ -- 0
+pop$ -- 72
+preamble$ -- 1
+purify$ -- 33
+quote$ -- 0
+skip$ -- 531
+stack$ -- 1
+substring$ -- 99
+swap$ -- 1
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 2
+width$ -- 0
+write$ -- 7
+(There was 1 warning)

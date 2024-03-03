@@ -1,0 +1,129 @@
+\chapter[$(3+1)$ Dimensões e Instantons em $(4+0)$ dimensões]{$(3+1)$ Dimensões e Instantons em $(4+0)$ dimensões}
+\label{(3+1) e 4}
+
+\section{Monopolos}
+
+Será considerado o caso da carga magnética topológica definida pela integral no espaço de três dimensões $\mathbb{R}^3$
+\begin{equation}
+    \mathcal{Q}_M = -\dfrac{1}{2}\int_{\mathbb{R}^3} \dd^3x \, \varepsilon_{ijk} \, \text{Tr}\left(F_{ij}D_k\Phi \right) = \int_{\mathbb{R}^3} \dd^3x \, \text{Tr}\left(B_i D_i \right) \ ,
+    \label{Qmonopolo}
+\end{equation}
+onde $B_i = -\dfrac{1}{2}\, \varepsilon_{ijk}\, F_{jk}$ é o campo magnético não abeliano, $F_{ij} = \partial_iA_j - \partial_j A_i - ie\comm{A_i}{A_j} = F^a_{ij} T_a$ o tensor dos campos, $A_i = A_i^a T_a$ o campo de \textit{gauge}, e $\Phi = \Phi^{a}T_a$ o campo de \textit{Higgs} na representação adjunta de um grupo de Lie simples e compacto, com geradores $T_a \, , \ a = 1,2,...,\text{dim} \, G$. Além disso, $D_i \qty(*) = \partial_i \qty(*) + ie \comm{A_i}{\qty(*)} $ é a derivada covariante na representação adjunta de $G$.
+
+Nesse caso todos os campos são reais. Logo, seguindo (\ref{bps2}) e os resultados em \cite{LafHenBPS}, são introduzidas as quantidades reais
+\begin{equation}
+    \mathcal{A}_\alpha \equiv B_i^b \, k_{ba} \ ; \qquad \qquad \tilde{\mathcal{A}}_\alpha \equiv k^{-1}_{ab} \qty(D_i\Phi)^b \ ,
+\end{equation}
+então (\ref{Qmonopolo}) pode ser escrita como (\ref{cargatop}). As equações de auto-dualidade (\ref{bps2}) se tornam
+\begin{equation}
+    \dfrac{1}{2} \, \varepsilon_{ijk}F_{jk}^b\, h_{ba} = \pm \qty(D_i \Phi)^a \ ; \qquad\qquad\qquad h = k\,k^T \ ,
+    \label{bpsmonopolo}
+\end{equation}
+com $h_{ab}$, $a,b = 1,2,...,\text{dim} \, G$, uma matriz simétrica e inversível de campos escalares. As equações (\ref{bpsmonopolo}) constituem uma generalização das equações \textit{BPS} (\textit{Bogomolny-Prasad-Sommerfield}) \cite{bps_1976, monopolohooft} para monopolos auto-duais. O funcional de energia (\ref{energia2}) se torna \cite{LafHenBPS}
+\begin{equation}
+    E_{YMH} = \int \dd^3x \, \qty[\dfrac{1}{4}h_{ab}F^{a}_{ij}F^b_{ij} + \dfrac{1}{2}h^{-1}_{ab} \qty(D_i\Phi)^a \qty(D_i\Phi)^b] \ ,
+    \label{Emonopolo}
+\end{equation}
+portanto essa é uma teoria com campos de \textit{gauge} $A_\mu$, campo de Higgs $\Phi$ na representação adjunta do grupo de \textit{gauge}, e campos escalares reais na matriz $h$. A energia (\ref{Emonopolo}) avaliada nas soluções auto-duais de (\ref{bpsmonopolo}) é igual à carga magnética topológica
+\begin{equation}
+    E_{YMH} = \mathcal{Q}_M \ .
+\end{equation}
+
+Para mais detalhes na construção de soluções auto-duais dessa teoria, consultar \cite{LafHenBPS}.
+
+\section{Skyrmions}
+
+Skyrmions são sólitons topológicos soluções de teorias em $(3+1)$ dimensões com o grupo $SU(2)$ como espaço-alvo. Os três campos em $SU(2)$ são interpretados como os três píons $\pi^+, \pi^0$ e $\pi^-$. Essas soluções são interpretadas seguindo a proposta de Skyrme \cite{skyrmeNonLinear, skyrmeMesons}, em que a carga topológica desempenha o papel de número bariônico \cite{TopSol, shnirTop}.
+
+A carga topológica relevante nesse caso é dada pela integral sobre o espaço tridimensional $\mathbb{R}^3$
+\begin{equation}
+    \mathcal{Q}_B = \dfrac{i}{48\pi^2}\int \dd^3x \, K(U) \, \varepsilon_{ijk} \, \text{Tr}\qty(R_i R_j R_k) \ ,
+    \label{QSkyrm}
+\end{equation}
+com $R_i = i\partial_i U U^{\dag} = R_i^{a}T_a$, $U \ \in \ SU(2)$, e $K(U)$ é um funcional real arbitrário dos campos quirais $U$, mas não de suas derivadas. $K$ pode ser interpretado como uma deformação na métrica do espaço-alvo $SU(2)$. A notação utilizada é tal que $\text{Tr}\qty(T_aT_b) = \delta_{ab}$, com $T_a \, , \ a=1,2,3$ sendo os geradores da álgebra de Lie de $SU(2)$.
+
+Seguindo (\ref{cargatop}), serão definidas as quantidades reais
+\begin{equation}
+    \mathcal{A}_\alpha \equiv \dfrac{\lambda}{24}\, \varepsilon_{ijk} \, \text{Tr}\qty(R_iR_jR_k) \ ; \qquad\qquad \tilde{\mathcal{A}}_\alpha \equiv K = \mu \sqrt{V} \ ,
+    \label{qntdsSkyrm}
+\end{equation}
+em que $\lambda$ e $\mu$ são constantes de acoplamento, e $V$ desempenha o papel de um potencial. As equações de auto-dualidade (\ref{bps}) se tornam
+\begin{equation}
+    \dfrac{\lambda}{24}\, \varepsilon_{ijk} \, \text{Tr}\qty(R_iR_jR_k) = \pm \, \mu \sqrt{V} \ .
+    \label{bpsSkyrm}
+\end{equation}
+
+Assim, o funcional de energia se torna
+\begin{equation}
+    E = \int \dd^3x \qty[\dfrac{\lambda^2}{(24)^2}B_iB_i + \mu^2 V] \ ,
+\end{equation}
+com $B_i = \varepsilon_{ijk} \text{Tr}\qty(R_iR_jR_k)$. Esse modelo foi proposto em \cite{skyrmBarionic} e foi aplicado em muitos contextos em física de estrelas de neutrôns e nuclear \cite{SkyrmNeutron}. As soluções de (\ref{bpsSkyrm}) foram construídas utilizando um \textit{ansatz} esfericamente simétrico, para o potencial $V = \text{Tr}\qty(1-U)/2$, as soluções são de tal forma que os campos vão a zero para um valor finito de distância radial.
+
+\section{Um modelo mais geral do \textit{Skyrme} auto-dual}
+
+Usando o fato de que as quantidades $R_i = i\partial_i UU^{\dag}$ satisfazem a equação de Maurer-Cartan
+\begin{equation}
+    \partial_{\mu}R_\nu - \partial_\nu R_\mu + i \comm{R_\mu}{R_\nu} = 0 \ ,
+\end{equation}
+podemos escrever a carga topológica (\ref{QSkyrm}), para $K = 1$, como
+\begin{equation}
+\begin{split}
+    \mathcal{Q}_B &= \dfrac{i}{96\pi^2} \int \ \dd^3x \ \varepsilon_{ijk} \text{Tr}\qty(R_i \ \comm{R_j}{R_k}) = -\dfrac{1}{96\pi^2}\int \ \dd^3x \  \varepsilon_{ijk}\text{Tr}\qty(R_i \qty(\partial_jR_k - \partial_k R_j)) \\
+    &= -\dfrac{1}{48\pi^2} \int \ \dd^3x \ \varepsilon_{ijk} R_i^a\partial_jR^a_k \equiv -\dfrac{1}{48\pi^2}\dfrac{e_0}{m_0}\int \ \dd^3x \ \mathcal{A}_i^a \Tilde{\mathcal{A}}_i^a \ ,
+    \label{QSkyrme2}
+\end{split}
+\end{equation}
+em que foram introduzidas as quantidades reais
+\begin{equation}
+    \mathcal{A}_i^a \equiv m_0 \ R_i^b k_{ba} \ ; \qquad \Tilde{\mathcal{A}}_i^a \equiv \dfrac{1}{e_0}k^{-1}_{ab} \ \varepsilon_{ijk} \partial_j R_k^b \ ,
+\end{equation}
+sendo $k_{ab}$ uma matriz inversível, $m_0$ e $e_0$ constantes de acoplamento. Logo, a carga topológica (\ref{QSkyrm}), para $K=1$, pode ser escrita da mesma forma que (\ref{cargatop}). Com isso, as equações de auto-dualidade (\ref{bps}) se tornam
+\begin{equation}
+    \lambda \ h_{ab} R_i^{b} = \dfrac{1}{2} \ \varepsilon_{ijk} \ H^{a}_{jk} \qquad \text{com} \qquad \lambda = \pm m_0e_0 \ ,
+    \label{bpsSkyrm}
+\end{equation}
+onde $h=kk^T$ é uma matriz real, simétrica e inversível, e definimos $H^{a}_{ij} = \partial_i R_j^{a} - \partial_jR_i^{a} = \varepsilon_{abc}R^{b}_\mu R^{c}_\nu$. Dessa forma, o funcional de energia (\ref{energia2}) se torna
+\begin{equation}
+    E = \int \dd^3x \qty[\dfrac{m_0^2}{2}h_{ab}R_i^{a}R_i^{b} + \dfrac{1}{4e_o^2}h_{ab}^{-1}H^{a}_{ij}H^{b}_{ij}] \ .
+\end{equation}
+
+A energia das soluções auto-duais de (\ref{bpsSkyrm}) é dada por
+\begin{equation}
+    E = 48\pi^2\dfrac{m_0}{e_0} \ \abs{\mathcal{Q}} \ .
+\end{equation}
+
+Essa teoria foi proposta em \cite{lafSkyrm} e explorada mais a fundo em \cite{lafSkyrm2}, em que as entradas da matriz $h_{ab}$ são consideradas como seis campos reais adicionados à teoria. Note que, para $h = \mathbb{1}$ o modelo se reduz para o modelo original de \textit{Skyrme}. A carga topológica (\ref{QSkyrme2}) é interpretada, seguindo \textit{Skyrme}, como o número bariônico. Mais recentemente, tal modelo foi extendido considerando uma potência fracional da densidade de carga topológica como um parâmetro de ordem para descrever um fluido de matéria bariônica. O modelo descreve com boa precisão a energia de ligação de mais de 240 núcleos, e também a relação entre seus raios e número bariônico.
+
+
+
+\section{Instantons}
+
+Como um último exemplo de aplicação dos métodos descritos no capítulo \ref{autodulidade generalizada}, será apresentado o caso de soluções de instantons para a teoria de Yang-Mills em quatro dimensões Euclidianas. A carga topológica relevante para esse caso é o número de Pontryagin
+\begin{equation}
+    \mathcal{Q}_{YM} = \int \dd^4x \, \text{Tr} \qty(F_{\mu\nu} \Tilde{F}^{\mu\nu}) \ ,
+\end{equation}
+sendo $F_{\mu\nu}$ o tensor dos campos e $\Tilde{F}_{\mu\nu}$ seu dual de Hodge, ou seja,
+\begin{equation}
+    F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu + \, ie \comm{A_\mu}{A_\nu} \ ; \qquad \qquad \Tilde{F}_{\mu\nu} = \dfrac{1}{2} \, \varepsilon_{\mu\nu\rho\sigma} \, F^{\rho\sigma} \ ,
+\end{equation}
+sendo $A_\mu$ o potencial de gauge para um grupo compacto de Lie. Seguindo (\ref{cargatop}):
+\begin{equation}
+    \mathcal{A}_\alpha \equiv F_{\mu\nu} \ ; \qquad\qquad \Tilde{\mathcal{A}}_\alpha \equiv \Tilde{F}_{\mu\nu} \ .
+\end{equation}
+Assim, as equações de auto-dualidade (\ref{bps}) se tornam
+\begin{equation}
+    F_{\mu\nu} = \pm\tilde{F}_{\mu\nu} \ ,
+    \label{bpsYM}
+\end{equation}
+e o funcional (\ref{energia}) se torna a ação Euclidiana de Yang-Mills \footnote{Aqui foi utilizado o fato de que $\text{Tr}\qty(F_{\mu\nu}F_{\mu\nu}) = \text{Tr}\qty(\Tilde{F}_{\mu\nu}\tilde{F}_{\mu\nu})$.}
+\begin{equation}
+    S_{YM} = \dfrac{1}{8}\int \dd^4x \qty[\text{Tr}\qty(F_{\mu\nu}F_{\mu\nu}) + \text{Tr}\qty(\tilde{F}_{\mu\nu}\Tilde{F}_{\mu\nu})] = \dfrac{1}{4}\int \dd^4x \, \text{Tr}\qty(F_{\mu\nu}F_{\mu\nu}) \ .
+\end{equation}
+
+As soluções de (\ref{bpsYM}) são bem conhecidas e são chamadas de soluções \textit{instanton} da teoria de Yang-Mills. Essas soluções desempenham papéis importantes na estrutura dos vácuos e também fenômenos não perturbativos em teorias de Yang-Mills \cite{TopSol, YMpseudoparticle}.
+
+Seguindo (\ref{trasnf_geral}), é possível introduzir uma matriz inversível, simétrica e real $h_{ab}$ nas equações de auto-dualidade (\ref{bpsYM})
+\begin{equation}
+    F_{\mu\nu}^b \, h_{ba} = \pm \Tilde{F}^{a}_{\mu\nu} \ ; \qquad\qquad F_{\mu\nu} = F^{a}_{\mu\nu} T_a \, , \ \Tilde{F}_{\mu\nu} = \Tilde{F}^{a}_{\mu\nu} T_a \ ,
+\end{equation}
+com $T_a$, $a=1,2,..., \text{dim}\, G$, sendo $T_a$ uma base para a álgebra de Lie para o grupo de \textit{gauge} G. Além disso, seguindo o mesmo procedimento que de (\ref{4.9} - \ref{4.11}) chegamos à conclusão de que $h = \mathbb{1}$.
