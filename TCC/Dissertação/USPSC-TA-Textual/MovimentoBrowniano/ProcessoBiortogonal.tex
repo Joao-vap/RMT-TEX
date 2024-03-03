@@ -1,0 +1,31 @@
+Um n-ponto processo é um ensemble biortogonal se existem duas sequências $f_1, \dots, f_n$ e $g_1, \dots g_n$ em $L^2(R)$ e uma constante $\mathcal{Z}_n \neq $ tais que:
+
+\[
+	\mathcal{P}(x_1, \dots, x_n) = \frac{1}{\mathcal{Z}_n} \det{[f_i(x_j)]_{i,j=1}^{n}} \cdot \det{[g_i(x_j)]_{i,j=1}^{n}}
+\]
+
+Onde todo $f_i$ e $g_i$ é independente nos $i$'s. Pode-se mostrar que se
+
+\[
+	\phi_j \in span(f_1, \dots, f_n) \ \ \psi_j \in span(g_1, \dots, g_n)
+\]
+
+tais que 
+
+\[
+	\int_{-\infty}^{\infty} \phi_k(c) \psi_j(x) dx = \delta_{jk}
+\]
+
+então
+
+\[
+	K_n(x,y) = \sum_{j=1}^{n} \phi_k(c) \psi_j(x)
+\]
+
+onde $K_n(x, y)$ é um \textit{Kernel} tal que
+
+\[
+	\mathcal{P}(x_1, \dots, x_n) = \frac{1}{n!} \det{[K_n(x_i, x_j)]_{i,j=1}^{n}}
+\]
+
+O processo é determinado e $K_n$ é o kernel de correlação.

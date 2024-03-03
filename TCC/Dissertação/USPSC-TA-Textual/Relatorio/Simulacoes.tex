@@ -1,0 +1,111 @@
+Recorde que um gas de coulomb é descrito pela medida explicitada em \ref{eq: coulomb}. Para alguns modelos destes gases, pode-se utilizar modelos de matrizes aleatórias com mesma medida do espectro para auxiliar na simulação de suas dinâmicas, quando estes estão disponíveis. Processos determinantais também podem ser de ajuda quando $\beta = 2$. Fora esses casos, existem ainda métodos alternativos como o \textit{Overdamped Langevin Difusion Algorithm}, \textit{Metropolis-Hastings algorithm}, \textit{Metropolis adjusted Langevin algorithm} e versões cinéticas chamadas \textit{Hybrid or Hamiltonian Monte Carlo} baseada em uma versão cinética (\textit{underdamped}) da difusão de Langevin.
+
+Em geral amostrar a medida resulta em dificuldades. A computação de forças e de energias escala com $N^2$ pelo Hamiltoniano tratar de interações par a par. Outra dificuldade são as singularidades em $W$, que resultam em instabilidades numéricas.
+
+\subsection{Os típicos}
+
+A ideia explorada é que $P_N$ é medida de probabilidade invariante reversível do processo de difusão de Markov $(X_t)_{t>0}$ solução de
+
+\[
+\dd X_t = -\alpha_N \nabla H_N(X_t) \dd t + \sqrt{2\frac{\alpha_N}{\beta_N} \dd B_t}.
+\]
+
+Sob algumas condições em $\beta_N$ e $V$, podemos afirmar que
+
+\[
+X_t \xrightarrow[t \rightarrow \infty]{Law} P_N.
+\]
+
+Discretizado, tomamos o processo
+
+\[
+x_{k+1} = x_k - \nabla H_N(x_k) \alpha_N \Delta t + \sqrt{2\frac{\alpha_N}{\beta_N} \Delta t} G_k,
+\]
+onde $G_k$ é a família de variáveis gaussianas usuais. Uma forma de contornar o viés embutido é amenizar a dinâmica com a forma
+
+\[
+x_{k+1} = x_k - \frac{\nabla H_N(x_k) \alpha_N \Delta t}{1 + |\nabla H_N(x_k)| \alpha_N \Delta t} + \sqrt{2\frac{\alpha_N}{\beta_N} \Delta t} G_k.
+\]
+Ainda assim, precisamos otimizar o processo. A ideia do algoritmo de Metropolis é adicionar um processo de seleção para evitar passos irrelevantes, algo do tipo:
+
+\begin{itemize}
+	\item defina $\tilde{x}_{k+1}$ de acordo com o kernel $K(x_k, \cdot)$ gaussiano;
+	
+	\item defina $p_k$
+	
+	\[
+	p_k = 1 \wedge \frac{K(\tilde{x}_{k+1},x_k) e^{\beta_N H_N(\tilde{x}_{k+1})}}{K(x_{k},\tilde{x}_{k+1}) e^{\beta_N H_N(\tilde{x}_{k})}};
+	\]
+	
+	\item defina
+	
+	\[
+	x_{k+1} = 
+	\begin{cases}
+		\tilde{x}_{k+1} & \quad \text{com probabilidade} \ \ p_k,\\
+		x_k &  \quad \text{com probabilidade} \ \ 1-p_k.
+	\end{cases}
+	\]
+	
+\end{itemize}
+
+\subsection{O Híbrido de Monte Carlo}
+
+O algoritmo híbrido de Monte Carlo é baseado no algoritmo anterior mas adicionando uma variável de momento para melhor explorar o espaço. Defina $E = \mathbb{R}^{\dd N}$ e deixe $U_N : E \rightarrow \mathbb{R}$ ser suave para que $\ee^{-\beta_N U_N}$ seja Lebesgue integrável. Seja ainda $(X_t, Y_t)_{t>0}$ o processo de difusão em $E \times E$ solução de
+
+\[
+\begin{cases}
+	\dd X_t = \alpha_N \nabla U_N (Y_t) \dd t, \\
+	\dd Y_t = \alpha_N \nabla H_N(X_t) \dd t - \gamma_N \alpha_N \nabla U_N(Y_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N} \dd B_t},
+\end{cases}
+\]
+onde $(B_t)_{t>0}$ é o movimento browniano em $E$ e $\gamma_N > 0$ parâmetro representando atrito.
+
+Quando $U_N(y) = \frac{1}{2}|y|^2$ temos $Y_t = \dd X_t/\dd t$ e teremos que $X_t$ e $Y_t$ poderão ser interpretados como posição e velocidade do sistema de $N$ pontos em $S$ no tempo $t$. Nesse caso, $U_n$ é energia cinética.
+
+\subsubsection{O algoritmo discreto}
+
+Descrevemos agora o algoritmo discretizado. Inicie de uma configuração $(x_0, y_0)$ e para todo $k \geq 0$ faça
+
+\begin{enumerate}
+	\item atualize as velocidades com
+	
+	\[
+	\tilde{y}_k = \eta y_k + \sqrt{\frac{1-\eta^2}{\beta_N}} G_k, \ \eta = \ee^{-\gamma_N \alpha_N \Delta t};
+	\]
+	
+	\item calcule os termos
+	\[
+	\begin{cases}
+		\tilde{y}_{k+\frac{1}{2}} = \tilde{y}_k - \nabla H_N(x_k) \alpha_N \frac{\Delta t}{2}, \\
+		\tilde{x}_{k+1} = x_k + \tilde{y}_{k + \frac{1}{2}} \alpha_N \Delta t, \\
+		\tilde{y}_{k+1} = \tilde{y}_{k+\frac{1}{2}} - \nabla H_N(x_{k+1}) \alpha_N \frac{\Delta t}{2};
+	\end{cases}
+	\]
+	
+	\item definir $p_k$
+	
+	\[
+	p_k = 1 \wedge \exp{\left[ -\beta_N \left(  H_N(\tilde{x}_{k+1}) + \frac{\tilde{y}^2_{k+1}}{2} - H_N(x_k) - \frac{\tilde{y}^2_k}{2} \right)\right] };
+	\]
+	
+	\item defina
+	
+	\[
+	(x_{k+1}, y_{k+1}) = 
+	\begin{cases}
+		(\tilde{x}_{k+1}, \tilde{y}_{k+1}) \ \text{com probabilidade} \ p_k, \\
+		(x_k, -\tilde{y}_{k}) \ \text{com probabilidade} \ 1-p_k; \\
+	\end{cases}
+	\]
+	
+\end{enumerate}
+
+\subsection{Discussão}
+
+Já apresentamos ao longo do relatório alguns dos resultados das simulações nas figuras \ref{fig: semicircle} e \ref{fig: quarticmonic}. Para \ref{fig: semicircle} temos concordância do comportamento teórico assintótico (semi-círculo) e mesmo nos casos de baixo $N$, os resultados de matrizes aleatórias e da simulação concordam fortemente. Note que as simulações estão normalizadas para que o suporte seja $[-1,1]$ em \ref{fig: semicircle}.
+
+Para o potencial mônico, podemos validar qualitativamente a forma do potencial e o efeito que causa na distribuição. O movimento da densidade para as bordas é justificado nesse sentido. Contudo, os resultados numéricos tem discrepâncias com a teoria ainda não justificadas. Um exemplo disso é o fato do suporte da densidade do resultado numérico ser visivelmente menor do que o suporte teórico.
+
+Finalmente, para o potencial quártico, o resultado novamente é comparável a teoria em forma. Alguma ponderação pode esclarecer alguns pontos, outros ainda são injustificados. Para a quantidade de partículas consideradas, a densidade deve ser diferente da assintótica. Por exemplo, encontrar partículas em torno de $x=0$ é razoavelmente raro para os casos próximos da transição. De forma que a quantidade de passos e partículas influencia fortemente a observação de realizações na região. O suporte da densidade no resultado numérico, novamente reduzido, ainda não foi explicado.
+

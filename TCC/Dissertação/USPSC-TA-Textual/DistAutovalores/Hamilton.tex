@@ -1,0 +1,81 @@
+Vamos introduzi uma função contagem para facilitar o tratamento do conjunto de pontos em $\mathbb{R}$. Definiremos
+
+\begin{equation}
+	\upsilon_\lambda = \frac{1}{N} \sum_1^N \delta_{\lambda_i}
+\end{equation}
+
+Notamos a propriedade de nossa função
+
+\begin{equation}
+	\int f(x) d\upsilon_\lambda(x) = \frac{1}{N} \sum f(x) 
+\end{equation}
+
+Com isso, se quisermos escrever $\mathcal{H}_N(\upsilon_\lambda)$, precisamos notar que
+
+\[
+	\int V(x) d\upsilon_\lambda(x) = \frac{1}{N} \sum V(x) 
+\]
+
+e
+
+\[
+	\int \int_{x\neq y} \log{\frac{1}{|\lambda_i - \lambda_j|}}  d\upsilon_\lambda(x) d\upsilon_\lambda(y) = \frac{1}{N^2} \sum_{i \neq j} \log{\frac{1}{|\lambda_i - \lambda_j|}} 
+\]
+
+Unindo esses resultados,
+
+\begin{equation}
+	\mathcal{H}_N(\upsilon_\lambda) = 	\int \int_{x\neq y} \log{\frac{1}{|\lambda_i - \lambda_j|}}  d\upsilon_\lambda(x) d\upsilon_\lambda(y) + \frac{1}{N} \int \tilde{V}(x) d\upsilon_\lambda(x)
+	\label{eq::CoulombGas:: hamilton}
+\end{equation}
+
+O que acontece quando tratamos do limite termodinâmico? Ou seja, quando $N\to\infty$. Estaremos transicionando da nossa função $\upsilon_\lambda$ para uma densidade $\phi(x) dx$, ou seja,
+
+\[
+	\int f(x) d\upsilon_\lambda(x) =  \int f(x) \phi(x) dx
+\]
+
+Note que, para justificar isso, escrevemos
+
+\[
+	\int f(x) d\upsilon_\lambda(x) = \frac{1}{N} \sum_{i=1}^N f(\lambda_j)
+\]
+
+Mas é claro, nosso lambdas são desigualmente espaçados, definimos uma função ($\phi$) que mapeie pontos igualmente distribuídos nos nossos autovalores de forma que
+
+\[
+\frac{1}{N} \sum_{i=1}^N f(\lambda_j) = \frac{1}{N} \sum_{i=1}^N f(\Phi(x_j))
+\]
+
+Assim podemos retomar e escrever
+
+\[
+	\int f((\Phi(s)) ds = \int f(x) \frac{1}{\Phi'(\Phi^{-1}(x))} = \int f(x) (\Phi^{-1})'(x) dx =  \int f(x) \phi(x) dx= \int f(x) d\psi(x)
+\]
+
+Onde $\Phi(s) = x$, $ds = \frac{dx}{\Phi'(s)}$ e $\psi = \Phi^{-1}$. Em suma, podemos afirmar que nossa função converge para a densidade de forma
+
+\[
+\int f(x) d\upsilon_\lambda(x) =  \int f(x) \phi(x) dx
+\]
+
+Finalmente podemos pensar em minimizar nossa energia livre, ou equivalentemente minimizar o hamiltoniano. Note que pela equação \ref{eq::CoulombGas:: hamilton}, nosso potencial externo é limitado e deve ir à zero com o limite aplicado. Teremos uma situação sem equilíbrio!! Precisamos garantir um potencial $V(x) = N\tilde{V}(x)$. Nossa nova distribuição será
+
+\[
+	\frac{1}{\mathcal{\tilde{Z}_N}} e^{-N\Tr{(V(M))}} dM
+\]
+
+e equivalentemente,
+
+\[
+	\frac{1}{\mathcal{Z}_N} \prod_{i<j} (\lambda_i - \lambda_j)^2 \prod_{i=1}^{N} e^{-NV(\lambda_i)} d\lambda = 	\frac{1}{\mathcal{Z}_N}  e^{-N^2 \mathcal{H}_N(\lambda)}
+\]
+
+E finalmente poderemos expressar de forma correta
+
+\begin{equation}
+	\mathcal{H}_N(\upsilon_\lambda) \to \int \int_{x\neq y} \log{\frac{1}{|\lambda_i - \lambda_j|}}  d\phi(x) d\phi(y) dx dy + \int V(x) d\phi(x) dx \equiv E^V(\phi)
+	\label{eq::CoulombGas:: hamilton corrected}
+\end{equation}
+
+E $\phi(x)$ será aquela que minimize $E^V(\phi)$ que limita a energia livre discutida.

@@ -1,0 +1,37 @@
+Assim como na física, para determinar nossa distribuição, vamos precisar minimizar a energia livre do nosso ensemble. Recuperamos a noção da energia livre de Helmholtz e definimos
+\[
+F = -\frac{1}{k_b} \ln{(\mathcal{Z}_N)}.
+\]
+Teremos que os estados mais prováveis serão aqueles em que for maximizada a expressão
+\begin{equation}\
+	\exp{\left[-N^2 \left( \frac{1}{N^2}\sum_{i\neq j}\log{\frac{1}{|\lambda_i - \lambda_j|}} + \frac{1}{N^2} \sum_{i=1}^{N} \tilde{V}(\lambda_i)  \right)\right]},
+\end{equation}
+onde identificamos o Hamiltoniano e escrevemos $\exp{(-N^2\mathcal{\tilde{H}}_N(\lambda))}$. Precisamos minimizar o Hamiltoniano do sistema $\mathcal{\tilde{H}}_N(\lambda)$. Vamos introduzir uma função contagem para facilitar o tratamento do conjunto de pontos em $\mathbb{R}$. Definimos
+\begin{equation}
+	\upsilon_\lambda = \frac{1}{N} \sum_1^N \delta_{\lambda_i},
+\end{equation}
+de forma que
+\begin{equation}
+	\mathcal{H}_N(\upsilon_\lambda) = 	\int \int_{x\neq y} \log{\frac{1}{|\lambda_i - \lambda_j|}}  \upsilon_\lambda(x) \upsilon_\lambda(y) \dd x \dd y + \frac{1}{N} \int \tilde{V}(x) \upsilon_\lambda(x) \dd x.
+	\label{eq::CoulombGas:: hamilton}
+\end{equation}
+O que acontece quando tratamos do limite termodinâmico, nu seja, quando $N\to\infty$? Estaremos transicionando da nossa função $\upsilon_\lambda$ para uma densidade $\mu_V(x) \dd x$, ou seja,
+\[
+\int f(x) \upsilon_\lambda(x) \dd x =  \int f(x) \mu_V(x) \dd x.
+\]
+
+Precisamos garantir ainda um potencial $V(x) = 
+N\tilde{V}(x)$ para trabalharmos a assintótica e mantermos a integrabilidade. Escreve-se
+\[
+\frac{1}{\mathcal{Z}_N} \prod_{i<j} (\lambda_i - \lambda_j)^\beta \prod_{i=1}^{N} \ee^{-NV(\lambda_i)} \dd\lambda = 	\frac{1}{\mathcal{Z}_N}  \ee^{-N^2 \mathcal{H}_N(\lambda)},
+\]
+e, com essa mudança, $\mathcal{H}_N(\upsilon_\lambda)$ toma a forma
+\begin{equation}
+	\mathcal{H}_N(\upsilon_\lambda) = \int \int_{x\neq y} \log{\frac{1}{|\lambda_i - \lambda_j|}}  \dd\mu_V(\dd x) \mu_V(\dd y) + \int V(x) \mu_V(\dd x) \equiv \epsilon^V(\mu_V),
+\end{equation}
+onde $\mu_V(x)$ será medida de probabilidade não aleatória tal que na assintótica,
+\[
+\mu_V^* = \arg \inf {\epsilon^V(\mu_V)}.
+\]
+
+$\mu_V^*$ é chamada medida de equilíbrio.

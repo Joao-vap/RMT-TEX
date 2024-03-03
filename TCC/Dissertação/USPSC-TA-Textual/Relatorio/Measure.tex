@@ -1,0 +1,31 @@
+Consideremos inicialmente um espaço de matrizes com $N^2$ entradas independentes, sejam elas reais, complexas ou simpléticas. Nesse espaço, expressa-se a medida
+\begin{equation}
+	p(\hat{M}) \dd M = p(M_{1,1}, \dots, M_{N,N}) \prod_{i,j=1}^{N} \dd M_{i,j}.
+\end{equation}
+
+Contido neste espaço temos um espaço de maior interesse correspondente ao espaço das matrizes \textit{simétricas} ou \textit{hermitianas}. A escolha do subespaço está relacionada com o fato  de que essas matrizes são diagonalizáveis. Podemos escrever nossa matriz $\matriz{H}$ como 
+\[
+\matriz{H} = \matriz{U} \matriz{\Lambda} \matriz{U}^{-1}, \quad \matriz{\Lambda} = \diag(\lambda_1, \dots, \lambda_N), \quad \matriz{U}\cdot\matriz{U}^* = I,
+\]
+onde, claro, $\matriz{\Lambda}$ é matriz diagonal e $\matriz{U}$ é matriz unitária. Em geral, o conjunto de matrizes degeneradas tem medida nula e não é uma preocupação.  Um cuidado deve ser tomado. A correspondência $\matriz{H} \mapsto (\matriz{U} \ U(N), \matriz{\Lambda})$ não é injetora, podemos tomar $\matriz{U}_1 \matriz{\Lambda} \matriz{U}_1^{-1} = \matriz{U}_2 \matriz{\Lambda} \matriz{U}_2^{-1}$ se $\matriz{U}_1^{-1} \matriz{U}_2 = \diag(e^i\phi_1, \dots, e^i\phi_N)$ para qualquer escolha de fases $(\phi_1, \dots, \phi_N)$. Para restringir nosso problema e tornar a função injetiva será necessário considerar as matrizes unitárias no espaço de coset  $U(N) / U(1) \times \dots \times U(1)$.  Outra restrição necessária é ordenar os autovalores, ou seja, $\lambda_1 < \dots < \lambda_n$, isso deverá introduzir uma constante de normalização $N!$ à expressão.
+
+Podemos assim reescrever a medida $\dd\mu(\matriz{H})$ em função dos autovalores. Nesse subespaço escrevemos
+\[
+	p(M_{1,1}, \dots, M_{N,N}) \prod_{i<j} \dd M_{i,j} = p(\lambda_1, \dots, \lambda_N, \hat{U}) \dd U \prod_{i=1}^N \dd\lambda_{i},
+\]
+onde, é claro, sendo $J(\hat{M} \rightarrow {\lambda_i, U})$ o jacobiano da transformação expresso
+\[
+		p(M_{1,1}, \dots, M_{N,N}) J(\hat{M} \rightarrow {\lambda_i, U})= p(\lambda_1, \dots, \lambda_N, \hat{U}),
+\]
+podemos expressar, neste caso, o jacobiano como um determinante de Vandermonde
+\begin{equation}
+	J(\hat{M} \rightarrow \{\lambda_i, U\}) = \prod_{j>k} (\lambda_j - \lambda_{k})^\beta,
+\end{equation}
+onde $\beta > 0$ e depende da entradas da matriz. 
+
+Integra-se no espaço dos autovetores para obter a medida em termos dos autovalores. Isso nem sempre é simples ou possível. Por simplicidade temos ocultado a dependência das entradas que deveriam ser expressas $M_{i,j}(\lambda, U)$.  Para efeitos deste trabalho tomaremos \textit{ensembles} ortogonalmente invariantes, ou seja, tais que $M_{i,j}(\lambda)$, a dependência seja somente referente aos autovalores. Define-se o volume do espaço dos autovetores que nos dará uma constante na expressão. Definimos
+\begin{equation}
+	p(\hat{M}) \dd M =  \frac{1}{Z_N} p(\lambda_1, \dots, \lambda_N) \prod_{j>k} (\lambda_j - \lambda_{k})^\beta.
+\end{equation}
+
+Notemos um ponto importante. Ao restringir o espaço das matrizes para o espaço das hermitianas obtemos o determinante de Vandermonde. Este desempenha importante papel na caracterização da medida, note que agora, realizações com autovalores próximos são improváveis. Isso se expressa como uma repulsão de autovalores distintos quando introduzimos uma dinâmica.
