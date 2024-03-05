@@ -1,0 +1,46 @@
+\section{Introdução ao algoritmo}
+
+A ideia explorada é que $P_N$ é medida de probabilidade invariante reversível do processo de difusão de Markov $(X_t)_{t>0}$ solução de
+
+\[
+\dd X_t = -\alpha_N \nabla H_N(X_t) \dd t + \sqrt{2\frac{\alpha_N}{\beta_N} \dd B_t}.
+\]
+
+Sob algumas condições em $\beta_N$ e $V$, podemos afirmar que
+
+\[
+X_t \xrightarrow[t \rightarrow \infty]{Law} P_N.
+\]
+
+Discretizado, tomamos o processo
+
+\[
+x_{k+1} = x_k - \nabla H_N(x_k) \alpha_N \Delta t + \sqrt{2\frac{\alpha_N}{\beta_N} \Delta t} G_k,
+\]
+onde $G_k$ é a família de variáveis gaussianas usuais. Uma forma de contornar o viés embutido é amenizar a dinâmica com a forma
+
+\[
+x_{k+1} = x_k - \frac{\nabla H_N(x_k) \alpha_N \Delta t}{1 + |\nabla H_N(x_k)| \alpha_N \Delta t} + \sqrt{2\frac{\alpha_N}{\beta_N} \Delta t} G_k.
+\]
+Ainda assim, precisamos otimizar o processo. A ideia do algoritmo de Metropolis é adicionar um processo de seleção para evitar passos irrelevantes, algo do tipo:
+
+\begin{itemize}
+	\item defina $\tilde{x}_{k+1}$ de acordo com o kernel $K(x_k, \cdot)$ gaussiano;
+	
+	\item defina $p_k$
+	
+	\[
+	p_k = 1 \wedge \frac{K(\tilde{x}_{k+1},x_k) e^{\beta_N H_N(\tilde{x}_{k+1})}}{K(x_{k},\tilde{x}_{k+1}) e^{\beta_N H_N(\tilde{x}_{k})}};
+	\]
+	
+	\item defina
+	
+	\[
+	x_{k+1} = 
+	\begin{cases}
+		\tilde{x}_{k+1} & \quad \text{com probabilidade} \ \ p_k,\\
+		x_k &  \quad \text{com probabilidade} \ \ 1-p_k.
+	\end{cases}
+	\]
+	
+\end{itemize}

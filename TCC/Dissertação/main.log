@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.23)  2 MAR 2024 18:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.23)  4 MAR 2024 11:24
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
-**USPSC-TCC-modelo.tex
-(./USPSC-TCC-modelo.tex
+**main.tex
+(./main.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (./USPSC-classe/USPSC.cls
 Document Class: USPSC-classe/USPSC 01/06/2021 v3.1 USPSC
@@ -1359,42 +1359,57 @@ Package: ABNT6023-2018
 )
 
 LaTeX Warning: \include should only be used after \begin{document} on input lin
-e 152.
+e 123.
 
 (./USPSC-TCC-pre-textual-IFSC.tex)
-Package hyperref Info: Option `colorlinks' set `true' on input line 184.
-\USPSC-TCC-modelo@idxfile=\write5
-\openout5 = `USPSC-TCC-modelo.idx'.
+Package hyperref Info: Option `colorlinks' set `true' on input line 151.
+\main@idxfile=\write5
+\openout5 = `main.idx'.
 
 
-Writing index file USPSC-TCC-modelo.idx 
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 20
+Writing index file main.idx 
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 21
 5.
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) (./USPSC-TCC-modelo.aux
+) (./main.aux
 (./USPSC-TA-PreTextual/USPSC-fichacatalografica.aux)
-(./USPSC-TA-PreTextual/USPSC-Resumo.aux))
-\openout1 = `USPSC-TCC-modelo.aux'.
+(./USPSC-TA-PreTextual/USPSC-Resumo.aux)
+(./USPSC-TA-Textual/C1-Introducao/C1-Introducao.aux)
+(./USPSC-TA-Textual/C1-Introducao/DistAutovalores.aux)
+(./USPSC-TA-Textual/C1-Introducao/EmsemblesGaussianos.aux)
+(./USPSC-TA-Textual/C1-Introducao/GasesDeCoulomb.aux)
+(./USPSC-TA-Textual/C1-Introducao/MedidaDeEquilibrio.aux)
+(./USPSC-TA-Textual/C1-Introducao/PotenciaisNotaveis.aux)
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.aux)
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/IntroducaoAoAlgoritmo.aux)
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/AlgoritmoHibridoMonteCarlo.aux)
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/Discretizacao.aux)
+(./USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.aux
+) (./USPSC-TA-Textual/C3-ImplementacaoEResultados/Implementacao.aux)
+(./USPSC-TA-Textual/C3-ImplementacaoEResultados/ValidacaoDistsConhecidas.aux)
+(./USPSC-TA-Textual/C3-ImplementacaoEResultados/OutrosPotenciais.aux)
+(./USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.aux))
+\openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 205.
-LaTeX Font Info:    ... okay on input line 205.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 205.
-LaTeX Font Info:    ... okay on input line 205.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 205.
-LaTeX Font Info:    ... okay on input line 205.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 205.
-LaTeX Font Info:    ... okay on input line 205.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 205.
-LaTeX Font Info:    ... okay on input line 205.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 205.
-LaTeX Font Info:    ... okay on input line 205.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 205.
-LaTeX Font Info:    ... okay on input line 205.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 205.
-LaTeX Font Info:    ... okay on input line 205.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 205.
-LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1418,7 +1433,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 205.
+Package hyperref Info: Link coloring ON on input line 215.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1433,29 +1448,29 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 205.
-LaTeX Info: Redefining \ref on input line 205.
-LaTeX Info: Redefining \pageref on input line 205.
-LaTeX Info: Redefining \nameref on input line 205.
-LaTeX Info: Redefining \degres on input line 205.
-LaTeX Info: Redefining \up on input line 205.
+LaTeX Info: Redefining \nameref on input line 215.
+LaTeX Info: Redefining \ref on input line 215.
+LaTeX Info: Redefining \pageref on input line 215.
+LaTeX Info: Redefining \nameref on input line 215.
+LaTeX Info: Redefining \degres on input line 215.
+LaTeX Info: Redefining \up on input line 215.
 \myptabbox=\box129
 \myptabboxwidth=\skip277
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 205.
-LaTeX Info: Redefining \microtypecontext on input line 205.
-Package microtype Info: Applying patch `item' on input line 205.
-Package microtype Info: Applying patch `toc' on input line 205.
-Package microtype Info: Applying patch `eqnum' on input line 205.
-Package microtype Info: Applying patch `footnote' on input line 205.
+(lastpage)             ! on input line 215.
+LaTeX Info: Redefining \microtypecontext on input line 215.
+Package microtype Info: Applying patch `item' on input line 215.
+Package microtype Info: Applying patch `toc' on input line 215.
+Package microtype Info: Applying patch `eqnum' on input line 215.
+Package microtype Info: Applying patch `footnote' on input line 215.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 205.
+LaTeX Info: Redefining \showhyphens on input line 215.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1474,7 +1489,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
-31.
+41.
 
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1488,54 +1503,54 @@ Package microtype Info: Loading generic protrusion settings for font family
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
-Underfull \hbox (badness 2865) in paragraph at lines 247--247
+Underfull \hbox (badness 2865) in paragraph at lines 257--257
 \T1/lmr/m/n/12 (+20) ao Programa de Graduação em Física
  []
 
 
-Underfull \hbox (badness 3240) in paragraph at lines 247--247
+Underfull \hbox (badness 3240) in paragraph at lines 257--257
 \T1/lmr/m/n/12 (+20) do Instituto de Física de São Carlos,
  []
 
 
-Underfull \hbox (badness 1769) in paragraph at lines 247--247
+Underfull \hbox (badness 1769) in paragraph at lines 257--257
 \T1/lmr/m/n/12 (+20) da Universidade de São Paulo, para a
  []
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-47.
+57.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-47.
+57.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-247.
+257.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-247.
+257.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 247.
+(Font)              <12> on input line 257.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 247.
+(Font)              <8> on input line 257.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 247.
+(Font)              <6> on input line 257.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.247 
+l.257 
        [1
 
 
@@ -1555,7 +1570,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.254 ...C-TA-PreTextual/USPSC-fichacatalografica}
+l.264 ...C-TA-PreTextual/USPSC-fichacatalografica}
                                                    [2
 
 ]
@@ -1568,13 +1583,157 @@ l.254 ...C-TA-PreTextual/USPSC-fichacatalografica}
 
 ] [4
 
-]) (./USPSC-TCC-modelo.toc)
-[5
+]) (./main.toc) [5
 
 
 ] [6
 
-] (./USPSC-TCC-modelo.bbl
+]
+\openout2 = `USPSC-TA-Textual/C1-Introducao/C1-Introducao.aux'.
+
+
+(./USPSC-TA-Textual/C1-Introducao/C1-Introducao.tex) [7
+
+
+] [8
+
+
+]
+\openout2 = `USPSC-TA-Textual/C1-Introducao/DistAutovalores.aux'.
+
+
+(./USPSC-TA-Textual/C1-Introducao/DistAutovalores.tex) [9
+
+
+
+]
+\openout2 = `USPSC-TA-Textual/C1-Introducao/EmsemblesGaussianos.aux'.
+
+
+(./USPSC-TA-Textual/C1-Introducao/EmsemblesGaussianos.tex) [10
+
+
+
+]
+\openout2 = `USPSC-TA-Textual/C1-Introducao/GasesDeCoulomb.aux'.
+
+
+(./USPSC-TA-Textual/C1-Introducao/GasesDeCoulomb.tex) [11
+
+
+
+]
+\openout2 = `USPSC-TA-Textual/C1-Introducao/MedidaDeEquilibrio.aux'.
+
+
+(./USPSC-TA-Textual/C1-Introducao/MedidaDeEquilibrio.tex) [12
+
+
+
+]
+\openout2 = `USPSC-TA-Textual/C1-Introducao/PotenciaisNotaveis.aux'.
+
+
+(./USPSC-TA-Textual/C1-Introducao/PotenciaisNotaveis.tex)
+\openout2 = `USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos
+.aux'.
+
+
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.tex
+
+LaTeX Warning: Citation `Chafa__2018' on page 13 undefined on input line 3.
+
+LaTeX Font Info:    Trying to load font information for U+bbold on input line 3
+.
+(/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd) [13
+
+
+
+
+
+]) [14]
+\openout2 = `USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/IntroducaoAoAlgoritmo.au
+x'.
+
+
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/IntroducaoAoAlgoritmo.tex
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+8.
+
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)) [15
+
+
+
+]
+\openout2 = `USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/AlgoritmoHibridoMonteCar
+lo.aux'.
+
+
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/AlgoritmoHibridoMonteCarlo.tex)
+[16
+
+
+
+]
+\openout2 = `USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/Discretizacao.aux'.
+
+ (./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/Discretizacao.tex) [17
+
+
+
+]
+\openout2 = `USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResu
+ltados.aux'.
+
+
+(./USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.tex
+[18
+
+
+
+
+]) [19] [20
+
+
+]
+\openout2 = `USPSC-TA-Textual/C3-ImplementacaoEResultados/Implementacao.aux'.
+
+
+(./USPSC-TA-Textual/C3-ImplementacaoEResultados/Implementacao.tex) [21
+
+
+
+]
+\openout2 = `USPSC-TA-Textual/C3-ImplementacaoEResultados/ValidacaoDistsConheci
+das.aux'.
+
+
+(./USPSC-TA-Textual/C3-ImplementacaoEResultados/ValidacaoDistsConhecidas.tex)
+[22
+
+
+
+]
+\openout2 = `USPSC-TA-Textual/C3-ImplementacaoEResultados/OutrosPotenciais.aux'
+.
+
+ (./USPSC-TA-Textual/C3-ImplementacaoEResultados/OutrosPotenciais.tex)
+\openout2 = `USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.aux'.
+
+
+(./USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.tex) [23
+
+
+
+
+
+] (./main.bbl [24
+
+
+
+]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\uppercase' on input line 3.
@@ -1585,31 +1744,58 @@ LaTeX Warning: Empty `thebibliography' environment on input line 8.
 
 ) 
 AED: lastpage setting LastPage
-[7
-
-]
+[25]
 \tf@toc=\write6
-\openout6 = `USPSC-TCC-modelo.toc'.
+\openout6 = `main.toc'.
 
- (./USPSC-TCC-modelo.aux (./USPSC-TA-PreTextual/USPSC-fichacatalografica.aux) (
-./USPSC-TA-PreTextual/USPSC-Resumo.aux)) ) 
+ (./main.aux (./USPSC-TA-PreTextual/USPSC-fichacatalografica.aux)
+(./USPSC-TA-PreTextual/USPSC-Resumo.aux)
+(./USPSC-TA-Textual/C1-Introducao/C1-Introducao.aux)
+(./USPSC-TA-Textual/C1-Introducao/DistAutovalores.aux)
+(./USPSC-TA-Textual/C1-Introducao/EmsemblesGaussianos.aux)
+(./USPSC-TA-Textual/C1-Introducao/GasesDeCoulomb.aux)
+(./USPSC-TA-Textual/C1-Introducao/MedidaDeEquilibrio.aux)
+(./USPSC-TA-Textual/C1-Introducao/PotenciaisNotaveis.aux)
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.aux)
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/IntroducaoAoAlgoritmo.aux)
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/AlgoritmoHibridoMonteCarlo.aux)
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/Discretizacao.aux)
+(./USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.aux
+) (./USPSC-TA-Textual/C3-ImplementacaoEResultados/Implementacao.aux)
+(./USPSC-TA-Textual/C3-ImplementacaoEResultados/ValidacaoDistsConhecidas.aux)
+(./USPSC-TA-Textual/C3-ImplementacaoEResultados/OutrosPotenciais.aux)
+(./USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.aux))
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 33039 strings out of 478287
- 597375 string characters out of 5849288
- 1035445 words of memory out of 5000000
- 50539 multiletter control sequences out of 15000+600000
- 518597 words of font info for 97 fonts, out of 8000000 for 9000
+ 33656 strings out of 478287
+ 630302 string characters out of 5849288
+ 1057796 words of memory out of 5000000
+ 50958 multiletter control sequences out of 15000+600000
+ 526964 words of font info for 120 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,93p,2554b,524s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/
-lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/
-fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmssbx10.pfb>
-Output written on USPSC-TCC-modelo.pdf (9 pages, 157980 bytes).
+ 84i,13n,93p,1001b,524s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
+vips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/
+share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/l
+m-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texlive
+/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texmf/fonts/
+type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmsy8.pfb>
+Output written on main.pdf (27 pages, 289692 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 500000)
- 28717 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 349 PDF objects out of 1000 (max. 8388607)
+ 283 compressed objects within 3 object streams
+ 58 named destinations out of 1000 (max. 500000)
+ 35005 words of extra memory for PDF output out of 35830 (max. 10000000)
 

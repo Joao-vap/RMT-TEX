@@ -1,9 +1,10 @@
 This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: USPSC-TCC-modelo.aux
+The top-level auxiliary file: main.aux
 The style file: USPSC-classe/abntex2-num-USPSC.bst
 A level-1 auxiliary file: USPSC-TA-PreTextual/USPSC-fichacatalografica.aux
 A level-1 auxiliary file: USPSC-TA-PreTextual/USPSC-Resumo.aux
+A level-1 auxiliary file: USPSC-TA-Textual/Relatorio/Relatorio.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -27,7 +28,7 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 +---------------------------------------------------------+
 You've used 11 entries,
             6714 wiz_defined-function locations,
-            1210 strings with 9736 characters,
+            1211 strings with 9752 characters,
 and the built_in function-call counts, 3247 in all, are:
 = -- 310
 > -- 1

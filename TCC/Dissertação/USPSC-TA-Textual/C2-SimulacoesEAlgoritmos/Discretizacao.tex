@@ -1,0 +1,37 @@
+\section{Discretização}
+
+Descrevemos agora o algoritmo discretizado. Inicie de uma configuração $(x_0, y_0)$ e para todo $k \geq 0$ faça
+
+\begin{enumerate}
+	\item atualize as velocidades com
+	
+	\[
+	\tilde{y}_k = \eta y_k + \sqrt{\frac{1-\eta^2}{\beta_N}} G_k, \ \eta = \ee^{-\gamma_N \alpha_N \Delta t};
+	\]
+	
+	\item calcule os termos
+	\[
+	\begin{cases}
+		\tilde{y}_{k+\frac{1}{2}} = \tilde{y}_k - \nabla H_N(x_k) \alpha_N \frac{\Delta t}{2}, \\
+		\tilde{x}_{k+1} = x_k + \tilde{y}_{k + \frac{1}{2}} \alpha_N \Delta t, \\
+		\tilde{y}_{k+1} = \tilde{y}_{k+\frac{1}{2}} - \nabla H_N(x_{k+1}) \alpha_N \frac{\Delta t}{2};
+	\end{cases}
+	\]
+	
+	\item definir $p_k$
+	
+	\[
+	p_k = 1 \wedge \exp{\left[ -\beta_N \left(  H_N(\tilde{x}_{k+1}) + \frac{\tilde{y}^2_{k+1}}{2} - H_N(x_k) - \frac{\tilde{y}^2_k}{2} \right)\right] };
+	\]
+	
+	\item defina
+	
+	\[
+	(x_{k+1}, y_{k+1}) = 
+	\begin{cases}
+		(\tilde{x}_{k+1}, \tilde{y}_{k+1}) \ \text{com probabilidade} \ p_k, \\
+		(x_k, -\tilde{y}_{k}) \ \text{com probabilidade} \ 1-p_k; \\
+	\end{cases}
+	\]
+	
+\end{enumerate}

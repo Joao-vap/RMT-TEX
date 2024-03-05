@@ -1,4 +1,4 @@
-%% USPSC-TCC-modelo.tex
+%% main.tex <- USPSC-TCC-modelo.tex
 % ---------------------------------------------------------------
 % USPSC: Modelo de Trabalho Academico (tese de doutorado, dissertacao de
 % mestrado e trabalhos monograficos em geral) em conformidade com 
@@ -42,9 +42,8 @@
 % -- opções da classe memoir --
 12pt,		% tamanho da fonte
 openright,	% capítulos começam em pág ímpar (insere página vazia caso preciso)
-twoside,  % para impressão em anverso (frente) e verso. Oposto a oneside - Nota: utilizar \imprimirfolhaderosto*
-%oneside, % para impressão em páginas separadas (somente anverso) -  Nota: utilizar \imprimirfolhaderosto
-% inclua uma % antes do comando twoside e exclua a % antes do oneside 
+twoside,  % para impressão em anverso (frente) e verso. Oposto a oneside
+%oneside, % para impressão em páginas separadas (somente anverso)
 a4paper,			% tamanho do papel. 
 % -- opções da classe abntex2 --
 chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
@@ -86,38 +85,13 @@ brazil				% o último idioma é o principal do documento
 \usepackage{eso-pic}           % Pacote para incluir imagem de fundo
 \usepackage{makebox}  
 \usepackage{amsmath}
-% Pacote para criar caixa de texto
-% ---
-
-% ---
-% Pacotes de citações
-% Citações padrão ABNT
-% ---
-% Sistemas de chamada: numérico.
-
-% Sistema Numérico
-% Para citações numéricas, sistema adotado pelo IFSC, incluir % no início dos comandos acima e retirar a % dos comandos abaixo 
-\usepackage[superscript]{cite}              % agrupa citações numéricas consecutivas
+\usepackage[superscript]{cite} % agrupa citações numéricas consecutivas
 \usepackage[num, abnt-emphasize=bf, abnt-thesis-year=both, abnt-repeated-author-omit=no, abnt-last-names=abnt, abnt-etal-cite, abnt-etal-list=3, abnt-etal-text=it, abnt-and-type=e, abnt-doi=doi, abnt-url-package=none, abnt-verbatim-entry=no]{abntex2cite} 
 \bibliographystyle{USPSC-classe/abntex2-num-USPSC}
-
-% Complementarmente, verifique as instruções abaixo sobre os Pacotes de Nota de rodapé
-% ---
-% Pacotes de Nota de rodapé
-% Configurações de nota de rodapé
-
-% O presente modelo adota o formato numérico para as notas de rodapés quando utiliza o sistema de chamada autor-data para citações e referências. Para utilizar o sistema de chamada numérico para citações e referências, habilitar um dos comandos abaixo.
-% Há diversa opções para nota de rodapé no Sistema Numérico.  Para o IFSC, habilitade o comando abaixo.
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}  %Comando para inserção de símbolos em nota de rodapé
 
 \renewcommand{\footnotesize}{\small} %Comando para diminuir a fonte das notas de rodapé
-
-% ---
-% Pacote para agrupar a citação numérica consecutiva
-% Quando for adotado o Sistema Numérico, a exemplo do IFSC, habilite 
-% o pacote cite abaixo retirando a porcentagem antes do comando abaixo
-%\usepackage[superscript]{cite}	
 
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
@@ -146,19 +120,12 @@ brazil				% o último idioma é o principal do documento
 
 % ---
 % DADOS INICIAIS - Define sigla com título, área de concentração e opção do Programa 
-% Consulte a tabela referente aos Programas, áreas e opções de sua unidade contante do
-% arquivo USPSC-Siglas estabelecidas para os Programas de Pós-Graduação por Unidade.xlsx 
-% ou nos APÊNDICES A-F
 \siglaunidade{IFSC-TCC}
 \programa{BFCp}
-% Os demais dados deverão ser fornecidos no arquivo USPSC-pre-textual-UUUU ou USPSC-TCC-pre-textual-UUUU, onde UUUU é a sigla da Unidade. 
-% Exemplo:USPSC-pre-textual-IFSC.tex
-% ---'
+
 % Configurações de aparência do PDF final
 % alterando o aspecto da cor azul
 \definecolor{blue}{RGB}{41,5,195}
-
-
 
 
 % informações do PDF
@@ -198,6 +165,49 @@ brazil				% o último idioma é o principal do documento
 % compila o sumário e índice
 \makeindex
 % ---
+
+% ----------------
+
+\newcommand{\matriz}[1]{\hat#1}
+
+\newcommand{\many}[2]{$#1_1, #1_2, \dots, #1_#2$}
+
+\newcommand{\cmany}[3]{$#1_1 #3 #1_2 #3 \dots #3 #1_#2$}
+
+\newcommand{\mmany}[2]{#1_1, #1_2, \dots, #1_#2}
+
+\newcommand{\mcmany}[3]{#1_1 #3 #1_2 #3 \dots #3 #1_#2}
+
+\newcommand{\set}[1]{\{#1\}}
+
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\ai}{Ai}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\ee}{\textrm e}
+\DeclareMathOperator{\supp}{supp}
+\renewcommand{\Re}{\mathop{\textrm Re}}
+\newcommand{\res}{\mathop{\textrm Res}}
+\renewcommand{\Im}{\mathop{\textrm Im}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\boh}{\mathit{o}}
+\newcommand{\Boh}{\mathcal{O}}
+\newcommand{\bbp}{\bm K_{\mathrm{BBP}}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand*{\deff}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+			\hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+	=}
+\newcommand*{\revdeff}{=\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+			\hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+}
+
+%-----------
 
 % ----
 % Início do documento
@@ -359,23 +369,97 @@ brazil				% o último idioma é o principal do documento
 \textual
 % Os capítulos são inseridos como arquivos externos 
 
+% ---
 % Capítulo 1 - Introdução
-
-% ---
-% Capítulo 2
 % ---
 
-%\include{USPSC-TA-Textual/Capitulo1}
+\include{USPSC-TA-Textual/C1-Introducao/C1-Introducao}
 
-%\include{USPSC-TA-Textual/Capitulo2}
+% -
+% C1S1 - Distribuição de autovalores
+% - 
+\section{Distribuição de autovalores}
+\include{USPSC-TA-Textual/C1-Introducao/DistAutovalores.tex}
 
-%\include{USPSC-TA-Textual/Capitulo3}
+% -
+% C1S2 - Emsembles Gaussianos
+% - 
+\section{Emsembles Gaussianos}
+\include{USPSC-TA-Textual/C1-Introducao/EmsemblesGaussianos.tex}
+
+% -
+% C1S3 - Gases de Coulomb (Log Gas?)
+% - 
+\section{Gases de Coulomb}
+\include{USPSC-TA-Textual/C1-Introducao/GasesDeCoulomb.tex}
+
+% -
+% C1S4 - Medidas de Equilíbrio
+% - 
+\section{Medidas de Equilíbrio}
+\include{USPSC-TA-Textual/C1-Introducao/MedidaDeEquilibrio.tex}
+
+% -
+% C1S5 - Potenciais notáveis
+% - 
+\section{Potenciais notáveis}
+\include{USPSC-TA-Textual/C1-Introducao/PotenciaisNotaveis.tex}
+
 % ---
-%\include{USPSC-TA-Textual/Capitulo4}
+% Capítulo 2 - Simulações e Algoritmos
+% ---
 
-%\include{USPSC-TA-Textual/Capitulo5}
+\include{USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.tex}
 
-%\include{USPSC-TA-Textual/Conclusao}
+% -
+% C1S1 - Introdução ao algoritmo
+% - 
+
+\include{USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/IntroducaoAoAlgoritmo.tex}
+
+% -
+% C1S2 - Algoritmo Híbrido de Monte Carlo
+% - 
+
+\include{USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/AlgoritmoHibridoMonteCarlo.tex}
+
+% -
+% C1S3 - Discretização
+% - 
+
+\include{USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/Discretizacao.tex}
+
+% ---
+% Capítulo 3 -Implementação e Resultados
+% ---
+
+\include{USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.tex}
+
+% -
+% C3S1 - A implementação
+% - 
+\section{A implementação}
+\include{USPSC-TA-Textual/C3-ImplementacaoEResultados/Implementacao.tex}
+
+% -
+% C3S2 - Validação em distribuições conhecidas
+% - 
+\section{Validação em distribuições conhecidas}
+\include{USPSC-TA-Textual/C3-ImplementacaoEResultados/ValidacaoDistsConhecidas.tex}
+
+% -
+% C3S3 - Outros Potenciais?
+% - 
+\section{Outros Potenciais}
+\include{USPSC-TA-Textual/C3-ImplementacaoEResultados/OutrosPotenciais.tex}
+
+% ---
+% Capítulo 4 - Conclusão
+% ---
+
+\include{USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.tex}
+
+
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
 % ----------------------------------------------------------
