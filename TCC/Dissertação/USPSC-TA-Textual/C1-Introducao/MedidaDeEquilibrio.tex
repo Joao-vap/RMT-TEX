@@ -1,0 +1,35 @@
+\section{Medidas de Equilíbrio}
+
+O conjunto de pontos do espaço de fase, seus microestados, determinam um \textit{ensemble estatístico}\footnote{O nome 'Ensembles de Matrizes' não é coincidência.}. Não é difícil notar que o conjunto de microestados $\{\vec{\lambda}\}$ do sistema de $N$ autovalores descrito nesse trabalho caracteriza o ensemble canônico, com função partição $Z_{N, \beta}$, soma sobre os estados do sistema. Um argumento termodinâmico nos indica então que devemos minimizar a energia livre de Helmholtz $$F = -\frac{1}{\beta} \log{Z_{N, \beta}}.$$ 
+
+Para todos os efeitos, consideraremos $\V, \ \g$ e $\beta$ tais que dada $\mu_{V,g}(\vec{\lambda})$ medida de probabilidade em $\Omega$, espaço das possíveis configurações de autovalores, e maximizada a função partição $Z_{N, \beta} = \int_{\Omega} \exp{-\beta \mathcal{H}_N(\vec{\lambda})}$, exista\footnote{Condições de Fisher} $$\mu_{V,g}^* = \arg \inf {\mathcal{H}_N(\vec{\lambda})}$$ medida de equilíbrio no limite termodinâmico $N, V \rightarrow \infty$ tal que $v = V/N$ constante. Para determinar a medida de equilíbrio \cite{RMT-firstcourse-Potters} de \ref{Equação: Medida Gas de Coulomb} com interação logarítmica, queremos satisfazer o sistema de equações
+
+\begin{equation}
+	\frac{\partial \mathcal{H}}{\partial \lambda_i} = 0 \ \implies \ \V'(\lambda_i) = \frac{1}{N} \sum_{1 = j \neq i}^{N} \frac{1}{\lambda_i - \lambda_j} \ \ \text{para} \ i = 1, \cdots, N.
+	\label{Equação: Sistema minimizante}
+\end{equation} 
+
+\noindent Usaremos o denominado \textit{resolvent}. Considere a função complexa\footnote{Stieltjes transform} $$G_N(z) = \frac{1}{N} \Tr{\left(z\Id - \matriz{M}\right)^{-1}} = \frac{1}{N} \sum_{i=1}^{N} \frac{1}{z - \lambda_i},$$ onde $\matriz{M}$ é matriz aleatória com autovalores $\{\mmany{\lambda}{N}\}$. Note que $G_N(z)$ é uma função complexa aleatória com polos em $\lambda_i$. Não trivialmente, podemos reescrever \ref{Equação: Sistema minimizante} como $$\V'(z) G_N(z) - \Pi_N(z) = \frac{G_N^2(z)}{2} + \frac{G'_N(z)}{2N},$$ onde $\Pi_N(z) = \frac{1}{N} \sum_{i = 1}^{N} \frac{\V'(z) - \V'(\lambda_i)}{z - \lambda_i}$ é um polinômio de grau $k - 1 = \deg{\V'(z)} - 1$. 
+
+Poderíamos tentar resolver explicitamente essa formula para qualquer $N$, isso é possível em alguns casos. Contudo, em geral, estaremos interessados em tirar o limite $N \to \infty$, de $<G_N(z)>$, média sobre a distribuição de $\matriz{M}$. Esta média, denomina-se \textit{resolvent}. Nesse limite,
+
+\begin{equation}
+	G^{(med)}_{\infty}(z) = \frac{1}{2} \left( \V'(z) \pm \sqrt{\V'(z)^2 - 2 \Pi_{\infty}(z) }\right).
+	\label{Equation: Resolvent}
+\end{equation}
+
+\noindent Como consequência da fórmula de Sokhotski-Plemeji, é enunciado o resultado 
+
+\begin{equation}
+	\p(x) = \frac{1}{\pi} \lim_{\epsilon \to 0^+} \Im{G_{\infty}^{(med)}(x - \iu\epsilon)}.
+	\label{Equation: p(lambda)}
+\end{equation}
+
+Podemos ir um passo além, desde que o potencial $\V(x)$ seja convexo. Neste caso, teremos uma medida de equilíbrio $\p(x)$ não nula apenas no intervalo $(\lambda_{-}, \lambda_{+})$ tal que $$G_{\infty}^{(med)}(z) = \int_{\lambda_{-}}^{\lambda_{+}} \frac{\p(\lambda)}{z - \lambda} d\lambda.$$ Sabemos que o comportamento não analítico deve surgir da raiz quadrada, tal que se definirmos $\Df(z) := \V'(z)^2 - 2 \Pi_{\infty}(z)$ polinômio de grau $2k$, $\{\lambda_{-}, \lambda_{+}\}$ são suas raízes e o polinômio tem valor negativo em algum intervalo. Equivalentemente $$D(z) = (z-\lambda_{-})(z - \lambda_{+}) \Qf^2(z),$$ onde $\Qf(z)$ é polinômio de grau $k-1$. Com essas definições podemos escrever que $$G_{\infty}^{(med)}(z) = \frac{\V(z) \pm \Qf(z) \sqrt{(z - \lambda_{-})(z - \lambda_{+})}}{2}$$ e, principalmente, por \ref{Equation: p(lambda)},
+\begin{equation}
+	\p(x) =\frac{\Qf(x)}{2\pi} \sqrt{(\lambda_{+} - x)(x - \lambda_{-})}, \ \ \text{para} \ \  \lambda_{-} \leq \lambda \leq \lambda_{+}
+\end{equation}
+
+Restaria, para cada potencial, dada a condição que $G_{\infty}^{(med)}(z) \sim 1/z$ para $z \rightarrow \infty$, resolver um sistema de $k+2$ equações balanceando os coeficientes dos polinômios $\V'$ e $\Qf$ e os valores $\{\lambda_{-}, \lambda_{+}\}$.
+
+

@@ -1,0 +1,101 @@
+\section{Potenciais notáveis}
+
+Consideraremos a mudança de variável $\V(x) \mapsto \beta N \V(x)$ tal que possamos escrever $\p(\{ \lambda_i\}) \propto \ee^{-\beta N \mathcal{H}_N(\{ \lambda_i\})}$ com $$\mathcal{H}_N(\{ \lambda_i\}) = \sum_{i = 1}^{N} V(x) + \frac{1}{2N} \sum_{i \neq j} \log{|\lambda_i - \lambda_j|}.$$ Com essa mudança, consideremos os seguintes potencias.
+
+
+%Um resultado importante enuncia \cite{deiftorthogonal}:
+
+%\begin{thm}
+%	Para $V(x) = t x^{2m}$ com $t>0$, vale que $$ \p_V(x) = - \frac{m t}{\pi} \sqrt{x^2 - a^2} + h(x) $$ no suporte $\supp(-a, a)$. Onde, $$ a = \left( mt \prod_{l=1}^{m} \frac{2l - 1}{2l} \right)$$ e $$h(x) = x^{2m-2} + \sum_{j=1}^{m-1} x^{2m - 2 - 2j} a^{2j} \prod_{l=1}^{j}.$$
+%	\label{Teorema: Medida V(x)}
+%\end{thm}
+
+
+\subsection{Potenciais Quadráticos}
+
+O caso de potencial quadrático $$V(x) = \frac{x^2}{2}$$ descreve o caso dos ensembles gaussianos, onde é fácil determinar que $$V'(z) = z \ \implies \ \Pi(z) = 1$$ e, por isso, 
+
+% $$\mathcal{H}(\vec{\lambda}) = \frac{1}{2}\sum_{i = 1}^{N} \lambda_i^2 - \frac{1}{2N}\sum_{i \neq j} \log{|\lambda_i - \lambda_j|}.$$ É fácil determinar que $$V'(z) = z \ \implies \ \Pi(z) = 1$$ e, por isso, 
+%Note o fator $N\beta$. Tomaremos, eventualmente, $N$ suficientemente grande para notar efeitos assintóticos em N. Com isso, estaremos explorando o limite de temperatura zero. Minimizemos $\mathcal{H}(\vec{\lambda})$\footnote{Seguindo passos de \cite{IntroRM}}. Para cada $\lambda_i$, escrevemos
+
+%\begin{equation}
+%	\frac{\partial \mathcal{H}(\vec{\lambda})}{\partial \lambda_i} = 0 \implies \lambda_i = \frac{1}{N} \sum_{i \neq j} \frac{1}{\lambda_i - \lambda_j}.
+%	\label{Equation: Saddle}
+%\end{equation}
+
+%\noindent Multiplicando \ref{Equation: Saddle} por  $1/(N (z - \lambda_i))$, onde $z \in \C \setminus \{\lambda_i\}$ e somando sobre todos autovalores, teremos
+
+%\begin{equation*}
+%	\frac{1}{N} \sum_{i=1}^{N} \frac{\lambda_i}{z - \lambda_i} = \frac{1}{N} \sum_{i=1}^{N} \sum_{i \neq j} \frac{1}{\lambda_i - \lambda_j} \frac{1}{N(z - \lambda_i)}.
+%	\label{Equation: Post-Saddle}
+%\end{equation*}
+
+%\noindent é possível reescrever ainda (não trivialmente) a expressão \ref{Equation: Post-Saddle} retomando a definição \ref{Equation: def G}. Ficaremos com:
+
+%\begin{equation}
+%	\frac{1}{2} G_N^2(z) + \frac{1}{2N} G_N'(z) = -1 + z G_N(z)
+%	\label{Equation: S1 G(z)}
+%\end{equation}
+
+%Temos uma equação diferencial nas mãos. Contudo, o termo em \ref{Equation: S1 G(z)} com a derivada está sendo dividido por $N$. Lembremos que, pela ordem de $\lambda_i$ devemos ter também que $G_N(z)$ tem ordem $\Boh(1)$. Logo, sua derivada divida por $N$ não terá a ordem dominante. Naturalmente, quando tomamos o limite $N \rightarrow \infty$ ficaremos com $${G_{\infty}^{(med)}}^2 (z) - 2z G_{\infty}^{(med)}(z) + 2 = 0.$$ Equação algébrica que pode ser resolvida diretamente, resultando
+
+\begin{equation}
+	G_{\infty}^{(med)}(z) = z \pm \sqrt{z^2 - 2}
+	\label{Equation: G gauss}.
+\end{equation}
+
+Nosso problema chega ao fim pois definimos o \textit{resolvent}. Resta agora invocar a Equação \ref{Equation: p(lambda)} utilizando de \ref{Equation: G gauss} para descobrir que
+
+\begin{equation*}
+	\p(x) = \pm \frac{\sign(-x)}{\pi \sqrt{2}} \sqrt{|x^2 - 2| - x^2 + 2}.
+\end{equation*}
+
+\noindent Ou ainda, no suporte $\supp(-\sqrt{2}, \sqrt{2})$,
+
+\begin{equation}
+	\p(x) = \frac{1}{\pi} \sqrt{2 - x^2}.
+\end{equation}
+
+Esse resultado é bem conhecido e a medida encontrada denominada Semi-Círculo de Wigner. Note que isso vale para qualquer $\beta$, a diferença é notada somente quando $N$ é suficientemente pequeno..
+
+
+\subsection{Potencial Mônico}
+
+Considere o potencial
+
+\[
+V(x) = \frac{t}{2\alpha} x^{2\alpha},
+\]
+onde $t > 0$ é escala e $\alpha \in \Z$. A medida de equilíbrio para $\alpha = 1$ é o semi-círculo de Wigner podemos validar na figura com a distribuição em vermelho. Sabemos também que o suporte $[-a, a]$ da densidade é dado por
+
+\[
+a = \left( \frac{t}{2} \prod_{j=1}^{\alpha} \frac{2j-1}{2j} \right)^{-\frac{1}{2\alpha}}.
+\]
+
+
+\subsection{Potencial Quártico}
+
+Para Considere o potencial
+
+\begin{equation}
+	V(x) = \frac{x^4}{4} + t \frac{x^2}{2}.
+	\label{Equação: Quartico}	
+\end{equation}
+
+\noindent Aqui observaremos, a depender de $t$, pela primeira vez a separação do suporte da função. Teremos um ponto crítico em $t=-2$ onde o suporte se separa nos intervalos $[-b_t, -a_t]$ e $[a_t, b_t]$ para $t < -2$. Para $t > -2$ o suporte é um único intervalo $[-b_t, b_t]$. Definiremos a medida nos dois casos,
+
+\begin{itemize}
+	\item \(t > -2\)
+	\[
+	\supp \mu_V = [-b_t, b_t], \ \ \frac{\dd \mu_V}{\dd x}(x) = \frac{1}{2\pi} (x^2 + c_t^2) \sqrt{b_t^2 - x^2},
+	\]
+	
+	com $c_t^2 \deff\frac{1}{2} b_t^2 + t \deff \frac{1}{3} (2t + \sqrt{t^2 + 12})$.
+	
+	\item \(t < -2\)
+	\[
+	\supp \mu_V = [-b_t, -a_t] \cup [a_t, b_t], \ \ \frac{\dd \mu_V}{\dd x}(x) = \frac{1}{2\pi} |x| \sqrt{(x^2 - a_t^2)(b_t^2 - x^2)},
+	\]
+	
+	com $ a_t \deff \sqrt{-2-t}, b_t \deff \sqrt{2-t}$.
+\end{itemize}

@@ -4,7 +4,10 @@ The top-level auxiliary file: main.aux
 The style file: USPSC-classe/abntex2-num-USPSC.bst
 A level-1 auxiliary file: USPSC-TA-PreTextual/USPSC-fichacatalografica.aux
 A level-1 auxiliary file: USPSC-TA-PreTextual/USPSC-Resumo.aux
-A level-1 auxiliary file: USPSC-TA-Textual/Relatorio/Relatorio.aux
+A level-1 auxiliary file: USPSC-TA-Textual/C1-Introducao/C1-Introducao.aux
+A level-1 auxiliary file: USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.aux
+A level-1 auxiliary file: USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.aux
+A level-1 auxiliary file: USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -21,50 +24,51 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Warning--campo year vazio ou faltando em deiftorthogonal
 +---------------------------------------------------------+
 | Estilo bibliográfico abntex2-num.bst versão v-1.9.7           |
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 11 entries,
+You've used 17 entries,
             6714 wiz_defined-function locations,
-            1211 strings with 9752 characters,
-and the built_in function-call counts, 3247 in all, are:
-= -- 310
-> -- 1
-< -- 1
-+ -- 56
-- -- 1
-* -- 126
-:= -- 376
-add.period$ -- 0
-call.type$ -- 13
-change.case$ -- 33
-chr.to.int$ -- 5
-cite$ -- 0
-duplicate$ -- 37
-empty$ -- 480
-format.name$ -- 0
-if$ -- 930
+            1256 strings with 11089 characters,
+and the built_in function-call counts, 11031 in all, are:
+= -- 1219
+> -- 131
+< -- 193
++ -- 293
+- -- 41
+* -- 605
+:= -- 1318
+add.period$ -- 26
+call.type$ -- 19
+change.case$ -- 86
+chr.to.int$ -- 14
+cite$ -- 7
+duplicate$ -- 817
+empty$ -- 824
+format.name$ -- 203
+if$ -- 2518
 int.to.chr$ -- 10
 int.to.str$ -- 1
-missing$ -- 112
-newline$ -- 8
-num.names$ -- 0
-pop$ -- 72
+missing$ -- 222
+newline$ -- 38
+num.names$ -- 24
+pop$ -- 227
 preamble$ -- 1
-purify$ -- 33
+purify$ -- 55
 quote$ -- 0
-skip$ -- 531
+skip$ -- 1300
 stack$ -- 1
-substring$ -- 99
-swap$ -- 1
-text.length$ -- 0
+substring$ -- 415
+swap$ -- 285
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 2
+type$ -- 2
+warning$ -- 1
+while$ -- 38
 width$ -- 0
-write$ -- 7
-(There was 1 warning)
+write$ -- 90
+(There were 2 warnings)

@@ -5,4 +5,43 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
+\bibitem{AlanThesis}
+\abntrefinfo{Edelman}{EDELMAN}{1984}
+{EDELMAN, A.
+\textbf{Eigenvalues and Condition Numbers of Random Matrices}.
+1984. Tese (Doutorado) --- Massachusetts Institute of Technology, 1984.}
+
+\bibitem{CoulombGaschafai}
+\abntrefinfo{Chafaï}{CHAFAï}{2021}
+{CHAFAï, D. \textbf{Aspects of Coulomb gases}. 2021.}
+
+\bibitem{RMT-firstcourse-Potters}
+\abntrefinfo{Potters e Bouchaud}{POTTERS; BOUCHAUD}{2020}
+{POTTERS, M.; BOUCHAUD, J. \textbf{A First Course in Random Matrix Theory: for
+  Physicists, Engineers and Data Scientists}. Cambridge University Press, 2020.
+ISBN 9781108488082. Dispon{\'\i}vel em:
+  \url{https://books.google.com.br/books?id=9K-WzQEACAAJ}.}
+
+\bibitem{deiftorthogonal}
+\abntrefinfo{Deift}{DEIFT}{}
+{DEIFT, P. \textbf{Orthogonal Polynomials and Random Matrices: A
+  Riemann-Hilbert Approach}. Courant Institute of Mathematical Sciences, New
+  York University.  (Courant lecture notes in mathematics).
+ISBN 9780821883440. Dispon{\'\i}vel em:
+  \url{https://books.google.com.br/books?id=SBR8yv0LkFgC}.}
+
+\bibitem{IntroRM}
+\abntrefinfo{Livan, Novaes e Vivo}{LIVAN; NOVAES; VIVO}{2018}
+{LIVAN, G.; NOVAES, M.; VIVO, P. \textbf{Introduction to Random Matrices}.
+  Springer International Publishing, 2018. Dispon{\'\i}vel em:
+  \url{https://doi.org/10.1007\%2F978-3-319-70885-0}.}
+
+\bibitem{Chafa2018}
+\abntrefinfo{Chafaï e Ferr{\'{e}}}{CHAFAï; FERR{\'{E}}}{2018}
+{CHAFAï, D.; FERR{\'{E}}, G. Simulating coulomb and log-gases with hybrid
+  monte carlo algorithms.
+\textbf{Journal of Statistical Physics}, Springer Science and Business Media
+  {LLC}, v.~174, n.~3, p. 692--714, nov 2018.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1007\%2Fs10955-018-2195-6}.}
+
 \end{thebibliography}

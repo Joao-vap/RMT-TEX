@@ -168,22 +168,31 @@ brazil				% o último idioma é o principal do documento
 
 % ----------------
 
+\newcommand\underrel[2]{\mathrel{\mathop{#2}\limits_{#1}}}
+
 \newcommand{\matriz}[1]{\hat#1}
 
 \newcommand{\many}[2]{$#1_1, #1_2, \dots, #1_#2$}
 
 \newcommand{\cmany}[3]{$#1_1 #3 #1_2 #3 \dots #3 #1_#2$}
 
-\newcommand{\mmany}[2]{#1_1, #1_2, \dots, #1_#2}
+\newcommand{\mmany}[2]{ #1_1, #1_2, \dots, #1_#2 }
 
 \newcommand{\mcmany}[3]{#1_1 #3 #1_2 #3 \dots #3 #1_#2}
 
 \newcommand{\set}[1]{\{#1\}}
 
+\newcommand{\cjgt}[1]{\overline{#1}}
 \DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\ai}{Ai}
 \DeclareMathOperator{\re}{Re}
 \DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\Df}{D}
+\DeclareMathOperator{\Qf}{Q}
+\DeclareMathOperator{\g}{g}
+\DeclareMathOperator{\V}{V}
+\newcommand{\iu}{\mathrm{i}\mkern1mu}
 \DeclareMathOperator{\ee}{\textrm e}
 \DeclareMathOperator{\supp}{supp}
 \renewcommand{\Re}{\mathop{\textrm Re}}
@@ -195,7 +204,12 @@ brazil				% o último idioma é o principal do documento
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\D}{\mathbb{D}}
 \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\J}{J} %Jacobiano
+\newcommand{\Id}{\mathbb{1}}
+\newcommand{\p}{p} %medida
 \newcommand{\E}{\mathbb{E}}
+\newcommand{\Se}{\mathbb{S}}
+\newcommand{\He}{\mathbb{H}}
 \newcommand{\boh}{\mathit{o}}
 \newcommand{\Boh}{\mathcal{O}}
 \newcommand{\bbp}{\bm K_{\mathrm{BBP}}}
@@ -206,6 +220,32 @@ brazil				% o último idioma é o principal do documento
 \newcommand*{\revdeff}{=\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
 			\hbox{\scriptsize.}\hbox{\scriptsize.}}}%
 }
+
+
+% MATH DECLARATIONS
+\newtheorem{lemma}{Lema}[section]
+\newtheorem{thm}[lemma]{Teorema}
+\newtheorem{claim}[lemma]{Afirmação}
+\newtheorem{cor}[lemma]{Corolário}
+\newtheorem{definition}[lemma]{Definição}
+\newtheorem{conjecture}[lemma]{Conjectura}
+\newtheorem{prop}[lemma]{Proposição}
+\newtheorem{assumption}[lemma]{Assumpção}
+\numberwithin{equation}{section} %numeracao dentro de secoes
+
+% PROOF ENV
+\makeatletter
+\newenvironment{proof}[1][Demonstração]{\par
+	\pushQED{\qed}%
+	\normalfont \topsep6\p@\@plus6\p@\relax
+	\trivlist
+	\item\relax
+	{\itshape
+		#1\@addpunct{.}}\hspace\labelsep\ignorespaces
+}{%
+	\popQED\endtrivlist\@endpefalse
+}
+\makeatother
 
 %-----------
 
@@ -375,83 +415,17 @@ brazil				% o último idioma é o principal do documento
 
 \include{USPSC-TA-Textual/C1-Introducao/C1-Introducao}
 
-% -
-% C1S1 - Distribuição de autovalores
-% - 
-\section{Distribuição de autovalores}
-\include{USPSC-TA-Textual/C1-Introducao/DistAutovalores.tex}
-
-% -
-% C1S2 - Emsembles Gaussianos
-% - 
-\section{Emsembles Gaussianos}
-\include{USPSC-TA-Textual/C1-Introducao/EmsemblesGaussianos.tex}
-
-% -
-% C1S3 - Gases de Coulomb (Log Gas?)
-% - 
-\section{Gases de Coulomb}
-\include{USPSC-TA-Textual/C1-Introducao/GasesDeCoulomb.tex}
-
-% -
-% C1S4 - Medidas de Equilíbrio
-% - 
-\section{Medidas de Equilíbrio}
-\include{USPSC-TA-Textual/C1-Introducao/MedidaDeEquilibrio.tex}
-
-% -
-% C1S5 - Potenciais notáveis
-% - 
-\section{Potenciais notáveis}
-\include{USPSC-TA-Textual/C1-Introducao/PotenciaisNotaveis.tex}
-
 % ---
 % Capítulo 2 - Simulações e Algoritmos
 % ---
 
 \include{USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.tex}
 
-% -
-% C1S1 - Introdução ao algoritmo
-% - 
-
-\include{USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/IntroducaoAoAlgoritmo.tex}
-
-% -
-% C1S2 - Algoritmo Híbrido de Monte Carlo
-% - 
-
-\include{USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/AlgoritmoHibridoMonteCarlo.tex}
-
-% -
-% C1S3 - Discretização
-% - 
-
-\include{USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/Discretizacao.tex}
-
 % ---
 % Capítulo 3 -Implementação e Resultados
 % ---
 
 \include{USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.tex}
-
-% -
-% C3S1 - A implementação
-% - 
-\section{A implementação}
-\include{USPSC-TA-Textual/C3-ImplementacaoEResultados/Implementacao.tex}
-
-% -
-% C3S2 - Validação em distribuições conhecidas
-% - 
-\section{Validação em distribuições conhecidas}
-\include{USPSC-TA-Textual/C3-ImplementacaoEResultados/ValidacaoDistsConhecidas.tex}
-
-% -
-% C3S3 - Outros Potenciais?
-% - 
-\section{Outros Potenciais}
-\include{USPSC-TA-Textual/C3-ImplementacaoEResultados/OutrosPotenciais.tex}
 
 % ---
 % Capítulo 4 - Conclusão
