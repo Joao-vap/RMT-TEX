@@ -5,7 +5,6 @@ Seja $\Se$ um conjunto tal como $\R, \C, \He $ (Reais, Complexos e Quaterniônic
 Não lidaremos, contudo, com uma classe tão ampla de matrizes. Considere a decomposição $\matriz{M} = \matriz{O} \matriz{D} \matriz{O}^{-1}$, onde $\matriz{D} = \diag(\mmany{\lambda}{N})$. Estamos especialmente interessados no caso onde $\matriz{O} \in V_N(\Se^N)$, espaço denominado variedade de Stiefel. Isso implica que $ \matriz{O} \matriz{O}^* = \Id$. Estamos tomando $\matriz{O}$ matriz ortogonal, unitária ou simplética, a depender de $\Se$, resultando em autovalores reais. Isso pode ser motivado fisicamente, por exemplo, quando $\Se = \C$, considerando a noção de operadores autoadjuntos e sua importância na construção do formalismo quântico.
 
 Tomamos matrizes tais que $\cjgt{M_{i,j}} = M_{j, i}$. Este fato é refletido na dimensão do subespaço escolhido, com valor dependente de $\Se$. A transformação tomada tem ainda Jacobiano $\J(\matriz{M} \rightarrow \{ \vec{\lambda}, \matriz{O} \} )$. Com estes fatos podemos reescrever a jpdf como 
-
 \begin{equation}
 	\begin{split}
 	 \p(\hat{M}) \dd M &= \p(M_{1,1}, \dots, M_{N,N}) \prod_{i \leq j} \dd M_{i,j}\\
@@ -17,14 +16,12 @@ Tomamos matrizes tais que $\cjgt{M_{i,j}} = M_{j, i}$. Este fato é refletido na
 Aqui, ressalto que estamos interessados em distribuições de autovalores. Para calcular $\p(\mmany{\lambda}{N})$ devemos integrar os termos à direita da Equação \ref{Equation: p(lambda, O)} sobre o subespaço $V_N(\Se^N)$. Isso nem sempre é fácil ou possível. Para garantir a integrabilidade, tomaremos \textit{ensembles} de matrizes aleatórias onde o jpdf de suas entradas pode ser escrito exclusivamente como função dos autovalores, ou seja $$\p(\mmany{\lambda}{N}, \matriz{O}) \equiv \p \left( M_{1,1}(\vec{\lambda}), \cdots, M_{N,N}(\vec{\lambda}) | \J(\matriz{M} \rightarrow \{ \vec{\lambda} \} ) \right).$$
 
 Ensembles com esta propriedade são denominados invariantes por rotação. Esta escolha implica que quaisquer duas matrizes que satisfaçam a relação de equivalência $\matriz{M} = \matriz{U} \matriz{M'} \matriz{U}^{-1}$ tem mesma probabilidade. Nesta relação, $\matriz{U}$ é simétrica, hermitiana ou simplética respectivamente quando $\Se = \R,\C,\He $. Considere o teorema \cite{AlanThesis}.
-
 \begin{thm}
 	Tome $\matriz{M} \in M_{\R}(N),  M_{\C}(N),  M_{\He}(N)$ simétrica, hermitiana ou autodual, respectivamente. Se  $\matriz{M}$ tem jpdf da forma $\phi(\matriz{M})$ invariante sobre transformações de similaridade ortogonal. A jpdf dos $N$ autovalores ordenados de $\matriz{M}$, $\mcmany{\lambda}{N}{\geq}$, é $$ C_{N}^{(\beta)} \phi(\matriz{D}) \prod_{i < j} (\lambda_i - \lambda_j)^{\beta}$$ onde $C_{N}^{\beta}$ é constante e $\beta = 1, 2, 3$ corresponde respectivamente à $\matriz{M} \in M_{\R}(N),  M_{\C}(N),  M_{\He}(N)$. 
 	\label{Teorema: Invariante}
 \end{thm}
 
 Com esse teorema, desde que tomemos um ensemble de matrizes aleatórias com a jpdf das entradas apropriado, podemos reescrever a distribuição em função dos autovalores com a expressão acima. Vale ainda observar que um conhecido resultado\footnote{Weyl's Lemma?} nos diz que a jpdf $\p(\matriz{M})= \phi \left( \Tr(\matriz{M}), \Tr(\matriz{M}^2), \cdots, \Tr(\matriz{M}^N) \right)$ é invariante. Tomada esta densidade, podemos escrever ainda:
-
 \begin{equation}
 	\p_{ord}(\mmany{\lambda}{N}) = C_{N}^{\beta} \phi{\left( \sum_i^N \lambda_i, \cdots, \sum_i^N \lambda_i^N \right)} \prod_{i < j} (\lambda_i - \lambda_j)^{\beta}
 	\label{Equation: p-ord}

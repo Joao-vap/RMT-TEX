@@ -1,6 +1,38 @@
 \chapter{Implementação e Resultados}
 \label{Capitulo: Resultados}
 
+ Simular Gases de Coulomb é especialmente interessante quando não há modelos de Matrizes conhecidos ou disponíveis para o $\Hf$ escolhido. Escrevemos então um programa que faz uso da interpretação dos Gases de Coulomb para simular medidas de interesse em RMT. Consideraremos nossas partículas em um subespaço $S$ de dimensão $d$ em $\mathbb{R}^N$ de forma que nosso espaço de fase $\Omega$ será de dimensão $dN$. O campo externo será denominado $V : S \mapsto \mathbb{R}$ e o núcleo de interação entre as partículas $\W : S \mapsto (-\infty, \infty]$. Reunindo os resultados do capítulo passado sob essas condições, temos, por completeza, o algoritmo completo descrito em \cite{Chafa2018}. Dada uma condição inicial $(q_k, p_k)$, para cada $k\geq0$, realizamos os seguintes passos
+\begin{enumerate}
+	\item Baseado em \ref{Equation: Mehler}, atualize as velocidades com
+	\begin{equation}
+	\tilde{p}_k = \eta p_k + \sqrt{\frac{1-\eta^2}{\beta_N}} G_k, \ \eta = \ee^{-\gamma_N \alpha_N \Delta t};
+	\label{Equation: Alg Mehler}
+	\end{equation}
+	\item Utilizando do esquema de \ref{Equation: Verlet}, calcule os termos
+	\begin{equation}
+	\begin{cases}
+		\tilde{p}_{k+\frac{1}{2}} = \tilde{p}_k - \nabla H_N(q_k) \alpha_N \frac{\Delta t}{2}, \\
+		\tilde{q}_{k+1} = q_k + \tilde{p}_{k + \frac{1}{2}} \alpha_N \Delta t, \\
+		\tilde{p}_{k+1} = \tilde{p}_{k+\frac{1}{2}} - \nabla H_N(q_{k+1}) \alpha_N \frac{\Delta t}{2};
+		\label{Equation: Alg Verlet}
+	\end{cases}
+	\end{equation}
+	\item Pela definição \ref{Equation: Pk}, tome
+	\begin{equation}
+	P_k = 1 \wedge \exp{\left[ -\beta_N \left(  H_N(\tilde{q}_{k+1}) + \frac{\tilde{p}^2_{k+1}}{2} - H_N(q_k) - \frac{\tilde{p}^2_k}{2} \right)\right] };
+	\label{Equação: Alg Pk}
+	\end{equation}
+	\item Defina, a partir de \ref{Equation: Metropolis}, 
+	\begin{equation}
+	(q_{k+1}, p_{k+1}) = 
+	\begin{cases}
+		(\tilde{q}_{k+1}, \tilde{p}_{k+1}) \ \text{com probabilidade} \ P_k, \\
+		(q_k, -\tilde{p}_{k}) \ \text{com probabilidade} \ 1-P_k; \\
+	\end{cases}
+	\label{Equation: Alg Metro}
+	\end{equation}
+\end{enumerate}
+Resta agora apresentar a implementação e os resultados obtidos.
 
 % -
 % C3S1 - A implementação
@@ -15,4 +47,4 @@
 % -
 % C3S3 - Outros Potenciais?
 % - 
-\input{USPSC-TA-Textual/C3-ImplementacaoEResultados/OutrosPotenciais.tex}
+%\input{USPSC-TA-Textual/C3-ImplementacaoEResultados/OutrosPotenciais.tex}

@@ -42,8 +42,8 @@
 % -- opções da classe memoir --
 12pt,		% tamanho da fonte
 openright,	% capítulos começam em pág ímpar (insere página vazia caso preciso)
-twoside,  % para impressão em anverso (frente) e verso. Oposto a oneside
-%oneside, % para impressão em páginas separadas (somente anverso)
+%twoside,  % para impressão em anverso (frente) e verso. Oposto a oneside
+oneside, % para impressão em páginas separadas (somente anverso)
 a4paper,			% tamanho do papel. 
 % -- opções da classe abntex2 --
 chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
@@ -75,8 +75,43 @@ brazil				% o último idioma é o principal do documento
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{float} 				% Fixa tabelas e figuras no local exato
+\usepackage{lipsum}  
 \usepackage{tikz}				% Para escrever reações químicas e outros
-\usetikzlibrary{positioning}
+%\usetikzlibrary{positioning}
+\usetikzlibrary{shapes,positioning,calc,quotes}
+\tikzstyle{subrotina} = [rectangle, draw,text centered, minimum width=5em, inner sep=5pt]
+
+\tikzstyle{funcao} = [rounded rectangle, draw, text centered, minimum width=7em, inner sep=5pt]
+
+\tikzstyle{random} = [rectangle, text centered, inner sep=5pt, minimum width=5em]
+
+\tikzstyle{loop} = [rectangle, draw, align=left]
+
+\tikzstyle{fluxo} = [draw, thick, -latex]
+
+\tikzstyle{meiofluxo} = [draw, -]
+
+\tikzstyle{chamada} = [draw, dashed, <->]
+%\tikzset{
+%	basic box/.style={
+%		shape=rectangle, rounded corners, align=center, draw=#1, fill=#1!25},
+%	header node/.style={
+%		node family/width=header nodes,
+%		font=\strut\Large\ttfamily,
+%		text depth=+.3ex, fill=white, draw},
+%	header/.style={%
+%		inner ysep=+1.5em,
+%		append after command={
+%			\pgfextra{\let\TikZlastnode\tikzlastnode}
+%			node [header node] (header-\TikZlastnode) at (\TikZlastnode.north) {#1}
+%			% the next node contains both \tikzlastnode and its header
+%			% this is needed so that h- can be used to connect lines
+%			node [span=(\TikZlastnode)(header-\TikZlastnode)]
+%			at (fit bounding box) (h-\TikZlastnode) {}
+%		}
+%	},
+%	fat blue line/.style={ultra thick, blue}
+%}
 \usepackage{microtype} 			% para melhorias de justificação
 \usepackage{pdfpages}
 \usepackage{makeidx}            % para gerar índice remissivo
@@ -189,7 +224,14 @@ brazil				% o último idioma é o principal do documento
 \DeclareMathOperator{\re}{Re}
 \DeclareMathOperator{\im}{Im}
 \DeclareMathOperator{\Df}{D}
+\DeclareMathOperator{\Ee}{E}
+\DeclareMathOperator{\h}{h_1}
+\DeclareMathOperator{\U}{U}
+\DeclareMathOperator{\W}{W}
+\DeclareMathOperator{\K}{K}
+\DeclareMathOperator{\Hf}{\mathcal{H}}
 \DeclareMathOperator{\Qf}{Q}
+\DeclareMathOperator{\Gl}{\mathcal{L}}
 \DeclareMathOperator{\g}{g}
 \DeclareMathOperator{\V}{V}
 \newcommand{\iu}{\mathrm{i}\mkern1mu}

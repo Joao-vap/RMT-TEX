@@ -22,19 +22,21 @@
 ISBN 9781108488082. Dispon{\'\i}vel em:
   \url{https://books.google.com.br/books?id=9K-WzQEACAAJ}.}
 
-\bibitem{deiftorthogonal}
-\abntrefinfo{Deift}{DEIFT}{}
-{DEIFT, P. \textbf{Orthogonal Polynomials and Random Matrices: A
-  Riemann-Hilbert Approach}. Courant Institute of Mathematical Sciences, New
-  York University.  (Courant lecture notes in mathematics).
-ISBN 9780821883440. Dispon{\'\i}vel em:
-  \url{https://books.google.com.br/books?id=SBR8yv0LkFgC}.}
+\bibitem{leimmolecular}
+\abntrefinfo{Leimkuhler e Matthews}{LEIMKUHLER; MATTHEWS}{2015}
+{LEIMKUHLER, B.; MATTHEWS, C. \textbf{Molecular Dynamics: With Deterministic
+  and Stochastic Numerical Methods}. Springer International Publishing, 2015.
+  (Interdisciplinary Applied Mathematics).
+ISBN 9783319163758. Dispon{\'\i}vel em:
+  \url{https://books.google.com.br/books?id=AGF1CQAAQBAJ}.}
 
-\bibitem{IntroRM}
-\abntrefinfo{Livan, Novaes e Vivo}{LIVAN; NOVAES; VIVO}{2018}
-{LIVAN, G.; NOVAES, M.; VIVO, P. \textbf{Introduction to Random Matrices}.
-  Springer International Publishing, 2018. Dispon{\'\i}vel em:
-  \url{https://doi.org/10.1007\%2F978-3-319-70885-0}.}
+\bibitem{Stoltz2018}
+\abntrefinfo{Stoltz e Trstanova}{STOLTZ; TRSTANOVA}{2018}
+{STOLTZ, G.; TRSTANOVA, Z. Langevin dynamics with general kinetic energies.
+\textbf{Multiscale Modeling \& amp; Simulation}, Society for Industrial \&
+  Applied Mathematics (SIAM), v.~16, n.~2, p. 777–806, jan. 2018.
+ISSN 1540-3467.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1137/16M110575X}.}
 
 \bibitem{Chafa2018}
 \abntrefinfo{Chafaï e Ferr{\'{e}}}{CHAFAï; FERR{\'{E}}}{2018}
@@ -43,5 +45,10 @@ ISBN 9780821883440. Dispon{\'\i}vel em:
 \textbf{Journal of Statistical Physics}, Springer Science and Business Media
   {LLC}, v.~174, n.~3, p. 692--714, nov 2018.
 Dispon{\'\i}vel em: \url{https://doi.org/10.1007\%2Fs10955-018-2195-6}.}
+
+\bibitem{NormalVariable}
+\abntrefinfo{Boiroju}{BOIROJU}{2011}
+{BOIROJU, N. Generation of standard normal random variables.
+\textbf{Indian Journal of Scientific Research}, v.~2, p. 83--85, 01 2011.}
 
 \end{thebibliography}

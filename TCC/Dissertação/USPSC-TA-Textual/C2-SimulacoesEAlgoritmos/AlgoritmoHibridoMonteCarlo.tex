@@ -1,14 +1,1 @@
 
-\section{Algoritmo Híbrido de Monte Carlo}
-
-O algoritmo híbrido de Monte Carlo é baseado no algoritmo anterior mas adicionando uma variável de momento para melhor explorar o espaço. Defina $E = \mathbb{R}^{\dd N}$ e deixe $U_N : E \rightarrow \mathbb{R}$ ser suave para que $\ee^{-\beta_N U_N}$ seja Lebesgue integrável. Seja ainda $(X_t, Y_t)_{t>0}$ o processo de difusão em $E \times E$ solução de
-
-\[
-\begin{cases}
-	\dd X_t = \alpha_N \nabla U_N (Y_t) \dd t, \\
-	\dd Y_t = \alpha_N \nabla H_N(X_t) \dd t - \gamma_N \alpha_N \nabla U_N(Y_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N} \dd B_t},
-\end{cases}
-\]
-onde $(B_t)_{t>0}$ é o movimento browniano em $E$ e $\gamma_N > 0$ parâmetro representando atrito.
-
-Quando $U_N(y) = \frac{1}{2}|y|^2$ temos $Y_t = \dd X_t/\dd t$ e teremos que $X_t$ e $Y_t$ poderão ser interpretados como posição e velocidade do sistema de $N$ pontos em $S$ no tempo $t$. Nesse caso, $U_n$ é energia cinética

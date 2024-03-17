@@ -1,1 +1,165 @@
 \section{A implementação}
+
+Para todos os exemplos aqui restringiremos o subespaço $\Se$ à $\R$ tal que $q_i \in \R$. Isso vem do fato de que estamos, nesse trabalho, interessados na simulação de partículas (ou autovalores) reais. Casos em mais dimensões são igualmente de alto interesse na teoria e o leitor interessado pode se referir à \cite{NAO SEI} por exemplo. Igualmente importante, consideraremos um núcleo de interação $\W = g$ coulombiano, por motivos claros. Essas funções são tais que assumiremos uma medida da forma \ref{Equação: Medida Gas de Coulomb} usual de Gases de Coulomb. Por sua natureza de física e gosto pessoal, a implementação do algoritmo foi feita em FORTRAN e sua esquemática se encontra na Figura \ref{Figura: Implementação}. Podemos entender melhor a relação entre as sub-rotinas e funções em luz da descrição na Tabela \ref{Table: Funcoes e Subrotinas}.
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}[font=\small,thick]
+		
+		% Start block
+		\node[subrotina] (INIT) {INIT};
+		
+		% -------------------------------------------------------------------		
+		
+		\node[subrotina,
+		left=0.7cm of INIT] (LabelSubrotina) {Subrotinas};
+		
+		\node[funcao,
+		below=0.1cm of LabelSubrotina] (LabelFunção) {Funções};
+		
+		% -------------------------------------------------------------------		
+		
+		\node[funcao,
+		below=0.5cm of INIT, xshift=2cm] (Hold) {H};
+		
+		\node[funcao,
+		right=0.5cm of Hold, yshift=0.5cm] (Wold) {W};
+		
+		\node[funcao,
+		right=0.5cm of Hold, yshift=-0.5cm] (Vold) {V};
+		
+		
+		\node[loop,
+		below=2cm of INIT,
+		minimum width=6cm,
+		xshift=2cm,
+		] (LOOP) {
+			\begin{tikzpicture}
+				
+				\node[subrotina,
+				] (L2) {L2-OrnsUhlen};
+				
+				\node[funcao,
+				below=0.5cm of L2
+				] (Gauss) {Gauss};
+				
+				\node[subrotina,
+				right=2cm of L2] (L1) {L1-Verlet};
+				
+				\node[subrotina,
+				below=0.5cm of L1] (GradH) {GradH};
+				
+				\node[subrotina,
+				below=0.5cm of GradH, xshift=1cm] (GradW) {GradW};
+				
+				\node[subrotina,
+				below=0.5cm of GradH, xshift=-1cm] (GradV) {GradV};
+								
+				\node[subrotina,
+				below=4cm of L2, xshift=-0.5cm] (Metro) {Metropolis};
+				
+				\node[funcao,
+				below=0.5cm of Metro
+				] (Problog) {ProbLog};
+				
+				\node[funcao,
+				right=1cm of Problog] (H) {H};
+				
+				\node[funcao,
+				right=0.5cm of H, yshift=0.5cm] (W) {W};
+				
+				\node[funcao,
+				right=0.5cm of H, yshift=-0.5cm] (V) {V};
+				
+				\node[random,
+				above=0.5cm of Metro, xshift=-1.3cm] (aceito) {$q_k = \tilde{q}_{k_1}$ \\ $p_k = \tilde{p}_{k_1}$};
+				
+				\node[random,
+				above=0.5cm of Metro, xshift=1.3cm] (negado) {$q_k = q_k$ \\ $p_k = -p_k$};
+				
+				
+				% ---------------------------------------------------------------------
+				
+				\path [fluxo] (L2) -- (L1);
+				\path [fluxo]  (L2) ++(-3cm, 0cm) -- (L2);
+				\path [chamada] (L2) -- (Gauss);
+				\path [chamada] (L1) -- (GradH);
+				\path [chamada] (GradH) -- (GradV);
+				\path [chamada] (GradH) -- (GradW);
+				\path [fluxo]  (L1) --++(3cm, 0cm) |- (Metro);
+				\path [chamada] (Metro) -- (Problog);
+				\path [chamada] (Problog) -- (H);
+				\path [chamada] (H) -- (W);
+				\path [chamada] (H) -- (V);
+				\path [meiofluxo] (Metro) -- (aceito);
+				\path [meiofluxo] (Metro) -- (negado);
+				\path [meiofluxo] (negado) -- ++(0cm, 1.5cm) -- ++(-2.6cm, 0cm);
+				\path [meiofluxo] (aceito) -- ++(0cm, 1.45cm);
+				\path [fluxo] (aceito)++(0cm, 1.45cm) -- ++(0cm, 1.75cm);
+				
+			\end{tikzpicture}
+		};
+	
+		\node[random,
+		left=0.3cm of LOOP,
+		yshift=2cm,
+		rotate=90
+		] (do) {DO k = 1, nsteps};
+		
+		\path [fluxo] (INIT) -- ++(0cm, -2.3cm);
+		\path [chamada] (INIT) ++(0cm, -1.1cm) -- (Hold);
+		\path [chamada] (Hold) -- (Vold);
+		\path [chamada] (Hold) -- (Wold);
+		
+	\end{tikzpicture}
+\caption{Iustração da implementação do algoritmo \textit{Hybrid Monte Carlo} (HMC) descrito. Setas sólidas indicam o fluxo do programa. Linhas tracejadas indicam chamadas de funções dentro do bloco. A descrição das funções se encontra na Tabela \ref{Table: Funcoes e Subrotinas}. O programa completo pode ser encontrado em \url{https://github.com/Joao-vap/RMT-Code/tree/main/ArticleAlg}}
+\label{Figura: Implementação}
+\end{figure}
+Alguns detalhes são importantes de notar. O gerador de variáveis aleatórias gaussianas, necessário em \ref{Equation: Alg Mehler} foi implementado utilizando do algoritmo de \textit{Box-Muller} \cite{NormalVariable}. Para além disso, o ajuste de variáveis é razoavelmente empírico observado que $\cdots$. Para cada execução do programa resta então definir o potencial referente à seu ensemble, as dimensões $d, n$ e as constantes definidas anteriormente, como a de dissipação $\eta$ e o intervalo de passo temporal $\Delta t$.
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{ |p{2.6cm}||p{2cm}|p{10cm}|  }
+			\hline
+			\multicolumn{3}{|c|}{Lista de Funções e Subrotinas} \\
+			\hline
+						\hline
+			Nome & Tipo & Descrição \\ 
+			\hline
+						\hline
+			Init   		  &Subrotina	 & 
+			Modifica ${p}_{k}$ vetor $[N\cross m]$, global, uniforme no cubo em $R^d$ e ${q}_{k}, G_H$, vetores $[N\cross m]$, globais, nulos. \\
+			\hline
+			L1-OrnsUhlen  &Subrotina	 & 
+			Modifica $\tilde{p}_k$, vetor $[N\cross m]$, global, por $\Gl_U$ segundo \ref{Equation: Alg Mehler}. \\
+						\hline
+			L2-Verlet  	  &Subrotina	 & 
+			Modifica $\tilde{p}_{k_1},\tilde{q}_{k_1}$ vetores $[N\cross m]$, globais, por $\Gl_{\Hf}$ segundo \ref{Equation: Alg Verlet}.	\\
+						\hline
+			GradH         &Subrotina	 & 
+			Modifica $G_H$, vetor $[N\cross m$], global, gradiente do Hamiltoniano.					\\
+						\hline
+			GradW         &Subrotina	 &
+			Modifica $G_{W_i}$, escalar, global, gradiente de $W$ núcleo de interação.	\\
+						\hline
+			GradV  	      &Subrotina	 &
+			Modifica $G_{V_i}$, escalar, global, gradiente de $\V$ potencial.		                    \\
+						\hline
+			ProbLog       &Função		 &
+			Retorna $P_K$, escalar, local, probabilidade de aceite de \ref{Equação: Alg Pk}. \\
+						\hline
+			H             &Função  	 &
+			Retorna $H$, escalar, local, hamiltoniano em $k$.	 							\\
+						\hline
+			V  	      	&Função		 &
+			Retorna $V_i$, escalar, local, potencial de $q_i$.								\\
+						\hline
+			W         	  &Função		 & 
+			Retorna $W_{i,j}$, escalar, local, interação entre $q_i,q_j$ 							\\
+						\hline
+			Metropolis    &Subrotina 	 & 
+			Modifica ${p}_{k},{q}_{k}$, vetores $[N\cross m]$, globais por \ref{Equation: Alg Metro}.								\\
+			\hline
+	\end{tabular}
+\caption{ Descrição das funções e subrotinas utilizadas na implementação do programa.}
+\label{Table: Funcoes e Subrotinas}
+\end{table}
+

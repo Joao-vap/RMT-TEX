@@ -3,10 +3,15 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: USPSC-classe/abntex2-num-USPSC.bst
 A level-1 auxiliary file: USPSC-TA-PreTextual/USPSC-fichacatalografica.aux
+A level-1 auxiliary file: USPSC-TA-PreTextual/USPSC-Epigrafe.aux
 A level-1 auxiliary file: USPSC-TA-PreTextual/USPSC-Resumo.aux
 A level-1 auxiliary file: USPSC-TA-Textual/C1-Introducao/C1-Introducao.aux
 A level-1 auxiliary file: USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.aux
 A level-1 auxiliary file: USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.aux
+White space in argument---line 4 of file USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.aux
+ : \citation{NAO
+ :               SEI}
+I'm skipping whatever remains of this command
 A level-1 auxiliary file: USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -20,55 +25,55 @@ Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: abntex2-options.bib
 Database file #2: USPSC-bib/USPSC-modelo-references.bib
 Warning--I didn't find a database entry for "abnt-etal-cite"
+Warning--I didn't find a database entry for "bibid"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
-Warning--campo year vazio ou faltando em deiftorthogonal
 +---------------------------------------------------------+
 | Estilo bibliográfico abntex2-num.bst versão v-1.9.7           |
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 17 entries,
+You've used 18 entries,
             6714 wiz_defined-function locations,
-            1256 strings with 11089 characters,
-and the built_in function-call counts, 11031 in all, are:
-= -- 1219
-> -- 131
+            1271 strings with 11343 characters,
+and the built_in function-call counts, 11687 in all, are:
+= -- 1260
+> -- 144
 < -- 193
-+ -- 293
-- -- 41
-* -- 605
-:= -- 1318
-add.period$ -- 26
-call.type$ -- 19
-change.case$ -- 86
-chr.to.int$ -- 14
++ -- 290
+- -- 45
+* -- 647
+:= -- 1394
+add.period$ -- 30
+call.type$ -- 20
+change.case$ -- 94
+chr.to.int$ -- 21
 cite$ -- 7
-duplicate$ -- 817
-empty$ -- 824
-format.name$ -- 203
-if$ -- 2518
+duplicate$ -- 858
+empty$ -- 871
+format.name$ -- 224
+if$ -- 2687
 int.to.chr$ -- 10
 int.to.str$ -- 1
-missing$ -- 222
-newline$ -- 38
-num.names$ -- 24
-pop$ -- 227
+missing$ -- 238
+newline$ -- 46
+num.names$ -- 28
+pop$ -- 235
 preamble$ -- 1
-purify$ -- 55
+purify$ -- 58
 quote$ -- 0
-skip$ -- 1300
+skip$ -- 1338
 stack$ -- 1
-substring$ -- 415
-swap$ -- 285
-text.length$ -- 7
+substring$ -- 452
+swap$ -- 325
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 2
-warning$ -- 1
-while$ -- 38
+warning$ -- 0
+while$ -- 45
 width$ -- 0
-write$ -- 90
-(There were 2 warnings)
+write$ -- 110
+(There was 1 error message)

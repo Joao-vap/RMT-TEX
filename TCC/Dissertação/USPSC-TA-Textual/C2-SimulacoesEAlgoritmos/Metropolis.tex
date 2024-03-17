@@ -1,0 +1,18 @@
+\section{Passo de Seleção - Metropolis}
+
+Mais de uma ideia poderia ser empregada para diminuir os efeitos das singularidades das interações, como por exemplo, amenizar a dinâmica \cite{bibid}, teria efeito sobre a estabilidade do sistema\footnote{WHY, cite something}. Contudo, usaremos um esquema de Metropolis onde procuraremos, definindo uma probablidade de aceite de cada atualização, evitar passos redundantes ou irrelevantes. Propõe-se então \cite{Chafa2018} que, a partir da atualização para a posição $\tilde{q}_{k+1}$, se calcule a probabilidade
+
+\begin{equation}
+P_k = 1 \wedge \frac{\K(\tilde{q}_{k+1}, q_k) \ee^{-\beta_N \Hf_N(\tilde{q}_{k+1})}}{\K(q_k, \tilde{q}_{k+1}) \ee^{-\beta_N \Hf_N(q_{k})}},
+\label{Equation: Pk}
+\end{equation}
+onde o núcleo $K(x, y)$ é simétrico \cite{Chafa2018} para o caso do \textit{Hybrid Monte Carlo} e, por se cancelar, não será discutido adiante. Atribua agora às coordenadas generalizadas $(q_{k+1}, p_{k+1})$ valor da seguinte forma
+\begin{equation}
+	(q_{k+1}, p_{k+1}) =
+\begin{cases}
+	(\tilde{q}_{k+1}, \tilde{p}_{k+1}) \ \text{com probabilidade} \ P_k, \\
+	(q_k, -\tilde{p}_{k}) \ \text{com probabilidade} \ 1-P_k; \\
+\end{cases}
+\label{Equation: Metropolis}
+\end{equation}
+De forma a garantir a conservação da energia para o sistema e otimizar a exploração do espaço de fase.
