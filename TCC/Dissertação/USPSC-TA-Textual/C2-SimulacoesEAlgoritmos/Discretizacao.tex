@@ -1,6 +1,6 @@
 \section{Discretização - Verlet Integrator}
 
-Para integrar $\Gl$, faremos separadamente a operação sobre $\Gl_{\Hf}$ e $\Gl_{\U}$. Sobre a primeira, a qual denomina-se dinâmica Hamiltoniana, o integrador de Verlet \cite{Chafa2018}\cite{leimmolecular}, para $\Delta t > 0$, a partir do estado $(q_k, p_k)$,
+Para integrar $\Gl$, faremos separadamente a operação sobre $\Gl_{\Hf}$ e $\Gl_{\U}$. Sobre a primeira, a qual denomina-se dinâmica Hamiltoniana, utilizaremos do integrador de Verlet \cite{Chafa2018}\cite{leimmolecular}. Para $\Delta t > 0$, a partir do estado $(q_k, p_k)$,
 \begin{equation}
 \begin{cases}
 	\tilde{p}_{k+\frac{1}{2}} = \tilde{p}_k - \nabla \Hf_N(q_k) \alpha_N \frac{\Delta t}{2}, \\
@@ -9,10 +9,10 @@ Para integrar $\Gl$, faremos separadamente a operação sobre $\Gl_{\Hf}$ e $\Gl
 \end{cases}
 \label{Equation: Verlet}
 \end{equation}
-Que consiste em dois tipos de operações, uma de atualização do momento, uma de atualização da posição e novamente uma atualização do momento. Feito isso, nos resta integrar $\Gl_{\U}$, o qual, para a energia cinética usual supracitada, consiste em um processo de Ornstein-Uhlenbeck de variância explícita e pode ser resolvido a partir da fórmula de Mehler
+Que consiste em dois tipos de operações, uma de atualização do momento, uma de atualização da posição e novamente uma atualização do momento. Outros métodos tais quais \textit{Euler-Maruyama} \cite[Capítulo~7]{leimmolecular} podem ser utilizados para o mesmo fim, contudo o método de Verlet é especialmente bom em preservar a temperatura do sistema. Feito isso, nos resta integrar $\Gl_{\U}$, o qual, para a energia cinética usual supracitada, consiste em um processo de Ornstein-Uhlenbeck de variância explícita $$dx_t = - \xi x_t dt + \sigma dW_t$$ onde $\xi, \sigma > 0$ são parâmetros e $W_t$ é processo de Wiener. Este processo pode ser resolvido a partir da fórmula de Mehler e obtêm-se
 \begin{equation}
 \tilde{p}_k = \eta p_k + \sqrt{\frac{1-\eta^2}{\beta_N}} G_k, \ \ \ \eta = \ee^{-\gamma_N \alpha_N \Delta t}.
 \label{Equation: Mehler}
 \end{equation}
-Onde $G_k$ é variável aleatória Gaussiana usual. Nota-se ainda que esse processo pode não ter medida invariante graças às singularidades das interações. Para evitar esse tipo de problema, introduz-se o passo de seleção de Metropolis.
+Onde $G_k$ é variável aleatória Gaussiana usual. Nota-se ainda que esse processo poderia não ter medida invariante graças às singularidades das interações. Para evitar esse tipo de problema, introduz-se o passo de seleção de Metropolis.
 

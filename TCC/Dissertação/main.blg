@@ -3,7 +3,6 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: USPSC-classe/abntex2-num-USPSC.bst
 A level-1 auxiliary file: USPSC-TA-PreTextual/USPSC-fichacatalografica.aux
-A level-1 auxiliary file: USPSC-TA-PreTextual/USPSC-Epigrafe.aux
 A level-1 auxiliary file: USPSC-TA-PreTextual/USPSC-Resumo.aux
 A level-1 auxiliary file: USPSC-TA-Textual/C1-Introducao/C1-Introducao.aux
 A level-1 auxiliary file: USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.aux
@@ -35,45 +34,45 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 18 entries,
+You've used 24 entries,
             6714 wiz_defined-function locations,
-            1271 strings with 11343 characters,
-and the built_in function-call counts, 11687 in all, are:
-= -- 1260
-> -- 144
-< -- 193
-+ -- 290
-- -- 45
-* -- 647
-:= -- 1394
-add.period$ -- 30
-call.type$ -- 20
-change.case$ -- 94
-chr.to.int$ -- 21
-cite$ -- 7
-duplicate$ -- 858
-empty$ -- 871
-format.name$ -- 224
-if$ -- 2687
+            1327 strings with 12533 characters,
+and the built_in function-call counts, 21785 in all, are:
+= -- 2505
+> -- 277
+< -- 495
++ -- 627
+- -- 85
+* -- 1254
+:= -- 2563
+add.period$ -- 58
+call.type$ -- 26
+change.case$ -- 150
+chr.to.int$ -- 39
+cite$ -- 13
+duplicate$ -- 1992
+empty$ -- 1215
+format.name$ -- 427
+if$ -- 4681
 int.to.chr$ -- 10
 int.to.str$ -- 1
-missing$ -- 238
-newline$ -- 46
-num.names$ -- 28
-pop$ -- 235
+missing$ -- 349
+newline$ -- 81
+num.names$ -- 52
+pop$ -- 375
 preamble$ -- 1
-purify$ -- 58
+purify$ -- 80
 quote$ -- 0
-skip$ -- 1338
+skip$ -- 2446
 stack$ -- 1
-substring$ -- 452
-swap$ -- 325
-text.length$ -- 12
+substring$ -- 899
+swap$ -- 763
+text.length$ -- 28
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 2
 warning$ -- 0
-while$ -- 45
+while$ -- 85
 width$ -- 0
-write$ -- 110
+write$ -- 205
 (There was 1 error message)

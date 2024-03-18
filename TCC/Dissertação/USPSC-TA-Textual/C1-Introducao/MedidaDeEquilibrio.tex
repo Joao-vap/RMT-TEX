@@ -1,27 +1,28 @@
 \section{Medidas de Equilíbrio}
 \label{Seção: Medida}
-O conjunto de pontos do espaço de fase, seus microestados, determinam um \textit{ensemble estatístico}\footnote{O nome 'Ensembles de Matrizes' não é coincidência.}. Não é difícil notar que o conjunto de microestados $\{\vec{\lambda}\}$ do sistema de $N$ autovalores descrito nesse trabalho caracteriza o ensemble canônico, com função partição $Z_{N, \beta}$, soma sobre os estados do sistema. Um argumento termodinâmico nos indica então que devemos minimizar a energia livre de Helmholtz $$F = -\frac{1}{\beta} \log{Z_{N, \beta}}.$$
-Para todos os efeitos, consideraremos $\V, \ \g$ e $\beta$ tais que dada $\mu_{V,g}(\vec{\lambda})$ medida de probabilidade em $\Omega$, espaço das possíveis configurações de autovalores, e maximizada a função partição $Z_{N, \beta} = \int_{\Omega} \exp{-\beta \mathcal{H}_N(\vec{\lambda})}$, exista\footnote{Condições de Fisher} $$\mu_{V,g}^* = \arg \inf {\mathcal{H}_N(\vec{\lambda})}$$ medida de equilíbrio no limite termodinâmico $N, V \rightarrow \infty$ tal que $v = V/N$ constante. Para determinar a medida de equilíbrio \cite{RMT-firstcourse-Potters} de \ref{Equação: Medida Gas de Coulomb} com interação logarítmica, queremos satisfazer o sistema de equações
+O conjunto de pontos no espaço de fase ou ainda, os microestados, determinam um \textit{ensemble estatístico}. De mesma forma um conjunto de matrizes determina um ensemble em RMT. Podemos relacionar o conjunto de microestados dos autovalores $\{\vec{\lambda}\}$ com as configurações do sistema de $N$ partículas descrito na Seção \ref{Section: Gases de Coulomb}. Notando que tratamos do ensemble canônico, um argumento termodinâmico nos indica então que devemos minimizar a energia livre de Helmholtz $$F = -\frac{1}{\beta} \log{Z_{N, \beta}}.$$ 
+
+Consideraremos $\V$ sob condições tais que seja denominado um potencial admissível \cite{ChafaCoulombMeasure}. Com isso, se $\mu_{V}(\vec{\lambda})$ é medida de probabilidade no espaço das possíveis configurações de autovalores, $Z_{N, \beta} = \int \exp{-\beta \mathcal{H}_N(\vec{\lambda})}$ será finita e existirá $$\mu_{V}^* = \arg \inf {\mathcal{H}_N(\vec{\lambda})}$$ medida de equilíbrio única no limite termodinâmico $N \rightarrow \infty$. Para determinar a medida de equilíbrio de \ref{Equation: Medida Log V} \cite{RMT-firstcourse-Potters}, queremos satisfazer o sistema de equações
 \begin{equation}
 	\frac{\partial \mathcal{H}}{\partial \lambda_i} = 0 \ \implies \ \V'(\lambda_i) = \frac{1}{N} \sum_{1 = j \neq i}^{N} \frac{1}{\lambda_i - \lambda_j} \ \ \text{para} \ i = 1, \cdots, N.
 	\label{Equação: Sistema minimizante}
 \end{equation} 
-Usaremos o denominado \textit{resolvent}. Considere a função complexa\footnote{Stieltjes transform} $$G_N(z) = \frac{1}{N} \Tr{\left(z\Id - \matriz{M}\right)^{-1}} = \frac{1}{N} \sum_{i=1}^{N} \frac{1}{z - \lambda_i},$$ onde $\matriz{M}$ é matriz aleatória com autovalores $\{\mmany{\lambda}{N}\}$. Note que $G_N(z)$ é uma função complexa aleatória com polos em $\lambda_i$. Não trivialmente, podemos reescrever \ref{Equação: Sistema minimizante} como $$\V'(z) G_N(z) - \Pi_N(z) = \frac{G_N^2(z)}{2} + \frac{G'_N(z)}{2N},$$ onde $\Pi_N(z) = \frac{1}{N} \sum_{i = 1}^{N} \frac{\V'(z) - \V'(\lambda_i)}{z - \lambda_i}$ é um polinômio de grau $k - 1 = \deg{\V'(z)} - 1$. 
-Poderíamos tentar resolver explicitamente essa formula para qualquer $N$, isso é possível em alguns casos. Contudo, em geral, estaremos interessados em tirar o limite $N \to \infty$, de $<G_N(z)>$, média sobre a distribuição de $\matriz{M}$. Esta média, denomina-se \textit{resolvent}. Nesse limite,
+Usaremos o denominado \textit{resolvent}. Considere a função complexa $$G_N(z) = \frac{1}{N} \Tr{\left(z\Id - \matriz{M}\right)^{-1}} = \frac{1}{N} \sum_{i=1}^{N} \frac{1}{z - \lambda_i},$$ onde $\matriz{M}$ é matriz aleatória com autovalores $\{\mmany{\lambda}{N}\}$. Note que $G_N(z)$ é uma função complexa aleatória com polos em $\lambda_i$. Não trivialmente, podemos reescrever \ref{Equação: Sistema minimizante} como $$\V'(z) G_N(z) - \Pi_N(z) = \frac{G_N^2(z)}{2} + \frac{G'_N(z)}{2N},$$ onde $\Pi_N(z) = \frac{1}{N} \sum_{i = 1}^{N} \frac{\V'(z) - \V'(\lambda_i)}{z - \lambda_i}$ é um polinômio de grau $k - 1 = \deg{\V'(z)} - 1$. 
+Poderíamos tentar resolver explicitamente essa formula para qualquer $N$, isso é possível em alguns casos. Contudo, em geral, estaremos interessados na assintótica $N \to \infty$ de $G_N(z)$, nesse limite temos a transformada de Stieltjes
 \begin{equation}
-	G^{(med)}_{\infty}(z) = \int \frac{\p(x)}{z - x} \dd x= \V'(z) \pm \sqrt{\V'(z)^2 - 2 \Pi_{\infty}(z) }.
+	S_{\mu_V}(z) = \int \frac{\mu^*_V(x)}{z - x} \dd x= \V'(z) \pm \sqrt{\V'(z)^2 - 2 \Pi_{\infty}(z) }.
 	\label{Equation: Resolvent}
 \end{equation}
-Como consequência da fórmula de Sokhotski-Plemeji, é enunciado o resultado 
+com $\Pi_N(z) = \int \frac{\V'(z) - \V'(\lambda_i)}{z - \lambda_i} \mu^*_V(x) dx$. Como consequência da fórmula de Sokhotski-Plemeji, é enunciado o resultado 
 \begin{equation}
-	\p(x) = \frac{1}{\pi} \lim_{\epsilon \to 0^+} \Im{G_{\infty}^{(med)}(x - \ii\epsilon)}.
+	\mu_V(x) = \frac{1}{\pi} \lim_{\epsilon \to 0^+} \Im{S_{\mu_V}(x - \ii\epsilon)}.
 	\label{Equation: p(lambda)}
 \end{equation}
-Podemos ir um passo além, desde que o potencial $\V(x)$ seja convexo. Neste caso, teremos uma medida de equilíbrio $\p(x)$ não nula apenas no intervalo $(\lambda_{-}, \lambda_{+})$. Sabemos que o comportamento não analítico deve surgir da raiz quadrada, tal que se definirmos $\Df(z) := \V'(z)^2 - 2 \Pi_{\infty}(z)$ polinômio de grau $2k$, $\{\lambda_{-}, \lambda_{+}\}$ são suas raízes e o polinômio tem valor negativo em algum intervalo. Equivalentemente $$D(z) = (z-\lambda_{-})(z - \lambda_{+}) \Qf^2(z),$$ onde $\Qf(z)$ é polinômio de grau $k-1$. Com essas definições podemos escrever que $$G_{\infty}^{(med)}(z) = \V'(z) \pm \Qf(z) \sqrt{(z - \lambda_{-})(z - \lambda_{+})}$$ e, principalmente, por \ref{Equation: p(lambda)},
+Podemos ir um passo além, desde que o potencial $\V(x)$ seja convexo. Neste caso, teremos uma medida de equilíbrio $\mu^*_V(x)$ não nula apenas no intervalo $(\lambda_{-}, \lambda_{+})$. Sabemos que o comportamento não analítico deve surgir da raiz quadrada, tal que se definirmos $\Df(z) := \V'(z)^2 - 2 \Pi_{\infty}(z)$ polinômio de grau $2k$, $\{\lambda_{-}, \lambda_{+}\}$ são suas raízes e o polinômio tem valor negativo em algum intervalo. Equivalentemente $$D(z) = (z-\lambda_{-})(z - \lambda_{+}) \Qf^2(z),$$ onde $\Qf(z)$ é polinômio de grau $k-1$. Com essas definições podemos escrever que $$S_{\mu_V}(z) = \V'(z) \pm \Qf(z) \sqrt{(z - \lambda_{-})(z - \lambda_{+})}$$ e, principalmente, por \ref{Equation: p(lambda)},
 \begin{equation}
-	\p(x) =\frac{\Qf(x)}{\pi} \sqrt{(\lambda_{+} - x)(x - \lambda_{-})}, \ \ \text{para} \ \  \lambda_{-} \leq x \leq \lambda_{+}
+	\mu^*_V(x) =\frac{\Qf(x)}{\pi} \sqrt{(\lambda_{+} - x)(x - \lambda_{-})}, \ \ \text{para} \ \  \lambda_{-} \leq x \leq \lambda_{+}
 \end{equation}
-Restaria, para cada potencial, dada a condição que $G_{\infty}^{(med)}(z) \sim 1/z$ para $z \rightarrow \infty$, resolver um sistema de $k+2$ equações balanceando os coeficientes dos polinômios $\V'$ e $\Qf$ e os valores $\{\lambda_{-}, \lambda_{+}\}$ que tomaremos simétrico $a = \lambda_{+} = \lambda_{-}$, em
+Restaria, para cada potencial, dada a condição que $S_{\mu_V}(z) \sim 1/z$ para $z \rightarrow \infty$, resolver um sistema de $k+2$ equações balanceando os coeficientes dos polinômios $\V'$ e $\Qf$ e os valores $\{\lambda_{-}, \lambda_{+}\}$ que tomaremos simétrico $a = \lambda_{+} = \lambda_{-}$, em
 \[
 \frac{1}{\pi \ii} \int_{\lambda_{-}}^{\lambda_{+}} \frac{\sqrt{x^2 - a^2}\Qf(x)}{z-x} dx = \V'(z) \pm \sqrt{z^2 - a^2}\Qf(z) 
 \]

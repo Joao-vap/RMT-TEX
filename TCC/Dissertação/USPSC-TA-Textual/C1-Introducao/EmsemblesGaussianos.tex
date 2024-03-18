@@ -2,7 +2,7 @@
 \label{Section: Ensembles Gaussianos}
 
 Dentre os muitos ensembles da Teoria de Matrizes Aleatórias (RMT), os ensembles Gaussianos são notórios. São eles o \textit{Gaussian Orthogonal Ensemble (GOE)} \textit{Gaussian Unitary Ensemble (GUE)} e \textit{Gaussian Sympletic Ensemble (GSE)}. Notemos primeiramente que o nome é relacionado à escolha de $\Se$. Mais explicitamente, o nome é dado em relação à se $\matriz{O}$, tal que $\matriz{M} = \matriz{O}\matriz{D}\matriz{O}^*$, é ortogonal, unitário ou simplético. É natural então pensar nos ensembles \textit{GOE}, \textit{GUE} e \textit{GSE} como matrizes $\matriz{M} \in \mathcal{M}_{\Se}(N)$ onde 
-$$ 
+$$
 \mathcal{M}_{\Se}(N) \ni M_{i,j} \sim
 \begin{cases}
 	\mathcal{N}_{\R}(0,1/2) &  \ \text{para} \ i \neq j \ \text{se} \ \ \Se = \R \ (\beta = 1),\\
@@ -11,22 +11,21 @@ $$
 	\mathcal{N}_{\C}(0,1) & \ \text{para} \ i = j \ \text{se} \ \ \Se = \C \ (\beta = 2),\\
 	\mathcal{N}_{\He}(0,1/2) & \ \text{para} \ i \neq j \ \text{se} \ \ \Se = \He \ (\beta = 4), \\
 	\mathcal{N}_{\He}(0,1) & \ \text{para} \ i = j \ \text{se} \ \ \Se = \He \ (\beta = 4).
-\end{cases} $$
+\end{cases}
+$$
 
+Os três ensembles gaussianos compartilham de uma propriedade exclusiva. Estes são os únicos ensembles tais que suas entradas são independentes e sua jpdf permanece sendo rotacionalmente invariante. Para qualquer outro caso, apenas uma das propriedades pode ser esperada. Tomemos, por simplicidade, $\matriz{U} \in \mathcal{M}_{\R}(N)$, matriz real simétrica, do GOE. Para esta, sabendo as entradas independentes, podemos escrever $$\p(\matriz{U}) = \prod_{i=1}^{N}\frac{\exp{\frac{U_{i,i}^2}{2}}}{\sqrt{2\pi}} \prod_{i<j} \frac{\exp{U_{i,i}^2}}{\sqrt{\pi}} = 2^{-N/2} \pi^{-N(N + 1)/4} \exp{-\frac{1}{2} \Tr{U^2}}.$$
 
-Os três ensembles gaussianos compartilham de uma propriedade exclusiva. Estes são os únicos ensembles tais que suas entradas são independentes e sua jpdf permanecem sendo rotacionalmente invariante. Para qualquer outro caso, apenas uma das propriedades pode ser esperada. Tomemos, por simplicidade, $\matriz{U} \in \mathcal{M}_{\R}(N)$, matriz real simétrica, do GOE. Para esta, sabendo as entradas independentes, podemos escrever $$\p(\matriz{U}) = \prod_{i=1}^{N}\frac{\exp{\frac{U_{i,i}^2}{2}}}{\sqrt{2\pi}} \prod_{i<j} \frac{\exp{U_{i,i}^2}}{\sqrt{\pi}} = 2^{-N/2} \pi^{-N(N + 1)/4} \exp{-\frac{1}{2} \Tr{U^2}}.$$
-
-Note que essa jpdf satisfaz as condições do Teorema \ref{Teorema: Invariante} e, especialmente, é da forma que propomos na Equação \ref{Equation: p-ord}. Logo, utilizando o resultado, $$ \p_{ord}(\mmany{\lambda}{N}) = \frac{1}{Z_{N, \beta = 1}^{(ord)}} \exp{-\frac{1}{2} \sum_{i = 1}^{N} \lambda_i^2} \prod_{i < j} (\lambda_i - \lambda_j).$$ Concluímos notando que, se desordenarmos os autovalores, temos a relação $ Z_{N, \beta} = N! Z_{N, \beta}^{(ord)}$\footnote{Fator de contagem correta de Boltzmann}. Assim, $$ \p(\mmany{\lambda}{N}) = \frac{1}{ N! Z_{N, \beta = 1}^{(ord)}} \exp{- \left(\frac{1}{2} \sum_{i = 1}^{N} \lambda_i^2 + \sum_{i < j} \log\frac{1}{|\lambda_i - \lambda_j|} \right)}.$$
-
-De forma análoga, podemos deduzir mais geralmente para os outros casos que
+Note que essa jpdf satisfaz as condições do Teorema \ref{Teorema: Invariante} e, especialmente, é da forma que propomos na Equação \ref{Equation: p-ord}. Logo, utilizando o resultado, $$ \p_{ord}(\mmany{\lambda}{N}) = \frac{1}{Z_{N, \beta = 1}^{(ord)}} \exp{-\frac{1}{2} \sum_{i = 1}^{N} \lambda_i^2} \prod_{i < j} (\lambda_i - \lambda_j).$$ Concluímos notando que, se desordenarmos os autovalores, utilizamos do fator de contagem de Boltzmann \cite[Capítulo~3]{landau2013statistical} para escrever $ Z_{N, \beta} = N! Z_{N, \beta}^{(ord)}$. Assim, $$ \p(\mmany{\lambda}{N}) = \frac{1}{ N! Z_{N, \beta = 1}^{(ord)}} \exp{- \left(\frac{1}{2} \sum_{i = 1}^{N} \lambda_i^2 + \sum_{i < j} \log\frac{1}{|\lambda_i - \lambda_j|} \right)}.$$
+De forma análoga, podemos deduzir mais geralmente para outros $\beta$ que
 \begin{equation}
 	\begin{split}
 		\p(\mmany{\lambda}{N}) 
 		&= \frac{1}{ N! Z_{N, \beta}^{(ord)}} \exp{- \left(\sum_{i = 1}^{N} \frac{\lambda_i^2}{2} - \sum_{i < j} \log{|\lambda_i - \lambda_j|^{\beta}} \right)} \\
-		&= \frac{1}{Z_{N, \beta}} \ee^{-\beta \mathcal{H}_N(\vec{\lambda})}
+		&= \frac{1}{Z_{N, \beta}} \ee^{-\beta_N \mathcal{H}_N(\vec{\lambda})}
 	\end{split}
 \label{Equation: medida Gaussian}
 \end{equation}
 
-Note que, por definição, $Z_{N, \beta}$, na equação \ref{Equation: medida Gaussian}, é função de partição canônica. O fator $\beta$ é pensado como a temperatura inversa. Definimos ainda o Hamiltoniano $\mathcal{H}_N(\vec{\lambda}) = \sum_{i = 1}^{N} \frac{\lambda_i^2}{2 \beta} + \sum_{i < j} \log{\frac{1}{|\lambda_i - \lambda_j|}}.$ Sabemos então, que a partir dessa função podemos retirar importantes propriedades estatísticas dos ensembles Gaussianos.
+Note que, por definição, $Z_{N, \beta}$ é função de partição canônica, normalizante da expressão \ref{Equation: medida Gaussian}. O fator $\beta_N = \beta N^2$ é pensado como a temperatura inversa. Definimos ainda o Hamiltoniano $$\mathcal{H}_N(\vec{\lambda}) = \frac{1}{N}\sum_{i = 1}^{N} \frac{\lambda_i'^2}{2} + \frac{1}{N^2} \sum_{i < j} \log{\frac{1}{|\lambda_i - \lambda_j|}}$$ onde $\lambda_i \mapsto \lambda_i' \sqrt{\beta N}$. Sabemos então, que a partir dessa função podemos retirar importantes propriedades estatísticas (macroscópicas) do sistema de autovalores dos ensembles Gaussianos.
 

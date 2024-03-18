@@ -11,9 +11,33 @@
 \textbf{Eigenvalues and Condition Numbers of Random Matrices}.
 1984. Tese (Doutorado) --- Massachusetts Institute of Technology, 1984.}
 
+\bibitem{weyl1946classical}
+\abntrefinfo{Weyl}{WEYL}{1946}
+{WEYL, H. \textbf{The Classical Groups: Their Invariants and Representations}.
+  Princeton University Press, 1946.  (Princeton Landmarks in Mathematics and
+  Physics, N{\textordmasculine} 1,pt. 1).
+ISBN 9780691057569. Dispon{\'\i}vel em:
+  \url{https://books.google.com.br/books?id=zmzKSP2xTtYC}.}
+
+\bibitem{landau2013statistical}
+\abntrefinfo{Landau e Lifshitz}{LANDAU; LIFSHITZ}{2013}
+{LANDAU, L.; LIFSHITZ, E. \textbf{Statistical Physics: Volume 5}. Elsevier
+  Science, 2013.
+ISBN 9780080570464. Dispon{\'\i}vel em:
+  \url{https://books.google.com.br/books?id=VzgJN-XPTRsC}.}
+
 \bibitem{CoulombGaschafai}
 \abntrefinfo{Chafaï}{CHAFAï}{2021}
 {CHAFAï, D. \textbf{Aspects of Coulomb gases}. 2021.}
+
+\bibitem{ChafaCoulombMeasure}
+\abntrefinfo{Chafaï, Hardy e Maïda}{CHAFAï; HARDY; MAïDA}{2018}
+{CHAFAï, D.; HARDY, A.; MAïDA, M. Concentration for coulomb gases and coulomb
+  transport inequalities.
+\textbf{Journal of Functional Analysis}, Elsevier BV, v.~275, n.~6, p.
+  1447–1483, set. 2018.
+ISSN 0022-1236.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1016/j.jfa.2018.06.004}.}
 
 \bibitem{RMT-firstcourse-Potters}
 \abntrefinfo{Potters e Bouchaud}{POTTERS; BOUCHAUD}{2020}
@@ -38,6 +62,13 @@ ISBN 9783319163758. Dispon{\'\i}vel em:
 ISSN 1540-3467.
 Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1137/16M110575X}.}
 
+\bibitem{Verlet}
+\abntrefinfo{Verlet}{VERLET}{1967}
+{VERLET, L. Computer "experiments" on classical fluids. i. thermodynamical
+  properties of lennard-jones molecules.
+\textbf{Phys. Rev.}, American Physical Society, v.~159, p. 98--103, Jul 1967.
+Dispon{\'\i}vel em: \url{https://link.aps.org/doi/10.1103/PhysRev.159.98}.}
+
 \bibitem{Chafa2018}
 \abntrefinfo{Chafaï e Ferr{\'{e}}}{CHAFAï; FERR{\'{E}}}{2018}
 {CHAFAï, D.; FERR{\'{E}}, G. Simulating coulomb and log-gases with hybrid
@@ -45,6 +76,20 @@ Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1137/16M110575X}.}
 \textbf{Journal of Statistical Physics}, Springer Science and Business Media
   {LLC}, v.~174, n.~3, p. 692--714, nov 2018.
 Dispon{\'\i}vel em: \url{https://doi.org/10.1007\%2Fs10955-018-2195-6}.}
+
+\bibitem{DPD}
+\abntrefinfo{Español e Warren}{ESPAñOL; WARREN}{1995}
+{ESPAñOL, P.; WARREN, P. Statistical mechanics of dissipative particle
+  dynamics.
+\textbf{Europhysics Letters}, v.~30, n.~4, p.~191, may 1995.
+Dispon{\'\i}vel em: \url{https://dx.doi.org/10.1209/0295-5075/30/4/001}.}
+
+\bibitem{Hoover}
+\abntrefinfo{Hoover}{HOOVER}{1985}
+{HOOVER, W.~G. Canonical dynamics: Equilibrium phase-space distributions.
+\textbf{Phys. Rev. A}, American Physical Society, v.~31, p. 1695--1697, Mar
+  1985.
+Dispon{\'\i}vel em: \url{https://link.aps.org/doi/10.1103/PhysRevA.31.1695}.}
 
 \bibitem{NormalVariable}
 \abntrefinfo{Boiroju}{BOIROJU}{2011}
