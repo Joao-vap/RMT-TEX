@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.23)  18 MAR 2024 18:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.23)  19 MAR 2024 15:33
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1446,7 +1446,7 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 186.
 Writing index file main.idx 
 \c@lemma=\count413
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 29
-7.
+8.
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (./main.aux
@@ -1458,24 +1458,24 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (./USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1499,7 +1499,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 297.
+Package hyperref Info: Link coloring ON on input line 298.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1514,29 +1514,29 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 297.
-LaTeX Info: Redefining \ref on input line 297.
-LaTeX Info: Redefining \pageref on input line 297.
-LaTeX Info: Redefining \nameref on input line 297.
-LaTeX Info: Redefining \degres on input line 297.
-LaTeX Info: Redefining \up on input line 297.
+LaTeX Info: Redefining \nameref on input line 298.
+LaTeX Info: Redefining \ref on input line 298.
+LaTeX Info: Redefining \pageref on input line 298.
+LaTeX Info: Redefining \nameref on input line 298.
+LaTeX Info: Redefining \degres on input line 298.
+LaTeX Info: Redefining \up on input line 298.
 \myptabbox=\box149
 \myptabboxwidth=\skip277
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 297.
-LaTeX Info: Redefining \microtypecontext on input line 297.
-Package microtype Info: Applying patch `item' on input line 297.
-Package microtype Info: Applying patch `toc' on input line 297.
-Package microtype Info: Applying patch `eqnum' on input line 297.
-Package microtype Info: Applying patch `footnote' on input line 297.
+(lastpage)             ! on input line 298.
+LaTeX Info: Redefining \microtypecontext on input line 298.
+Package microtype Info: Applying patch `item' on input line 298.
+Package microtype Info: Applying patch `toc' on input line 298.
+Package microtype Info: Applying patch `eqnum' on input line 298.
+Package microtype Info: Applying patch `footnote' on input line 298.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 297.
+LaTeX Info: Redefining \showhyphens on input line 298.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1555,7 +1555,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 3
-23.
+24.
 
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1567,54 +1567,54 @@ Package microtype Info: Loading generic protrusion settings for font family
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 2865) in paragraph at lines 339--339
+Underfull \hbox (badness 2865) in paragraph at lines 340--340
 \T1/lmr/m/n/12 (+20) ao Programa de Graduação em Física
  []
 
 
-Underfull \hbox (badness 3240) in paragraph at lines 339--339
+Underfull \hbox (badness 3240) in paragraph at lines 340--340
 \T1/lmr/m/n/12 (+20) do Instituto de Física de São Carlos,
  []
 
 
-Underfull \hbox (badness 1769) in paragraph at lines 339--339
+Underfull \hbox (badness 1769) in paragraph at lines 340--340
 \T1/lmr/m/n/12 (+20) da Universidade de São Paulo, para a
  []
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-39.
+40.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-39.
+40.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-339.
+340.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-339.
+340.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 339.
+(Font)              <12> on input line 340.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 339.
+(Font)              <8> on input line 340.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 339.
+(Font)              <6> on input line 340.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.339 
+l.340 
        [1
 
 
@@ -1684,14 +1684,17 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 
 (./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.tex
-(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/IntroducaoAoAlgoritmo.tex [12
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/IntroducaoAoAlgoritmo.tex
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 3.
+ [12
 
 
 
 
 ])
-(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/Discretizacao.tex)
-(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/Metropolis.tex [13])) [14]
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/Discretizacao.tex [13])
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/Metropolis.tex)) [14]
 \openout2 = `USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResu
 ltados.aux'.
 
@@ -1701,8 +1704,6 @@ ltados.aux'.
 
 LaTeX Warning: Citation `NAO SEI' on page 15 undefined on input line 3.
 
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 74.
 [15
 
 
@@ -1711,12 +1712,12 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ])
 (./USPSC-TA-Textual/C3-ImplementacaoEResultados/ValidacaoDistsConhecidas.tex
 [16]
-<Assets/validationGaussian.png, id=248, 1387.584pt x 734.9859pt>
+<Assets/validationGaussian.png, id=258, 1387.584pt x 734.9859pt>
 File: Assets/validationGaussian.png Graphic file (type png)
 <use Assets/validationGaussian.png>
 Package pdftex.def Info: Assets/validationGaussian.png  used on input line 10.
 (pdftex.def)             Requested size: 455.0pt x 241.00964pt.
-<Assets/validationQuarticMonic.png, id=256, 1387.584pt x 734.9859pt>
+<Assets/validationQuarticMonic.png, id=266, 1387.584pt x 734.9859pt>
 File: Assets/validationQuarticMonic.png Graphic file (type png)
 <use Assets/validationQuarticMonic.png>
 Package pdftex.def Info: Assets/validationQuarticMonic.png  used on input line 
@@ -1758,17 +1759,17 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 36132 strings out of 478287
- 681975 string characters out of 5849288
- 1158108 words of memory out of 5000000
- 53265 multiletter control sequences out of 15000+600000
- 550829 words of font info for 186 fonts, out of 8000000 for 9000
+ 36168 strings out of 478287
+ 682518 string characters out of 5849288
+ 1158442 words of memory out of 5000000
+ 53278 multiletter control sequences out of 15000+600000
+ 556302 words of font info for 196 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,20n,93p,1742b,1389s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,20n,93p,1448b,1389s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/shar
-e/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/l
-m-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texlive
+ips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share
+/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ma
+thsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texlive
 /texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/share/texmf/fonts/type1/
 public/lm/lmbsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/
@@ -1778,15 +1779,15 @@ ic/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share
 lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/f
 onts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb
 ></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/sh
-are/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public
-/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmsy8.pfb>
-Output written on main.pdf (22 pages, 609849 bytes).
+/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
+Output written on main.pdf (22 pages, 633492 bytes).
 PDF statistics:
- 502 PDF objects out of 1000 (max. 8388607)
- 421 compressed objects within 5 object streams
- 109 named destinations out of 1000 (max. 500000)
- 45247 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 521 PDF objects out of 1000 (max. 8388607)
+ 437 compressed objects within 5 object streams
+ 114 named destinations out of 1000 (max. 500000)
+ 49343 words of extra memory for PDF output out of 51595 (max. 10000000)
 

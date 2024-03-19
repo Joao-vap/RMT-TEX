@@ -1,20 +1,25 @@
-\section{Introdução - Dinâmica de Langevin}
+\section{Dinâmica de Langevin Monte Carlo}
 
-Precisamos portanto de uma dinâmica estocástica, um termostato, onde sejamos capazes de amostrar da medida de equilíbrio do sistema. Um esquema comumente utilizado é o da dinâmica de Langevin. Contudo, poderíamos ter explorado quaisquer outras dinâmicas similares tais como as dinâmicas de \textit{Dissipative Particle} \cite{DPD} ou \textit{Nose-Hoover} \cite{Hoover}.
+Nosso objetivo com a simulação é determinar a esperança de uma função de interesse $\f(\vec{q})$, $$\langle f \rangle \approx \frac{1}{n} \sum_{i=0}^{n-1} f(\vec{q}_i),$$ onde $\vec{q}_i$ são obtidos por meio da simulação a partir da distribuição de Boltzmann dada. Para fazer nosso modelo ergótico, ou seja, garantir que não restringiremos a dinâmica (e nossas amostras) à um subconjunto do espaço de fase, tomaremos uma dinâmica, um termostato, estocástica. Isso usualmente garante que o sistema convirja para sua medida invariante (única). Um esquema comumente utilizado é o da dinâmica de Langevin.\footnote{Poderíamos ter explorado quaisquer outras dinâmicas similares tais como as dinâmicas de \textit{Dissipative Particle} \cite{DPD} ou \textit{Nose-Hoover} \cite{Hoover}.} 
 
-Para a nossa escolha, denote a configuração do sistema por $(q, p)$, onde $q,p \in \R^d$ são respectivamente as posições e momentos associados às $N$ partículas. Poderíamos enunciar a equação diferencial simplesmente por $$\dd q_t = -\alpha_N \nabla H_N(q_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd B_t$$ e isso seria suficiente. Contudo, a proposta é introduzir $\U_N \colon \R^d \rightarrow \R$ energia cinética generalizada tal que $\ee^{-\beta_N \U_N}$ seja lebesgue integrável. Para uma energia da forma $\Ee(q,p) = \Hf(q) + \U(p)$, escreveríamos dinâmica de Langevin para o processo de difusão em $\R^{dN} \cross \R^{dN}$ como a solução para a equação estocástica \cite{Stoltz2018} 
+Denote a configuração do sistema por $(q, p)$, onde $q,p \in \R^d$ são respectivamente as posições e momentos generalizados associados às $N$ partículas. Poderíamos enunciar a equação diferencial simplesmente por 
+\begin{equation}
+	\dd q_t = -\alpha_N \nabla H_N(q_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd W_t
+	\label{Equação: Langevin Overdamped}
+\end{equation}
+onde $(W_t)_{t>0}$ é processo de Wiener, $\gamma_N > 0$ é constante de atrito e $\alpha_N$ é escala temporal. Isso seria suficiente e é chamado \textit{Overdamped Langevin}, contudo, tomaremos sua versão cinética. introduza $\U_N \colon \R^d \rightarrow \R$ energia cinética generalizada tal que $\ee^{-\beta_N \U_N}$ seja lebesgue integrável. Para uma energia da forma $\Ee(q,p) = \Hf(q) + \U(p)$, escrevemos a dinâmica de Langevin para o processo de difusão em $\R^{dN} \cross \R^{dN}$ como a solução para a equação estocástica \cite{Stoltz2018} 
 \begin{equation}
 \begin{cases}
 	\dd q_t = \alpha_N \nabla U_N (p_t) \dd t, \\
-	\dd p_t = -\alpha_N \nabla H_N(q_t) \dd t - \gamma_N \alpha_N \nabla U_N(p_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd B_t.
+	\dd p_t = -\alpha_N \nabla H_N(q_t) \dd t - \gamma_N \alpha_N \nabla U_N(p_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd W_t.
 \end{cases}
 \label{Equação: EqDif - Dinamica Langevin}
 \end{equation}
-onde $(B_t)_{t>0}$ é movimento browniano em $\R^{dN}$ e $\gamma_N > 0$ é constante de atrito. Já $\beta_N$, temperatura inversa e $\Hf$ são como em \ref{Equation: Medida Log V}. Essa dinâmica admite o gerador infinitesimal 
+onde $\beta_N$, temperatura inversa e $\Hf$ são como em \ref{Equation: Medida Log V}. Essa dinâmica admite o gerador infinitesimal 
 \[
 	\Gl = \Gl_{\Hf} + \Gl_{\U},
 \]
 \[
  \Gl_{\Hf} = -\alpha_N \nabla\Hf_N(q) \cdot \nabla_p + \alpha_N \nabla \U_N(p) \cdot \nabla_q, \ \ \ \ \Gl_{\U} = \frac{\gamma_N\alpha_N}{\beta_N} \Delta_p - \gamma_N \alpha_N \nabla \U_N(p) \cdot \nabla_p.
 \]
-Aqui, denomina-se $\Gl_{\Hf}$ a parte Hamiltoniana e $\Gl_{\U}$ a parte de flutuação-dissipação. Tomaremos $\U_N(p) = \frac{1}{2} |p|^2$ tal que $\U_N(p)$ é energia cinética usual, apesar de que existem trabalhos sobre energias cinéticas generalizadas que poderiam ser exploradas \cite{Stoltz2018}. Para simular o processo $(p_t,q_t)$ teríamos que integrar \ref{Equação: EqDif - Dinamica Langevin}, contudo, sabemos que isso pode não ser possível, o que nos leva a recorrer a métodos numéricos e amostrar da trajetória obtida a partir da discretização de \ref{Equação: EqDif - Dinamica Langevin}. 
+Aqui, denomina-se $\Gl_{\Hf}$ a parte Hamiltoniana e $\Gl_{\U}$ a parte de flutuação-dissipação. Tomaremos $\U_N(p) = \frac{1}{2} |p|^2$ tal que $\U_N(p)$ é energia cinética usual tal que $(W_t)_{t>0}$ será processo browniano. Para simular o processo $(p_t,q_t)$ teríamos que integrar \ref{Equação: EqDif - Dinamica Langevin}, contudo, sabemos que isso pode não ser possível, o que nos leva a recorrer a métodos numéricos e amostrar da trajetória obtida a partir da discretização. 

@@ -54,14 +54,6 @@ ISBN 9781108488082. Dispon{\'\i}vel em:
 ISBN 9783319163758. Dispon{\'\i}vel em:
   \url{https://books.google.com.br/books?id=AGF1CQAAQBAJ}.}
 
-\bibitem{Stoltz2018}
-\abntrefinfo{Stoltz e Trstanova}{STOLTZ; TRSTANOVA}{2018}
-{STOLTZ, G.; TRSTANOVA, Z. Langevin dynamics with general kinetic energies.
-\textbf{Multiscale Modeling \& amp; Simulation}, Society for Industrial \&
-  Applied Mathematics (SIAM), v.~16, n.~2, p. 777–806, jan. 2018.
-ISSN 1540-3467.
-Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1137/16M110575X}.}
-
 \bibitem{Verlet}
 \abntrefinfo{Verlet}{VERLET}{1967}
 {VERLET, L. Computer "experiments" on classical fluids. i. thermodynamical
@@ -90,6 +82,21 @@ Dispon{\'\i}vel em: \url{https://dx.doi.org/10.1209/0295-5075/30/4/001}.}
 \textbf{Phys. Rev. A}, American Physical Society, v.~31, p. 1695--1697, Mar
   1985.
 Dispon{\'\i}vel em: \url{https://link.aps.org/doi/10.1103/PhysRevA.31.1695}.}
+
+\bibitem{Stoltz2018}
+\abntrefinfo{Stoltz e Trstanova}{STOLTZ; TRSTANOVA}{2018}
+{STOLTZ, G.; TRSTANOVA, Z. Langevin dynamics with general kinetic energies.
+\textbf{Multiscale Modeling \& amp; Simulation}, Society for Industrial \&
+  Applied Mathematics (SIAM), v.~16, n.~2, p. 777–806, jan. 2018.
+ISSN 1540-3467.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1137/16M110575X}.}
+
+\bibitem{handbookmontecarlo}
+\abntrefinfo{Brooks \textit{et al.}}{BROOKS \textit{et al.}}{2011}
+{BROOKS, S. \textit{et al.} \textbf{Handbook of Markov Chain Monte Carlo}. CRC
+  Press, 2011.  (ISSN).
+ISBN 9781420079425. Dispon{\'\i}vel em:
+  \url{https://books.google.com.br/books?id=qfRsAIKZ4rIC}.}
 
 \bibitem{NormalVariable}
 \abntrefinfo{Boiroju}{BOIROJU}{2011}

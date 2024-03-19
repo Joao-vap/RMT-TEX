@@ -14,8 +14,8 @@
 \contentsline {subsection}{\numberline {1.5.3}Potencial Mônico}{11}{subsection.1.5.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Simulações e Algoritmos}}{12}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Introdução - Dinâmica de Langevin}{12}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Discretização - Verlet Integrator}{13}{section.2.2}%
+\contentsline {section}{\numberline {2.1}Dinâmica de Langevin Monte Carlo}{12}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Discretização}{13}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Passo de Seleção - Metropolis}{14}{section.2.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Implementação e Resultados}}{15}{chapter.3}%

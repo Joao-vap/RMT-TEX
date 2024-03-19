@@ -1,13 +1,13 @@
 \section{Passo de Seleção - Metropolis}
 
-Muitos algoritmos utilizam  de um passo de seleção para estabilizar sua dinâmica e otimizar a convergência e a amostragem da variável de interesse. Dentre eles citemos por exemplo o \textit{Metropolis-Adjusted Langevin Algorith} (MALA) \cite[Anexo~C]{leimmolecular}. Outros métodos com a amenização do processo também teriam efeito sobre a estilização da dinâmica. Para o método de metrópolis, um importante aspecto é manter a quantidade de rejeições baixa para não atrapalhar a eficiência do programa, o que influencia no tamanho do passo temporal decidido. Apesar disso, seu uso pode levar à descrita melhor estabilidade numérica.
+Muitos algoritmos utilizam de um passo de seleção para estabilizar sua dinâmica e otimizar a convergência e a amostragem da variável de interesse \footnote{Como o \textit{Metropolis-Adjusted Langevin Algorith} (MALA) \cite[Anexo~C]{leimmolecular}}. Partindo dos esquemas da Seção \ref{Seção: Discretização}, consideraremos que temos uma proposta $\tilde{q}_{k+1}$ de estado. Para o método de Metropolis, um importante aspecto é manter a razão de rejeições baixa para não atrapalhar a eficiência do programa, o que influencia no tamanho do passo temporal decidido. Pode ser mostrado que $\Delta t$ é ideal quando é da ordem de $N^{-\frac{1}{4}}$, tornando o esquema interessante pela escalabilidade de $N$.
 
-Usaremos um esquema de Metropolis onde procuraremos, definindo uma probabilidade de aceite de cada atualização, evitar passos redundantes ou irrelevantes. Propõe-se então que, a partir da atualização para a posição $\tilde{q}_{k+1}$ \cite{Chafa2018}, se calcule a probabilidade
+Propõe-se então que, a partir da proposição de estado $\tilde{q}_{k+1}$ gerada pelo esquema anterior, se calcule a probabilidade
 \begin{equation}
 P_k = 1 \wedge \frac{\K(\tilde{q}_{k+1}, q_k) \ee^{-\beta_N \Hf_N(\tilde{q}_{k+1})}}{\K(q_k, \tilde{q}_{k+1}) \ee^{-\beta_N \Hf_N(q_{k})}},
 \label{Equation: Pk}
 \end{equation}
-onde o núcleo $K(x, y)$ é simétrico \cite{Chafa2018} para o caso do \textit{Hybrid Monte Carlo} e, por se cancelar, não será discutido adiante. Atribua agora às coordenadas generalizadas $(q_{k+1}, p_{k+1})$ valor da seguinte forma
+onde o núcleo $K(x, y)$ é simétrico \cite{Chafa2018} para o caso do \textit{Langevin Monte Carlo} e, por se cancelar, não será discutido adiante. Atribua agora às novas coordenadas generalizadas $(q_{k+1}, p_{k+1})$ valor da seguinte forma
 \begin{equation}
 	(q_{k+1}, p_{k+1}) =
 \begin{cases}
@@ -16,4 +16,4 @@ onde o núcleo $K(x, y)$ é simétrico \cite{Chafa2018} para o caso do \textit{H
 \end{cases}
 \label{Equation: Metropolis}
 \end{equation}
-De forma a garantir a conservação da energia para o sistema e otimizar a exploração do espaço de fase.
+De forma a garantir a conservação da energia, que é uma preocupação na discretização da dinâmica, e otimizar a exploração do espaço de fase.

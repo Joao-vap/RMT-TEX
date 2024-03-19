@@ -24,7 +24,6 @@ Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: abntex2-options.bib
 Database file #2: USPSC-bib/USPSC-modelo-references.bib
 Warning--I didn't find a database entry for "abnt-etal-cite"
-Warning--I didn't find a database entry for "bibid"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
@@ -34,45 +33,45 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 24 entries,
+You've used 25 entries,
             6714 wiz_defined-function locations,
-            1327 strings with 12533 characters,
-and the built_in function-call counts, 21785 in all, are:
-= -- 2505
-> -- 277
-< -- 495
-+ -- 627
-- -- 85
-* -- 1254
-:= -- 2563
-add.period$ -- 58
-call.type$ -- 26
-change.case$ -- 150
-chr.to.int$ -- 39
-cite$ -- 13
-duplicate$ -- 1992
-empty$ -- 1215
-format.name$ -- 427
-if$ -- 4681
+            1333 strings with 12711 characters,
+and the built_in function-call counts, 23617 in all, are:
+= -- 2730
+> -- 311
+< -- 545
++ -- 691
+- -- 95
+* -- 1371
+:= -- 2782
+add.period$ -- 64
+call.type$ -- 27
+change.case$ -- 163
+chr.to.int$ -- 40
+cite$ -- 14
+duplicate$ -- 2184
+empty$ -- 1280
+format.name$ -- 482
+if$ -- 5048
 int.to.chr$ -- 10
 int.to.str$ -- 1
-missing$ -- 349
-newline$ -- 81
-num.names$ -- 52
-pop$ -- 375
+missing$ -- 370
+newline$ -- 86
+num.names$ -- 56
+pop$ -- 404
 preamble$ -- 1
-purify$ -- 80
+purify$ -- 85
 quote$ -- 0
-skip$ -- 2446
+skip$ -- 2635
 stack$ -- 1
-substring$ -- 899
-swap$ -- 763
-text.length$ -- 28
+substring$ -- 967
+swap$ -- 832
+text.length$ -- 29
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 2
 warning$ -- 0
-while$ -- 85
+while$ -- 91
 width$ -- 0
-write$ -- 205
+write$ -- 220
 (There was 1 error message)
