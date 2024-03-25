@@ -1,0 +1,51 @@
+\babel@toc {portuguese}{}\relax 
+\contentsline {chapter}{\numberline {1}Introdução}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Física e Mecânica Estatística}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Entropia de Shannon}{3}{subsection.1.1.1}%
+\contentsline {subsubsection}{Um vínculo}{3}{section*.2}%
+\contentsline {subsubsection}{Dois vínculos}{4}{section*.3}%
+\contentsline {subsubsection}{Três vínculos}{5}{section*.4}%
+\contentsline {subsection}{\numberline {1.1.2}O ensemble Micro-Canônico}{5}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}O ensemble Canônico}{6}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}O ensemble Grão Canônico}{8}{subsection.1.1.4}%
+\contentsline {chapter}{\numberline {2}Procura-se autovalores}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Porquê exponencial?}{12}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Shannon-Quem?}{12}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Independência ou Morte}{13}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Uma medida à Hermitiana}{14}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Processo Pontual}{16}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Poisson \& fries}{16}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Funcão Correlação}{17}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Pontual Determinantal}{17}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Emsemble Biortogonal}{18}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Karlin-McGregor}{18}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}O teorema}{18}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Consequências}{20}{subsection.2.6.2}%
+\contentsline {section}{\numberline {2.7}Simulações Gerais}{23}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Tracy Widom}{25}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}O diamante Asteca}{32}{subsection.2.7.2}%
+\contentsline {subsubsection}{O tabuleiro de xadrez}{32}{section*.5}%
+\contentsline {subsubsection}{De quantas formas preenchemos?}{34}{section*.6}%
+\contentsline {subsubsection}{O diamante}{34}{section*.7}%
+\contentsline {chapter}{\numberline {3}Coulombolas! Gases Aleatórios}{40}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Hamiltonianozinho}{41}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Introdução Teórica}{42}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Gases de Coulomb}{42}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Log-Gases}{43}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Medidas de Equilíbrio}{43}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Simulando Coulomb-Log Gases}{43}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Os típicos}{43}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}O Híbrido de Monte Carlo}{44}{subsection.3.3.2}%
+\contentsline {subsubsection}{O algoritmo discreto}{44}{section*.8}%
+\contentsline {section}{\numberline {3.4}Validando a implementação}{45}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Validando nosso programa}{45}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Outras distribuições}{45}{subsection.3.4.2}%
+\contentsline {subsubsection}{Potencial Quártico}{45}{section*.9}%
+\contentsline {subsubsection}{Potencial Mônico}{45}{section*.10}%
+\contentsline {subsection}{\numberline {3.4.3}Paralelização}{45}{subsection.3.4.3}%
+\contentsline {chapter}{\numberline {A}Algoritmo Artigo}{49}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Transformação Legendre}{50}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Tangentes}{50}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Otimização}{50}{section.B.2}%
+\contentsline {chapter}{\numberline {C}Soma Assintóticas}{52}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Det Vandermonde}{53}{appendix.D}%

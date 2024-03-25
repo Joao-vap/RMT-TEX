@@ -1,0 +1,46 @@
+Introduction
+
+#########################################################################################
+> Handbook of Markov Chain
+
+[C5/p132] - Markov chain. Monte Carlo (MCMC) originated with the dassic paper of Metropolis et al.
+{1953), where it was used to simulate the distribution of states for a system of idealized
+molecules. Not long after, another approach to molecular simulation was introduced (Alder
+and Wamwright, 1959), in which the motion of the molecules was deterministic, following
+Newton's laws of motion, which have an elegant formalization as Hamiltonian dynamics. For
+finding the properties of bulk materials, these approaches are asymptotically equivalent,
+since even in a deterministic simulation, each local region of the material experiences
+effectively random influences from distant regions. Despite the large overlap in their
+appli­cation areas, the MCMC and molecular dynamics approaches have continued to coexist in
+the following decades (see Frenkel and Smit, 1996).
+
+[C5/p123] - Note that the invariance of H under Hamiltonian dynamics means that a Hamiltonian
+trajectory will (if simulated exactly) move within a hypersurface of constant probability
+density.
+
+> Real spectra of large real asymmetric random matrices
+
+It is almost impossible to imagine a quantitative field,
+in which a diagonalization of non-symmetric matrices is
+not used. Following the pioneering works of Wigner [1]
+and Dyson [2], spectra of random matrices have been
+intensively studied in physics and mathematics. Gini-
+bre initiated studies of random matrices lacking symme-
+tries [3], but real matrices turned out to be the most
+difficult path on the Dyson threefold way [4], and it took
+more than 40 years to pave the way for fully solving the
+real Ginibre ensemble [5–13].
+
+> A frist Course in random matrix theory
+
+In many circumstances, the matrices that are encountered are large, and with no particular
+structure. Physicist Eugene Wigner postulated that one can often replace a large complex
+(but deterministic) matrix by a typical element of a certain ensemble of random matrices.
+This bold proposal was made in the context of the study of large complex atomic nuclei,
+where the “matrix” is the Hamiltonian of the system, which is a Hermitian matrix describ-
+ing all the interactions between the neutrons and protons contained in the nucleus. At the
+time, these interactions were not well known; but even if they had been, the task of diag-
+onalizing the Hamiltonian to find the energy levels of the nucleus was so formidable that
+Wigner looked for an alternative.
+
+#####################################################################################################

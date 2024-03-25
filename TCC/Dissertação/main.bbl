@@ -5,30 +5,43 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
+\bibitem{PoterRosen}
+\abntrefinfo{Rosenzweig e Porter}{ROSENZWEIG; PORTER}{1960}
+{ROSENZWEIG, N.; PORTER, C.~E. "repulsion of energy levels" in complex atomic
+  spectra.
+\textbf{Phys. Rev.}, American Physical Society, v.~120, p. 1698--1714, Dec
+  1960.}
+
+\bibitem{MehtaGaudin}
+\abntrefinfo{Mehta e Gaudin}{MEHTA; GAUDIN}{1960}
+{MEHTA, M.; GAUDIN, M. On the density of eigenvalues of a random matrix.
+\textbf{Nuclear Physics}, v.~18, p. 420--427, 1960.
+ISSN 0029-5582.}
+
+\bibitem{Dyson}
+\abntrefinfo{Dyson}{DYSON}{1962}
+{DYSON, F.~J. {Statistical Theory of the Energy Levels of Complex Systems. I}.
+\textbf{Journal of Mathematical Physics}, v.~3, n.~1, p. 140--156, 01 1962.
+ISSN 0022-2488.}
+
+\bibitem{RMT-firstcourse-Potters}
+\abntrefinfo{Potters e Bouchaud}{POTTERS; BOUCHAUD}{2020}
+{POTTERS, M.; BOUCHAUD, J. \textbf{A First Course in Random Matrix Theory: for
+  Physicists, Engineers and Data Scientists}. [\textit{S.l.: s.n.}]: Cambridge
+  University Press, 2020.
+ISBN 9781108488082.}
+
 \bibitem{AlanThesis}
 \abntrefinfo{Edelman}{EDELMAN}{1984}
 {EDELMAN, A.
 \textbf{Eigenvalues and Condition Numbers of Random Matrices}.
 1984. Tese (Doutorado) --- Massachusetts Institute of Technology, 1984.}
 
-\bibitem{weyl1946classical}
-\abntrefinfo{Weyl}{WEYL}{1946}
-{WEYL, H. \textbf{The Classical Groups: Their Invariants and Representations}.
-  Princeton University Press, 1946.  (Princeton Landmarks in Mathematics and
-  Physics, N{\textordmasculine} 1,pt. 1).
-ISBN 9780691057569. Dispon{\'\i}vel em:
-  \url{https://books.google.com.br/books?id=zmzKSP2xTtYC}.}
-
 \bibitem{landau2013statistical}
 \abntrefinfo{Landau e Lifshitz}{LANDAU; LIFSHITZ}{2013}
-{LANDAU, L.; LIFSHITZ, E. \textbf{Statistical Physics: Volume 5}. Elsevier
-  Science, 2013.
-ISBN 9780080570464. Dispon{\'\i}vel em:
-  \url{https://books.google.com.br/books?id=VzgJN-XPTRsC}.}
-
-\bibitem{CoulombGaschafai}
-\abntrefinfo{Chafaï}{CHAFAï}{2021}
-{CHAFAï, D. \textbf{Aspects of Coulomb gases}. 2021.}
+{LANDAU, L.; LIFSHITZ, E. \textbf{Statistical Physics: Volume 5}.
+  [\textit{S.l.: s.n.}]: Elsevier Science, 2013.
+ISBN 9780080570464.}
 
 \bibitem{ChafaCoulombMeasure}
 \abntrefinfo{Chafaï, Hardy e Maïda}{CHAFAï; HARDY; MAïDA}{2018}
@@ -36,67 +49,56 @@ ISBN 9780080570464. Dispon{\'\i}vel em:
   transport inequalities.
 \textbf{Journal of Functional Analysis}, Elsevier BV, v.~275, n.~6, p.
   1447–1483, set. 2018.
-ISSN 0022-1236.
-Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1016/j.jfa.2018.06.004}.}
-
-\bibitem{RMT-firstcourse-Potters}
-\abntrefinfo{Potters e Bouchaud}{POTTERS; BOUCHAUD}{2020}
-{POTTERS, M.; BOUCHAUD, J. \textbf{A First Course in Random Matrix Theory: for
-  Physicists, Engineers and Data Scientists}. Cambridge University Press, 2020.
-ISBN 9781108488082. Dispon{\'\i}vel em:
-  \url{https://books.google.com.br/books?id=9K-WzQEACAAJ}.}
+ISSN 0022-1236.}
 
 \bibitem{leimmolecular}
 \abntrefinfo{Leimkuhler e Matthews}{LEIMKUHLER; MATTHEWS}{2015}
 {LEIMKUHLER, B.; MATTHEWS, C. \textbf{Molecular Dynamics: With Deterministic
-  and Stochastic Numerical Methods}. Springer International Publishing, 2015.
-  (Interdisciplinary Applied Mathematics).
-ISBN 9783319163758. Dispon{\'\i}vel em:
-  \url{https://books.google.com.br/books?id=AGF1CQAAQBAJ}.}
+  and Stochastic Numerical Methods}. [\textit{S.l.: s.n.}]: Springer
+  International Publishing, 2015.  (Interdisciplinary Applied Mathematics).
+ISBN 9783319163758.}
 
 \bibitem{Verlet}
 \abntrefinfo{Verlet}{VERLET}{1967}
 {VERLET, L. Computer "experiments" on classical fluids. i. thermodynamical
   properties of lennard-jones molecules.
-\textbf{Phys. Rev.}, American Physical Society, v.~159, p. 98--103, Jul 1967.
-Dispon{\'\i}vel em: \url{https://link.aps.org/doi/10.1103/PhysRev.159.98}.}
+\textbf{Phys. Rev.}, American Physical Society, v.~159, p. 98--103, Jul 1967.}
 
 \bibitem{Chafa2018}
 \abntrefinfo{Chafaï e Ferr{\'{e}}}{CHAFAï; FERR{\'{E}}}{2018}
 {CHAFAï, D.; FERR{\'{E}}, G. Simulating coulomb and log-gases with hybrid
   monte carlo algorithms.
 \textbf{Journal of Statistical Physics}, Springer Science and Business Media
-  {LLC}, v.~174, n.~3, p. 692--714, nov 2018.
-Dispon{\'\i}vel em: \url{https://doi.org/10.1007\%2Fs10955-018-2195-6}.}
+  {LLC}, v.~174, n.~3, p. 692--714, nov 2018.}
 
 \bibitem{DPD}
 \abntrefinfo{Español e Warren}{ESPAñOL; WARREN}{1995}
 {ESPAñOL, P.; WARREN, P. Statistical mechanics of dissipative particle
   dynamics.
-\textbf{Europhysics Letters}, v.~30, n.~4, p.~191, may 1995.
-Dispon{\'\i}vel em: \url{https://dx.doi.org/10.1209/0295-5075/30/4/001}.}
+\textbf{Europhysics Letters}, v.~30, n.~4, p.~191, may 1995.}
 
 \bibitem{Hoover}
 \abntrefinfo{Hoover}{HOOVER}{1985}
 {HOOVER, W.~G. Canonical dynamics: Equilibrium phase-space distributions.
 \textbf{Phys. Rev. A}, American Physical Society, v.~31, p. 1695--1697, Mar
-  1985.
-Dispon{\'\i}vel em: \url{https://link.aps.org/doi/10.1103/PhysRevA.31.1695}.}
+  1985.}
 
 \bibitem{Stoltz2018}
 \abntrefinfo{Stoltz e Trstanova}{STOLTZ; TRSTANOVA}{2018}
 {STOLTZ, G.; TRSTANOVA, Z. Langevin dynamics with general kinetic energies.
 \textbf{Multiscale Modeling \& amp; Simulation}, Society for Industrial \&
   Applied Mathematics (SIAM), v.~16, n.~2, p. 777–806, jan. 2018.
-ISSN 1540-3467.
-Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1137/16M110575X}.}
+ISSN 1540-3467.}
 
 \bibitem{handbookmontecarlo}
 \abntrefinfo{Brooks \textit{et al.}}{BROOKS \textit{et al.}}{2011}
-{BROOKS, S. \textit{et al.} \textbf{Handbook of Markov Chain Monte Carlo}. CRC
-  Press, 2011.  (ISSN).
-ISBN 9781420079425. Dispon{\'\i}vel em:
-  \url{https://books.google.com.br/books?id=qfRsAIKZ4rIC}.}
+{BROOKS, S. \textit{et al.} \textbf{Handbook of Markov Chain Monte Carlo}.
+  [\textit{S.l.: s.n.}]: CRC Press, 2011.  (ISSN).
+ISBN 9781420079425.}
+
+\bibitem{tao2008random}
+\abntrefinfo{Tao e Vu}{TAO; VU}{2008}
+{TAO, T.; VU, V. \textbf{Random Matrices: The circular Law}. 2008.}
 
 \bibitem{NormalVariable}
 \abntrefinfo{Boiroju}{BOIROJU}{2011}

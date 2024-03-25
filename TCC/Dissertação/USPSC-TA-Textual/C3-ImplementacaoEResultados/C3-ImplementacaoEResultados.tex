@@ -1,9 +1,9 @@
 \chapter{Implementação e Resultados}
 \label{Capitulo: Resultados}
 
- Simular Gases de Coulomb é especialmente interessante quando não há modelos de Matrizes conhecidos ou disponíveis para o $\Hf$ escolhido. Escrevemos então um programa que faz uso da interpretação dos Gases de Coulomb para simular medidas de interesse em RMT. Consideraremos nossas partículas em um subespaço $S$ de dimensão $d$ em $\mathbb{R}^N$ de forma que nosso espaço de fase $\Omega$ será de dimensão $dN$. O campo externo será denominado $V : S \mapsto \mathbb{R}$ e o núcleo de interação entre as partículas $\W : S \mapsto (-\infty, \infty]$. Reunindo os resultados do capítulo passado sob essas condições, temos, por completeza, o algoritmo completo descrito em \cite{Chafa2018}. Dada uma condição inicial $(q_k, p_k)$, para cada $k\geq0$, realizamos os seguintes passos
+ Simular gases de coulomb é especialmente interessante quando não há modelos de matrizes conhecidos, disponíveis ou simples para o $\Hf$ definido. Podemos, com a simulação de tais gases, calcular a média da função densidade das partículas, ou autovalores. Consideraremos nossas $N$ partículas em um subespaço $S$ de dimensão $d$ em $\mathbb{R}^n$ de forma que nosso espaço de fase $\Omega$ será de dimensão $Nd$. O campo externo é $V : S \mapsto \mathbb{R}$ e o núcleo de interação entre as partículas é função $\W : S \mapsto (-\infty, \infty]$. Reunindo os resultados do capítulo \ref{Capitulo: Simulações} sob essas condições, temos o algoritmo, descrito em \cite{Chafa2018}, completo. Dada uma condição inicial $(q_k, p_k)$, para cada $k\geq0$, realizamos os seguintes passos
 \begin{enumerate}
-	\item Baseado em \ref{Equation: Mehler}, atualize as velocidades com
+	\item Baseado em \ref{Equation: Mehler}, atualize a $\tilde{\p}_k$ com
 	\begin{equation}
 	\tilde{p}_k = \eta p_k + \sqrt{\frac{1-\eta^2}{\beta_N}} G_k, \ \eta = \ee^{-\gamma_N \alpha_N \Delta t};
 	\label{Equation: Alg Mehler}
@@ -32,7 +32,6 @@
 	\label{Equation: Alg Metro}
 	\end{equation}
 \end{enumerate}
-Resta agora apresentar a implementação e os resultados obtidos.
 
 % -
 % C3S1 - A implementação

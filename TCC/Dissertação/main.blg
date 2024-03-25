@@ -7,10 +7,6 @@ A level-1 auxiliary file: USPSC-TA-PreTextual/USPSC-Resumo.aux
 A level-1 auxiliary file: USPSC-TA-Textual/C1-Introducao/C1-Introducao.aux
 A level-1 auxiliary file: USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.aux
 A level-1 auxiliary file: USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.aux
-White space in argument---line 4 of file USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.aux
- : \citation{NAO
- :               SEI}
-I'm skipping whatever remains of this command
 A level-1 auxiliary file: USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -33,45 +29,45 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 25 entries,
+You've used 27 entries,
             6714 wiz_defined-function locations,
-            1333 strings with 12711 characters,
-and the built_in function-call counts, 23617 in all, are:
-= -- 2730
-> -- 311
-< -- 545
-+ -- 691
-- -- 95
-* -- 1371
-:= -- 2782
-add.period$ -- 64
-call.type$ -- 27
-change.case$ -- 163
-chr.to.int$ -- 40
-cite$ -- 14
-duplicate$ -- 2184
-empty$ -- 1280
-format.name$ -- 482
-if$ -- 5048
+            1337 strings with 12405 characters,
+and the built_in function-call counts, 15354 in all, are:
+= -- 1241
+> -- 380
+< -- 36
++ -- 197
+- -- 115
+* -- 971
+:= -- 1892
+add.period$ -- 59
+call.type$ -- 29
+change.case$ -- 190
+chr.to.int$ -- 51
+cite$ -- 16
+duplicate$ -- 752
+empty$ -- 1378
+format.name$ -- 585
+if$ -- 3837
 int.to.chr$ -- 10
 int.to.str$ -- 1
-missing$ -- 370
-newline$ -- 86
-num.names$ -- 56
-pop$ -- 404
+missing$ -- 404
+newline$ -- 92
+num.names$ -- 64
+pop$ -- 442
 preamble$ -- 1
-purify$ -- 85
+purify$ -- 94
 quote$ -- 0
-skip$ -- 2635
+skip$ -- 1216
 stack$ -- 1
-substring$ -- 967
-swap$ -- 832
-text.length$ -- 29
+substring$ -- 547
+swap$ -- 390
+text.length$ -- 25
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 2
 warning$ -- 0
-while$ -- 91
+while$ -- 95
 width$ -- 0
-write$ -- 220
-(There was 1 error message)
+write$ -- 241
+(There was 1 warning)

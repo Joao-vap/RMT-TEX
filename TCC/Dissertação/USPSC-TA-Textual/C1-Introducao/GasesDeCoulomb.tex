@@ -1,14 +1,14 @@
 \section{Gases de Coulomb}
 \label{Section: Gases de Coulomb}
 
-Sob as devidas condições, o Gás de Coulomb $\p_N$ é \cite{CoulombGaschafai} a medida de probabilidade de Boltzmann-Gibbs dada em $(R^d)^N$ por 
+Sob as devidas condições, o gás de coulomb $\p_N$ \cite{ChafaCoulombMeasure} é a medida de probabilidade de Boltzmann-Gibbs dada em $(R^d)^N$ por 
 \begin{equation}
 	\dd \p_N(\mmany{x}{N}) = \frac{e^{-\beta N^2 \Hf_N(\mmany{x}{N})}}{Z_{N,\beta}} \mcmany{\dd x}{N}{},
 	\label{Equação: Medida Gas de Coulomb}
 \end{equation}
-onde $$\Hf_N(\vec{\lambda}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x) + \frac{1}{2N^2} \sum_{i \neq j} \g(x_i - x_j)$$ é usualmente chamado hamiltoniano ou energia do sistema.
+onde $\Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x) + \frac{1}{2N^2} \sum_{i \neq j} \g(x_i - x_j)$ é usualmente chamado hamiltoniano ou energia do sistema.
 
-A medida modela um gás de partículas indistinguíveis com carga nas posições $\mmany{x}{N} \in \Se$ de dimensão $d$ em $\R^n$ \textit{ambient space}. As partículas estão sujeitas a um potencial externo $\V \colon \Se \mapsto \R$ e interagem por $\W \colon \Se \mapsto (-\infty, \infty]$. A temperatura inversa é $\beta N^2$. Assumiremos, para que valha a definição \ref{Equação: Medida Gas de Coulomb}, que $V, \ \W \ \text{e} \ \beta$ são tais que a constante de normalização (função partição) $Z_{N, \beta} < \infty \ \forall \ N$. Note que $\p_N$ é um modelo de interações estáticas e não há campos magnéticos considerados. Tome $\R^n$ com $n \geq 2$. Sabemos que, para $x \neq 0$ o núcleo de interação coulombiana (função de Green) vale $$
+A medida $\p_N$ modela um gás de partículas indistinguíveis com carga nas posições $\mmany{x}{N} \in \Se$ de dimensão $d$ em $\R^n$ \textit{ambient space}. As partículas estão sujeitas a um potencial externo $\V \colon \Se \mapsto \R$ e interagem por $\g \colon \Se \mapsto (-\infty, \infty]$. A temperatura inversa é $\beta N^2$. Assumiremos, para que valha a definição \ref{Equação: Medida Gas de Coulomb}, que $V, \ \g \ \text{e} \ \beta$ são tais que a constante de normalização (função partição) $Z_{N, \beta} < \infty \ \forall \ N$\footnote{Note que $\p_N$ é um modelo de interações estáticas e não há campos magnéticos considerados.}. Tome $\R^n$ com $n \geq 2$, sabemos que, para $x \neq 0$ o núcleo de interação coulombiana (função de Green) vale $$
 	g(\vec{x}) =
 	\begin{cases}
 			\log \frac{1}{|\vec{x}|} \ \ \text{se} \ n = 2,\\
@@ -22,9 +22,9 @@ $$ onde $g$ é solução da equação de Poisson dada por $$
 	\end{cases}
 $$
 
-Se lembramos da expressão \ref{Equation: medida Gaussian}, perceberemos que, para o devido $\V(x)$, podemos tomar $d=1$ e $n = 2$ e recuperar a medida dos ensembles gaussianos 
+Se lembramos da expressão \ref{Equation: medida Gaussian}, perceberemos que, para o devido $\V(x)$, podemos tomar $d=1$ e $n = 2$ para recuperar a medida dos ensembles gaussianos 
 \begin{equation}
 	\p_N(\vec{x}) = \frac{e^{-\beta_N \Hf_N(\vec{x})}}{Z_{N,\beta}}, \ \ \Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x_i) + \frac{1}{N^2} \sum_{i < j} \log{\frac{1}{|x_i - x_j|}}.
 	\label{Equation: Medida Log V}
 \end{equation}
-Estamos tratando de partículas no plano confinadas à uma reta. Para algum potencial arbitrário, além da devida escolha de $n$ e $d$, cairemos em outros ensembles de matrizes. Exploraremos melhor esse fato no Capítulo \ref{Capitulo: Simulações}.
+Estamos tratando de partículas no plano confinadas à uma reta. Para algum potencial arbitrário, além da devida escolha de $n$ e $d$, cairemos em outros ensembles de matrizes.

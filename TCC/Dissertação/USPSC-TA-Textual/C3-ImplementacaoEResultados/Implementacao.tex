@@ -1,6 +1,7 @@
 \section{A implementação}
 
-Para todos os exemplos aqui restringiremos o subespaço $\Se$ à $\R$ tal que $q_i \in \R$. Isso vem do fato de que estamos, nesse trabalho, interessados na simulação de partículas (ou autovalores) reais. Casos em mais dimensões são igualmente de alto interesse na teoria e o leitor interessado pode se referir à \cite{NAO SEI} por exemplo. Igualmente importante, consideraremos um núcleo de interação $\W = g$ coulombiano, por motivos claros. Essas funções são tais que assumiremos uma medida da forma \ref{Equação: Medida Gas de Coulomb} usual de Gases de Coulomb. Por sua natureza de física e gosto pessoal, a implementação do algoritmo foi feita em FORTRAN e sua esquemática se encontra na Figura \ref{Figura: Implementação}. Podemos entender melhor a relação entre as sub-rotinas e funções em luz da descrição na Tabela \ref{Table: Funcoes e Subrotinas}.
+Restringiremos o subespaço $\Se$ à $\R$ tal que $q_i \in \R$. Isso vem do fato de que estamos, nesse trabalho, interessados na simulação de partículas (ou autovalores) reais. Casos em mais dimensões são igualmente de interesse na teoria e o leitor interessado pode se referir à \cite{tao2008random}, por exemplo. Consideraremos ainda um núcleo de interação $\W = g$ coulombiano. Por isso, retomamos medida da forma \ref{Equação: Medida Gas de Coulomb} usual de gases de coulomb. A esquemática da implementação se encontra na Figura \ref{Figura: Implementação}. Podemos entender melhor a relação entre as sub-rotinas e funções em referência à Tabela \ref{Table: Funcoes e Subrotinas}.
+
 \begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}[font=\small,thick]
@@ -111,55 +112,60 @@ Para todos os exemplos aqui restringiremos o subespaço $\Se$ à $\R$ tal que $q
 		\path [chamada] (Hold) -- (Wold);
 		
 	\end{tikzpicture}
-\caption{Iustração da implementação do algoritmo \textit{Hybrid Monte Carlo} (HMC) descrito. Setas sólidas indicam o fluxo do programa. Linhas tracejadas indicam chamadas de funções dentro do bloco. A descrição das funções se encontra na Tabela \ref{Table: Funcoes e Subrotinas}. O programa completo pode ser encontrado em \url{https://github.com/Joao-vap/RMT-Code/tree/main/ArticleAlg}}
+\caption{Implementação do algoritmo \textit{Langevin Monte Carlo} (LMC). Setas sólidas indicam o fluxo do programa. Setas tracejadas indicam chamadas de funções dentro do bloco. A descrição das funções se encontra na Tabela \ref{Table: Funcoes e Subrotinas}.}
 \label{Figura: Implementação}
 \end{figure}
-Alguns detalhes são importantes de notar. O gerador de variáveis aleatórias gaussianas, necessário em \ref{Equation: Alg Mehler} foi implementado utilizando do algoritmo de \textit{Box-Muller} \cite{NormalVariable}. Para além disso, o ajuste de variáveis é razoavelmente empírico observado que $\cdots$. Para cada execução do programa resta então definir o potencial referente à seu ensemble, as dimensões $d, n$ e as constantes definidas anteriormente, como a de dissipação $\eta$ e o intervalo de passo temporal $\Delta t$.
+
 \begin{table}[ht]
 	\centering
-	\begin{tabular}{ |p{2.6cm}||p{2cm}|p{10cm}|  }
-			\hline
-			\multicolumn{3}{|c|}{Lista de Funções e Subrotinas} \\
-			\hline
-						\hline
-			Nome & Tipo & Descrição \\ 
-			\hline
-						\hline
-			Init   		  &Subrotina	 & 
-			Modifica ${p}_{k}$ vetor $[N\cross m]$, global, uniforme no cubo em $R^d$ e ${q}_{k}, G_H$, vetores $[N\cross m]$, globais, nulos. \\
-			\hline
-			L1-OrnsUhlen  &Subrotina	 & 
-			Modifica $\tilde{p}_k$, vetor $[N\cross m]$, global, por $\Gl_U$ segundo \ref{Equation: Alg Mehler}. \\
-						\hline
-			L2-Verlet  	  &Subrotina	 & 
-			Modifica $\tilde{p}_{k_1},\tilde{q}_{k_1}$ vetores $[N\cross m]$, globais, por $\Gl_{\Hf}$ segundo \ref{Equation: Alg Verlet}.	\\
-						\hline
-			GradH         &Subrotina	 & 
-			Modifica $G_H$, vetor $[N\cross m$], global, gradiente do Hamiltoniano.					\\
-						\hline
-			GradW         &Subrotina	 &
-			Modifica $G_{W_i}$, escalar, global, gradiente de $W$ núcleo de interação.	\\
-						\hline
-			GradV  	      &Subrotina	 &
-			Modifica $G_{V_i}$, escalar, global, gradiente de $\V$ potencial.		                    \\
-						\hline
-			ProbLog       &Função		 &
-			Retorna $P_K$, escalar, local, probabilidade de aceite de \ref{Equação: Alg Pk}. \\
-						\hline
-			H             &Função  	 &
-			Retorna $H$, escalar, local, hamiltoniano em $k$.	 							\\
-						\hline
-			V  	      	&Função		 &
-			Retorna $V_i$, escalar, local, potencial de $q_i$.								\\
-						\hline
-			W         	  &Função		 & 
-			Retorna $W_{i,j}$, escalar, local, interação entre $q_i,q_j$ 							\\
-						\hline
-			Metropolis    &Subrotina 	 & 
-			Modifica ${p}_{k},{q}_{k}$, vetores $[N\cross m]$, globais por \ref{Equation: Alg Metro}.								\\
-			\hline
+	\begin{tabular}{ |p{2.6cm}||p{12cm}|  }
+		\hline
+		\multicolumn{2}{|c|}{Lista de Funções e Subrotinas} \\
+		\hline
+		\hline
+		Nome & Descrição \\ 
+		\hline
+		\hline
+		Init   		  	 & 
+		Modifica ${p}_{k}$ vetor $[N\cross m]$, global, uniforme no cubo em $R^d$ e ${q}_{k}, G_H$, vetores $[N\cross m]$, globais, nulos. \\
+		\hline
+		L1-OrnsUhlen 	 & 
+		Modifica $\tilde{p}_k$, vetor $[N\cross m]$, global, por $\Gl_U$ segundo \ref{Equation: Alg Mehler}. \\
+		\hline
+		L2-Verlet  	 	 & 
+		Modifica $\tilde{p}_{k_1},\tilde{q}_{k_1}$ vetores $[N\cross m]$, globais, por $\Gl_{\Hf}$ segundo \ref{Equation: Alg Verlet}.	\\
+		\hline
+		GradH         	 & 
+		Modifica $G_H$, vetor $[N\cross m$], global, gradiente do Hamiltoniano.					\\
+		\hline
+		GradW        	 &
+		Modifica $G_{W_i}$, escalar, global, gradiente de $W$ núcleo de interação.	\\
+		\hline
+		GradV  	      	 &
+		Modifica $G_{V_i}$, escalar, global, gradiente de $\V$ potencial.		                    \\
+		\hline
+		ProbLog       		 &
+		Retorna $P_K$, escalar, local, probabilidade de aceite de \ref{Equação: Alg Pk}. \\
+		\hline
+		H              	 &
+		Retorna $H$, escalar, local, hamiltoniano em $k$.	 							\\
+		\hline
+		V  	      			 &
+		Retorna $V_i$, escalar, local, potencial de $q_i$.								\\
+		\hline
+		W         	  		 & 
+		Retorna $W_{i,j}$, escalar, local, interação entre $q_i,q_j$ 							\\
+		\hline
+		Metropolis     	 & 
+		Modifica ${p}_{k},{q}_{k}$, vetores $[N\cross m]$, globais por \ref{Equation: Alg Metro}.								\\
+		\hline
 	\end{tabular}
-\caption{ Descrição das funções e subrotinas utilizadas na implementação do programa.}
-\label{Table: Funcoes e Subrotinas}
+	\caption{ Descrição das funções e subrotinas utilizadas na implementação do programa.}
+	\label{Table: Funcoes e Subrotinas}
 \end{table}
+
+ Alguns detalhes são importantes de notar. O gerador de variáveis aleatórias gaussianas, necessário em \ref{Equation: Alg Mehler} foi implementado utilizando do algoritmo de \textit{Box-Muller} \cite{NormalVariable}. Para além disso, o ajuste de variáveis é notoriamente um dos aspectos complicados do algoritmo implementado. Precisamos de uma holística par ajustar $\Delta t, \alpha_N \ \text{e} \ \gamma_N$. No escopo do nosso programa, $\Delta t$ e $\alpha_N$ desempenham o mesmo papel e, por isso, tomaremos $\alpha_N = 1$ e decidiremos sobre o valor de $\Delta t$. Seguindo a recomendação de \cite[Capítulo~5]{handbookmontecarlo}, tomaremos $\Delta t = \Delta\tilde{t} + X$, onde $X$ é variável aleatória de média $0$ e variância $\sigma^2$ pequena. Essa escolha ajuda a acelerar a convergência em casos exóticos, que queremos evitar. Lembramos ainda que $\Delta \tilde{t}$ é melhor quando é da ordem de $N^{-\frac{1}{4}}$, isto é, é pequeno o suficiente para manter a razão de aceite do passo de Metropolis alta e grande o suficiente para não desacelerar a convergência do algoritmo. Já $\gamma_N$ definirá o quanto substituiremos o momento anterior das partículas e o quanto utilizaremos do passo aleatório. Aqui, sabemos apenas que tornar $\eta$ próximo demais de $0$, ou de $1$ para todos efeitos, desacelera intensamente a convergência. Faremos com que $\gamma_N \alpha_N \Delta t \approx 0.5$.
+ 
+ %Para além dos ajustes, cada simulação é identificada pelo Hamiltoniano, ou seja, pelo potencial $V$ e pelas dimensões $d, n$, respectivamente do espaço que as partículas estão restritas e do que elas existem.
+
 
