@@ -14,7 +14,7 @@
 
 \bibitem{MehtaGaudin}
 \abntrefinfo{Mehta e Gaudin}{MEHTA; GAUDIN}{1960}
-{MEHTA, M.; GAUDIN, M. On the density of eigenvalues of a random matrix.
+{MEHTA, M.; GAUDIN, M. On the density of eigenvalues of a random matriz.
 \textbf{Nuclear Physics}, v.~18, p. 420--427, 1960.
 ISSN 0029-5582.}
 
@@ -26,7 +26,7 @@ ISSN 0022-2488.}
 
 \bibitem{RMT-firstcourse-Potters}
 \abntrefinfo{Potters e Bouchaud}{POTTERS; BOUCHAUD}{2020}
-{POTTERS, M.; BOUCHAUD, J. \textbf{A First Course in Random Matrix Theory: for
+{POTTERS, M.; BOUCHAUD, J. \textbf{A First Course in Random matriz Theory: for
   Physicists, Engineers and Data Scientists}. [\textit{S.l.: s.n.}]: Cambridge
   University Press, 2020.
 ISBN 9781108488082.}
@@ -36,12 +36,6 @@ ISBN 9781108488082.}
 {EDELMAN, A.
 \textbf{Eigenvalues and Condition Numbers of Random Matrices}.
 1984. Tese (Doutorado) --- Massachusetts Institute of Technology, 1984.}
-
-\bibitem{landau2013statistical}
-\abntrefinfo{Landau e Lifshitz}{LANDAU; LIFSHITZ}{2013}
-{LANDAU, L.; LIFSHITZ, E. \textbf{Statistical Physics: Volume 5}.
-  [\textit{S.l.: s.n.}]: Elsevier Science, 2013.
-ISBN 9780080570464.}
 
 \bibitem{ChafaCoulombMeasure}
 \abntrefinfo{Chafaï, Hardy e Maïda}{CHAFAï; HARDY; MAïDA}{2018}
@@ -96,13 +90,17 @@ ISSN 1540-3467.}
   [\textit{S.l.: s.n.}]: CRC Press, 2011.  (ISSN).
 ISBN 9781420079425.}
 
-\bibitem{tao2008random}
-\abntrefinfo{Tao e Vu}{TAO; VU}{2008}
-{TAO, T.; VU, V. \textbf{Random Matrices: The circular Law}. 2008.}
-
 \bibitem{NormalVariable}
 \abntrefinfo{Boiroju}{BOIROJU}{2011}
 {BOIROJU, N. Generation of standard normal random variables.
 \textbf{Indian Journal of Scientific Research}, v.~2, p. 83--85, 01 2011.}
+
+\bibitem{Tracy}
+\abntrefinfo{Tracy e Widom}{TRACY; WIDOM}{1970}
+{TRACY, C.; WIDOM, H. The distributions of random matriz theory and their
+  applications.
+\textit{In}:  \underline{\ \ \ \ \ \ \ \ }. [\textit{S.l.: s.n.}], 1970. p.
+  753--765.
+ISBN 978-90-481-2809-9.}
 
 \end{thebibliography}

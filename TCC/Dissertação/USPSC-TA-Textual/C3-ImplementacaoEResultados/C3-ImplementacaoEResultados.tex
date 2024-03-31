@@ -1,7 +1,7 @@
 \chapter{Implementação e Resultados}
 \label{Capitulo: Resultados}
 
- Simular gases de coulomb é especialmente interessante quando não há modelos de matrizes conhecidos, disponíveis ou simples para o $\Hf$ definido. Podemos, com a simulação de tais gases, calcular a média da função densidade das partículas, ou autovalores. Consideraremos nossas $N$ partículas em um subespaço $S$ de dimensão $d$ em $\mathbb{R}^n$ de forma que nosso espaço de fase $\Omega$ será de dimensão $Nd$. O campo externo é $V : S \mapsto \mathbb{R}$ e o núcleo de interação entre as partículas é função $\W : S \mapsto (-\infty, \infty]$. Reunindo os resultados do capítulo \ref{Capitulo: Simulações} sob essas condições, temos o algoritmo, descrito em \cite{Chafa2018}, completo. Dada uma condição inicial $(q_k, p_k)$, para cada $k\geq0$, realizamos os seguintes passos
+ Simular gases de coulomb é especialmente interessante quando não há modelos de matrizes conhecidos, disponíveis ou simples para o $\Hf$ definido. Podemos, com a simulação de tais gases, calcular a média da função densidade das partículas, ou autovalores. Consideraremos nossas $N$ partículas em um subespaço $S$ de dimensão $d$ em $\mathbb{R}^n$ de forma que nosso espaço de fase $\Omega$ será de dimensão $Nd$. O campo externo é $V : S \mapsto \mathbb{R}$ e o núcleo de interação entre as partículas é função $\W : S \mapsto (-\infty, \infty]$. Reunindo os resultados do Capítulo \ref{Capitulo: Simulações} sob essas condições, temos o algoritmo, descrito em \cite{Chafa2018}, completo. Dada uma condição inicial $(q_k, p_k)$, para cada $k\geq0$, realizamos os seguintes passos
 \begin{enumerate}
 	\item Baseado em \ref{Equation: Mehler}, atualize a $\tilde{\p}_k$ com
 	\begin{equation}
@@ -19,7 +19,7 @@
 	\end{equation}
 	\item Pela definição \ref{Equation: Pk}, tome
 	\begin{equation}
-	P_k = 1 \wedge \exp{\left[ -\beta_N \left(  H_N(\tilde{q}_{k+1}) + \frac{\tilde{p}^2_{k+1}}{2} - H_N(q_k) - \frac{\tilde{p}^2_k}{2} \right)\right] };
+	P_k = 1 \wedge \exp{ -\beta \left| H_N(\tilde{q}_{k+1}) + \frac{\tilde{p}^2_{k+1}}{2} - H_N(q_k) - \frac{\tilde{p}^2_k}{2} \right| };
 	\label{Equação: Alg Pk}
 	\end{equation}
 	\item Defina, a partir de \ref{Equation: Metropolis}, 
@@ -46,4 +46,9 @@
 % -
 % C3S3 - Outros Potenciais?
 % - 
-%\input{USPSC-TA-Textual/C3-ImplementacaoEResultados/OutrosPotenciais.tex}
+\input{USPSC-TA-Textual/C3-ImplementacaoEResultados/OutrosResultados.tex}
+
+% -
+% C3S3 - Outros Potenciais?
+% - 
+\input{USPSC-TA-Textual/C3-ImplementacaoEResultados/Discussao.tex}

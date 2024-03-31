@@ -1,10 +1,10 @@
 \section{A implementação}
 
-Restringiremos o subespaço $\Se$ à $\R$ tal que $q_i \in \R$. Isso vem do fato de que estamos, nesse trabalho, interessados na simulação de partículas (ou autovalores) reais. Casos em mais dimensões são igualmente de interesse na teoria e o leitor interessado pode se referir à \cite{tao2008random}, por exemplo. Consideraremos ainda um núcleo de interação $\W = g$ coulombiano. Por isso, retomamos medida da forma \ref{Equação: Medida Gas de Coulomb} usual de gases de coulomb. A esquemática da implementação se encontra na Figura \ref{Figura: Implementação}. Podemos entender melhor a relação entre as sub-rotinas e funções em referência à Tabela \ref{Table: Funcoes e Subrotinas}.
+Restringiremos o subespaço $\Se$ à $\R^d$, $d = 1, 2$. Usaremos autovalores na reta para validar o funcionamento do algoritmo nos potencias já discutidos. e exploraremos uma distribuição em $\R^2$, mais complexa. Consideraremos um núcleo de interação $\W = g$ coulombiano em $n = 2$. Por isso, retomamos medida da forma \ref{Equação: Medida Gas de Coulomb} usual de gases de coulomb. A esquemática da implementação se encontra na Figura \ref{Figura: Implementação}. Podemos entender melhor a relação entre as sub-rotinas e funções em referência à Tabela \ref{Table: Funcoes e Subrotinas}.
 
 \begin{figure}[ht]
 	\centering
-	\begin{tikzpicture}[font=\small,thick]
+	\begin{tikzpicture}[font=\tiny,thick]
 		
 		% Start block
 		\node[subrotina] (INIT) {INIT};
@@ -120,9 +120,6 @@ Restringiremos o subespaço $\Se$ à $\R$ tal que $q_i \in \R$. Isso vem do fato
 	\centering
 	\begin{tabular}{ |p{2.6cm}||p{12cm}|  }
 		\hline
-		\multicolumn{2}{|c|}{Lista de Funções e Subrotinas} \\
-		\hline
-		\hline
 		Nome & Descrição \\ 
 		\hline
 		\hline
@@ -164,7 +161,7 @@ Restringiremos o subespaço $\Se$ à $\R$ tal que $q_i \in \R$. Isso vem do fato
 	\label{Table: Funcoes e Subrotinas}
 \end{table}
 
- Alguns detalhes são importantes de notar. O gerador de variáveis aleatórias gaussianas, necessário em \ref{Equation: Alg Mehler} foi implementado utilizando do algoritmo de \textit{Box-Muller} \cite{NormalVariable}. Para além disso, o ajuste de variáveis é notoriamente um dos aspectos complicados do algoritmo implementado. Precisamos de uma holística par ajustar $\Delta t, \alpha_N \ \text{e} \ \gamma_N$. No escopo do nosso programa, $\Delta t$ e $\alpha_N$ desempenham o mesmo papel e, por isso, tomaremos $\alpha_N = 1$ e decidiremos sobre o valor de $\Delta t$. Seguindo a recomendação de \cite[Capítulo~5]{handbookmontecarlo}, tomaremos $\Delta t = \Delta\tilde{t} + X$, onde $X$ é variável aleatória de média $0$ e variância $\sigma^2$ pequena. Essa escolha ajuda a acelerar a convergência em casos exóticos, que queremos evitar. Lembramos ainda que $\Delta \tilde{t}$ é melhor quando é da ordem de $N^{-\frac{1}{4}}$, isto é, é pequeno o suficiente para manter a razão de aceite do passo de Metropolis alta e grande o suficiente para não desacelerar a convergência do algoritmo. Já $\gamma_N$ definirá o quanto substituiremos o momento anterior das partículas e o quanto utilizaremos do passo aleatório. Aqui, sabemos apenas que tornar $\eta$ próximo demais de $0$, ou de $1$ para todos efeitos, desacelera intensamente a convergência. Faremos com que $\gamma_N \alpha_N \Delta t \approx 0.5$.
+ Alguns detalhes são importantes de notar. O gerador de variáveis aleatórias gaussianas, necessário em \ref{Equation: Alg Mehler} foi implementado utilizando do algoritmo de \textit{Box-Muller} \cite{NormalVariable}. Para além disso, o ajuste de variáveis é notoriamente um dos aspectos complicados do algoritmo implementado. Precisamos de uma holística par ajustar $\Delta t, \alpha_N \ \text{e} \ \gamma_N$. No escopo do nosso programa, $\Delta t$ e $\alpha_N$ desempenham o mesmo papel e, por isso, tomaremos $\alpha_N = 1$ e decidiremos sobre o valor de $\Delta t$. Seguindo a recomendação de \cite[Capítulo~5]{handbookmontecarlo}, tomaremos $\Delta t = \Delta\tilde{t} + X$, onde $X$ é variável aleatória de média $0$ e variância $\sigma^2$ pequena. Essa escolha ajuda a acelerar a convergência em casos exóticos, que queremos evitar. Lembramos ainda que $\Delta \tilde{t}$ é melhor quando é da ordem de $N^{-\frac{1}{4}}$, isto é, é pequeno o suficiente para manter a razão de aceite do passo de Metropolis alta e grande o suficiente para não desacelerar a convergência do algoritmo. Já $\gamma_N$ definirá o quanto substituiremos o momento anterior das partículas e o quanto utilizaremos do passo aleatório. Aqui, sabemos apenas que tornar $\eta$ próximo demais de $0$, ou de $1$ para todos efeitos, desacelera intensamente a convergência. Faremos, em geral, com que $\gamma_N \alpha_N \Delta t \approx 0.5$.
  
  %Para além dos ajustes, cada simulação é identificada pelo Hamiltoniano, ou seja, pelo potencial $V$ e pelas dimensões $d, n$, respectivamente do espaço que as partículas estão restritas e do que elas existem.
 

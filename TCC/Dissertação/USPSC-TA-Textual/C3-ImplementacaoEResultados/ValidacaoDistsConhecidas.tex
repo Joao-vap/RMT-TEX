@@ -5,14 +5,14 @@ Podemos validar a execução do programa e qualidade da medida gerada utilizando
 d = 1, \ \  n = 2, \ \ \V(x)=\frac{|x|^2}{2}, \ \ W(x) = g(x) = \log{|x|}, \ \ \beta_N = \beta N^2, \ \ \beta = 1,2,4.
 \label{Equation: Parametros Gaussian}
 \end{equation}
-Para demonstrar este fato e representar a semelhança entra os dois métodos de simulação apresenta-se, para $N=10$, sem muitos detalhes da implementação, a densidade gerada para os três modelos ($\beta = 1,2,4$) na coluna da esquerda da Figura \ref{Figura: Gaussian}. Na mesma figura, também apresentamos a representação do Semi-Círculo de Wigner e o comportamento da configuração de equilíbrio para os três modelos quando $N$ cresce. Fica fácil observar a convergência para a medida de equilíbrio prevista. Note que os valores foram escalados por $\sqrt{2}$ para melhor visualização.
-\begin{figure}[ht]
+O resultado da simulação para \ref{Equation: Parametros Gaussian} está na Figura \ref{Figura: Gaussian}. Apresentamos ainda na coluna da esquerda os resultados, para $N=10$, da densidade gerada pela simulação equivalente com matrizes para os três modelos ($\beta = 1,2,4$). Na coluna central, representa-se uma comparação com o Semi-Círculo de Wigner, configuração de equilíbrio para os três modelos quando $N$ é grande o suficiente. Note que os valores foram escalados por $\sqrt{2 \beta}$ para melhor visualização. Finalmente, na coluna da direita apresentamos a distribuição do maior autovalor. Um resultado importante  \cite{Tracy} enuncia que existem $z_{N}^{(\beta)}$ e $s_N^{(\beta)}$ tais que $$\lim_{N \to \infty} \mathbb{P}_{\beta,N,V} \left( \frac{\lambda_{max} - z_{N}^{(\beta)}}{s_N^{(\beta)}} \leq x \right) = F_{\beta}(x),$$ onde $F_{\beta}(x)$ é a densidade acumulada de Tracy-Widow. Mostraremos a concordância desse resultado com a simulação na coluna da direita.
+\begin{figure}[ht!]
 	\includegraphics[width=\textwidth]{Assets/validationGaussianTracy.png}
-	\caption{Medidas de equilíbrio para os ensembles gaussianos, equivalente à tomar \ref{Equation: Parametros Gaussian}. Para todos, vale a escolha de $\Delta t = 0.5$ e $nsteps = 2\cdot10^6$ passos, registrando a cada $1000$ iterações os microestados a partir da metade da simulação. Para as simulações à esquerda da figura se apresenta ainda a distribuição da amostragem de $10^6$ matrizes do tipo apropriado e a densidade resultante.}
+	\caption{Densidade para ensembles gaussianos, \ref{Equation: Parametros Gaussian}. Tomou-se $\Delta t = 0.3$ e $nsteps = 5\cdot10^6$ passos, registrando a cada $1000$ iterações a partir de $nsteps/5$. À esquerda da figura, em azul, a densidade da amostragem de $4\cdot10^3$ matrizes do ensemble. No centro, o Semi-Círculo de Wigner, medida de equilíbrio. Na direita, apresenta-se a densidade de $\lambda_{max}$ normalizado e sua mediada esperada.}
 	\label{Figura: Gaussian}
 \end{figure}
 
-Indo além dos modelos gaussianos podemos retomar as descrições dos potenciais Mônico em \ref{Equação: Mônico} e as duas situações para o potencial quártico \ref{Equação: Quartico +} e \ref{Equação: Quartico -}. Respectivamente, estes modelos equivalem a tomar na simulação os parâmetros
+Indo além dos modelos gaussianos podemos retomar as descrições dos potenciais mônico em \ref{Equação: Mônico} e as duas situações para o potencial quártico \ref{Equação: Quartico +} e \ref{Equação: Quartico -}. Respectivamente, estes modelos equivalem a tomar na simulação os parâmetros
 \begin{equation}
 	d = 1, \ \  n = 2, \ \ \V(x)= t |x|^{2m}, \ \ W(x) = g(x) = \log{|x|}, \ \ \beta_N = \beta N^2, \ \ \beta = 2.
 	\label{Equation: Parametros Monico}
@@ -21,16 +21,10 @@ Indo além dos modelos gaussianos podemos retomar as descrições dos potenciais
 	d = 1, \ \  n = 2, \ \ \V(x)=\frac{|x|^4}{4} + t \frac{|x|^2}{2}, \ \ W(x) = g(x) = \log{|x|}, \ \ \beta_N = \beta N^2, \ \ \beta = 2.
 	\label{Equation: Parametros Quartico}
 \end{equation}
-Note que o caso mônico se reduz ao gaussiano se tomarmos $m=1$. Isso pode ser confirmado na figura \ref{Figura: Quartic Monic} onde a medida do semi-círculo é concordante com a simulação.
-\begin{figure}[ht]
+O caso mônico se reduz ao gaussiano se $m=1$. Os resultados para ambos os potenciais estão explicitados na Figura \ref{Figura: Quartic Monic} para alguns parâmetros interessantes de $t$ e $m$.
+\begin{figure}[ht!]
 	\includegraphics[width=\textwidth]{Assets/validationQuarticMonic-alt.png}
-	\caption{Medidas de equilíbrio para os potencias Quártico \ref{Equation: Parametros Quartico} e Mônico \ref{Equation: Parametros Monico}, respectivamente à esquerda e direita. Para ambos os casos vale $\Delta t = 0.5$ e $nsteps = 2\cdot10^6$ passos. Registra-se a cada $1000$ iterações os microestados a partir da metade da simulação. Toma-se por padrão $N=50$. No quártico, simula-se $t=-1,-1.5,-2,-2.5,-3$ e par ao mônico fixa-se $t=1$ e simula-se $m=1,2,3,4,5$.}
+	\caption{Potencial Quártico \ref{Equation: Parametros Quartico} e Mônico \ref{Equation: Parametros Monico}, respectivamente à esquerda e direita. Tomou-se $\Delta t = 0.1$, $N=100$, e $nsteps = 5\cdot10^6$ passos. Registra-se a cada $1000$ iterações a partir de $nsteps/5$. No Quártico, simula-se $t=-1,-2,-3$. No Mônico fixa-se $t=1$ e simula-se $m=1,3,5$.}
 	\label{Figura: Quartic Monic}
-\end{figure}
-
-\begin{figure}[ht]
-	\includegraphics[width=\textwidth]{Assets/Validationx3.png}
-	\caption{ $\Delta t = 0.5$ e $nsteps = 2\cdot10^6$ passos. Registra-se a cada $1000$ iterações os microestados a partir da metade da simulação. Toma-se $N=100$.}
-	\label{Figura: V3}
 \end{figure}
 
