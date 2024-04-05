@@ -1,6 +1,6 @@
 \section{A implementação}
 
-Restringiremos o subespaço $\Se$ à $\R^d$, $d = 1, 2$. Usaremos autovalores na reta para validar o funcionamento do algoritmo nos potencias já discutidos. e exploraremos uma distribuição em $\R^2$, mais complexa. Consideraremos um núcleo de interação $\W = g$ coulombiano em $n = 2$. Por isso, retomamos medida da forma \ref{Equação: Medida Gas de Coulomb} usual de gases de coulomb. A esquemática da implementação se encontra na Figura \ref{Figura: Implementação}. Podemos entender melhor a relação entre as sub-rotinas e funções em referência à Tabela \ref{Table: Funcoes e Subrotinas}.
+Tomaremos o subespaço $\Se = \R^d$ com $d = 1, 2$. Usaremos autovalores na reta para validar o funcionamento do algoritmo nos potencias já discutidos e exploraremos uma distribuição em $\R^2$, mais complexa. Consideraremos um núcleo de interação $\W = g$ coulombiano em $n = 2$. Por isso, retomamos medida da forma \ref{Equação: Medida Gas de Coulomb} usual de gases de coulomb. A esquemática da implementação se encontra na Figura \ref{Figura: Implementação}. Podemos entender melhor a relação entre as sub-rotinas e funções em referência à Tabela \ref{Table: Funcoes e Subrotinas}.
 
 \begin{figure}[ht]
 	\centering
@@ -12,7 +12,7 @@ Restringiremos o subespaço $\Se$ à $\R^d$, $d = 1, 2$. Usaremos autovalores na
 		% -------------------------------------------------------------------		
 		
 		\node[subrotina,
-		left=0.7cm of INIT] (LabelSubrotina) {Subrotinas};
+		left=0.2cm of INIT] (LabelSubrotina) {Subrotinas};
 		
 		\node[funcao,
 		below=0.1cm of LabelSubrotina] (LabelFunção) {Funções};
@@ -20,17 +20,17 @@ Restringiremos o subespaço $\Se$ à $\R^d$, $d = 1, 2$. Usaremos autovalores na
 		% -------------------------------------------------------------------		
 		
 		\node[funcao,
-		below=0.5cm of INIT, xshift=2cm] (Hold) {H};
+		below=0.1cm of INIT, xshift=2cm] (Hold) {H};
 		
 		\node[funcao,
-		right=0.5cm of Hold, yshift=0.5cm] (Wold) {W};
+		right=0.5cm of Hold, yshift=0.3cm] (Wold) {W};
 		
 		\node[funcao,
-		right=0.5cm of Hold, yshift=-0.5cm] (Vold) {V};
+		right=0.5cm of Hold, yshift=-0.3cm] (Vold) {V};
 		
 		
 		\node[loop,
-		below=2cm of INIT,
+		below=1cm of INIT,
 		minimum width=6cm,
 		xshift=2cm,
 		] (LOOP) {
@@ -56,20 +56,20 @@ Restringiremos o subespaço $\Se$ à $\R^d$, $d = 1, 2$. Usaremos autovalores na
 				below=0.5cm of GradH, xshift=-1cm] (GradV) {GradV};
 								
 				\node[subrotina,
-				below=4cm of L2, xshift=-0.5cm] (Metro) {Metropolis};
+				below=3cm of L2, xshift=-0.5cm] (Metro) {Metropolis};
 				
 				\node[funcao,
-				below=0.5cm of Metro
+				below=0.3cm of Metro
 				] (Problog) {ProbLog};
 				
 				\node[funcao,
 				right=1cm of Problog] (H) {H};
 				
 				\node[funcao,
-				right=0.5cm of H, yshift=0.5cm] (W) {W};
+				right=0.5cm of H, yshift=0.3cm] (W) {W};
 				
 				\node[funcao,
-				right=0.5cm of H, yshift=-0.5cm] (V) {V};
+				right=0.5cm of H, yshift=-0.3cm] (V) {V};
 				
 				\node[random,
 				above=0.5cm of Metro, xshift=-1.3cm] (aceito) {$q_k = \tilde{q}_{k_1}$ \\ $p_k = \tilde{p}_{k_1}$};
@@ -86,16 +86,16 @@ Restringiremos o subespaço $\Se$ à $\R^d$, $d = 1, 2$. Usaremos autovalores na
 				\path [chamada] (L1) -- (GradH);
 				\path [chamada] (GradH) -- (GradV);
 				\path [chamada] (GradH) -- (GradW);
-				\path [fluxo]  (L1) --++(3cm, 0cm) |- (Metro);
+				\path [fluxo]  (L1) --++(2cm, 0cm) |- (Metro);
 				\path [chamada] (Metro) -- (Problog);
 				\path [chamada] (Problog) -- (H);
 				\path [chamada] (H) -- (W);
 				\path [chamada] (H) -- (V);
 				\path [meiofluxo] (Metro) -- (aceito);
 				\path [meiofluxo] (Metro) -- (negado);
-				\path [meiofluxo] (negado) -- ++(0cm, 1.5cm) -- ++(-2.6cm, 0cm);
-				\path [meiofluxo] (aceito) -- ++(0cm, 1.45cm);
-				\path [fluxo] (aceito)++(0cm, 1.45cm) -- ++(0cm, 1.75cm);
+				\path [meiofluxo] (negado) -- ++(0cm, 0.8cm) -- ++(-2.6cm, 0cm);
+				\path [meiofluxo] (aceito) -- ++(0cm, 1.5cm);
+				\path [fluxo] (aceito)++(0cm, 1.45cm) -- ++(0cm, 0.8cm);
 				
 			\end{tikzpicture}
 		};
@@ -106,8 +106,8 @@ Restringiremos o subespaço $\Se$ à $\R^d$, $d = 1, 2$. Usaremos autovalores na
 		rotate=90
 		] (do) {DO k = 1, nsteps};
 		
-		\path [fluxo] (INIT) -- ++(0cm, -2.3cm);
-		\path [chamada] (INIT) ++(0cm, -1.1cm) -- (Hold);
+		\path [fluxo] (INIT) -- ++(0cm, -1.3cm);
+		\path [chamada] (INIT) ++(0cm, -0.7cm) -- (Hold);
 		\path [chamada] (Hold) -- (Vold);
 		\path [chamada] (Hold) -- (Wold);
 		
@@ -161,7 +161,7 @@ Restringiremos o subespaço $\Se$ à $\R^d$, $d = 1, 2$. Usaremos autovalores na
 	\label{Table: Funcoes e Subrotinas}
 \end{table}
 
- Alguns detalhes são importantes de notar. O gerador de variáveis aleatórias gaussianas, necessário em \ref{Equation: Alg Mehler} foi implementado utilizando do algoritmo de \textit{Box-Muller} \cite{NormalVariable}. Para além disso, o ajuste de variáveis é notoriamente um dos aspectos complicados do algoritmo implementado. Precisamos de uma holística par ajustar $\Delta t, \alpha_N \ \text{e} \ \gamma_N$. No escopo do nosso programa, $\Delta t$ e $\alpha_N$ desempenham o mesmo papel e, por isso, tomaremos $\alpha_N = 1$ e decidiremos sobre o valor de $\Delta t$. Seguindo a recomendação de \cite[Capítulo~5]{handbookmontecarlo}, tomaremos $\Delta t = \Delta\tilde{t} + X$, onde $X$ é variável aleatória de média $0$ e variância $\sigma^2$ pequena. Essa escolha ajuda a acelerar a convergência em casos exóticos, que queremos evitar. Lembramos ainda que $\Delta \tilde{t}$ é melhor quando é da ordem de $N^{-\frac{1}{4}}$, isto é, é pequeno o suficiente para manter a razão de aceite do passo de Metropolis alta e grande o suficiente para não desacelerar a convergência do algoritmo. Já $\gamma_N$ definirá o quanto substituiremos o momento anterior das partículas e o quanto utilizaremos do passo aleatório. Aqui, sabemos apenas que tornar $\eta$ próximo demais de $0$, ou de $1$ para todos efeitos, desacelera intensamente a convergência. Faremos, em geral, com que $\gamma_N \alpha_N \Delta t \approx 0.5$.
+ Alguns detalhes são importantes de notar. O gerador de variáveis aleatórias gaussianas, necessário em \ref{Equation: Alg Mehler} foi implementado utilizando do algoritmo de \textit{Box-Muller}. Além disso, o ajuste de variáveis é notoriamente um dos aspectos complicados do algoritmo implementado. Precisamos de uma holística par ajustar $\Delta t, \alpha_N \ \text{e} \ \gamma_N$. No escopo deste programa, $\Delta t$ e $\alpha_N$ desempenham o mesmo papel e, por isso, toma-se $\alpha_N = 1$ e varia-se $\Delta t$. Seguindo a recomendação de \cite[Capítulo~5]{handbookmontecarlo}, tomaremos $\Delta t = \Delta\tilde{t} + X$, onde $X$ é variável aleatória de média $0$ e variância $\sigma^2$ pequena. Essa escolha ajuda a acelerar a convergência e melhor garante ergoticidade. Lembra-se ainda que $\Delta \tilde{t}$ é ideal na ordem de $N^{-\frac{1}{4}}$, isto é, é pequeno o suficiente para manter a razão de aceite do passo de Metropolis alta e grande o suficiente para não desacelerar a convergência do algoritmo. Já $\gamma_N$ definirá o quanto substituiremos o momento anterior das partículas será relevante em relação ao movimento browniano. Aqui, sabemos que tornar $\eta$ próximo demais de $0$, ou de $1$ para todos efeitos, desacelera intensamente a convergência. Faremos, em geral, com que $\gamma_N \alpha_N \Delta t \approx 0.5$.
  
  %Para além dos ajustes, cada simulação é identificada pelo Hamiltoniano, ou seja, pelo potencial $V$ e pelas dimensões $d, n$, respectivamente do espaço que as partículas estão restritas e do que elas existem.
 

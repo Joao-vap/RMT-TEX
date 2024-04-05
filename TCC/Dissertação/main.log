@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.23)  31 MAR 2024 13:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.23)  5 APR 2024 14:12
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1444,38 +1444,358 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 186.
 
 
 Writing index file main.idx 
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.240 \renewcommand{\Re}{\mate}{\textrm e
-                                         }
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 24
-0.
+\c@lemma=\count413
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 29
+6.
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-! TeX capacity exceeded, sorry [input stack size=5000].
-\reserved@a ->\def \reserved@a 
-                               *{\@declmathop m}\reserved@a 
-l.242 \newcommand
-                 {\res}{\mathop{\textrm Res}}
-If you really absolutely need more capacity,
-you can ask a wizard to enlarge me.
+) (./main.aux
+(./USPSC-TA-PreTextual/USPSC-fichacatalografica.aux)
+(./USPSC-TA-PreTextual/USPSC-Resumo.aux)
+(./USPSC-TA-Textual/C1-Introducao/C1-Introducao.aux)
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.aux)
+(./USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.aux
+) (./USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.aux))
+\openout1 = `main.aux'.
 
- 
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 296.
+LaTeX Font Info:    ... okay on input line 296.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 296.
+LaTeX Font Info:    ... okay on input line 296.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 296.
+LaTeX Font Info:    ... okay on input line 296.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 296.
+LaTeX Font Info:    ... okay on input line 296.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 296.
+LaTeX Font Info:    ... okay on input line 296.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 296.
+LaTeX Font Info:    ... okay on input line 296.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 296.
+LaTeX Font Info:    ... okay on input line 296.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 296.
+LaTeX Font Info:    ... okay on input line 296.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 296.
+LaTeX Font Info:    ... okay on input line 296.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count414
+\scratchdimen=\dimen349
+\scratchbox=\box148
+\nofMPsegments=\count415
+\nofMParguments=\count416
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count417
+\MPscratchDim=\dimen350
+\MPnumerator=\count418
+\makeMPintoPDFobject=\count419
+\everyMPtoPDFconversion=\toks56
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package hyperref Info: Link coloring ON on input line 296.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count420
+)
+Redoing nameref's sectioning
+Redoing nameref's label
+LaTeX Info: Redefining \nameref on input line 296.
+LaTeX Info: Redefining \ref on input line 296.
+LaTeX Info: Redefining \pageref on input line 296.
+LaTeX Info: Redefining \nameref on input line 296.
+LaTeX Info: Redefining \degres on input line 296.
+LaTeX Info: Redefining \up on input line 296.
+\myptabbox=\box149
+\myptabboxwidth=\skip277
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             https://www.ctan.org/pkg/pageslts
+(lastpage)             ! on input line 296.
+LaTeX Info: Redefining \microtypecontext on input line 296.
+Package microtype Info: Applying patch `item' on input line 296.
+Package microtype Info: Applying patch `toc' on input line 296.
+Package microtype Info: Applying patch `eqnum' on input line 296.
+Package microtype Info: Applying patch `footnote' on input line 296.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+LaTeX Info: Redefining \showhyphens on input line 296.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 3
+22.
+
+(/usr/share/texmf/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 2865) in paragraph at lines 338--338
+\T1/lmr/m/n/12 (+20) ao Programa de Graduação em Física
+ []
+
+
+Underfull \hbox (badness 3240) in paragraph at lines 338--338
+\T1/lmr/m/n/12 (+20) do Instituto de Física de São Carlos,
+ []
+
+
+Underfull \hbox (badness 1769) in paragraph at lines 338--338
+\T1/lmr/m/n/12 (+20) da Universidade de São Paulo, para a
+ []
+
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
+38.
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
+38.
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+338.
+
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+338.
+
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 338.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 338.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 338.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.338 
+       [1
+
+
+
+]
+\openout2 = `USPSC-TA-PreTextual/USPSC-fichacatalografica.aux'.
+
+ (./USPSC-TA-PreTextual/USPSC-fichacatalografica.tex
+Underfull \hbox (badness 10000) in paragraph at lines 13--17
+
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 22.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 22.
+) [2
+
+]
+\openout2 = `USPSC-TA-PreTextual/USPSC-Resumo.aux'.
+
+ (./USPSC-TA-PreTextual/USPSC-Resumo.tex [3
+
+
+
+]) (./main.toc) [4
+
+
+
+]
+\openout2 = `USPSC-TA-Textual/C1-Introducao/C1-Introducao.aux'.
+
+
+(./USPSC-TA-Textual/C1-Introducao/C1-Introducao.tex
+(./USPSC-TA-Textual/C1-Introducao/DistAutovalores.tex
+LaTeX Font Info:    Trying to load font information for U+bbold on input line 3
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd) [5
+
+
+
+] [6]
+Overfull \hbox (13.32355pt too wide) in paragraph at lines 17--19
+\T1/lmr/m/it/12 (-20) onde $\OML/lmm/m/it/12 C[]$ \T1/lmr/m/it/12 (-20) é cons-
+tante e $\OML/lmm/m/it/12 ^^L \OT1/lmr/m/n/12 (-20) = 1\OML/lmm/m/it/12 ; \OT1/
+lmr/m/n/12 (-20) 2\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 (-20) 4$ \T1/lmr/m/it/12 (
+-20) cor-res-ponde res-pec-ti-va-mente à $[] \OMS/lmsy/m/n/12 2 \OML/lmm/m/it/1
+2 M[]\OT1/lmr/m/n/12 (-20) (\OML/lmm/m/it/12 N\OT1/lmr/m/n/12 (-20) )\OML/lmm/m
+/it/12 ; M[]\OT1/lmr/m/n/12 (-20) (\OML/lmm/m/it/12 N\OT1/lmr/m/n/12 (-20) )\OM
+L/lmm/m/it/12 ; M[]\OT1/lmr/m/n/12 (-20) (\OML/lmm/m/it/12 N\OT1/lmr/m/n/12 (-2
+0) )$\T1/lmr/m/it/12 (-20) .
+ []
+
+) (./USPSC-TA-Textual/C1-Introducao/EmsemblesGaussianos.tex
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+5.
+
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 25.
+ [7])
+(./USPSC-TA-Textual/C1-Introducao/GasesDeCoulomb.tex)
+(./USPSC-TA-Textual/C1-Introducao/MedidaDeEquilibrio.tex [8])
+(./USPSC-TA-Textual/C1-Introducao/PotenciaisNotaveis.tex [9])) [10]
+\openout2 = `USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos
+.aux'.
+
+
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.tex
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/IntroducaoAoAlgoritmo.tex [11
+
+
+
+
+])
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/Discretizacao.tex [12])
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/Metropolis.tex)) [13]
+\openout2 = `USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResu
+ltados.aux'.
+
+
+(./USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.tex
+(./USPSC-TA-Textual/C3-ImplementacaoEResultados/Implementacao.tex [14
+
+
+
+
+])
+(./USPSC-TA-Textual/C3-ImplementacaoEResultados/ValidacaoDistsConhecidas.tex
+[15]
+<Assets/validationGaussianTracy.png, id=252, 1911.14pt x 1000.73875pt>
+File: Assets/validationGaussianTracy.png Graphic file (type png)
+<use Assets/validationGaussianTracy.png>
+Package pdftex.def Info: Assets/validationGaussianTracy.png  used on input line
+ 13.
+(pdftex.def)             Requested size: 432.24861pt x 226.33229pt.
+<Assets/validationQuarticMonic-alt.png, id=260, 1253.68375pt x 603.25375pt>
+File: Assets/validationQuarticMonic-alt.png Graphic file (type png)
+<use Assets/validationQuarticMonic-alt.png>
+Package pdftex.def Info: Assets/validationQuarticMonic-alt.png  used on input l
+ine 30.
+(pdftex.def)             Requested size: 432.24861pt x 207.9939pt.
+ [16] [17 <./Assets/validationGaussianTracy.png> <./Assets/validationQuarticMon
+ic-alt.png>]
+<Assets/complexPotential.png, id=284, 624.4128pt x 320.1561pt>
+File: Assets/complexPotential.png Graphic file (type png)
+<use Assets/complexPotential.png>
+Package pdftex.def Info: Assets/complexPotential.png  used on input line 43.
+(pdftex.def)             Requested size: 455.0pt x 233.29187pt.
+
+
+LaTeX Warning: Citation `nao sei ainda' on page 18 undefined on input line 48.
+
+)) [18 <./Assets/complexPotential.png>]
+\openout2 = `USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.aux'.
+
+
+(./USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.tex) [19
+
+
+
+
+] (./main.bbl
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\uppercase' on input line 3.
+
+bibitemlist
+) 
+AED: lastpage setting LastPage
+[20
+
+
+
+]
+\tf@toc=\write6
+\openout6 = `main.toc'.
+
+ (./main.aux (./USPSC-TA-PreTextual/USPSC-fichacatalografica.aux)
+(./USPSC-TA-PreTextual/USPSC-Resumo.aux)
+(./USPSC-TA-Textual/C1-Introducao/C1-Introducao.aux)
+(./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.aux)
+(./USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.aux
+) (./USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.aux))
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 33729 strings out of 478287
- 628473 string characters out of 5849288
- 1091624 words of memory out of 5000000
- 51387 multiletter control sequences out of 15000+600000
- 473620 words of font info for 32 fonts, out of 8000000 for 9000
+ 36192 strings out of 478287
+ 682945 string characters out of 5849288
+ 1156683 words of memory out of 5000000
+ 53285 multiletter control sequences out of 15000+600000
+ 557198 words of font info for 205 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 5000i,1n,93p,432b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 84i,20n,93p,1792b,1375s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/te
+xmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ma
+thsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texlive
+/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmbsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/l
+msy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
+Output written on main.pdf (21 pages, 688654 bytes).
+PDF statistics:
+ 506 PDF objects out of 1000 (max. 8388607)
+ 420 compressed objects within 5 object streams
+ 113 named destinations out of 1000 (max. 500000)
+ 49324 words of extra memory for PDF output out of 51595 (max. 10000000)
+

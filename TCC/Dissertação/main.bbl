@@ -20,14 +20,14 @@ ISSN 0029-5582.}
 
 \bibitem{Dyson}
 \abntrefinfo{Dyson}{DYSON}{1962}
-{DYSON, F.~J. {Statistical Theory of the Energy Levels of Complex Systems. I}.
+{DYSON, F.~J. Statistical theory of the energy levels of complex systems. i.
 \textbf{Journal of Mathematical Physics}, v.~3, n.~1, p. 140--156, 01 1962.
 ISSN 0022-2488.}
 
 \bibitem{RMT-firstcourse-Potters}
 \abntrefinfo{Potters e Bouchaud}{POTTERS; BOUCHAUD}{2020}
 {POTTERS, M.; BOUCHAUD, J. \textbf{A First Course in Random matriz Theory: for
-  Physicists, Engineers and Data Scientists}. [\textit{S.l.: s.n.}]: Cambridge
+  Physicists, Engineers and Data Scientists}. Cambridge, Inglaterra: Cambridge
   University Press, 2020.
 ISBN 9781108488082.}
 
@@ -42,21 +42,15 @@ ISBN 9781108488082.}
 {CHAFAï, D.; HARDY, A.; MAïDA, M. Concentration for coulomb gases and coulomb
   transport inequalities.
 \textbf{Journal of Functional Analysis}, Elsevier BV, v.~275, n.~6, p.
-  1447–1483, set. 2018.
+  1447–1483, sep 2018.
 ISSN 0022-1236.}
 
 \bibitem{leimmolecular}
 \abntrefinfo{Leimkuhler e Matthews}{LEIMKUHLER; MATTHEWS}{2015}
 {LEIMKUHLER, B.; MATTHEWS, C. \textbf{Molecular Dynamics: With Deterministic
-  and Stochastic Numerical Methods}. [\textit{S.l.: s.n.}]: Springer
-  International Publishing, 2015.  (Interdisciplinary Applied Mathematics).
+  and Stochastic Numerical Methods}. Cham, Suiça: Springer International
+  Publishing, 2015.  (Interdisciplinary Applied Mathematics).
 ISBN 9783319163758.}
-
-\bibitem{Verlet}
-\abntrefinfo{Verlet}{VERLET}{1967}
-{VERLET, L. Computer "experiments" on classical fluids. i. thermodynamical
-  properties of lennard-jones molecules.
-\textbf{Phys. Rev.}, American Physical Society, v.~159, p. 98--103, Jul 1967.}
 
 \bibitem{Chafa2018}
 \abntrefinfo{Chafaï e Ferr{\'{e}}}{CHAFAï; FERR{\'{E}}}{2018}
@@ -81,7 +75,7 @@ ISBN 9783319163758.}
 \abntrefinfo{Stoltz e Trstanova}{STOLTZ; TRSTANOVA}{2018}
 {STOLTZ, G.; TRSTANOVA, Z. Langevin dynamics with general kinetic energies.
 \textbf{Multiscale Modeling \& amp; Simulation}, Society for Industrial \&
-  Applied Mathematics (SIAM), v.~16, n.~2, p. 777–806, jan. 2018.
+  Applied Mathematics (SIAM), v.~16, n.~2, p. 777–806, jan 2018.
 ISSN 1540-3467.}
 
 \bibitem{handbookmontecarlo}
@@ -90,17 +84,19 @@ ISSN 1540-3467.}
   [\textit{S.l.: s.n.}]: CRC Press, 2011.  (ISSN).
 ISBN 9781420079425.}
 
-\bibitem{NormalVariable}
-\abntrefinfo{Boiroju}{BOIROJU}{2011}
-{BOIROJU, N. Generation of standard normal random variables.
-\textbf{Indian Journal of Scientific Research}, v.~2, p. 83--85, 01 2011.}
-
 \bibitem{Tracy}
 \abntrefinfo{Tracy e Widom}{TRACY; WIDOM}{1970}
-{TRACY, C.; WIDOM, H. The distributions of random matriz theory and their
-  applications.
-\textit{In}:  \underline{\ \ \ \ \ \ \ \ }. [\textit{S.l.: s.n.}], 1970. p.
-  753--765.
+{TRACY, C.; WIDOM, H. The distributions of random matrix theory and their
+  applications. \textit{In}:  \textbf{New Trends in Mathematical Physics}.
+  Dordrecht: Springer Netherlands, 1970. p. 753--765.
 ISBN 978-90-481-2809-9.}
+
+\bibitem{Byun_2023}
+\abntrefinfo{Byun, Kang e Seo}{BYUN; KANG; SEO}{2023}
+{BYUN, S.-S.; KANG, N.-G.; SEO, S.-M. Partition functions of determinantal and
+  pfaffian coulomb gases with radially symmetric potentials.
+\textbf{Communications in Mathematical Physics}, Springer Science and Business
+  Media LLC, v.~401, n.~2, p. 1627–1663, mar. 2023.
+ISSN 1432-0916.}
 
 \end{thebibliography}

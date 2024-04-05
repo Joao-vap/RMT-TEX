@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.23)  31 MAR 2024 14:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.23)  31 MAR 2024 19:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -641,8 +641,12 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 169
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 No file senic.nls.
+
+Underfull \vbox (badness 2486) has occurred while \output is active []
+
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 188
 .
+
 (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -668,18 +672,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 256--256
  []
 
 
-Underfull \hbox (badness 2261) in paragraph at lines 280--281
+Underfull \hbox (badness 2261) in paragraph at lines 282--283
 \OT1/ptm/m/n/10.95 A me-dida $\OML/cmm/m/it/10.95 ^^V$ \OT1/ptm/m/n/10.95 de Bo
 ltzmann-Gibbs des-creve o de-
  []
 
 
-Underfull \hbox (badness 1348) in paragraph at lines 280--281
+Underfull \hbox (badness 1348) in paragraph at lines 282--283
 \OT1/ptm/m/n/10.95 no-mi-nado en-sem-ble can[]onico. M[]edias so-bre suas
  []
 
 
-Underfull \hbox (badness 1622) in paragraph at lines 280--281
+Underfull \hbox (badness 1622) in paragraph at lines 282--283
 \OT1/ptm/m/n/10.95 configura[][]oes, mi-cro-es-ta-dos, s[]ao usa-das para in-fe
 -
  []
@@ -693,23 +697,29 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.60628pt}.
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 282--283
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
 []\OT1/ptm/m/n/10.95 Consideraremos nos-sas $\OML/cmm/m/it/10.95 N$ \OT1/ptm/m/
 n/10.95 part[]^^Pculas em um
  []
 
 
-Underfull \hbox (badness 1286) in paragraph at lines 322--323
+Underfull \hbox (badness 1286) in paragraph at lines 324--325
 \OT1/ptm/m/n/10.95 O re-sul-tado da simula[][]ao para []4.1[] est[]a na Fi-gura
 
  []
 
-<figures/validationGaussianTracy.png, id=91, 1387.584pt x 734.9859pt>
+<figures/validationGaussianTracy.png, id=90, 1387.584pt x 734.9859pt>
 File: figures/validationGaussianTracy.png Graphic file (type png)
 <use figures/validationGaussianTracy.png>
 Package pdftex.def Info: figures/validationGaussianTracy.png  used on input lin
-e 327.
+e 329.
 (pdftex.def)             Requested size: 224.06393pt x 118.67677pt.
+<figures/validationQuarticMonic-alt.png, id=95, 919.2744pt x 448.074pt>
+File: figures/validationQuarticMonic-alt.png Graphic file (type png)
+<use figures/validationQuarticMonic-alt.png>
+Package pdftex.def Info: figures/validationQuarticMonic-alt.png  used on input 
+line 347.
+(pdftex.def)             Requested size: 224.06393pt x 109.20819pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -718,17 +728,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[4 <./figures/validationGaussianTracy.png>]
-<figures/validationQuarticMonic-alt.png, id=115, 919.2744pt x 448.074pt>
-File: figures/validationQuarticMonic-alt.png Graphic file (type png)
-<use figures/validationQuarticMonic-alt.png>
-Package pdftex.def Info: figures/validationQuarticMonic-alt.png  used on input 
-line 345.
-(pdftex.def)             Requested size: 224.06393pt x 109.20819pt.
- (./senic.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+[4] (./senic.bbl
 Underfull \hbox (badness 1360) in paragraph at lines 45--48
 []\OT1/ptm/m/n/10.95 L. Ver-let, ``Com-pu-ter "ex-pe-ri-ments"on clas-si-cal
  []
@@ -753,18 +753,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.7817pt}.
 
-[5 <./figures/validationQuarticMonic-alt.png>] (./senic.aux)
+[5 <./figures/validationGaussianTracy.png> <./figures/validationQuarticMonic-al
+t.png>] (./senic.aux)
 Package rerunfilecheck Info: File `senic.out' has not changed.
 (rerunfilecheck)             Checksum: AA3B47ED1EE71907A3FB3641455DCF81;489.
  ) 
 Here is how much of TeX's memory you used:
  13814 strings out of 478287
  219781 string characters out of 5849288
- 779274 words of memory out of 5000000
+ 780274 words of memory out of 5000000
  31709 multiletter control sequences out of 15000+600000
  501852 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,18n,106p,1686b,366s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 110i,18n,106p,1692b,366s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/jvap/.texl
 ive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf-d
@@ -784,7 +785,7 @@ ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on senic.pdf (5 pages, 482445 bytes).
+Output written on senic.pdf (5 pages, 482026 bytes).
 PDF statistics:
  231 PDF objects out of 1000 (max. 8388607)
  176 compressed objects within 2 object streams

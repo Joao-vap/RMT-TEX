@@ -7,6 +7,10 @@ A level-1 auxiliary file: USPSC-TA-PreTextual/USPSC-Resumo.aux
 A level-1 auxiliary file: USPSC-TA-Textual/C1-Introducao/C1-Introducao.aux
 A level-1 auxiliary file: USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.aux
 A level-1 auxiliary file: USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.aux
+White space in argument---line 28 of file USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.aux
+ : \citation{nao
+ :               sei ainda}
+I'm skipping whatever remains of this command
 A level-1 auxiliary file: USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -19,6 +23,11 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: abntex2-options.bib
 Database file #2: USPSC-bib/USPSC-modelo-references.bib
+I was expecting a `,' or a `}'---line 17 of file USPSC-bib/USPSC-modelo-references.bib
+ :  
+ :  adress={Florida, USA}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "abnt-etal-cite"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
@@ -29,45 +38,45 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 26 entries,
+You've used 25 entries,
             6714 wiz_defined-function locations,
-            1333 strings with 12347 characters,
-and the built_in function-call counts, 14830 in all, are:
-= -- 1211
-> -- 354
-< -- 37
-+ -- 188
-- -- 107
-* -- 933
-:= -- 1821
-add.period$ -- 58
-call.type$ -- 28
-change.case$ -- 181
-chr.to.int$ -- 50
-cite$ -- 15
-duplicate$ -- 724
-empty$ -- 1335
-format.name$ -- 544
-if$ -- 3719
+            1334 strings with 12439 characters,
+and the built_in function-call counts, 14631 in all, are:
+= -- 1207
+> -- 370
+< -- 35
++ -- 196
+- -- 111
+* -- 929
+:= -- 1771
+add.period$ -- 56
+call.type$ -- 27
+change.case$ -- 182
+chr.to.int$ -- 46
+cite$ -- 14
+duplicate$ -- 711
+empty$ -- 1294
+format.name$ -- 565
+if$ -- 3680
 int.to.chr$ -- 10
 int.to.str$ -- 1
-missing$ -- 383
-newline$ -- 89
-num.names$ -- 60
-pop$ -- 407
+missing$ -- 370
+newline$ -- 84
+num.names$ -- 56
+pop$ -- 396
 preamble$ -- 1
-purify$ -- 90
+purify$ -- 89
 quote$ -- 0
-skip$ -- 1188
+skip$ -- 1178
 stack$ -- 1
-substring$ -- 559
-swap$ -- 383
-text.length$ -- 26
+substring$ -- 528
+swap$ -- 391
+text.length$ -- 25
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 3
 warning$ -- 0
-while$ -- 92
+while$ -- 84
 width$ -- 0
-write$ -- 232
-(There was 1 warning)
+write$ -- 220
+(There were 2 error messages)
