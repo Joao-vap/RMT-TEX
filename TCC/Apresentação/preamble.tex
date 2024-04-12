@@ -1,18 +1,71 @@
 % General Configs
 
-\documentclass[10pt]{beamer}
+\documentclass[10pt, compress]{beamer}
+
+%---------------------------------------------------------
+%---------------------------------------------------------
+
 \usepackage[utf8]{inputenc}
 \usepackage[portuguese]{babel}
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{float} 				% Fixa tabelas e figuras no local exato
+\usepackage{physics}
+\usepackage{bbold}
+\usepackage{subcaption}
+
+%------------------Tikz
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,calc,quotes}
+\tikzstyle{subrotina} = [rectangle, draw,text centered, minimum width=5em, inner sep=5pt]
+\tikzstyle{funcao} = [rounded rectangle, draw, text centered, minimum width=7em, inner sep=5pt]
+\tikzstyle{random} = [rectangle, text centered, inner sep=5pt, minimum width=5em]
+\tikzstyle{loop} = [rectangle, draw, align=left]
+\tikzstyle{fluxo} = [draw, thick, -latex]
+\tikzstyle{meiofluxo} = [draw, -]
+\tikzstyle{chamada} = [draw, dashed, <->]
+%-----------------------
 
 %------------------------------------------------------------
 % Configure Theme like things
 
-\usetheme{Szeged}
-\usecolortheme{sidebartab}
+\usetheme{Madrid}
 \usefonttheme{structuresmallcapsserif}
-\setbeamercolor{lower separation line foot}{bg=}
-\setbeamercolor{separation line}{use=structure,bg=structure.fg!50!bg}
+\useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
+\useinnertheme{circles}
+\setbeamercovered{transparent}
 
+\definecolor{UBCblue}{rgb}{0.04706, 0.13725, 0.26667} % UBC Blue (primary)
+\usecolortheme[named=UBCblue]{structure}
+
+%------------ proportions in footer
+\makeatletter
+\setbeamertemplate{footline}
+{
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+			\usebeamerfont{author in head/foot}\insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+			\usebeamerfont{title in head/foot}\insertshorttitle
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.266666\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+			\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+			\insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+	\end{beamercolorbox}}%
+	\vskip0pt%
+}
+\makeatother
+%------------- background image title page
+\addtobeamertemplate{title page}{
+	\begin{tikzpicture}[remember picture,overlay]
+		\node[anchor=south west,inner sep=0pt] at (-4,-2.2)
+		{
+			\includegraphics[width=1.5\paperwidth]{./media/aesthetics/croppedCircle.png}
+		};
+	\end{tikzpicture}
+}{}
+%------------
 
 %TOC
 \setbeamertemplate{section in toc}[sections numbered]
@@ -22,7 +75,6 @@
 %Templetae
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{note page}[compress]
-
 
 %------------------------------------------------------------
 %This block of code defines the information to appear in the
@@ -54,17 +106,82 @@
 %End of title page configuration block
 %------------------------------------------------------------
 
-
-
 %------------------------------------------------------------
 %The next block of commands puts the table of contents at the 
 %beginning of each section and highlights the current section:
 
 \AtBeginSection[]
 {
+	{
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{./media/aesthetics/AstecDiamond.png}}
 	\begin{frame}
-		\frametitle{Table of Contents}
+		\frametitle{Sumário}
 		\tableofcontents[currentsection]
 	\end{frame}
+	}
 }
 %------------------------------------------------------------
+
+\newcommand\underrel[2]{\mathrel{\mathop{#2}\limits_{#1}}}
+
+\newcommand{\matriz}[1]{\hat#1}
+
+\newcommand{\many}[2]{$#1_1, #1_2, \dots, #1_#2$}
+
+\newcommand{\cmany}[3]{$#1_1 #3 #1_2 #3 \dots #3 #1_#2$}
+
+\newcommand{\mmany}[2]{ #1_1, #1_2, \dots, #1_#2 }
+
+\newcommand{\mcmany}[3]{#1_1 #3 #1_2 #3 \dots #3 #1_#2}
+
+\newcommand{\set}[1]{\{#1\}}
+
+\newcommand{\cjgt}[1]{\overline{#1}}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\ai}{Ai}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\Df}{D}
+\DeclareMathOperator{\Ee}{E}
+\DeclareMathOperator{\h}{h_1}
+\DeclareMathOperator{\f}{f}
+\DeclareMathOperator{\U}{U}
+\DeclareMathOperator{\W}{W}
+\DeclareMathOperator{\K}{K}
+\DeclareMathOperator{\Hf}{\mathcal{H}}
+\DeclareMathOperator{\Qf}{Q}
+\DeclareMathOperator{\Gl}{\mathcal{L}}
+\DeclareMathOperator{\g}{g}
+\DeclareMathOperator{\V}{V}
+\DeclareMathOperator{\Glin}{GL}
+\newcommand{\iu}{\mathrm{i}\mkern1mu}
+\renewcommand{\Im}{\mathop{\textrm Im}}
+\DeclareMathOperator{\ee}{e}
+\DeclareMathOperator{\supp}{supp}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\J}{J} %Jacobiano
+\newcommand{\Id}{\mathbb{1}}
+\newcommand{\p}{p} %medida
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Se}{\mathbb{S}}
+\newcommand{\He}{\mathbb{H}}
+\newcommand{\boh}{\mathit{o}}
+\newcommand{\Boh}{\mathcal{O}}
+\newcommand{\bbp}{\bm K_{\mathrm{BBP}}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand*{\deff}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+			\hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+	=}
+\newcommand*{\revdeff}{=\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+			\hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+}
+
+
+% MATH DECLARATION
+\numberwithin{equation}{section} %numeracao dentro de secoes
