@@ -91,12 +91,10 @@ ISBN 9781420079425.}
   Dordrecht: Springer Netherlands, 1970. p. 753--765.
 ISBN 978-90-481-2809-9.}
 
-\bibitem{Byun_2023}
-\abntrefinfo{Byun, Kang e Seo}{BYUN; KANG; SEO}{2023}
-{BYUN, S.-S.; KANG, N.-G.; SEO, S.-M. Partition functions of determinantal and
-  pfaffian coulomb gases with radially symmetric potentials.
-\textbf{Communications in Mathematical Physics}, Springer Science and Business
-  Media LLC, v.~401, n.~2, p. 1627–1663, mar. 2023.
-ISSN 1432-0916.}
+\bibitem{balogh2016orthogonal}
+\abntrefinfo{Balogh, Grava e Merzi}{BALOGH; GRAVA; MERZI}{2016}
+{BALOGH, F.; GRAVA, T.; MERZI, D. Orthogonal polynomials for a class of
+  measures with discrete rotational symmetries in the complex plane.
+2016.}
 
 \end{thebibliography}

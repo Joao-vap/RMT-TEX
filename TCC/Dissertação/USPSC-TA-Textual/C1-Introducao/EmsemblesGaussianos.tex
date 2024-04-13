@@ -12,7 +12,7 @@ $$
 
 Os três ensembles gaussianos compartilham de uma propriedade exclusiva - são os únicos ensembles com entradas independentes e, simultaneamente, jpdf rotacionalmente invariante. Tomemos, por simplicidade, $\matriz{U} \in \mathcal{M}_{\R}(N)$, matriz real simétrica, do GOE. Para esta, sabendo as entradas independentes, podemos escrever $$\p(\matriz{U}) = \prod_{i=1}^{N}\frac{\exp{\frac{U_{i,i}^2}{2}}}{\sqrt{2\pi}} \prod_{i<j} \frac{\exp{U_{i,i}^2}}{\sqrt{\pi}} = 2^{-N/2} \pi^{-N(N + 1)/4} \exp{-\frac{1}{2} \Tr{U^2}}.$$
 
-Note que essa jpdf satisfaz as condições do Teorema \ref{Teorema: Invariante} e, especialmente, é da forma que propomos na Equação \ref{Equation: p-ord}, logo, $$ \p_{ord}(\mmany{\lambda}{N}) = \frac{1}{Z_{N, \beta = 1}^{(ord)}} \exp{-\frac{1}{2} \sum_{i = 1}^{N} \lambda_i^2} \prod_{i < j} (\lambda_i - \lambda_j).$$ 
+Note que essa jpdf satisfaz as condições do Teorema \ref{Teorema: Invariante} e, especialmente, é da forma que exige o Lema de Weyl, logo, pela Equação \ref{Equation: p-ord}, $$ \p_{ord}(\mmany{\lambda}{N}) = \frac{1}{Z_{N, \beta = 1}^{(ord)}} \exp{-\frac{1}{2} \sum_{i = 1}^{N} \lambda_i^2} \prod_{i < j} (\lambda_i - \lambda_j).$$ 
 De forma análoga, podemos deduzir mais geralmente para $\beta = 1,2,4$ que
 \begin{equation}
 	\begin{split}
@@ -22,6 +22,6 @@ De forma análoga, podemos deduzir mais geralmente para $\beta = 1,2,4$ que
 	\end{split}
 \label{Equation: medida Gaussian}
 \end{equation}
-onde $Z_{N, \beta}$ é função de partição canônica para autovalores desordenados\footnote{Usa-se do fator de contagem de Boltzmann para escrever $ Z_{N, \beta} = N! Z_{N, \beta}^{(ord)}$.}, normalizante da expressão \ref{Equation: medida Gaussian}. O fator $\beta_N = \beta N^2$ é pensado como a temperatura inversa. Definimos ainda o Hamiltoniano $$\mathcal{H}_N(\vec{\lambda}) = \frac{1}{N}\sum_{i = 1}^{N} \frac{\lambda_i^2}{2} + \frac{1}{N^2} \sum_{i < j} \log{\frac{1}{|\lambda_i - \lambda_j|}}, \ \ \  \lambda_i \mapsto \lambda_i \sqrt{\beta N}.$$
+onde $Z_{N, \beta}$ é função de partição canônica para autovalores desordenados\footnote{Usa-se do fator de contagem de Boltzmann para escrever $ Z_{N, \beta} = N! Z_{N, \beta}^{(ord)}$.}, normalizante da expressão \ref{Equation: medida Gaussian}. O fator $\beta_N = \beta N^2$ é pensado como a temperatura inversa. Definimos ainda o Hamiltoniano $$\mathcal{H}_N(\vec{\lambda}) = \frac{1}{N}\sum_{i = 1}^{N} \frac{\lambda_i^2}{2} + \frac{1}{N^2} \sum_{i < j} \log{\frac{1}{|\lambda_i - \lambda_j|}}, \ \ \  \lambda_i \mapsto \lambda_i \sqrt{\beta N}.$$ Onde é aplicado a devida escala na magnitude dos autovalores.
 % Sabemos então, que a partir dessa função podemos retirar importantes propriedades estatísticas (macroscópicas) do sistema de autovalores dos ensembles Gaussianos.
 

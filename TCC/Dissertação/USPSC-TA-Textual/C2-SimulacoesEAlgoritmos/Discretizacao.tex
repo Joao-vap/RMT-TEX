@@ -6,11 +6,11 @@ Para integrar $\Gl$, operaremos separadamente sobre $\Gl_{\Hf}$ e $\Gl_{\U}$. A 
 \begin{cases}
 	\tilde{p}_{k+\frac{1}{2}} = \tilde{p}_k - \nabla \Hf_N(q_k) \alpha_N \frac{\Delta t}{2}, \\
 	\tilde{q}_{k+1} = q_k + \tilde{p}_{k + \frac{1}{2}} \alpha_N \Delta t, \\
-	\tilde{p}_{k+1} = \tilde{p}_{k+\frac{1}{2}} - \nabla \Hf_N(q_{k+1}) \alpha_N \frac{\Delta t}{2}.
+	\tilde{p}_{k+1} = \tilde{p}_{k+\frac{1}{2}} - \nabla \Hf_N(q_{k+1}) \alpha_N \frac{\Delta t}{2},
 \end{cases}
 \label{Equation: Verlet}
 \end{equation}
-Um esquema análogo é possível para energias cinéticas generalizadas \cite{Stoltz2018}. Outros métodos tais quais \textit{Euler-Maruyama} (EM) \cite[Capítulo~7]{leimmolecular} poderiam ser utilizados para o mesmo fim. Nos métodos que temos interesse, o erro associado à discretização deve ir à zero quando $\Delta t$ vai à zero. Para EM, o erro por passo, local, é da ordem de $\Boh{(\Delta t^2)}$ e o erro final, global, $\Boh{(\Delta t)}$, Já para o esquema escolhido, temos erro local de  $\Boh{(\Delta t^3)}$ e global de  $\Boh{(\Delta t^2)}$. Essa diferença vem do fato da discretização usada ser reversível \cite[Capítulo~5]{handbookmontecarlo}. 
+onde $(q_{k+1}, p_{k+1})$ é estado seguinte da dinâmica. Um esquema análogo é possível para energias cinéticas generalizadas \cite{Stoltz2018}. Outros métodos tais quais \textit{Euler-Maruyama} (EM) \cite[Capítulo~7]{leimmolecular} poderiam ser utilizados para o mesmo fim. Nos métodos que temos interesse, o erro associado à discretização deve ir à zero quando $\Delta t$ vai à zero. Para EM, o erro por passo, local, é da ordem de $\Boh{(\Delta t^2)}$ e o erro final, global, $\Boh{(\Delta t)}$, Já para o esquema escolhido, temos erro local de  $\Boh{(\Delta t^3)}$ e global de  $\Boh{(\Delta t^2)}$. Essa diferença vem do fato da discretização usada ser reversível \cite[Capítulo~5]{handbookmontecarlo}. 
 
 Nos resta integrar $\Gl_{\U}$, o qual, para a energia cinética usual, consiste em um processo de Ornstein-Uhlenbeck de variância explícita, ou ainda, $$dx_t = - \alpha_N x_t dt + \sigma dB_t,$$ onde $\alpha_N, \sigma > 0$ são parâmetros e $B_t$ é processo browniano. Este processo também mantém a medida invariante. Note que, para $\alpha_N > 0$ somente substituiremos parcialmente o momento das variáveis e, se $\alpha_N, \gamma_N \rightarrow 0$ com $\alpha_N \gamma_N = 1$, retomaríamos a dinâmica de \ref{Equação: Langevin Overdamped}. Este processo não seria muito melhor, contudo, do que um \textit{Random Walk Metropolis} \cite[Capítulo~5]{handbookmontecarlo} já que o momento seria completamente substituído. De qualquer forma, $\Gl_{\U}$ pode ser integrado a partir da fórmula de Mehler para obter
 \begin{equation}

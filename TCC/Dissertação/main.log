@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.8)  13 APR 2024 10:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.8)  13 APR 2024 13:02
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1671,7 +1671,7 @@ L/lmm/m/it/12 ; M[]\OT1/lmr/m/n/12 (-20) (\OML/lmm/m/it/12 N\OT1/lmr/m/n/12 (-2
 0) )$\T1/lmr/m/it/12 (-20) .
  []
 
-) (./USPSC-TA-Textual/C1-Introducao/EmsemblesGaussianos.tex [7]
+) (./USPSC-TA-Textual/C1-Introducao/EmsemblesGaussianos.tex
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
 5.
 
@@ -1680,7 +1680,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 25.
-)
+ [7])
 (./USPSC-TA-Textual/C1-Introducao/GasesDeCoulomb.tex)
 (./USPSC-TA-Textual/C1-Introducao/MedidaDeEquilibrio.tex [8])
 (./USPSC-TA-Textual/C1-Introducao/PotenciaisNotaveis.tex [9])) [10]
@@ -1710,13 +1710,13 @@ ltados.aux'.
 ])
 (./USPSC-TA-Textual/C3-ImplementacaoEResultados/ValidacaoDistsConhecidas.tex
 [15]
-<Assets/validationGaussianTracy.png, id=254, 1911.14pt x 1000.73875pt>
+<Assets/validationGaussianTracy.png, id=255, 1911.14pt x 1000.73875pt>
 File: Assets/validationGaussianTracy.png Graphic file (type png)
 <use Assets/validationGaussianTracy.png>
 Package pdftex.def Info: Assets/validationGaussianTracy.png  used on input line
  13.
 (pdftex.def)             Requested size: 432.24861pt x 226.33229pt.
-<Assets/validationQuarticMonic-alt.png, id=262, 1253.68375pt x 603.25375pt>
+<Assets/validationQuarticMonic-alt.png, id=263, 1253.68375pt x 603.25375pt>
 File: Assets/validationQuarticMonic-alt.png Graphic file (type png)
 <use Assets/validationQuarticMonic-alt.png>
 Package pdftex.def Info: Assets/validationQuarticMonic-alt.png  used on input l
@@ -1724,15 +1724,11 @@ ine 30.
 (pdftex.def)             Requested size: 432.24861pt x 207.9939pt.
  [16] [17 <./Assets/validationGaussianTracy.png> <./Assets/validationQuarticMon
 ic-alt.png>]
-<Assets/complexPotential.png, id=286, 624.4128pt x 320.1561pt>
+<Assets/complexPotential.png, id=287, 624.4128pt x 320.1561pt>
 File: Assets/complexPotential.png Graphic file (type png)
 <use Assets/complexPotential.png>
 Package pdftex.def Info: Assets/complexPotential.png  used on input line 43.
 (pdftex.def)             Requested size: 455.0pt x 233.29187pt.
-
-
-LaTeX Warning: Citation `nao sei ainda' on page 18 undefined on input line 48.
-
 )) [18 <./Assets/complexPotential.png>]
 \openout2 = `USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.aux'.
 
@@ -1763,41 +1759,37 @@ AED: lastpage setting LastPage
 (./USPSC-TA-Textual/C1-Introducao/C1-Introducao.aux)
 (./USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.aux)
 (./USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.aux
-) (./USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.aux))
-
-LaTeX Warning: There were undefined references.
-
- ) 
+) (./USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.aux)) ) 
 Here is how much of TeX's memory you used:
- 36200 strings out of 478287
- 683030 string characters out of 5849290
- 1156684 words of memory out of 5000000
+ 36195 strings out of 478287
+ 683029 string characters out of 5849290
+ 1156738 words of memory out of 5000000
  53286 multiletter control sequences out of 15000+600000
- 557545 words of font info for 208 fonts, out of 8000000 for 9000
+ 557152 words of font info for 205 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,20n,93p,1732b,1375s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/te
-xmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ma
-thsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texlive
-/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/share/texmf/fonts/type1/
-public/lm/lmbsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb
-></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/t
-exmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/l
-msy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on main.pdf (21 pages, 689103 bytes).
+{/usr/share/texmf/fonts/
+enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/sha
+re/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-
+mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf
+/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/bbold-type1/bbold10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+bbold-type1/bbold7.pfb></usr/share/texmf/fonts/type1/public/lm/lmbsy10.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
+Output written on main.pdf (21 pages, 682880 bytes).
 PDF statistics:
- 511 PDF objects out of 1000 (max. 8388607)
+ 509 PDF objects out of 1000 (max. 8388607)
  425 compressed objects within 5 object streams
- 114 named destinations out of 1000 (max. 500000)
+ 115 named destinations out of 1000 (max. 500000)
  49332 words of extra memory for PDF output out of 51595 (max. 10000000)
 

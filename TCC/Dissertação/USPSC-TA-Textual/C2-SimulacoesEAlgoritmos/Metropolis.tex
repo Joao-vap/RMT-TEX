@@ -5,7 +5,7 @@ Muitos algoritmos utilizam de um passo de seleção para estabilizar sua dinâmi
 
 Propõe-se então que, a partir da proposição de estado $\tilde{q}_{k+1}$ gerada pelo esquema anterior, se calcule a probabilidade
 \begin{equation}
-P_k = 1 \wedge \frac{\K(\tilde{q}_{k+1}, q_k) \ee^{-\beta_N \Ee_N(\tilde{q}_{k+1})}}{\K(q_k, \tilde{q}_{k+1}) \ee^{-\beta_N \Ee_N(q_{k})}},
+P_k = 1 \wedge \frac{\K(\tilde{q}_{k+1}, q_k) \ee^{-\beta \Hf_N(\tilde{q}_{k+1})}}{\K(q_k, \tilde{q}_{k+1}) \ee^{-\beta \Hf_N(q_{k})}},
 \label{Equation: Pk}
 \end{equation}
 onde o núcleo $K(x, y)$ é simétrico \cite{Chafa2018} para o caso do \textit{Langevin Monte Carlo} e, por se cancelar, não será discutido adiante. Atribua agora às novas coordenadas generalizadas $(q_{k+1}, p_{k+1})$ valor da seguinte forma

@@ -7,10 +7,6 @@ A level-1 auxiliary file: USPSC-TA-PreTextual/USPSC-Resumo.aux
 A level-1 auxiliary file: USPSC-TA-Textual/C1-Introducao/C1-Introducao.aux
 A level-1 auxiliary file: USPSC-TA-Textual/C2-SimulacoesEAlgoritmos/C2-SimulacoesEAlgoritmos.aux
 A level-1 auxiliary file: USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.aux
-White space in argument---line 28 of file USPSC-TA-Textual/C3-ImplementacaoEResultados/C3-ImplementacaoEResultados.aux
- : \citation{nao
- :               sei ainda}
-I'm skipping whatever remains of this command
 A level-1 auxiliary file: USPSC-TA-Textual/C4-Conclusao/C4-Conclusao.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -23,7 +19,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: abntex2-options.bib
 Database file #2: USPSC-bib/USPSC-modelo-references.bib
-I was expecting a `,' or a `}'---line 17 of file USPSC-bib/USPSC-modelo-references.bib
+I was expecting a `,' or a `}'---line 26 of file USPSC-bib/USPSC-modelo-references.bib
  :  
  :  adress={Florida, USA}
 (Error may have been on previous line)
@@ -40,43 +36,43 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 +---------------------------------------------------------+
 You've used 25 entries,
             6714 wiz_defined-function locations,
-            1334 strings with 12439 characters,
-and the built_in function-call counts, 14631 in all, are:
-= -- 1207
-> -- 370
-< -- 35
+            1328 strings with 12342 characters,
+and the built_in function-call counts, 14351 in all, are:
+= -- 1170
+> -- 369
+< -- 31
 + -- 196
 - -- 111
-* -- 929
-:= -- 1771
-add.period$ -- 56
+* -- 916
+:= -- 1755
+add.period$ -- 55
 call.type$ -- 27
 change.case$ -- 182
-chr.to.int$ -- 46
+chr.to.int$ -- 43
 cite$ -- 14
-duplicate$ -- 711
-empty$ -- 1294
+duplicate$ -- 680
+empty$ -- 1283
 format.name$ -- 565
-if$ -- 3680
+if$ -- 3597
 int.to.chr$ -- 10
 int.to.str$ -- 1
-missing$ -- 370
-newline$ -- 84
+missing$ -- 369
+newline$ -- 83
 num.names$ -- 56
-pop$ -- 396
+pop$ -- 403
 preamble$ -- 1
 purify$ -- 89
 quote$ -- 0
-skip$ -- 1178
+skip$ -- 1148
 stack$ -- 1
-substring$ -- 528
-swap$ -- 391
-text.length$ -- 25
+substring$ -- 517
+swap$ -- 356
+text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 3
 warning$ -- 0
 while$ -- 84
 width$ -- 0
-write$ -- 220
-(There were 2 error messages)
+write$ -- 214
+(There was 1 error message)
