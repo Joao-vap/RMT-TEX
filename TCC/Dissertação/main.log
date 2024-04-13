@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.8)  11 APR 2024 09:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.8)  13 APR 2024 10:51
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1648,16 +1648,18 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout2 = `USPSC-TA-Textual/C1-Introducao/C1-Introducao.aux'.
 
 
-(./USPSC-TA-Textual/C1-Introducao/C1-Introducao.tex
+(./USPSC-TA-Textual/C1-Introducao/C1-Introducao.tex [5
+
+
+
+]
 (./USPSC-TA-Textual/C1-Introducao/DistAutovalores.tex
 LaTeX Font Info:    Trying to load font information for U+bbold on input line 3
 .
 
-(/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd) [5
+(/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd) [6
 
-
-
-] [6]
+]
 Overfull \hbox (13.32355pt too wide) in paragraph at lines 17--19
 \T1/lmr/m/it/12 (-20) onde $\OML/lmm/m/it/12 C[]$ \T1/lmr/m/it/12 (-20) é cons-
 tante e $\OML/lmm/m/it/12 ^^L \OT1/lmr/m/n/12 (-20) = 1\OML/lmm/m/it/12 ; \OT1/
@@ -1669,7 +1671,7 @@ L/lmm/m/it/12 ; M[]\OT1/lmr/m/n/12 (-20) (\OML/lmm/m/it/12 N\OT1/lmr/m/n/12 (-2
 0) )$\T1/lmr/m/it/12 (-20) .
  []
 
-) (./USPSC-TA-Textual/C1-Introducao/EmsemblesGaussianos.tex
+) (./USPSC-TA-Textual/C1-Introducao/EmsemblesGaussianos.tex [7]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
 5.
 
@@ -1678,7 +1680,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 25.
- [7])
+)
 (./USPSC-TA-Textual/C1-Introducao/GasesDeCoulomb.tex)
 (./USPSC-TA-Textual/C1-Introducao/MedidaDeEquilibrio.tex [8])
 (./USPSC-TA-Textual/C1-Introducao/PotenciaisNotaveis.tex [9])) [10]
@@ -1708,13 +1710,13 @@ ltados.aux'.
 ])
 (./USPSC-TA-Textual/C3-ImplementacaoEResultados/ValidacaoDistsConhecidas.tex
 [15]
-<Assets/validationGaussianTracy.png, id=252, 1911.14pt x 1000.73875pt>
+<Assets/validationGaussianTracy.png, id=254, 1911.14pt x 1000.73875pt>
 File: Assets/validationGaussianTracy.png Graphic file (type png)
 <use Assets/validationGaussianTracy.png>
 Package pdftex.def Info: Assets/validationGaussianTracy.png  used on input line
  13.
 (pdftex.def)             Requested size: 432.24861pt x 226.33229pt.
-<Assets/validationQuarticMonic-alt.png, id=260, 1253.68375pt x 603.25375pt>
+<Assets/validationQuarticMonic-alt.png, id=262, 1253.68375pt x 603.25375pt>
 File: Assets/validationQuarticMonic-alt.png Graphic file (type png)
 <use Assets/validationQuarticMonic-alt.png>
 Package pdftex.def Info: Assets/validationQuarticMonic-alt.png  used on input l
@@ -1722,7 +1724,7 @@ ine 30.
 (pdftex.def)             Requested size: 432.24861pt x 207.9939pt.
  [16] [17 <./Assets/validationGaussianTracy.png> <./Assets/validationQuarticMon
 ic-alt.png>]
-<Assets/complexPotential.png, id=284, 624.4128pt x 320.1561pt>
+<Assets/complexPotential.png, id=286, 624.4128pt x 320.1561pt>
 File: Assets/complexPotential.png Graphic file (type png)
 <use Assets/complexPotential.png>
 Package pdftex.def Info: Assets/complexPotential.png  used on input line 43.
@@ -1767,13 +1769,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 36192 strings out of 478287
- 682945 string characters out of 5849290
+ 36200 strings out of 478287
+ 683030 string characters out of 5849290
  1156684 words of memory out of 5000000
- 53285 multiletter control sequences out of 15000+600000
- 557198 words of font info for 205 fonts, out of 8000000 for 9000
+ 53286 multiletter control sequences out of 15000+600000
+ 557545 words of font info for 208 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,20n,93p,1792b,1375s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,20n,93p,1732b,1375s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/te
 xmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ma
@@ -1792,10 +1794,10 @@ e/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 msy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on main.pdf (21 pages, 688642 bytes).
+Output written on main.pdf (21 pages, 689103 bytes).
 PDF statistics:
- 506 PDF objects out of 1000 (max. 8388607)
- 420 compressed objects within 5 object streams
- 113 named destinations out of 1000 (max. 500000)
- 49324 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 511 PDF objects out of 1000 (max. 8388607)
+ 425 compressed objects within 5 object streams
+ 114 named destinations out of 1000 (max. 500000)
+ 49332 words of extra memory for PDF output out of 51595 (max. 10000000)
 
