@@ -10,9 +10,9 @@ $$
 \end{cases}
 $$
 
-Os três ensembles gaussianos compartilham de uma propriedade exclusiva - são os únicos ensembles com entradas independentes e, simultaneamente, jpdf rotacionalmente invariante. Tomemos, por simplicidade, $\matriz{U} \in \mathcal{M}_{\R}(N)$, matriz real simétrica, do GOE. Para esta, sabendo as entradas independentes, podemos escrever $$\p(\matriz{U}) = \prod_{i=1}^{N}\frac{\exp{\frac{U_{i,i}^2}{2}}}{\sqrt{2\pi}} \prod_{i<j} \frac{\exp{U_{i,i}^2}}{\sqrt{\pi}} = 2^{-N/2} \pi^{-N(N + 1)/4} \exp{-\frac{1}{2} \Tr{U^2}}.$$
+Os três ensembles gaussianos compartilham de uma propriedade exclusiva - são os únicos ensembles com entradas independentes e, simultaneamente, jpdf rotacionalmente invariante. Tomemos, por simplicidade, $\matriz{G} \in \mathcal{M}_{\R}(N)$, matriz real simétrica, do GOE. Para esta, sabendo as entradas independentes, podemos escrever $$\p(\matriz{G}) = \prod_{i=1}^{N}\frac{\exp{\frac{G_{i,i}^2}{2}}}{\sqrt{2\pi}} \prod_{i<j} \frac{\exp{G_{i,i}^2}}{\sqrt{\pi}} = 2^{-N/2} \pi^{-N(N + 1)/4} \exp{-\frac{1}{2} \Tr{G^2}}.$$
 
-Note que essa jpdf satisfaz as condições do Teorema \ref{Teorema: Invariante} e, especialmente, é da forma que exige o Lema de Weyl, logo, pela Equação \ref{Equation: p-ord}, $$ \p_{ord}(\mmany{\lambda}{N}) = \frac{1}{Z_{N, \beta = 1}^{(ord)}} \exp{-\frac{1}{2} \sum_{i = 1}^{N} \lambda_i^2} \prod_{i < j} (\lambda_i - \lambda_j).$$ 
+Note que essa jpdf satisfaz as condições do Teorema \ref{Teorema: Invariante} e, especialmente, é da forma que exige o Lema de Weyl, logo, pela Equação \ref{Equation: p-ord}, $$ \p_{ord}^{G}(\mmany{\lambda}{N}) = \frac{1}{Z_{N, \beta = 1}^{(ord)}} \exp{-\frac{1}{2} \sum_{i = 1}^{N} \lambda_i^2} \prod_{i < j} (\lambda_i - \lambda_j).$$ 
 De forma análoga, podemos deduzir mais geralmente para $\beta = 1,2,4$ que
 \begin{equation}
 	\begin{split}

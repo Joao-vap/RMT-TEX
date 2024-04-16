@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.8)  12 APR 2024 19:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.8)  16 APR 2024 11:30
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1129,7 +1129,7 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 
  <./media/aesthetics/logotipoifsc.png> <./media/aesthetics/croppedCircle.png>] 
 (./main.toc)
-<./media/aesthetics/AstecDiamond.png, id=199, 6019.48875pt x 4827.03375pt>
+<./media/aesthetics/AstecDiamond.png, id=198, 6019.48875pt x 4827.03375pt>
 File: ./media/aesthetics/AstecDiamond.png Graphic file (type png)
 <use ./media/aesthetics/AstecDiamond.png>
 Package pdftex.def Info: ./media/aesthetics/AstecDiamond.png  used on input lin
@@ -1236,7 +1236,7 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-166.
+184.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [13
 
@@ -1244,7 +1244,7 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-184.
+196.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [14
 
@@ -1276,7 +1276,7 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-196.
+211.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [18
 
@@ -1292,7 +1292,7 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-211.
+260.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [20
 
@@ -1300,7 +1300,7 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-258.
+260.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [21
 
@@ -1308,7 +1308,7 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-258.
+298.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [22
 
@@ -1316,7 +1316,7 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-258.
+298.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
 
 [23
@@ -1325,15 +1325,20 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-258.
+298.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [24
 
-]
+] (./main.toc)
+File: ./media/aesthetics/AstecDiamond.png Graphic file (type png)
+<use ./media/aesthetics/AstecDiamond.png>
+Package pdftex.def Info: ./media/aesthetics/AstecDiamond.png  used on input lin
+e 304.
+(pdftex.def)             Requested size: 364.19536pt x 292.04013pt.
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-258.
+304.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [25
 
@@ -1341,7 +1346,7 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-296.
+318.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [26
 
@@ -1349,7 +1354,7 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-296.
+318.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [27
 
@@ -1357,36 +1362,48 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-296.
+318.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [28
 
-] (./main.toc)
-File: ./media/aesthetics/AstecDiamond.png Graphic file (type png)
-<use ./media/aesthetics/AstecDiamond.png>
-Package pdftex.def Info: ./media/aesthetics/AstecDiamond.png  used on input lin
-e 302.
-(pdftex.def)             Requested size: 364.19536pt x 292.04013pt.
+]
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
+(Font)              using `OT1/cmr/m/it' instead on input line 364.
+
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-302.
+364.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
- [29
+[29
+
+]
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
+(Font)              using `OT1/cmr/m/it' instead on input line 364.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 364.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <7> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 364.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 364.
+
+File: media/aesthetics/logotipoifsc.png Graphic file (type png)
+<use media/aesthetics/logotipoifsc.png>
+Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
+364.
+(pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
+[30
 
 ]
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-316.
-(pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
- [30
-
-]
-File: media/aesthetics/logotipoifsc.png Graphic file (type png)
-<use media/aesthetics/logotipoifsc.png>
-Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-316.
+364.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [31
 
@@ -1394,270 +1411,235 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-316.
+387.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [32
 
 ]
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/it' instead on input line 362.
-
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-362.
+403.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
-[33
-
-]
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/it' instead on input line 362.
-
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 362.
-
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <7> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 362.
-
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 362.
-
-File: media/aesthetics/logotipoifsc.png Graphic file (type png)
-<use media/aesthetics/logotipoifsc.png>
-Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-362.
-(pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
-[34
+ [33
 
 ]
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-362.
+429.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
- [35
-
-]
-File: media/aesthetics/logotipoifsc.png Graphic file (type png)
-<use media/aesthetics/logotipoifsc.png>
-Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-385.
-(pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
- [36
-
-]
-File: media/aesthetics/logotipoifsc.png Graphic file (type png)
-<use media/aesthetics/logotipoifsc.png>
-Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-401.
-(pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
- [37
-
-]
-File: media/aesthetics/logotipoifsc.png Graphic file (type png)
-<use media/aesthetics/logotipoifsc.png>
-Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-427.
-(pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
- [38
+ [34
 
 ] (./main.toc)
 File: ./media/aesthetics/AstecDiamond.png Graphic file (type png)
 <use ./media/aesthetics/AstecDiamond.png>
 Package pdftex.def Info: ./media/aesthetics/AstecDiamond.png  used on input lin
-e 433.
+e 435.
 (pdftex.def)             Requested size: 364.19536pt x 292.04013pt.
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-433.
+435.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
- [39
+ [35
 
 ]
-Overfull \vbox (8.68735pt too high) detected at line 471
+Overfull \vbox (8.68735pt too high) detected at line 473
  []
 
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-471.
+473.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
-[40
+[36
 
 ]
-Overfull \vbox (8.68735pt too high) detected at line 471
+Overfull \vbox (8.68735pt too high) detected at line 473
  []
 
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-471.
+473.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
-[41
+[37
 
 ]
-Overfull \vbox (8.68735pt too high) detected at line 471
+Overfull \vbox (8.68735pt too high) detected at line 473
  []
 
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-471.
+473.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
-[42
+[38
 
 ]
-Overfull \vbox (8.68735pt too high) detected at line 471
+Overfull \vbox (8.68735pt too high) detected at line 473
  []
 
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-471.
+473.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
-[43
+[39
 
 ]
-<./media/Results/Esquematics.jpg, id=2019, 318.18875pt x 277.035pt>
+<./media/Results/Esquematics.jpg, id=1860, 318.18875pt x 277.035pt>
 File: ./media/Results/Esquematics.jpg Graphic file (type jpg)
 <use ./media/Results/Esquematics.jpg>
 Package pdftex.def Info: ./media/Results/Esquematics.jpg  used on input line 48
-1.
+3.
 (pdftex.def)             Requested size: 206.51929pt x 179.80852pt.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <9> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 481.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 483.
 
 
-Overfull \vbox (5.1558pt too high) detected at line 481
+Overfull \vbox (5.1558pt too high) detected at line 483
  []
 
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-481.
+483.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
-[44
+[40
 
  <./media/Results/Esquematics.jpg>]
-<./media/Results/validationGaussianTracy.png, id=2060, 1911.14pt x 1000.73875pt
+File: media/aesthetics/logotipoifsc.png Graphic file (type png)
+<use media/aesthetics/logotipoifsc.png>
+Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
+509.
+(pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
+ [41
+
+]
+<./media/Results/validationGaussianTracy.png, id=1941, 1157.0427pt x 633.8079pt
 >
 File: ./media/Results/validationGaussianTracy.png Graphic file (type png)
 <use ./media/Results/validationGaussianTracy.png>
 Package pdftex.def Info: ./media/Results/validationGaussianTracy.png  used on i
-nput line 499.
-(pdftex.def)             Requested size: 240.93567pt x 126.16093pt.
+nput line 509.
+(pdftex.def)             Requested size: 309.77368pt x 169.68942pt.
 
-Overfull \vbox (2.35548pt too high) detected at line 499
+Overfull \vbox (6.03671pt too high) detected at line 509
  []
 
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-499.
+509.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
-[45
+[42
 
  <./media/Results/validationGaussianTracy.png>]
-<./media/Results/validationQuarticMonic-alt.png, id=2101, 1253.68375pt x 603.25
+File: media/aesthetics/logotipoifsc.png Graphic file (type png)
+<use media/aesthetics/logotipoifsc.png>
+Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
+533.
+(pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
+ [43
+
+]
+<./media/Results/validationQuarticMonic-alt.png, id=2024, 1253.68375pt x 603.25
 375pt>
 File: ./media/Results/validationQuarticMonic-alt.png Graphic file (type png)
 <use ./media/Results/validationQuarticMonic-alt.png>
 Package pdftex.def Info: ./media/Results/validationQuarticMonic-alt.png  used o
-n input line 513.
-(pdftex.def)             Requested size: 240.93567pt x 115.9265pt.
+n input line 533.
+(pdftex.def)             Requested size: 309.77368pt x 149.05493pt.
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-513.
+533.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
- [46
+ [44
 
  <./media/Results/validationQuarticMonic-alt.png>]
+File: media/aesthetics/logotipoifsc.png Graphic file (type png)
+<use media/aesthetics/logotipoifsc.png>
+Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
+564.
+(pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
+ [45
+
+]
 File: ./media/Results/validationQuarticMonic-alt.png Graphic file (type png)
 <use ./media/Results/validationQuarticMonic-alt.png>
 Package pdftex.def Info: ./media/Results/validationQuarticMonic-alt.png  used o
-n input line 527.
-(pdftex.def)             Requested size: 240.93567pt x 115.9265pt.
+n input line 564.
+(pdftex.def)             Requested size: 309.77368pt x 149.05493pt.
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-527.
+564.
+(pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
+ [46
+
+]
+File: media/aesthetics/logotipoifsc.png Graphic file (type png)
+<use media/aesthetics/logotipoifsc.png>
+Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
+581.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [47
 
 ]
-<./media/Results/complexPotential.png, id=2182, 624.4128pt x 320.1561pt>
+<./media/Results/complexPotential.png, id=2184, 624.4128pt x 320.1561pt>
 File: ./media/Results/complexPotential.png Graphic file (type png)
 <use ./media/Results/complexPotential.png>
 Package pdftex.def Info: ./media/Results/complexPotential.png  used on input li
-ne 541.
-(pdftex.def)             Requested size: 275.3573pt x 141.18176pt.
+ne 581.
+(pdftex.def)             Requested size: 344.19533pt x 176.4772pt.
 
-Overfull \vbox (10.02905pt too high) detected at line 541
+Overfull \vbox (1.8245pt too high) detected at line 581
  []
 
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-541.
+581.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
 [48
 
  <./media/Results/complexPotential.png>]
-Overfull \hbox (43.2146pt too wide) detected at line 555
-[]\OT1/mathkerncmss/m/sl/10 d \OT1/cmss/m/n/10 = 2;  \OT1/mathkerncmss/m/sl/10 
-n \OT1/cmss/m/n/10 = 2;  [](\OT1/mathkerncmss/m/sl/10 z\OT1/cmss/m/n/10 ) = \OT
-1/mathkerncmss/m/sl/10 t[]\OT1/cmss/m/n/10 (\OMS/cmsy/m/n/10 j\OT1/mathkerncmss
-/m/sl/10 z\OMS/cmsy/m/n/10 j[] ^^@ \OT1/cmss/m/n/10 2 []\OMS/cmsy/m/n/10 f\OT1/
-mathkerncmss/m/sl/10 z[]\OML/cmm/m/it/10 =\OT1/cmss/m/n/10 3 + \OT1/mathkerncms
-s/m/sl/10 t[]z\OMS/cmsy/m/n/10 g\OT1/cmss/m/n/10 );  \OT1/mathkerncmss/m/sl/10 
-W\OT1/cmss/m/n/10 (\OT1/mathkerncmss/m/sl/10 x\OT1/cmss/m/n/10 ) = \OT1/mathker
-ncmss/m/sl/10 g\OT1/cmss/m/n/10 (\OT1/mathkerncmss/m/sl/10 x\OT1/cmss/m/n/10 ) 
-= [] [];  \OML/cmm/m/it/10 ^^L[] \OT1/cmss/m/n/10 = \OML/cmm/m/it/10 ^^L\OT1/ma
-thkerncmss/m/sl/10 N[]\OT1/cmss/m/n/10 ;  \OML/cmm/m/it/10 ^^L \OT1/cmss/m/n/10
- = 2\OML/cmm/m/it/10 :[][]
- []
-
-<./media/Results/allshapes.png, id=2223, 462.528pt x 346.896pt>
-File: ./media/Results/allshapes.png Graphic file (type png)
-<use ./media/Results/allshapes.png>
-Package pdftex.def Info: ./media/Results/allshapes.png  used on input line 555.
-
-(pdftex.def)             Requested size: 206.51929pt x 154.8896pt.
-
-Overfull \vbox (23.7369pt too high) detected at line 555
- []
-
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-555.
+598.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
-[49
+ [49
+
+]
+<./media/Results/allshapes.png, id=2265, 1156.32pt x 583.2189pt>
+File: ./media/Results/allshapes.png Graphic file (type png)
+<use ./media/Results/allshapes.png>
+Package pdftex.def Info: ./media/Results/allshapes.png  used on input line 598.
+
+(pdftex.def)             Requested size: 344.19533pt x 173.59654pt.
+File: media/aesthetics/logotipoifsc.png Graphic file (type png)
+<use media/aesthetics/logotipoifsc.png>
+Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
+598.
+(pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
+ [50
 
  <./media/Results/allshapes.png>] (./main.toc)
 File: ./media/aesthetics/AstecDiamond.png Graphic file (type png)
 <use ./media/aesthetics/AstecDiamond.png>
 Package pdftex.def Info: ./media/aesthetics/AstecDiamond.png  used on input lin
-e 560.
+e 603.
 (pdftex.def)             Requested size: 364.19536pt x 292.04013pt.
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-560.
-(pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
- [50
-
-]
-File: media/aesthetics/logotipoifsc.png Graphic file (type png)
-<use media/aesthetics/logotipoifsc.png>
-Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-574.
+603.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [51
 
@@ -1665,7 +1647,7 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-574.
+616.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [52
 
@@ -1673,7 +1655,7 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-574.
+616.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [53
 
@@ -1681,11 +1663,32 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 File: media/aesthetics/logotipoifsc.png Graphic file (type png)
 <use media/aesthetics/logotipoifsc.png>
 Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
-574.
+616.
 (pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
  [54
 
 ]
+File: media/aesthetics/logotipoifsc.png Graphic file (type png)
+<use media/aesthetics/logotipoifsc.png>
+Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
+616.
+(pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
+ [55
+
+]
+<./media/aesthetics/mealt.png, id=2509, 1907.125pt x 674.52pt>
+File: ./media/aesthetics/mealt.png Graphic file (type png)
+<use ./media/aesthetics/mealt.png>
+Package pdftex.def Info: ./media/aesthetics/mealt.png  used on input line 636.
+(pdftex.def)             Requested size: 309.77368pt x 109.56187pt.
+File: media/aesthetics/logotipoifsc.png Graphic file (type png)
+<use media/aesthetics/logotipoifsc.png>
+Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line 
+636.
+(pdftex.def)             Requested size: 17.23965pt x 14.22636pt.
+ [56
+
+ <./media/aesthetics/mealt.png>]
 \tf@nav=\write6
 \openout6 = `main.nav'.
 
@@ -1695,48 +1698,42 @@ Package pdftex.def Info: media/aesthetics/logotipoifsc.png  used on input line
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
-
-(./main.aux)
+ (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 94A8497139F451D4228A63997863F94A;2111.
+(rerunfilecheck)             Checksum: F358A2D32273BC6451BFAD5D46C7EF96;2111.
  ) 
 Here is how much of TeX's memory you used:
- 30609 strings out of 478287
- 630996 string characters out of 5849290
- 934546 words of memory out of 5000000
- 48019 multiletter control sequences out of 15000+600000
- 481961 words of font info for 68 fonts, out of 8000000 for 9000
+ 30660 strings out of 478287
+ 632016 string characters out of 5849290
+ 934553 words of memory out of 5000000
+ 48058 multiletter control sequences out of 15000+600000
+ 486526 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 133i,21n,125p,571b,864s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Navigation57} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Navigation55} has been referenced but does not exis
-t, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (54 pages, 8368368 bytes).
+ 133i,21n,125p,613b,864s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on main.pdf (56 pages, 8501333 bytes).
 PDF statistics:
- 2587 PDF objects out of 2984 (max. 8388607)
- 2345 compressed objects within 24 object streams
- 133 named destinations out of 1000 (max. 500000)
- 589 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2673 PDF objects out of 2984 (max. 8388607)
+ 2423 compressed objects within 25 object streams
+ 134 named destinations out of 1000 (max. 500000)
+ 594 words of extra memory for PDF output out of 10000 (max. 10000000)
 

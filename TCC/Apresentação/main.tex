@@ -45,12 +45,12 @@
 
 \only<2>{
 	\begin{itemize}
-		\item Tomaremos $\matriz{M}$ ortogonal, unitária ou simplética tal que $\matriz{M} \in \Glin_N(\Se)$;
+		\item Tomaremos $\matriz{M}$ simétrica, hermitiana ou simplética, a depender de $\Se$ ($\matriz{M} \in \Glin_N(\Se)$);
 		
 		\item $\exists$ $\matriz{D}$ diagonal e $\matriz{O} \in V_N(\Se^N)$ tais que $\matriz{M} = \matriz{O} \matriz{D} \matriz{O}^{-1}$.
 	\end{itemize}
 	\begin{block}{Medida Geral}
-		Se $\matriz{D} = \diag(\mmany{\lambda}{N})$, a jpdf de $\matriz{M}$ pode ser expressa
+		Se $\exists$ $\matriz{O} \in V_N(\Se^N)$ e $\matriz{D} = \diag(\mmany{\lambda}{N})$ tais que $\matriz{M} = \matriz{O} \matriz{D} \matriz{O}^{-1}$, a jpdf de $\matriz{M}$ pode ser expressa
 		\[
 		\p(\matriz{M}) = \p \left( M_{1,1}(\vec{\lambda}, \matriz{O}), \cdots, M_{N,N}(\vec{\lambda}, \matriz{O}) | \J(\matriz{M} \rightarrow \{ \vec{\lambda}, \matriz{O} \} ) \right).
 		\]
@@ -77,7 +77,7 @@
 \begin{frame}
 	\frametitle{Medida Invariante}
 	\begin{block}{Teorema}
-		Tome $\matriz{M} \in M_{\R}(N),  M_{\C}(N),  M_{\He}(N)$ simétrica, hermitiana ou autodual, respectivamente. Se  $\matriz{M}$ tem jpdf $\phi(\matriz{M})$, invariante sobre transformações de similaridade ortogonal, a jpdf dos $N$ autovalores ordenados de $\matriz{M}$, $\mcmany{\lambda}{N}{\geq}$, é $$ \frac{1}{Z_{N, \beta}^{(ord)}} \phi(\matriz{D}) \prod_{i < j} (\lambda_i - \lambda_j)^{\beta}$$ onde $Z_{N, \beta}^{(ord)}$ é constante e $\beta = 1, 2, 4$ corresponde respectivamente à escolha de $\matriz{M} \in M_{\R}(N),  M_{\C}(N),  M_{\He}(N)$. 
+		Tome $\matriz{M} \in M_{\R}(N),  M_{\C}(N),  M_{\He}(N)$ simétrica, hermitiana ou autodual, respectivamente. Se  $\matriz{M}$ tem jpdf $\phi(\matriz{M})$, invariante sobre transformações de similaridade ortogonal, a jpdf dos $N$ autovalores ordenados de $\matriz{M}$, $\mcmany{\lambda}{N}{\geq}$, é $$ \frac{1}{Z_{N, \beta}^{(ord)}} \phi(\matriz{D}) \prod_{i < j} (\lambda_i - \lambda_j)^{\beta}$$ onde $Z_{N, \beta}^{(ord)}$ é constante, $\matriz{D} = \diag(\mmany{\lambda}{N})$ e $\beta = 1, 2, 4$ corresponde respectivamente à escolha de $\matriz{M} \in M_{\R}(N),  M_{\C}(N),  M_{\He}(N)$. 
 	\end{block}
 \end{frame}
 %---------------------------------------------------------
@@ -146,7 +146,7 @@
 	}
 	}
 
-	\only<3,4>{
+	\only<3>{
 		Mais geralmente, para $\beta = 1,2,4$, podemos expressar
 		\[
 			\begin{split}
@@ -219,42 +219,44 @@
 	\frametitle{Equilíbrio}
 	\only<1,2>{
 		\onslide<1>{
-		Minimizar a energia livre 
+		Um argumento termodinâmico nos leva à minimizar a energia livre 
 		\[
 		E^V_{N,\beta} = \log{Z_{N, \beta}}
 		\]
+		E existe $\mu_{V}^* = \arg \inf {\mathcal{H}_N(\mu_{V})}$ medida de equilíbrio única no limite termodinâmico $N \rightarrow \infty$.
 		}
+	
 		\onslide<2>{
-		Existe $\mu_{V}^* = \arg \inf {\mathcal{H}_N(\mu_{V})}$ medida de equilíbrio única no limite termodinâmico $N \rightarrow \infty$ que satisfaz
+		Deve satisfazer
 		\[
 		\frac{\partial \mathcal{H}}{\partial \lambda_i} = 0 \ \implies \ \V'(\lambda_i) = \frac{1}{N} \sum_{1 = j \neq i}^{N} \frac{1}{\lambda_i - \lambda_j} \ \ \text{para} \ i = 1, \cdots, N.
 		\]
 		}
 	}
-	\only<3,4>{
-		\onslide<3>{
-		Sabemos por Sokhotski-Plemeji que
-		\[
-			\mu^{*}_{V}(x) = \frac{1}{2\pi \ii} \left( S^{\mu_V}_{+} -  S^{\mu_V}_{-}\right) = \frac{1}{\pi} \lim_{\epsilon \to 0^+} \Im{S^{\mu_V}_{+}(x + \ii\epsilon)}.
-		\]
-		}
-		\onslide<4>{
-		onde $S^{\mu_V}(z)$ é transformada de Stieltjes/Cauchy e pode ser escrita, assintoticamente em $N$,
-		\[
-			S^{\mu_V}(z) = \int \frac{\mu^*_V(\lambda)}{z - \lambda} \dd \lambda= \V'(z) \pm \sqrt{\V'(z)^2 - 2 \Pi_{\infty}(z) }.
-		\]
-		onde 
-		\[
-		\Pi_{\infty}(z) = \int \frac{\V'(z) - \V'(\lambda)}{z - \lambda} \mu^*_V(\lambda) d\lambda
-		\]
-		}
-	}
-	\only<5>{
-	Isso se reduz, em muitos casos, à balancear, em ordem para $z \rightarrow \infty$, o sistema de equações dado por
-	\[
-	\left( S^{\mu_{V}} - \V' \right)^2 = \left( V' \right)^2 - 2 \Pi_{\infty}
-	\]
-	}
+%	\only<3,4>{
+%		\onslide<3>{
+%		Sabemos por Sokhotski-Plemeji que
+%		\[
+%			\mu^{*}_{V}(x) = \frac{1}{2\pi \ii} \left( S^{\mu_V}_{+} -  S^{\mu_V}_{-}\right) = \frac{1}{\pi} \lim_{\epsilon \to 0^+} \Im{S^{\mu_V}_{+}(x + \ii\epsilon)}.
+%		\]
+%		}
+%		\onslide<4>{
+%		onde $S^{\mu_V}(z)$ é transformada de Stieltjes/Cauchy e pode ser escrita, assintoticamente em $N$,
+%		\[
+%			S^{\mu_V}(z) = \int \frac{\mu^*_V(\lambda)}{z - \lambda} \dd \lambda= \V'(z) \pm \sqrt{\V'(z)^2 - 2 \Pi_{\infty}(z) }.
+%		\]
+%		onde 
+%		\[
+%		\Pi_{\infty}(z) = \int \frac{\V'(z) - \V'(\lambda)}{z - \lambda} \mu^*_V(\lambda) d\lambda
+%		\]
+%		}
+%	}
+%	\only<5>{
+%	Isso se reduz, em muitos casos, à balancear, em ordem para $z \rightarrow \infty$, o sistema de equações dado por
+%	\[
+%	\left( S^{\mu_{V}} - \V' \right)^2 = \left( V' \right)^2 - 2 \Pi_{\infty}
+%	\]
+%	}
 \end{frame}
 %---------------------------------------------------------
 %Examplos potenciais
@@ -487,71 +489,112 @@
 %Gaussian
 \begin{frame}
 	\frametitle{Gaussianos}
-	\begin{equation}
-		d = 1; \ \  n = 2; \ \ \V(x)=\frac{|x|^2}{2}; \ \ W(x) = g(x) = \log{|x|}; \ \ \beta_N = \beta N^2; \ \ \beta = 1,2,4.
+	\only<1>{
+		Potencial Quadrático
+	\[
+		d = 1; \ \  n = 2; \ \ \V(x)=\frac{|x|^2}{2}; \ \ W(x) = g(x) = \log{|x|}; \ \ \beta = 1,2,4.
 		\label{Equation: Parametros Gaussian}
-	\end{equation}
-	\begin{figure}
+	\]
+	\[
+	\supp{\mu_V(x)} = [-\sqrt{2}, \sqrt{2}], \ \ \ \text{e} \ \ \ \mu_V(x) = \frac{1}{\pi} \sqrt{2 - x^2}.
+	\]
+	}
+	\only<2>{
+		\begin{figure}
 		\centering
-		\includegraphics[width=0.7\textwidth]{./media/Results/validationGaussianTracy}	
-		\caption{text}
+		\includegraphics[width=0.9\textwidth]{./media/Results/validationGaussianTracy}	
+		\caption{Medida experimentais e teóricas para ensembles Gaussianos para combinações de $N,\beta$.}
 	\end{figure}
+	}
 \end{frame}
 %---------------------------------------------------------
 %Monic
 \begin{frame}
 	\frametitle{Potencial Mônico}
-	\begin{equation}
-		d = 1; \ \  n = 2; \ \ \V(x)= t |x|^{2m}; \ \ W(x) = g(x) = \log{|x|}; \ \ \beta_N = \beta N^2; \ \ \beta = 2.
+	\only<1>{
+	Potencial Mônico
+	\[
+		d = 1; \ \  n = 2; \ \ \V(x)= t |x|^{2m}; \ \ W(x) = g(x) = \log{|x|}; \ \ \beta = 2.
 		\label{Equation: Parametros Monico}
-	\end{equation}
+	\]
+	\[
+	\supp \mu_V(x) = [-a, a], \ \ \mu_V(x) = \frac{mt}{\pi} \sqrt{a^2 - x^2} \h(x),
+	\]
+	com $$ a \deff \left( mt \prod_{l=1}^{m} \frac{2l-1}{2l}\right), \ \ \ \h(x) = x^{2m-2} + \sum_{j=1}^{m-1} x^{2m-2-2j} a^{2j} \prod_{l=1}^{j} \frac{2l-1}{2l}.$$
+	}
+
+	\only<2>{
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.7\textwidth]{./media/Results/validationQuarticMonic-alt}	
-		\caption{text}
+		\includegraphics[width=0.9\textwidth]{./media/Results/validationQuarticMonic-alt}	
+		\caption{Medidas experimentais e teóricas para potencial Mônico para $t$ de interesse.}
 	\end{figure}
+	}
 \end{frame}
 %---------------------------------------------------------~
 %Quartic
 \begin{frame}
 	\frametitle{Potencial Quártico}
-	\begin{equation}
-	d = 1; \ \  n = 2; \ \ \V(x)=\frac{|x|^4}{4} + t \frac{|x|^2}{2}; \ \ W(x) = g(x) = \log{|x|}; \ \ \beta_N = \beta N^2; \ \ \beta = 2.
-\label{Equation: Parametros Quartico}
-	\end{equation}
+	\only<1>{
+	Potencial Quártico
+	\[
+	d = 1; \ \  n = 2; \ \ \V(x)=\frac{|x|^4}{4} + t \frac{|x|^2}{2}; \ \ W(x) = g(x) = \log{|x|}; \ \ \beta = 2.
+	\]
+	\begin{itemize}
+		\item \(t \geq -2\)
+		\[
+		\supp \mu_V(x) = [-b_t, b_t], \ \ \mu_V(x) = \frac{1}{2\pi} (x^2 + c_t^2) \sqrt{b_t^2 - x^2},\label{Equação: Quartico +}
+		\]
+		com $c_t^2 \deff\frac{1}{2} b_t^2 + t \deff \frac{1}{3} (2t + \sqrt{t^2 + 12})$.
+		\item \(t < -2\)
+		\[
+		\supp \mu_V(x) = [-b_t, -a_t] \cup [a_t, b_t], \ \ \mu_V(x) = \frac{1}{2\pi} |x| \sqrt{(x^2 - a_t^2)(b_t^2 - x^2)},
+		\label{Equação: Quartico -}
+		\]
+		com $ a_t \deff \sqrt{-2-t}, b_t \deff \sqrt{2-t}$.
+	\end{itemize}
+	}
+	\only<2>{
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.7\textwidth]{./media/Results/validationQuarticMonic-alt}	
-		\caption{text}
+		\includegraphics[width=0.9\textwidth]{./media/Results/validationQuarticMonic-alt}	
+		\caption{Medidas experimentais e teóricas para potencial Quártico para $m$ de interesse.}
 	\end{figure}
+	}
 \end{frame}
 %---------------------------------------------------------
 %Complex
 \begin{frame}
-	\frametitle{Potencial Complexo}
-	\begin{equation}
-	d = 2; \  n = 2; \  \V(z)=|z|^{2a} - \Re\{t z^a\};  \ W(x) = g(x) = \log{|x|};  \ \beta_N = \beta N^2;  \ \beta = 2.
-	\label{Equation: Complex}
-	\end{equation}
+	\frametitle{Potenciais Complexos}
+	\only<1>{
+	\[
+		d = 2; \  n = 2; \  \V(z)=|z|^{2a} - \Re\{t z^a\};  \ W(x) = g(x) = \log{|x|}; \ \ \beta = 2.
+	\]
+	}
+	\only<2>{
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.8\textwidth]{./media/Results/complexPotential}	
-		\caption{text}
+		\includegraphics[width=\textwidth]{./media/Results/complexPotential}	
+		\caption{Potencial Complexo proposto}
 	\end{figure}
+	}
 \end{frame}
 %---------------------------------------------------------
 %Complex
 \begin{frame}
-	\frametitle{Outras ideias}
-	\begin{equation}
-		d = 2; \  n = 2; \  \V(z)= t_0(|z|^{2} - 2\Re\{z^3/3 + t_1 z\});  \ W(x) = g(x) = \log{|x|};  \ \beta_N = \beta N^2;  \ \beta = 2.
-		\label{Equation: Complex Shapes}
-	\end{equation}
+	\frametitle{Potenciais Complexos}
+	\only<1>{
+	\[
+		d = 2; \  n = 2; \  \V(z)= t_0(|z|^{2} - 2\Re\{z^3/3 + t_1 z\});  \ W(x) = g(x) = \log{|x|}; \ \beta = 2.
+	\]
+	}
+	\only<2>{
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.6\textwidth]{./media/Results/allshapes}	
+		\includegraphics[width=\textwidth]{./media/Results/allshapes}	
 		\caption{text}
 	\end{figure}
+	}
 \end{frame}
 
 %---------------------------------------------------------
@@ -563,15 +606,35 @@
 %Changing visivility of the text
 \begin{frame}
 	\frametitle{Conclusões}
-	Conclusões
 	
 	\begin{itemize}
-		\item<1> conclusão 1;
-		\item<2> conclusão 2;
-		\item<3> conclusão 3;
-		\item<4> conclusão 4.
+		\item<1> Teoria de Matrizes Aleatórias pode ser útil como uma alternativa em sistemas de alta complexidade para um descrição analítica do problema;
+		\item<2> Podemos tratar das medidas nos autovalores em ensembles invariantes sob a analogia de Gases de Coulomb;
+		\item<3> É possível e razoável utilizar de simulações numéricas para tratar da dinâmica de partículas enunciada;
+		\item<4>  Os resultados apresentam uma boa indicação de que as simulações numéricas podem indicar, para um sistema de interesse, aspectos do comportamento dos gases de Coulomb que de outra forma são de difícil tratamento.
 	\end{itemize}
 \end{frame}
+%---------------------------------------------------------
+
+%---------------------------------------------------------
+%Changing visivility of the text
+\begin{frame}
+	\begin{center}
+		Obrigado!
+		
+		\vspace{0.5cm}
+		
+		Projeto realizado com auxílio da FAPESP sob processo \# 2023/02674-0.
+		
+		\begin{tikzpicture}[remember picture, overlay]
+		\node[above=0.2cm] at (current page.south) 
+		{
+			\includegraphics[width=0.9\textwidth]{./media/aesthetics/mealt}	
+		};
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
 %---------------------------------------------------------
 
 \end{document}
