@@ -11,7 +11,7 @@ onde $(W_t)_{t>0}$ é processo de Wiener, $\gamma_N > 0$ é constante de atrito 
 \begin{equation}
 \begin{cases}
 	\dd q_t = \alpha_N \nabla U_N (p_t) \dd t, \\
-	\dd p_t = -\alpha_N \nabla H_N(q_t) \dd t - \gamma_N \alpha_N \nabla U_N(p_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd W_t.
+	\dd p_t = -\alpha_N \nabla \Hf_N(q_t) \dd t - \gamma_N \alpha_N \nabla U_N(p_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd B_t.
 \end{cases}
 \label{Equação: EqDif - Dinamica Langevin}
 \end{equation}
@@ -23,4 +23,4 @@ onde $\beta_N$, temperatura inversa e $\Hf$ são como em \ref{Equation: Medida L
  \Gl_{\Hf} = -\alpha_N \nabla\Hf_N(q) \cdot \nabla_p + \alpha_N \nabla \U_N(p) \cdot \nabla_q, \ \ \ \ \Gl_{\U} = \frac{\gamma_N\alpha_N}{\beta_N} \Delta_p - \gamma_N \alpha_N \nabla \U_N(p) \cdot \nabla_p.
 \]
 
-Denomina-se $\Gl_{\Hf}$ a parte Hamiltoniana e $\Gl_{\U}$ a parte de flutuação-dissipação. Tomaremos $\U_N(p) = \frac{1}{2} |p|^2$ tal que $\U_N(p)$ é energia cinética usual e $(W_t)_{t>0}$ é processo browniano. Para simular o processo $(p_t,q_t)$ integramos \ref{Equação: EqDif - Dinamica Langevin}, contudo, sabemos que isso pode não ser possível, o que nos leva a recorrer a métodos numéricos para amostragem.
+Denomina-se $\Gl_{\Hf}$ a parte Hamiltoniana e $\Gl_{\U}$ a parte de flutuação-dissipação. Tomaremos $\U_N(p) = \frac{1}{2} |p|^2$ tal que $\U_N(p)$ é energia cinética usual. Além disso, $(B_t)_{t>0}$ é processo browniano. Para simular o processo $(p_t,q_t)$ integramos \ref{Equação: EqDif - Dinamica Langevin}, contudo, sabemos que isso pode não ser possível analiticamente, o que nos leva a recorrer a métodos numéricos para amostragem.
