@@ -9,7 +9,7 @@
 \contentsline {section}{\numberline {2.1}Distribuição de autovalores}{6}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Ensembles Gaussianos}{7}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Gases de Coulomb}{8}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Medidas de Equilíbrio}{8}{section.2.4}%
+\contentsline {section}{\numberline {2.4}Medidas de Equilíbrio}{9}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Potenciais notáveis}{10}{section.2.5}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Simulações e Algoritmos}}{11}{chapter.3}%

@@ -24,51 +24,84 @@
 
 %---------------------------------------------------------
 \subsection{Porquê RMT}
+
+%---------------------------------------------------------
+%Motivação
+\begin{frame}
+	\begin{block}{Wigner}
+		\parbox{\linewidth}{\textit{The assumption is that
+			the Hamiltonian which governs the behavior of
+			a \textcolor{red}{complicated} system is a random symmetric
+			matrix with no particular properties except for
+			its symmetric nature.}}
+	\end{block}
+
+	\vspace{1cm}
+
+	\pause
+	\begin{itemize}
+		\item Modelos estatísticos de núcleos atômicos pesados \cite{Wigner};
+		\item Zeros da função de Rienmann \cite{montgomery};
+		\item Sistemas Financeiros \cite[Chapter~2]{fabozziquantitative};
+	\end{itemize}
+	
+	
+\end{frame}
+
 %---------------------------------------------------------
 %Medida nos autovalores
 \begin{frame}
 \frametitle{Medida nos autovalores}
 	
 \only<1>{
-	\begin{itemize}
-		\item $\Se$ espaço tal como $\R, \C, \He $ (Reais, Complexos e Quaterniônicos);
-		
-		\item $\matriz{M} \in \mathcal{M}_{\Se}(N)$ e $M_{i,j}$ $\forall i, j \in \Z$, com $1 \leq i, j \leq N$, variável aleatória de distribuição arbitrária.
-	\end{itemize}
 	\begin{block}{Medida Geral}
 		A medida de densidade conjunta (jpdf, \textit{joint probability density function}) de $\matriz{M}$, $\p(\hat{M})$ é expressa
 		\[
 		\p(\hat{M}) = \p(M_{1,1}, \dots, M_{N,N})
 		\]
 	\end{block}
+
+	\vspace{1cm}
+
+	\begin{itemize}
+		\item $\Se$ espaço tal como $\R, \C, \He $ (Reais, Complexos e Quaterniônicos);
+		
+		\item $\matriz{M} \in \mathcal{M}_{\Se}(N)$ e $M_{i,j}$ $\forall i, j \in \Z$, com $1 \leq i, j \leq N$, variável aleatória de distribuição arbitrária.
+	\end{itemize}
 }	
 
 \only<2>{
-	\begin{itemize}
-		\item Tomaremos $\matriz{M}$ simétrica, hermitiana ou simplética, a depender de $\Se$ ($\matriz{M} \in \Glin_N(\Se)$);
-		
-		\item $\exists$ $\matriz{D}$ diagonal e $\matriz{O} \in V_N(\Se^N)$ tais que $\matriz{M} = \matriz{O} \matriz{D} \matriz{O}^{-1}$.
-	\end{itemize}
 	\begin{block}{Medida Geral}
 		Se $\exists$ $\matriz{O} \in V_N(\Se^N)$ e $\matriz{D} = \diag(\mmany{\lambda}{N})$ tais que $\matriz{M} = \matriz{O} \matriz{D} \matriz{O}^{-1}$, a jpdf de $\matriz{M}$ pode ser expressa
 		\[
 		\p(\matriz{M}) = \p \left( M_{1,1}(\vec{\lambda}, \matriz{O}), \cdots, M_{N,N}(\vec{\lambda}, \matriz{O}) | \J(\matriz{M} \rightarrow \{ \vec{\lambda}, \matriz{O} \} ) \right).
 		\]
 	\end{block}
+
+	\vspace{1cm}
+	
+	\begin{itemize}
+	\item Tomaremos $\matriz{M}$ simétrica, hermitiana ou simplética, a depender de $\Se$ ($\matriz{M} \in \Glin_N(\Se)$);
+	
+	\item $\exists$ $\matriz{D}$ diagonal e $\matriz{O} \in V_N(\Se^N)$ tais que $\matriz{M} = \matriz{O} \matriz{D} \matriz{O}^{-1}$.
+	\end{itemize}
 }	
 
 \only<3>{
-	\begin{itemize}
-		\item Poderíamos integrar em sobre $V_N(\Se^N)$ quando possível;
-		
-		\item Considere matrizes nos ensembles denominados \textbf{invariantes} (por rotação), $$\matriz{M} \sim \matriz{M'} \iff \exists \  \matriz{U}, \matriz{U}^{-1} \in V_N(\Se^N)  \ | \ \matriz{M} = \matriz{U} \matriz{M'} \matriz{U}^{-1}.$$
-	\end{itemize}
 	\begin{block}{Medida Invariante}
 		Se a medida de $\matriz{M}$ é invariante,
 		\[
 		\p(\mmany{\lambda}{N}, \matriz{O}) \equiv \p \left( M_{1,1}(\vec{\lambda}), \cdots, M_{N,N}(\vec{\lambda}) | \J(\matriz{M} \rightarrow \{ \vec{\lambda} \} ) \right).
 		\]
 	\end{block}
+
+	\vspace{1cm}
+	
+	\begin{itemize}
+		\item Poderíamos integrar em sobre $V_N(\Se^N)$ quando possível;
+		
+		\item Considere matrizes nos ensembles denominados \textbf{invariantes} (por rotação), $$\matriz{M} \sim \matriz{M'} \iff \exists \  \matriz{U}, \matriz{U}^{-1} \in V_N(\Se^N)  \ | \ \matriz{M} = \matriz{U} \matriz{M'} \matriz{U}^{-1}.$$
+	\end{itemize}
 }	
 
 \end{frame}
@@ -76,7 +109,7 @@
 %Teorema de medida
 \begin{frame}
 	\frametitle{Medida Invariante}
-	\begin{block}{Teorema}
+	\begin{block}{Teorema \cite[Capítulo~3]{AlanThesis}}
 		Tome $\matriz{M} \in M_{\R}(N),  M_{\C}(N),  M_{\He}(N)$ simétrica, hermitiana ou autodual, respectivamente. Se  $\matriz{M}$ tem jpdf $\phi(\matriz{M})$, invariante sobre transformações de similaridade ortogonal, a jpdf dos $N$ autovalores ordenados de $\matriz{M}$, $\mcmany{\lambda}{N}{\geq}$, é $$ \frac{1}{Z_{N, \beta}^{(ord)}} \phi(\matriz{D}) \prod_{i < j} (\lambda_i - \lambda_j)^{\beta}$$ onde $Z_{N, \beta}^{(ord)}$ é constante, $\matriz{D} = \diag(\mmany{\lambda}{N})$ e $\beta = 1, 2, 4$ corresponde respectivamente à escolha de $\matriz{M} \in M_{\R}(N),  M_{\C}(N),  M_{\He}(N)$. 
 	\end{block}
 \end{frame}
@@ -180,7 +213,7 @@
 	\[
 		\Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x) + \frac{1}{2N^2} \sum_{i \neq j} \g(x_i - x_j)
 	\]
-	é usualmente denominado Hamiltoniano do sistema.
+	é usualmente denominado Hamiltoniano do sistema. \cite{ChafaCoulombMeasure}
 \end{frame}
 %Interpretação
 \begin{frame}
@@ -191,14 +224,14 @@
 	\pause
 	\item Interagindo por $\g \colon \Se \mapsto (-\infty, \infty]$ núcleo de interação coulombiana;
 	\pause
-	\item $V, \ \g \ \text{e} \ \beta$ tais que  $Z_{N, \beta} < \infty \ \forall \ N$.
+	\item $V$ tal que  $Z_{N, \beta} < \infty \ \forall \ N$.
 	\end{itemize}
 \end{frame}
 %---------------------------------------------------------
 % Analogia
 \begin{frame}
 	\frametitle{Uma analogia}	
-	Se $d = 1$, $n=2$ e $V(x) = -\frac{x^2}{2}$,
+	Se $d = 1$, $n=2$ e $V(x) = \frac{x^2}{2}$,
 	\pause
 	\[
 	\p_N(\vec{x}) = \frac{e^{-\beta_N \Hf_N(\vec{x})}}{Z_{N,\beta}},
@@ -219,11 +252,11 @@
 	\frametitle{Equilíbrio}
 	\only<1,2>{
 		\onslide<1>{
-		Um argumento termodinâmico nos leva à minimizar a energia livre 
+		Um argumento termodinâmico nos leva à minimizar a energia livre \cite{RMT-firstcourse-Potters}
 		\[
-		E^V_{N,\beta} = \log{Z_{N, \beta}}
+		E^V_{N,\beta} \propto \log{Z_{N, \beta}}
 		\]
-		E existe $\mu_{V}^* = \arg \inf {\mathcal{H}_N(\mu_{V})}$ medida de equilíbrio única no limite termodinâmico $N \rightarrow \infty$.
+		%Existe $\mu_{V}^* = \arg \inf {\mathcal{H}_N(\mu_{V})}$ medida de equilíbrio única no limite termodinâmico $N \rightarrow \infty$.
 		}
 	
 		\onslide<2>{
@@ -313,7 +346,7 @@
 		\pause
 		\item Dinâmicas podem não ser diretamente/analiticamente integráveis, recorre-se a processos numéricos;
 		\pause
-		\item Amostragem de medida de equilíbrio por integração numérica estável de processo estocástico invariante.
+		%\item Amostragem de medida de equilíbrio por integração numérica estável de processo estocástico invariante.
 	\end{itemize}
 \end{frame}
 %---------------------------------------------------------
@@ -326,7 +359,7 @@
 \frametitle{Langevin Monte Carlo}
 
 	\only<1>{
-		\begin{block}{\textit{Overdamped Langevin}}
+		\begin{block}{\textit{Overdamped Langevin} \cite{leimmolecular}}
 			$q \in \R^d$ é vetor de posições generalizadas associado às $N$ partículas
 			\[
 				\dd q_t = -\alpha_N \nabla H_N(q_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd W_t
@@ -337,7 +370,7 @@
 	}
 
 	\only<2>{
-		\begin{block}{\textit{Kinetic Langevin}}
+		\begin{block}{\textit{Kinetic Langevin} \cite{Stoltz2018}}
 			$(q, p)$, com $q,p \in \R^d$ são respectivamente as posições e momentos generalizados associados às $N$ partículas. $\U_N \colon \R^d \rightarrow \R$ energia cinética generalizada tal que $\ee^{-\beta_N \U_N}$ seja lebesgue integrável. Para energia $\Ee(q,p) = \Hf(q) + \U(p)$, escreve-se a dinâmica de Langevin para o processo de difusão em $\R^{dN} \cross \R^{dN}$ como a solução para a equação estocástica 
 			\[
 				\begin{cases}
@@ -350,7 +383,7 @@
 	}
 
 	\only<3>{
-	Essa dinâmica admite o gerador infinitesimal 
+	Essa dinâmica admite o gerador infinitesimal \cite{Chafa2018}
 	\[
 		\Gl = \Gl_{\Hf} + \Gl_{\U},
 	\]
@@ -458,7 +491,7 @@
 			$$
 			\item<3> Pela definição do passo de metropolis, defina a probabilidade $P_k$
 			$$
-				1 \wedge \ee^{ -\beta \left( H_N(\tilde{q}_{k+1}) + \frac{\tilde{p}^2_{k+1}}{2} - H_N(q_k) - \frac{\tilde{p}^2_k}{2} \right) };
+				1 \wedge \ee^{ -\beta_N \left( H_N(\tilde{q}_{k+1}) + \frac{\tilde{p}^2_{k+1}}{2} - H_N(q_k) - \frac{\tilde{p}^2_k}{2} \right) };
 			$$
 			\item<4> Defina, a partir de $P_k$, 
 			$$
@@ -575,7 +608,7 @@
 	\begin{figure}
 		\centering
 		\includegraphics[width=\textwidth]{./media/Results/complexPotential}	
-		\caption{Potencial Complexo proposto}
+		\caption{Potencial Complexo proposto estudado em \cite{balogh2016orthogonal}}
 	\end{figure}
 	}
 \end{frame}
@@ -592,7 +625,23 @@
 	\begin{figure}
 		\centering
 		\includegraphics[width=\textwidth]{./media/Results/allshapes}	
-		\caption{Outro Potencial Complexo}
+		\caption{Suportes obtidos de potencial}
+	\end{figure}
+	}
+
+	\only<3>{
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\textwidth]{./media/Results/diagram}	
+		\caption{Diagrama de fase de \cite{bleher2016mother}}
+	\end{figure}
+	}
+
+	\only<4>{
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\textwidth]{./media/Results/mashedshapes}	
+		\caption{Validação com diagrama de fase de \cite{bleher2016mother}}
 	\end{figure}
 	}
 \end{frame}
@@ -618,6 +667,14 @@
 
 %---------------------------------------------------------
 %Changing visivility of the text
+\begin{frame}[allowframebreaks]
+	\frametitle{Referências}
+	\bibliography{../refs.bib}
+\end{frame}
+%---------------------------------------------------------
+
+%---------------------------------------------------------
+%Changing visivility of the text
 \begin{frame}
 	\begin{center}
 		Obrigado!
@@ -634,7 +691,6 @@
 		\end{tikzpicture}
 	\end{center}
 \end{frame}
-
 %---------------------------------------------------------
 
 \end{document}

@@ -126,10 +126,10 @@ Tomaremos o subespaço $\Se = \R^d$ com $d = 1, 2$. Consideraremos um núcleo de
 		Init   		  	 & 
 		Modifica ${p}_{k}$ vetor $[N\times m]$, global, uniforme no cubo em $R^d$ e ${q}_{k}, G_H$, vetores $[N\times m]$, globais, nulos. \\
 		\hline
-		L1-OrnsUhlen 	 & 
+		L2-OrnsUhlen 	 & 
 		Modifica $\tilde{p}_k$, vetor $[N\times m]$, global, por $\Gl_U$ segundo \ref{Equation: Alg Mehler}. \\
 		\hline
-		L2-Verlet  	 	 & 
+		L1-Verlet  	 	 & 
 		Modifica $\tilde{p}_{k_1},\tilde{q}_{k_1}$ vetores $[N\times m]$, globais, por $\Gl_{\Hf}$ segundo \ref{Equation: Alg Verlet}.	\\
 		\hline
 		GradH         	 & 
@@ -155,6 +155,9 @@ Tomaremos o subespaço $\Se = \R^d$ com $d = 1, 2$. Consideraremos um núcleo de
 		\hline
 		Metropolis     	 & 
 		Modifica ${p}_{k},{q}_{k}$, vetores $[N\times m]$, globais por \ref{Equation: Alg Metro}.								\\
+		\hline
+		Gauss     	 & 
+		Retorna variáveis gaussianas, vetor $[1\times m]$, local por Box-Muller.								\\
 		\hline
 	\end{tabular}
 	\caption{ Descrição das funções e subrotinas utilizadas na implementação do programa.}

@@ -5,13 +5,6 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
-\bibitem{PoterRosen}
-\abntrefinfo{Rosenzweig e Porter}{ROSENZWEIG; PORTER}{1960}
-{ROSENZWEIG, N.; PORTER, C.~E. "repulsion of energy levels" in complex atomic
-  spectra.
-\textbf{Phys. Rev.}, American Physical Society, v.~120, p. 1698--1714, Dec
-  1960.}
-
 \bibitem{MehtaGaudin}
 \abntrefinfo{Mehta e Gaudin}{MEHTA; GAUDIN}{1960}
 {MEHTA, M.; GAUDIN, M. On the density of eigenvalues of a random matriz.

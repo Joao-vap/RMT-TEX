@@ -1,11 +1,11 @@
 \section{Passo de Metropolis}
 \label{Section: Metropolis}
 
-Muitos algoritmos utilizam de um passo de seleção para estabilizar sua dinâmica e otimizar a convergência e a amostragem da variável de interesse\footnote{Como o \textit{Metropolis-Adjusted Langevin Algorith} (MALA) \cite[Anexo~C]{leimmolecular}}. Partindo dos esquemas da Seção \ref{Seção: Discretização}, consideraremos que temos uma proposta $\tilde{q}_{k+1}$ de estado. Para o método de Metropolis, um importante aspecto é manter a razão de rejeições baixa para não atrapalhar a eficiência do programa, o que influencia no tamanho do passo temporal decidido. Pode ser mostrado que $\Delta t$ é ideal quando é da ordem de $N^{-\frac{1}{4}}$ \cite{Chafa2018}, tornando o esquema interessante pela escalabilidade de $N$.
+Muitos algoritmos utilizam de um passo de seleção para estabilizar sua dinâmica e otimizar a convergência e a amostragem da variável de interesse. Partindo dos esquemas da Seção \ref{Seção: Discretização}, consideraremos que temos uma proposta $\tilde{q}_{k+1}$ de estado. Para o método de Metropolis, um importante aspecto é manter a razão de rejeições baixa para não atrapalhar a eficiência do programa, o que influencia no tamanho do passo temporal decidido. Pode ser mostrado que $\Delta t$ é ideal quando é da ordem de $N^{-\frac{1}{4}}$ \cite{Chafa2018}, tornando o esquema interessante pela escalabilidade de $N$.
 
 Propõe-se então que, a partir da proposição de estado $\tilde{q}_{k+1}$ gerada pelo esquema anterior, se calcule a probabilidade
 \begin{equation}
-P_k = 1 \wedge \frac{\K(\tilde{q}_{k+1}, q_k) \ee^{-\beta \Hf_N(\tilde{q}_{k+1})}}{\K(q_k, \tilde{q}_{k+1}) \ee^{-\beta \Hf_N(q_{k})}},
+P_k = 1 \wedge \frac{\K(\tilde{q}_{k+1}, q_k) \ee^{-\beta_N \Hf_N(\tilde{q}_{k+1})}}{\K(q_k, \tilde{q}_{k+1}) \ee^{-\beta_N \Hf_N(q_{k})}},
 \label{Equation: Pk}
 \end{equation}
 onde o núcleo $K(x, y)$ é simétrico \cite{Chafa2018} para o caso do algoritmo de \textit{Langevin Monte Carlo} e, por se cancelar, não será discutido adiante. Atribua agora às novas coordenadas generalizadas $(q_{k+1}, p_{k+1})$ valor da seguinte forma
