@@ -3,48 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: document.aux
 The style file: apalike.bst
 Database file #1: bibliography.bib
-Warning--I didn't find a database entry for "SimulatingCoulomb"
-Warning--I didn't find a database entry for "EscalabilityArticle"
-Warning--I didn't find a database entry for "StabilityArticle"
 You've used 5 entries,
             1935 wiz_defined-function locations,
-            511 strings with 4576 characters,
-and the built_in function-call counts, 1737 in all, are:
-= -- 166
-> -- 57
+            503 strings with 4463 characters,
+and the built_in function-call counts, 1739 in all, are:
+= -- 169
+> -- 63
 < -- 3
-+ -- 18
-- -- 18
-* -- 137
-:= -- 316
-add.period$ -- 17
++ -- 20
+- -- 20
+* -- 141
+:= -- 318
+add.period$ -- 16
 call.type$ -- 5
-change.case$ -- 31
+change.case$ -- 33
 chr.to.int$ -- 5
 cite$ -- 5
-duplicate$ -- 70
-empty$ -- 134
-format.name$ -- 23
-if$ -- 341
+duplicate$ -- 66
+empty$ -- 126
+format.name$ -- 27
+if$ -- 338
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 8
-newline$ -- 28
+missing$ -- 6
+newline$ -- 27
 num.names$ -- 15
-pop$ -- 32
+pop$ -- 29
 preamble$ -- 1
-purify$ -- 34
+purify$ -- 35
 quote$ -- 0
-skip$ -- 51
+skip$ -- 50
 stack$ -- 0
 substring$ -- 114
-swap$ -- 5
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
+type$ -- 26
 warning$ -- 0
 while$ -- 12
 width$ -- 0
-write$ -- 66
-(There were 3 warnings)
+write$ -- 64

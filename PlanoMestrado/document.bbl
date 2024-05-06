@@ -21,9 +21,9 @@ Feynman, R. (1998).
 \newblock {\em Statistical Mechanics: A Set Of Lectures}.
 \newblock Advanced Books Classics. Avalon Publishing.
 
-\bibitem[Giacomo~Livan, 2018]{IntroRMT}
-Giacomo~Livan, Marcel~Novaes, P.~V. (2018).
-\newblock {\em Introduction to Random Matrices, Theory and Practice}.
-\newblock Springer Cham.
+\bibitem[Leblé and Serfaty, 2017]{leblé2017large}
+Leblé, T. and Serfaty, S. (2017).
+\newblock Large deviation principle for empirical fields of log and riesz
+  gases.
 
 \end{thebibliography}
