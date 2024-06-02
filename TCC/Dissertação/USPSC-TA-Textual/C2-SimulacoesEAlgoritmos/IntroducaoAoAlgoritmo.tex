@@ -1,21 +1,21 @@
-\section{Dinâmica de Langevin Monte Carlo}
+\section{Dinâmica de \textit{Langevin Monte Carlo}}
 
-Nosso objetivo com a simulação é determinar a esperança de uma função de interesse $\f(\vec{q})$ $$\langle f \rangle \approx \frac{1}{n} \sum_{i=0}^{n-1} f(\vec{q}_i),$$ onde $\vec{q}_i$ são obtidos por meio da simulação com dada distribuição de Gibbs-Boltzmann. Para fazer o modelo ergótico, ou seja, garantir que a dinâmica (e nossas amostras) não esteja restrita à um subconjunto do espaço de fase, tomaremos uma dinâmica, um termostato, estocástica. Isso usualmente garante que o sistema convirja para sua medida invariante (única). Um esquema comumente utilizado é o da dinâmica de Langevin\footnote{Poderíamos ter explorado quaisquer outras dinâmicas similares tais como as dinâmicas de \textit{Dissipative Particle} \cite{DPD} ou \textit{Nose-Hoover} \cite{Hoover}.}.
+Nosso objetivo com a simulação é determinar a esperança de uma função de interesse $\zeta(q,p)$, dado um ensemble. Pela teoria ergódica, sob algumas condições e no limite adequado, a média espacial $\langle \zeta \rangle_{\mu}$ é igual a média temporal $$\langle \zeta \rangle_t \approx \frac{1}{\tau} \sum_{k=1}^{\tau} \zeta(q_k, p_k),$$ onde $(q_k, p_k)$ podem ser obtidos por meio de uma dinâmica que preserve dada distribuição de Gibbs-Boltzmann. Para fazer o modelo ergódico, ou seja, garantir que a simulação - e nossas amostras - não esteja restrita a um subconjunto do espaço de fase, tomaremos uma dinâmica, um termostato, estocástica. Isso usualmente garante que o sistema possa convergir para sua medida invariante (única). Um esquema comumente utilizado é a dinâmica de Langevin\footnote{Poderíamos ter explorado outras dinâmicas similares tais como as dinâmicas de \textit{Dissipative Particle} \cite{DPD} ou \textit{Nose-Hoover} \cite{Hoover}.}.
 
-Denote $q$, com $q \in \R^d$ posição generalizada associada às $N$ partículas. Poderíamos enunciar a seguinte equação diferencial para a dinâmica
+Denote $q$, com $q \in \R^{(dN)}$, posição generalizada associada as $N$ partículas. A Equação \eqref{Equação: Medida Gas de Coulomb} é medida invariante do processo de difusão de Markov solução da equação diferencial estocástica
 \begin{equation}
-	\dd q_t = -\alpha_N \nabla H_N(q_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd W_t
+	\dd q_t = -\alpha_N \nabla \Hf_N(q_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd W_t,
 	\label{Equação: Langevin Overdamped}
 \end{equation}
-onde $(W_t)_{t>0}$ é processo de Wiener, $\gamma_N > 0$ é constante de atrito e $\alpha_N$ é escala temporal. Isso seria suficiente e é chamado \textit{Overdamped Langevin}, contudo, tomaremos sua versão cinética. Usaremos $q$ como variável de interesse e $p$, com $p \in \R^d$ variável de momento generalizado, para flexibilizar a dinâmica. Considere $\U_N \colon \R^d \rightarrow \R$ energia cinética generalizada tal que $\ee^{-\beta_N \U_N}$ seja lebesgue integrável. Para uma energia da forma $\Ee(q,p) = \Hf_N(q) + \U_N(p)$, escreve-se \cite{Stoltz2018} a dinâmica de Langevin para o processo de difusão em $\R^{dN} \times \R^{dN}$ como a solução para a equação estocástica 
+onde $(W_t)_{t>0}$ é processo de Wiener, $\gamma_N > 0$ é constante de atrito e $\alpha_N$ é escala temporal. Isso seria suficiente e é chamado \textit{Overdamped Langevin}, contudo, tomaremos sua extensão cinética. Usaremos $q$ como variável de interesse e $p$, com $p \in \R^{(dN)}$, variável de momento generalizado, para flexibilizar a dinâmica. Considere $\U_N \colon \R^{(dN)} \rightarrow \R$ energia cinética generalizada tal que $\ee^{-\beta_N \U_N}$ seja Lebesgue integrável. Para uma energia da forma $\Ee_N(q,p) = \Hf_N(q) + \U_N(p)$, seja $(q_t, p_t)_{t\geq0}$ processo de difusão em $\R^{dN} \times \R^{dN}$ solução da equação diferencial estocástica
 \begin{equation}
 \begin{cases}
 	\dd q_t = \alpha_N \nabla U_N (p_t) \dd t, \\
-	\dd p_t = -\alpha_N \nabla \Hf_N(q_t) \dd t - \gamma_N \alpha_N \nabla U_N(p_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd B_t.
+	\dd p_t = -\alpha_N \nabla \Hf_N(q_t) \dd t - \gamma_N \alpha_N \nabla U_N(p_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd B_t,
 \end{cases}
 \label{Equação: EqDif - Dinamica Langevin}
 \end{equation}
-onde $\beta_N$, temperatura inversa e $\Hf$ são como em \ref{Equation: Medida Log V}. Essa dinâmica admite o gerador infinitesimal 
+onde $\beta_N$ é temperatura inversa e $\Hf_N \colon \R^{(dN)} \rightarrow \R$ é como na Distribuição \eqref{Equation: Medida Log V}. \cite{Stoltz2018} Esse processo deixa invariante $\p(q,p) = \p_q \otimes \p_p = \ee^{-\beta_N \Ee_N(q,p)}/Z'_N$ e admite o gerador infinitesimal 
 \[
 	\Gl = \Gl_{\Hf} + \Gl_{\U},
 \]
@@ -23,4 +23,4 @@ onde $\beta_N$, temperatura inversa e $\Hf$ são como em \ref{Equation: Medida L
  \Gl_{\Hf} = -\alpha_N \nabla\Hf_N(q) \cdot \nabla_p + \alpha_N \nabla \U_N(p) \cdot \nabla_q, \ \ \ \ \Gl_{\U} = \frac{\gamma_N\alpha_N}{\beta_N} \Delta_p - \gamma_N \alpha_N \nabla \U_N(p) \cdot \nabla_p.
 \]
 
-Denomina-se $\Gl_{\Hf}$ a parte Hamiltoniana e $\Gl_{\U}$ a parte de flutuação-dissipação. Tomaremos $\U_N(p) = \frac{1}{2} |p|^2$ tal que $\U_N(p)$ é energia cinética usual. Além disso, $(B_t)_{t>0}$ é processo browniano. Para simular o processo $(p_t,q_t)$ integramos \ref{Equação: EqDif - Dinamica Langevin}, contudo, sabemos que isso pode não ser possível analiticamente, o que nos leva a recorrer a métodos numéricos para amostragem.
+Denomina-se $\Gl_{\Hf}$ a parte hamiltoniana e $\Gl_{\U}$ a parte de flutuação-dissipação. Tomaremos $\U_N(p) = \frac{1}{2} |p|^2$ tal que $\U_N(p)$ é energia cinética usual. Um esquema análogo é possível para energias cinéticas generalizadas. \cite{Stoltz2018} Além disso, $(B_t)_{t>0}$ é processo browniano. Para simular $(q_t,p_t)_{t \geq 0}$ integramos a Equação \eqref{Equação: EqDif - Dinamica Langevin}, contudo, isso pode não ser possível analiticamente, levando a recorrer a métodos numéricos para amostragem.

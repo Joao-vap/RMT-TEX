@@ -1,14 +1,14 @@
-\section{Potenciais notáveis}
+\section{Potenciais Notáveis}
 \label{Section: Potencias}
 
- O desenvolvimento feito na seção \ref{Seção: Medida} é suficiente para resolver os seguintes casos exemplificados, salvo detalhes. Retome a medida \ref{Equation: Medida Log V} e considere primeiramente o potencial $$\V(x) = \frac{x^2}{2}.$$ Neste caso, teremos que
+ Sabemos que para um potencial arbitrário podemos usar o desenvolvimento da Seção \ref{Seção: Medida}  para determinar $\Pi$ e, consequentemente, $S^{\mu_V}$ e $\mu^{*}_{V}$. Enunciemos então alguns potencias notáveis. Retome a Medida \eqref{Equation: Medida Log V} e considere primeiramente o potencial quadrático $$\V(x) = \frac{x^2}{2}.$$ Neste caso, teremos que
 \begin{equation}
 	 \supp{\mu^*_V(x)} = [-\sqrt{2}, \sqrt{2}], \ \ \ \mu^*_V(x) = \frac{1}{\pi} \sqrt{2 - x^2}.
 	 \label{Equação: Quadrático}
 \end{equation}
 Esse resultado é bem conhecido e a medida encontrada é denominada Semi-Círculo de Wigner. Especialmente é medida de equilíbrio para os ensembles gaussianos e vale para qualquer $\beta$. A diferença é notada somente para $N$ suficientemente pequeno.
 
-Agora, considere o potencial $$\V(x) = \frac{x^4}{4} + t \frac{x^2}{2}.$$ Aqui observaremos, a depender de $t$, pela primeira vez, a separação do suporte de $\mu^*_V$. Teremos um ponto crítico em $t=-2$, onde, com $t < -2$, este se separa do intervalo $[-b_t, b_t]$ para $[-b_t, -a_t] \bigcup [a_t, b_t]$. Considere a medida nos dois casos
+Agora, considere o potencial quártico $$\V(x) = \frac{x^4}{4} + t \frac{x^2}{2}.$$ Aqui observaremos, a depender de $t$, pela primeira vez, a separação do suporte de $\mu^*_V$. Teremos um ponto crítico em $t=-2$, onde, com $t < -2$, este se separa do intervalo $[-b_t, b_t]$ para $[-b_t, -a_t] \bigcup [a_t, b_t]$. Considere a medida nos dois casos
 \begin{itemize}
 	\item \(t \geq -2\)
 	\begin{equation}
@@ -36,11 +36,11 @@ Agora, considere o potencial $$\V(x) = \frac{x^4}{4} + t \frac{x^2}{2}.$$ Aqui o
 %a = \left( \frac{t}{2} \prod_{j=1}^{\alpha} \frac{2j-1}{2j} \right)^{-\frac{1}{2\alpha}}.
 %\]
  
- Por último, tome $$\V(x) = t x^{2m}.$$ Com o mesmo processo, apesar de mais geral, determinamos sua medida 
+ Por último, tome o potencial mônico $$\V(x) = t x^{2m}.$$ Com o mesmo processo, apesar de mais geral, determinamos sua medida 
  \begin{equation}
  	\supp \mu^*_V(x) = [-a, a], \ \ \mu^*_V(x) = \frac{mt}{\pi} \sqrt{a^2 - x^2} \h(x),
  	\label{Equação: Mônico}
  \end{equation}
-com $$ a \deff \left( mt \prod_{l=1}^{m} \frac{2l-1}{2l}\right) \ \ \ \text{e} \ \ \ \h(x) = x^{2m-2} + \sum_{j=1}^{m-1} x^{2m-2-2j} a^{2j} \prod_{l=1}^{j} \frac{2l-1}{2l}.$$
+com $$ a \deff \left( mt \prod_{l=1}^{m} \frac{2l-1}{2l}\right) \ \ \ \text{e} \ \ \ \h(x) \deff x^{2m-2} + \sum_{j=1}^{m-1} x^{2m-2-2j} a^{2j} \prod_{l=1}^{j} \frac{2l-1}{2l}.$$
 
-Essas medidas de equilíbrio nos servirão no Capítulo \ref{Capitulo: Resultados} quando quisermos conferir o bom comportamento das simulações implementadas.
+Essas medidas de equilíbrio nos servirão no Capítulo \ref{Capitulo: Resultados} quando quisermos assegurar o bom comportamento das simulações implementadas.

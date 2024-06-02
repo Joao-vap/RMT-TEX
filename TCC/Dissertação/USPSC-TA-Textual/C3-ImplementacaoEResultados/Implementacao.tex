@@ -1,6 +1,6 @@
-\section{A implementação}
+\section{Implementação}
 
-Tomaremos o subespaço $\Se = \R^d$ com $d = 1, 2$. Consideraremos um núcleo de interação $\W = g$ coulombiano em $n = 2$. Por isso, retomamos medida da forma \ref{Equação: Medida Gas de Coulomb} usual de gases de coulomb. A esquemática da implementação se encontra na Figura \ref{Figura: Implementação}. Podemos entender melhor a relação entre as sub-rotinas e funções em referência à Tabela \ref{Table: Funcoes e Subrotinas}.
+Tomaremos o subespaço $\Se = \R^d$ com $d = 1, 2$. Consideraremos um núcleo de interação $\W = g$ coulombiano em $n = 2$. Por isso, retomamos a Medida \eqref{Equação: Medida Gas de Coulomb} usual de Gases de Coulomb. A esquemática da implementação se encontra na Figura \ref{Figura: Implementação}. Podemos entender melhor a relação entre as sub-rotinas e funções em referência à Tabela \ref{Table: Funcoes e Subrotinas}.
 
 \begin{figure}[ht]
 	\centering
@@ -127,10 +127,10 @@ Tomaremos o subespaço $\Se = \R^d$ com $d = 1, 2$. Consideraremos um núcleo de
 		Modifica ${p}_{k}$ vetor $[N\times m]$, global, uniforme no cubo em $R^d$ e ${q}_{k}, G_H$, vetores $[N\times m]$, globais, nulos. \\
 		\hline
 		L2-OrnsUhlen 	 & 
-		Modifica $\tilde{p}_k$, vetor $[N\times m]$, global, por $\Gl_U$ segundo \ref{Equation: Alg Mehler}. \\
+		Modifica $\tilde{p}_k$, vetor $[N\times m]$, global, por $\Gl_U$ segundo \eqref{Equation: Alg Mehler}. \\
 		\hline
 		L1-Verlet  	 	 & 
-		Modifica $\tilde{p}_{k_1},\tilde{q}_{k_1}$ vetores $[N\times m]$, globais, por $\Gl_{\Hf}$ segundo \ref{Equation: Alg Verlet}.	\\
+		Modifica $\tilde{p}_{k+1},\tilde{q}_{k+1}$ vetores $[N\times m]$, globais, por $\Gl_{\Hf}$ segundo \eqref{Equation: Alg Verlet}.	\\
 		\hline
 		GradH         	 & 
 		Modifica $G_H$, vetor $[N\times m$], global, gradiente do Hamiltoniano.					\\
@@ -142,10 +142,10 @@ Tomaremos o subespaço $\Se = \R^d$ com $d = 1, 2$. Consideraremos um núcleo de
 		Modifica $G_{V_i}$, escalar, global, gradiente de $\V$ potencial.		                    \\
 		\hline
 		ProbLog       		 &
-		Retorna $P_K$, escalar, local, probabilidade de aceite de \ref{Equação: Alg Pk}. \\
+		Retorna $P_K$, escalar, local, probabilidade de aceite de \eqref{Equação: Alg Pk}. \\
 		\hline
 		H              	 &
-		Retorna $H$, escalar, local, hamiltoniano em $k$.	 							\\
+		Retorna $H$, escalar, local, Hamiltoniano em $k$.	 							\\
 		\hline
 		V  	      			 &
 		Retorna $V_i$, escalar, local, potencial de $q_i$.								\\
@@ -154,7 +154,7 @@ Tomaremos o subespaço $\Se = \R^d$ com $d = 1, 2$. Consideraremos um núcleo de
 		Retorna $W_{i,j}$, escalar, local, interação entre $q_i,q_j$ 							\\
 		\hline
 		Metropolis     	 & 
-		Modifica ${p}_{k},{q}_{k}$, vetores $[N\times m]$, globais por \ref{Equation: Alg Metro}.								\\
+		Modifica ${p}_{k},{q}_{k}$, vetores $[N\times m]$, globais por \eqref{Equation: Alg Metro}.								\\
 		\hline
 		Gauss     	 & 
 		Retorna variáveis gaussianas, vetor $[1\times m]$, local por Box-Muller.								\\
@@ -164,7 +164,9 @@ Tomaremos o subespaço $\Se = \R^d$ com $d = 1, 2$. Consideraremos um núcleo de
 	\label{Table: Funcoes e Subrotinas}
 \end{table}
 
- Alguns detalhes são importantes de notar. O gerador de variáveis aleatórias gaussianas, necessário em \ref{Equation: Alg Mehler} foi implementado utilizando do algoritmo de \textit{Box-Muller}. Além disso, o ajuste de variáveis é notoriamente um dos aspectos complicados do algoritmo implementado. Precisamos de uma holística par ajustar $\Delta t, \alpha_N \ \text{e} \ \gamma_N$. No escopo deste programa, $\Delta t$ e $\alpha_N$ desempenham o mesmo papel e, por isso, toma-se $\alpha_N = 1$ e varia-se $\Delta t$. Seguindo a recomendação de \cite[Capítulo~5]{handbookmontecarlo}, tomaremos $\Delta t = \Delta\tilde{t} + X$, onde $X$ é variável aleatória de média $0$ e variância $\sigma^2$ pequena. Essa escolha ajuda a acelerar a convergência e melhor garante ergoticidade. Lembra-se ainda que $\Delta \tilde{t}$ é ideal na ordem de $N^{-\frac{1}{4}}$, isto é, é pequeno o suficiente para manter a razão de aceite do passo de Metropolis alta e grande o suficiente para não desacelerar a convergência do algoritmo. Já $\gamma_N$ definirá o quanto substituiremos o momento anterior das partículas será relevante em relação ao movimento browniano. Aqui, sabemos que tornar $\eta$ próximo demais de $0$, ou de $1$ para todos efeitos, desacelera intensamente a convergência. Faremos, em geral, com que $\gamma_N \alpha_N \Delta t \approx 0.5$.
+ Alguns detalhes são importantes de notar. O gerador de variáveis aleatórias gaussianas, necessário na Equação \eqref{Equation: Alg Mehler}, foi implementado utilizando do algoritmo de \textit{Box-Muller}. Além disso, o ajuste de variáveis é notoriamente um dos aspectos complicados do algoritmo implementado. Precisamos de uma holística para ajustar $\Delta t, \alpha_N \ \text{e} \ \gamma_N$. No escopo deste programa, $\Delta t$ e $\alpha_N$ desempenham o mesmo papel; por isso, toma-se $\alpha_N = 1$ e varia-se $\Delta t$. 
+ 
+ Seguindo a recomendação de Brooks \cite[Capítulo~5]{handbookmontecarlo}, tomaremos $\Delta t = \Delta\tilde{t} + X$, onde $X$ é variável aleatória de média $0$ e variância $\sigma^2$ pequena. Essa escolha ajuda a acelerar a convergência e melhor garante ergodicidade. Lembra-se ainda que $\Delta \tilde{t}$ é ideal na ordem de $N^{-\frac{1}{4}}$, isto é,  pequeno o suficiente para manter a razão de aceite do passo de Metropolis-Hastings alta mas grande o suficiente para não desacelerar a convergência do algoritmo. Já $\gamma_N$ definirá o quanto o momento anterior das partículas será relevante em relação ao movimento browniano. Aqui, sabemos que tornar $\eta$ próximo demais de $0$, ou de $1$ para todos efeitos, desacelera intensamente a convergência. Faremos, em geral, com que $\gamma_N \alpha_N \Delta \tilde{t} \approx 0.5$.
  
  %Para além dos ajustes, cada simulação é identificada pelo Hamiltoniano, ou seja, pelo potencial $V$ e pelas dimensões $d, n$, respectivamente do espaço que as partículas estão restritas e do que elas existem.
 

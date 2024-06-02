@@ -304,7 +304,7 @@ Logo, desde que tomemos um ensemble invariante, podemos reescrever a distribuiç
 	\label{Equation: p-ord}
 \end{equation}
 
-Dentre os muitos ensembles em RMT, os Gaussianos são notórios. São eles o \textit{Gaussian Orthogonal Ensemble (GOE)} ($\beta=1$), \textit{Gaussian Unitary Ensemble (GUE)} ($\beta=2$) e \textit{Gaussian Sympletic Ensemble (GSE)} ($\beta=4$). Notemos primeiramente que o nome é relacionado à escolha de $\Se$. Mais explicitamente, o nome é dado em relação à se $\matriz{O}$, tal que $\matriz{M} = \matriz{O}\matriz{D}\matriz{O}^*$, é ortogonal, unitário ou simplético. É natural então pensar nos ensembles \textit{GOE}, \textit{GUE} e \textit{GSE} como matrizes $\matriz{M} \in \mathcal{M}_{\Se}(N)$ onde 
+Dentre os muitos ensembles em RMT, os Gaussianos são notórios. São eles o \textit{Gaussian Orthogonal Ensemble (GOE)} ($\beta=1$), \textit{Gaussian Unitary Ensemble (GUE)} ($\beta=2$) e \textit{Gaussian Sympletic Ensemble (GSE)} ($\beta=4$). Notemos primeiramente que o nome é relacionado à escolha de $\Se$. Mais explicitamente, o nome é dado em relação à se $\matriz{O}$, tal que $\matriz{M} = \matriz{O}\matriz{D}\matriz{O}^{-1}$, é ortogonal, unitário ou simplético. É natural então pensar nos ensembles \textit{GOE}, \textit{GUE} e \textit{GSE} como matrizes $\matriz{M} \in \mathcal{M}_{\Se}(N)$ onde 
 $$
 \mathcal{M}_{\Se}(N) \ni M_{i,j} \sim
 \begin{cases}
@@ -326,7 +326,7 @@ Para os ensembles que chamamos invariantes, a densidade de autovalores guarda um
 
 % Sabemos então, que a partir dessa função podemos retirar importantes propriedades estatísticas (macroscópicas) do sistema de autovalores dos ensembles Gaussianos.
 
-O gás de coulomb $\p_N$ \cite{ChafaCoulombMeasure} é a medida de probabilidade de Boltzmann-Gibbs dada em $(R^d)^N$ por 
+O gás de coulomb $\p_N$ \cite{ChafaCoulombMeasure} é a medida de probabilidade de Boltzmann-Gibbs dada em $(\R^d)^N$ por 
 \begin{equation}
 	\dd \p_N(\vec{x}) = \frac{e^{-\beta N^2 \Hf_N(\vec{x})}}{Z_{N,\beta}} \dd \vec{x},
 	\label{Equação: Medida Gas de Coulomb}
@@ -388,15 +388,15 @@ Consideraremos nossas $N$ partículas em um subespaço $S$ de dimensão $d$ em $
 	\item Utilizando do esquema de Verlet, calcule os termos
 	\begin{equation}
 		\begin{cases}
-			\tilde{p}_{k+\frac{1}{2}} = \tilde{p}_k - \nabla H_N(q_k) \alpha_N \frac{\Delta t}{2}, \\
+			\tilde{p}_{k+\frac{1}{2}} = \tilde{p}_k - \nabla \Hf_N(q_k) \alpha_N \frac{\Delta t}{2}, \\
 			\tilde{q}_{k+1} = q_k + \tilde{p}_{k + \frac{1}{2}} \alpha_N \Delta t, \\
-			\tilde{p}_{k+1} = \tilde{p}_{k+\frac{1}{2}} - \nabla H_N(q_{k+1}) \alpha_N \frac{\Delta t}{2};
+			\tilde{p}_{k+1} = \tilde{p}_{k+\frac{1}{2}} - \nabla \Hf_N(q_{k+1}) \alpha_N \frac{\Delta t}{2};
 			\label{Equation: Alg Verlet}
 		\end{cases}
 	\end{equation}
 	\item Pela definição do passo de metropolis, defina a probabilidade $P_k$
 	\begin{equation}
-		1 \wedge \ee^{ -\beta \left( H_N(\tilde{q}_{k+1}) + \frac{\tilde{p}^2_{k+1}}{2} - H_N(q_k) - \frac{\tilde{p}^2_k}{2} \right) };
+		1 \wedge \ee^{ -\beta \left( \Hf_N(\tilde{q}_{k+1}) + \frac{\tilde{p}^2_{k+1}}{2} - \Hf_N(q_k) - \frac{\tilde{p}^2_k}{2} \right) };
 		\label{Equação: Alg Pk}
 	\end{equation}
 	\item Defina, a partir do cálculo anterior, 

@@ -25,10 +25,29 @@
 %---------------------------------------------------------
 \subsection{Porquê RMT}
 
+
+\begin{frame}
+	\onslide<3>{
+	\begin{block}{Eugene Wigner - \textit{On the Wigner Surmise} (1956)}
+	``\textit{Perhaps I am now too courageous when I try to guess the distribution of the distances between successive levels (of energies of heavy nuclei). Theoretically, the situation is quite simple if one attacks the problem in a simpleminded fashion. The question is simply what are the distances of the characteristic values of a symmetric matrix with random coefficients.}''
+	\end{block}
+	}
+
+	\vspace{1cm}
+
+	\onslide<1-2>{
+	\begin{itemize}
+		\item Lei dos Grandes Números e Teorema Central do Limite;
+		\pause
+		\item Núcleos distintos compartilham estatísticas de níveis energéticos;
+	\end{itemize}
+	}
+\end{frame}
+
 %---------------------------------------------------------
 %Motivação
 \begin{frame}
-	\begin{block}{Wigner}
+	\begin{block}{Conjectura de Wigner}
 		\parbox{\linewidth}{\textit{The assumption is that
 			the Hamiltonian which governs the behavior of
 			a \textcolor{red}{complicated} system is a random symmetric
@@ -50,90 +69,109 @@
 
 %---------------------------------------------------------
 %Medida nos autovalores
+
+\subsection{Medida Invariante}
+
 \begin{frame}
-\frametitle{Medida nos autovalores}
+	\frametitle{Medida em $\matriz{M}$}
 	
-\only<1>{
-	\begin{block}{Medida Geral}
-		A medida de densidade conjunta (jpdf, \textit{joint probability density function}) de $\matriz{M}$, $\p(\hat{M})$ é expressa
-		\[
-		\p(\hat{M}) = \p(M_{1,1}, \dots, M_{N,N})
-		\]
-	\end{block}
-
-	\vspace{1cm}
-
-	\begin{itemize}
-		\item $\Se$ espaço tal como $\R, \C, \He $ (Reais, Complexos e Quaterniônicos);
-		
-		\item $\matriz{M} \in \mathcal{M}_{\Se}(N)$ e $M_{i,j}$ $\forall i, j \in \Z$, com $1 \leq i, j \leq N$, variável aleatória de distribuição arbitrária.
-	\end{itemize}
-}	
-
-\only<2>{
-	\begin{block}{Medida Geral}
-		Se $\exists$ $\matriz{O} \in V_N(\Se^N)$ e $\matriz{D} = \diag(\mmany{\lambda}{N})$ tais que $\matriz{M} = \matriz{O} \matriz{D} \matriz{O}^{-1}$, a jpdf de $\matriz{M}$ pode ser expressa
-		\[
-		\p(\matriz{M}) = \p \left( M_{1,1}(\vec{\lambda}, \matriz{O}), \cdots, M_{N,N}(\vec{\lambda}, \matriz{O}) | \J(\matriz{M} \rightarrow \{ \vec{\lambda}, \matriz{O} \} ) \right).
-		\]
-	\end{block}
-
-	\vspace{1cm}
+	\noindent
+	\begin{minipage}[h][0.38\textheight][c]{\textwidth}
+		\onslide
+		\begin{equation*}
+			\begin{split}
+				\p{\left(\matriz{M}\right)} \dd \matriz{M}
+				\only<3>{
+				&= \p{\left(\matriz{U} \matriz{\Lambda} \matriz{U^{-1}}\right)} \dd \left(\matriz{U} \matriz{\Lambda} \matriz{U^{-1}}\right) \\
+				}
+				\only<4->{
+				&= \p{\left(\matriz{U} \matriz{\Lambda} \matriz{U^{-1}}\right)} J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda}, \matriz{U} \right\rbrace \right) \dd \matriz{\Lambda} \dd \matriz{U} \\
+				}
+				\only<6-7>{
+				&=  \p{\left(\matriz{U^{-1}} \matriz{U} \matriz{\Lambda} \right)} J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda} \right\rbrace \right) \dd \matriz{\Lambda} \dd \matriz{U} \\
+				}
+				\only<7-9>{
+				&=  \p{\left(\matriz{\Lambda} \right)} J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda} \right\rbrace \right) \dd \matriz{\Lambda} \dd \matriz{U} \\
+				}
+				\only<8-9>{
+				&=  \phi\left( \Tr \left( \V\left( \matriz{M} \right) \right) \right) J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda} \right\rbrace \right) \dd \matriz{\Lambda} \dd \matriz{U} \\
+				}
+				\only<9-10>{
+				&=  \exp\left\lbrace -N \Tr \left( \V\left( \matriz{M} \right) \right) \right\rbrace J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda} \right\rbrace \right) \dd \matriz{\Lambda} \dd \matriz{U} \\
+				}
+				\only<11->{
+				&=  \exp\left\lbrace -N \sum_{i=1}^N \V(\lambda_i) \right\rbrace J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda} \right\rbrace \right) \dd \matriz{\Lambda} \dd \matriz{U} \\
+				}
+				\only<12->{
+				&=  \exp\left\lbrace -N \sum_{i=1}^N \V(\lambda_i) \right\rbrace \prod_{i < j}^{N} |\lambda_i - \lambda_j|^\beta \dd \matriz{\Lambda} \dd \matriz{U} \\
+				}
+			\end{split}
+		\end{equation*}
+	\end{minipage}
 	
-	\begin{itemize}
-	\item Tomaremos $\matriz{M}$ simétrica, hermitiana ou simplética, a depender de $\Se$ ($\matriz{M} \in \Glin_N(\Se)$);
+	\noindent
+	\begin{minipage}[h][0.45\textheight][c]{\textwidth}
+		\only<2-4>{
+		\begin{block}{$\matriz{M} \mapsto \matriz{U}\matriz{\Lambda}\matriz{U^{-1}}$}
+			Considere o mapa $\matriz{M} \mapsto \matriz{U}\matriz{\Lambda}\matriz{U^{-1}}$ com $\matriz{U}$ invertível e $\matriz{\Lambda}$ diagonal.
+			
+			\begin{itemize}
+				\item Sobrejetividade: Do Teorema Espectral;
+				\item Injetividade: Desconsidera-se fase e sinal dos autovetores. Ordena-se os autovalores. O subconjunto de matrizes sem multiplicidade de autovalores é aberto, denso e de medida completa.
+			\end{itemize}
+		\end{block}
+		}
+		\only<5-10>{
+		\begin{block}{Ensembles invariantes}
+			Consideraremos os ensembles denominados invariantes (por rotação)
+			\begin{itemize}
+				\item Lema de Weyl: Medida pode ser expressa totalmente por $\phi\left( \Tr \left( \V\left( \matriz{M} \right) \right) \right)$;
+				\item $\p{\left( \matriz{M}\right)} = \p{\left(\matriz{U} \matriz{\Lambda} \matriz{U^{-1}}\right)} = \p{\left(\matriz{U^{-1}} \matriz{U} \matriz{\Lambda}\right)} = \p{\left( \matriz{\Lambda}\right)}$
+				\item $J \left(\matriz{M}\right) = J \left(\matriz{R} \matriz{M'} \matriz{R^{-1}} \right) \implies J (\matriz{M}) = J (\matriz{\Lambda})$
+			\end{itemize}
+		\end{block}
+		}
+		\only<11-12>{
+		\begin{block}{Teorema - Jacobiano}
+			O jacobiano pode ser expresso por uma determinada matriz de Vandermonde tal que
+			\[
+				J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda} \right\rbrace \right) = \prod_{i < j}^{N} |\lambda_i - \lambda_j|^\beta
+			\]
+			onde $\lambda_i$ são os autovalores de $\matriz{M}$.
+		\end{block}
+		}
+		\only<13->{
+		\begin{block}{Medida}
+			\begin{equation*}
+				\begin{split}
+					\p{(\mmany{\lambda}{N})}
+					\only<13>{
+						&= \frac{1}{Z_{N, \beta}} \exp\left\lbrace -N \sum_{i=1}^N \V(\lambda_i) \right\rbrace \prod_{i < j}^{N} |\lambda_i - \lambda_j|^\beta \\
+					}
+					\only<14>{
+						&= \frac{1}{Z_{N, \beta}} \exp\left\lbrace -N \sum_{i=1}^N \V(\lambda_i) \right\rbrace \exp\left\lbrace \sum_{i < j}^{N}  \log |\lambda_i - \lambda_j|^\beta \right\rbrace
+					}
+					\only<15>{
+						&= \frac{1}{Z_{N, \beta}} \exp\left\lbrace -\beta N^2 \left( \frac{1}{\beta N} \sum_{i=1}^N \V(\lambda_i) + \frac{1}{2N^2} \sum_{i \neq j}^{N}  \log \frac{1}{|\lambda_i - \lambda_j|} \right) \right\rbrace
+					}
+					\only<16>{
+						&= \frac{1}{Z_{N, \beta}} \ee^{-\beta_N \Hf_N(\mmany{\lambda}{N})}
+					}
+				\end{split}
+			\end{equation*}
+			\only<16>{
+				onde
+				$\Hf_N(\mmany{\lambda}{N}) = \frac{1}{\beta N} \sum_{i=1}^N \V(\lambda_i) + \frac{1}{2N^2} \sum_{i \neq j}^{N}  \log \frac{1}{|\lambda_i - \lambda_j|}$
+			}
+		\end{block}
+		}
+	\end{minipage}
 	
-	\item $\exists$ $\matriz{D}$ diagonal e $\matriz{O} \in V_N(\Se^N)$ tais que $\matriz{M} = \matriz{O} \matriz{D} \matriz{O}^{-1}$.
-	\end{itemize}
-}	
-
-\only<3>{
-	\begin{block}{Medida Invariante}
-		Se a medida de $\matriz{M}$ é invariante,
-		\[
-		\p(\mmany{\lambda}{N}, \matriz{O}) \equiv \p \left( M_{1,1}(\vec{\lambda}), \cdots, M_{N,N}(\vec{\lambda}) | \J(\matriz{M} \rightarrow \{ \vec{\lambda} \} ) \right).
-		\]
-	\end{block}
-
-	\vspace{1cm}
-	
-	\begin{itemize}
-		\item Poderíamos integrar em sobre $V_N(\Se^N)$ quando possível;
-		
-		\item Considere matrizes nos ensembles denominados \textbf{invariantes} (por rotação), $$\matriz{M} \sim \matriz{M'} \iff \exists \  \matriz{U}, \matriz{U}^{-1} \in V_N(\Se^N)  \ | \ \matriz{M} = \matriz{U} \matriz{M'} \matriz{U}^{-1}.$$
-	\end{itemize}
-}	
-
 \end{frame}
-%---------------------------------------------------------
-%Teorema de medida
-\begin{frame}
-	\frametitle{Medida Invariante}
-	\begin{block}{Teorema \cite[Capítulo~3]{AlanThesis}}
-		Tome $\matriz{M} \in M_{\R}(N),  M_{\C}(N),  M_{\He}(N)$ simétrica, hermitiana ou autodual, respectivamente. Se  $\matriz{M}$ tem jpdf $\phi(\matriz{M})$, invariante sobre transformações de similaridade ortogonal, a jpdf dos $N$ autovalores ordenados de $\matriz{M}$, $\mcmany{\lambda}{N}{\geq}$, é $$ \frac{1}{Z_{N, \beta}^{(ord)}} \phi(\matriz{D}) \prod_{i < j} (\lambda_i - \lambda_j)^{\beta}$$ onde $Z_{N, \beta}^{(ord)}$ é constante, $\matriz{D} = \diag(\mmany{\lambda}{N})$ e $\beta = 1, 2, 4$ corresponde respectivamente à escolha de $\matriz{M} \in M_{\R}(N),  M_{\C}(N),  M_{\He}(N)$. 
-	\end{block}
-\end{frame}
-%---------------------------------------------------------
-%Lema de Weyl
-\begin{frame}
-	
- 	\begin{block}{Lema de Weyl}
- 		Se $\p(\matriz{M})$ é invariante, podemos expressar $\p(\matriz{M})= \phi \left(\Tr(F(M)) \right)$ com $F$ função polinomial.
- 	\end{block}
-	Assim, com o Teorema, escrevemos: 
-	\[
-		\p_{ord}(\mmany{\lambda}{N}) = \frac{1}{Z_{N, \beta}^{(ord)}} \phi{\left( \sum_i^N F(\lambda_i) \right)} \prod_{i < j} (\lambda_i - \lambda_j)^{\beta},
-	\]
-	ou ainda, com $N! Z_{N, \beta}^{(ord)} = Z_{N, \beta}$
-	\begin{equation}
-		\p(\mmany{\lambda}{N}) = \frac{1}{Z_{N, \beta}} \phi{\left( \sum_i^N F(\lambda_i) \right)} \prod_{i < j} (\lambda_i - \lambda_j)^{\beta}.
-		\label{Equation: p}
-	\end{equation}
-\end{frame}
-%---------------------------------------------------------
 
 %---------------------------------------------------------
 % Ensembles Gaussianos
+
 \subsection{Ensembles Gaussianos}
 %---------------------------------------------------------
 %Gaussianos
@@ -345,7 +383,6 @@
 		\item Processos ergóticos determinísticos são difíceis de serem construídos, desenvolve-se teoria de equações diferenciais estocásticas;
 		\pause
 		\item Dinâmicas podem não ser diretamente/analiticamente integráveis, recorre-se a processos numéricos;
-		\pause
 		%\item Amostragem de medida de equilíbrio por integração numérica estável de processo estocástico invariante.
 	\end{itemize}
 \end{frame}
@@ -362,7 +399,7 @@
 		\begin{block}{\textit{Overdamped Langevin} \cite{leimmolecular}}
 			$q \in \R^d$ é vetor de posições generalizadas associado às $N$ partículas
 			\[
-				\dd q_t = -\alpha_N \nabla H_N(q_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd W_t
+				\dd q_t = -\alpha_N \nabla \Hf_N(q_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd W_t
 			\label{Equação: Langevin Overdamped}
 			\]
 			onde $(W_t)_{t>0}$ é processo de Wiener, $\gamma_N > 0$ é constante de atrito e $\alpha_N$ é escala temporal.
@@ -375,7 +412,7 @@
 			\[
 				\begin{cases}
 					\dd q_t = \alpha_N \nabla U_N (p_t) \dd t, \\
-					\dd p_t = -\alpha_N \nabla H_N(q_t) \dd t - \gamma_N \alpha_N \nabla U_N(p_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd W_t.
+					\dd p_t = -\alpha_N \nabla \Hf_N(q_t) \dd t - \gamma_N \alpha_N \nabla U_N(p_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd W_t.
 				\end{cases}
 			\]
 		onde $\beta_N$ é temperatura inversa.
@@ -483,15 +520,15 @@
 			\item<2> Utilizando do esquema de Verlet, calcule os termos
 			$$
 				\begin{cases}
-					\tilde{p}_{k+\frac{1}{2}} = \tilde{p}_k - \nabla H_N(q_k) \alpha_N \frac{\Delta t}{2}, \\
+					\tilde{p}_{k+\frac{1}{2}} = \tilde{p}_k - \nabla \Hf_N(q_k) \alpha_N \frac{\Delta t}{2}, \\
 					\tilde{q}_{k+1} = q_k + \tilde{p}_{k + \frac{1}{2}} \alpha_N \Delta t, \\
-					\tilde{p}_{k+1} = \tilde{p}_{k+\frac{1}{2}} - \nabla H_N(q_{k+1}) \alpha_N \frac{\Delta t}{2};
+					\tilde{p}_{k+1} = \tilde{p}_{k+\frac{1}{2}} - \nabla \Hf_N(q_{k+1}) \alpha_N \frac{\Delta t}{2};
 					\label{Equation: Alg Verlet}
 				\end{cases}
 			$$
 			\item<3> Pela definição do passo de metropolis, defina a probabilidade $P_k$
 			$$
-				1 \wedge \ee^{ -\beta_N \left( H_N(\tilde{q}_{k+1}) + \frac{\tilde{p}^2_{k+1}}{2} - H_N(q_k) - \frac{\tilde{p}^2_k}{2} \right) };
+				1 \wedge \ee^{ -\beta_N \left( \Hf_N(\tilde{q}_{k+1}) + \frac{\tilde{p}^2_{k+1}}{2} - \Hf_N(q_k) - \frac{\tilde{p}^2_k}{2} \right) };
 			$$
 			\item<4> Defina, a partir de $P_k$, 
 			$$

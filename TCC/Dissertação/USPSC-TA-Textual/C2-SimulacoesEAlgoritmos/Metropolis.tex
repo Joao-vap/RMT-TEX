@@ -1,20 +1,20 @@
-\section{Passo de Metropolis}
+\section{Passo de Metropolis-Hastings}
 \label{Section: Metropolis}
 
-Muitos algoritmos utilizam de um passo de seleção para estabilizar sua dinâmica e otimizar a convergência e a amostragem da variável de interesse. Partindo dos esquemas da Seção \ref{Seção: Discretização}, consideraremos que temos uma proposta $\tilde{q}_{k+1}$ de estado. Para o método de Metropolis, um importante aspecto é manter a razão de rejeições baixa para não atrapalhar a eficiência do programa, o que influencia no tamanho do passo temporal decidido. Pode ser mostrado que $\Delta t$ é ideal quando é da ordem de $N^{-\frac{1}{4}}$ \cite{Chafa2018}, tornando o esquema interessante pela escalabilidade de $N$.
+Muitos algoritmos utilizam de um passo de seleção para estabilizar sua dinâmica e otimizar a convergência e amostragem, usaremos dessa ideia para otimizar o algoritmo. Para o método de Metropolis-Hastings, é importante manter a razão de rejeições baixa para não atrapalhar a eficiência, o que influencia no tamanho do passo temporal decidido. Pode ser mostrado que $\Delta t$ é ideal quando é da ordem de $N^{-\frac{1}{4}}$, \cite{Chafa2018} tornando o esquema interessante pela escalabilidade de $N$.
 
-Propõe-se então que, a partir da proposição de estado $\tilde{q}_{k+1}$ gerada pelo esquema anterior, se calcule a probabilidade
+Partindo dos esquemas da Seção \ref{Seção: Discretização}, consideraremos $(\tilde{q}_{k+1},\tilde{p}_{k+1})$ proposta de novo estado gerada pela dinâmica de $\Gl$, a partir do estado anterior $(q_{k},p_{k})$. Define-se
 \begin{equation}
-P_k = 1 \wedge \frac{\K(\tilde{q}_{k+1}, q_k) \ee^{-\beta_N \Hf_N(\tilde{q}_{k+1})}}{\K(q_k, \tilde{q}_{k+1}) \ee^{-\beta_N \Hf_N(q_{k})}},
+P_k = 1 \wedge \frac{\ee^{-\beta_N \Ee_N(\tilde{q}_{k+1}, \tilde{p}_{k+1})}}{\ee^{-\beta_N \Ee_N(q_{k}, \tilde{p}_{k})}},
 \label{Equation: Pk}
 \end{equation}
-onde o núcleo $K(x, y)$ é simétrico \cite{Chafa2018} para o caso do algoritmo de \textit{Langevin Monte Carlo} e, por se cancelar, não será discutido adiante. Atribua agora às novas coordenadas generalizadas $(q_{k+1}, p_{k+1})$ valor da seguinte forma
+onde $\tilde{p}_{k}$ é dado por \eqref{Equation: Alg Mehler}, probabilidade de aceite tal que se atribua agora às novas coordenadas generalizadas $(q_{k+1}, p_{k+1})$ valor da seguinte forma
 \begin{equation}
 	(q_{k+1}, p_{k+1}) =
 \begin{cases}
 	(\tilde{q}_{k+1}, \tilde{p}_{k+1}) \ \text{com probabilidade} \ P_k, \\
-	(q_k, -\tilde{p}_{k}) \ \text{com probabilidade} \ 1-P_k; \\
+	(q_k, -\tilde{p}_{k}) \ \text{com probabilidade} \ 1-P_k. \\
 \end{cases}
 \label{Equation: Metropolis}
 \end{equation}
-De forma a garantir a conservação da energia, que é uma preocupação na discretização da dinâmica, e otimizar a exploração do espaço de fase.
+Assim, a proposta será aceita com probabilidade um se $\Ee_N(\tilde{q}_{k+1}, \tilde{p}_{k+1}) < \Ee_N(q_{k}, \tilde{p}_{k})$ e com probabilidade dada pela razão das medidas, caso contrário. Dessa forma garante-se a conservação da energia - preocupação na discretização da dinâmica - e otimiza-se a exploração do espaço de fase.

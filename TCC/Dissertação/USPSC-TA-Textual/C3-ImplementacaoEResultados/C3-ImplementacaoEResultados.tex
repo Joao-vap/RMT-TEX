@@ -1,28 +1,28 @@
 \chapter{Implementação e Resultados}
 \label{Capitulo: Resultados}
 
-Consideraremos $N$ partículas em um subespaço $S$ de dimensão $d$ em $\mathbb{R}^n$ de forma que nosso espaço de fase $\Omega$ será de dimensão $Nd$. O campo externo é $V : S \mapsto \mathbb{R}$ e o núcleo de interação entre as partículas é função $\W : S \mapsto (-\infty, \infty]$. Reunindo os resultados do Capítulo \ref{Capitulo: Simulações} sob essas condições, temos o algoritmo, descrito em \cite{Chafa2018}, completo. Dada uma condição inicial $(q_k, p_k)$,  vetores de posição e velocidade generalizadas, para cada $k\geq0$, realizamos os seguintes passos
+Consideraremos $N$ partículas em um subespaço $S$ de dimensão $d$ em $\mathbb{R}^n$ de forma que nosso espaço de fase $\Omega$ será de dimensão $Nd$. O campo externo é $V : S \mapsto \mathbb{R}$ e o núcleo de interação entre as partículas é função $\W : S \mapsto (-\infty, \infty]$. Reunindo os resultados do Capítulo \ref{Capitulo: Simulações} sob essas condições, temos o algoritmo, com base em Chafa\"{i} e Ferré \cite{Chafa2018}, completo. Dada uma condição inicial $(q_k, p_k)$,  vetores de posição e momento generalizados, para cada $k\geq0$, realizamos os seguintes passos
 \begin{enumerate}
-	\item Baseado em \ref{Equation: Mehler}, atualize a $\tilde{\p}_k$ com
+	\item Baseado na Equação \eqref{Equation: Mehler}, atualize $\tilde{p}_k$ com
 	\begin{equation}
 	\tilde{p}_k = \eta p_k + \sqrt{\frac{1-\eta^2}{\beta_N}} G_k, \ \eta = \ee^{-\gamma_N \alpha_N \Delta t};
 	\label{Equation: Alg Mehler}
 	\end{equation}
-	\item Utilizando do esquema de \ref{Equation: Verlet}, calcule os termos
+	\item Utilizando do esquema de Verlet \eqref{Equation: Verlet}, calcule os termos
 	\begin{equation}
 	\begin{cases}
 		\tilde{p}_{k+\frac{1}{2}} = \tilde{p}_k - \nabla \Hf_N(q_k) \alpha_N \frac{\Delta t}{2}, \\
 		\tilde{q}_{k+1} = q_k + \tilde{p}_{k + \frac{1}{2}} \alpha_N \Delta t, \\
-		\tilde{p}_{k+1} = \tilde{p}_{k+\frac{1}{2}} - \nabla \Hf_N(q_{k+1}) \alpha_N \frac{\Delta t}{2};
+		\tilde{p}_{k+1} = \tilde{p}_{k+\frac{1}{2}} - \nabla \Hf_N(\tilde{q}_{k+1}) \alpha_N \frac{\Delta t}{2};
 		\label{Equation: Alg Verlet}
 	\end{cases}
 	\end{equation}
-	\item Pela definição \ref{Equation: Pk}, tome
+	\item Pela Definição \eqref{Equation: Pk}, tome
 	\begin{equation}
-	P_k = 1 \wedge \exp{ -\beta_N \left(  \Hf_N(\tilde{q}_{k+1}) -  \Hf_N(q_k) + U_N(\tilde{q}_{k+1}) - U_N(q_k)\right)};
+	P_k = 1 \wedge \exp{ -\beta_N \left(\Ee_N(\tilde{q}_{k+1}, \tilde{p}_{k+1}) - \Ee_N(q_{k}, \tilde{p}_{k}) \right)};
 	\label{Equação: Alg Pk}
 	\end{equation}
-	\item Defina, a partir de \ref{Equation: Metropolis}, 
+	\item Defina, a partir da Razão \eqref{Equation: Metropolis}, 
 	\begin{equation}
 	(q_{k+1}, p_{k+1}) = 
 	\begin{cases}

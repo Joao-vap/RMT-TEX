@@ -7,92 +7,81 @@
 
 \bibitem{MehtaGaudin}
 \abntrefinfo{Mehta e Gaudin}{MEHTA; GAUDIN}{1960}
-{MEHTA, M.; GAUDIN, M. On the density of eigenvalues of a random matriz.
-\textbf{Nuclear Physics}, v.~18, p. 420--427, 1960.
-ISSN 0029-5582.}
+{MEHTA, M.; GAUDIN, M. On the density of eigenvalues of a random matrix.
+\textbf{Nuclear Physics}, v.~18, p. 420--427, 1960.}
 
 \bibitem{Dyson}
 \abntrefinfo{Dyson}{DYSON}{1962}
-{DYSON, F.~J. Statistical theory of the energy levels of complex systems. i.
-\textbf{Journal of Mathematical Physics}, v.~3, n.~1, p. 140--156, 01 1962.
-ISSN 0022-2488.}
+{DYSON, F.~J. Statistical theory of the energy levels of complex systems.
+\textbf{Journal of Mathematical Physics}, v.~3, n.~1, p. 140--156, 1962.}
 
 \bibitem{RMT-firstcourse-Potters}
 \abntrefinfo{Potters e Bouchaud}{POTTERS; BOUCHAUD}{2020}
-{POTTERS, M.; BOUCHAUD, J. \textbf{A First Course in Random matriz Theory: for
-  Physicists, Engineers and Data Scientists}. Cambridge, Inglaterra: Cambridge
-  University Press, 2020.
+{POTTERS, M.; BOUCHAUD, J. \textbf{A First Course in {R}andom {M}atrix
+  {T}heory: for Physicists, Engineers and Data Scientists}. Cambridge,
+  Inglaterra: Cambridge University Press, 2020.
 ISBN 9781108488082.}
 
-\bibitem{AlanThesis}
-\abntrefinfo{Edelman}{EDELMAN}{1984}
-{EDELMAN, A.
-\textbf{Eigenvalues and Condition Numbers of Random Matrices}.
-1984. Tese (Doutorado) --- Massachusetts Institute of Technology, 1984.}
-
 \bibitem{ChafaCoulombMeasure}
-\abntrefinfo{Chafaï, Hardy e Maïda}{CHAFAï; HARDY; MAïDA}{2018}
-{CHAFAï, D.; HARDY, A.; MAïDA, M. Concentration for coulomb gases and coulomb
-  transport inequalities.
+\abntrefinfo{Chafa{\"{I}}, Hardy e Maïda}{CHAFA{\"{I}}; HARDY; MAïDA}{2018}
+{CHAFA{\"{I}}, D.; HARDY, A.; MAïDA, M. Concentration for {C}oulomb gases and
+  {C}oulomb transport inequalities.
 \textbf{Journal of Functional Analysis}, Elsevier BV, v.~275, n.~6, p.
-  1447–1483, sep 2018.
-ISSN 0022-1236.}
+  1447–1483, 2018.}
 
 \bibitem{leimmolecular}
 \abntrefinfo{Leimkuhler e Matthews}{LEIMKUHLER; MATTHEWS}{2015}
 {LEIMKUHLER, B.; MATTHEWS, C. \textbf{Molecular Dynamics: With Deterministic
   and Stochastic Numerical Methods}. Cham, Suiça: Springer International
-  Publishing, 2015.  (Interdisciplinary Applied Mathematics).
+  Publishing, 2015.
 ISBN 9783319163758.}
 
 \bibitem{Chafa2018}
-\abntrefinfo{Chafaï e Ferr{\'{e}}}{CHAFAï; FERR{\'{E}}}{2018}
-{CHAFAï, D.; FERR{\'{E}}, G. Simulating coulomb and log-gases with hybrid
-  monte carlo algorithms.
-\textbf{Journal of Statistical Physics}, Springer Science and Business Media
-  {LLC}, v.~174, n.~3, p. 692--714, nov 2018.}
+\abntrefinfo{Chafa{\"{I}} e Ferr{\'{e}}}{CHAFA{\"{I}}; FERR{\'{E}}}{2018}
+{CHAFA{\"{I}}, D.; FERR{\'{E}}, G. Simulating {C}oulomb and log-gases with
+  {H}ybrid {M}onte {C}arlo algorithms.
+\textbf{Journal of Statistical Physics}, v.~174, n.~3, p. 692--714, 2018.}
 
 \bibitem{DPD}
-\abntrefinfo{Español e Warren}{ESPAñOL; WARREN}{1995}
-{ESPAñOL, P.; WARREN, P. Statistical mechanics of dissipative particle
+\abntrefinfo{Espa{Ñ}ol e Warren}{ESPA{Ñ}OL; WARREN}{1995}
+{ESPA{Ñ}OL, P.; WARREN, P. Statistical mechanics of dissipative particle
   dynamics.
-\textbf{Europhysics Letters}, v.~30, n.~4, p.~191, may 1995.}
+\textbf{Europhysics Letters}, v.~30, n.~4, p.~191, 1995.}
 
 \bibitem{Hoover}
 \abntrefinfo{Hoover}{HOOVER}{1985}
 {HOOVER, W.~G. Canonical dynamics: Equilibrium phase-space distributions.
-\textbf{Phys. Rev. A}, American Physical Society, v.~31, p. 1695--1697, Mar
-  1985.}
+\textbf{Physics Review A}, v.~31, p. 1695--1697, 1985.}
 
 \bibitem{Stoltz2018}
 \abntrefinfo{Stoltz e Trstanova}{STOLTZ; TRSTANOVA}{2018}
 {STOLTZ, G.; TRSTANOVA, Z. Langevin dynamics with general kinetic energies.
-\textbf{Multiscale Modeling \& amp; Simulation}, Society for Industrial \&
-  Applied Mathematics (SIAM), v.~16, n.~2, p. 777–806, jan 2018.
-ISSN 1540-3467.}
+\textbf{Multiscale Modeling \& amp; Simulation}, v.~16, n.~2, p. 777–806,
+  2018.}
 
 \bibitem{handbookmontecarlo}
 \abntrefinfo{Brooks \textit{et al.}}{BROOKS \textit{et al.}}{2011}
 {BROOKS, S. \textit{et al.} \textbf{Handbook of Markov Chain Monte Carlo}.
-  [\textit{S.l.: s.n.}]: CRC Press, 2011.  (ISSN).
+  Florida, USA: CRC Press, 2011.
 ISBN 9781420079425.}
 
 \bibitem{Tracy}
 \abntrefinfo{Tracy e Widom}{TRACY; WIDOM}{1970}
-{TRACY, C.; WIDOM, H. The distributions of random matrix theory and their
+{TRACY, C.; WIDOM, H. The distributions of {R}andom {M}atrix {T}heory and their
   applications. \textit{In}:  \textbf{New Trends in Mathematical Physics}.
   Dordrecht: Springer Netherlands, 1970. p. 753--765.
 ISBN 978-90-481-2809-9.}
 
 \bibitem{balogh2016orthogonal}
-\abntrefinfo{Balogh, Grava e Merzi}{BALOGH; GRAVA; MERZI}{2016}
+\abntrefinfo{Balogh, Grava e Merzi}{BALOGH; GRAVA; MERZI}{2017}
 {BALOGH, F.; GRAVA, T.; MERZI, D. Orthogonal polynomials for a class of
   measures with discrete rotational symmetries in the complex plane.
-2016.}
+\textbf{Constructive Approximation}, v.~46, p. 109–169, 2017.}
 
 \bibitem{Silva}
 \abntrefinfo{Bleher e Silva}{BLEHER; SILVA}{2016}
-{BLEHER, P.; SILVA, G. \textbf{The mother body phase transition in the normal
-  matrix model}. 2016.}
+{BLEHER, P.; SILVA, G. The mother body phase transition in the normal matrix
+  model.
+\textbf{Memoirs of the American Mathematical Society}, v.~265, 01 2016.}
 
 \end{thebibliography}

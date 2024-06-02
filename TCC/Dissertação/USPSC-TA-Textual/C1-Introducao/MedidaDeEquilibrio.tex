@@ -1,29 +1,32 @@
 \section{Medidas de Equilíbrio}
 \label{Seção: Medida}
-O conjunto de pontos no espaço de fase ou ainda, os microestados, determinam um \textit{ensemble estatístico}. De mesma forma, um conjunto de matrizes determina um ensemble em RMT. Podemos relacionar o conjunto de microestados dos autovalores $\{\vec{\lambda}\}$ com as configurações do sistema de $N$ partículas descrito na Seção \ref{Section: Gases de Coulomb}. Notando que tratamos do ensemble canônico, um argumento termodinâmico nos indica então que devemos minimizar a energia livre $E^V_{N,\beta} \propto \log{Z_{N, \beta}}.$
+O conjunto de pontos no espaço de fase ou ainda, os microestados, determinam um \textit{ensemble estatístico}. De mesma forma, um conjunto de matrizes pode determinar um ensemble em RMT. Podemos relacionar o conjunto de microestados dos autovalores $\{\vec{\lambda}\}$ com as configurações do sistema de $N$ partículas descrito na Seção \ref{Section: Gases de Coulomb}. Notando que tratamos do ensemble canônico, um argumento termodinâmico nos indica então que devemos minimizar a energia livre $E^V_{N,\beta} \propto - \log{Z_{N, \beta}}.$
 
-Consideraremos $\V$ sob condições tais que seja denominado um potencial admissível \cite{ChafaCoulombMeasure}. Com isso, se $\mu_{V}(\vec{\lambda})$ é medida de probabilidade no espaço das possíveis configurações de autovalores, $Z_{N, \beta}$ será finita e existirá $\mu_{V}^* = \arg \inf {\mathcal{H}_N(\vec{\lambda})}$ medida de equilíbrio única no limite termodinâmico $N \rightarrow \infty$. Para determinar a medida de equilíbrio de \ref{Equation: Medida Log V} \cite{RMT-firstcourse-Potters}, queremos satisfazer o sistema de equações
+Consideramos $\V$ sob condições tais que seja denominado um potencial admissível. \cite{ChafaCoulombMeasure} Com isso, se $\mu_{V}$ é medida de probabilidade no espaço das possíveis configurações de autovalores, $Z_{N, \beta}$ será finita e existirá $\mu_{V}^* = \arg \inf {\mathcal{H}_N}$ medida de equilíbrio única no limite termodinâmico $N \rightarrow \infty$. Para determinar a medida de equilíbrio da Distribuição \eqref{Equation: Medida Log V}, \cite{RMT-firstcourse-Potters} queremos satisfazer o sistema de equações
 \begin{equation}
-	\frac{\partial \mathcal{H}}{\partial \lambda_i} = 0 \ \implies \ \V'(\lambda_i) = \frac{1}{N} \sum_{1 = j \neq i}^{N} \frac{1}{\lambda_i - \lambda_j} \ \ \text{para} \ i = 1, \cdots, N.
+	\frac{\partial \mathcal{H}}{\partial \lambda_i} = 0 \ \implies \ \V'(\lambda_i) = \frac{1}{N} \sum_{\substack{j=1 \\ j \neq i}}^{N} \frac{1}{\lambda_i - \lambda_j} \ \ \text{para} \ i = 1, \cdots, N.
 	\label{Equação: Sistema minimizante}
 \end{equation} 
-Usaremos o denominado \textit{resolvent}. Considere a função complexa $$G_N(z) = \frac{1}{N} \Tr{\left(z\Id - \matriz{M}\right)^{-1}} = \frac{1}{N} \sum_{i=1}^{N} \frac{1}{z - \lambda_i},$$ onde $\matriz{M}$ é matriz aleatória com autovalores $\{\mmany{\lambda}{N}\}$. Note que $G_N(z)$ é uma função complexa aleatória com polos em $\lambda_i$. Não trivialmente, podemos reescrever \ref{Equação: Sistema minimizante} como $$\V'(z) G_N(z) - \Pi_N(z) = \frac{G_N^2(z)}{2} + \frac{G'_N(z)}{2N},$$ onde $$\Pi_N(z) = \frac{1}{N} \sum_{i = 1}^{N} \frac{\V'(z) - \V'(\lambda_i)}{z - \lambda_i}$$ é um polinômio de grau $\deg{\V'(z)} - 1 = k - 1$. Resolver explicitamente para $N$ constante pode não ser simples ou mesmo possível. Em geral, tomaremos a assintótica $N \to \infty$ de $G_N(z)$, nesse limite temos a transformada de Stieltjes\footnote{Também chamada transformada de Cauchy.}
+
+Usaremos o denominado resolvente. Considere a função complexa $$S^{\mu_V}_N(z) = \frac{1}{N} \Tr{\left(z\Id - \matriz{M}\right)^{-1}} = \frac{1}{N} \sum_{i=1}^{N} \frac{1}{z - \lambda_i},$$ onde $\matriz{M}$ é matriz aleatória com autovalores $\{\mmany{\lambda}{N}\}$ e $S^{\mu_V}_N(z)$ pode ser vista como função complexa aleatória com polo em todo $\lambda_i$. Não trivialmente, multiplicando ambos lados da Relação \eqref{Equação: Sistema minimizante} por $1/(z-\lambda_i)$ e somando sobre $i$, podemos reescrever a igualdade como $$\V'(z) S^{\mu_V}_N(z) - \Pi_N(z) = \frac{S^{\mu_V}_N (z)^2}{2} + \frac{S'^{\mu_V}_N(z)}{2N}, \ \ \text{com}\ \  \Pi_N(z) = \frac{1}{N} \sum_{i = 1}^{N} \frac{\V'(z) - \V'(\lambda_i)}{z - \lambda_i}$$ polinômio de grau $\deg{\V'(z)} - 1 = k - 1$. Resolver explicitamente para $N$ constante pode não ser simples ou mesmo possível. Em geral, tomaremos a assintótica $N \to \infty$ e, nesse limite, $S^{\mu_V}_N(z)$ é transformada de Stieltjes\footnote{Também chamada transformada de Cauchy.} $$S^{\mu_V}(z) = \int \frac{\mu^*_V(\lambda)}{z - \lambda} \dd \lambda.$$ Como consequência da fórmula de Sokhotski-Plemeji, é enunciado ainda a relação 
 \begin{equation}
-	S^{\mu_V}(z) = \int \frac{\mu^*_V(\lambda)}{z - \lambda} \dd \lambda= \V'(z) \pm \sqrt{\V'(z)^2 - 2 \Pi_{\infty}(z) }.
+	\mu^{*}_{V}(x) = \frac{1}{2\pi \ii} \left( S^{\mu_V}_{+} -  S^{\mu_V}_{-}\right) = \frac{1}{\pi} \lim_{\epsilon \to 0^+} \im{S^{\mu_V}_{+}(x + \ii\epsilon)}.
+	\label{Equation: p(lambda)}
+\end{equation} 
+
+Com isso, resolve-se a equação quadrática obtida com o limite para $S^{\mu_V}(z)$ tal que
+\begin{equation}
+	S^{\mu_V}(z) = \V'(z) \pm \sqrt{\V'(z)^2 - 2 \Pi(z) }
 	\label{Equation: Resolvent}
 \end{equation}
-com $$\Pi_{\infty}(z) = \int \frac{\V'(z) - \V'(\lambda)}{z - \lambda} \mu^*_V(\lambda) d\lambda.$$ Como consequência da fórmula de Sokhotski-Plemeji, é enunciado o resultado 
-\begin{equation}
-	\mu^{*}_{V}(x) = \frac{1}{2\pi \ii} \left( S^{\mu_V}_{+} -  S^{\mu_V}_{-}\right) = \frac{1}{\pi} \lim_{\epsilon \to 0^+} \Im{S^{\mu_V}_{+}(x + \ii\epsilon)}.
-	\label{Equation: p(lambda)}
-\end{equation}
-%Considere ainda um potencial $\V(x)$ convexo. Neste caso, tomamos naturalmente $\mu^*_V(x)$ não nula apenas em um intervalo $(\lambda_{-}, \lambda_{+})$. Sabemos que o comportamento não analítico surge da raiz quadrada, tal que se definirmos $\Df(z) := \V'(z)^2 - 2 \Pi_{\infty}(z)$ polinômio de grau $2k$, $\{\lambda_{-}, \lambda_{+}\}$ são suas raízes e o polinômio tem valor negativo em algum intervalo. Equivalentemente $D(z) = (z-\lambda_{-})(z - \lambda_{+}) \Qf^2(z),$ onde $\Qf(z)$ é polinômio de grau $k-1$. Com essas definições podemos escrever que, por \ref{Equation: p(lambda)},
+com $$\Pi(z) = \int \frac{\V'(z) - \V'(\lambda)}{z - \lambda} \mu^*_V(\lambda) d\lambda.$$ Assumindo $V$ potencial polinomial arbitrário, resta explicitar $\Pi(z)$ para encontrar a medida $\mu^{*}_{V}(x)$ pela Equação \eqref{Equation: p(lambda)}. Para isso, a expansão de $S^{\mu_V}(z)$ em $z \rightarrow \infty$ nos dará um sistema de equações auto consistentes para a determinação dos coeficientes de $\Pi$.
+%Considere ainda um potencial $\V(x)$ convexo. Neste caso, tomamos naturalmente $\mu^*_V(x)$ não nula apenas em um intervalo $(\lambda_{-}, \lambda_{+})$. Sabemos que o comportamento não analítico surge da raiz quadrada, tal que se definirmos $\Df(z) := \V'(z)^2 - 2 \Pi_{\infty}(z)$ polinômio de grau $2k$, $\{\lambda_{-}, \lambda_{+}\}$ são suas raízes e o polinômio tem valor negativo em algum intervalo. Equivalentemente $D(z) = (z-\lambda_{-})(z - \lambda_{+}) \Qf^2(z),$ onde $\Qf(z)$ é polinômio de grau $k-1$. Com essas definições podemos escrever que, por \eqref{Equation: p(lambda)},
 %\begin{equation}
 %	\mu^*_V(x) =\frac{\Qf(x)}{\pi} \sqrt{(\lambda_{+} - x)(x - \lambda_{-})}, \ \ \text{para} \ \  \lambda_{-} \leq x \leq \lambda_{+}.
 %\end{equation}
-Em geral, restaria para cada potencial, balancear o sistema de $k+2$ equações dada por
-\[
-\left( S^{\mu_{V}} - \V' \right)^2 = \left( V' \right)^2 - 2 \Pi_{\infty}.
-\]
+%Em geral, restaria para cada potencial, balancear o sistema de $k+2$ equações dada por
+%\[
+%\left( S^{\mu_{V}} - \V' \right)^2 = \left( V' \right)^2 - 2 \Pi.
+%\]
 
 
