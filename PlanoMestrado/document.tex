@@ -1,0 +1,258 @@
+%% Copyright 2019 Matheus H. J. Saldanha <mhjsaldanha@gmail.com>
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+
+\documentclass[12pt,a4paper]{article}
+
+% Pacotes para o português.
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}     % Comando \includegraphics
+\usepackage{xcolor}       % Comando de cores \textcolor
+\usepackage{indentfirst}  % Indenta o primeiro parágrafo de cada seção
+\usepackage{url}          % Comandos \url e \href
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry} % Define as margens do documento
+\usepackage{multirow}     % Permite criar tabelas com uma célula ocupando várias linhas
+\usepackage{amssymb}      % Símbolos matemáticos
+\usepackage{amsmath}      % Ambientes para escrever fórmulas, \begin{align} por exemplo.
+\usepackage{caption}      % Para definir o estilo das legendas de figuras e tabelas.
+\usepackage{setspace}     % Para definir espaçamento entre linhas. (\onehalfspacing, \singlespacing, \doublespacing)
+\usepackage{breakcites}   % Para permitir quebra de linha no meio de citações.
+%\usepackage{times}        % Fonte Times New Roman
+\usepackage{lipsum}       % Para gerar texto temporário. Exemplo: \lipsum \lipsum[1] \lipsum[4-5].
+\usepackage{inconsolata}  % Fonte boa para códigos e URLs. Use \texttt{}
+\usepackage{hyperref}     % Faz os links ficarem azuis e clicáveis. Facilita a navegação pelo PDF.
+
+\makeatletter
+\hypersetup{
+	pdfkeywords={research project},
+	colorlinks=true,       		% false: boxed links; true: colored links
+	linkcolor=blue,          	% color of internal links
+	citecolor=blue,        		% color of links to bibliography
+	filecolor=magenta,      	% color of file links
+	urlcolor=blue,
+	bookmarksdepth=4,
+}
+\makeatother
+
+\makeatletter
+\renewcommand\tableofcontents{%         % Redefine table of contents to our taste
+    \section*{\huge\centering\contentsname
+        \@mkboth{%
+           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
+           \vspace{24pt}%
+    \@starttoc{toc}%
+    \newpage%
+}
+
+% Comando para marcar o texto para revisão.
+\newcommand{\rev}[1]{\textcolor{red}{#1}}
+
+% Permite escrever aspas normais "text" em vez de ``text''
+\usepackage[autostyle]{csquotes}
+\MakeOuterQuote{"}
+
+
+\newcommand\underrel[2]{\mathrel{\mathop{#2}\limits_{#1}}}
+
+\newcommand{\matriz}[1]{\hat#1}
+
+\newcommand{\many}[2]{$#1_1, #1_2, \dots, #1_#2$}
+
+\newcommand{\cmany}[3]{$#1_1 #3 #1_2 #3 \dots #3 #1_#2$}
+
+\newcommand{\mmany}[2]{ #1_1, #1_2, \dots, #1_#2 }
+
+\newcommand{\mcmany}[3]{#1_1 #3 #1_2 #3 \dots #3 #1_#2}
+
+\newcommand{\set}[1]{\{#1\}}
+
+\newcommand{\cjgt}[1]{\overline{#1}}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\ai}{Ai}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\Df}{D}
+\DeclareMathOperator{\Ee}{E}
+\DeclareMathOperator{\h}{h_1}
+\DeclareMathOperator{\f}{f}
+\DeclareMathOperator{\U}{U}
+\DeclareMathOperator{\W}{W}
+\DeclareMathOperator{\K}{K}
+\DeclareMathOperator{\Hf}{\mathcal{H}}
+\DeclareMathOperator{\Qf}{Q}
+\DeclareMathOperator{\Gl}{\mathcal{L}}
+\DeclareMathOperator{\g}{g}
+\DeclareMathOperator{\V}{V}
+\DeclareMathOperator{\Glin}{GL}
+\newcommand{\iu}{\mathrm{i}\mkern1mu}
+\renewcommand{\Im}{\mathop{\textrm Im}}
+\DeclareMathOperator{\ee}{e}
+\DeclareMathOperator{\supp}{supp}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\J}{J} %Jacobiano
+\newcommand{\Id}{\mathbb{1}}
+\newcommand{\p}{p} %medida
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Se}{\mathbb{S}}
+\newcommand{\He}{\mathbb{H}}
+\newcommand{\boh}{\mathit{o}}
+\newcommand{\Boh}{\mathcal{O}}
+\newcommand{\bbp}{\bm K_{\mathrm{BBP}}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand*{\deff}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+			\hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+	=}
+\newcommand*{\revdeff}{=\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+			\hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+}
+
+
+% MATH DECLARATIONS
+\newtheorem{lemma}{Lema}[section]
+\newtheorem{thm}[lemma]{Teorema}
+\newtheorem{claim}[lemma]{Afirmação}
+\newtheorem{cor}[lemma]{Corolário}
+\newtheorem{definition}[lemma]{Definição}
+\newtheorem{conjecture}[lemma]{Conjectura}
+\newtheorem{prop}[lemma]{Proposição}
+\newtheorem{assumption}[lemma]{Assumpção}
+\numberwithin{equation}{section} %numeracao dentro de secoes
+
+% PROOF ENV
+\makeatletter
+\newenvironment{proof}[1][Demonstração]{\par
+	\pushQED{\qed}%
+	\normalfont \topsep6\p@\@plus6\p@\relax
+	\trivlist
+	\item\relax
+	{\itshape
+		#1\@addpunct{.}}\hspace\labelsep\ignorespaces
+}{%
+	\popQED\endtrivlist\@endpefalse
+}
+\makeatother
+\newcommand{\dd}{\mathrm{d}}
+%%%%%
+
+\begin{document}
+
+\doublespacing
+
+\begin{titlepage}
+    \begin{center}
+        {\large \sc Universidade de São Paulo} \\
+        {\large \sc Fundação de Amparo à Pesquisa do Estado de São Paulo}\\
+        {\large \sc Proposta de Projeto de Mestrado}
+        
+        \vspace{1cm}
+
+        % % Título.
+        {\Large \bfseries Assintóticas de Funções Partição em Gases de Coulomb} \\
+        \vspace{1cm}
+		{\small \sc Proposta vinculada ao Projeto Jovem Pesquisador entitulado} \\
+		{\small \sc Análise Assintótica de Sistemas de Partículas e Matrizes Aleatórias} \\
+		\vspace{1cm}
+
+        % % Participantes
+        {\small \sc \textbf{Proponente/beneficiário}: João Victor Alcantara Pimenta}\\
+        {\small \sc \textbf{Orientador:} Guilherme L. F. Silva}\\[0.5cm]
+        
+        \includegraphics[scale=0.30]{Assets/CuteCircleWhite2}
+        
+    \end{center}
+
+    \vfill
+
+    \begin{center}
+        {\bf \large Resumo} \\[1em]
+    \end{center}
+    \input{text/resumo.tex}
+
+    % Data
+    % \begin{center}
+    %     \makeatletter
+    %     São Carlos, SP \\
+    %     \@date
+    %     \makeatother
+    % \end{center}
+    
+\end{titlepage}
+
+\begin{titlepage}
+    \begin{center}
+        {\large \sc University of São Paulo} \\
+		{\large \sc São Paulo Research Foundation}\\
+    	{\large \sc Proposal of Masters Project}
+    	
+    	\vspace{1cm}
+    	
+    	% % Título.
+    	{\Large \bfseries Asymptotics of Partition Functions on Coulomb Gases} \\
+    	\vspace{1cm}
+    	{\small \sc Proposal vinculated to the "Jovem Pesquisador" research proposal entitled} \\
+    	{\small \sc Asymptotic Analysis of Interacting Particle Systems and Random Matrix Theory} \\
+    	\vspace{1cm}
+    	
+    	% % Participantes
+    	{\small \sc \textbf{Principal Investigator/beneficiary}: João Victor Alcantara Pimenta}\\
+    	{\small \sc \textbf{Supervisor:} Guilherme L. F. Silva}\\[0.5cm]
+    	
+    	\includegraphics[scale=0.35]{Assets/CuteCircleWhite}
+    	
+    \end{center}
+
+    \vfill
+
+    \begin{center}
+        {\bf \large Abstract} \\[1em]
+    \end{center}
+    \input{text/abstract.tex}
+    
+\end{titlepage}
+
+
+% \noindent{}
+% \newpage
+% \pagestyle{empty} % Não numera a página
+% \tableofcontents
+% \newpage
+\setcounter{page}{1}
+\pagestyle{plain} % Agora passa a numerar as páginas
+
+\section{Introduction}
+\label{section:introducao}
+\input{text/introducao.tex}
+
+\section{Main Goals and Methodology}
+\label{section:objetivos}
+\input{text/objetivos.tex}
+
+\section{Necessary Background}
+\label{section:Materiais&Metodos}
+\input{text/materiaisMetodos.tex}
+
+\section{Brief Schedule}
+\label{section:Planos&Cronograma}
+\input{text/planoCronograma.tex}
+
+\bibliographystyle{apalike}
+\bibliography{bibliography.bib}
+
+\end{document}

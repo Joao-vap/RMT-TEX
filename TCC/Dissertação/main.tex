@@ -113,7 +113,6 @@ brazil				% o último idioma é o principal do documento
 \usepackage[absolute]{textpos} % Pacote permite o posicionamento do texto
 \usepackage{eso-pic}           % Pacote para incluir imagem de fundo
 \usepackage{makebox}  
-\usepackage{amsmath}
 \usepackage[superscript]{cite} % agrupa citações numéricas consecutivas
 \usepackage[num, abnt-emphasize=bf, abnt-thesis-year=both, abnt-repeated-author-omit=no, abnt-last-names=abnt, abnt-etal-cite, abnt-etal-list=3, abnt-etal-text=it, abnt-and-type=e, abnt-doi=doi, abnt-url-package=none, abnt-verbatim-entry=no]{abntex2cite} 
 \bibliographystyle{USPSC-classe/abntex2-num-USPSC}
@@ -138,6 +137,7 @@ brazil				% o último idioma é o principal do documento
 \usepackage{physics}
 \usepackage{bbold}
 \usepackage{subcaption}
+\usepackage{mathtools}
 
 % ----
 % Compatibilização com a ABNT NBR 6023:2018
@@ -229,6 +229,7 @@ brazil				% o último idioma é o principal do documento
 \DeclareMathOperator{\Gl}{\mathcal{L}}
 \DeclareMathOperator{\g}{g}
 \DeclareMathOperator{\V}{V}
+\DeclareMathOperator{\Glin}{GL}
 \newcommand{\iu}{\mathrm{i}\mkern1mu}
 \renewcommand{\Im}{\mathop{\textrm Im}}
 \DeclareMathOperator{\ee}{e}
@@ -241,7 +242,7 @@ brazil				% o último idioma é o principal do documento
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\J}{J} %Jacobiano
 \newcommand{\Id}{\mathbb{1}}
-\newcommand{\p}{p} %medida
+\newcommand{\p}{\mathcal{P}} %medida
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\Se}{\mathbb{S}}
 \newcommand{\He}{\mathbb{H}}

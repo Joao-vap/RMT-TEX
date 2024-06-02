@@ -1,30 +1,16 @@
 \section{Gases de Coulomb}
 \label{Section: Gases de Coulomb}
 
-Sob as devidas condições, o gás de coulomb $\p_N$ \cite{ChafaCoulombMeasure} é a medida de probabilidade de Boltzmann-Gibbs dada em $(R^d)^N$ por 
+Sob as devidas condições, o Gás de Coulomb $\p_N$ é medida de probabilidade de Boltzmann-Gibbs dada em $(\R^d)^N$. \cite{ChafaCoulombMeasure} A medida $\p_N$ modela um gás interagente de partículas indistinguíveis sob potencial externo nas posições $\mmany{x}{N} \in \Se$ de dimensão $d$ no espaço ambiente $\R^n$. A medida é dada por 
 \begin{equation}
-	\dd \p_N(\mmany{x}{N}) = \frac{e^{-\beta N^2 \Hf_N(\mmany{x}{N})}}{Z_{N,\beta}} \mcmany{\dd x}{N}{},
+	\dd \p_N(\mmany{x}{N}) = \frac{e^{-\beta N^2 \Hf_N(\vec{x})}}{Z_{N,\beta}} \mcmany{\dd x}{N}{},
 	\label{Equação: Medida Gas de Coulomb}
 \end{equation}
-onde $\Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x) + \frac{1}{2N^2} \sum_{i \neq j} \g(x_i - x_j)$ é usualmente chamado hamiltoniano ou energia do sistema.
+onde $$\Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x) + \frac{1}{2N^2} \sum_{i \neq j}^{N} \g(x_i - x_j)$$ é usualmente chamado Hamiltoniano\footnote{Note que $\p_N$ é um modelo de interações estáticas e não há campos magnéticos considerados.} ou energia do sistema. $\V \colon \Se \mapsto \R$ é potencial externo e $\g \colon \Se \mapsto (-\infty, \infty]$ núcleo de interação coulombiana solução da equação de Poisson dada por $- \nabla g(\vec{x}) = c_n\delta_0$. Além disso, $\beta N^2$ é chamado temperatura inversa. Tomaremos $V$, para que valha a Definição \eqref{Equação: Medida Gas de Coulomb}, tal que a constante de normalização (função partição) $Z_{N, \beta}$ seja finita para todo $N$ e o suporte da medida seja compacto.
 
-A medida $\p_N$ modela um gás de partículas indistinguíveis com carga nas posições $\mmany{x}{N} \in \Se$ de dimensão $d$ em $\R^n$ \textit{ambient space}. As partículas estão sujeitas a um potencial externo $\V \colon \Se \mapsto \R$ e interagem por $\g \colon \Se \mapsto (-\infty, \infty]$. A temperatura inversa é $\beta N^2$. Assumiremos, para que valha a definição \ref{Equação: Medida Gas de Coulomb}, que $V, \ \g \ \text{e} \ \beta$ são tais que a constante de normalização (função partição) $Z_{N, \beta} < \infty \ \forall \ N$\footnote{Note que $\p_N$ é um modelo de interações estáticas e não há campos magnéticos considerados.}. Tome $\R^n$ com $n \geq 2$, sabemos que, para $x \neq 0$ o núcleo de interação coulombiana (função de Green) vale $$
-	g(\vec{x}) =
-	\begin{cases}
-			\log \frac{1}{|\vec{x}|} \ \ \text{se} \ n = 2,\\
-			\frac{1}{|x|^{n-2}} \ \ \text{se} \ n \geq 3.
-	\end{cases}
-$$ onde $g$ é solução da equação de Poisson dada por $$
-	- \nabla g(\vec{x}) = c\delta_0 \ \ \text{com} \ c = 
-	\begin{cases}
-		2\pi \ \ \text{para} \ n = 2,\\
-		(n-2) |S^{n-1}| \ \ \text{para} \ n \geq 3.
-	\end{cases}
-$$
-
-Se lembramos da expressão \ref{Equation: medida Gaussian}, perceberemos que, para o devido $\V(x)$, podemos tomar $d=1$ e $n = 2$ para recuperar a medida dos ensembles gaussianos 
+Se lembrarmos da Expressão \eqref{Equation: medida Gaussian}, perceberemos que, para o devido $\V \colon \R \rightarrow \R$, podemos tomar $d=1$ e $n = 2$ para recuperar a medida dos ensembles gaussianos 
 \begin{equation}
-	\p_N(\vec{x}) = \frac{e^{-\beta_N \Hf_N(\vec{x})}}{Z_{N,\beta}}, \ \ \Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x_i) + \frac{1}{N^2} \sum_{i < j} \log{\frac{1}{|x_i - x_j|}}.
+	\p_N(\vec{x}) = \frac{e^{-\beta_N \Hf_N(\vec{x})}}{Z_{N,\beta}}, \ \ \Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x_i) + \frac{1}{N^2} \sum_{i < j}^{N} \log{\frac{1}{|x_i - x_j|}}.
 	\label{Equation: Medida Log V}
 \end{equation}
-Estamos tratando de partículas no plano confinadas à uma reta. Para algum potencial arbitrário, além da devida escolha de $n$ e $d$, cairemos em outros ensembles de matrizes.
+Estamos tratando de partículas no plano confinadas à reta, neste caso. Contudo, a medida dos gases aceita uma extensão natural para potenciais admissíveis arbitrários. Junto à escolha adequada de $n$ e $d$ estaremos lidando, ao explorar estas extensões, com a medida de outros diversos ensembles de matrizes aleatórias.

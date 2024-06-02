@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.23)  16 MAR 2024 12:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.8)  27 APR 2024 10:10
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1075,8 +1075,8 @@ Package rerunfilecheck Info: File `principal.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  27871 strings out of 478287
- 525623 string characters out of 5849288
- 857920 words of memory out of 5000000
+ 525623 string characters out of 5849290
+ 857921 words of memory out of 5000000
  45476 multiletter control sequences out of 15000+600000
  487541 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1112,7 +1112,7 @@ ier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on principal.pdf (18 pages, 1443414 bytes).
+Output written on principal.pdf (18 pages, 1443411 bytes).
 PDF statistics:
  472 PDF objects out of 1000 (max. 8388607)
  364 compressed objects within 4 object streams

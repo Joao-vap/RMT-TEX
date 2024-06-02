@@ -1,0 +1,86 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.6 }
+
+\bibitem{Chafa2018}
+\abntrefinfo{Chafaï e Ferr{\'{e}}}{CHAFAï; FERR{\'{E}}}{2018}
+{CHAFAï, D.; FERR{\'{E}}, G. Simulating coulomb and log-gases with hybrid
+  monte carlo algorithms.
+\emph{Journal of Statistical Physics}, Springer Science and Business Media
+  {LLC}, v.~174, n.~3, p. 692--714, nov 2018.}
+
+\bibitem{PoterRosen}
+\abntrefinfo{Rosenzweig e Porter}{ROSENZWEIG; PORTER}{1960}
+{ROSENZWEIG, N.; PORTER, C.~E. "repulsion of energy levels" in complex atomic
+  spectra.
+\emph{Phys. Rev.}, American Physical Society, v.~120, p. 1698--1714, Dec 1960.}
+
+\bibitem{MehtaGaudin}
+\abntrefinfo{Mehta e Gaudin}{MEHTA; GAUDIN}{1960}
+{MEHTA, M.; GAUDIN, M. On the density of eigenvalues of a random matriz.
+\emph{Nuclear Physics}, v.~18, p. 420--427, 1960.
+ISSN 0029-5582.}
+
+\bibitem{Dyson}
+\abntrefinfo{Dyson}{DYSON}{1962}
+{DYSON, F.~J. Statistical theory of the energy levels of complex systems. i.
+\emph{Journal of Mathematical Physics}, v.~3, n.~1, p. 140--156, 01 1962.
+ISSN 0022-2488.}
+
+\bibitem{RMT-firstcourse-Potters}
+\abntrefinfo{Potters e Bouchaud}{POTTERS; BOUCHAUD}{2020}
+{POTTERS, M.; BOUCHAUD, J. \emph{A First Course in Random matriz Theory: for
+  Physicists, Engineers and Data Scientists}. Cambridge, Inglaterra: Cambridge
+  University Press, 2020.
+ISBN 9781108488082.}
+
+\bibitem{AlanThesis}
+\abntrefinfo{Edelman}{EDELMAN}{1984}
+{EDELMAN, A.
+\emph{Eigenvalues and Condition Numbers of Random Matrices}.
+Tese (Doutorado) --- Massachusetts Institute of Technology, 1984.}
+
+\bibitem{ChafaCoulombMeasure}
+\abntrefinfo{Chafaï, Hardy e Maïda}{CHAFAï; HARDY; MAïDA}{2018}
+{CHAFAï, D.; HARDY, A.; MAïDA, M. Concentration for coulomb gases and coulomb
+  transport inequalities.
+\emph{Journal of Functional Analysis}, Elsevier BV, v.~275, n.~6, p.
+  1447–1483, sep 2018.
+ISSN 0022-1236.}
+
+\bibitem{leimmolecular}
+\abntrefinfo{Leimkuhler e Matthews}{LEIMKUHLER; MATTHEWS}{2015}
+{LEIMKUHLER, B.; MATTHEWS, C. \emph{Molecular Dynamics: With Deterministic and
+  Stochastic Numerical Methods}. Cham, Suiça: Springer International
+  Publishing, 2015.  (Interdisciplinary Applied Mathematics).
+ISBN 9783319163758.}
+
+\bibitem{Verlet}
+\abntrefinfo{Verlet}{VERLET}{1967}
+{VERLET, L. Computer "experiments" on classical fluids. i. thermodynamical
+  properties of lennard-jones molecules.
+\emph{Phys. Rev.}, American Physical Society, v.~159, p. 98--103, Jul 1967.}
+
+\bibitem{handbookmontecarlo}
+\abntrefinfo{Brooks et al.}{BROOKS et al.}{2011}
+{BROOKS, S. et al. \emph{Handbook of Markov Chain Monte Carlo}. [S.l.]: CRC
+  Press, 2011.  (ISSN).
+ISBN 9781420079425.}
+
+\bibitem{Tracy}
+\abntrefinfo{Tracy e Widom}{TRACY; WIDOM}{1970}
+{TRACY, C.; WIDOM, H. The distributions of random matrix theory and their
+  applications. In:  \emph{New Trends in Mathematical Physics}. Dordrecht:
+  Springer Netherlands, 1970. p. 753--765.
+ISBN 978-90-481-2809-9.}
+
+\bibitem{balogh2016orthogonal}
+\abntrefinfo{Balogh, Grava e Merzi}{BALOGH; GRAVA; MERZI}{2016}
+{BALOGH, F.; GRAVA, T.; MERZI, D. Orthogonal polynomials for a class of
+  measures with discrete rotational symmetries in the complex plane.
+2016.}
+
+\end{thebibliography}

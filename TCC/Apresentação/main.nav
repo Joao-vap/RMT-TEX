@@ -11,83 +11,93 @@
 \headcommand {\beamer@subsectionentry {0}{1}{1}{4}{Porquê RMT}}
 \headcommand {\slideentry {1}{1}{1}{4/6}{Porquê RMT}{0}}
 \headcommand {\beamer@framepages {4}{6}}
-\headcommand {\slideentry {1}{1}{2}{7/7}{Porquê RMT}{0}}
-\headcommand {\beamer@framepages {7}{7}}
-\headcommand {\slideentry {1}{1}{3}{8/8}{Porquê RMT}{0}}
-\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {1}{1}{2}{7/8}{Porquê RMT}{0}}
+\headcommand {\beamer@framepages {7}{8}}
 \headcommand {\beamer@subsectionpages {4}{8}}
-\headcommand {\beamer@subsectionentry {0}{1}{2}{9}{Ensembles Gaussianos}}
-\headcommand {\slideentry {1}{2}{1}{9/9}{Ensembles Gaussianos}{0}}
-\headcommand {\beamer@framepages {9}{9}}
-\headcommand {\slideentry {1}{2}{2}{10/13}{Ensembles Gaussianos}{0}}
-\headcommand {\beamer@framepages {10}{13}}
-\headcommand {\beamer@subsectionpages {9}{13}}
-\headcommand {\beamer@subsectionentry {0}{1}{3}{14}{Gases de Coulomb}}
-\headcommand {\slideentry {1}{3}{1}{14/14}{Gases de Coulomb}{0}}
-\headcommand {\beamer@framepages {14}{14}}
-\headcommand {\slideentry {1}{3}{2}{15/18}{Gases de Coulomb}{0}}
-\headcommand {\beamer@framepages {15}{18}}
-\headcommand {\slideentry {1}{3}{3}{19/20}{Gases de Coulomb}{0}}
-\headcommand {\beamer@framepages {19}{20}}
-\headcommand {\beamer@subsectionpages {14}{20}}
-\headcommand {\beamer@subsectionentry {0}{1}{4}{21}{Medidas de Equilíbrio}}
-\headcommand {\slideentry {1}{4}{1}{21/25}{Medidas de Equilíbrio}{0}}
-\headcommand {\beamer@framepages {21}{25}}
-\headcommand {\slideentry {1}{4}{2}{26/28}{Medidas de Equilíbrio}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{9}{Medida Invariante}}
+\headcommand {\slideentry {1}{2}{1}{9/24}{Medida Invariante}{0}}
+\headcommand {\beamer@framepages {9}{24}}
+\headcommand {\beamer@subsectionpages {9}{24}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{25}{Ensembles Gaussianos}}
+\headcommand {\slideentry {1}{3}{1}{25/25}{Ensembles Gaussianos}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\slideentry {1}{3}{2}{26/28}{Ensembles Gaussianos}{0}}
 \headcommand {\beamer@framepages {26}{28}}
-\headcommand {\beamer@sectionpages {3}{28}}
-\headcommand {\beamer@subsectionpages {21}{28}}
-\headcommand {\sectionentry {2}{Simulação de Partículas}{29}{Simulação de Partículas}{0}}
-\headcommand {\slideentry {2}{0}{1}{29/29}{}{0}}
+\headcommand {\beamer@subsectionpages {25}{28}}
+\headcommand {\beamer@subsectionentry {0}{1}{4}{29}{Gases de Coulomb}}
+\headcommand {\slideentry {1}{4}{1}{29/29}{Gases de Coulomb}{0}}
 \headcommand {\beamer@framepages {29}{29}}
-\headcommand {\slideentry {2}{0}{2}{30/32}{}{0}}
-\headcommand {\beamer@framepages {30}{32}}
-\headcommand {\beamer@subsectionpages {29}{32}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{33}{Dinâmica de Langevin Monte Carlo}}
-\headcommand {\slideentry {2}{1}{1}{33/35}{Dinâmica de Langevin Monte Carlo}{0}}
-\headcommand {\beamer@framepages {33}{35}}
-\headcommand {\beamer@subsectionpages {33}{35}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{36}{Integração Numérica - Verlet}}
-\headcommand {\slideentry {2}{2}{1}{36/36}{Integração Numérica - Verlet}{0}}
-\headcommand {\beamer@framepages {36}{36}}
-\headcommand {\slideentry {2}{2}{2}{37/37}{Integração Numérica - Verlet}{0}}
-\headcommand {\beamer@framepages {37}{37}}
-\headcommand {\beamer@subsectionpages {36}{37}}
-\headcommand {\beamer@subsectionentry {0}{2}{3}{38}{Passo de Metropolis}}
-\headcommand {\slideentry {2}{3}{1}{38/38}{Passo de Metropolis}{0}}
-\headcommand {\beamer@framepages {38}{38}}
-\headcommand {\beamer@sectionpages {29}{38}}
-\headcommand {\beamer@subsectionpages {38}{38}}
-\headcommand {\sectionentry {3}{Implementação e Resultados}{39}{Implementação e Resultados}{0}}
-\headcommand {\slideentry {3}{0}{1}{39/39}{}{0}}
-\headcommand {\beamer@framepages {39}{39}}
-\headcommand {\beamer@subsectionpages {39}{39}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{40}{Implementação}}
-\headcommand {\slideentry {3}{1}{1}{40/43}{Implementação}{0}}
-\headcommand {\beamer@framepages {40}{43}}
-\headcommand {\slideentry {3}{1}{2}{44/44}{Implementação}{0}}
-\headcommand {\beamer@framepages {44}{44}}
-\headcommand {\beamer@subsectionpages {40}{44}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{45}{Resultados}}
-\headcommand {\slideentry {3}{2}{1}{45/45}{Resultados}{0}}
-\headcommand {\beamer@framepages {45}{45}}
-\headcommand {\slideentry {3}{2}{2}{46/46}{Resultados}{0}}
-\headcommand {\beamer@framepages {46}{46}}
-\headcommand {\slideentry {3}{2}{3}{47/47}{Resultados}{0}}
+\headcommand {\slideentry {1}{4}{2}{30/33}{Gases de Coulomb}{0}}
+\headcommand {\beamer@framepages {30}{33}}
+\headcommand {\slideentry {1}{4}{3}{34/35}{Gases de Coulomb}{0}}
+\headcommand {\beamer@framepages {34}{35}}
+\headcommand {\beamer@subsectionpages {29}{35}}
+\headcommand {\beamer@subsectionentry {0}{1}{5}{36}{Medidas de Equilíbrio}}
+\headcommand {\slideentry {1}{5}{1}{36/37}{Medidas de Equilíbrio}{0}}
+\headcommand {\beamer@framepages {36}{37}}
+\headcommand {\slideentry {1}{5}{2}{38/40}{Medidas de Equilíbrio}{0}}
+\headcommand {\beamer@framepages {38}{40}}
+\headcommand {\beamer@sectionpages {3}{40}}
+\headcommand {\beamer@subsectionpages {36}{40}}
+\headcommand {\sectionentry {2}{Simulação de Partículas}{41}{Simulação de Partículas}{0}}
+\headcommand {\slideentry {2}{0}{1}{41/41}{}{0}}
+\headcommand {\beamer@framepages {41}{41}}
+\headcommand {\slideentry {2}{0}{2}{42/43}{}{0}}
+\headcommand {\beamer@framepages {42}{43}}
+\headcommand {\beamer@subsectionpages {41}{43}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{44}{Dinâmica de Langevin Monte Carlo}}
+\headcommand {\slideentry {2}{1}{1}{44/46}{Dinâmica de Langevin Monte Carlo}{0}}
+\headcommand {\beamer@framepages {44}{46}}
+\headcommand {\beamer@subsectionpages {44}{46}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{47}{Integração Numérica - Verlet}}
+\headcommand {\slideentry {2}{2}{1}{47/47}{Integração Numérica - Verlet}{0}}
 \headcommand {\beamer@framepages {47}{47}}
-\headcommand {\slideentry {3}{2}{4}{48/48}{Resultados}{0}}
+\headcommand {\slideentry {2}{2}{2}{48/48}{Integração Numérica - Verlet}{0}}
 \headcommand {\beamer@framepages {48}{48}}
-\headcommand {\slideentry {3}{2}{5}{49/49}{Resultados}{0}}
+\headcommand {\beamer@subsectionpages {47}{48}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{49}{Passo de Metropolis}}
+\headcommand {\slideentry {2}{3}{1}{49/49}{Passo de Metropolis}{0}}
 \headcommand {\beamer@framepages {49}{49}}
-\headcommand {\beamer@sectionpages {39}{49}}
-\headcommand {\beamer@subsectionpages {45}{49}}
-\headcommand {\sectionentry {4}{Conclusão}{50}{Conclusão}{0}}
-\headcommand {\slideentry {4}{0}{1}{50/50}{}{0}}
+\headcommand {\beamer@sectionpages {41}{49}}
+\headcommand {\beamer@subsectionpages {49}{49}}
+\headcommand {\sectionentry {3}{Implementação e Resultados}{50}{Implementação e Resultados}{0}}
+\headcommand {\slideentry {3}{0}{1}{50/50}{}{0}}
 \headcommand {\beamer@framepages {50}{50}}
-\headcommand {\slideentry {4}{0}{2}{51/54}{}{0}}
+\headcommand {\beamer@subsectionpages {50}{50}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{51}{Implementação}}
+\headcommand {\slideentry {3}{1}{1}{51/54}{Implementação}{0}}
 \headcommand {\beamer@framepages {51}{54}}
-\headcommand {\beamer@partpages {1}{54}}
-\headcommand {\beamer@subsectionpages {50}{54}}
-\headcommand {\beamer@sectionpages {50}{54}}
-\headcommand {\beamer@documentpages {54}}
-\headcommand {\gdef \inserttotalframenumber {29}}
+\headcommand {\slideentry {3}{1}{2}{55/55}{Implementação}{0}}
+\headcommand {\beamer@framepages {55}{55}}
+\headcommand {\beamer@subsectionpages {51}{55}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{56}{Resultados}}
+\headcommand {\slideentry {3}{2}{1}{56/57}{Resultados}{0}}
+\headcommand {\beamer@framepages {56}{57}}
+\headcommand {\slideentry {3}{2}{2}{58/59}{Resultados}{0}}
+\headcommand {\beamer@framepages {58}{59}}
+\headcommand {\slideentry {3}{2}{3}{60/61}{Resultados}{0}}
+\headcommand {\beamer@framepages {60}{61}}
+\headcommand {\slideentry {3}{2}{4}{62/63}{Resultados}{0}}
+\headcommand {\beamer@framepages {62}{63}}
+\headcommand {\slideentry {3}{2}{5}{64/67}{Resultados}{0}}
+\headcommand {\beamer@framepages {64}{67}}
+\headcommand {\beamer@sectionpages {50}{67}}
+\headcommand {\beamer@subsectionpages {56}{67}}
+\headcommand {\sectionentry {4}{Conclusão}{68}{Conclusão}{0}}
+\headcommand {\slideentry {4}{0}{1}{68/68}{}{0}}
+\headcommand {\beamer@framepages {68}{68}}
+\headcommand {\slideentry {4}{0}{2}{69/72}{}{0}}
+\headcommand {\beamer@framepages {69}{72}}
+\headcommand {\slideentry {4}{0}{3}{73/73}{}{0}}
+\headcommand {\beamer@framepages {73}{73}}
+\headcommand {\slideentry {4}{0}{3}{73/74}{}{0}}
+\headcommand {\beamer@framepages {73}{74}}
+\headcommand {\slideentry {4}{0}{3}{73/75}{}{0}}
+\headcommand {\beamer@framepages {73}{75}}
+\headcommand {\slideentry {4}{0}{4}{76/76}{}{0}}
+\headcommand {\beamer@framepages {76}{76}}
+\headcommand {\beamer@partpages {1}{76}}
+\headcommand {\beamer@subsectionpages {68}{76}}
+\headcommand {\beamer@sectionpages {68}{76}}
+\headcommand {\beamer@documentpages {76}}
+\headcommand {\gdef \inserttotalframenumber {33}}
