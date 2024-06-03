@@ -1,5 +1,11 @@
 \documentclass[12pt]{report}
-\usepackage[a4paper]{geometry}
+\usepackage[a4paper,
+bindingoffset=0.2in,
+left=0.1in,
+right=0.1in,
+top=0.5in,
+bottom=0.5in,
+footskip=.25in]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[english,portuguese]{babel}
 \usepackage[myheadings]{fullpage}
@@ -18,6 +24,7 @@
 \usepackage{amsfonts}
 \usepackage{bbm, dsfont}
 \usepackage{tikz}
+\usepackage{mathtools}
 %\usetikzlibrary{positioning}
 \usetikzlibrary{shapes,positioning,calc,quotes}
 \tikzstyle{subrotina} = [rectangle, draw,text centered, minimum width=5em, inner sep=5pt]
@@ -244,12 +251,13 @@ Durante o período referente à pesquisa o aluno realizou as seguintes matérias
 
 \section{Participação em eventos científicos}\label{chp:particEvento}
 
-Durante o período de 13 de Janeiro à 24 de Fevereiro o bolsista participou do evento 'Jornadas de Pesquisa em Matemática' realizado pelo Instituto de Ciências Matemáticas e de Computação (ICMC - USP). Durante este evento foi realizado pesquisa original em simulações de caminhos aleatórios, que rendeu o relatório de nome 'Baralhos e passeios aleatórios', submetido para a FAPESP e disponível em anexo.
+Durante o período de 13 de Janeiro à 24 de Fevereiro o bolsista participou do evento ``Jornadas de Pesquisa em Matemática'' realizado pelo Instituto de Ciências Matemáticas e de Computação (ICMC - USP). Durante este evento foi realizado pesquisa original em simulações de caminhos aleatórios, que rendeu o relatório de nome 'Baralhos e passeios aleatórios', submetido para a FAPESP e disponível em anexo.
 
-O bolsista também apresentou em dois eventos no período da pesquisa. O Colóquio Brasileiro de Matemática (CBM) e a Semana Integrada da Física de São Carlos (SIFSC). Apenas para o primeiro, realizado no Rio de Janeiro, foi necessário o uso da reserva técnica. Por isso, segue o pôster apresentado na página que se segue. O trabalho é complementar aos estudos assintóticos e de probabilidade realizados nos meses cobertos por este relatório.
+O bolsista também apresentou em dois eventos no período da pesquisa. O Colóquio Brasileiro de Matemática (CBM) e a Semana Integrada da Física de São Carlos (SIFSC). Apenas para o primeiro, realizado no Rio de Janeiro, foi necessário o uso da reserva técnica. Por isso, segue o pôster apresentado na próxima página. O trabalho é complementar aos estudos assintóticos e de probabilidade realizados nos meses cobertos por este relatório.
 
 \hspace{1cm}
 
+\begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
 	\hline
 	Evento &  Sede & Data & Modalidade & Apresentação & Reserva Técnica \\
@@ -261,50 +269,46 @@ O bolsista também apresentou em dois eventos no período da pesquisa. O Colóqu
 	Jornadas & ICMC-USP & 13/01-24/02/23 & Presencial & Oral & Não \\
 	\hline
 \end{tabular}
+\end{center}
 
 \includepdf[pages={1}]{Assets/posterwhite.pdf}
 
 \section{Outros trabalhos Preparados ou Submetidos}
 
-Durante o período da bolsa foi também finalizado o trabalho intitulado ’A Central Li-
-mit Theorem for intransitive dice’ co-autorado por mim. O arquivo se encontra disponível
-na plataforma Arxiv em \url{https://arxiv.org/abs/2310.17083}. Por fim, realizou-se o desenvolvimento do Trabalho de Conclusão de Curso referente à graduação em andamento. A ser defendido, disponível em anexo.
+Durante o período da bolsa foi também finalizado o trabalho intitulado ``A Central Limit Theorem for intransitive dice'' co-autorado pelo aluno beneficiário da bolsa. O arquivo se encontra disponível
+na plataforma Arxiv em \url{https://arxiv.org/abs/2310.17083} e está em processo de publicação. Por fim, realizou-se também o desenvolvimento do Trabalho de Conclusão de Curso referente à graduação em andamento. A ser defendido, disponível em anexo.
 
 \section{Pesquisa}
 \label{Pesquisa}
 
-Os resultados e texto científico abaixo foram desenvolvidos conjuntamente com o trabalho de conclusão de curso realizado no mesmo período, tomando como base seu conteúdo. Apresento breve noção do trabalho e alguns resultados e possibilidades para desenvolvimento e uso destes. Todos os produtos, programas e textos, podem ser acessados em \url{https://github.com/Joao-vap/RMT-TEX} e \url{https://github.com/Joao-vap/RMT-Code}.
+Os resultados e texto científico abaixo foram desenvolvidos conjuntamente com o trabalho de conclusão de curso realizado no mesmo período, tomando como base seu conteúdo. Apresento breve noção do tema de trabalho e alguns resultados e possibilidades para desenvolvimento e uso destes. Todos os produtos, programas e textos, podem ser acessados em \url{https://github.com/Joao-vap/RMT-TEX} e \url{https://github.com/Joao-vap/RMT-Code}.
 
 \subsection{Matrizes Aleatórias}
+\label{Section: Matrizes}
 
-De acordo com a mecânica quântica, níveis de energia de uma sistema são descritos pelos autovalores de seu operador hermitiano associado, o hamiltoniano $\Hf$. Em situações mais complexas, $\Hf$ não é completamente descrito pela teoria ou é complicado. Por isto, somado à necessidade do cálculo explícito de grandezas, considera-se usualmente truncamentos do espaço de Hilbert onde opera $\Hf$, representado agora por matriz de dimensão finita. Caracterizar o sistema físico é resolver o problema de autovalores $\Hf \Psi_i = E_i \Psi_i$.
+Sistemas integráveis em física são descritos por equações diferenciais simples o suficiente tais que se pode determinar soluções explícitas. Seu comportamento é, em algum sentido, previsível e unicamente determinado pelas condições iniciais. Naturalmente, muitos sistemas de interesse não se enquadram nessa classe, são chamados caóticos ou não integráveis. Seja por complexidade ou instabilidade, não conseguimos expressar ou resolver significativamente os operadores associados a esses sistemas. 
 
-Wigner, em seu estudo de núcleos atômicos, sugere uma solução alternativa, uma mecânica estatística para o problema de autovalores. Tal teoria descreveria, estocasticamente, o perfil da estrutura energética nucleica ao invés de detalhar seus níveis. Buscava-se, em algum sentido, uma universalidade, uma resposta que fosse, dada complexidade o suficiente, independente de $\Hf$. A teoria foi prontamente seguida por, dentre outros, Porter e Rosenzweig \cite{PoterRosen}, que procederam a validar com dados experimentais as ideias postuladas e por Gaudin, Mehta \cite{MehtaGaudin}, e Dyson \cite{Dyson}, que avançaram na descrição, dentre outros, dos importantes ensembles gaussianos. Esse desenvolvimento é o início da chamada Teoria de Matrizes Aleatórias (RMT, \textit{Random Matrix Theory}) e hoje desempenha importante papel na descrição estatística de sistemas com alta complexidade representados com matrizes de simetria induzida pela natureza do problema descrito.
+De acordo com a mecânica quântica, níveis de energia de um sistema são descritos pelos autovalores de seu operador hermitiano associado, o Hamiltoniano $\Hf$. Para um modelo simples o suficiente, caracterizar o sistema físico é equivalente a resolver o problema de autoenergias $\Hf \Psi_i = E_i \Psi_i$. Contudo, para estados excitados de alta energia de núcleos atômicos pesados, por exemplo, esta abordagem se torna impeditiva: ou não se sabe o Hamiltoniano, ou sua solução é complicada. Wigner sugere uma abordagem alternativa, estatística, para o problema de autovalores. Tal teoria descreveria as propriedades estatísticas da estrutura energética nucleica ao invés de detalhar seus níveis. Buscava-se, em algum sentido, uma universalidade, uma descrição que fosse, dada complexidade o suficiente, sensível às simetrias, mas independente dos detalhes em $\Hf$. A teoria foi prontamente seguida por, dentre outros, Gaudin, Mehta, \cite{MehtaGaudin} e Dyson, \cite{Dyson} que avançaram na descrição dos principais ensembles. Esse desenvolvimento é o início do que chamamos hoje Teoria de Matrizes Aleatórias (RMT, \textit{Random Matrix Theory}).
 
-Seja $\Se$ um conjunto tal como $\R, \C, \He $ (Reais, Complexos e Quaterniônicos). Considere uma matriz $\matriz{M} \in \mathcal{M}_{\Se}(N)$ espaço de matrizes $N \times N$, ou seja, de $N^2$ entradas, sejam elas reais, complexas ou quaterniônicas. Se tomamos o elemento de matriz $M_{i,j}$ $\forall i, j \in \Z$, com $1 \leq i, j \leq N$, como variável aleatória de distribuição arbitrária, podemos expressar a densidade de probabilidade conjunta (jpdf, \textit{joint probability density function}) como $$\p(\hat{M}) \dd M = \p(M_{1,1}, \dots, M_{N,N}) \prod_{i,j=1}^{N} \dd M_{i,j}.$$
+Seja $\Se$ um conjunto tal como $\R, \C, \He $ (Reais, Complexos e Quaterniônicos). Consideremos inicialmente uma matriz $\matriz{M} \in \mathcal{M}_{\Se}(N)$ espaço de matrizes $N \times N$, de entradas reais, complexas ou quaterniônicas. Se tomamos o elemento de matriz $M_{i,j}$ $\forall i, j \in \Z$, com $1 \leq i, j \leq N$, como variável aleatória de distribuição arbitrária, podemos expressar a densidade de probabilidade conjunta de $\matriz{M}$ (jpdf, \textit{joint probability density function}) como $$\p(\hat{M}) \dd \matriz{M} = \p(M_{1,1}, \dots, M_{N,N}) \prod_{i,j=1}^{N} \dd M_{i,j}.$$
 
-Não lidaremos, contudo, com uma classe tão ampla de matrizes. Tomamos $\matriz{M}$ matriz ortogonal, unitária ou simplética, a depender de $\Se$, o que resulta em autovalores $\lambda \in \R$ sem degeneração. Isto pode ser motivado fisicamente sabendo que, para sistemas quânticos invariantes reversíveis, o Hamiltoniano é matriz real simétrica; na presença de campo magnético, o Hamiltoniano é matriz complexa hermitiana; na presença de acoplamento spin-órbita, o Hamiltoniano é simplético \cite[Capítulo~2]{RMT-firstcourse-Potters}. 
-
-Considere a decomposição $\matriz{M} = \matriz{O} \matriz{D} \matriz{O}^{-1}$, com $\matriz{O} \in V_N(\Se^N)$ variedade de Stiefel e $\matriz{D} = \diag(\mmany{\lambda}{N})$. Se a transformação tem Jacobiano $\J(\matriz{M} \rightarrow \{ \vec{\lambda}, \matriz{O} \} )$, reescreve-se a jpdf em função dos autovalores e $\matriz{O}$ tal que:
+Considere a decomposição nas coordenadas espectrais $\matriz{M} = \matriz{P} \matriz{\Lambda} \matriz{P}^{-1}$ onde $\matriz{P}$ é matriz invertível e $\matriz{\Lambda} = \diag(\mmany{\lambda}{N})$. Para que valha a decomposição tomaremos $\matriz{M}$ matriz simétrica, hermitiana ou hermitiana quaterniônica. Esta escolha é feita em importantes ensembles em RMT e motivada fisicamente sabendo que, para sistemas quânticos invariantes reversíveis, o Hamiltoniano é matriz real simétrica; na presença de campo magnético, o Hamiltoniano é matriz complexa hermitiana; na presença de acoplamento spin-órbita, o Hamiltoniano é matriz hermitiana quaterniônica. \cite[Capítulo~2]{RMT-firstcourse-Potters} Devemos atentar ainda pela escolha de mapa $\matriz{M} \mapsto \matriz{P} \matriz{\Lambda} \matriz{P^{-1}}$ bijetivo\footnote{Injetividade é garantida desconsiderando fase e sinal dos autovetores e ordenando os autovalores. Restringe-se ao subconjunto de matrizes sem multiplicidade de autovalores - denso, aberto e de medida completa tal que seu complemento é irrelevante na integração conseguinte.}. Se a mudança de variáveis tem Jacobiano $\J(\matriz{M} \rightarrow \{ \matriz{\Lambda}, \matriz{P} \} )$, reescreve-se a jpdf em função de $\matriz{\Lambda}$ e $\matriz{P}$ tal que
 \begin{equation}
-	\p(\hat{M}) \dd M = \p \left( M_{1,1}(\vec{\lambda}, \matriz{O}), \cdots, M_{N,N}(\vec{\lambda}, \matriz{O}) | \J(\matriz{M} \rightarrow \{ \vec{\lambda}, \matriz{O} \} ) \right) \dd O \prod_{i=1}^{N} \lambda_i.
+	\p(\hat{M}) \dd \matriz{M} = \p \left( M_{1,1}(\matriz{\Lambda}, \matriz{P}), \cdots, M_{N,N}(\matriz{\Lambda}, \matriz{P}) | \J(\matriz{M} \rightarrow \{ \matriz{\Lambda}, \matriz{P} \} ) \right) \dd \matriz{\Lambda} \dd \matriz{P}.
 	\label{Equation: p(lambda, O)}
 \end{equation}
 
-Aqui, ressalta-se que estamos interessados em distribuições de autovalores. Para calcular $\p(\mmany{\lambda}{N})$ devemos integrar os termos à direita da equação \ref{Equation: p(lambda, O)} sobre o subespaço $V_N(\Se^N)$. Isso nem sempre é fácil ou possível. Para garantir integrabilidade, tomaremos \textit{ensembles} de matrizes aleatórias onde o jpdf de suas entradas pode ser escrito exclusivamente como função dos autovalores, ou seja $$\p(\mmany{\lambda}{N}, \matriz{O}) \equiv \p \left( M_{1,1}(\vec{\lambda}), \cdots, M_{N,N}(\vec{\lambda}) | \J(\matriz{M} \rightarrow \{ \vec{\lambda} \} ) \right).$$
+Estamos especialmente interessados na distribuição de autovalores, logo, devemos integrar a Equação \eqref{Equation: p(lambda, O)} sobre $\dd \matriz{P}$, o que nem sempre é fácil ou possível. Por isso, tomaremos ensembles denominados invariantes (por rotação), isto é, tais que quaisquer duas matrizes $\matriz{M}$ e $\matriz{M'}$ que satisfaçam a relação de equivalência $\matriz{M} = \matriz{U} \matriz{M'} \matriz{U}^{-1}$, sendo $\matriz{U}$ uma rotação, tem mesma probabilidade. Com isso, a jpdf de suas entradas pode ser escrita exclusivamente como função dos autovalores, ou seja, $$\p(\matriz{\Lambda}, \matriz{P}) \dd \matriz{\Lambda} \dd \matriz{P} \coloneqq \p \left( M_{1,1}( \matriz{\Lambda}), \cdots, M_{N,N}(\matriz{\Lambda}) | \J(\matriz{M} \rightarrow \{\matriz{\Lambda}\} ) \right) \dd \matriz{\Lambda} \dd \matriz{P}.$$
 
-Ensembles com esta propriedade são denominados invariantes (por rotação). Esta escolha implica que quaisquer duas matrizes $\matriz{M}, \matriz{M'}$ que satisfaçam a relação de equivalência $\matriz{M} = \matriz{U} \matriz{M'} \matriz{U}^{-1}$ tem mesma probabilidade. Nesta relação, $\matriz{U}$ é simétrica, hermitiana ou simplética respectivamente quando $\Se = \R,\C,\He $. Considere o teorema \cite[Capítulo~3]{AlanThesis}.
-\begin{thm}
-	Tome $\matriz{M} \in M_{\R}(N),  M_{\C}(N),  M_{\He}(N)$ simétrica, hermitiana ou autodual, respectivamente. Se  $\matriz{M}$ tem jpdf da forma $\phi(\matriz{M})$, invariante sobre transformações de similaridade ortogonal, a jpdf dos $N$ autovalores ordenados de $\matriz{M}$, $\mcmany{\lambda}{N}{\geq}$, é $$ C_{N}^{(\beta)} \phi(\matriz{D}) \prod_{i < j} (\lambda_i - \lambda_j)^{\beta}$$ onde $C_{N}^{\beta}$ é constante e $\beta = 1, 2, 4$ corresponde respectivamente à $\matriz{M} \in M_{\R}(N),  M_{\C}(N),  M_{\He}(N)$. 
-	\label{Teorema: Invariante}
-\end{thm}
-Logo, desde que tomemos um ensemble invariante, podemos reescrever a distribuição em função dos autovalores pelo Teorema \ref{Teorema: Invariante}. Vale ainda observar que, pelo Lema de Weyl, uma jpdf invariante pode ser expressa totalmente por $\p(\matriz{M})= \phi \left(\Tr(F(M)) \right)$ com $F$ função polinomial. Ou seja, se unirmos os resultados do Teorema e Lema, podemos escrever
+Pelo Lema de Weyl, uma jpdf invariante pode ser expressa totalmente por $\p(\matriz{M}) \coloneqq \phi \left(\Tr(V(\matriz{M})) \right)$ com $V$ função polinomial. Além disso, o jacobiano $\J(\matriz{M} \rightarrow \{\matriz{\Lambda}, \matriz{P}\} )$ desta transformação pode ser expresso pelo determinante de matriz de Vandermonde tal que $$\p(\matriz{\Lambda}, \matriz{P}) \dd \matriz{\Lambda} \dd \matriz{P} = \phi \left(\Tr(V(\matriz{M})) \right) \prod_{i<j}^{N} |\lambda_i - \lambda_j|^{\beta} \dd \matriz{\Lambda} \dd \matriz{P},$$ onde $\beta = 1,2,4$ quando tomado $\Se = \R, \C, \He$, respectivamente. Com esta expressão, sabendo medida uniforme sobre os autovetores, podemos explicitar pela primeira vez a jpdf para os autovalores ordenados destes ensembles de matrizes aleatórias como 
 \begin{equation}
-	\p_{ord}(\mmany{\lambda}{N}) = C_{N}^{\beta} \phi{\left( \sum_i^N F(\lambda_i) \right)} \prod_{i < j} (\lambda_i - \lambda_j)^{\beta}.
+	\p_{ord}(\mmany{\lambda}{N}) = \frac{1}{Z_{N, \beta}^{(ord)}} \phi{\left( \sum_i^N V(\lambda_i) \right)} \prod_{i < j}^{N} |\lambda_i - \lambda_j|^{\beta}.
 	\label{Equation: p-ord}
 \end{equation}
 
-Dentre os muitos ensembles em RMT, os Gaussianos são notórios. São eles o \textit{Gaussian Orthogonal Ensemble (GOE)} ($\beta=1$), \textit{Gaussian Unitary Ensemble (GUE)} ($\beta=2$) e \textit{Gaussian Sympletic Ensemble (GSE)} ($\beta=4$). Notemos primeiramente que o nome é relacionado à escolha de $\Se$. Mais explicitamente, o nome é dado em relação à se $\matriz{O}$, tal que $\matriz{M} = \matriz{O}\matriz{D}\matriz{O}^{-1}$, é ortogonal, unitário ou simplético. É natural então pensar nos ensembles \textit{GOE}, \textit{GUE} e \textit{GSE} como matrizes $\matriz{M} \in \mathcal{M}_{\Se}(N)$ onde 
+Note que, graças ao jacobiano, autovalores destas matrizes apresentam repulsão mútua, expressa pelo produtório na Equação \eqref{Equation: p-ord}. Este fato naturaliza a analogia da Seção \ref{Section: Gases de Coulomb} e é central a muitos resultados em RMT. É possível fazer desenvolvimento análogo para matrizes normais de ensembles associados a $\beta = 2$ com autovalores $\lambda_i \in \C$ - extensão explorada nos resultados. Outros casos fogem ao escopo do trabalho.
+
+Dentre os muitos ensembles em RMT, os Gaussianos são notórios. São eles o \textit{Gaussian Orthogonal Ensemble (GOE)} ($\beta=1$), \textit{Gaussian Unitary Ensemble (GUE)} ($\beta=2$) e \textit{Gaussian Sympletic Ensemble (GSE)} ($\beta=4$). Notemos primeiramente que o nome é relacionado à escolha de $\Se$. Mais explicitamente, o nome é dado em relação à se $\matriz{O}$, tal que $\matriz{M} = \matriz{O}\matriz{\Lambda}\matriz{O}^{-1}$, é ortogonal, unitário ou simplético. É natural então pensar nos ensembles \textit{GOE}, \textit{GUE} e \textit{GSE} como matrizes $\matriz{M} \in \mathcal{M}_{\Se}(N)$ onde 
 $$
 \mathcal{M}_{\Se}(N) \ni M_{i,j} \sim
 \begin{cases}
@@ -318,99 +322,145 @@ Os três ensembles gaussianos compartilham de uma propriedade exclusiva - são o
 	\p(\vec{\lambda}) = \frac{1}{Z_{N, \beta}} \ee^{-\beta_N \mathcal{H}_N(\vec{\lambda})},
 	\label{Equation: medida Gaussian}
 \end{equation}
-onde $Z_{N, \beta}$ é função de partição canônica para autovalores desordenados\footnote{Usa-se do fator de contagem de Boltzmann para escrever $ Z_{N, \beta} = N! Z_{N, \beta}^{(ord)}$.}, normalizante da expressão \ref{Equation: medida Gaussian}. O fator $\beta_N = \beta N^2$ é pensado como a temperatura inversa. Definimos ainda o Hamiltoniano $$\mathcal{H}_N(\vec{\lambda}) = \frac{1}{N}\sum_{i = 1}^{N} \frac{\lambda_i^2}{2} + \frac{1}{N^2} \sum_{i < j} \log{\frac{1}{|\lambda_i - \lambda_j|}}$$ com  $\lambda_i \mapsto \lambda_i \sqrt{\beta N}$.
+onde $Z_{N, \beta}$ é função de partição canônica para autovalores desordenados\footnote{Usa-se do fator de contagem de Boltzmann para escrever $ Z_{N, \beta} = N! Z_{N, \beta}^{(ord)}$.}, normalizante da Expressão \eqref{Equation: medida Gaussian}. O fator $\beta_N = \beta N^2$ é pensado como a temperatura inversa. Definimos ainda o Hamiltoniano $$\mathcal{H}_N(\vec{\lambda}) = \frac{1}{N}\sum_{i = 1}^{N} \frac{\lambda_i^2}{2} + \frac{1}{N^2} \sum_{i < j} \log{\frac{1}{|\lambda_i - \lambda_j|}}$$ com  $\lambda_i \mapsto \lambda_i \sqrt{\beta N}$.
 
 \subsection{Gases de Coulomb}
+\label{Section: Gases de Coulomb}
 
 Para os ensembles que chamamos invariantes, a densidade de autovalores guarda uma importante analogia, a de Gases de Coulomb. Pensando os $N$ autovalores das matrizes como partículas de um gás com o devido núcleo de interação e potencial externo, podemos usar de noções físicas para intuir seu comportamento. Usando das estabelecidas leis termodinâmicas é possível ainda derivar, por exemplo, as densidades de autovalores no limite termodinâmico ($N \rightarrow \infty$). Generalizando o potencial aplicado podemos ainda recuperar um ensemble de matrizes que pode não estar diretamente disponível.
 
 % Sabemos então, que a partir dessa função podemos retirar importantes propriedades estatísticas (macroscópicas) do sistema de autovalores dos ensembles Gaussianos.
 
-O gás de coulomb $\p_N$ \cite{ChafaCoulombMeasure} é a medida de probabilidade de Boltzmann-Gibbs dada em $(\R^d)^N$ por 
+O gás de coulomb $\p_N$ é a medida de probabilidade de Boltzmann-Gibbs dada em $(\R^d)^N$ por 
 \begin{equation}
 	\dd \p_N(\vec{x}) = \frac{e^{-\beta N^2 \Hf_N(\vec{x})}}{Z_{N,\beta}} \dd \vec{x},
 	\label{Equação: Medida Gas de Coulomb}
 \end{equation}
-onde $$\Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x) + \frac{1}{2N^2} \sum_{i \neq j} \g(x_i - x_j)$$ é usualmente chamado hamiltoniano ou energia do sistema, $g$ é solução da equação de Poisson e $\V \colon \Se \mapsto \R$ potencial externo. A medida $\p_N$ modela um gás de partículas indistinguíveis com carga nas posições $\mmany{x}{N} \in \Se$ de dimensão $d$ em $\R^n$ \textit{ambient space}. As partículas estão sujeitas a um potencial externo $\V \colon \Se \mapsto \R$ e interagem por $\g \colon \Se \mapsto (-\infty, \infty]$. A temperatura inversa é $\beta N^2$. Assumiremos, para que valha a definição \ref{Equação: Medida Gas de Coulomb}, que $V, \ \g \ \text{e} \ \beta$ são tais que a constante de normalização (função partição) $Z_{N, \beta} < \infty \ \forall \ N$\footnote{Note que $\p_N$ é um modelo de interações estáticas e não há campos magnéticos considerados.}.
+onde $$\Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x) + \frac{1}{2N^2} \sum_{i \neq j} \g(x_i - x_j)$$ é usualmente chamado hamiltoniano ou energia do sistema, $g$ é solução da equação de Poisson e $\V \colon \Se \mapsto \R$ potencial externo. \cite{ChafaCoulombMeasure} A medida $\p_N$ modela um gás de partículas indistinguíveis com carga nas posições $\mmany{x}{N} \in \Se$ de dimensão $d$ em $\R^n$ \textit{ambient space}. As partículas estão sujeitas a um potencial externo $\V \colon \Se \mapsto \R$ e interagem por $\g \colon \Se \mapsto (-\infty, \infty]$. A temperatura inversa é $\beta N^2$. Assumiremos, para que valha a definição \eqref{Equação: Medida Gas de Coulomb}, que $V, \ \g \ \text{e} \ \beta$ são tais que a constante de normalização (função partição) $Z_{N, \beta}$ seja finita para todo N. \footnote{Note que $\p_N$ é um modelo de interações estáticas e não há campos magnéticos considerados.}
 
-Se lembramos da expressão \ref{Equation: medida Gaussian}, perceberemos que, para o devido $\V(x)$, podemos tomar $d=1$ e $n = 2$ para recuperar a medida dos ensembles gaussianos 
+Se lembramos da Expressão \eqref{Equation: medida Gaussian}, perceberemos que, para o devido $\V(x)$, podemos tomar $d=1$ e $n = 2$ para recuperar a medida dos ensembles gaussianos 
 \begin{equation}
-	\p_N(\vec{x}) = \frac{e^{-\beta_N \Hf_N(\vec{x})}}{Z_{N,\beta}},
+	\p_N(\vec{x}) = \frac{e^{-\beta_N \Hf_N(\vec{x})}}{Z_{N,\beta}}, \ \ \Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x_i) + \frac{1}{N^2} \sum_{i < j} \log{\frac{1}{|x_i - x_j|}}.
 	\label{Equation: Medida Log V}
 \end{equation}
-\begin{equation}
-	\Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x_i) + \frac{1}{N^2} \sum_{i < j} \log{\frac{1}{|x_i - x_j|}}.
-\end{equation}
-Estamos tratando de partículas no plano confinadas à uma reta. Para algum potencial arbitrário, além da devida escolha de $n$ e $d$, cairemos em outros ensembles de matrizes.
+Estamos tratando de partículas no plano confinadas à uma reta. Para algum potencial arbitrário, além da devida escolha de $n$ e $d$, cairemos em outros ensembles de matrizes. Notando que tratamos do ensemble canônico, um argumento termodinâmico nos indica então que devemos minimizar a energia livre $E^V_{N,\beta} \propto - \log{Z_{N, \beta}}.$
 
-O conjunto de pontos no espaço de fase ou ainda, os microestados, determinam um \textit{ensemble estatístico}. De mesma forma, um conjunto de matrizes determina um ensemble em RMT. Podemos relacionar o conjunto de microestados dos autovalores $\{\vec{\lambda}\}$ com as configurações do sistema de $N$ partículas descrito pelos Gases de Coulomb. Notando que tratamos do ensemble canônico, um argumento termodinâmico nos indica então que devemos minimizar a energia livre $$E^V_{N,\beta} \propto \log{Z_{N, \beta}}.$$
-
-Consideraremos $\V$ sob condições tais que seja denominado um potencial admissível \cite{ChafaCoulombMeasure}. Com isso, se $\mu_{V}(\vec{\lambda})$ é medida de probabilidade no espaço das possíveis configurações de autovalores, $Z_{N, \beta}$ será finita e existirá $\mu_{V}^* = \arg \inf {\mathcal{H}_N(\vec{\lambda})}$ medida de equilíbrio única no limite termodinâmico $N \rightarrow \infty$. Para determinar a medida de equilíbrio de \ref{Equation: Medida Log V} \cite{RMT-firstcourse-Potters}, queremos satisfazer o sistema de equações
+Consideramos $\V$ sob condições tais que seja denominado um potencial admissível. \cite{ChafaCoulombMeasure} Com isso, se $\mu_{V}$ é medida de probabilidade no espaço das possíveis configurações de autovalores, $Z_{N, \beta}$ será finita e existirá $\mu_{V}^* = \arg \inf {\mathcal{H}_N}$ medida de equilíbrio única no limite termodinâmico $N \rightarrow \infty$. Para determinar a medida de equilíbrio da Distribuição \eqref{Equation: Medida Log V}, \cite{RMT-firstcourse-Potters} queremos satisfazer o sistema de equações
 \begin{equation}
-	\frac{\partial \mathcal{H}}{\partial \lambda_i} = 0 \ \implies \ \V'(\lambda_i) = \frac{1}{N} \sum_{1 = j \neq i}^{N} \frac{1}{\lambda_i - \lambda_j} \ \ \forall i.
+	\frac{\partial \mathcal{H}}{\partial \lambda_i} = 0 \ \implies \ \V'(\lambda_i) = \frac{1}{N} \sum_{\substack{j=1 \\ j \neq i}}^{N} \frac{1}{\lambda_i - \lambda_j} \ \ \text{para} \ i = 1, \cdots, N.
 	\label{Equação: Sistema minimizante}
 \end{equation} 
-Usaremos o denominado \textit{resolvent}. Considere a função complexa $$G_N(z) = \frac{1}{N} \Tr{\left(z \mathbbm{1} - \matriz{M}\right)^{-1}} = \frac{1}{N} \sum_{i=1}^{N} \frac{1}{z - \lambda_i},$$ onde $\matriz{M}$ é matriz aleatória com autovalores $\{\mmany{\lambda}{N}\}$. Note que $G_N(z)$ é uma função complexa aleatória com polos em $\lambda_i$. Não trivialmente, podemos reescrever \ref{Equação: Sistema minimizante} como $$\V'(z) G_N(z) - \Pi_N(z) = \frac{G_N^2(z)}{2} + \frac{G'_N(z)}{2N},$$ onde $\Pi_N(z) = \frac{1}{N} \sum_{i = 1}^{N} \frac{\V'(z) - \V'(\lambda_i)}{z - \lambda_i}$ é um polinômio de grau $\deg{\V'(z)} - 1 = k - 1$. Poderíamos tentar resolver explicitamente essa formula para qualquer $N$, isso é possível em alguns casos. Contudo, em geral, estaremos interessados na assintótica $N \to \infty$ de $G_N(z)$, nesse limite temos a transformada de Stieltjes $S^{\mu_V}(z)$
+
+Usaremos o denominado resolvente. Considere a função complexa $$S^{\mu_V}_N(z) = \frac{1}{N} \Tr{\left(z\Id - \matriz{M}\right)^{-1}} = \frac{1}{N} \sum_{i=1}^{N} \frac{1}{z - \lambda_i},$$ onde $\matriz{M}$ é matriz aleatória com autovalores $\{\mmany{\lambda}{N}\}$ e $S^{\mu_V}_N(z)$ pode ser vista como função complexa aleatória com polo em todo $\lambda_i$. Não trivialmente, multiplicando ambos lados da Relação \eqref{Equação: Sistema minimizante} por $1/(z-\lambda_i)$ e somando sobre $i$, podemos reescrever a igualdade como $$\V'(z) S^{\mu_V}_N(z) - \Pi_N(z) = \frac{S^{\mu_V}_N (z)^2}{2} + \frac{S'^{\mu_V}_N(z)}{2N}, \ \ \text{com}\ \  \Pi_N(z) = \frac{1}{N} \sum_{i = 1}^{N} \frac{\V'(z) - \V'(\lambda_i)}{z - \lambda_i}$$ polinômio de grau $\deg{\V'(z)} - 1 = k - 1$. Resolver explicitamente para $N$ constante pode não ser simples ou mesmo possível. Em geral, tomaremos a assintótica $N \to \infty$ e, nesse limite, $S^{\mu_V}_N(z)$ é transformada de Stieltjes\footnote{Também chamada transformada de Cauchy.} $$S^{\mu_V}(z) = \int \frac{\mu^*_V(\lambda)}{z - \lambda} \dd \lambda.$$ Como consequência da fórmula de Sokhotski-Plemeji, é enunciado ainda a relação 
 \begin{equation}
-	\int \frac{\mu^*_V(\lambda)}{z - \lambda} \dd \lambda= \V'(z) \pm \sqrt{\V'(z)^2 - 2 \Pi_{\infty}(z) }.
+	\mu^{*}_{V}(x) = \frac{1}{2\pi \ii} \left( S^{\mu_V}_{+} -  S^{\mu_V}_{-}\right) = \frac{1}{\pi} \lim_{\epsilon \to 0^+} \im{S^{\mu_V}_{+}(x + \ii\epsilon)}.
+	\label{Equation: p(lambda)}
+\end{equation} 
+
+Com isso, resolve-se a equação quadrática obtida com o limite para $S^{\mu_V}(z)$ tal que
+\begin{equation}
+	S^{\mu_V}(z) = \V'(z) \pm \sqrt{\V'(z)^2 - 2 \Pi(z) }, \ \ \Pi(z) = \int \frac{\V'(z) - \V'(\lambda)}{z - \lambda} \mu^*_V(\lambda) d\lambda.
 	\label{Equation: Resolvent}
 \end{equation}
-com $\Pi_{\infty}(z) = \int \frac{\V'(z) - \V'(\lambda)}{z - \lambda} \mu^*_V(\lambda) d\lambda$. Como consequência da fórmula de Sokhotski-Plemeji, é enunciado o resultado 
-\begin{equation}
-	\begin{split}
-		\mu^{*}_{V}(x) 
-		&= \frac{1}{2\pi \ii} \left( S^{\mu_V}_{+} -  S^{\mu_V}_{-}\right) \\
-		&= \frac{1}{\pi} \lim_{\epsilon \to 0^+} \Im{S^{\mu_V}_{+}(x + \ii\epsilon)}.
-	\end{split}
-	\label{Equation: p(lambda)}
-\end{equation}
-%Considere ainda um potencial $\V(x)$ convexo. Neste caso, tomamos naturalmente $\mu^*_V(x)$ não nula apenas em um intervalo $(\lambda_{-}, \lambda_{+})$. Sabemos que o comportamento não analítico surge da raiz quadrada, tal que se definirmos $\Df(z) := \V'(z)^2 - 2 \Pi_{\infty}(z)$ polinômio de grau $2k$, $\{\lambda_{-}, \lambda_{+}\}$ são suas raízes e o polinômio tem valor negativo em algum intervalo. Equivalentemente $D(z) = (z-\lambda_{-})(z - \lambda_{+}) \Qf^2(z),$ onde $\Qf(z)$ é polinômio de grau $k-1$. Com essas definições podemos escrever que, por \ref{Equation: p(lambda)},
-%\begin{equation}
-%	\mu^*_V(x) =\frac{\Qf(x)}{\pi} \sqrt{(\lambda_{+} - x)(x - \lambda_{-})}, \ \ \text{para} \ \  \lambda_{-} \leq x \leq \lambda_{+}.
-%\end{equation}
-Restaria, para cada potencial, balancear o sistema de $k+2$ equações dada por
-\[
-\left( S^{\mu_{V}} - \V' \right)^2 = \left( V' \right)^2 - 2 \Pi_{\infty}
-\]
+Assumindo $V$ potencial polinomial arbitrário, resta explicitar $\Pi(z)$ para encontrar a medida $\mu^{*}_{V}(x)$ pela Equação \eqref{Equation: p(lambda)}. Para isso, a expansão de $S^{\mu_V}(z)$ em $z \rightarrow \infty$ nos dará um sistema de equações auto consistentes para a determinação dos coeficientes de $\Pi$.
 
 Usar de simulações de gases para extrair medidas tem algumas dificuldades. Nem sempre uma solução analítica é possível para as equações diferencias que descrevem sua dinâmica, que deve ser ergótica. Por isso, recorre-se à simulações numéricas que podem também se mostrar delicadas de tratar. A dinâmica tem alta complexidade temporal pela quantidade de interações entre partículas e as singularidades dificultam a invariância do hamiltoniano na simulação. Ainda assim, essa abordagem permite explorar ensembles exóticos em RMT e será discutida nesse trabalho.
 
 \subsection{Simulações}
-A medida $\mu$ de Boltzmann-Gibbs descreve o denominado ensemble canônico. Médias sobre suas configurações, microestados, são usadas para inferir informações macroscópicas do sistema. Sistemas dinâmicos que amostrem da medida $\mu$ são denominados termostatos e são notoriamente difíceis de se construir ergoticamente com processos dinâmicos determinísticos, portanto, uma teoria de equações diferenciais estocásticas foi desenvolvida. Usualmente, para o ensemble canônico, uma escolha natural de processo é a denominada \textit{Langevin Dynamics} \cite[Capítulo~6]{leimmolecular}, especialmente sua versão cinética. Muitas vezes as equações usadas não são diretamente integráveis e, por isso, se recorre a métodos numéricos. O caso cinético pode ser separado em duas dinâmicas. Para a integração da primeira, chamada Hamiltoniana, utilizamos o esquema de Verlet \cite{Verlet}. Para a segunda parte, denominada flutuação-dissipação, resolve-se analiticamente por se tratar de processo de Ornstein-Uhlenbeck de variância explícita. Apesar das qualidades dos métodos citados, a discretização pode introduzir instabilidade numérica e, para amenizar seus efeitos, introduz-se um passo de Metropolis \cite[Apêndice~C]{leimmolecular}. As escolhas supracitadas são descritas em \cite{Chafa2018} e é denominada \textit{Langevin Monte Carlo}. Simular gases de coulomb é especialmente interessante quando não há modelos de matrizes conhecidos, disponíveis ou simples para o $\Hf$ definido. Podemos, com a simulação de tais gases, calcular a média da função densidade das partículas, ou autovalores.
+A medida de Boltzmann-Gibbs descreve o denominado ensemble canônico. Médias sobre suas configurações, microestados, são usadas para inferir informações macroscópicas do sistema. Sistemas dinâmicos que amostrem desta medida são denominados termostatos e são notoriamente difíceis de se construir ergodicamente com processos dinâmicos determinísticos, portanto, uma teoria de equações diferenciais estocásticas foi desenvolvida. Usualmente, para o ensemble canônico, uma escolha natural de processo é a denominada \textit{Langevin Dynamics}, \cite[Capítulo~6]{leimmolecular} especialmente sua versão cinética. Muitas vezes as equações usadas não são diretamente integráveis e, por isso, se recorre a métodos numéricos. O caso cinético pode ser separado em duas dinâmicas. Para a integração da primeira, chamada hamiltoniana, utilizamos o esquema de Verlet. A segunda parte, denominada flutuação-dissipação, resolve-se analiticamente por se tratar de processo de Ornstein-Uhlenbeck de variância explícita. Apesar das qualidades dos métodos citados, a discretização pode introduzir instabilidade numérica e, para amenizar seus efeitos, introduz-se um passo de Metropolis-Hastings.  \cite[Apêndice~C]{leimmolecular} As escolhas supracitadas são descritas por Chafa\"{i} e Ferré \cite{Chafa2018} e são denominadas \textit{Langevin Monte Carlo}. Simular gases de coulomb é especialmente interessante quando não há modelos de matrizes conhecidos, disponíveis ou simples para o $\Hf$ definido. Podemos, com a simulação de tais gases, calcular a média da função densidade das partículas, ou autovalores.
 
-Consideraremos nossas $N$ partículas em um subespaço $S$ de dimensão $d$ em $\mathbb{R}^n$ de forma que nosso espaço de fase $\Omega$ será de dimensão $Nd$. O campo externo é $V : S \mapsto \mathbb{R}$ e o núcleo de interação entre as partículas é função $\W : S \mapsto (-\infty, \infty]$. Sob essas condições, temos o algoritmo, descrito em \cite{Chafa2018}, completo. Dada uma condição inicial $(q_k, p_k)$, para cada $k\geq0$, realizamos os seguintes passos
+Nosso objetivo com a simulação é determinar a esperança de uma função de interesse $\zeta(q,p)$, dado um ensemble. Pela teoria ergódica, sob algumas condições e no limite adequado, a média espacial $\langle \zeta \rangle_{\mu}$ é igual a média temporal $$\langle \zeta \rangle_t \approx \frac{1}{\tau} \sum_{k=1}^{\tau} \zeta(q_k, p_k),$$ onde $(q_k, p_k)$ podem ser obtidos por meio de uma dinâmica que preserve dada distribuição de Gibbs-Boltzmann. Para fazer o modelo ergódico, ou seja, garantir que a simulação - e nossas amostras - não esteja restrita a um subconjunto do espaço de fase, tomaremos uma dinâmica, um termostato, estocástica. Isso usualmente garante que o sistema possa convergir para sua medida invariante (única). Um esquema comumente utilizado é a dinâmica de Langevin\footnote{Poderíamos ter explorado outras dinâmicas similares tais como as dinâmicas de \textit{Dissipative Particle} \cite{DPD} ou \textit{Nose-Hoover} \cite{Hoover}.}.
+
+Denote $q$, com $q \in \R^{(dN)}$, posição generalizada associada as $N$ partículas. A Equação \eqref{Equação: Medida Gas de Coulomb} é medida invariante do processo de difusão de Markov solução da equação diferencial estocástica
+\begin{equation}
+	\dd q_t = -\alpha_N \nabla \Hf_N(q_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd W_t,
+	\label{Equação: Langevin Overdamped}
+\end{equation}
+onde $(W_t)_{t>0}$ é processo de Wiener, $\gamma_N > 0$ é constante de atrito e $\alpha_N$ é escala temporal. Isso seria suficiente e é chamado \textit{Overdamped Langevin}, contudo, tomaremos sua extensão cinética. Usaremos $q$ como variável de interesse e $p$, com $p \in \R^{(dN)}$, variável de momento generalizado, para flexibilizar a dinâmica. Considere $\U_N \colon \R^{(dN)} \rightarrow \R$ energia cinética generalizada tal que $\ee^{-\beta_N \U_N}$ seja Lebesgue integrável. Para uma energia da forma $\Ee_N(q,p) = \Hf_N(q) + \U_N(p)$, seja $(q_t, p_t)_{t\geq0}$ processo de difusão em $\R^{dN} \times \R^{dN}$ solução da equação diferencial estocástica
+\begin{equation}
+	\begin{cases}
+		\dd q_t = \alpha_N \nabla U_N (p_t) \dd t, \\
+		\dd p_t = -\alpha_N \nabla \Hf_N(q_t) \dd t - \gamma_N \alpha_N \nabla U_N(p_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd B_t,
+	\end{cases}
+	\label{Equação: EqDif - Dinamica Langevin}
+\end{equation}
+onde $\beta_N$ é temperatura inversa e $\Hf_N \colon \R^{(dN)} \rightarrow \R$ é como na Distribuição \eqref{Equation: Medida Log V}. \cite{Stoltz2018} Esse processo deixa invariante $\p(q,p) = \p_q \otimes \p_p = \ee^{-\beta_N \Ee_N(q,p)}/Z'_N$ e admite o gerador infinitesimal 
+\[
+\Gl = \Gl_{\Hf} + \Gl_{\U},
+\]
+\[
+\Gl_{\Hf} = -\alpha_N \nabla\Hf_N(q) \cdot \nabla_p + \alpha_N \nabla \U_N(p) \cdot \nabla_q, \ \ \ \ \Gl_{\U} = \frac{\gamma_N\alpha_N}{\beta_N} \Delta_p - \gamma_N \alpha_N \nabla \U_N(p) \cdot \nabla_p.
+\]
+
+Denomina-se $\Gl_{\Hf}$ a parte hamiltoniana e $\Gl_{\U}$ a parte de flutuação-dissipação. Tomaremos $\U_N(p) = \frac{1}{2} |p|^2$ tal que $\U_N(p)$ é energia cinética usual. Um esquema análogo é possível para energias cinéticas generalizadas. \cite{Stoltz2018} Além disso, $(B_t)_{t>0}$ é processo browniano. Para simular $(q_t,p_t)_{t \geq 0}$ integramos a Equação \eqref{Equação: EqDif - Dinamica Langevin}, contudo, isso pode não ser possível analiticamente, levando a recorrer a métodos numéricos para amostragem.
+
+Para integrar o Processo \eqref{Equação: EqDif - Dinamica Langevin} discretizaremos, para amostragem numérica, separadamente as dinâmicas associadas à $\Gl_{\Hf}$ e $\Gl_{\U}$. Naturalmente, $\Gl_{\Hf}$ descreve um processo hamiltoniano e deve preservar o volume do espaço de fase, de forma que não precisaremos calcular o jacobiano da transformação que dá esta dinâmica. Utilizando de um integrador simplético, tal como o de Verlet, podemos manter essa propriedade na discretização. A dinâmica é também reversível a menos de inversão do momento, importante no algoritmo para garantir que mantém-se a medida invariante. Contudo, é conhecido que a discretização não pode preservar a energia exatamente e, para lidar com esse fato, discute-se a implementação de um passo de Metropolis-Hastings posteriormente. Para $\Delta t > 0$, a partir do estado $(q_k, p_k)$, o esquema de Verlet lê-se
+\begin{equation}
+	\begin{cases}
+		p_{k+\frac{1}{2}} = p_k - \nabla \Hf_N(q_k) \alpha_N \frac{\Delta t}{2}, \\
+		\tilde{q}_{k+1} = q_k + p_{k + \frac{1}{2}} \alpha_N \Delta t, \\
+		\tilde{p}_{k+1} = p_{k+\frac{1}{2}} - \nabla \Hf_N(\tilde{q}_{k+1}) \alpha_N \frac{\Delta t}{2},
+	\end{cases}
+	\label{Equation: Verlet}
+\end{equation}
+onde $(\tilde{q}_{k+1}, \tilde{p}_{k+1})$ é estado seguinte da dinâmica. Outros métodos tais quais \textit{Euler-Maruyama} (EM) podem ser utilizados para o mesmo fim.  \cite[Capítulo~7]{leimmolecular} Nos métodos que temos interesse, o erro associado à discretização deve ir a zero quando $\Delta t$ vai a zero. Para EM, o erro local é da ordem de $\Boh{(\Delta t^2)}$ e o erro global $\Boh{(\Delta t)}$. Já para o esquema escolhido, devido à reversibilidade, o erro local é $\Boh{(\Delta t^3)}$ e o global $\Boh{(\Delta t^2)}$. \cite[Capítulo~5]{handbookmontecarlo} 
+
+Nos resta tratar o processo de $\Gl_{\U}$, o qual, para a energia cinética usual, consiste em um processo de Ornstein-Uhlenbeck de variância explícita, ou ainda, da forma $$\dd p_t = - \alpha_N p_t \dd t + \sigma \dd B_t,$$ onde $\alpha_N, \sigma > 0$ são parâmetros e $B_t$ é processo browniano. Este processo também mantém a medida invariante e é reversível. Note que, para $\alpha_N > 0$ somente substituiremos parcialmente o momento das partículas e, se $\alpha_N, \gamma_N \rightarrow 0$ com $\alpha_N \gamma_N = 1$, retomaríamos a dinâmica da Equação \eqref{Equação: Langevin Overdamped}. Este processo não seria muito melhor, contudo, do que um \textit{Random Walk Metropolis} já que o momento seria completamente substituído. \cite[Capítulo~5]{handbookmontecarlo} De qualquer forma, sabemos existir solução analítica para o processo de Ornstein-Uhlenbeck a partir da fórmula de Mehler dada por
+\begin{equation}
+	\tilde{p}_k = \eta p_k + \sqrt{\frac{1-\eta^2}{\beta_N}} G_k, \ \ \ \eta = \ee^{-\gamma_N \alpha_N \Delta t},
+	\label{Equation: Mehler}
+\end{equation}
+onde $G_k$ é variável aleatória gaussiana usual. \cite{Chafa2018} Muitos algoritmos utilizam de um passo de seleção para estabilizar sua dinâmica e otimizar a convergência e amostragem, usaremos dessa ideia para otimizar o algoritmo. Para o método de Metropolis-Hastings, é importante manter a razão de rejeições baixa para não atrapalhar a eficiência, o que influencia no tamanho do passo temporal decidido. Pode ser mostrado que $\Delta t$ é ideal quando é da ordem de $N^{-\frac{1}{4}}$, \cite{Chafa2018} tornando o esquema interessante pela escalabilidade.
+
+Partindo dos esquemas anteriores, consideraremos $(\tilde{q}_{k+1},\tilde{p}_{k+1})$ proposta de novo estado gerada pela dinâmica de $\Gl$, a partir do estado anterior $(q_{k},p_{k})$. Define-se
+\begin{equation}
+	P_k = 1 \wedge \frac{\ee^{-\beta_N \Ee_N(\tilde{q}_{k+1}, \tilde{p}_{k+1})}}{\ee^{-\beta_N \Ee_N(q_{k}, \tilde{p}_{k})}},
+	\label{Equation: Pk}
+\end{equation}
+onde $\tilde{p}_{k}$ é dado por \eqref{Equation: Alg Mehler}, probabilidade de aceite tal que se atribua agora às novas coordenadas generalizadas $(q_{k+1}, p_{k+1})$ valor da seguinte forma
+\begin{equation}
+	(q_{k+1}, p_{k+1}) =
+	\begin{cases}
+		(\tilde{q}_{k+1}, \tilde{p}_{k+1}) \ \text{com probabilidade} \ P_k, \\
+		(q_k, -\tilde{p}_{k}) \ \text{com probabilidade} \ 1-P_k. \\
+	\end{cases}
+	\label{Equation: Metropolis}
+\end{equation}
+Assim, a proposta será aceita com probabilidade um se $\Ee_N(\tilde{q}_{k+1}, \tilde{p}_{k+1}) < \Ee_N(q_{k}, \tilde{p}_{k})$ e com probabilidade dada pela razão das medidas, caso contrário. Dessa forma garante-se a conservação da energia - preocupação na discretização da dinâmica - e otimiza-se a exploração do espaço de fase.
+
+Recapitulemos o algoritmo. Consideraremos $N$ partículas em um subespaço $S$ de dimensão $d$ em $\mathbb{R}^n$ de forma que nosso espaço de fase $\Omega$ será de dimensão $Nd$. O campo externo é $V : S \mapsto \mathbb{R}$ e o núcleo de interação entre as partículas é função $\W : S \mapsto (-\infty, \infty]$. Reunindo os resultados anteriores sob essas condições, temos o algoritmo, com base em Chafa\"{i} e Ferré \cite{Chafa2018}, completo. Dada uma condição inicial $(q_k, p_k)$,  vetores de posição e momento generalizados, para cada $k\geq0$, realizamos os seguintes passos
 \begin{enumerate}
-	\item Baseado no processo de Ornstein-Uhlenbeck, atualize a $\tilde{\p}_k$ com
+	\item Baseado na Equação de Mehler para o o processo de Ornstein-Uhlenbeck, atualize $\tilde{p}_k$ com
 	\begin{equation}
 		\tilde{p}_k = \eta p_k + \sqrt{\frac{1-\eta^2}{\beta_N}} G_k, \ \eta = \ee^{-\gamma_N \alpha_N \Delta t};
 		\label{Equation: Alg Mehler}
 	\end{equation}
-	\item Utilizando do esquema de Verlet, calcule os termos
+	\item Utilizando do esquema de Verlet para o processo hamiltoniano, calcule os termos
 	\begin{equation}
 		\begin{cases}
 			\tilde{p}_{k+\frac{1}{2}} = \tilde{p}_k - \nabla \Hf_N(q_k) \alpha_N \frac{\Delta t}{2}, \\
 			\tilde{q}_{k+1} = q_k + \tilde{p}_{k + \frac{1}{2}} \alpha_N \Delta t, \\
-			\tilde{p}_{k+1} = \tilde{p}_{k+\frac{1}{2}} - \nabla \Hf_N(q_{k+1}) \alpha_N \frac{\Delta t}{2};
+			\tilde{p}_{k+1} = \tilde{p}_{k+\frac{1}{2}} - \nabla \Hf_N(\tilde{q}_{k+1}) \alpha_N \frac{\Delta t}{2};
 			\label{Equation: Alg Verlet}
 		\end{cases}
 	\end{equation}
-	\item Pela definição do passo de metropolis, defina a probabilidade $P_k$
+	\item Introduzido o passo de Metropolis-Hastings, tome
 	\begin{equation}
-		1 \wedge \ee^{ -\beta \left( \Hf_N(\tilde{q}_{k+1}) + \frac{\tilde{p}^2_{k+1}}{2} - \Hf_N(q_k) - \frac{\tilde{p}^2_k}{2} \right) };
+		P_k = 1 \wedge \exp{ -\beta_N \left(\Ee_N(\tilde{q}_{k+1}, \tilde{p}_{k+1}) - \Ee_N(q_{k}, \tilde{p}_{k}) \right)};
 		\label{Equação: Alg Pk}
 	\end{equation}
-	\item Defina, a partir do cálculo anterior, 
+	\item Defina, a partir da razão anterior, 
 	\begin{equation}
 		(q_{k+1}, p_{k+1}) = 
 		\begin{cases}
-			(\tilde{q}_{k+1}, \tilde{p}_{k+1}) \ \text{c/ prob.} \ P_k, \\
-			(q_k, -\tilde{p}_{k}) \ \text{c/ prob.} \ 1-P_k; \\
+			(\tilde{q}_{k+1}, \tilde{p}_{k+1}) \ \text{com probabilidade} \ P_k, \\
+			(q_k, -\tilde{p}_{k}) \ \text{com probabilidade} \ 1-P_k; \\
 		\end{cases}
 		\label{Equation: Alg Metro}
 	\end{equation}
 \end{enumerate}
 
-O ajuste de variáveis é notoriamente um dos aspectos complicados do algoritmo implementado. Precisamos de uma holística par ajustar $\Delta t, \alpha_N \ \text{e} \ \gamma_N$. No escopo do nosso programa, $\Delta t$ e $\alpha_N$ desempenham o mesmo papel e, por isso, tomaremos $\alpha_N = 1$ e decidiremos sobre o valor de $\Delta t$. Seguindo a recomendação de \cite[Capítulo~5]{handbookmontecarlo}, tomaremos $\Delta t = \Delta\tilde{t} + X$, onde $X$ é variável aleatória de média $0$ e variância $\sigma^2$ pequena. $\Delta \tilde{t}$ é melhor quando da ordem de $N^{-\frac{1}{4}}$. Já $\gamma_N$ definirá o quanto substituiremos o momento anterior das partículas e o quanto utilizaremos do passo aleatório. Faremos, em geral, com que $\gamma_N \alpha_N \Delta t \approx 0.5$.  A esquemática da implementação se encontra na Figura \ref{Figura: Implementação}. Podemos entender melhor a relação entre as sub-rotinas e funções em referência à Tabela \ref{Table: Funcoes e Subrotinas}.
+O ajuste de variáveis é notoriamente um dos aspectos complicados do algoritmo implementado. Precisamos de uma holística par ajustar $\Delta t, \alpha_N \ \text{e} \ \gamma_N$. No escopo do nosso programa, $\Delta t$ e $\alpha_N$ desempenham o mesmo papel e, por isso, tomaremos $\alpha_N = 1$ e decidiremos sobre o valor de $\Delta t$. Seguindo a recomendação de Brooks \cite[Capítulo~5]{handbookmontecarlo}, tomaremos $\Delta t = \Delta\tilde{t} + X$, onde $X$ é variável aleatória de média $0$ e variância $\sigma^2$ pequena. Essa escolha ajuda a acelerar a convergência e melhor garante ergodicidade. Lembra-se ainda que $\Delta \tilde{t}$ é ideal na ordem de $N^{-\frac{1}{4}}$, isto é,  pequeno o suficiente para manter a razão de aceite do passo de Metropolis-Hastings alta mas grande o suficiente para não desacelerar a convergência do algoritmo. Já $\gamma_N$ definirá o quanto o momento anterior das partículas será relevante em relação ao movimento browniano. Aqui, sabemos que tornar $\eta$ próximo demais de $0$, ou de $1$ para todos efeitos, desacelera intensamente a convergência. Faremos, em geral, com que $\gamma_N \alpha_N \Delta \tilde{t} \approx 0.5$.
 
 
 \begin{figure}[ht]
@@ -537,11 +587,11 @@ O ajuste de variáveis é notoriamente um dos aspectos complicados do algoritmo 
 		Init   		  	 & 
 		Modifica ${p}_{k}$ vetor $[N\times m]$, global, uniforme no cubo em $R^d$ e ${q}_{k}, G_H$, vetores $[N\times m]$, globais, nulos. \\
 		\hline
-		L1-OrnsUhlen 	 & 
-		Modifica $\tilde{p}_k$, vetor $[N\times m]$, global, por $\Gl_U$ segundo \ref{Equation: Alg Mehler}. \\
+		L2-OrnsUhlen 	 & 
+		Modifica $\tilde{p}_k$, vetor $[N\times m]$, global, por $\Gl_U$ segundo \eqref{Equation: Alg Mehler}. \\
 		\hline
-		L2-Verlet  	 	 & 
-		Modifica $\tilde{p}_{k_1},\tilde{q}_{k_1}$ vetores $[N\times m]$, globais, por $\Gl_{\Hf}$ segundo \ref{Equation: Alg Verlet}.	\\
+		L1-Verlet  	 	 & 
+		Modifica $\tilde{p}_{k+1},\tilde{q}_{k+1}$ vetores $[N\times m]$, globais, por $\Gl_{\Hf}$ segundo \eqref{Equation: Alg Verlet}.	\\
 		\hline
 		GradH         	 & 
 		Modifica $G_H$, vetor $[N\times m$], global, gradiente do Hamiltoniano.					\\
@@ -553,10 +603,10 @@ O ajuste de variáveis é notoriamente um dos aspectos complicados do algoritmo 
 		Modifica $G_{V_i}$, escalar, global, gradiente de $\V$ potencial.		                    \\
 		\hline
 		ProbLog       		 &
-		Retorna $P_K$, escalar, local, probabilidade de aceite de \ref{Equação: Alg Pk}. \\
+		Retorna $P_K$, escalar, local, probabilidade de aceite de \eqref{Equação: Alg Pk}. \\
 		\hline
 		H              	 &
-		Retorna $H$, escalar, local, hamiltoniano em $k$.	 							\\
+		Retorna $H$, escalar, local, Hamiltoniano em $k$.	 							\\
 		\hline
 		V  	      			 &
 		Retorna $V_i$, escalar, local, potencial de $q_i$.								\\
@@ -565,7 +615,10 @@ O ajuste de variáveis é notoriamente um dos aspectos complicados do algoritmo 
 		Retorna $W_{i,j}$, escalar, local, interação entre $q_i,q_j$ 							\\
 		\hline
 		Metropolis     	 & 
-		Modifica ${p}_{k},{q}_{k}$, vetores $[N\times m]$, globais por \ref{Equation: Alg Metro}.								\\
+		Modifica ${p}_{k},{q}_{k}$, vetores $[N\times m]$, globais por \eqref{Equation: Alg Metro}.								\\
+		\hline
+		Gauss     	 & 
+		Retorna variáveis gaussianas, vetor $[1\times m]$, local por Box-Muller.								\\
 		\hline
 	\end{tabular}
 	\caption{ Descrição das funções e subrotinas utilizadas na implementação do programa.}
@@ -574,81 +627,72 @@ O ajuste de variáveis é notoriamente um dos aspectos complicados do algoritmo 
 
 \subsection{Resultados e Discussão}
 
-Podemos validar a execução do programa e qualidade da medida gerada utilizando de potenciais bem descritos na literatura. A família de ensembles gaussianos são modelos que mostramos ser bem representados como matrizes. Tomar a medida dos ensembles gaussianos é o equivalente na simulação descrita a tomar $d = 1, \ \  n = 2, \ \ \beta_N = \beta N^2$ para $\beta = 1,2,4$ e 
+A família de ensembles gaussianos são modelos que mostramos ser bem representados como matrizes na Seção \ref{Section: Matrizes}. Tomar a medida dos ensembles gaussianos é o equivalente, na simulação de gases descrita, a tomar 
 \begin{equation}
-	\V(x)=\frac{|x|^2}{2}, \ \ W(x) = g(x) = \log{|x|}.
+	d = 1; \ \  n = 2; \ \ \V(x)=\frac{|x|^2}{2}; \ \ W(x) = g(x) = \log{|x|}; \ \ \beta_N = \beta N^2; \ \ \beta = 1,2,4.
 	\label{Equation: Parametros Gaussian}
 \end{equation}
-O resultado da simulação para \ref{Equation: Parametros Gaussian} está na Figura \ref{Figura: Gaussian}. Apresentamos ainda na coluna da esquerda os resultados, para $N=10$, da densidade gerada pela simulação equivalente com matrizes para os três modelos ($\beta = 1,2,4$). Na coluna central, representa-se uma comparação com o Semi-Círculo de Wigner, configuração de equilíbrio para os três modelos quando $N$ é grande o suficiente. Note que os valores foram escalados por $\sqrt{2 \beta}$ para melhor visualização. Finalmente, na coluna da direita apresentamos a distribuição do maior autovalor. Um resultado importante  \cite{Tracy} enuncia que existem $z_{N}^{(\beta)}$ e $s_N^{(\beta)}$ tais que $$\lim_{N \to \infty} \mathbb{P}_{\beta,N,V} \left( \frac{\lambda_{max} - z_{N}^{(\beta)}}{s_N^{(\beta)}} \leq x \right) = F_{\beta}(x),$$ onde $F_{\beta}(x)$ é a densidade acumulada de Tracy-Widow. Mostraremos a concordância desse resultado com a simulação na coluna da direita.
+O resultado da simulação para a Configuração \eqref{Equation: Parametros Gaussian} é apresentado na Figura \ref{Figura: Gaussian} para os três modelos ($\beta = 1,2,4$). Na coluna da esquerda, contrasta-se os resultados para $N=10$ da densidade gerada por ambas a simulação de gases e a amostragem direta de matrizes do ensemble. Na coluna central, representa-se a comparação da medida da simulação com o Semi-Círculo de Wigner, configuração de equilíbrio para os três modelos quando $N$ é grande o suficiente. Note que os valores foram escalados por $\sqrt{2 \beta}$ para apresentarem mesmo suporte. Finalmente, na coluna da direita apresentamos a distribuição do maior autovalor $\lambda_{max}$. Um resultado importante enuncia que existem $z_{N}^{(\beta)}$ e $s_N^{(\beta)}$ tais que $$\lim_{N \to \infty} \mathbb{P}_{\beta,N,V} \left( \frac{\lambda_{max} - z_{N}^{(\beta)}}{s_N^{(\beta)}} \leq x \right) = F_{\beta}(x),$$ onde $F_{\beta}(x)$ é a densidade acumulada de Tracy-Widow. \cite{Tracy} 
 
+Observa-se que os dois modelos à esquerda, amostragem direta e simulação de gases, concordam bem na estimativa da medida para o $N$ usado. No centro, é possível notar que a medida de equilíbrio esperada, o Semi-Círculo de Wigner, é aproximada rapidamente pelo aumento de partículas no sistema. A distribuição do autovalor máximo é mais delicada; contudo, ainda que com $N$ finito, podemos ver boa correspondência com o resultado esperado pela Tracy-Widow, piorando com a diminuição da temperatura.
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=0.9\textwidth]{Assets/validationGaussianTracy.png}
-	\caption{Densidade para ensembles gaussianos, \ref{Equation: Parametros Gaussian}. Tomou-se $\Delta t = 0.3$ e $nsteps = 5\cdot10^6$ passos, registrando a cada $1000$ iterações a partir de $nsteps/5$. À esquerda da figura, em azul, a densidade da amostragem de $4\cdot10^3$ matrizes do ensemble. No centro, o Semi-Círculo de Wigner, medida de equilíbrio. Na direita, apresenta-se a densidade de $\lambda_{max}$ normalizado e sua mediada esperada.}
+	\includegraphics[width=\textwidth]{Assets/validationGaussianTracy.png}
+	\caption{Densidade para ensembles gaussianos, \eqref{Equation: Parametros Gaussian}. Tomou-se $\Delta \tilde{t} = 0.1$ e $nsteps = 5\cdot10^6$ passos, registrando a cada $100$ iterações a partir de $nsteps/5$. À esquerda da figura, em azul, a densidade da amostragem de $4\cdot10^3$ matrizes do ensemble. No centro, o Semi-Círculo de Wigner, medida de equilíbrio. Na direita, apresenta-se a densidade de $\lambda_{max}$ normalizado e sua medida esperada.}
 	\label{Figura: Gaussian}
 \end{figure}
 
-Indo além dos modelos gaussianos podemos retomar as descrições dos potenciais mônico e quártico. Respectivamente, estes modelos equivalem a tomar na simulação os parâmetros $d = 1, \ \  n = 2, \ \ \beta_N = \beta N^2$ para $\beta = 2$ com
+Podemos retomar também as descrições dos potenciais mônico e os dois regimes do potencial quártico. Respectivamente, estes modelos equivalem a tomar na simulação os parâmetros
 \begin{equation}
-	\V(x)= t |x|^{2m}, \ \ W(x) = g(x) = \log{|x|}.
+	d = 1; \ \  n = 2; \ \ \V(x)= t |x|^{2m}; \ \ W(x) = g(x) = \log{|x|}; \ \ \beta_N = \beta N^2; \ \ \beta = 2.
 	\label{Equation: Parametros Monico}
 \end{equation}
-e $d = 1, \ \  n = 2, \ \ \beta_N = \beta N^2$ para $\beta = 2$ com
 \begin{equation}
-	\V(x)=\frac{|x|^4}{4} + t \frac{|x|^2}{2}, \ \ W(x) = g(x) = \log{|x|}.
+	d = 1; \ \  n = 2; \ \ \V(x)=\frac{|x|^4}{4} + t \frac{|x|^2}{2}; \ \ W(x) = g(x) = \log{|x|}; \ \ \beta_N = \beta N^2; \ \ \beta = 2.
 	\label{Equation: Parametros Quartico}
 \end{equation}
 O caso mônico se reduz ao gaussiano se $m=1$. Os resultados para ambos os potenciais estão explicitados na Figura \ref{Figura: Quartic Monic} para alguns parâmetros interessantes de $t$ e $m$.
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Assets/validationQuarticMonic-alt.png}
-	\caption{Potencial Quártico \ref{Equation: Parametros Quartico} e Mônico \ref{Equation: Parametros Monico}, respectivamente à esquerda e direita. Tomou-se $\Delta t = 0.1$, $N=100$, e $nsteps = 5\cdot10^6$ passos. Registra-se a cada $1000$ iterações a partir de $nsteps/5$. No Quártico, simula-se $t=-1,-2,-3$. No Mônico fixa-se $t=1$ e simula-se $m=1,3,5$.}
+	\includegraphics[width=\textwidth]{Assets/validationQuarticMonic-alt.png}
+	\caption{Potencial Quártico \eqref{Equation: Parametros Quartico} e Mônico \eqref{Equation: Parametros Monico}, respectivamente à esquerda e direita. Tomou-se $\Delta \tilde{t} = 0.1$, $N=100$, e $nsteps = 5\cdot10^6$ passos. Registra-se a cada $1000$ iterações a partir de $nsteps/5$. No Quártico, simula-se $t=-1,-2,-3$. No Mônico fixa-se $t=1$ e simula-se $m=1,3,5$.}
 	\label{Figura: Quartic Monic}
 \end{figure}
 
-É fácil ver para os casos \ref{Equation: Parametros Gaussian}, \ref{Equation: Parametros Monico}, \ref{Equation: Parametros Quartico} que as medidas explícita pela teoria são concordantes, como esperado, com a medida experimental obtida nas simulações. Contudo, isso é bem explorado e pode ser observado, com exceção do Mônico, em \cite{Chafa2018}.
-
- Em uma situação menos explorada, considere a seguinte configuração de potencial e autovalores complexos ($\R^d = \R^2$) e a representação das medidas simuladas para alguns valores de interesse de $t, a$ na Figura \ref{Figura: Complex},
+Novamente as medidas experimentais parecem convergir para a medida teórica enunciada em todas as configurações testadas. Contudo, isso é discutido, com exceção do Mônico, por Chafa\"{i} e Ferré \cite{Chafa2018}. Em luz da situação recentemente explorada por Balogh \textit{et al.} \cite{balogh2016orthogonal} consideremos a Configuração \eqref{Equation: Complex} complexa. Para esta, representamos as medidas simuladas para alguns valores de interesse de $t, a$ na Figura \ref{Figura: Complex},
 \begin{equation}
 	d = 2; \  n = 2; \  \V(z)=|z|^{2a} - \Re{t z^a};  \ W(x) = g(x) = \log{|x|};  \ \beta_N = \beta N^2;  \ \beta = 2.
 	\label{Equation: Complex}
 \end{equation}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Assets/complexPotential.png}
-	\caption{Medidas referentes à configuração \ref{Equation: Complex}. Tomou-se $\Delta t = 0.5$ e $nsteps = 2\cdot10^6$ passos, registrando a cada $500$ iterações a partir de $nsteps/5$.}
+	\includegraphics[width=0.75\textwidth]{Assets/complexPotential.png}
+	\caption{Medidas referentes à configuração \eqref{Equation: Complex}. Tomou-se $\Delta \tilde{t} = 0.5$ e $nsteps = 2\cdot10^6$ passos, registrando a cada $500$ iterações a partir de $nsteps/5$.}
 	\label{Figura: Complex}
 \end{figure}
 
-É previsto para esse modelo uma transição de regime, uma separação da medida de equilíbrio, para $t_c \approx \sqrt{\frac{1}{a}}$ \cite{balogh2016orthogonal}. A simulação replicar o comportamento esperado é um bom indicador de que é possível estudar a medida de tal ensemble numericamente, que pode ser explorado posteriormente. Outro fator que corrobora o bom comportamento do modelo é a medida uniforme quando $a=1$, também prevista pela teoria. 
-
-%Outro potencial explorado pela literatura é descrito por
-%\begin{equation}
-%	d = 2; \  n = 2; \  \V(z)=\frac{1}{t_1}\left(|z|^{2} - 2\Re{\frac{z^{3}}{3} + t_0 z}\right);  \ W(x) = g(x) = \log{|x|};  \ \beta_N = \beta N^2;  \ \beta = 2.
-%	\label{Equation: ComplexDiagram}
-%\end{equation}
-%para o qual podemos representar uma seção de relevância do diagrama de fase para $(t_0, t_1)$ com ofeito na \ref{Figura: ComplexDiagram}
-
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=0.6\textwidth]{Assets/allshapes.png}
-%	\caption{Medidas referentes à configuração \ref{Equation: ComplexDiagram}. Tomou-se $\Delta t = 0.5$ e $nsteps = 2\cdot10^6$ passos, registrando a cada $500$ iterações a partir de $nsteps/5$. horizontalmnete varia-se $t_1$, verticalmente $t_0$.}
-%	\label{Figura: ComplexDiagram}
-%\end{figure}
-
-%Os resultados são holísticos mas parecem concordar com as previsões da literatura, como em \cite{Guilherme}.
-Notamos que os modelos gaussianos são os únicos em RMT com invariância por rotação e independência das entradas simultaneamente. Gerar matrizes de outros modelos invariantes dependeria de gerar entradas correlacionadas ja que, se tratando de ensembles invariantes, ou seja, de medida igual para quaisquer $M, M'$ tais que $\matriz{M} = \matriz{U} \matriz{M'} \matriz{U}^{-1}$, podemos simular $\matriz{U}$ autovetores uniformemente do espaço correspondente. Isso pois sabemos do teorema espectral que, para as matrizes tomadas, vale a decomposição $\matriz{M} = \matriz{U} \matriz{D} \matriz{U}^{-1}$. Para reconstruir uma elemento do ensemble de interesse nos resta replicar a medida de autovalores, $\matriz{D}$. Isso, de forma interessante, pode ser feito pela simulação descrita de Gases de Coulomb, que replica a medida dos ensemble.
+É previsto para esse modelo uma transição de regime - uma separação da medida de equilíbrio - para $t_c \approx \sqrt{a^{-1}}$, o que pode ser observado na Figura \ref{Figura: Complex} com algum detalhe. Outros fatores que corroboram o bom comportamento do modelo são que a medida é uniforme no disco quando $(a,t) = (1,0)$ e se concentra no bordo quando incrementa-se $a$, fatos também previstos. \cite{balogh2016orthogonal} Esse exemplo demonstra que é possível, sem muito esforço, replicar a medida, e principalmente o suporte, para potenciais mais complexos estudados em publicações recentes no tema e pode ser estendido para outros estudos, como para o potencial discutido por Bleher e Silva \cite{Silva}, dado pela Configuração \eqref{Equation: Silva}, representado em um diagrama de fase na Figura \ref{Figura: Silva}  
+\begin{equation}
+	d = 2; \  n = 2; \  \V(z)= t_0(|z|^{2} - 2\Re\{z^3/3 + t_1 z\});  \ W(x) = g(x) = \log{|x|}; \ \beta = 2.
+	\label{Equation: Silva}
+\end{equation}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Assets/allshapes.png}
+	\caption{Medidas referentes à configuração \eqref{Equation: Complex}. Tomou-se $\Delta \tilde{t} = 0.5$ e $nsteps = 2\cdot10^6$ passos, registrando a cada $500$ iterações a partir de $nsteps/5$.}
+	\label{Figura: Silva}
+\end{figure}
 
 \subsection{Conclusão}
 
-Descrevemos os fundamentos da Teoria de Matrizes Aleatórias e, com essas ideias, explicitamos os modelos gaussiano para $\beta = 1,2,4$, importantes em RMT pela sua característica única de pertencer à ambas categorias de ensembles, invariantes e independentes. Usando desse exemplo podemos entender os principais resultados sobre medidas dos ensembles invariantes e sobre a medida de autovalores destas matrizes. 
+A Teoria de Matrizes Aleatórias é uma ferramenta matemática extremamente versátil. Suas aplicações são extensas e diversas, cobrindo ambos sistemas físicos e matemáticos de grande relevância. Partindo da hipótese que autoenergias de sistemas complexos se comportam localmente como autovalores de matrizes aleatórias adequadas, permite-se a caracterização estatística do núcleo atômico ou ainda a determinação de propriedades físicas de metais. Em matemática, além das clássicas aplicações estatísticas dos modelos, mostra-se que matrizes aleatórias tem importante papel na determinação dos zeros da função de Riemann. Consolidada assim sua importância, a teoria se desenvolve rapidamente e tem chamado atenção da comunidade científica-matemática. Introduzimos neste trabalho as ideias de medida de matrizes aleatórias e ensembles, essenciais à RMT, e descrevemos os clássicos ensembles gaussianos, que julgamos exemplares para o entendimento dos resultados sobre medida nos autovalores e equilíbrio.
 
-Introduzimos a ideia de um Gás de Coulomb e como esta noção pode ser relacionada com os ensembles de matrizes aleatórias. Usando da ideia de partículas para pensar na dinâmica dos autovalores intuímos as ideias de minimização da energia livre para identificar o equilíbrio. Com isso, mostramos os principais resultados que possibilitam o cálculo explicito da medida de autovalores para o caso gaussiano e mais dois ensembles que usaremos como exemplo nas simulações que seguem. Com a analogia, percebemos que muitas vezes métodos numéricos são necessários para a solução das equações de movimento de descrevem a dinâmica das partículas descritas. Discutimos os principais métodos e principalmente as características do algoritmo implementado, justificando seu uso e propondo sua forma final apresentada também neste trabalho.
+A analogia de Gases de Coulomb surge naturalmente ao se explicitar a medida de matrizes de ensembles invariantes. Sua interpretação permite pensar na dinâmica dos autovalores como uma de partículas interagentes, da qual intuímos as ideias de minimização da energia livre para identificar o equilíbrio. Percebemos que muitas vezes métodos numéricos são necessários para a solução das equações de movimento estocásticas que descrevem a dinâmica das partículas modeladas. Apresentamos então os métodos de simulação numérica e discutimos as principais características do algoritmo implementado, denominado \textit{Langevin Monte Carlo}.
 
-Por fim, apresentamos os resultados. Simulações de medidas para os ensembles já descritos anteriormente, todos com autovalores reais, e um último ensemble com autovalores complexos, menos descrito. Para os efeitos deste trabalho, foi encontrada boa concordância das medidas simuladas com a descrição teórica atual e com os modelos de matriz testados. Principalmente para o ensemble de autovalores complexos, este resultado é de interesse visto que apresenta uma forma alternativa de simulação e, também, de análise numérica destes modelos para diversos ensembles explorados em literatura recente.
+Além disso, apresentamos os resultados, que dividimos, em propósito, em duas partes. Os primeiros resultados são de medidas de autovalores na reta, bem explorados na teoria e relativamente simples. Para estes, incluímos explicitamente no trabalho as soluções. Qualitativamente observa-se que os resultados tem boa concordância com a teoria, mesmo em distribuições mais delicadas, como a Tracy-Widow. Isso nos dá boa indicação do bom comportamento dos métodos e implementação utilizados. Com isso, apresentamos um dos resultados obtidos em um Gás de Coulomb em duas dimensões. Isso de refere a um potencial complexo, explorado com mais afinco apenas em teoria recente. Mesmo aqui, mostra-se que é possível replicar características de resultados apontados em trabalhos recentes e indica uma possível direção para exploração numérica da teoria.
 
-Finalmente, entendemos os resultados deste estudo como uma descrição e validação de métodos conhecidos de simulação e estudo de matrizes aleatórias, ainda que atuais. Contudo, vê-se extensões da utilização do método para estudo numérico de importantes resultados com pouca descrição teórica.
+Entendemos este estudo como uma descrição e validação de métodos conhecidos de simulação e matrizes aleatórias, ainda que atuais. Contudo, veem-se extensões da utilização do método para estudo numérico de importantes resultados com menos descrição teórica, o que, até onde sabemos, é menos explorado.
 
 %%-----
 %% Referências bibliográficas
