@@ -27,21 +27,9 @@
 
 
 \begin{frame}
-	\onslide<3>{
 	\begin{block}{Eugene Wigner - \textit{On the Wigner Surmise} (1956)}
 	``\textit{Perhaps I am now too courageous when I try to guess the distribution of the distances between successive levels (of energies of heavy nuclei). Theoretically, the situation is quite simple if one attacks the problem in a simpleminded fashion. The question is simply what are the distances of the characteristic values of a symmetric matrix with random coefficients.}''
 	\end{block}
-	}
-
-	\vspace{1cm}
-
-	\onslide<1-2>{
-	\begin{itemize}
-		\item Lei dos Grandes Números e Teorema Central do Limite;
-		\pause
-		\item Núcleos distintos compartilham estatísticas de níveis energéticos;
-	\end{itemize}
-	}
 \end{frame}
 
 %---------------------------------------------------------
@@ -81,28 +69,28 @@
 		\begin{equation*}
 			\begin{split}
 				\p{\left(\matriz{M}\right)} \dd \matriz{M}
-				\only<3>{
-				&= \p{\left(\matriz{U} \matriz{\Lambda} \matriz{U^{-1}}\right)} \dd \left(\matriz{U} \matriz{\Lambda} \matriz{U^{-1}}\right) \\
-				}
-				\only<4->{
+%				\only<3>{
+%				&= \p{\left(\matriz{U} \matriz{\Lambda} \matriz{U^{-1}}\right)} \dd \left(\matriz{U} \matriz{\Lambda} \matriz{U^{-1}}\right) \\
+%				}
+				\only<3->{
 				&= \p{\left(\matriz{U} \matriz{\Lambda} \matriz{U^{-1}}\right)} J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda}, \matriz{U} \right\rbrace \right) \dd \matriz{\Lambda} \dd \matriz{U} \\
 				}
-				\only<6-7>{
-				&=  \p{\left(\matriz{U^{-1}} \matriz{U} \matriz{\Lambda} \right)} J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda} \right\rbrace \right) \dd \matriz{\Lambda} \dd \matriz{U} \\
-				}
-				\only<7-9>{
-				&=  \p{\left(\matriz{\Lambda} \right)} J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda} \right\rbrace \right) \dd \matriz{\Lambda} \dd \matriz{U} \\
-				}
-				\only<8-9>{
-				&=  \phi\left( \Tr \left( \V\left( \matriz{M} \right) \right) \right) J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda} \right\rbrace \right) \dd \matriz{\Lambda} \dd \matriz{U} \\
-				}
-				\only<9-10>{
+%				\only<6-7>{
+%				&=  \p{\left(\matriz{U^{-1}} \matriz{U} \matriz{\Lambda} \right)} J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda} \right\rbrace \right) \dd \matriz{\Lambda} \dd \matriz{U} \\
+%				}
+%				\only<7-9>{
+%				&=  \p{\left(\matriz{\Lambda} \right)} J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda} \right\rbrace \right) \dd \matriz{\Lambda} \dd \matriz{U} \\
+%				}
+%				\only<8-9>{
+%				&=  \phi\left( \Tr \left( \V\left( \matriz{M} \right) \right) \right) J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda} \right\rbrace \right) \dd \matriz{\Lambda} \dd \matriz{U} \\
+%				}
+				\only<5>{
 				&=  \exp\left\lbrace -N \Tr \left( \V\left( \matriz{M} \right) \right) \right\rbrace J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda} \right\rbrace \right) \dd \matriz{\Lambda} \dd \matriz{U} \\
 				}
-				\only<11->{
+				\only<6->{
 				&=  \exp\left\lbrace -N \sum_{i=1}^N \V(\lambda_i) \right\rbrace J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda} \right\rbrace \right) \dd \matriz{\Lambda} \dd \matriz{U} \\
 				}
-				\only<12->{
+				\only<7->{
 				&=  \exp\left\lbrace -N \sum_{i=1}^N \V(\lambda_i) \right\rbrace \prod_{i < j}^{N} |\lambda_i - \lambda_j|^\beta \dd \matriz{\Lambda} \dd \matriz{U} \\
 				}
 			\end{split}
@@ -110,8 +98,8 @@
 	\end{minipage}
 	
 	\noindent
-	\begin{minipage}[h][0.45\textheight][c]{\textwidth}
-		\only<2-4>{
+	\begin{minipage}[h][0.47\textheight][c]{\textwidth}
+		\only<2-3>{
 		\begin{block}{$\matriz{M} \mapsto \matriz{U}\matriz{\Lambda}\matriz{U^{-1}}$}
 			Considere o mapa $\matriz{M} \mapsto \matriz{U}\matriz{\Lambda}\matriz{U^{-1}}$ com $\matriz{U}$ invertível e $\matriz{\Lambda}$ diagonal.
 			
@@ -121,8 +109,8 @@
 			\end{itemize}
 		\end{block}
 		}
-		\only<5-10>{
-		\begin{block}{Ensembles invariantes}
+		\only<4-5>{
+		\begin{block}{Propriedades - Ensembles invariantes}
 			Consideraremos os ensembles denominados invariantes (por rotação)
 			\begin{itemize}
 				\item Lema de Weyl: Medida pode ser expressa totalmente por $\phi\left( \Tr \left( \V\left( \matriz{M} \right) \right) \right)$;
@@ -131,38 +119,37 @@
 			\end{itemize}
 		\end{block}
 		}
-		\only<11-12>{
+		\only<6-7>{
 		\begin{block}{Teorema - Jacobiano}
 			O jacobiano pode ser expresso por uma determinada matriz de Vandermonde tal que
 			\[
 				J \left(\matriz{M} \rightarrow \left\lbrace \matriz{\Lambda} \right\rbrace \right) = \prod_{i < j}^{N} |\lambda_i - \lambda_j|^\beta
 			\]
-			onde $\lambda_i$ são os autovalores de $\matriz{M}$.
+			onde $\lambda_i$ são os autovalores de $\matriz{M}$ e $\beta \in \{1,2,4\}$ é referente à entradas reais, complexas ou quaterniônicas.
 		\end{block}
 		}
-		\only<13->{
-		\begin{block}{Medida}
+		\only<8>{
+		\begin{block}{Resultado - Medida Invariante}
+			Para matrizes simétricas, hermitianas ou hermitianas quaterniônicas - dos ensembles invariantes - vale que
 			\begin{equation*}
-				\begin{split}
-					\p{(\mmany{\lambda}{N})}
-					\only<13>{
-						&= \frac{1}{Z_{N, \beta}} \exp\left\lbrace -N \sum_{i=1}^N \V(\lambda_i) \right\rbrace \prod_{i < j}^{N} |\lambda_i - \lambda_j|^\beta \\
-					}
-					\only<14>{
-						&= \frac{1}{Z_{N, \beta}} \exp\left\lbrace -N \sum_{i=1}^N \V(\lambda_i) \right\rbrace \exp\left\lbrace \sum_{i < j}^{N}  \log |\lambda_i - \lambda_j|^\beta \right\rbrace
-					}
-					\only<15>{
-						&= \frac{1}{Z_{N, \beta}} \exp\left\lbrace -\beta N^2 \left( \frac{1}{\beta N} \sum_{i=1}^N \V(\lambda_i) + \frac{1}{2N^2} \sum_{i \neq j}^{N}  \log \frac{1}{|\lambda_i - \lambda_j|} \right) \right\rbrace
-					}
-					\only<16>{
-						&= \frac{1}{Z_{N, \beta}} \ee^{-\beta_N \Hf_N(\mmany{\lambda}{N})}
-					}
-				\end{split}
+%				\begin{split}
+					\p{(\mmany{\lambda}{N})} = \frac{1}{Z_{N, \beta}} \ee^{-\beta_N \Hf_N(\mmany{\lambda}{N})}
+%					\only<13>{
+%						&= \frac{1}{Z_{N, \beta}} \exp\left\lbrace -N \sum_{i=1}^N \V(\lambda_i) \right\rbrace \prod_{i < j}^{N} |\lambda_i - \lambda_j|^\beta \\
+%					}
+%					\only<14>{
+%						&= \frac{1}{Z_{N, \beta}} \exp\left\lbrace -N \sum_{i=1}^N \V(\lambda_i) \right\rbrace \exp\left\lbrace \sum_{i < j}^{N}  \log |\lambda_i - \lambda_j|^\beta \right\rbrace
+%					}
+%					\only<15>{
+%						&= \frac{1}{Z_{N, \beta}} \exp\left\lbrace -\beta N^2 \left( \frac{1}{\beta N} \sum_{i=1}^N \V(\lambda_i) + \frac{1}{2N^2} \sum_{i \neq j}^{N}  \log \frac{1}{|\lambda_i - \lambda_j|} \right) \right\rbrace
+%					}
+%					\only<16>{
+%						&= \frac{1}{Z_{N, \beta}} \ee^{-\beta_N \Hf_N(\mmany{\lambda}{N})}
+%					}
+%				\end{split}
 			\end{equation*}
-			\only<16>{
 				onde
 				$\Hf_N(\mmany{\lambda}{N}) = \frac{1}{\beta N} \sum_{i=1}^N \V(\lambda_i) + \frac{1}{2N^2} \sum_{i \neq j}^{N}  \log \frac{1}{|\lambda_i - \lambda_j|}$
-			}
 		\end{block}
 		}
 	\end{minipage}
@@ -177,17 +164,20 @@
 %Gaussianos
 \begin{frame}	
 \frametitle{Os Ensembles Gaussianos}
-	Tome agora as entradas segundo a lei 
-	\[
-	\mathcal{M}_{\Se}(N) \ni M_{i,j} \sim
-	\begin{cases}
-		\mathcal{N}_{\Se}(0,1/2) &  \ \text{para} \ i \neq j,\\
-		\mathcal{N}_{\Se}(0,1) & \ \text{para} \ i = j.
-	\end{cases}
-	\]
+
+	\begin{block}{Definição: Ensembles Gaussianos}
+		Seja $\matriz{M}$ matriz simétrica com entradas dadas segundo a lei 
+		\[
+		\mathcal{M}_{\Se}(N) \ni M_{i,j} \sim
+		\begin{cases}
+			\mathcal{N}_{\Se}(0,1/2) &  \ \text{para} \ i \neq j,\\
+			\mathcal{N}_{\Se}(0,1) & \ \text{para} \ i = j.
+		\end{cases}
+		\]
+		Esta matriz será, para $\Se = \R, \C, \He$, do \textit{Gaussian Orthogonal Ensemble (GOE)} ($\beta=1$), \textit{Gaussian Unitary Ensemble (GUE)} ($\beta=2$) e \textit{Gaussian Sympletic Ensemble (GSE)} ($\beta=4$). 
+	\end{block}
+
 	\begin{itemize}
-		\item Isso descreve, para $\Se = \R, \C, \He$, o \textit{Gaussian Orthogonal Ensemble (GOE)} ($\beta=1$), \textit{Gaussian Unitary Ensemble (GUE)} ($\beta=2$) e \textit{Gaussian Sympletic Ensemble (GSE)} ($\beta=4$).
-		
 		\item Únicos ensembles com entradas independentes e, simultaneamente, jpdf invariante.
 	\end{itemize}
 \end{frame}
@@ -200,7 +190,7 @@
 	}
 	
 	\only<2>{
-		Satisfaz as condições do Teorema e, especialmente, tem a forma exigida pelo Lema de Weyl, logo, 
+		Tem a forma de ensembles invariantes, logo 
 	}
 	
 	\only<1,2>{
@@ -262,7 +252,7 @@
 	\pause
 	\item Interagindo por $\g \colon \Se \mapsto (-\infty, \infty]$ núcleo de interação coulombiana;
 	\pause
-	\item $V$ tal que  $Z_{N, \beta} < \infty \ \forall \ N$.
+	\item $V$ tal que  $Z_{N, \beta}$ é finito para todo $N$.
 	\end{itemize}
 \end{frame}
 %---------------------------------------------------------
@@ -286,13 +276,13 @@
 \subsection{Medidas de Equilíbrio}
 %---------------------------------------------------------
 %Como calcular equilibrio
-\begin{frame}
+\begin{frame}[t]
 	\frametitle{Equilíbrio}
-	\only<1,2>{
+	\only<1-5>{
 		\onslide<1>{
 		Um argumento termodinâmico nos leva à minimizar a energia livre \cite{RMT-firstcourse-Potters}
 		\[
-		E^V_{N,\beta} \propto \log{Z_{N, \beta}}
+		E^V_{N,\beta} \propto - \log{Z_{N, \beta}}
 		\]
 		%Existe $\mu_{V}^* = \arg \inf {\mathcal{H}_N(\mu_{V})}$ medida de equilíbrio única no limite termodinâmico $N \rightarrow \infty$.
 		}
@@ -303,63 +293,303 @@
 		\frac{\partial \mathcal{H}}{\partial \lambda_i} = 0 \ \implies \ \V'(\lambda_i) = \frac{1}{N} \sum_{1 = j \neq i}^{N} \frac{1}{\lambda_i - \lambda_j} \ \ \text{para} \ i = 1, \cdots, N.
 		\]
 		}
+		
+		\onslide<3-5>{
+			\only<3>{
+			Ou ainda, definindo $S^{\mu_V}_N(z) \coloneqq  \frac{1}{N} \sum_{i=1}^{N} \frac{1}{z - \lambda_i}$ transformada de Cauchy/Stieljes
+			
+			\[
+			\V'(z)S^{\mu_V}_N(z) - \frac{1}{N} \sum^{N}_{i=1} \frac{\V'(z) - \V'(\lambda_i)}{z-\lambda_i} = S^{\mu_V}_N(z)^2 + \frac{S'^{\mu_V}_N(z)}{N}
+			\]
+			}
+		
+			\only<4>{
+				Assintoticamente em $N$, tal que $S^{\mu_V}(z) = \int \frac{\mu^*_V(\lambda)}{z - \lambda} \dd \lambda$,
+				
+				\[
+				\V'(z)S^{\mu_V}(z) - \int \frac{\V'(z) - \V'(\lambda)}{z - \lambda} \mu^*_V(\lambda) d\lambda = S^{\mu_V}(z)^2
+				\]
+				
+			}
+		
+			\only<5>{
+				Que, por ser equação de segundo grau, definido $\Pi(z) = int \frac{\V'(z) - \V'(\lambda)}{z - \lambda} \mu^*_V(\lambda) d\lambda$, resolve-se
+				
+				\[
+					S^{\mu_{V}} =  \V' \pm \sqrt{V'^2 - 2 \Pi}
+				\]
+			
+			}
+		}
 	}
-%	\only<3,4>{
-%		\onslide<3>{
-%		Sabemos por Sokhotski-Plemeji que
-%		\[
-%			\mu^{*}_{V}(x) = \frac{1}{2\pi \ii} \left( S^{\mu_V}_{+} -  S^{\mu_V}_{-}\right) = \frac{1}{\pi} \lim_{\epsilon \to 0^+} \Im{S^{\mu_V}_{+}(x + \ii\epsilon)}.
-%		\]
-%		}
-%		\onslide<4>{
-%		onde $S^{\mu_V}(z)$ é transformada de Stieltjes/Cauchy e pode ser escrita, assintoticamente em $N$,
-%		\[
-%			S^{\mu_V}(z) = \int \frac{\mu^*_V(\lambda)}{z - \lambda} \dd \lambda= \V'(z) \pm \sqrt{\V'(z)^2 - 2 \Pi_{\infty}(z) }.
-%		\]
-%		onde 
-%		\[
-%		\Pi_{\infty}(z) = \int \frac{\V'(z) - \V'(\lambda)}{z - \lambda} \mu^*_V(\lambda) d\lambda
-%		\]
-%		}
-%	}
-%	\only<5>{
-%	Isso se reduz, em muitos casos, à balancear, em ordem para $z \rightarrow \infty$, o sistema de equações dado por
-%	\[
-%	\left( S^{\mu_{V}} - \V' \right)^2 = \left( V' \right)^2 - 2 \Pi_{\infty}
-%	\]
-%	}
+
+	\only<6-7>{
+		\onslide<6>{
+		Sabemos por Sokhotski-Plemeji que
+		\[
+			\mu^{*}_{V}(x) = \frac{1}{2\pi \ii} \left( S^{\mu_V}_{+} -  S^{\mu_V}_{-}\right) = \frac{1}{\pi} \lim_{\epsilon \to 0^+} \Im{S^{\mu_V}_{+}(x + \ii\epsilon)}.
+		\]
+		}
+		\onslide<7>{
+		onde sabemos
+		\[
+			S^{\mu_V}(z) = \int \frac{\mu^*_V(\lambda)}{z - \lambda} \dd \lambda= \V'(z) \pm \sqrt{\V'(z)^2 - 2 \Pi(z) }.
+		\]
+		com 
+		\[
+		\Pi(z) = \int \frac{\V'(z) - \V'(\lambda)}{z - \lambda} \mu^*_V(\lambda) d\lambda
+		\]
+		}
+	}
 \end{frame}
 %---------------------------------------------------------
 %Examplos potenciais
-\begin{frame}
-	\frametitle{Exemplos}
 
-	\only<1>{
+\begin{frame}[t]
+	\frametitle{Exemplo I}
+	
+	\only<1-4>{
+		Consideremos
+		
+		\[
+			V(x) = \frac{x^2}{2}.
+		\]
+	}
+	
+	\only<2-4>{
+		Onde temos a relação
+		\[
+		S^{\mu_{V}} = z \pm \sqrt{z^2 - 2\Pi}
+		\]
+	}
+
+	\only<3>{
+		e sabemos 
+		\begin{align*}
+		\Pi(z) & = \int \frac{\V'(z) - \V'(\lambda)}{z - \lambda} \mu^*_V(\lambda) d\lambda \\
+		       & = \int \frac{z - \lambda}{z - \lambda} \mu^*_V(\lambda) d\lambda = 1
+		\end{align*}
+	}
+
+	\only<4>{
+		Logo,
+		\[
+			\frac{1}{\pi} \lim_{\epsilon \rightarrow 0} \im S^{\mu_{V}}(x+\ii\epsilon) = \frac{1}{\pi} \sqrt{2 - x^2}
+		\]
+	}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Potencial Quadrático}
 	Se $\V(x) = \frac{x^2}{2}$:
 	\[
-		\supp{\mu_V(x)} = [-\sqrt{2}, \sqrt{2}], \ \ \ \text{e} \ \ \ \mu_V(x) = \frac{1}{\pi} \sqrt{2 - x^2}.
+	\supp{\mu_V(x)} = [-\sqrt{2}, \sqrt{2}], \ \ \ \text{e} \ \ \ \mu_V(x) = \frac{1}{\pi} \sqrt{2 - x^2}.
 	\]
 	É Semi-Círculo de Wigner!
+\end{frame}
+
+
+\begin{frame}[t]
+	\frametitle{Exemplo II}
+	
+	\only<1-5>{
+		Consideremos
+		
+		\[
+			V(x) = \frac{x^4}{4} + t \frac{x^2}{2}
+		\]
+	}
+
+    \only<2-3>{
+		Partimos de
+		\[
+		    S^{\mu_{V}} =  \V' \pm \sqrt{V'^2 - 2 \Pi}
+		\]
 	}
 	
-	\only<3>{
-	Se $\V(x) = \frac{x^4}{4} + t \frac{x^2}{2}$:
-	\begin{itemize}
-		\item \(t \geq -2\)
+	\only<4-5>{	
+		Reescrevemos
 		\[
-			\supp \mu_V(x) = [-b_t, b_t], \ \ \mu_V(x) = \frac{1}{2\pi} (x^2 + c_t^2) \sqrt{b_t^2 - x^2},\label{Equação: Quartico +}
+			S^{\mu_{V}} =  \V' \pm Q(z) \sqrt{(z-\lambda_-)(z-\lambda_+)}
 		\]
-		com $c_t^2 \deff\frac{1}{2} b_t^2 + t \deff \frac{1}{3} (2t + \sqrt{t^2 + 12})$.
-		\item \(t < -2\)
+	
+%		onde $Q(z)$ é polinômio de grau $\deg{(V'(z))}$.
+	}
+
+
+	\only<3-4>{
+	\begin{block}{One Cut Assumption}
+		Simplificaremos o problema assumindo que $\mu^*_{V}(\lambda)$ é não nulo para todo $\lambda$ tal que $\lambda_- \leq \lambda \leq \lambda_+$ e nulo em todo o resto do domínio. Esperado para um potencial convexo. 
+		
 		\[
+			S^{\mu_{V}} = \int_{\lambda_-}^{\lambda_+} \frac{\mu^*_{V}(\lambda)}{z - \lambda} \dd \lambda
+		\]
+	\end{block}
+	}
+
+	\only<5>{
+		\vspace{0.75cm}
+		Para obter, por Sokhotski-Plemeji
+		\[
+			\mu^*_{V}(\lambda) = \frac{Q(\lambda) \sqrt{(\lambda_+ - 	\lambda)(\lambda-\lambda_-)}}{\pi}, \ \ \ \lambda_- \leq \lambda \leq \lambda_+.
+		\]
+		
+		onde definimos $\lambda_- = - \lambda_+ = 2a$
+	}
+
+	\only<6->{
+		Definiremos $Q(z)$ a partir do balanceamento de
+		
+		\[
+			S^{\mu_{V}} =  \V' \pm Q(z) \sqrt{(z+2a)(z-2a)}
+		\]
+	}
+
+	\only<8-9>{
+		\[
+			S^{\mu_{V}} =  \left( z + t z^3 \right) \pm Q(z) \sqrt{(z+2a)(z-2a)}
+		\]
+	}
+
+
+	\only<10-11>{
+		\[
+			S^{\mu_{V}} =   \left( z + t z^3 \right) \pm (a_0 + a_1 z + t z^2) \sqrt{(z+2a)(z-2a)}
+		\]
+	}
+
+	\only<7>{
+	\begin{block}{Derivada $V'(z)$ do potencial}
+		Sabendo 
+		
+		\[
+		V(z) = \frac{z^4}{4} + t \frac{z^2}{2}
+		\]
+		
+		escreve-se
+		
+		\[
+		V'(z) = \left( z + t z^3 \right)
+		\]		
+	\end{block}
+	}
+
+	\only<9>{
+		\begin{block}{Forma de $Q(z)$}
+			Sabendo o grau de $V'(z)$ dizemos
+			
+			\[
+			Q(z) = a_0 + a_1 z + t z^2
+			\]		
+		\end{block}
+	}
+	
+	\only<11>{
+		\begin{block}{Expansão de $S^{\mu_{V}}$}
+			Expandindo $S^{\mu_{V}}$ em $z \rightarrow \infty$ temos que
+			
+			\[
+			S^{\mu_{V}}(\infty) = \frac{1}{z} + \Boh \left( \frac{1}{z^2} \right)
+			\]
+		\end{block}
+	}
+
+	\only<12->{
+		\only<12-13>{
+			\[
+			\frac{1}{z} + \Boh \left( \frac{1}{z^2} \right) =   \left( z + t z^3 \right) \pm (a_0 + a_1 z + t z^2) \sqrt{(z+2a)(z-2a)}
+			\]
+		}
+%		\onslide<13-14>{
+%			\[
+%			\frac{1}{z} + \Boh \left( \frac{1}{z^2} \right) =   \left( z + t z^3 \right) \pm (a_0 + a_1 z + t z^2) z \sqrt{1 - \frac{4a^2}{z^2}}
+%			\]
+%		}
+%		\onslide<14-15>{0
+%			\[
+%			\frac{1}{z} + \Boh \left( \frac{1}{z^2} \right) =   \left( z + t z^3 \right) \pm (a_0 + a_1 z + t z^2) z \left( 1 - \frac{2a^2}{z^2} - \frac{2a^4}{z^4} + \Boh \left(\frac{1}{z^6}\right) \right)
+%			\]
+%		}
+	
+		\only<13->{
+			\[
+			\frac{1}{z} + \Boh \left( \frac{1}{z^2} \right) =  \frac{1}{z} (2a^2a_0 + 2a^4t) + z(1 - a_0 + 2a^2t) + z^2 (-a_1) + \Boh\left(\frac{1}{z^2}\right)
+			\]
+		}
+	}
+
+	\only<14->{
+		
+
+		Resolvemos então o sistema
+			
+		\begin{equation*}
+			\begin{cases}
+				a_1 = 0 \\
+				1 - a_0 + 2ta^2 = 0 \\
+				2a^4t + 2a^2a_0 = 1
+			\end{cases}
+		\end{equation*}
+			
+		donde
+			
+		\[
+		a_1 = 0; \ \ \  a_0 = 1 + 2a^2t; \ \ \ a^2 = \frac{-2 \pm \sqrt{4 + 24t}}{12t}. 
+		\]		
+	}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Potencial Quártico}
+		Se $\V(x) = \frac{x^4}{4} + t \frac{x^2}{2}$:
+		\begin{itemize}
+			\item \(t \geq -2\)
+			\[
+			\supp \mu_V(x) = [-b_t, b_t], \ \ \mu_V(x) = \frac{1}{2\pi} (x^2 + c_t^2) \sqrt{b_t^2 - x^2},\label{Equação: Quartico +}
+			\]
+			com $c_t^2 \deff\frac{1}{2} b_t^2 + t \deff \frac{1}{3} (2t + \sqrt{t^2 + 12})$.
+			\pause
+			\vspace{1cm}
+			\item \(t < -2\)
+			\[
 			\supp \mu_V(x) = [-b_t, -a_t] \cup [a_t, b_t], \ \ \mu_V(x) = \frac{1}{2\pi} |x| \sqrt{(x^2 - a_t^2)(b_t^2 - x^2)},
 			\label{Equação: Quartico -}
-		\]
-		com $ a_t \deff \sqrt{-2-t}, b_t \deff \sqrt{2-t}$.
-	\end{itemize}
-	}
+			\]
+			com $ a_t \deff \sqrt{-2-t}, b_t \deff \sqrt{2-t}$.
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Mônico}
+
+%	\only<1>{
+%	Se $\V(x) = \frac{x^2}{2}$:
+%	\[
+%		\supp{\mu_V(x)} = [-\sqrt{2}, \sqrt{2}], \ \ \ \text{e} \ \ \ \mu_V(x) = \frac{1}{\pi} \sqrt{2 - x^2}.
+%	\]
+%	É Semi-Círculo de Wigner!
+%	}
 	
-	\only<2>{
+%	\only<3>{
+%	Se $\V(x) = \frac{x^4}{4} + t \frac{x^2}{2}$:
+%	\begin{itemize}
+%		\item \(t \geq -2\)
+%		\[
+%			\supp \mu_V(x) = [-b_t, b_t], \ \ \mu_V(x) = \frac{1}{2\pi} (x^2 + c_t^2) \sqrt{b_t^2 - x^2},\label{Equação: Quartico +}
+%		\]
+%		com $c_t^2 \deff\frac{1}{2} b_t^2 + t \deff \frac{1}{3} (2t + \sqrt{t^2 + 12})$.
+%		\item \(t < -2\)
+%		\[
+%			\supp \mu_V(x) = [-b_t, -a_t] \cup [a_t, b_t], \ \ \mu_V(x) = \frac{1}{2\pi} |x| \sqrt{(x^2 - a_t^2)(b_t^2 - x^2)},
+%			\label{Equação: Quartico -}
+%		\]
+%		com $ a_t \deff \sqrt{-2-t}, b_t \deff \sqrt{2-t}$.
+%	\end{itemize}
+%	}
+	
+	\only<1>{
 	Se $\V(x) = t x^{2m}$:
 	\[
 		\supp \mu_V(x) = [-a, a], \ \ \mu_V(x) = \frac{mt}{\pi} \sqrt{a^2 - x^2} \h(x),
@@ -380,7 +610,9 @@
 	\frametitle{Simulações}
 	
 	\begin{itemize}
-		\item Processos ergóticos determinísticos são difíceis de serem construídos, desenvolve-se teoria de equações diferenciais estocásticas;
+		\item Construir sistema dinâmico que amostre de $\mu^*_{\beta}$ do ensemble canônico - um termostato;
+		\pause
+		\item Processos ergódicos determinísticos são difíceis de serem construídos, desenvolve-se teoria de equações diferenciais estocásticas;
 		\pause
 		\item Dinâmicas podem não ser diretamente/analiticamente integráveis, recorre-se a processos numéricos;
 		%\item Amostragem de medida de equilíbrio por integração numérica estável de processo estocástico invariante.
@@ -395,39 +627,44 @@
 \begin{frame}
 \frametitle{Langevin Monte Carlo}
 
-	\only<1>{
-		\begin{block}{\textit{Overdamped Langevin} \cite{leimmolecular}}
-			$q \in \R^d$ é vetor de posições generalizadas associado às $N$ partículas
-			\[
-				\dd q_t = -\alpha_N \nabla \Hf_N(q_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd W_t
-			\label{Equação: Langevin Overdamped}
-			\]
-			onde $(W_t)_{t>0}$ é processo de Wiener, $\gamma_N > 0$ é constante de atrito e $\alpha_N$ é escala temporal.
-		\end{block}
-	}
+%	\only<1>{
+%		\begin{block}{\textit{Overdamped Langevin} \cite{leimmolecular}}
+%			$q \in \R^d$ é vetor de posições generalizadas associado às $N$ partículas
+%			\[
+%				\dd q_t = -\alpha_N \nabla \Hf_N(q_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd W_t
+%			\label{Equação: Langevin Overdamped}
+%			\]
+%			onde $(W_t)_{t>0}$ é processo de Wiener, $\gamma_N > 0$ é constante de atrito e $\alpha_N$ é escala temporal.
+%		\end{block}
+%	}
 
-	\only<2>{
+	\only<1>{
 		\begin{block}{\textit{Kinetic Langevin} \cite{Stoltz2018}}
-			$(q, p)$, com $q,p \in \R^d$ são respectivamente as posições e momentos generalizados associados às $N$ partículas. $\U_N \colon \R^d \rightarrow \R$ energia cinética generalizada tal que $\ee^{-\beta_N \U_N}$ seja lebesgue integrável. Para energia $\Ee(q,p) = \Hf(q) + \U(p)$, escreve-se a dinâmica de Langevin para o processo de difusão em $\R^{dN} \cross \R^{dN}$ como a solução para a equação estocástica 
+			Sejam $(q, p)$, com $q,p \in \R^d$ posições e momentos generalizados associados às $N$ partículas. Seja ainda $\U_N \colon \R^d \rightarrow \R$ energia cinética generaliza tal que $\ee^{-\beta_N \U_N}$ seja lebesgue integrável. A dinâmica de Langevin para o processo de difusão em $\R^{dN} \cross \R^{dN}$ é solução para a equação estocástica 
 			\[
 				\begin{cases}
 					\dd q_t = \alpha_N \nabla U_N (p_t) \dd t, \\
 					\dd p_t = -\alpha_N \nabla \Hf_N(q_t) \dd t - \gamma_N \alpha_N \nabla U_N(p_t) \dd t + \sqrt{2\frac{\gamma_N \alpha_N}{\beta_N}} \dd W_t.
 				\end{cases}
 			\]
-		onde $\beta_N$ é temperatura inversa.
+		onde $(W_t)_{t>0}$ é processo de Wiener, $\gamma_N > 0$ é constante de atrito e $\alpha_N$ é escala temporal e $\beta_N$ é temperatura inversa.
 		\end{block}
 	}
 
-	\only<3>{
-	Essa dinâmica admite o gerador infinitesimal \cite{Chafa2018}
-	\[
-		\Gl = \Gl_{\Hf} + \Gl_{\U},
-	\]
-	\[
-		\Gl_{\Hf} = -\alpha_N \nabla\Hf_N(q) \cdot \nabla_p + \alpha_N \nabla \U_N(p) \cdot \nabla_q, \ \ \ \ \Gl_{\U} = \frac{\gamma_N\alpha_N}{\beta_N} \Delta_p - \gamma_N \alpha_N \nabla \U_N(p) \cdot \nabla_p.
-	\]
-	Denomina-se $\Gl_{\Hf}$ a parte Hamiltoniana e $\Gl_{\U}$ a parte de flutuação-dissipação.
+	\only<2-3>{
+		\onslide<2>{
+		Esse processo deixa invariante $$\p(q,p) = \p_q \otimes \p_p = \ee^{-\beta_N \Ee_N(q,p)}/Z'_N$$
+		}
+		\onslide<3>{
+		e admite o gerador infinitesimal
+		\[
+			\Gl = \Gl_{\Hf} + \Gl_{\U},
+		\]
+		\[
+			\Gl_{\Hf} = -\alpha_N \nabla\Hf_N(q) \cdot \nabla_p + \alpha_N 	\nabla \U_N(p) \cdot \nabla_q, \ \ \ \ \Gl_{\U} = \frac{\gamma_N\alpha_N}{\beta_N} \Delta_p - \gamma_N \alpha_N \nabla \U_N(p) \cdot \nabla_p.
+		\]
+		Denomina-se $\Gl_{\Hf}$ a parte Hamiltoniana e $\Gl_{\U}$ a parte de flutuação-dissipação. \cite{Chafa2018}
+		}
 	}
 
 
@@ -440,10 +677,11 @@
 %Verlet
 \begin{frame}
 	\frametitle{Dinâmica Hamiltoniana}
-	Resolveremos $\Gl_{\Hf}$ que descreve a dinâmica hamiltoniana
-	\[
-	\Gl_{\Hf} = -\alpha_N \nabla\Hf_N(q) \cdot \nabla_p + \alpha_N \nabla \U_N(p) \cdot \nabla_q
-	\]
+	Resolveremos a dinâmica associada à $\Gl_{\Hf}$, que descreve a parte hamiltoniana.
+	
+	\pause
+	
+	\vspace{0.6cm}
 	\begin{block}{Esquema de Verlet}
 		Para $\Delta t > 0$, a partir do estado $(q_k, p_k)$, o esquema lê-se
 		\[
@@ -453,22 +691,24 @@
 			\tilde{p}_{k+1} = \tilde{p}_{k+\frac{1}{2}} - \nabla \Hf_N(q_{k+1}) \alpha_N \frac{\Delta t}{2}.
 		\end{cases}
 		\]
+		e $(\tilde{q}_{k}, \tilde{p}_{k+1})$ `será proposta de estado posterior. Afirma-se ainda Verlet um integrador simplético.
 	\end{block}
 \end{frame}
 %---------------------------------------------------------
 %Ornstein Uhlenbeck
 \begin{frame}
 	\frametitle{Ornstein-Uhlenbeck}
-	Considere agora $\Gl_{\U}$ que descreve a dinâmica estocástica
-	\[
-	\Gl_{\U} = \frac{\gamma_N\alpha_N}{\beta_N} \Delta_p - \gamma_N \alpha_N \nabla \U_N(p) \cdot \nabla_p
-	\]
+	Considere agora $\Gl_{\U}$ que descreve a parte de flutuação-dissipação da dinâmica. Tem forma de processo de Ornstein-Uhlenbeck.
+	
+	\pause
+	
+	\vspace{0.6cm}
 	\begin{block}{Formula de Mehler}
-		Processo de Ornstein-Uhlenbeck de variância explícita $\Gl_{\U}$ pode ser integrado a partir da fórmula de Mehler para obter
+		Processo de Ornstein-Uhlenbeck de variância explícita tem solução explícita dada pela fórmula de Mehler. Escreve-se
 		\[
 			\tilde{p}_k = \eta p_k + \sqrt{\frac{1-\eta^2}{\beta_N}} G_k, \ \ \ \eta = \ee^{-\gamma_N \alpha_N \Delta t}.
 		\]
-		Onde $G_k$ é variável aleatória Gaussiana usual.
+		onde $\eta$ é pensado coeficiente de colisão/atrito, $\beta_N$ temperatura inversa e $G_k$ é variável aleatória Gaussiana usual.
 	\end{block}
 \end{frame}
 %---------------------------------------------------------
@@ -479,19 +719,21 @@
 %Highlighting text
 \begin{frame}
 	\frametitle{Metropolis}
-	Precisamos estabilizar a dinâmica, garantir razoável invariância.
+	Discretização não pode preservar a energia exatamente: implementa-se um passo de Metropolis-Hastings.
+	
+	\pause
 	
 	\begin{block}{Passo de Metropolis}
-		A partir da proposta $\tilde{q}_{k+1}$, calcule-se a probabilidade
+		A partir da proposta $(\tilde{q}_{k+1},\tilde{p}_{k+1})$, calcule-se a probabilidade
 		\[
-			P_k = 1 \wedge \frac{\K(\tilde{q}_{k+1}, q_k) \ee^{-\beta_N \Ee_N(\tilde{q}_{k+1})}}{\K(q_k, \tilde{q}_{k+1}) \ee^{-\beta_N \Ee_N(q_{k})}},
+			P_k = 1 \wedge \frac{\ee^{-\beta_N \Ee_N(\tilde{q}_{k+1}, \tilde{p}_{k+1})}}{\ee^{-\beta_N \Ee_N(q_{k}, \tilde{p}_{k})}},
 		\]
 		Atribua às coordenadas generalizadas $(q_{k+1}, p_{k+1})$ valor da seguinte forma
 		\[
 			(q_{k+1}, p_{k+1}) =
 			\begin{cases}
-				(\tilde{q}_{k+1}, \tilde{p}_{k+1}) \ \text{com probabilidade} \ P_k, \\
-				(q_k, -\tilde{p}_{k}) \ \text{com probabilidade} \ 1-P_k; \\
+				(\tilde{q}_{k+1}, \tilde{p}_{k+1}) \ \text{com 	probabilidade} \ P_k, \\
+				(q_k, -\tilde{p}_{k}) \ \text{com probabilidade} \ 	1-P_k. \\
 			\end{cases}
 		\]
 	\end{block}
@@ -512,7 +754,7 @@
 	\frametitle{Algoritmo}
 	
 		\begin{itemize}		
-			\item<1> Baseado no processo de Ornstein-Uhlenbeck, atualize a $\tilde{\p}_k$ com
+			\item<1> Baseado no processo de Ornstein-Uhlenbeck, atualize a $\tilde{p}_k$ com
 			$$
 				\tilde{p}_k = \eta p_k + \sqrt{\frac{1-\eta^2}{\beta_N}} G_k, \ \eta = \ee^{-\gamma_N \alpha_N \Delta t};
 				\label{Equation: Alg Mehler}
@@ -528,7 +770,7 @@
 			$$
 			\item<3> Pela definição do passo de metropolis, defina a probabilidade $P_k$
 			$$
-				1 \wedge \ee^{ -\beta_N \left( \Hf_N(\tilde{q}_{k+1}) + \frac{\tilde{p}^2_{k+1}}{2} - \Hf_N(q_k) - \frac{\tilde{p}^2_k}{2} \right) };
+				P_k = 1 \wedge \exp{ -\beta_N \left(\Ee_N(\tilde{q}_{k+1}, \tilde{p}_{k+1}) - \Ee_N(q_{k}, \tilde{p}_{k}) \right)};
 			$$
 			\item<4> Defina, a partir de $P_k$, 
 			$$
@@ -730,4 +972,115 @@
 \end{frame}
 %---------------------------------------------------------
 
+
+%\begin{frame}
+%	\frametitle{Equilíbrio}
+%	\only<1-3>{
+%		\onslide<1>{
+%			Um argumento termodinâmico nos leva à minimizar a energia livre \cite{RMT-firstcourse-Potters}
+%			\[
+%			E^V_{N,\beta} \propto - \log{Z_{N, \beta}}
+%			\]
+%			%Existe $\mu_{V}^* = \arg \inf {\mathcal{H}_N(\mu_{V})}$ medida de equilíbrio única no limite termodinâmico $N \rightarrow \infty$.
+%		}
+%		
+%		\onslide<2,3>{
+%			Deve satisfazer
+%			\[
+%			\frac{\partial \mathcal{H}}{\partial \lambda_i} = 0 \ \implies \ \V'(\lambda_i) = \frac{1}{N} \sum_{1 = j \neq i}^{N} \frac{1}{\lambda_i - \lambda_j} \ \ \text{para} \ i = 1, \cdots, N.
+%			\]
+%		}
+%		
+%		\onslide<3>{
+%			Ou ainda, multiplicando por $\frac{1}{z-\lambda_i}$ e somando sobre $i$
+%			\[
+%			\frac{1}{N} \sum^{N}_{i=1} \frac{\V'(\lambda_i)}{z-\lambda_i} = \frac{1}{N^2} \sum_{\substack{i,j=1 \\ j \neq i}}^{N} \frac{1}{(\lambda_i-\lambda_j)(z - \lambda_i)}
+%			\]
+%		}
+%	}
+%	
+%	\only<4-11>{
+%		\onslide<4>{
+%			Introduzimos
+%			\[
+%			S^{\mu_V}_N(z) \coloneqq  \frac{1}{N} \sum_{i=1}^{N} \frac{1}{z - \lambda_i}
+%			\]	
+%			tal que
+%		}
+%	}
+%	
+%	
+%	\only<5>{
+%		\[
+%		\frac{1}{N} \sum^{N}_{i=1} \frac{\V'(\lambda_i)}{z-\lambda_i} = \frac{1}{N^2} \sum_{\substack{i,j=1 \\ j \neq i}}^{N} \frac{1}{(\lambda_i-\lambda_j)(z - \lambda_i)}
+%		\]
+%	}
+%	
+%	\only<6>{
+%		\[
+%		\frac{1}{N} \sum^{N}_{i=1} \frac{\V'(\lambda_i)}{z-\lambda_i} = \frac{1}{2N^2} \left[ \sum_{\substack{i,j=1 \\ j \neq i}}^{N} \frac{1}{(\lambda_i-\lambda_j)(z - \lambda_i)} + \sum_{\substack{i,j=1 \\ j \neq i}}^{N} \frac{1}{(\lambda_j-\lambda_i)(z - \lambda_j)}\right]
+%		\]
+%	}
+%	
+%	\only<7>{
+%		\[
+%		\frac{1}{N} \sum^{N}_{i=1} \frac{\V'(\lambda_i)}{z-\lambda_i} = \frac{1}{2N^2} \sum_{\substack{i,j=1 \\ j \neq i}}^{N} \frac{1}{(z-\lambda_i)(z-\lambda_j)}
+%		\]
+%	}
+%	
+%	\only<8>{
+%		\[
+%		\frac{1}{N} \sum^{N}_{i=1} \frac{\V'(\lambda_i)}{z-\lambda_i} = \frac{S^{\mu_V}_N(z)^2}{2} - \frac{1}{2N^2} \sum_{i=1}^{N} \frac{1}{(z-\lambda_i)^2}
+%		\]
+%	}
+%	
+%	\only<9>{
+%		\[
+%		\frac{1}{N} \sum^{N}_{i=1} \frac{\V'(\lambda_i)}{z-\lambda_i} = S^{\mu_V}_N(z)^2 + \frac{S'^{\mu_V}_N(z)}{N}
+%		\]
+%	}
+%	
+%	\only<10>{
+%		\[
+%		\V'(z)S^{\mu_V}_N(z) - \frac{1}{N} \sum^{N}_{i=1} \frac{\V'(z) - \V'(\lambda_i)}{z-\lambda_i} = S^{\mu_V}_N(z)^2 + \frac{S'^{\mu_V}_N(z)}{N}
+%		\]
+%	}
+%	
+%	\only<11>{
+%		\[
+%		\V'(z)S^{\mu_V}_N(z) - \Pi_N(z) = S^{\mu_V}_N(z)^2 + \frac{S'^{\mu_V}_N(z)}{N}
+%		\]
+%		
+%		onde
+%		
+%		\[
+%		\Pi_N(z) = \frac{1}{N} \sum^{N}_{i=1} \frac{\V'(z) - \V'(\lambda_i)}{z-\lambda_i}
+%		\]
+%	}
+%	
+%	\only<12-13>{
+%		\onslide<12>{
+%			Sabemos por Sokhotski-Plemeji que
+%			\[
+%			\mu^{*}_{V}(x) = \frac{1}{2\pi \ii} \left( S^{\mu_V}_{+} -  S^{\mu_V}_{-}\right) = \frac{1}{\pi} \lim_{\epsilon \to 0^+} \Im{S^{\mu_V}_{+}(x + \ii\epsilon)}.
+%			\]
+%		}
+%		\onslide<13>{
+%			onde $S^{\mu_V}(z)$ é transformada de Stieltjes/Cauchy e pode ser escrita, assintoticamente em $N$,
+%			\[
+%			S^{\mu_V}(z) = \int \frac{\mu^*_V(\lambda)}{z - \lambda} \dd \lambda= \V'(z) \pm \sqrt{\V'(z)^2 - 2 \Pi(z) }.
+%			\]
+%			onde 
+%			\[
+%			\Pi(z) = \int \frac{\V'(z) - \V'(\lambda)}{z - \lambda} \mu^*_V(\lambda) d\lambda
+%			\]
+%		}
+%	}
+%	\only<14>{
+%		Isso se reduz, em muitos casos, à balancear, em ordem para $z \rightarrow \infty$, o sistema de equações dado por
+%		\[
+%		S^{\mu_{V}} =  \V' \pm \sqrt{V'^2 - 2 \Pi}
+%		\]
+%	}
+%\end{frame}
 \end{document}

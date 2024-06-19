@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.8)  3 JUN 2024 12:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.8)  4 JUN 2024 10:08
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1054,7 +1054,7 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-<Assets/CuteCircleWhite.png, id=65, 462.528pt x 346.896pt>
+<Assets/CuteCircleWhite.png, id=77, 462.528pt x 346.896pt>
 File: Assets/CuteCircleWhite.png Graphic file (type png)
 <use Assets/CuteCircleWhite.png>
 Package pdftex.def Info: Assets/CuteCircleWhite.png  used on input line 106.
@@ -1072,155 +1072,1016 @@ l.109 \folhaDeRosto
 
 ] [2
 
-]
-Cap\'{\i }tulo 1.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 196
-.
+] (./principal.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
+
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 196
-.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (12.65855pt too wide) in paragraph at lines 196--211
+))
+\tf@toc=\write7
+\openout7 = `principal.toc'.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.140 \clearpage
+                 [1
+
+]
+Cap\'{\i }tulo 1.
+
+Overfull \hbox (12.65855pt too wide) in paragraph at lines 199--214
  [][] 
  []
 
 [1
 
 
-]
-Cap\'{\i }tulo 2.
-
-Overfull \hbox (16.48224pt too wide) in paragraph at lines 261--272
- [] 
- []
-
-<Assets/posterwhite.pdf, id=102, 2159.99966pt x 3840.00026pt>
-File: Assets/posterwhite.pdf Graphic file (type pdf)
-<use Assets/posterwhite.pdf>
-Package pdftex.def Info: Assets/posterwhite.pdf  used on input line 274.
-(pdftex.def)             Requested size: 2159.99443pt x 3839.99094pt.
-File: Assets/posterwhite.pdf Graphic file (type pdf)
-<use Assets/posterwhite.pdf>
-Package pdftex.def Info: Assets/posterwhite.pdf  used on input line 274.
-(pdftex.def)             Requested size: 2159.99443pt x 3839.99094pt.
-<Assets/posterwhite.pdf, id=105, page=1, 2159.99966pt x 3840.00026pt>
-File: Assets/posterwhite.pdf Graphic file (type pdf)
-<use Assets/posterwhite.pdf, page 1>
-Package pdftex.def Info: Assets/posterwhite.pdf , page1 used on input line 274.
-
-(pdftex.def)             Requested size: 2159.99443pt x 3839.99094pt.
-File: Assets/posterwhite.pdf Graphic file (type pdf)
-<use Assets/posterwhite.pdf, page 1>
-Package pdftex.def Info: Assets/posterwhite.pdf , page1 used on input line 274.
-
-(pdftex.def)             Requested size: 475.43211pt x 845.21284pt.
-[2
-
-]
-File: Assets/posterwhite.pdf Graphic file (type pdf)
-<use Assets/posterwhite.pdf, page 1>
-Package pdftex.def Info: Assets/posterwhite.pdf , page1 used on input line 274.
-
-(pdftex.def)             Requested size: 475.43211pt x 845.21284pt.
-File: Assets/posterwhite.pdf Graphic file (type pdf)
-<use Assets/posterwhite.pdf, page 1>
-Package pdftex.def Info: Assets/posterwhite.pdf , page1 used on input line 274.
-
-(pdftex.def)             Requested size: 475.43211pt x 845.21284pt.
-File: Assets/posterwhite.pdf Graphic file (type pdf)
-<use Assets/posterwhite.pdf, page 1>
-Package pdftex.def Info: Assets/posterwhite.pdf , page1 used on input line 274.
-
-(pdftex.def)             Requested size: 475.43211pt x 845.21284pt.
- [3 <./Assets/posterwhite.pdf>] [4] [5] [6] [7] [8] [9] [10] [11] [12]
-<Assets/validationGaussianTracy.png, id=354, 1157.0427pt x 633.8079pt>
+] [2] [3] [4]
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 3
+26.
+ (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+) [5] [6] [7] [8] [9] [10]
+<Assets/validationGaussianTracy.png, id=292, 1157.0427pt x 633.8079pt>
 File: Assets/validationGaussianTracy.png Graphic file (type png)
 <use Assets/validationGaussianTracy.png>
 Package pdftex.def Info: Assets/validationGaussianTracy.png  used on input line
- 640.
+ 612.
 (pdftex.def)             Requested size: 452.9679pt x 248.1222pt.
-<Assets/validationQuarticMonic-alt.png, id=358, 1253.68375pt x 603.25375pt>
+<Assets/validationQuarticMonic-alt.png, id=296, 1253.68375pt x 603.25375pt>
 File: Assets/validationQuarticMonic-alt.png Graphic file (type png)
 <use Assets/validationQuarticMonic-alt.png>
 Package pdftex.def Info: Assets/validationQuarticMonic-alt.png  used on input l
-ine 657.
+ine 629.
 (pdftex.def)             Requested size: 452.9679pt x 217.9628pt.
-
-[13]
-<Assets/complexPotential.png, id=375, 624.4128pt x 320.1561pt>
+ [11]
+<Assets/complexPotential.png, id=314, 624.4128pt x 320.1561pt>
 File: Assets/complexPotential.png Graphic file (type png)
 <use Assets/complexPotential.png>
-Package pdftex.def Info: Assets/complexPotential.png  used on input line 670.
+Package pdftex.def Info: Assets/complexPotential.png  used on input line 642.
 (pdftex.def)             Requested size: 339.72592pt x 174.18605pt.
-<Assets/allshapes.png, id=383, 1387.584pt x 734.9859pt>
+<Assets/allshapes.png, id=322, 1387.584pt x 734.9859pt>
 File: Assets/allshapes.png Graphic file (type png)
 <use Assets/allshapes.png>
-Package pdftex.def Info: Assets/allshapes.png  used on input line 682.
+Package pdftex.def Info: Assets/allshapes.png  used on input line 654.
 (pdftex.def)             Requested size: 317.07614pt x 167.94412pt.
- [14 <./Assets/validationGaussianTracy.png>] [15 <./Assets/validationQuarticMon
-ic-alt.png>] (./principal.bbl [16 <./Assets/complexPotential.png> <./Assets/all
-shapes.png>]) [17
+ [12 <./Assets/validationGaussianTracy.png>]
+[13 <./Assets/validationQuarticMonic-alt.png>] [14 <./Assets/complexPotential.p
+ng> <./Assets/allshapes.png>]
+Cap\'{\i }tulo 2.
 
-] (./principal.aux)
+Overfull \hbox (16.48224pt too wide) in paragraph at lines 678--689
+ [] 
+ []
+
+[15
+
+]
+Cap\'{\i }tulo 3.
+(./principal.bbl [16
+
+]) [17
+
+]
+Ap\^endice A.
+<Assets/posterwhite.pdf, id=366, 2159.99966pt x 3840.00026pt>
+File: Assets/posterwhite.pdf Graphic file (type pdf)
+<use Assets/posterwhite.pdf>
+Package pdftex.def Info: Assets/posterwhite.pdf  used on input line 725.
+(pdftex.def)             Requested size: 2159.99443pt x 3839.99094pt.
+File: Assets/posterwhite.pdf Graphic file (type pdf)
+<use Assets/posterwhite.pdf>
+Package pdftex.def Info: Assets/posterwhite.pdf  used on input line 725.
+(pdftex.def)             Requested size: 2159.99443pt x 3839.99094pt.
+<Assets/posterwhite.pdf, id=369, page=1, 2159.99966pt x 3840.00026pt>
+File: Assets/posterwhite.pdf Graphic file (type pdf)
+<use Assets/posterwhite.pdf, page 1>
+Package pdftex.def Info: Assets/posterwhite.pdf , page1 used on input line 725.
+
+(pdftex.def)             Requested size: 2159.99443pt x 3839.99094pt.
+File: Assets/posterwhite.pdf Graphic file (type pdf)
+<use Assets/posterwhite.pdf, page 1>
+Package pdftex.def Info: Assets/posterwhite.pdf , page1 used on input line 725.
+
+(pdftex.def)             Requested size: 475.43211pt x 845.21284pt.
+[18
+
+]
+File: Assets/posterwhite.pdf Graphic file (type pdf)
+<use Assets/posterwhite.pdf, page 1>
+Package pdftex.def Info: Assets/posterwhite.pdf , page1 used on input line 725.
+
+(pdftex.def)             Requested size: 475.43211pt x 845.21284pt.
+File: Assets/posterwhite.pdf Graphic file (type pdf)
+<use Assets/posterwhite.pdf, page 1>
+Package pdftex.def Info: Assets/posterwhite.pdf , page1 used on input line 725.
+
+(pdftex.def)             Requested size: 475.43211pt x 845.21284pt.
+File: Assets/posterwhite.pdf Graphic file (type pdf)
+<use Assets/posterwhite.pdf, page 1>
+Package pdftex.def Info: Assets/posterwhite.pdf , page1 used on input line 725.
+
+(pdftex.def)             Requested size: 475.43211pt x 845.21284pt.
+ [19 <./Assets/posterwhite.pdf>]
+Ap\^endice B.
+<Assets/TCC.pdf, id=461, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf>
+Package pdftex.def Info: Assets/TCC.pdf  used on input line 731.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf>
+Package pdftex.def Info: Assets/TCC.pdf  used on input line 731.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+<Assets/TCC.pdf, id=464, page=1, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 1>
+Package pdftex.def Info: Assets/TCC.pdf , page1 used on input line 731.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 1>
+Package pdftex.def Info: Assets/TCC.pdf , page1 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+[20
+
+]
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 1>
+Package pdftex.def Info: Assets/TCC.pdf , page1 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 1>
+Package pdftex.def Info: Assets/TCC.pdf , page1 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 1>
+Package pdftex.def Info: Assets/TCC.pdf , page1 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [21 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=481, page=2, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 2>
+Package pdftex.def Info: Assets/TCC.pdf , page2 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 2>
+Package pdftex.def Info: Assets/TCC.pdf , page2 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 2>
+Package pdftex.def Info: Assets/TCC.pdf , page2 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [22 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=492, page=3, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 3>
+Package pdftex.def Info: Assets/TCC.pdf , page3 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 3>
+Package pdftex.def Info: Assets/TCC.pdf , page3 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 3>
+Package pdftex.def Info: Assets/TCC.pdf , page3 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [23 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=509, page=4, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 4>
+Package pdftex.def Info: Assets/TCC.pdf , page4 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 4>
+Package pdftex.def Info: Assets/TCC.pdf , page4 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 4>
+Package pdftex.def Info: Assets/TCC.pdf , page4 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+
+[24 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=526, page=5, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 5>
+Package pdftex.def Info: Assets/TCC.pdf , page5 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 5>
+Package pdftex.def Info: Assets/TCC.pdf , page5 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 5>
+Package pdftex.def Info: Assets/TCC.pdf , page5 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [25 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=537, page=6, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 6>
+Package pdftex.def Info: Assets/TCC.pdf , page6 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 6>
+Package pdftex.def Info: Assets/TCC.pdf , page6 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 6>
+Package pdftex.def Info: Assets/TCC.pdf , page6 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [26 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=564, page=7, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 7>
+Package pdftex.def Info: Assets/TCC.pdf , page7 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 7>
+Package pdftex.def Info: Assets/TCC.pdf , page7 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 7>
+Package pdftex.def Info: Assets/TCC.pdf , page7 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+
+[27 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=604, page=8, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 8>
+Package pdftex.def Info: Assets/TCC.pdf , page8 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 8>
+Package pdftex.def Info: Assets/TCC.pdf , page8 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 8>
+Package pdftex.def Info: Assets/TCC.pdf , page8 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [28 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=621, page=9, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 9>
+Package pdftex.def Info: Assets/TCC.pdf , page9 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 9>
+Package pdftex.def Info: Assets/TCC.pdf , page9 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 9>
+Package pdftex.def Info: Assets/TCC.pdf , page9 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [29 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=637, page=10, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 10>
+Package pdftex.def Info: Assets/TCC.pdf , page10 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 10>
+Package pdftex.def Info: Assets/TCC.pdf , page10 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 10>
+Package pdftex.def Info: Assets/TCC.pdf , page10 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+
+[30 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=646, page=11, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 11>
+Package pdftex.def Info: Assets/TCC.pdf , page11 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 11>
+Package pdftex.def Info: Assets/TCC.pdf , page11 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 11>
+Package pdftex.def Info: Assets/TCC.pdf , page11 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [31 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=655, page=12, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 12>
+Package pdftex.def Info: Assets/TCC.pdf , page12 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 12>
+Package pdftex.def Info: Assets/TCC.pdf , page12 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 12>
+Package pdftex.def Info: Assets/TCC.pdf , page12 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [32 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=666, page=13, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 13>
+Package pdftex.def Info: Assets/TCC.pdf , page13 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 13>
+Package pdftex.def Info: Assets/TCC.pdf , page13 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 13>
+Package pdftex.def Info: Assets/TCC.pdf , page13 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+
+[33 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=672, page=14, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 14>
+Package pdftex.def Info: Assets/TCC.pdf , page14 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 14>
+Package pdftex.def Info: Assets/TCC.pdf , page14 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 14>
+Package pdftex.def Info: Assets/TCC.pdf , page14 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [34 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=677, page=15, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 15>
+Package pdftex.def Info: Assets/TCC.pdf , page15 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 15>
+Package pdftex.def Info: Assets/TCC.pdf , page15 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 15>
+Package pdftex.def Info: Assets/TCC.pdf , page15 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [35 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=682, page=16, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 16>
+Package pdftex.def Info: Assets/TCC.pdf , page16 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 16>
+Package pdftex.def Info: Assets/TCC.pdf , page16 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 16>
+Package pdftex.def Info: Assets/TCC.pdf , page16 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+
+[36 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=693, page=17, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 17>
+Package pdftex.def Info: Assets/TCC.pdf , page17 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 17>
+Package pdftex.def Info: Assets/TCC.pdf , page17 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 17>
+Package pdftex.def Info: Assets/TCC.pdf , page17 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [37 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=698, page=18, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 18>
+Package pdftex.def Info: Assets/TCC.pdf , page18 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 18>
+Package pdftex.def Info: Assets/TCC.pdf , page18 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 18>
+Package pdftex.def Info: Assets/TCC.pdf , page18 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [38 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=708, page=19, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 19>
+Package pdftex.def Info: Assets/TCC.pdf , page19 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 19>
+Package pdftex.def Info: Assets/TCC.pdf , page19 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 19>
+Package pdftex.def Info: Assets/TCC.pdf , page19 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+
+[39 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=717, page=20, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 20>
+Package pdftex.def Info: Assets/TCC.pdf , page20 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 20>
+Package pdftex.def Info: Assets/TCC.pdf , page20 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 20>
+Package pdftex.def Info: Assets/TCC.pdf , page20 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [40 <./Assets/TCC.pdf>]
+<Assets/TCC.pdf, id=722, page=21, 597.50829pt x 845.0471pt>
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 21>
+Package pdftex.def Info: Assets/TCC.pdf , page21 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 21>
+Package pdftex.def Info: Assets/TCC.pdf , page21 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Assets/TCC.pdf Graphic file (type pdf)
+<use Assets/TCC.pdf, page 21>
+Package pdftex.def Info: Assets/TCC.pdf , page21 used on input line 731.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [41 <./Assets/TCC.pdf>]
+Ap\^endice C.
+
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=727, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf>
+Package pdftex.def Info: Assets/Verao.pdf  used on input line 737.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf>
+Package pdftex.def Info: Assets/Verao.pdf  used on input line 737.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=730, page=1, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 1>
+Package pdftex.def Info: Assets/Verao.pdf , page1 used on input line 737.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 1>
+Package pdftex.def Info: Assets/Verao.pdf , page1 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[42
+
+]
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 1>
+Package pdftex.def Info: Assets/Verao.pdf , page1 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 1>
+Package pdftex.def Info: Assets/Verao.pdf , page1 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 1>
+Package pdftex.def Info: Assets/Verao.pdf , page1 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [43 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=755, page=2, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 2>
+Package pdftex.def Info: Assets/Verao.pdf , page2 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 2>
+Package pdftex.def Info: Assets/Verao.pdf , page2 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 2>
+Package pdftex.def Info: Assets/Verao.pdf , page2 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[44 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=784, page=3, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 3>
+Package pdftex.def Info: Assets/Verao.pdf , page3 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 3>
+Package pdftex.def Info: Assets/Verao.pdf , page3 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 3>
+Package pdftex.def Info: Assets/Verao.pdf , page3 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[45 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=816, page=4, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 4>
+Package pdftex.def Info: Assets/Verao.pdf , page4 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 4>
+Package pdftex.def Info: Assets/Verao.pdf , page4 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 4>
+Package pdftex.def Info: Assets/Verao.pdf , page4 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[46 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=829, page=5, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 5>
+Package pdftex.def Info: Assets/Verao.pdf , page5 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 5>
+Package pdftex.def Info: Assets/Verao.pdf , page5 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 5>
+Package pdftex.def Info: Assets/Verao.pdf , page5 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[47 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=834, page=6, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 6>
+Package pdftex.def Info: Assets/Verao.pdf , page6 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 6>
+Package pdftex.def Info: Assets/Verao.pdf , page6 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 6>
+Package pdftex.def Info: Assets/Verao.pdf , page6 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[48 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=839, page=7, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 7>
+Package pdftex.def Info: Assets/Verao.pdf , page7 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 7>
+Package pdftex.def Info: Assets/Verao.pdf , page7 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 7>
+Package pdftex.def Info: Assets/Verao.pdf , page7 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[49 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=856, page=8, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 8>
+Package pdftex.def Info: Assets/Verao.pdf , page8 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 8>
+Package pdftex.def Info: Assets/Verao.pdf , page8 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 8>
+Package pdftex.def Info: Assets/Verao.pdf , page8 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[50 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=865, page=9, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 9>
+Package pdftex.def Info: Assets/Verao.pdf , page9 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 9>
+Package pdftex.def Info: Assets/Verao.pdf , page9 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 9>
+Package pdftex.def Info: Assets/Verao.pdf , page9 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[51 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=871, page=10, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 10>
+Package pdftex.def Info: Assets/Verao.pdf , page10 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 10>
+Package pdftex.def Info: Assets/Verao.pdf , page10 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 10>
+Package pdftex.def Info: Assets/Verao.pdf , page10 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[52 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=876, page=11, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 11>
+Package pdftex.def Info: Assets/Verao.pdf , page11 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 11>
+Package pdftex.def Info: Assets/Verao.pdf , page11 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 11>
+Package pdftex.def Info: Assets/Verao.pdf , page11 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[53 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=881, page=12, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 12>
+Package pdftex.def Info: Assets/Verao.pdf , page12 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 12>
+Package pdftex.def Info: Assets/Verao.pdf , page12 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 12>
+Package pdftex.def Info: Assets/Verao.pdf , page12 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[54 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=886, page=13, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 13>
+Package pdftex.def Info: Assets/Verao.pdf , page13 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 13>
+Package pdftex.def Info: Assets/Verao.pdf , page13 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 13>
+Package pdftex.def Info: Assets/Verao.pdf , page13 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[55 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=891, page=14, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 14>
+Package pdftex.def Info: Assets/Verao.pdf , page14 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 14>
+Package pdftex.def Info: Assets/Verao.pdf , page14 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 14>
+Package pdftex.def Info: Assets/Verao.pdf , page14 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[56 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=896, page=15, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 15>
+Package pdftex.def Info: Assets/Verao.pdf , page15 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 15>
+Package pdftex.def Info: Assets/Verao.pdf , page15 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 15>
+Package pdftex.def Info: Assets/Verao.pdf , page15 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[57 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=906, page=16, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 16>
+Package pdftex.def Info: Assets/Verao.pdf , page16 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 16>
+Package pdftex.def Info: Assets/Verao.pdf , page16 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 16>
+Package pdftex.def Info: Assets/Verao.pdf , page16 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[58 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=911, page=17, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 17>
+Package pdftex.def Info: Assets/Verao.pdf , page17 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 17>
+Package pdftex.def Info: Assets/Verao.pdf , page17 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 17>
+Package pdftex.def Info: Assets/Verao.pdf , page17 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[59 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=916, page=18, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 18>
+Package pdftex.def Info: Assets/Verao.pdf , page18 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 18>
+Package pdftex.def Info: Assets/Verao.pdf , page18 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 18>
+Package pdftex.def Info: Assets/Verao.pdf , page18 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[60 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=921, page=19, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 19>
+Package pdftex.def Info: Assets/Verao.pdf , page19 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 19>
+Package pdftex.def Info: Assets/Verao.pdf , page19 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 19>
+Package pdftex.def Info: Assets/Verao.pdf , page19 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[61 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=926, page=20, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 20>
+Package pdftex.def Info: Assets/Verao.pdf , page20 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 20>
+Package pdftex.def Info: Assets/Verao.pdf , page20 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 20>
+Package pdftex.def Info: Assets/Verao.pdf , page20 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[62 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=931, page=21, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 21>
+Package pdftex.def Info: Assets/Verao.pdf , page21 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 21>
+Package pdftex.def Info: Assets/Verao.pdf , page21 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 21>
+Package pdftex.def Info: Assets/Verao.pdf , page21 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[63 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=937, page=22, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 22>
+Package pdftex.def Info: Assets/Verao.pdf , page22 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 22>
+Package pdftex.def Info: Assets/Verao.pdf , page22 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 22>
+Package pdftex.def Info: Assets/Verao.pdf , page22 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[64 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=942, page=23, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 23>
+Package pdftex.def Info: Assets/Verao.pdf , page23 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 23>
+Package pdftex.def Info: Assets/Verao.pdf , page23 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 23>
+Package pdftex.def Info: Assets/Verao.pdf , page23 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[65 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=951, page=24, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 24>
+Package pdftex.def Info: Assets/Verao.pdf , page24 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 24>
+Package pdftex.def Info: Assets/Verao.pdf , page24 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 24>
+Package pdftex.def Info: Assets/Verao.pdf , page24 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[66 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=956, page=25, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 25>
+Package pdftex.def Info: Assets/Verao.pdf , page25 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 25>
+Package pdftex.def Info: Assets/Verao.pdf , page25 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 25>
+Package pdftex.def Info: Assets/Verao.pdf , page25 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[67 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=969, page=26, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 26>
+Package pdftex.def Info: Assets/Verao.pdf , page26 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 26>
+Package pdftex.def Info: Assets/Verao.pdf , page26 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 26>
+Package pdftex.def Info: Assets/Verao.pdf , page26 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[68 <./Assets/Verao.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./Assets/Verao.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<Assets/Verao.pdf, id=974, page=27, 597.23125pt x 845.1575pt>
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 27>
+Package pdftex.def Info: Assets/Verao.pdf , page27 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 27>
+Package pdftex.def Info: Assets/Verao.pdf , page27 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: Assets/Verao.pdf Graphic file (type pdf)
+<use Assets/Verao.pdf, page 27>
+Package pdftex.def Info: Assets/Verao.pdf , page27 used on input line 737.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[69 <./Assets/Verao.pdf>] (./principal.aux)
 Package rerunfilecheck Info: File `principal.out' has not changed.
-(rerunfilecheck)             Checksum: 432F6824CD805123BA4E702AB6246F66;2343.
+(rerunfilecheck)             Checksum: 427C2E73B88EE6C0A019C5E608C92993;3075.
  ) 
 Here is how much of TeX's memory you used:
- 30386 strings out of 478287
- 594324 string characters out of 5849290
- 960243 words of memory out of 5000000
- 47927 multiletter control sequences out of 15000+600000
- 488540 words of font info for 73 fonts, out of 8000000 for 9000
+ 30638 strings out of 478287
+ 600411 string characters out of 5849290
+ 962428 words of memory out of 5000000
+ 48109 multiletter control sequences out of 15000+600000
+ 489116 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,81p,1685b,1433s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
 fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cmextra/cmbsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf
-/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/
-cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fo
-nts/type1/public/cm-super/sftt1200.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sftt1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1728.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri
-8a.pfb>
-Output written on principal.pdf (20 pages, 1135934 bytes).
+type1/public/fdsymbol/FdSymbolA-Book.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/fdsymbol/FdSymbolB-Book.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/fdsymbol/FdSymbolC-Book.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/fdsymbol/FdSymbolE-Book.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/fdsymbol/FdSymbolF-Book.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/bbold-type1/bbold10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/bbold-type1/bbold7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cmextra/cmbsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+x8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke
+/dsrom12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmm
+i10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmssbo10.pfb></usr/share/texmf/font
+s/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts
+/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-sup
+er/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></us
+r/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/
+type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-supe
+r/sftt1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1440.pfb></usr
+/share/texmf/fonts/type1/public/cm-super/sfxc1728.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
+utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on principal.pdf (73 pages, 2149981 bytes).
 PDF statistics:
- 581 PDF objects out of 1000 (max. 8388607)
- 443 compressed objects within 5 object streams
- 90 named destinations out of 1000 (max. 500000)
- 178 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1185 PDF objects out of 1200 (max. 8388607)
+ 868 compressed objects within 9 object streams
+ 146 named destinations out of 1000 (max. 500000)
+ 472 words of extra memory for PDF output out of 10000 (max. 10000000)
 

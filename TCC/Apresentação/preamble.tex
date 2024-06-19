@@ -12,6 +12,9 @@
 \usepackage{physics}
 \usepackage{bbold}
 \usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{appendixnumberbeamer}
 
 %------------------Tikz
 \usepackage{tikz}
@@ -85,7 +88,7 @@
 \subtitle{}
 
 \author[João V. A. Pimenta] % (optional)
-{João V. A. Pimenta\inst{1} \and Guilherme Silva\inst{2}}
+{João V. A. Pimenta\inst{1} \and Guilherme L. F. Silva\inst{2}}
 
 \institute[IFSC] % (optional)
 {
@@ -99,7 +102,7 @@
 }
 
 \date[TCC 2024] % (optional)
-{Defesa de TCC em Física Computacional, Junho 2024}
+{Defesa de TCC para obtenção de título de Bacharel em Física Computacional, Junho 2024}
 
 \logo{\includegraphics[height=0.5cm]{media/aesthetics/logotipoifsc}}
 
@@ -120,6 +123,21 @@
 	\end{frame}
 	}
 }
+
+%------------------------------------------------------------
+\definecolor{titleideablock}{HTML}{014508}
+\definecolor{historycolor}{HTML}{b36630}
+\definecolor{preamblecolor}{HTML}{d97836}
+
+
+
+\newenvironment{ideablock}[1]{%
+	\setbeamercolor{block title}{bg=titleideablock}
+	\begin{block}{#1}}{\end{block}}
+
+\newenvironment{history}[1]{%
+	\setbeamercolor{block title}{bg=historycolor}
+	\begin{block}{#1}}{\end{block}}
 %------------------------------------------------------------
 
 \newcommand\underrel[2]{\mathrel{\mathop{#2}\limits_{#1}}}
@@ -167,7 +185,7 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\J}{J} %Jacobiano
 \newcommand{\Id}{\mathbb{1}}
-\newcommand{\p}{p} %medida
+\newcommand{\p}{\mathcal{P}} %medida
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\Se}{\mathbb{S}}
 \newcommand{\He}{\mathbb{H}}

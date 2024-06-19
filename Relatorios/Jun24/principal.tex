@@ -135,6 +135,7 @@ footskip=.25in]{geometry}
 %
 %% Adicionará o sumário.
 %% Mantenha o \thispagestyle{empty} e \clearpage
+\tableofcontents
 \thispagestyle{empty}
 \clearpage
 %
@@ -150,7 +151,9 @@ footskip=.25in]{geometry}
 %% Corpo do texto
 %%-----
 
-\chapter{Atividades Desenvolvidas}
+\chapter{Realizações do período}\label{chp:realizacoes}
+
+\section{Atividades Desenvolvidas}
 \label{section:atividadesdesenvolvidas}
 
 A execução do projeto foi dividida nas seguintes etapas:
@@ -158,7 +161,7 @@ A execução do projeto foi dividida nas seguintes etapas:
 \begin{enumerate}
 	\item \textbf{Revisão da Literatura em RMT, e estudo de teoria básica do GUE}, é necessário fazer vasta revisão de literatura no tema para que o aluno tenha domínio das ferramentas e métodos utilizados para o tratamento de matrizes aleatórias e suas implicações em mecânica estatística. Para isso, durante esse período será realizado o estudo da bibliografia adequada;
 	
-	\item \textbf{Estudo dos métodos de Simulação}, como mencionado, uma das aplicações importantes da teoria de matrizes aleatórias reside em sua conexão com gases de Coulomb. Em 2018 publicou-se o artigo \cite{Chafa2018}, base para o estudo do método de simulação implementado;
+	\item \textbf{Estudo dos métodos de Simulação}, uma das aplicações importantes da teoria de matrizes aleatórias reside em sua conexão com Gases de Coulomb. Em 2018 publicou-se o artigo \cite{Chafa2018}, base para o estudo do método de simulação implementado;
 	
 	\item \textbf{Implementação dos algoritmos}, implementa-se os métodos descritos no artigo e tenta-se estender seu uso em condições diferentes das utilizadas no artigo, como por exemplo em outros potenciais;
 	
@@ -212,8 +215,6 @@ Com base nas tarefas enumeradas na Seção \ref{section:atividadesdesenvolvidas}
 	\label{tab:cronograma1ano}
 \end{table}
 
-\chapter{Realizações do período}\label{chp:realizacoes}
-
 \section{Graduação}
 
 Durante o período referente à pesquisa o aluno realizou as seguintes matérias e respectivos desempenhos:
@@ -248,35 +249,6 @@ Durante o período referente à pesquisa o aluno realizou as seguintes matérias
 		\hline
 	\end{tabular}
 \end{center}
-
-\section{Participação em eventos científicos}\label{chp:particEvento}
-
-Durante o período de 13 de Janeiro à 24 de Fevereiro o bolsista participou do evento ``Jornadas de Pesquisa em Matemática'' realizado pelo Instituto de Ciências Matemáticas e de Computação (ICMC - USP). Durante este evento foi realizado pesquisa original em simulações de caminhos aleatórios, que rendeu o relatório de nome 'Baralhos e passeios aleatórios', submetido para a FAPESP e disponível em anexo.
-
-O bolsista também apresentou em dois eventos no período da pesquisa. O Colóquio Brasileiro de Matemática (CBM) e a Semana Integrada da Física de São Carlos (SIFSC). Apenas para o primeiro, realizado no Rio de Janeiro, foi necessário o uso da reserva técnica. Por isso, segue o pôster apresentado na próxima página. O trabalho é complementar aos estudos assintóticos e de probabilidade realizados nos meses cobertos por este relatório.
-
-\hspace{1cm}
-
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
-	\hline
-	Evento &  Sede & Data & Modalidade & Apresentação & Reserva Técnica \\
-	\hline
-	CBM & IMPA & 24-28/07/23 & Presencial & Pôster - Oral & Sim \\
-	\hline
-	SIFSC & IFSC-USP & 21-25/08/23 & Presencial & Pôster - Oral & Não \\
-	\hline
-	Jornadas & ICMC-USP & 13/01-24/02/23 & Presencial & Oral & Não \\
-	\hline
-\end{tabular}
-\end{center}
-
-\includepdf[pages={1}]{Assets/posterwhite.pdf}
-
-\section{Outros trabalhos Preparados ou Submetidos}
-
-Durante o período da bolsa foi também finalizado o trabalho intitulado ``A Central Limit Theorem for intransitive dice'' co-autorado pelo aluno beneficiário da bolsa. O arquivo se encontra disponível
-na plataforma Arxiv em \url{https://arxiv.org/abs/2310.17083} e está em processo de publicação. Por fim, realizou-se também o desenvolvimento do Trabalho de Conclusão de Curso referente à graduação em andamento. A ser defendido, disponível em anexo.
 
 \section{Pesquisa}
 \label{Pesquisa}
@@ -322,7 +294,7 @@ Os três ensembles gaussianos compartilham de uma propriedade exclusiva - são o
 	\p(\vec{\lambda}) = \frac{1}{Z_{N, \beta}} \ee^{-\beta_N \mathcal{H}_N(\vec{\lambda})},
 	\label{Equation: medida Gaussian}
 \end{equation}
-onde $Z_{N, \beta}$ é função de partição canônica para autovalores desordenados\footnote{Usa-se do fator de contagem de Boltzmann para escrever $ Z_{N, \beta} = N! Z_{N, \beta}^{(ord)}$.}, normalizante da Expressão \eqref{Equation: medida Gaussian}. O fator $\beta_N = \beta N^2$ é pensado como a temperatura inversa. Definimos ainda o Hamiltoniano $$\mathcal{H}_N(\vec{\lambda}) = \frac{1}{N}\sum_{i = 1}^{N} \frac{\lambda_i^2}{2} + \frac{1}{N^2} \sum_{i < j} \log{\frac{1}{|\lambda_i - \lambda_j|}}$$ com  $\lambda_i \mapsto \lambda_i \sqrt{\beta N}$.
+onde $Z_{N, \beta}$ é função de partição canônica para autovalores desordenados\footnote{Usa-se do fator de contagem de Boltzmann para escrever $ Z_{N, \beta} = N! Z_{N, \beta}^{(ord)}$.}, normalizante da Expressão \eqref{Equation: medida Gaussian}. O fator $\beta_N = \beta N^2$ é pensado como a temperatura inversa. Definimos ainda o Hamiltoniano $$\mathcal{H}_N(\vec{\lambda}) = \frac{1}{N}\sum_{i = 1}^{N} \frac{\lambda_i^2}{2} + \frac{1}{N^2} \sum_{i < j} \log{\frac{1}{|\lambda_i - \lambda_j|}},$$ com  $\lambda_i \mapsto \lambda_i \sqrt{\beta N}$.
 
 \subsection{Gases de Coulomb}
 \label{Section: Gases de Coulomb}
@@ -336,7 +308,7 @@ O gás de coulomb $\p_N$ é a medida de probabilidade de Boltzmann-Gibbs dada em
 	\dd \p_N(\vec{x}) = \frac{e^{-\beta N^2 \Hf_N(\vec{x})}}{Z_{N,\beta}} \dd \vec{x},
 	\label{Equação: Medida Gas de Coulomb}
 \end{equation}
-onde $$\Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x) + \frac{1}{2N^2} \sum_{i \neq j} \g(x_i - x_j)$$ é usualmente chamado hamiltoniano ou energia do sistema, $g$ é solução da equação de Poisson e $\V \colon \Se \mapsto \R$ potencial externo. \cite{ChafaCoulombMeasure} A medida $\p_N$ modela um gás de partículas indistinguíveis com carga nas posições $\mmany{x}{N} \in \Se$ de dimensão $d$ em $\R^n$ \textit{ambient space}. As partículas estão sujeitas a um potencial externo $\V \colon \Se \mapsto \R$ e interagem por $\g \colon \Se \mapsto (-\infty, \infty]$. A temperatura inversa é $\beta N^2$. Assumiremos, para que valha a definição \eqref{Equação: Medida Gas de Coulomb}, que $V, \ \g \ \text{e} \ \beta$ são tais que a constante de normalização (função partição) $Z_{N, \beta}$ seja finita para todo N. \footnote{Note que $\p_N$ é um modelo de interações estáticas e não há campos magnéticos considerados.}
+onde $$\Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x) + \frac{1}{2N^2} \sum_{i \neq j} \g(x_i - x_j)$$ é usualmente chamado hamiltoniano ou energia do sistema, $g$ é solução da equação de Poisson e $\V \colon \Se \mapsto \R$ potencial externo. \cite{ChafaCoulombMeasure} A medida $\p_N$ modela um gás de partículas indistinguíveis com carga nas posições $\mmany{x}{N} \in \Se$ de dimensão $d$ em $\R^n$ \textit{ambient space}. As partículas estão sujeitas a um potencial externo $\V \colon \Se \mapsto \R$ e interagem por $\g \colon \Se \mapsto (-\infty, \infty]$. A temperatura inversa é $\beta N^2$. Assumiremos, para que valha a definição \eqref{Equação: Medida Gas de Coulomb}, que $V, \ \g \ \text{e} \ \beta$ são tais que a constante de normalização (função partição) $Z_{N, \beta}$ é finita para todo N. \footnote{Note que $\p_N$ é um modelo de interações estáticas e não há campos magnéticos considerados.}
 
 Se lembramos da Expressão \eqref{Equation: medida Gaussian}, perceberemos que, para o devido $\V(x)$, podemos tomar $d=1$ e $n = 2$ para recuperar a medida dos ensembles gaussianos 
 \begin{equation}
@@ -694,6 +666,33 @@ Além disso, apresentamos os resultados, que dividimos, em propósito, em duas p
 
 Entendemos este estudo como uma descrição e validação de métodos conhecidos de simulação e matrizes aleatórias, ainda que atuais. Contudo, veem-se extensões da utilização do método para estudo numérico de importantes resultados com menos descrição teórica, o que, até onde sabemos, é menos explorado.
 
+\chapter{Participação em eventos científicos}\label{chp:particEvento}
+
+Durante o período de 13 de Janeiro à 24 de Fevereiro o bolsista participou do evento ``Jornadas de Pesquisa em Matemática'' realizado pelo Instituto de Ciências Matemáticas e de Computação (ICMC - USP). Durante este evento foi realizado pesquisa original em simulações de caminhos aleatórios, que rendeu o relatório de nome ``Baralhos e passeios aleatórios'', submetido para a FAPESP e em processo de desenvolvimento para publicação. O relatório fica disponível no Apêndice \ref{App: Baralhos}.
+
+O bolsista também apresentou em dois eventos no período da pesquisa. O Colóquio Brasileiro de Matemática (CBM) e a Semana Integrada da Física de São Carlos (SIFSC). Apenas para o primeiro, realizado no Rio de Janeiro, foi necessário o uso da reserva técnica. Por isso, segue o pôster apresentado na próxima página. O trabalho é complementar aos estudos assintóticos e de probabilidade realizados nos meses cobertos por este relatório.
+
+\hspace{1cm}
+
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		Evento &  Sede & Data & Modalidade & Apresentação & Reserva Técnica \\
+		\hline
+		CBM & IMPA & 24-28/07/23 & Presencial & Pôster - Oral & Sim \\
+		\hline
+		SIFSC & IFSC-USP & 21-25/08/23 & Presencial & Pôster - Oral & Não \\
+		\hline
+		Jornadas & ICMC-USP & 13/01-24/02/23 & Presencial & Oral & Não \\
+		\hline
+	\end{tabular}
+\end{center}
+
+
+\chapter{Outros trabalhos Preparados ou Submetidos}
+
+Durante o período da bolsa foi também finalizado o trabalho intitulado ``A Central Limit Theorem for intransitive dice'' co-autorado pelo aluno beneficiário da bolsa. O arquivo se encontra disponível na plataforma Arxiv em \url{https://arxiv.org/abs/2310.17083} e está em processo de publicação. Por fim, realizou-se também o desenvolvimento do Trabalho de Conclusão de Curso referente à graduação em andamento (a ser defendido) anexado no Apêndice \ref{App: TCC}. O trabalho referente ao relatório no Apêndice \ref{App: Baralhos} está ainda em desenvolvimento para publicação.
+
 %%-----
 %% Referências bibliográficas
 %%-----
@@ -716,5 +715,25 @@ Entendemos este estudo como uma descrição e validação de métodos conhecidos
 %fontsize=\footnotesize,
 %linenos
 %]{FORTRAN}{Assets/HKMC.f}
+
+\appendix
+
+\chapter{Apresentação CBM 23 e SIFSC}
+\label{App: CMB}
+Poster referente à apresentação no Colóquio Nacional de Matemática e na Semana do Instituto de Física de São Carlos.
+
+\includepdf[pages={1}]{Assets/posterwhite.pdf}
+
+\chapter{Trabalho de Conclusão de Curso}
+\label{App: TCC}
+Trabalho de conclusão de curso referente à obtenção de bacharel em física computacional pelo Instituto de Física de São Carlos.
+
+\includepdf[pages=1-21]{Assets/TCC.pdf}
+
+\chapter{Relatório de Pesquisa - Baralhos e Caminhos Aleatórios}
+\label{App: Baralhos}
+Relatório de Pesquisa realizado com auxílio da FAPESP no projeto de Pesquisa de Verão no Instituto de Ciências Matemáticas e de Computação.
+
+\includepdf[pages=1-27]{Assets/Verao.pdf}
 
 \end{document}

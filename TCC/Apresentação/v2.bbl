@@ -1,0 +1,70 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Balogh, Grava e Merzi 2016]{balogh2016orthogonal}
+\abntrefinfo{Balogh, Grava e Merzi}{BALOGH; GRAVA; MERZI}{2016}
+{BALOGH, F.; GRAVA, T.; MERZI, D. Orthogonal polynomials for a class of
+  measures with discrete rotational symmetries in the complex plane.
+2016.}
+
+\bibitem[Bleher e Silva 2016]{bleher2016mother}
+\abntrefinfo{Bleher e Silva}{BLEHER; SILVA}{2016}
+{BLEHER, P.; SILVA, G. \emph{The mother body phase transition in the normal
+  matrix model}. 2016.}
+
+\bibitem[Chafaï e Ferr{\'{e}} 2018]{Chafa2018}
+\abntrefinfo{Chafaï e Ferr{\'{e}}}{CHAFAï; FERR{\'{E}}}{2018}
+{CHAFAï, D.; FERR{\'{E}}, G. Simulating coulomb and log-gases with hybrid
+  monte carlo algorithms.
+\emph{Journal of Statistical Physics}, Springer Science and Business Media
+  {LLC}, v.~174, n.~3, p. 692--714, nov 2018.}
+
+\bibitem[Chafaï, Hardy e Maïda 2018]{ChafaCoulombMeasure}
+\abntrefinfo{Chafaï, Hardy e Maïda}{CHAFAï; HARDY; MAïDA}{2018}
+{CHAFAï, D.; HARDY, A.; MAïDA, M. Concentration for coulomb gases and coulomb
+  transport inequalities.
+\emph{Journal of Functional Analysis}, Elsevier BV, v.~275, n.~6, p.
+  1447–1483, sep 2018.
+ISSN 0022-1236.}
+
+\bibitem[Fabozzi, Focardi e Kolm 2010]{fabozziquantitative}
+\abntrefinfo{Fabozzi, Focardi e Kolm}{FABOZZI; FOCARDI; KOLM}{2010}
+{FABOZZI, F.; FOCARDI, S.; KOLM, P. \emph{Quantitative Equity Investing:
+  Techniques and Strategies}. Wiley, 2010.  (Frank J. Fabozzi Series).
+ISBN 9780470262474. Dispon{\'\i}vel em:
+  \url{https://books.google.com.br/books?id=eNWNDwAAQBAJ}.}
+
+\bibitem[Goldston et al. 2000]{montgomery}
+\abntrefinfo{Goldston et al.}{GOLDSTON et al.}{2000}
+{GOLDSTON, D. et al. On the pair correlation of zeros of the riemann
+  zeta-function.
+\emph{Proceedings of the London Mathematical Society}, v.~80, 01 2000.}
+
+\bibitem[Potters e Bouchaud 2020]{RMT-firstcourse-Potters}
+\abntrefinfo{Potters e Bouchaud}{POTTERS; BOUCHAUD}{2020}
+{POTTERS, M.; BOUCHAUD, J. \emph{A First Course in Random matriz Theory: for
+  Physicists, Engineers and Data Scientists}. Cambridge, Inglaterra: Cambridge
+  University Press, 2020.
+ISBN 9781108488082.}
+
+\bibitem[Stoltz e Trstanova 2018]{Stoltz2018}
+\abntrefinfo{Stoltz e Trstanova}{STOLTZ; TRSTANOVA}{2018}
+{STOLTZ, G.; TRSTANOVA, Z. Langevin dynamics with general kinetic energies.
+\emph{Multiscale Modeling \& amp; Simulation}, Society for Industrial \&
+  Applied Mathematics (SIAM), v.~16, n.~2, p. 777–806, jan 2018.
+ISSN 1540-3467.}
+
+\bibitem[Wigner 1955]{Wigner}
+\abntrefinfo{Wigner}{WIGNER}{1955}
+{WIGNER, E.~P. Characteristic vectors of bordered matrices with infinite
+  dimensions.
+\emph{Annals of Mathematics}, Annals of Mathematics, v.~62, n.~3, p. 548--564,
+  1955.
+ISSN 0003486X.
+Dispon{\'\i}vel em: \url{http://www.jstor.org/stable/1970079}.}
+
+\end{thebibliography}
