@@ -1,0 +1,80 @@
+\section{Watson Lemma}
+
+We start this study by looking at the functions $F: \R \rightarrow \R$
+\begin{equation}
+	F(\lambda) = \int_{0}^{T} f(t) \ee^{-\lambda t} \dd t
+	\label{equation: F}
+\end{equation}
+which can be identified as the Laplace transform of a function $f$ supported on $[0,T]$.
+
+\begin{thm}	
+	(Watson's Lemma) Take $f \in L^1(0,T)$ and suppose that for some $\delta > 0$ it is of the form
+	$$f(t) = t^\alpha f_0(t), \ \ 0 < t \leq \delta,$$
+	where $\alpha \in (-1, \infty)$ and $f_0$ is continuously differentiable on $[0, \delta]$ with $f_0(0) \neq 0$. Then the function $F$ in \ref{equation: F} satisfies
+	\begin{equation}
+		F(\lambda) = \frac{f_0(0) \Gamma(\alpha + 1)}{\lambda^{\alpha + 1}} (1 + \Boh(\lambda^{-1}))
+	\end{equation}
+	when $\lambda \rightarrow \infty$ and where $\Gamma$ is the Gamma function.
+\end{thm}
+
+\begin{Mproof}
+	A weak estimative of the integral values would be given by
+	$$\int_{0}^{T} f(t) \ee^{-\lambda t} \dd t \leq ||f||_{L^1}$$
+	where we only use the fact that $f \in L^1(0,T)$. However, we have more information on the behavior of the function in the section $0 < t < \delta$. To use this information we start by decomposing the function in two parts
+	$$F(\lambda) = (1) + (2) = \int_{0}^{\delta} f(t) \ee^{-\lambda t} \dd t + \int_{\delta}^{T} f(t) \ee^{-\lambda t} \dd t.$$
+	For $(2)$, we can use the weak estimative, leaving us with 
+	$$F(\lambda) \leq \int_{0}^{\delta} f(t) \ee^{-\lambda t} \dd t + ||f||_{L^1} \ee^{-\delta \lambda}.$$
+	Now, we remind of the condition of continous differentiability and the hypothesis on $f(t)$ to write $(1)$ as
+	$$(1) = \int_{0}^{\delta} t^\alpha(f_0(0) + r(t)) \ee^{-\lambda t} \dd t = f_0(0) \int_{0}^{\delta} t^\alpha \ee^{-\lambda t} \dd t + \int_{0}^{\delta} t^\alpha r(t) \ee^{-\lambda t} \dd t = f_0(0) \cdot (1.1) + (1.2)$$
+	For these two integrals we can try to simplify the problem by rewritring 
+	$$(1.1) = \int_{0}^{\infty} t^\alpha \ee^{-\lambda t} \dd t - \int_{\delta}^{\infty} t^\alpha \ee^{-\lambda t} \dd t  = \frac{\Gamma(\alpha + 1)}{\lambda^{\alpha +1}} - \int_{\delta}^{\infty} t^\alpha \ee^{-\lambda t} \dd t $$
+	$$|(1.2)| \leq ||f'||_{\infty} \int_{0}^{\delta} t^{\alpha + 1} \ee^{-\lambda t} \dd t = ||f'||_{\infty} \left( \int_{0}^{\infty} t^{\alpha+1} \ee^{-\lambda t} \dd t - \int_{\delta}^{\infty} t^{\alpha+1} \ee^{-\lambda t} \dd t \right) = ||f'||_{\infty} \left( \frac{\Gamma(\alpha + 2)}{\lambda^{\alpha +2}} - \int_{\delta}^{\infty} t^{\alpha+1} \ee^{-\lambda t} \dd t \right).$$
+	We are now only missing one ingredient to get the result, the order of
+	$$G(\lambda, \beta) \deff \int_{\delta}^{\infty} t^{\beta} \ee^{-\lambda t} \dd t, \ \ \ \lambda > 1, \ \ \ \beta > -1. $$
+	Using Cauchy-Schwartz we can estimate
+	\begin{equation*}
+		\begin{split}
+			|G(\lambda, \beta)|^2 & \leq \left( \int_{\delta}^{\infty} \ee^{-\lambda t} \dd t \right) \left(\int_{\delta}^{\infty} t^{2\beta} \ee^{-\lambda t} \dd t \right) \\
+			& = \left(\frac{e^{-\lambda \delta}}{\lambda}\right) \left( \int_{\delta}^{\infty} t^{2\beta} \ee^{-\lambda t}\dd t \right)	\\
+			& \stackrel{(u=\lambda t)}{=} \left(\frac{e^{-\lambda \delta}}{\lambda}\right) \left( \int_{\delta}^{\infty} \ee^{-u} u^{2\beta} \frac{1}{\lambda^{2\beta + 1}} \dd u \right) \\
+			& = \frac{\ee^{-\lambda \delta}}{\lambda^{2\beta + 2}} M_\beta
+		\end{split}
+	\end{equation*}
+	Where $M_\beta$ is independent of $\lambda$. That leave us with
+	$$G(\lambda, \beta) = \Boh\left(\frac{\ee^{-\lambda\delta/2}}{\lambda^{\beta+1}}\right) = \Boh\left(\ee^{-\epsilon\lambda}\right)$$
+	where $\epsilon > 0$ depends on $\beta$ and $\delta$. Finally we can rewrite
+	$$(1.1) = \frac{\Gamma(\alpha + 1)}{\lambda^{\alpha +1}} - G(\lambda, \alpha) =  \frac{\Gamma(\alpha + 1)}{\lambda^{\alpha+1}} + \Boh\left(\ee^{-\epsilon\lambda}\right)$$
+	$$|(1.2)| \leq ||f'||_{\infty} \left( \frac{\Gamma(\alpha + 2)}{\lambda^{\alpha +2}} - G(\lambda, \alpha + 1) \right) = ||f'||_{\infty} \left( \frac{\Gamma(\alpha + 2)}{\lambda^{\alpha +2}} + \Boh\left(\ee^{-\epsilon\lambda}\right) \right) = \Boh\left(\lambda^{-\alpha-2}\right)$$
+	and finally
+	$$F(\lambda) \leq \Boh\left(\lambda^{-\alpha-2}\right) + f_0(0) \left( \frac{\Gamma(\alpha + 1)}{\lambda^{\alpha+1}} + \Boh\left(\ee^{-\epsilon\lambda}\right) \right) + ||f||_{L^1} \ee^{-\delta \lambda}.$$
+	by the dominance of the exponential error, we can finally get the result
+	$$F(\lambda) = \frac{f_0(0) \Gamma(\alpha + 1)}{\lambda^{\alpha + 1}} (1 + \Boh(\lambda^{-1}))$$
+\end{Mproof}
+
+In the estimative the Gamma function and the factor of $\lambda^-1$ is the result of integrating the linear exponent of $\ee$ given by $-\lambda t$. If we, however, change this exponent to be of the general type $-\lambda t^d$ we can still have a similar result on the behavior of the function.
+
+\begin{prop}	
+	For $T, S > 0$, define the function
+	$$G(\lambda) \deff \int_{-S}^{T} g(t) \ee^{-\lambda t^2} \dd t$$
+	and assume $g(x)$ absolutely integrable in $[-S, T]$, of class $C^1$ in a fixed neighborhood of the origin. Then the function satisfies
+	\begin{equation}
+		G(\lambda) = \frac{g(0) \Gamma(1/2)}{\lambda^{1/2}} + \Boh \left(\frac{1}{\lambda^{3/2}} \right)
+	\end{equation}
+	when $\lambda \rightarrow \infty$ and where $\Gamma$ is the Gamma function.
+	\label{prop: cor watson}
+\end{prop}
+
+\begin{Mproof}
+	The proof is a reduction of the problem to Watson's Lemma. Assume, $T>S$ and write
+	$$G(\lambda) = \int_{-S}^{S} g(t) \ee^{-\lambda t^2} \dd t + \int_{S}^{T} g(t) \ee^{-\lambda t^2} \dd t $$
+	The second integral we know to be of order
+	$$\int_{S}^{T} g(t) \ee^{-\lambda t^2} \dd t \leq ||g||_{\infty} \ee^{-\lambda S^2},$$
+	exponential on $\lambda$, so we drop it. For the first integral we rewrite
+	\begin{equation*}
+		\begin{split}
+			\int_{-S}^{S} g(t) \ee^{-\lambda t^2} \dd t & = \int_{0}^{S} (g(t) + g(-t)) \ee^{-\lambda t^2}\dd t \\
+			& \stackrel{(u= t^2)}{=} \frac{1}{2} \int_{0}^{S^2} \left(\frac{g\left(\sqrt{u}\right) + g\left(-\sqrt{u}\right)}{\sqrt{u}}\right) \ee^{-\lambda u} \dd u
+		\end{split}
+	\end{equation*}
+	where now we can use Watson's Lemma.
+\end{Mproof}

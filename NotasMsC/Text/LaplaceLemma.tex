@@ -1,0 +1,115 @@
+\section{Laplace's Method}
+
+A seemly natural extension of the type of function we were dealing with are functions of the type
+\begin{equation}
+	\Phi(\lambda) \deff \int_{a}^{b} g(t) \ee^{-\lambda \phi(t)} \dd t
+	\label{equation: Laplace}
+\end{equation}
+for $a,b \in \R \cup \{-\infty, \infty\}$ and $a<b$. For now, $\phi$ is a real-valued function. To begin the study let's make some assumptions. The first one is that $a$ is finite, that means that we can set $a=0$ without loss of generality. The second assumption is that $\phi$ is a increasing function on $[0,b]$, so that $\phi(0) < \phi(t)$ for any $t$ in the interval. With that we note that the coefficient $\ee^{-\lambda \phi(t)} / \ee^{-\lambda \phi(0)}$ decreases exponentially, that is, the integral is accumulated as the neighborhood of $0$,
+$$\Phi(\lambda) \approx \int_{0}^{\delta} g(t) \ee^{-\lambda \phi(t)} \dd t.$$
+As we know $\phi(t)$ to be increasing, it's first non zero derivative must be of even order, so that when we expanded the function by Taylor, 
+$$\phi(t) \approx \phi(0) + \phi_{2k+1} t^{2k+1}$$
+for some $k\geq 0$ and $|t| < \delta$. As $\phi_{2k+1}$, the $(2k+1)$th-derivative, must be positive we also have that, as $\lambda \rightarrow \infty$,
+\begin{equation*}
+	\begin{split}
+		\Phi(\lambda) & \approx \ee^{-\lambda \phi(0)} \int_{0}^{\delta} g(t) \ee^{-\lambda \phi_{2k+1}(t) \cdot t^{2k+1}} \dd t\\
+		& \stackrel{(u=t(\lambda \phi_{2k+1})^{1/(2k+1)})}{\approx} \ee^{-\lambda \phi(0)} \frac{g(0)}{(\lambda \phi_{2k+1})^{\frac{1}{2k+1}}} \int_{0}^{\infty} \ee^{-u^{2k+1}} \dd u \\
+		& \stackrel{(s=u^{2k+1})}{\approx} \ee^{-\lambda \phi(0)} \frac{g(0)}{ (2k+1)(\lambda \phi_{2k+1})^{\frac{1}{2k+1}}} \int_{0}^{\infty} \ee^{-s} \dd u
+	\end{split}
+\end{equation*}
+Where the integral can be evaluated as an Gamma function.
+
+More than anything we need to focus on an important assumption that was made: that $\phi$ has a global minima at one of the endpoints of integration. Is that were not the case, for example if $a < 0 < b$ and $\phi(t)$ had a global minima at $t=0$ we would now have to consider the expansion
+$$\phi(t) \approx \phi(0) + \phi_{2k} t^{2k}$$
+which would lead us to the expression
+$$\Phi(\lambda) \approx \ee^{-\lambda \phi(0)} \frac{g(0)}{(\lambda \phi_{2k})^{\frac{1}{2k}}} \int_{-\infty}^{\infty} \ee^{-u^{2k}} \dd u$$
+which differentiates of the previously result more importantly by the limits of integration. This is closely related to physical boundaries of the problem.
+
+\begin{thm}
+	(Laplace's Method, endpoint contributions) Let $\Phi$ be as in \ref{equation: Laplace}, with a finite and $g \in L^1(a,b)$. Assume that $\phi$ has a unique global minimum at $t=a$. In addition, suppose that for some $\delta > 0$ and some $\alpha > -1$, the function $g$ takes the form
+	$$ g(t) = (t-a)^{\alpha} g_0(t)$$
+	for $|t-a| < \delta$ and $g_0$ continuously differentiable in $[a, a+\delta]$ and $g_0(a) \neq 0$, whereas $\phi$ is twice continuously differentiable on $[a, a+\delta]$ with $\phi'(a) > 0$. Then the function $\Phi$ satisfies an estimate of the form
+	\begin{equation}
+		\Phi(\lambda) = \frac{1}{\lambda^{\alpha + 1}} \frac{g_0(a) \Gamma(\alpha + 1)}{\phi'(a)^{\alpha + 1}} \ee^{-\lambda \phi(a)} \left(1+\Boh(\lambda^{-1})\right)
+	\end{equation}
+	as $\lambda \rightarrow \infty$.
+\end{thm}
+
+\begin{Mproof}
+	Start by assuming, w.l.g, that $a=0$ and dividing the integral in two, one in the region of interest and one in the rest of the interval
+	$$\Phi(\lambda) = \int_{0}^{b} g(t) \ee^{-\lambda \phi(t)} \dd t = \int_{0}^{\delta} g(t) \ee^{-\lambda \phi(t)} \dd t + \int_{\delta}^{b} g(t) \ee^{-\lambda \phi(t)} \dd t = (1) + (2).$$
+	Knowing that $\phi$ has a global minima at $t = 0$ we can assume, changing $\delta$ as needed, that $\phi(t) > \phi(\delta)$ for any $t > \delta$. That give us a simple limitation for $(2)$:
+	$$(2) = \int_{\delta}^{b} g(t) \ee^{-\lambda \phi(t)} \dd t \leq \ee^{-\lambda \phi(\delta)} \int_{\delta}^{b} g(t) \dd t \leq \ee^{-\lambda \phi(\delta)} ||g||_{L^1[0,b]}.$$
+	We now get back to $(1)$ and start by studying the difference give by $\phi(t) - \phi(0) = s$ in a similar way that we would think of a change of variable. Define the multivariate function 
+	$$H(t,s) \deff \phi(t) - \phi(0) - s$$
+	such that $H(0,0) = 0$ and $\partial_t H(0,0) \neq 0$ so that we can use the Theorem of Implicit Function to say that there exists a unique bijective and continuously differentiable function $t(s) \deff t$ such that 
+	\begin{equation*}
+		\begin{cases}
+			\phi(t(s)) - \phi(0) - s = 0	\\
+			t'(0) = \frac{\partial_s H(0,0)}{\partial_t H(0,0)} = \frac{1}{\phi'(0)} 
+		\end{cases}
+	\end{equation*}
+	If we set $T = t^{-1}(\delta)$ we would then have
+	$$\int_{0}^{\delta} g(s) \ee^{-\lambda \phi(s)} \dd s = \int_{0}^{T} g(t(s)) \ee^{-\lambda \phi(t(s))} t'(s) \dd s$$
+	for now to apply the assumption on $g$. We write $g(t(s)) = t^\alpha(s) g_0(t(s))$ and because of Taylor,
+	$$t(s) = s t'(0) (1+r(s)) = \frac{s}{\phi'(0)}(1+r(s)).$$
+	Joining both results,
+	\begin{equation}
+		\begin{split}
+			\int_{0}^{T} g(t(s)) \ee^{-\lambda \phi(t(s))} t'(s) \dd s & = \ee^{\lambda \phi(0)} \int_{0}^{T} g(t(s)) \ee^{-\lambda (\phi(t(s)) - \phi(0))} t'(s) \dd s \\
+			& = \ee^{\lambda \phi(0)} \int_{0}^{T} t^\alpha(s) g_0(t(s)) \ee^{-\lambda s} t'(s) \dd s \\
+			& = \frac{\ee^{\lambda \phi(0)}}{\phi'(0)^\alpha} \int_{0}^{T} s^\alpha (1+r(s))^\alpha g_0(t(s)) \ee^{-\lambda s} t'(s) \dd s			
+		\end{split}
+	\end{equation}
+	where, if we set $f(s) \deff s^\alpha (1+r(s))^\alpha g_0(t(s))$ we can apply Watson's Lemma.
+\end{Mproof}
+
+\begin{thm}
+	(Laplace's Method, interior contributions) Let $\Phi$ be as in \ref{equation: Laplace}, with a finite and $g \in L^1(a,b)$. Assume that $\phi$ has a unique global minimum at $t=c \in (a,b)$. In addition, suppose that for some $\delta > 0$ and some $\alpha > -1$, the function $g$ takes the form
+	$$ g(t) = (t-a)^{\alpha} g_0(t)$$
+	for $|t-a| < \delta$ and $g_0$ continuously differentiable in $[c-\delta, c+\delta]$ and $g_0(a) \neq 0$, whereas $\phi$ is three times continuously differentiable on $[c-\delta, c+\delta]$ with $\phi'(a) > 0$. Then the function $\Phi$ satisfies an estimate of the form
+	\begin{equation}
+		\Phi(\lambda) = \ee^{-\lambda \phi(c)} \left( \frac{\sqrt{2\pi} g(c)}{\sqrt{|\phi''(c)|}\lambda^{1/2}} + \Boh(\lambda^{-3/2})\right)
+	\end{equation}
+	as $\lambda \rightarrow \infty$.
+	\label{prop: (Laplace's Method, interior contributions)}
+\end{thm}
+
+\begin{Mproof}
+	Although the proof may be similar there is an important distinction in the solution. Suppose we wanted to try the same approach. We would first assume, w.l.g., that c = 0. Then, we could write
+	$$ \Phi(\lambda) = \int_{a}^{b} g(t) \ee^{-\lambda \phi(t)} \dd t = \int_{a}^{-\delta} g(t) \ee^{-\lambda \phi(t)} \dd t + \int_{-\delta}^{\delta} g(t) \ee^{-\lambda \phi(t)} \dd t + \int_{\delta}^{b} g(t) \ee^{-\lambda \phi(t)} \dd t = (1) + (2) + (3).$$
+	For $(1)$ and $(3)$ the result is as it was before
+	\begin{equation*}
+		\begin{cases}
+			(1)	= \int_{\delta}^{a} g(-t) \ee^{-\lambda \phi(-t)} \dd t \leq \ee^{\lambda \phi(-\delta)} ||g||_{L^1[a,b]}\\
+			(3) = \int_{\delta}^{b} g(t) \ee^{-\lambda \phi(t)} \dd t \leq \ee^{\lambda \phi(\delta)} ||g||_{L^1[a,b]}
+		\end{cases}
+	\end{equation*}
+	For $(2)$ we would try to define a function 
+	$$H(t,s) \deff \phi(t) - \phi(0) - s^2.$$
+	However we could not apply the Implicit Function Theorem here as its derivative $\partial_t H = \phi'$ vanishes at $t=0$. A nice fact about this indetermination is that it doesn't come from the fact that there are no solutions to $H(t,s) = 0$ but from the fact that there are two. To solve this we will use a technique called \textit{blow up}. First, we introduce a variable $v = v(t)$ such that $vs = t$. Now, we redefine our function of interested to be
+	$$L(s, v) \deff \frac{\phi(sv) - \phi(0)}{s^2} - 1.$$
+	for $s\in(-\delta, \delta) - \{0\}$. We would think this function is also singular but note that, using the Taylor Expansion of $\phi$ we can write
+	$$\phi(t) = \frac{\phi''(0)}{2}t^2 + t^3R(t) $$
+	which leave us with 
+	$$L(s, v) = \frac{\phi''(0)}{2}v^2 + sv^3R(sv) - 1 $$
+	where we can indeed apply the Implicit Function Theorem. In fact, we know $L \in C^2$ and as we want to solve for $L(s,v) = 0$, we need that the $v_0$ we take to satisfy $L(0, v_0) = 0$, ie,
+	$$v_0 = \sqrt{\frac{2}{\phi''(0)}}.$$
+	Now, we also know that
+	$$\partial_v L(0, v_0) = \phi''(0) v_0 \neq 0.$$
+	So we get a bijective and continuously differentiable function $v = v(s)$ such that
+	\begin{equation*}
+		\begin{cases}
+			L(s, v(s)) = 0 \\
+			v(0) = v_0
+		\end{cases}
+	\end{equation*}
+	But, $L(s, v(s))$ means exactly that
+	$$\phi(t) - \phi(0) = s^2$$
+	with $t = t(s) = sv(s)$. Getting back to our equation, we have that
+	$$ \ee^{\lambda \phi(0)} \int_{-\delta}^{\delta} g(t) \ee^{-\lambda (\phi(t)-\phi(0))} \dd t = \ee^{\lambda \phi(0)} \int_{\alpha}^{\beta} g(sv(s)) (v(s) + sv'(s)) \ee^{-\lambda s^2} \dd t$$
+	where we can easily calculate $\alpha = - \sqrt{\phi(-\delta) - \phi(0)}$ and $\beta = \sqrt{\phi(\delta) - \phi(0)}$. We finish the prove with Proposition \ref{prop: cor watson}.
+\end{Mproof}
+
+\input{./Text/GammaExample.tex}
+ 

@@ -1,0 +1,58 @@
+\section{Fourrier Transform}
+
+We start by defining what we call a Fourrier Series. Take $f(x)$ to be a a-periodic function, i.e., $f(x+a) = f(x), \ \forall \ x \in \R$. How to characterize such a function? We may try to specify the values it takes on the interval but that's uncountable big. We can also try to approximate it somehow, one such approach is to use geometric periodic functions. We write:
+$$
+f(x) = \sum_{n=1}^{\infty} \alpha_n \sin\left( \frac{2\pi n x}{a}\right) + \sum_{m=1}^{\infty} \beta_m \cos\left( \frac{2\pi m x}{a}\right) = \sum_{-\infty}^{\infty} f_n \ee^{2 \pi \ii n \frac{x}{a}}
+$$
+
+Note that such a summation must be a-periodic as all functions used are a-periodic. Of course, not all functions are guarantee to be expressed in such a way. A know class that works, and usually enough for our purposes, are square-integrable functions, for which
+$$
+\int_{-a/2}^{a/2} |f(x)|^2 \dd x
+$$
+exists and is finite. The concept we have is useful but limited if used as such. We want to extend such a concept for functions that are not a-periodic - but how? Define a family of functions $\{f_a(x) | a \in \R^+\}$  such that $f_a(x)$ is a-periodic and $ \lim_{a \rightarrow \infty}f_a(x) = f(x)$. We have that every function $f_{a}$ in the family can be written as a Fourrier Series as it is periodic, so we write:
+$$
+f_a(x) = \sum_{-\infty}^{\infty} f_{an} \ee^{\ii k_n x}: \ k_n = n \Delta k; \Delta k = \frac{2\pi}{a}.
+$$
+And as we know about the limit, we can write
+\begin{equation}
+	\begin{split}
+		f(x) & = \lim_{a \rightarrow \infty} \left[ \sum_{-\infty}^{\infty} f_{an} \ee^{\ii k_n x} \right] = \lim_{a \rightarrow \infty} \left[ \sum_{-\infty}^{\infty} \frac{\Delta k}{2\pi} \ee^{\ii k_n x} \left( \frac{2\pi f_{an}}{\Delta k}\right) \right] \\
+		& = \int_{-\infty}^{\infty} \frac{\dd k}{2\pi} \ee^{\ii k x} F(k); \ \ \text{where} \ \ F(k) = \lim_{a \rightarrow \infty} \left[ \frac{2\pi f_{an}}{\Delta k} \right].
+	\end{split} 
+\end{equation}
+where we call $F(x)$ the Fourrier Tranform of the function $f(x)$. We can also define the inverse transform 
+\begin{equation}
+	\begin{split}
+		F(k) & = \lim_{a \rightarrow \infty} \left[ \frac{2\pi}{\Delta k} f_{an}(x) \right] \\
+		& = \lim_{a \rightarrow \infty} \left[ \frac{2\pi}{\frac{2\pi}{a}} \frac{1}{a} \int_{-a/2}^{a/2} \dd x \ee^{- \ii k_n x} \right] \\
+		& = \int_{-\infty}^{\infty} \dd x \ee^{- \ii k x} f(x)
+	\end{split} 
+\end{equation}
+
+With this definition we can make explicit some properties of the transform, namely:
+
+\begin{enumerate}
+	\item Linearity: Given $f(x)$ and $g(x)$, with its respective $F(x)$ and $G(x)$ Fourrier Tranforms we have that $$a f(x) + b g(x) \rightarrow_{FT} a F(k) + b G(k);$$
+	\item Translation: Given $f(x)$ translated by $b$ we write  $$f(x + b) \rightarrow_{FT} \ee^{ikb} F(k);$$
+	\item Derivative: Given $f(x)$ we have that the derivative is written $$\frac{\dd}{\dd x}f(x) \rightarrow_{FT}  \ii k F(k)$$
+\end{enumerate}
+
+\subsection{On Differential Equations}
+
+Take the damped harmonic oscillator subjected to an additional force $f(t)$. The equation of motion is given by 
+$$
+\frac{\dd^2 x(t)}{\dd t} + 2\gamma \frac{\dd x(t)}{\dd t} + \omega_0^2 x(t) = \frac{f(t)}{m}.
+$$ 
+To solve for $x(t)$ we first take the Fourrier Tranform
+$$
+-\omega^2 X(\omega) - 2\ii \gamma \omega X(\omega) + \omega_0^2 X(\omega) = \frac{F(\omega)}{m}
+$$ 
+where now we can reorganize to solve for $X(\omega)$.
+$$
+X(t) = \frac{\frac{F(\omega)}{m}}{-\omega^2 - 2\ii \gamma \omega + \omega_0^2}.
+$$
+Now it is a simple case of taking the inverse of the Fourrier Transform
+$$
+x(t) = \int_{-\infty}^{\infty} \frac{\dd \omega}{2\pi} \frac{\frac{\ee^{-i\omega t} F(\omega)}{m}}{-\omega^2 - 2\ii \gamma \omega + \omega_0^2}; \ \ \text{where} \ F(\omega) = \int_{-\infty}^{\infty} \dd t \ee^{\ii \omega t} f(t)  
+$$
+

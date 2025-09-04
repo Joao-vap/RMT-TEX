@@ -1,0 +1,22 @@
+\subsection{Example - Gamma Function}
+
+Take the function called Gamma given by the expression
+
+\begin{equation}
+	\Gamma(x) = \int_{0}^{\infty} \ee^{-t} t^{x-1} \dd t
+	\label{eq: Gamma}
+\end{equation}
+
+We are interested in what happens to the function when we take the variable $x$ to $+\infty$. To see what happens, let's fit it into Proposition \ref{prop: (Laplace's Method, interior contributions)}. Rewrite equation \ref{eq: Gamma} as
+$$\int_{0}^{\infty} \ee^{-t+x\log{(t)}-\log{(t)}} \dd t.$$ 
+This lead us to identify $\phi$ as $-\log{(t)}$, which would give us $\phi'(t) < 0$, that is, we would have it's minimum at $t=+\infty$. However $\ee^{\log{(t)}} = t^1$ is not integrable near the origin. Something need to change about the identification. Let's introduce a variable to rescale the integral: $xs = t$, s.t.,
+$$\Gamma(x) = x^x \int_{0}^{\infty} \ee^{-\lambda(s - \log{(s)})} \ee^{-s} \dd s.$$
+Where we have used $\lambda = x - 1$. Thus we identify $\phi(s) = s - \log(s)$ and $g(s) = \ee^{-s}$. in fact, now $\phi$ has a global minima at $s = 1$ and $\phi''(1) = 1 \neq 0$. Hence
+\begin{equation*}
+	\begin{split}
+		\Gamma(x) & = \frac{\sqrt{2\pi} x^x \ee^{-x}}{(x-1)^{(-1/2)}} (1 + \Boh(x^{-1})) \\
+		& = \sqrt{2\pi} x^{x - 1/2} \ee^{-x} (1 + \Boh(x^{-1})) \\
+		& = (x-1/2)\log{(x)} - x + \frac{1}{2} \log{(2\pi)}
+	\end{split}
+\end{equation*} 
+Which is called the Stirling formula.

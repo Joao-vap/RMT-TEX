@@ -1,0 +1,15 @@
+\section{Asymptotic on Integrals}
+ 
+We will try to explore the asymptotic techniques on a specific type of function, as $\lambda \rightarrow \infty$, given by 
+
+\begin{equation}
+	\phi(\lambda) := \int_{\Gamma} g(s) \ee^{-\lambda f(s)} \dd s,
+\end{equation}
+
+where $\Gamma$ is a contour in the plane and $f, g$ are given \textcolor{red}{suitable} functions.
+
+\subsection{Motivations}
+
+\begin{itemize}
+	\item Airy Equation $\psi''(x) = x \psi(x)$: Taking the Fourrier transform we have $$-\omega^2 \Phi(x) = \ii \Phi'(x)$$ for which we can solve for $\Phi(x) $ and then take the inverse Fourrier Transform to get $$\phi(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \ee^{\ii/3 \omega^3 + \ii x \omega} \dd \omega.$$ The imaginary part of the argument is an odd function and therefore zero when integrated. The rest is expressed $$\phi(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \cos{\left( \frac{\omega^3}{3} + x \omega \right)} \dd \omega.$$ But how to know if this is the only solution? One can prove that for a more general definition of a Transform $$\tilde{F} f(w) := \frac{1}{\sqrt{2\pi \ii}} \int_{\Gamma} \ee^{-\ii \omega s} f(s) \dd s$$ holds very similar properties of the Fourrier Tranformation and solves the equation for any contour that gives a convergent integral. We can actually choose independent contour such that each give us a different independent solution to the equation.
+\end{itemize}
