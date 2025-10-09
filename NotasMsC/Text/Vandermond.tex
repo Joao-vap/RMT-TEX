@@ -1,0 +1,63 @@
+\section{Vandermonde}
+
+We have said before that the change of variables performed for the invariant ensembles give rise to an Jacobian of the form
+\[
+	\prod_{i<j}^n |\lambda_j - \lambda_i|^\beta,
+\]
+lets try to properly understand this object. The first thing to note is that this is a determinant. This is done in two steps: First, we show that for a given matrix form, the determinant has exactly this form, secondly we show that the Jacobian is exactly this matrix. For the first part, consider a matrix $V$ given by 
+%\begin{equation}
+%	|V| = \prod_{1\leq i < j \leq n} (\alpha_j - \alpha_i)
+%\end{equation}
+%Note que podemos iniciar com uma matriz $n\cdot n$. Seja $c_i$ a coluna $i$, multiplicamos a coluna $c_i$ por $-\alpha_1$ e somamos com a coluna $c_{i+1}$
+\[
+V = 
+\begin{vmatrix}
+	1 & \alpha_1 & \alpha_1^2 & \dots & \alpha_1^{n-1} \\
+	1 & \alpha_2 & \alpha_2^2 & \dots & \alpha_2^{n-1} \\
+	1 & \alpha_3 & \alpha_3^2 & \dots & \alpha_3^{n-1} \\
+	\vdots & \vdots & \vdots & \ddots & \vdots \\
+	1 & \alpha_n & \alpha_n^2 & \dots & \alpha_n^{n-1}
+\end{vmatrix}
+\]
+We can use of the properties of the determinant, namely that it does not change if we add a multiple of one row to another row to write
+\[
+|V|=
+\begin{vmatrix}
+	1 & 0 & 0 & \dots & 0 \\
+	1 & \alpha_2 - \alpha_1 & \alpha_2(\alpha_2 - \alpha_1) & \dots & \alpha_2^{n-2}(\alpha_2 - \alpha_1) \\
+	1 & \alpha_3 - \alpha_1& \alpha_3(\alpha_3 - \alpha_1) & \dots & \alpha_3^{n-2} (\alpha_3 - \alpha_1)\\
+	\vdots & \vdots & \vdots & \ddots & \vdots \\
+	1 & \alpha_n- \alpha_1 & \alpha_n(\alpha_n - \alpha_1) & \dots & \alpha_n^{n-2}(\alpha_n - \alpha_1)
+\end{vmatrix}
+= \prod_{i=2}^n (\alpha_i - \alpha_1)
+\begin{vmatrix}
+	1 & 0 & 0 & \dots & 0 \\
+	1 & 1 & \alpha_2 & \dots & \alpha_2^{n-2} \\
+	1 & 1 & \alpha_3 & \dots & \alpha_3^{n-2} \\
+	\vdots & \vdots & \vdots & \ddots & \vdots \\
+	1 & 1 & \alpha_n & \dots & \alpha_n^{n-2}
+\end{vmatrix}
+\]
+Using now of Lpalace Theorem we now that there is only one cofactor that matters. So we write
+\[
+|V| =
+\prod_{i=2}^n (\alpha_i - \alpha_1)
+\begin{vmatrix}
+	1 & \alpha_2 & \dots & \alpha_2^{n-2} \\
+	1 & \alpha_3 & \dots & \alpha_3^{n-2} \\
+	\vdots & \vdots & \ddots & \vdots \\
+	1 & \alpha_n & \dots & \alpha_n^{n-2}
+\end{vmatrix}
+\]
+Repeating this many times we of course have the expression we started with, that is
+\[
+|V| = \prod_{i<j}^n |\alpha_j - \alpha_i|.
+\]
+
+\subsection{Some properties}
+
+We can now use of the properties of the Vandermonde determinant to rewrite the Jacobian as we need. For reasons that will become clearer, we will use the following properties
+
+\begin{claim}
+	Let $\matriz{V}$ be a matrix with entries $\{V_{i,j}\} = v_i^{j-1}$ such that its determinant is given by $\prod_{i < j}^{n} |v_j - v_i|$. Then, if we define $\matriz{V}'$ with $\{V_{i,j}\} = p(v_i)$ with $p$ a monomial with degree $j$.
+\end{claim} 

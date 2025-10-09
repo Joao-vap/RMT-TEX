@@ -1,0 +1,126 @@
+\section{Orthogonal Polynomial Ensembles}
+
+The subclass of invariant matrix ensembles this section refers to are those self-adjoint matrices $X$ with p.d.f.s $P(X)$ such that one has the decomposition
+\[
+	P(X) = \prod_{i=1}^n w(\lambda_i),
+\]
+where $\{\lambda_i\}$ are the undistinguishable eigenvalues of $X$ and $w(\lambda)$ is some continuous weight function that is real valued on $\R$ and decays fast enough as $|\lambda| \rightarrow \infty$. This is the same as removing the constrain on the weight function of the classical ensembles.
+
+\begin{definition}
+	Let $\beta = 1, 2, 4$, fix $n \in \N$ and let $w(\lambda)$ be a continuous, non-negative, real-valued function such that $w(\lambda) = \o(\lambda^{-\beta(n-1)-1})$. Then, the j.p.d.f.
+	\[
+		\p^{(w)}(\mmany{\lambda}{n};\beta) = \frac{1}{N_{n,\beta}^{(w)}} \prod_{i=1}^{n} w(\lambda_i) |\Delta_n(\lambda)|^\beta
+	\]
+	describes the n-sized orthogonal polynomial ensemble (OPE) when $\beta = 2$, skew-orthogonal polynomial ensemble of real type ($\R$-SOPE) when $\beta=1$, and the skew-orthogonal polynomial ensemble of quaternion type ($\He$-SOPE) when $\beta = 4$.
+	\label{Definition: measure-weight}
+\end{definition}
+
+The condition on the weight function guarantees that the j.p.d.f has a well-defined normalization constant. For the nomenclature used, let's discuss the Vandermonde determinant. Check \ref{Vandermonde} for this. 
+
+If one wishes to integrate the determinantal and Pfaffian structure s given by the Jacobian against the product of weight functions, it is beneficial to use monic polynomials $\{q_j(\lambda)\}_{j=0}^\infty$ that are skew-orthogonal with respect to the weight $w(\lambda)$.
+
+\begin{definition}
+	With $w(\lambda)$ a suitable function, define the following inner products on polynomial space:
+	\begin{align}
+		\langle f,g \rangle^{(1)} & \deff \frac{1}{2} \int_{\R^2} f(x) g(y) \sign(y-x) w(x) w(y) \dd x \dd y \\
+		\langle f,g \rangle^{(2)} & \deff \int_{\R} f(x) g(x) w(x) \dd x \\
+		\langle f,g \rangle^{(4)} & \deff \frac{1}{2} \int_{\R} (f(x)g'(x) - f'(x)g(x)) w(x) \dd x
+	\end{align}
+	For $\beta = 1,2,4$, let $\{q_j^{(\beta)}\}_{j=0}^\infty$ be a family of monic polynomials such that each $q_j^{(\beta)}(\lambda)$ is of degree $j$. Impose also that exists finite positive constants $\{r_j^{(\beta)}\}_{j=0}^\infty$ s.t.
+	\begin{align}
+	\langle q_j^{(2)}, q_k^{(2)} \rangle^{(2)} & = r_j^{(2)} \chi_{j=k} \\
+	\langle q^{(\sigma)}_{2j}, q^{(\sigma)}_{2k+1} \rangle^{(\sigma)} & = - \langle q^{(\sigma)}_{2k+1}, q^{(\sigma)}_{2j} \rangle^{(\sigma)} = r_j^{(\sigma)} \chi_{j=k} \\
+	\langle q^{(\sigma)}_{2j}, q^{(\sigma)}_{2k} \rangle^{(\sigma)} & = \langle q^{(\sigma)}_{2j+1}, q^{(\sigma)}_{2k+1} \rangle^{(\sigma)} = 0
+	\end{align}	
+	for $\sigma = 1, 4$ and any $j,k>0$. Then, we say that the family $\{q_j^{(1)}(\lambda)\}_{j=0}^\infty$ if $\R$-skew-orthogonal, $\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$ is orthogonal, and $\{q_j^{(4)}(\lambda)\}_{j=0}^\infty$ is $\He$-skew-orthogonal. All in respect to $w(\lambda)$.
+\end{definition}
+
+We can now express the eigenvalue j.p.d.f $p^{(w)}(\mmany{\lambda}{n};\beta)$ as either a determinant or a Pfaffian. 
+
+\begin{proof}
+	Write sketch of the proof here.
+\end{proof}
+
+\begin{thm}
+	Let $\{q_j^{(\beta)}(x)\}_{j=0}^{\infty}, \{r_j^{(\beta)}\}_{j=0}^{\infty}$, be as in the definition above, and let $n \in \N$ with $n$ even in the case for $\beta = 1$. Next, introduce the auxiliary functions
+	\begin{align}
+		\phi_j(x) & \deff \int_{\R} q_j^{(1)}(y) \sign(x-y) w(y) \dd y \\
+		S_j^{(1)}(x,y) & \deff \phi'_{2j+1}(x)\phi_{2j}(y) - \phi'_{2j}(x)\phi_{2j+1}(y) \\
+		S_j^{(4)}(x,y) & \deff q'_{2j+1}(x)q_{2j}(y) - q'_{2j}(x)q_{2j+1}(y) \\
+		D_j^{(4)}(x,y) & \deff q'_{2j+1}(x)q'_{2j}(y) - q'_{2j}(x)q'_{2j+1}(y) \\
+		I_j^{(4)}(x,y) & \deff q_{2j+1}(x)q_{2j}(y) - q_{2j}(x)q_{2j+1}(y)
+	\end{align}
+	and the kernels corresponding respectively to the real, complex and quaternionic cases,
+	\begin{align}
+		K_n^{(1)}(x,y) & \deff \sum_{k=0}^{N/2-1} \frac{1}{r_k^{(1)}} \begin{bmatrix}
+			\frac{1}{2} \int_{\R} \sign(x-z) S_k^{(1)}(z,y) & S_k^{(1)}(y,x) \\
+			-S_k^{(1)}(x,y) & \delta_y S_k^{(1)}(x,y)
+		\end{bmatrix} 
+		- \frac{1}{2} 
+		\begin{bmatrix}
+			\sign(x-y) & 0 \\
+			0 & 0
+		\end{bmatrix},   \\
+		K_n^{(2)}(x,y) & \deff \sqrt{w(x) w(y)} \sum_{k=0}^{N-1} \frac{1}{r_k^{(2)}} q_k^{(2)}(x) q_k^{(2)}(y), \\
+		K_n^{(4)}(x,y) & \deff \sqrt{w(x) w(y)} \sum_{k=0}^{N-1} \frac{1}{r_k^{(4)}}
+		\begin{bmatrix}
+			I_k^{(4)}(x,y) & S_k^{(4)}(y,x) \\
+			-S_k^{(4)}(x,y) & D_k^{(4)}(x,y)
+		\end{bmatrix}.
+	\end{align}
+	Then, the eigenvalue j.p.d.f. of Definition \ref{Definition: measure-weight} given by
+	\[
+	p^{(w)}(\mmany{\lambda}{n};\beta) = 
+	\begin{cases}
+		\det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{n}, \quad \beta = 2, \\
+		\pf\left[ K_n^{(\beta)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{n}, \quad \beta = 1,4.
+	\end{cases}
+	\]
+\end{thm}
+
+
+The significance of this theorem is that, for $\beta = 1, 2, 4$ the kernels $K_n^{(\beta)}(x,y)$ have \textit{Reproducing properties} such as
+\begin{align}
+	\int_{\R} \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k+1} \dd \lambda_{k+1} & = (n-k) \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k} \\
+	\int_{\R} \pf\left[ K_n^{(\beta)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k+1} \dd \lambda_{k+1} & = (n-k)  \pf\left[ K_n^{(\beta)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k}
+\end{align}
+Thus, one may integrate the j.p.d.f. over $\dd \lambda_{k+1} \cdots \dd \lambda_n$ to obtain the \textit{k-point correlation function}
+\[
+	p_k^{(w)}(\mmany{\lambda}{k};n;\beta) \deff \frac{n!}{(n-k)!} \int_{\R^{n-k}} p^{(w)}(\mmany{\lambda}{n};\beta) \dd \lambda_{k+1} \cdots \dd \lambda_n \\
+	=
+	\begin{cases}
+		\det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k}, \quad \beta = 2, \\
+		\pf\left[ K_n^{(\beta)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k}, \quad \beta = 1,4.
+	\end{cases}
+\]
+
+This implies, that he eigenvalue density $p^{(w)} = p_1^{(w)}(\lambda)$ is given by the formula
+\[
+	p^{(w)}(\lambda; \beta) = 
+	\begin{cases}
+		K_n^{(2)}(\lambda, \lambda), \quad \beta = 2, \\
+		\pf\left[ K_n^{(\beta)}(\lambda, \lambda) \right], \quad \beta = 1,4.
+	\end{cases}
+\]
+
+
+\subsubsection{The case for $\beta = 2$}
+
+The formula can be further simplified. This is easier with $\beta = 2$, so that's the case we will deal with for now. First, it is known that the orthogonal polynomials $\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$ satisfy the three-term recurrence
+\[
+	q_{j}^{(2)}(\lambda) = (\lambda + a_j) q_{j-1}^{(2)}(\lambda) - \frac{r_{j-1}^{(2)}}{r_{j-2}^{(2)}} q_{j-2}^{(2)}(\lambda)
+\] 
+where the coefficients depend on the choice of weight. We use this recurrence to write the terms in the summation of $K_n^{(2)}$ so that it gives rise to the \textit{Christoffel-Darboux} formula:
+
+\begin{prop}
+	The $\beta=2$ kernel defined before simplifies as
+	\begin{equation}
+		K_n^{(2)}(x,y) = \frac{\sqrt{w(x) w(y)}}{r_{n-1}^{(2)}} \frac{q_n^{(2)}(x)q_{n-1}^{(2)}(y) - q_{n-1}^{(2)}(x)q_n^{(2)}(y)}{x-y}
+	\end{equation}
+\end{prop}
+Taking the limit $y \rightarrow x$ using L`Hopital's rule shows that for finite $n$ the density has the form
+\begin{equation}
+	p^{(w)}(\lambda) = K_n^{(2)}(\lambda, \lambda) = \frac{\sqrt{w(x) w(y)}}{r_{n-1}^{(2)}} \left( q_{n-1}^{(2)}(\lambda)\Delta_\lambda q_{n}^{(2)}(\lambda) - q_{n}^{(2)}(\lambda)\Delta_\lambda q_{n-1}^{(2)}(\lambda)  \right)
+\end{equation}
+
+All that remains to make $p^{(w)}(\lambda)$ fully explicit is knowledge of the orthogonal polynomials $\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$. In the Gaussian, Laguerre and Jacobi cases, there are Hermite, Laguerre and Jacobi orthogonal polynomials, respectively.

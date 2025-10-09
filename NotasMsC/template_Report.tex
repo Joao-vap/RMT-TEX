@@ -72,6 +72,9 @@
 	
 \newcommand{\cjgt}[1]{\overline{#1}}
 \DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\vol}{Vol}
+\DeclareMathOperator{\tr}{Tr}
+\DeclareMathOperator{\pf}{Pf}
 \DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\ai}{Ai}
 \DeclareMathOperator{\re}{Re}
@@ -126,6 +129,8 @@
 \newtheorem{conjecture}[lemma]{Conjecture}
 \newtheorem{prop}[lemma]{Proposition}
 \newtheorem{assumption}[lemma]{Assumption}
+\newtheorem{obs}[lemma]{Observation}
+\newtheorem{ex}[lemma]{Example}
 \numberwithin{equation}{section} %numeracao dentro de secoes
 	
 % PROOF ENV
@@ -147,7 +152,7 @@
 \title{Notes on Master Studies}
 \author{João Victor A. Pimenta}
 
-\includeonly{./Text/HermiteExample.tex}
+%\includeonly{./Text/HermiteExample.tex}
 
 \begin{document}
 \maketitle
@@ -156,6 +161,28 @@
 	\textit{"En remontant chez moi pour y passer la soirée à travailler de mon mieux, je me disais que le monde n'est pas construit pour l'équilibre. Le monde est désordre. L'équilibre n'est pas la règle, c'est l'exception."\\
 	G.Duhamel, Maitres, 1937}
 \end{abstract}p
+
+\chapter{Random Matrix Theory}
+
+Random Matrices can be though of in two ways: As a measurable function from a probability space into a set of matrices or, more concretely, as a matrix whose entries are random variables with some joint distribution. In some cases there is an explicit density formula for the eigenvalues of such a random matrix. This is the case for the invariant ensembles. With the help of some mathematical tools such as orthogonal polynomials one can expresses the equilibrium measures for the eigenvalues asymptotically.
+
+% Section on Ensembles
+\include{./Text/Ensembles.tex}
+
+% Section on the invariant measure of matrices
+\include{./Text/InvariantMeasure.tex}
+
+\include{./Text/OrtPolEnsembles.tex}
+
+% Section on the Vandermont Determinant
+\label{Vandermonde}
+\include{./Text/Vandermond.tex}
+
+% Section on Orthogonal Polyninomials and Kernels
+\include{./Text/OrthogonalPolynomials.tex}
+
+% Tying the expression back together
+\include{./Text/EquilibriumMeasure.tex}
 
 \chapter{Asymptotic}
 
@@ -183,5 +210,9 @@
 
 % Fourrier Transform
 \include{./Text/FourrierTransform.tex} 
+
+
+\bibliography{references}{}
+\bibliographystyle{plain}
 
 \end{document}          

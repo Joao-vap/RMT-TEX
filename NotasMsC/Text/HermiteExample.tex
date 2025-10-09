@@ -48,7 +48,7 @@ So that we have \[H_{n-1}(\sqrt{n}\alpha) = C_n^1 \int_{\Gamma}  \ee^{-N(\phi_\a
 
 \begin{wrapfigure}{h!}{8.5cm}
 	\caption{Figure for Case 1}\label{wrap-fig:1}
-	\includegraphics[width=8.5cm]{/home/vap/Documents/RMT-TEX/NotasMsC/Assets/g-contour_plot_theta_0.5.png}
+	\includegraphics[width=8.5cm]{./Assets/g-contour_plot_theta_0.5.png}
 \end{wrapfigure} 
 
 Here, with $0 < \alpha < \sqrt{2}$, as the plot \ref{wrap-fig:1} suggests, we have both critical points as complex values, this can be easily determined noting that if we set $0 < \alpha < \sqrt{2}$ , we will have
@@ -64,7 +64,7 @@ where we have set $\theta_0 = \gamma - \frac{1}{2} \sin{(2\gamma)}.$ Where we so
 
 \begin{multicols}{2}
 		\begin{center}
-					\includegraphics[width=6.5cm]{/home/vap/Documents/RMT-TEX/NotasMsC/Assets/geogebra-export.png}
+					\includegraphics[width=6.5cm]{./Assets/geogebra-export.png}
 		\end{center}
 	\columnbreak
 	\hspace{1cm}
@@ -87,14 +87,14 @@ With which we can construct both paths of constant imaginary part
 \[\Gamma_d^+ = \{ r_d^+(\theta) \ee^{\ii \theta} : \theta \in (0, \pi) \}; \ \ \ \Gamma_a^+ = \{ r_a^+(\theta) \ee^{\ii \theta} : \theta \in (0, \pi/2) \} \]
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=9cm]{/home/vap/Documents/RMT-TEX/NotasMsC/Assets/Hermite1positivepaths.png}
+	\includegraphics[width=9cm]{./Assets/Hermite1positivepaths.png}
 \end{figure}
 
 Analogously, for the negative part,
 \[\Gamma_d^- = \{ r_d^-(\theta) \ee^{\ii \theta} : \theta \in (0, \pi) \}; \ \ \ \Gamma_a^- = \{ r_a^-(\theta) \ee^{\ii \theta} : \theta \in (0, \pi/2) \} \]
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=10cm]{/home/vap/Documents/RMT-TEX/NotasMsC/Assets/HermiteCompletePaths.png}
+	\includegraphics[width=10cm]{./Assets/HermiteCompletePaths.png}
 \end{figure}
 
 Now, we only need to determine the steepest descent path. This should be easy as we know the asymptotic behaviour $\phi_\alpha(t) \asymp t^2$ for $t \rightarrow \infty$ and that  $\phi_{\alpha}(t) \asymp \ln{(t)}$ for $t \rightarrow 0$. From this, follows that $\Gamma_d^+$ and $\Gamma_d^-$ are the paths we were looking for.  We create therefore, a new path $\Gamma_x$ that connects both $\Gamma_d$ at the vertical line $x$. Then, doing $\Gamma \mapsto \Gamma_d^+ \cup \Gamma_d^- \cup \Gamma_x$ and noting that, as $x$ goes to infinity, we have
@@ -145,7 +145,7 @@ Of course, if we cange for the other case we can simply rewrite
 
 \begin{wrapfigure}{h!}{8.5cm}
 	\caption{Figure for case 3}\label{wrap-fig:2}
-	\includegraphics[width=8.5cm]{/home/vap/Documents/RMT-TEX/NotasMsC/Assets/g-contour_plot_theta_2.png}
+	\includegraphics[width=8.5cm]{./Assets/g-contour_plot_theta_2.png}
 \end{wrapfigure} 
 
 Here, with $ \alpha > \sqrt{2}$, as the plot \ref{wrap-fig:2} suggests, we have both critical points as real values, this can be easily determined noting that if we set $\alpha > \sqrt{2}$ , we will have
@@ -161,7 +161,7 @@ where we solve for the two solutions $r_a^+$ and $r_d^-$  by meshing the two qua
 
 \begin{multicols}{2}
 	\begin{center}
-		\includegraphics[width=7cm]{/home/vap/Documents/RMT-TEX/NotasMsC/Assets/HermiteCase2Positive.png}
+		\includegraphics[width=7cm]{./Assets/HermiteCase2Positive.png}
 	\end{center}
 	\columnbreak
 	\hspace{0.2cm}
@@ -178,7 +178,7 @@ With which we can construct both paths of constant imaginary part
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=10cm]{/home/vap/Documents/RMT-TEX/NotasMsC/Assets/HermiteCase2PathsPositive.png}
+	\includegraphics[width=10cm]{./Assets/HermiteCase2PathsPositive.png}
 \end{figure}
 
 We need now to determine the Steepest Descent Path. In this case is more clear what the path should be the one passing through the critical point $\ee^{-\gamma}$.  Then, repeting the process we did on Case 1 - changing the path of integration - we can make the substitution
@@ -209,7 +209,7 @@ Similary, for the other case
 
 \begin{wrapfigure}{h!}{8.5cm}
 	\caption{Figure for case 3}\label{wrap-fig:3}
-	\includegraphics[width=8.5cm]{/home/vap/Documents/RMT-TEX/NotasMsC/Assets/g-contour_plot_theta_1.4.png}
+	\includegraphics[width=8.5cm]{./Assets/g-contour_plot_theta_1.4.png}
 \end{wrapfigure} 
 
 For the case $(1)$ we can see that the contribution for the asymptotic will come from $t_c^+$ while for case $(2)$ the contribution comes from both critical points, although depending on the real part one of the asymptotic may be exponential bigger than the other. The interesting case comes from $(3)$ where both critical point have the same value and $f''(t_c) = 0$. We need to rescale the variable somehow to get the behavior of the asymptotic. 
@@ -245,12 +245,12 @@ where hopefully I can apply Laplace.
 
 \begin{figure}[h] 
 	\centering
-	\subfigure{\includegraphics[width=0.49\textwidth]{/home/vap/Documents/RMT-TEX/NotasMsC/Assets/g-contour_plot_theta_0.png}}
-	\subfigure{\includegraphics[width=0.49\textwidth]{/home/vap/Documents/RMT-TEX/NotasMsC/Assets/g-contour_plot_theta_0.5.png}}
-	\subfigure{\includegraphics[width=0.49\textwidth]{/home/vap/Documents/RMT-TEX/NotasMsC/Assets/g-contour_plot_theta_1.png}}
-	\subfigure{\includegraphics[width=0.49\textwidth]{/home/vap/Documents/RMT-TEX/NotasMsC/Assets/g-contour_plot_theta_1.4.png}}
-	\subfigure{\includegraphics[width=0.49\textwidth]{/home/vap/Documents/RMT-TEX/NotasMsC/Assets/g-contour_plot_theta_2.png}}
-	\subfigure{\includegraphics[width=0.49\textwidth]{/home/vap/Documents/RMT-TEX/NotasMsC/Assets/g-contour_plot_theta_3.png}}
+	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_0.png}}
+	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_0.5.png}}
+	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_1.png}}
+	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_1.4.png}}
+	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_2.png}}
+	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_3.png}}
 	\caption{Scenarios for $x$}
 	\label{Fig: x cases for hermite}
 \end{figure}
