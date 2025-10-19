@@ -1,8 +1,17 @@
-\subsubsection{Airy function}
+\subsection{Airy function}
+\label{Subsection: Airy Asymptotic}
 
 First, we define the function we call Airy. 
-$$Ai(x) \deff \frac{1}{2\pi \ii} \int_{\Gamma} \ee^{-\frac{1}{3} z^3 + x z} \dd z$$ 
-Let's take $\Gamma$ to be the union of the two half open line $\Gamma = (\ee^{-2\pi\ii / 3}\infty, 0] \cup [0, \ee^{2\pi\ii / 3} \infty)$. Of course, by Cauchy Theorem, we know that the definition is independent of the contour as long as the contour goeas from $\ee^{-2\pi\ii / 3}\infty$ to $\ee^{2\pi\ii / 3}\infty$. Now, we need to get things in order to apply Laplace method on the integral. We could start defining
+
+\begin{definition}
+	(Airy function) Let $\langle$ be the union of the line segments $\{t\ee^{\ii \pi/3} : t \geq 0\}$ and $\{ t\ee^{-\ii\pi/3}: t \geq 0\}$, that is the union of the two infinite rays in the complex plane emanating from the origin that make	angles $\pi/3$ and $-\pi/3$ with the real axis. For $u \in \C$ the Airy function is defined by the
+	complex contour integral
+	\begin{equation}
+		\Ai(u) = \frac{1}{2\pi\ii} \int_{\langle} \exp{\left(\frac{t^3}{3} - ut\right)} \dd t.
+	\end{equation}
+	\label{Def: Airy Function}
+\end{definition}
+Of course, by Cauchy Theorem, we know that the definition is independent of the contour as long as the contour goes from $\ee^{-2\pi\ii / 3}\infty$ to $\ee^{2\pi\ii / 3}\infty$. Now, we need to get things in order to apply Laplace method on the integral. We could start defining
 $$g(z) = \ee^{-\frac{1}{3} z^3}, \ \ f(z) = z$$
 but this is not a good approach as such an $f$ won't have any critical points and won't help us calculate the integral. We then try a change of variable to get a function with those critical points. Define $x \deff \lambda \ee^{\ii \theta} = \lambda \omega$ so that we can send $x$ to infinite by sending $\lambda$ in a constant direction $\theta$. Now, introduce a variable $s$ such that $s\lambda^{\eta} = z$ for some $\eta \in \R$. Now, we want to extract $\lambda$ from the new exponent 
 $$-\frac{1}{3}\lambda^{3\eta}s^3 + \lambda^{1+\eta} \omega s$$

@@ -1,8 +1,22 @@
 \begin{thebibliography}{1}
 
+\bibitem{nica2025gaussianintegralformulahermite}
+Mihai Nica and Janosch Ortmann.
+\newblock A gaussian integral formula for the hermite polynomials:
+  Combinatorics, asymptotics and applications, 2025.
+
 \bibitem{rahman2023recursivecharacterisationsrandommatrix}
 Anas~A. Rahman.
 \newblock Recursive characterisations of random matrix ensembles and associated
   combinatorial objects, 2023.
+
+\bibitem{shi2021errorboundsasymptoticexpansions}
+Wei Shi, Gergő Nemes, Xiang-Sheng Wang, and Roderick Wong.
+\newblock Error bounds for the asymptotic expansions of the hermite
+  polynomials, 2021.
+
+\bibitem{Zhipeng-Liu-ClassNotes}
+Zhipeng-Liu.
+\newblock Random matrix theory, Unknown 0.
 
 \end{thebibliography}

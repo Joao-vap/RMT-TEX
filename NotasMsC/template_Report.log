@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.10)  9 OCT 2025 15:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.10)  18 OCT 2025 15:15
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -906,16 +906,45 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks56
 \@floatcapt=\box114
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 38.
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
 
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count344
+\calc@Bcount=\count345
+\calc@Adimen=\dimen307
+\calc@Bdimen=\dimen308
+\calc@Askip=\skip67
+\calc@Bskip=\skip68
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count346
+\calc@Cskip=\skip69
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count347
+\l_MT_multwidth_dim=\dimen309
+\origjot=\skip70
+\l_MT_shortvdotswithinadjustabove_dim=\dimen310
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen311
+\l_MT_above_intertext_sep=\dimen312
+\l_MT_below_intertext_sep=\dimen313
+\l_MT_above_shortintertext_sep=\dimen314
+\l_MT_below_shortintertext_sep=\dimen315
+\xmathstrut@box=\box115
+\xmathstrut@dim=\dimen316
+)
 (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
-\csq@reset=\count344
-\csq@gtype=\count345
-\csq@glevel=\count346
-\csq@qlevel=\count347
-\csq@maxlvl=\count348
-\csq@tshold=\count349
+\csq@reset=\count348
+\csq@gtype=\count349
+\csq@glevel=\count350
+\csq@qlevel=\count351
+\csq@maxlvl=\count352
+\csq@tshold=\count353
 \csq@ltx@everypar=\toks57
 
 (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
@@ -930,50 +959,48 @@ File: csquotes.cfg
 Package csquotes Info: Enabling multilingual quotes.
 )
 Package csquotes Info: Allocating character ".
-\c@lemma=\count350
+Package hyperref Info: Option `colorlinks' set `true' on input line 44.
+\c@lemma=\count354
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 
-(./template_Report.aux (./Text/Ensembles.aux) (./Text/InvariantMeasure.aux)
-(./Text/OrtPolEnsembles.aux) (./Text/Vandermond.aux)
-(./Text/OrthogonalPolynomials.aux) (./Text/EquilibriumMeasure.aux)
-(./Text/IntegralAsymptotic.aux) (./Text/WatsonLemma.aux)
-(./Text/LaplaceLemma.aux) (./Text/SteepestDescent.aux) (./Text/AiryExample.aux)
-(./Text/HermiteExample.aux) (./Text/LaplaceTransform.aux)
-(./Text/FourrierTransform.aux))
+(./template_Report.aux
+
+LaTeX Warning: Label `Equation: Hermite Integral' multiply defined.
+
+)
 \openout1 = `template_Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count351
-\scratchdimen=\dimen307
-\scratchbox=\box115
-\nofMPsegments=\count352
-\nofMParguments=\count353
+\scratchcounter=\count355
+\scratchdimen=\dimen317
+\scratchbox=\box116
+\nofMPsegments=\count356
+\nofMParguments=\count357
 \everyMPshowfont=\toks58
-\MPscratchCnt=\count354
-\MPscratchDim=\dimen308
-\MPnumerator=\count355
-\makeMPintoPDFobject=\count356
+\MPscratchCnt=\count358
+\MPscratchDim=\dimen318
+\MPnumerator=\count359
+\makeMPintoPDFobject=\count360
 \everyMPtoPDFconversion=\toks59
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1035,7 +1062,7 @@ Package caption Info: End \AtBeginDocument code.
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
-Package hyperref Info: Link coloring ON on input line 157.
+Package hyperref Info: Link coloring ON on input line 181.
 
 (./template_Report.out) (./template_Report.out)
 \@outlinefile=\write4
@@ -1046,15 +1073,15 @@ Package hyperref Info: Link coloring ON on input line 157.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 157.
+ on input line 181.
 
-Package csquotes Info: Making character " active on input line 157.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 159
+Package csquotes Info: Making character " active on input line 181.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 183
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 159
+LaTeX Font Info:    Trying to load font information for U+msb on input line 183
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1062,131 +1089,104 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
-dvips/cm-super/cm-super-t1.enc}]
+dvips/cm-super/cm-super-t1.enc}] (./template_Report.toc)
+\tf@toc=\write5
+\openout5 = `template_Report.toc'.
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.163 \end{abstract}
-                    p [1]
+l.183 \tableofcontents
+                       [1]
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.165 \chapter
-              {Random Matrix Theory} [1]
+l.189 \end{abstract}
+                     [1]
 Chapter 1.
-[2
+(./Text/Ensembles.tex
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.18 ...c}{n} \delta\left(B_{i,j}\right)\right),$$
+                                                   then $\m{B}$ belongs to t...
+[1
 
-]
-\openout2 = `./Text/Ensembles.aux'.
-
- (./Text/Ensembles.tex [3
-
-] [4]
-Overfull \hbox (9.35568pt too wide) in paragraph at lines 76--78
-\T1/cmr/m/n/10 The spec-tral mo-ments can ad-di-tion-ally be ex-presses as an a
-v-er-age with re-spect ot the eigen-value j.p.d.f $\OML/cmm/m/it/10 p\OT1/cmr/m
-/n/10 (\OML/cmm/m/it/10 ^^U[]; ^^U[]; [] ; ^^U[]\OT1/cmr/m/n/10 )$
+] [2]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 106
+.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [3]
+Overfull \hbox (15.81361pt too wide) in paragraph at lines 124--126
+\T1/cmr/m/n/10 The spec-tral mo-ments can ad-di-tion-ally be ex-pressed as an a
+v-er-age with re-spect ot the eigen-value j.p.d.f. $\OT1/cmtt/m/n/10 p\OT1/cmr/
+m/n/10 (\OML/cmm/m/it/10 ^^U[]; ^^U[]; [] ; ^^U[]\OT1/cmr/m/n/10 )$
  []
 
-[5] [6{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]) [7]
-\openout2 = `./Text/InvariantMeasure.aux'.
-
-
-(./Text/InvariantMeasure.tex
-Overfull \hbox (0.1319pt too wide) in paragraph at lines 29--31
+[4] [5{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}])
+(./Text/InvariantMeasure.tex [6]
+Overfull \hbox (4.21973pt too wide) in paragraph at lines 39--41
 \T1/cmr/m/it/10 is the un-nor-mal-ized Haar mea-sure on the quo-tient space $\O
 ML/cmm/m/it/10 O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 )\OML/cmm/m/
-it/10 =O\OT1/cmr/m/n/10 (1)[]$ \T1/cmr/m/it/10 - $\OML/cmm/m/it/10 ^^L \OT1/cmr
-/m/n/10 = 1$\T1/cmr/m/it/10 , $\OML/cmm/m/it/10 U\OT1/cmr/m/n/10 (\OML/cmm/m/it
+it/10 =O\OT1/cmr/m/n/10 (1)[]$ \T1/cmr/m/it/10 ($\OML/cmm/m/it/10 ^^L \OT1/cmr/
+m/n/10 = 1$\T1/cmr/m/it/10 ), $\OML/cmm/m/it/10 U\OT1/cmr/m/n/10 (\OML/cmm/m/it
 /10 n\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =U\OT1/cmr/m/n/10 (1)[]$ \T1/cmr/m/it/10
- - $\OML/cmm/m/it/10 ^^L \OT1/cmr/m/n/10 = 2$\T1/cmr/m/it/10 , or $\OML/cmm/m/i
+ ($\OML/cmm/m/it/10 ^^L \OT1/cmr/m/n/10 = 2$\T1/cmr/m/it/10 ), or $\OML/cmm/m/i
 t/10 Sp\OT1/cmr/m/n/10 (2\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =S
 p\OT1/cmr/m/n/10 (2)[]$
  []
 
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 41.
-
-[8
-
-
-
-] [9] [10] [11]) [12]
-\openout2 = `./Text/OrtPolEnsembles.aux'.
-
- (./Text/OrtPolEnsembles.tex
-
-LaTeX Warning: Command \o invalid in math mode on input line 10.
-
-Missing character: There is no ø in font cmr10!
-[13
-
-
-
-]
-Overfull \hbox (17.971pt too wide) detected at line 95
-\OML/cmm/m/it/10 p[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^U[]; ^^U[]; [] ; ^^U[]\
-OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 n\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 ^^L\OT1/c
-mr/m/n/10 ) []= [] [][] \OML/cmm/m/it/10 p[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^
-^U[]; ^^U[]; [] ; ^^U[]\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 ^^L\OT1/cmr/m/n/10 )d
-\OML/cmm/m/it/10 ^^U[] [] \OT1/cmr/m/n/10 d\OML/cmm/m/it/10 ^^U[][]  \OT1/cmr/m
-/n/10 = []
+[7] [8] [9]) (./Text/OrtPolEnsembles.tex [10]
+Overfull \hbox (18.4084pt too wide) detected at line 93
+[][][]\OT1/cmtt/m/n/10 p[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^U[]; ^^U[]; [] ; 
+^^U[]\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 n\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 ^^L
+\OT1/cmr/m/n/10 ) []= [] [][] \OT1/cmtt/m/n/10 p[]\OT1/cmr/m/n/10 (\OML/cmm/m/i
+t/10 ^^U[]; ^^U[]; [] ; ^^U[]\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 ^^L\OT1/cmr/m/n
+/10 )d\OML/cmm/m/it/10 ^^U[] [] \OT1/cmr/m/n/10 d\OML/cmm/m/it/10 ^^U[][]  \OT1
+/cmr/m/n/10 = []
  []
 
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 107.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 107.
+(hyperref)                removing `\beta' on input line 105.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 107.
+(hyperref)                removing `math shift' on input line 105.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 107.
-
-[14]) [15]
-\openout2 = `./Text/Vandermond.aux'.
-
- (./Text/Vandermond.tex) [16
-
-
-
-]
-\openout2 = `./Text/OrthogonalPolynomials.aux'.
-
-
-No file ./Text/OrthogonalPolynomials.tex.
-\openout2 = `./Text/EquilibriumMeasure.aux'.
-
-No file ./Text/EquilibriumMeasure.tex.
+[11]) (./Text/Vandermond.tex [12]) (./Text/OrthogonalPolynomials.tex)
+(./Text/EquilibriumMeasure.tex) [13]
 Chapter 2.
-[17
+(./Text/HermitePolynomials.tex [14
+
+] [15]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 108.
 
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 108.
 
+[16]) [17]
+Chapter 3.
+(./Text/IntegralAsymptotic.tex
 
+Package hyperref Warning: Difference (3) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 7.
 
+) (./Text/LaplaceMethod.tex [18
 
-
-
-
-]
-\openout2 = `./Text/IntegralAsymptotic.aux'.
-
- (./Text/IntegralAsymptotic.tex) [18
-
-]
-\openout2 = `./Text/WatsonLemma.aux'.
-
- (./Text/WatsonLemma.tex
+] (./Text/WatsonLemma.tex [19]
 Overfull \hbox (34.17241pt too wide) detected at line 31
 \OMS/cmsy/m/n/10 j\OT1/cmr/m/n/10 (1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2)\OMS/cm
 sy/m/n/10 j ^^T jj\OML/cmm/m/it/10 f[]\OMS/cmsy/m/n/10 jj[] [][] \OML/cmm/m/it/
@@ -1195,294 +1195,243 @@ sy/m/n/10 j ^^T jj\OML/cmm/m/it/10 f[]\OMS/cmsy/m/n/10 jj[] [][] \OML/cmm/m/it/
 m/n/10 jj\OML/cmm/m/it/10 f[]\OMS/cmsy/m/n/10 jj[] [] \OML/cmm/m/it/10 :
  []
 
-[19
-
-
-
-]) [20]
-\openout2 = `./Text/LaplaceLemma.aux'.
-
- (./Text/LaplaceLemma.tex [21
-
-
-
-] [22] (./Text/GammaExample.tex [23]))
-[24]
-\openout2 = `./Text/SteepestDescent.aux'.
-
- (./Text/SteepestDescent.tex [25
-
-
-
-]) [26]
-\openout2 = `./Text/AiryExample.aux'.
-
- (./Text/AiryExample.tex
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 1.
-
-[27
-
-
-
-]
-<./Assets/contour_plot_theta_0.10.png, id=369, 578.16pt x 433.62pt>
+[20]) (./Text/LaplaceLemma.tex [21] [22] [23] (./Text/GammaExample.tex)))
+(./Text/SteepestDescent.tex [24] [25]) (./Text/AiryExample.tex [26]
+<./Assets/contour_plot_theta_0.10.png, id=557, 578.16pt x 433.62pt>
 File: ./Assets/contour_plot_theta_0.10.png Graphic file (type png)
 <use ./Assets/contour_plot_theta_0.10.png>
 Package pdftex.def Info: ./Assets/contour_plot_theta_0.10.png  used on input li
-ne 41.
+ne 50.
 (pdftex.def)             Requested size: 245.2399pt x 183.92546pt.
-<./Assets/contour_plot_theta_0.79.png, id=371, 578.16pt x 433.62pt>
+<./Assets/contour_plot_theta_0.79.png, id=559, 578.16pt x 433.62pt>
 File: ./Assets/contour_plot_theta_0.79.png Graphic file (type png)
 <use ./Assets/contour_plot_theta_0.79.png>
 Package pdftex.def Info: ./Assets/contour_plot_theta_0.79.png  used on input li
-ne 42.
+ne 51.
 (pdftex.def)             Requested size: 245.2399pt x 183.92546pt.
-<./Assets/contour_plot_theta_1.57.png, id=372, 578.16pt x 433.62pt>
+<./Assets/contour_plot_theta_1.57.png, id=560, 578.16pt x 433.62pt>
 File: ./Assets/contour_plot_theta_1.57.png Graphic file (type png)
 <use ./Assets/contour_plot_theta_1.57.png>
 Package pdftex.def Info: ./Assets/contour_plot_theta_1.57.png  used on input li
-ne 43.
+ne 52.
 (pdftex.def)             Requested size: 245.2399pt x 183.92546pt.
-<./Assets/contour_plot_theta_2.09.png, id=373, 578.16pt x 433.62pt>
+<./Assets/contour_plot_theta_2.09.png, id=561, 578.16pt x 433.62pt>
 File: ./Assets/contour_plot_theta_2.09.png Graphic file (type png)
 <use ./Assets/contour_plot_theta_2.09.png>
 Package pdftex.def Info: ./Assets/contour_plot_theta_2.09.png  used on input li
-ne 44.
+ne 53.
 (pdftex.def)             Requested size: 245.2399pt x 183.92546pt.
-<./Assets/contour_plot_theta_2.36.png, id=374, 578.16pt x 433.62pt>
+<./Assets/contour_plot_theta_2.36.png, id=562, 578.16pt x 433.62pt>
 File: ./Assets/contour_plot_theta_2.36.png Graphic file (type png)
 <use ./Assets/contour_plot_theta_2.36.png>
 Package pdftex.def Info: ./Assets/contour_plot_theta_2.36.png  used on input li
-ne 45.
+ne 54.
 (pdftex.def)             Requested size: 245.2399pt x 183.92546pt.
-<./Assets/contour_plot_theta_3.14.png, id=375, 578.16pt x 433.62pt>
+<./Assets/contour_plot_theta_3.14.png, id=563, 578.16pt x 433.62pt>
 File: ./Assets/contour_plot_theta_3.14.png Graphic file (type png)
 <use ./Assets/contour_plot_theta_3.14.png>
 Package pdftex.def Info: ./Assets/contour_plot_theta_3.14.png  used on input li
-ne 46.
+ne 55.
 (pdftex.def)             Requested size: 245.2399pt x 183.92546pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [28] [29 <./Assets/contour_plot_theta_0.10.png> <./Assets/contour_plot_theta_
-0.79.png> <./Assets/contour_plot_theta_1.57.png> <./Assets/contour_plot_theta_2
-.09.png> <./Assets/contour_plot_theta_2.36.png> <./Assets/contour_plot_theta_3.
-14.png>]
-\openout2 = `./Text/HermiteExample.aux'.
+) (./Text/HermiteExample.tex
 
- (./Text/HermiteExample.tex [30
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5.
 
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5.
 
-]
-<./Assets/g-contour_plot_theta_0.5.png, id=403, 578.16pt x 433.62pt>
+[27]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 41.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 41.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 41.
+
+[28]
+Overfull \hbox (24.52106pt too wide) detected at line 121
+[][][][][]\OT1/cmr/m/n/10 (2[] [] []) = []\OML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 (
+\OML/cmm/m/it/10 N \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 1)[] [][] [] [](1 + \OM
+S/cmsy/m/n/10 O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 ))\OML/cmm/
+m/it/10 ;
+ []
+
+
+Overfull \hbox (33.69179pt too wide) detected at line 126
+[][][][][]\OT1/cmr/m/n/10 (2[] [](\OML/cmm/m/it/10 ^^M\OT1/cmr/m/n/10 )) = [][]
+[] [] [](1 + \OMS/cmsy/m/n/10 O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 N[]\OT1/cmr/m/
+n/10 ))\OML/cmm/m/it/10 :
+ []
+
+[29]
+<./Assets/g-contour_plot_theta_0.5.png, id=611, 578.16pt x 433.62pt>
 File: ./Assets/g-contour_plot_theta_0.5.png Graphic file (type png)
 <use ./Assets/g-contour_plot_theta_0.5.png>
 Package pdftex.def Info: ./Assets/g-contour_plot_theta_0.5.png  used on input l
-ine 51.
+ine 153.
 (pdftex.def)             Requested size: 241.84842pt x 181.38472pt.
-<./Assets/geogebra-export.png, id=405, 95.93362pt x 62.99641pt>
+<./Assets/geogebra-export.png, id=613, 95.93362pt x 62.99641pt>
 File: ./Assets/geogebra-export.png Graphic file (type png)
 <use ./Assets/geogebra-export.png>
-Package pdftex.def Info: ./Assets/geogebra-export.png  used on input line 67.
+Package pdftex.def Info: ./Assets/geogebra-export.png  used on input line 177.
 (pdftex.def)             Requested size: 184.9429pt x 121.4602pt.
-
-Overfull \hbox (16.93657pt too wide) detected at line 77
-\OML/cmm/m/it/10 r[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 ) = []
-
- []
-
-
-Overfull \hbox (24.50952pt too wide) detected at line 84
-\OML/cmm/m/it/10 r[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 ) = []
-
- []
-
-<./Assets/Hermite1positivepaths.png, id=406, 267.99753pt x 133.19478pt>
+<./Assets/Hermite1positivepaths.png, id=614, 267.99753pt x 133.19478pt>
 File: ./Assets/Hermite1positivepaths.png Graphic file (type png)
 <use ./Assets/Hermite1positivepaths.png>
 Package pdftex.def Info: ./Assets/Hermite1positivepaths.png  used on input line
- 90.
+ 202.
 (pdftex.def)             Requested size: 256.0748pt x 127.28223pt.
-[31 <./Assets/g-contour_plot_theta_0.5.png> <./Assets/geogebra-export.png> <./A
-ssets/Hermite1positivepaths.png>]
-<./Assets/HermiteCompletePaths.png, id=417, 294.57881pt x 146.40567pt>
-File: ./Assets/HermiteCompletePaths.png Graphic file (type png)
-<use ./Assets/HermiteCompletePaths.png>
-Package pdftex.def Info: ./Assets/HermiteCompletePaths.png  used on input line 
-97.
-(pdftex.def)             Requested size: 284.52756pt x 141.41684pt.
 
-Overfull \hbox (8.98134pt too wide) detected at line 115
-[]
- []
-
-[32 <./Assets/HermiteCompletePaths.png>]
-<./Assets/g-contour_plot_theta_2.png, id=424, 578.16pt x 433.62pt>
-File: ./Assets/g-contour_plot_theta_2.png Graphic file (type png)
-<use ./Assets/g-contour_plot_theta_2.png>
-Package pdftex.def Info: ./Assets/g-contour_plot_theta_2.png  used on input lin
-e 148.
-(pdftex.def)             Requested size: 241.84842pt x 181.38472pt.
-<./Assets/HermiteCase2Positive.png, id=426, 752.8125pt x 374.14781pt>
-File: ./Assets/HermiteCase2Positive.png Graphic file (type png)
-<use ./Assets/HermiteCase2Positive.png>
-Package pdftex.def Info: ./Assets/HermiteCase2Positive.png  used on input line 
-164.
-(pdftex.def)             Requested size: 199.16928pt x 98.98883pt.
-
-Overfull \hbox (0.35423pt too wide) detected at line 170
-\OML/cmm/m/it/10 r[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 ) = []
-;   \OML/cmm/m/it/10 ^^R \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 
-; ^^Y\OT1/cmr/m/n/10 )
- []
-
-
-Overfull \hbox (0.529pt too wide) detected at line 173
-\OML/cmm/m/it/10 r[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 ) = []
-;   \OML/cmm/m/it/10 ^^R \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 
-; ^^Y\OT1/cmr/m/n/10 )
- []
-
-<./Assets/HermiteCase2PathsPositive.png, id=427, 451.6875pt x 224.4887pt>
-File: ./Assets/HermiteCase2PathsPositive.png Graphic file (type png)
-<use ./Assets/HermiteCase2PathsPositive.png>
-Package pdftex.def Info: ./Assets/HermiteCase2PathsPositive.png  used on input 
-line 181.
-(pdftex.def)             Requested size: 284.52756pt x 141.41835pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[33 <./Assets/g-contour_plot_theta_2.png> <./Assets/HermiteCase2Positive.png>]
-<./Assets/g-contour_plot_theta_1.4.png, id=435, 578.16pt x 433.62pt>
-File: ./Assets/g-contour_plot_theta_1.4.png Graphic file (type png)
-<use ./Assets/g-contour_plot_theta_1.4.png>
-Package pdftex.def Info: ./Assets/g-contour_plot_theta_1.4.png  used on input l
-ine 212.
-(pdftex.def)             Requested size: 241.84842pt x 181.38472pt.
+<./Assets/HermiteCompletePaths.png, id=615, 294.57881pt x 146.40567pt>
+File: ./Assets/HermiteCompletePaths.png Graphic file (type png)
+<use ./Assets/HermiteCompletePaths.png>
+Package pdftex.def Info: ./Assets/HermiteCompletePaths.png  used on input line 
+211.
+(pdftex.def)             Requested size: 284.52756pt x 141.41684pt.
 
-[34 <./Assets/HermiteCase2PathsPositive.png> <./Assets/g-contour_plot_theta_1.4
-.png>]
-Overfull \hbox (113.75285pt too wide) detected at line 220
-[][] [][] \OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 
-)d\OML/cmm/m/it/10 t \OT1/cmr/m/n/10 + [][] [][] \OML/cmm/m/it/10 g\OT1/cmr/m/n
-/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )d\OML/cmm/m/it/10 t \OT1/cmr/m/n/10 + [
-][] [][] \OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )
-d\OML/cmm/m/it/10 t \OMS/cmsy/m/n/10 ^^Y [][] [][] \OML/cmm/m/it/10 g\OT1/cmr/m
-/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )d\OML/cmm/m/it/10 t
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[30 <./Assets/g-contour_plot_theta_0.5.png> <./Assets/geogebra-export.png>]
+Overfull \hbox (25.73044pt too wide) detected at line 293
+[]
  []
 
-<./Assets/g-contour_plot_theta_0.png, id=445, 578.16pt x 433.62pt>
-File: ./Assets/g-contour_plot_theta_0.png Graphic file (type png)
-<use ./Assets/g-contour_plot_theta_0.png>
-Package pdftex.def Info: ./Assets/g-contour_plot_theta_0.png  used on input lin
-e 248.
-(pdftex.def)             Requested size: 245.2399pt x 183.92546pt.
-File: ./Assets/g-contour_plot_theta_0.5.png Graphic file (type png)
-<use ./Assets/g-contour_plot_theta_0.5.png>
-Package pdftex.def Info: ./Assets/g-contour_plot_theta_0.5.png  used on input l
-ine 249.
-(pdftex.def)             Requested size: 245.2399pt x 183.92546pt.
-<./Assets/g-contour_plot_theta_1.png, id=446, 578.16pt x 433.62pt>
-File: ./Assets/g-contour_plot_theta_1.png Graphic file (type png)
-<use ./Assets/g-contour_plot_theta_1.png>
-Package pdftex.def Info: ./Assets/g-contour_plot_theta_1.png  used on input lin
-e 250.
-(pdftex.def)             Requested size: 245.2399pt x 183.92546pt.
-File: ./Assets/g-contour_plot_theta_1.4.png Graphic file (type png)
-<use ./Assets/g-contour_plot_theta_1.4.png>
-Package pdftex.def Info: ./Assets/g-contour_plot_theta_1.4.png  used on input l
-ine 251.
-(pdftex.def)             Requested size: 245.2399pt x 183.92546pt.
+
+Overfull \hbox (5.91397pt too wide) detected at line 305
+[][][][][]\OT1/cmr/m/n/10 (2[] [](\OML/cmm/m/it/10 ^^M\OT1/cmr/m/n/10 )) = [][]
+[] [] [](1 + \OMS/cmsy/m/n/10 O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 N[]\OT1/cmr/m/
+n/10 ))
+ []
+
+<./Assets/g-contour_plot_theta_2.png, id=636, 578.16pt x 433.62pt>
 File: ./Assets/g-contour_plot_theta_2.png Graphic file (type png)
 <use ./Assets/g-contour_plot_theta_2.png>
 Package pdftex.def Info: ./Assets/g-contour_plot_theta_2.png  used on input lin
-e 252.
-(pdftex.def)             Requested size: 245.2399pt x 183.92546pt.
-<./Assets/g-contour_plot_theta_3.png, id=447, 578.16pt x 433.62pt>
-File: ./Assets/g-contour_plot_theta_3.png Graphic file (type png)
-<use ./Assets/g-contour_plot_theta_3.png>
-Package pdftex.def Info: ./Assets/g-contour_plot_theta_3.png  used on input lin
-e 253.
-(pdftex.def)             Requested size: 245.2399pt x 183.92546pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) [35] [36 <./Assets/g-contour_plot_theta_0.png> <./Assets/g-contour_plot_theta
-_1.png> <./Assets/g-contour_plot_theta_3.png>]
-Chapter 3.
-[37
-
-
-
-]
-\openout2 = `./Text/LaplaceTransform.aux'.
-
- (./Text/LaplaceTransform.tex) [38
-
-]
-\openout2 = `./Text/FourrierTransform.aux'.
-
- (./Text/FourrierTransform.tex [39
+e 311.
+(pdftex.def)             Requested size: 241.84842pt x 181.38472pt.
+[31 <./Assets/g-contour_plot_theta_2.png>]
+<./Assets/HermiteCase2Positive.png, id=650, 752.8125pt x 374.14781pt>
+File: ./Assets/HermiteCase2Positive.png Graphic file (type png)
+<use ./Assets/HermiteCase2Positive.png>
+Package pdftex.def Info: ./Assets/HermiteCase2Positive.png  used on input line 
+334.
+(pdftex.def)             Requested size: 199.16928pt x 98.98883pt.
+<./Assets/HermiteCase2PathsPositive.png, id=651, 451.6875pt x 224.4887pt>
+File: ./Assets/HermiteCase2PathsPositive.png Graphic file (type png)
+<use ./Assets/HermiteCase2PathsPositive.png>
+Package pdftex.def Info: ./Assets/HermiteCase2PathsPositive.png  used on input 
+line 353.
+(pdftex.def)             Requested size: 284.52756pt x 141.41835pt.
 
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[32 <./Assets/HermiteCase2Positive.png>]
+<./Assets/g-contour_plot_theta_1.4.png, id=672, 578.16pt x 433.62pt>
+File: ./Assets/g-contour_plot_theta_1.4.png Graphic file (type png)
+<use ./Assets/g-contour_plot_theta_1.4.png>
+Package pdftex.def Info: ./Assets/g-contour_plot_theta_1.4.png  used on input l
+ine 398.
+(pdftex.def)             Requested size: 241.84842pt x 181.38472pt.
+ [33 <./Assets/g-contour_plot_theta_1.4.png>]
+Overfull \hbox (44.37651pt too wide) detected at line 629
+[]
+ []
+
+[34]
+Overfull \hbox (44.59627pt too wide) detected at line 634
+[][][][][]\OT1/cmr/m/n/10 (^^A) = [][][] [] [](1 + \OMS/cmsy/m/n/10 O\OT1/cmr/m
+/n/10 (\OML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 ))
+ []
+
+
+Overfull \hbox (2.56352pt too wide) detected at line 653
+[][][]\OML/cmm/m/it/10 H[]\OT1/cmr/m/n/10 (^^A[])\OML/cmm/m/it/10 H[]\OT1/cmr/m
+/n/10 (^^A[]) \OMS/cmsy/m/n/10 / [] [] [] []
+ []
+
+
+Overfull \hbox (2.56352pt too wide) detected at line 657
+[][][]\OML/cmm/m/it/10 H[]\OT1/cmr/m/n/10 (^^A[])\OML/cmm/m/it/10 H[]\OT1/cmr/m
+/n/10 (^^A[]) \OMS/cmsy/m/n/10 / [] [] [] []
+ []
+
+[35]) [36] [37 <./Assets/contour_plot_theta_0.10.png> <./Assets/contour_plot_th
+eta_0.79.png> <./Assets/contour_plot_theta_1.57.png> <./Assets/contour_plot_the
+ta_2.09.png> <./Assets/contour_plot_theta_2.36.png> <./Assets/contour_plot_thet
+a_3.14.png>] [38 <./Assets/Hermite1positivepaths.png> <./Assets/HermiteComplete
+Paths.png> <./Assets/HermiteCase2PathsPositive.png>]
+Chapter 4.
+(./Text/LaplaceTransform.tex) (./Text/FourrierTransform.tex [39
 
 ])
-[40] (./template_Report.bbl) [41
+(./template_Report.bbl [40]) [41
 
-
-
-] (./template_Report.aux (./Text/Ensembles.aux) (./Text/InvariantMeasure.aux) (
-./Text/OrtPolEnsembles.aux)
-(./Text/Vandermond.aux) (./Text/OrthogonalPolynomials.aux)
-(./Text/EquilibriumMeasure.aux) (./Text/IntegralAsymptotic.aux)
-(./Text/WatsonLemma.aux) (./Text/LaplaceLemma.aux) (./Text/SteepestDescent.aux)
-(./Text/AiryExample.aux) (./Text/HermiteExample.aux)
-(./Text/LaplaceTransform.aux) (./Text/FourrierTransform.aux))
+] (./template_Report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `template_Report.out' has not changed.
-(rerunfilecheck)             Checksum: 4B833749FE5F45EECA3488A8B842BD6A;4258.
+(rerunfilecheck)             Checksum: 7A2A6AE0C0A3362BB44A6A056658AD5E;5824.
  ) 
 Here is how much of TeX's memory you used:
- 36365 strings out of 474222
- 832379 string characters out of 5748733
- 1952975 words of memory out of 5000000
- 57749 multiletter control sequences out of 15000+600000
- 576842 words of font info for 79 fonts, out of 8000000 for 9000
+ 37039 strings out of 474222
+ 838533 string characters out of 5748733
+ 1960975 words of memory out of 5000000
+ 58239 multiletter control sequences out of 15000+600000
+ 580998 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,19n,93p,1100b,764s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,20n,93p,1253b,765s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
-bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
-m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbi1000.pfb></usr/share/t
-exmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/pub
-lic/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx144
-0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/te
-xmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/publ
-ic/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000
-.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/tex
-mf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/publi
-c/cm-super/sfti0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.
-pfb>
-Output written on template_Report.pdf (43 pages, 9344269 bytes).
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/t
+ype1/public/cm-super/sfbi1000.pfb></usr/share/texmf/fonts/type1/public/cm-super
+/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/ty
+pe1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/
+sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/s
+hare/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/typ
+e1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
+frm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0700.pfb></usr/sh
+are/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on template_Report.pdf (44 pages, 7535569 bytes).
 PDF statistics:
- 646 PDF objects out of 1000 (max. 8388607)
- 510 compressed objects within 6 object streams
- 182 named destinations out of 1000 (max. 500000)
- 338 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1006 PDF objects out of 1200 (max. 8388607)
+ 860 compressed objects within 9 object streams
+ 387 named destinations out of 1000 (max. 500000)
+ 403 words of extra memory for PDF output out of 10000 (max. 10000000)
 

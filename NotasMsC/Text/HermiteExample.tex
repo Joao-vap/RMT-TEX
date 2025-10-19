@@ -1,16 +1,63 @@
- \subsubsection{Hermite's Polynomials}
+ \subsection{Hermite's Polynomials}
 
-For another example, let's explore the Hermite polynomial. We first note that such polynomials have an integral representation given by
+This example will be a collage of many sources: Check \cite{shi2021errorboundsasymptoticexpansions} and \cite{nica2025gaussianintegralformulahermite} for the main references and notation. We already know the asymptotic for $x = \boh(n)$, done in \ref{Subsection: Hermite x=n}. There are other two cases of interest that are related to methods explained in this Chapter. These are $x=\boh(1)$ and, more importantly, $x = \boh(\sqrt{n})$.
+
+\subsubsection{Regime $x = \boh(1)$}
+\label{SubSection: Hermite x=o(1)}
+
+\begin{prop}
+	For $x \in \R$ fixed, we have the following asymptotic as $n \rightarrow \infty$:
+	\begin{equation}
+		\He_n(x) = \sqrt{2} \left(\frac{n}{2}\right)^{n/2} \ee^{x^2/4} \cos{\left(\frac{n\pi}{2} - x \sqrt{n}\right)} (1 + \boh(1))
+	\end{equation}
+\end{prop}
+\begin{proof}
+	Start with the integral formula given by Property \ref{Def: Gaussian integral-expectation formula} and write
+	\begin{align}
+		\He_n(x) & = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} (x + \ii t)^n \ee^{-t^2/2} \dd t = \frac{2}{\sqrt{2\pi}} \Re\left\{ \int_{0}^{\infty} (x + \ii t)^n \ee^{-t^2/2} \dd t \right\} \\
+		& = \frac{2}{\sqrt{2\pi}} \Re\left\{ \int_{\Re(z) = x, \Im(z)>0} \ee^{n\ln{(z)} + \frac{1}{2}(z-x)^2} \frac{\dd z}{\ii} \right\} \\
+		& = \frac{2}{\sqrt{2\pi}} \Re\left\{ \int_{\Re(z) = 0, \Im(z)>0} \ee^{n\ln{(z)} + \frac{1}{2}(z-x)^2} \frac{\dd z}{\ii} \right\}
+	\end{align}
+	where you start with a line integral in $\C$ and move the contour over to the positive imaginary axis - justified by the Cauchy's Theorem and the exponential decay of the integrand near infinity. Now, we focus on $n\ln{(z)} + \frac{1}{2}(z-x)^2$ which has maximum at $z^* = \ii \sqrt{n} + \boh(\sqrt{n})$. The idea is to change variables by a factor of $\sqrt{z}$ so that the location of the maximum contribution stays $\Boh(1)$ as $n$ gets large. Specifically, we do
+	\begin{equation}
+		z = \ii \sqrt{n} s, \quad \frac{\dd z}{\ii} = \sqrt{n} \dd s, \quad \ln{(z)} = \ln{(\sqrt{n})} + \ln{(s)} + \ii \frac{\pi}{2}
+	\end{equation}  
+	which give us
+	\begin{equation}
+		\frac{1}{2}(z-x)^2 = -\frac{1}{2} ns^2 + \frac{1}{2} x^2 - \ii \sqrt{n} sx	
+	\end{equation}
+	so that we remain with
+	\begin{align}
+		\He_n(x) & = \frac{2}{\sqrt{2\pi}} \Re\left\{ \int_{0}^{\infty} \ee^{n\ln{(\sqrt{n})}} \ee^{n\ln{(s)}} \ee^{n\ii\frac{\pi}{2}} \ee^{\frac{1}{2}x^2}\ee^{-\ii\sqrt{n}sx} \sqrt{n} \dd s \right\} \\
+		& = \frac{2}{\sqrt{2\pi}} \sqrt{n} \ee^{n\ln{(\sqrt{n})}} \ee^{\frac{1}{2}x^2}  \int_{0}^{\infty} \ee^{n\left(\ln{(s)} - \frac{1}{2}s^2 \right)} \cos{\left(n\frac{\pi}{2} - \sqrt{n} s x\right)} \dd s,
+	\end{align}
+	where we can apply Laplace's approximation discussed before. Noting that $\phi(s) = \ln{(s)} - \frac{1}{2}s^2$ has $\phi'(s) = \frac{1}{s} - s$ and $\phi''(s) = -\frac{1}{s^2} - 1$, with global maximum at $s^* = 1$ with $\phi(1) = \frac{1}{2}$ and $\phi''(1) = -2$, yielding
+	\begin{align}
+		 \He_n(x) = \frac{2}{\sqrt{2\pi}} \sqrt{n} \ee^{n\ln{(\sqrt{n})}} \ee^{\frac{1}{2}x^2}  \left( \ee^{n\phi(1)} \sqrt{\frac{2\pi}{n|\phi''(1)|}} \right) \cos{\left(n\frac{\pi}{2} - \sqrt{n}x\right)} (1+\boh(1)),
+	\end{align}
+	which simplifies to the result.
+\end{proof}
+
+\subsubsection{Regime $x = \boh(\sqrt{n})$}
+
+There are three asymptotics regimes for $\He_n(x)$ when $x \rightarrow \infty$ depending on the value of $\lim_{N \rightarrow \infty} x/2\sqrt{N}$ for $N = n+1$, each of which has qualitatively different behavior
+\begin{itemize}
+	\item Small $x$ values $-2\sqrt{N} < x < 2\sqrt{N}$: in this regime the Hermite Polynomials will be oscillating, and a have a similar qualitative behavior as \ref{SubSection: Hermite x=o(1)} with modification to phase and amplitude. These polynomials will have some connections to the \textit{arcsine law} and \textit{semi-circle law}.
+	\item Large $x$ values $|x| > 2\sqrt{N}$: In this regime the polynomial doesn't have more oscillations and is monotone increasing. As $x$ grows larger, this approximation approaches \ref{Subsection: Hermite x=n}.
+	\item Edge $x$ values $x = \pm 2\sqrt{N} + \Boh(N^{-\frac{1}{6}})$: in this regime the polynomials will be approximated by the Airy Function. This interpolates between the oscillatory small $x$ regime and the monotone large $x$ regimes. 
+\end{itemize} 
+
+We write the integral representation given by the Cauchy Integral applied to the Generating Function, this representation should be discussed in \ref{Subsection: Integral Hermite} and given by:
 \begin{equation}
 	\begin{split}
-		H_n(x) & \deff \frac{n!}{2\pi \ii} \int_{\Gamma} z^{-n-1} \ee^{2xz-z^2} \dd z \\
-		& = \frac{n!}{2\pi \ii} \int_{\Gamma} \ee^{2xz-z^2 - (n+1)\log{(z)}} \dd z
+		\He_n(x) & \deff \frac{n!}{2\pi \ii} \int_{\Gamma} z^{-n-1} \ee^{xz-\frac{z^2}{2}} \dd z \\
+		& = \frac{n!}{2\pi \ii} \int_{\Gamma} \ee^{xz-\frac{z^2}{2} - (n+1)\ln{(z)}} \dd z
 	\end{split}
 \end{equation}
-Where $\Gamma$ is a contour that goeas around the origin coming and going from minus infinity such as $\Gamma = \{\lambda - \ii \delta : \lambda < 0 \} \cup \{\delta \ee^{\ii \theta}: -\pi/2 < \theta < \pi/2 \} \cup \{\lambda + \ii \delta : \lambda < 0 \}$. 
+Where $\Gamma$ is a contour that goes around the origin coming and going from minus infinity such as $\Gamma = \{\lambda - \ii \delta : \lambda < 0 \} \cup \{\delta \ee^{\ii \theta}: -\pi/2 < \theta < \pi/2 \} \cup \{\lambda + \ii \delta : \lambda < 0 \}$. This is equivalent to using $\Gamma = \{\ee^{\ii \theta}: 0 \leq \theta < 2\pi \}$.
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=.7]
+	\begin{tikzpicture}[scale=.5]
 		\draw[help lines, color=gray!30, dashed] (-15,-2.9) grid (2,2.9);
 		\draw[->,ultra thick] (-15,0)--(2,0) node[right]{$x$};
 		\draw[->,ultra thick] (0,-3)--(0,3) node[above]{$\ii$};
@@ -23,44 +70,107 @@ Where $\Gamma$ is a contour that goeas around the origin coming and going from m
 	\end{tikzpicture}
 \end{figure}
 
-There are a few expressions we want to have. Namely we want to determine the formulas for $H_{n}$ and  $H_{n-1}$.  Let's start working on the first case.  To do this, we only need to consider the scaling $x \mapsto N^\alpha x$ and $z = N^\beta s$ 
-
-\begin{equation*}
+There are a few expressions we want to have. Namely we want to determine the formulas for $\He_{n}$ and  $\He_{n-1}$.  Let's start working on the first case.  To do this, set $N = n + 1$ and consider the scaling $x \mapsto N^a \alpha$ and $z = N^b \beta$ 
+\begin{equation}
 	\begin{split}
-		H_n(x) & = \frac{n! n^b}{2\pi \ii} \int_{\Gamma} \ee^{2(n^a \alpha)(n^b \beta)-(n^b \beta)^2 - (n+1)\log{(N^b \beta)}} \dd \beta \\
-		& = \frac{n! n^b \ee^{-(n+1) \log{(n^b)}}}{2\pi \ii} \int_{\Gamma} \ee^{2(n^{a+b} \alpha \beta)-n^{2 b} \beta^2 - (n+1)\log{(\beta)}} \dd \beta \\
-		& \stackrel{(a = b = 1/2)}{=}   \frac{n! \sqrt{n} \ee^{-\frac{(n+1)}{2} \log{(n)}}}{2\pi \ii} \int_{\Gamma}  \ee^{-N(-2 \alpha \beta+ \beta^2 + \log{(\beta)})} \beta^{-1} \dd \beta
+		\He_n(N^a \alpha) & = \frac{(N-1)!}{2\pi \ii} \int_{\Gamma} \ee^{(N^a \alpha)(N^b \beta)- \frac{1}{2}(N^b \beta)^2 - N\ln{(N^b \beta)}} \dd \beta \\
+		& \stackrel{(a = b = 1/2)}{=}   \frac{(N-1)! N^{\frac{1}{2}\left(1-N\right)}}{2\pi \ii} \int_{\Gamma}  \ee^{-N(- \alpha \beta+ \frac{1}{2} \beta^2 + \ln{(\beta)})} \dd \beta
 	\end{split}
-\end{equation*}
-So that we have \[H_n(\sqrt{n}\alpha) = C_n^0 \int_{\Gamma}  \ee^{-N(\phi_\alpha(\beta))} \beta^{-1} \dd \beta\] with $\phi_\alpha(\beta) = -2 \alpha \beta+ \beta^2 + \log{(\beta)}$.  The same can be done in tehe second case, using now the reparamatrization, that is
-\begin{equation*}
-	\begin{split}
-		H_{n-1}(x) &=  \frac{n!}{2\pi \ii} \int_{\Gamma} \ee^{2xz-z^2 - (n+1)\log{(z)}}  \\
-		& = \frac{n! n^b}{2\pi \ii} \int_{\Gamma} \ee^{2(n^a \alpha)(n^b \beta)-(n^b \beta)^2 - (n+1)\log{(N^b \beta)}} \dd \beta \\
-		& = \frac{n! n^b \ee^{-(n+1) \log{(n^b)}}}{2\pi \ii} \int_{\Gamma} \ee^{2(n^{a+b} \alpha \beta)-n^{2 b} \beta^2 - (n+1)\log{(\beta)}} \dd \beta \\
-		& \stackrel{(a = b = 1/2)}{=}   \frac{n! \sqrt{n} \ee^{-\frac{(n+1)}{2} \log{(n)}}}{2\pi \ii} \int_{\Gamma}  \ee^{-N(-2 \alpha \beta+ \beta^2 + \log{(\beta)})} \beta^{-1} \dd \beta
-	\end{split}
-\end{equation*}
+\end{equation}
+So that we have
+\begin{equation}
+	\He_n(\sqrt{N}\alpha) = C_n^0 \int_{\Gamma}  \ee^{-N \phi_\alpha(\beta) } \dd \beta
+	\label{Equation: Hermite Integral}
+\end{equation}
+with 
+\begin{equation}
+	\phi_\alpha(\beta) = \frac{1}{2} \beta^2 - \alpha \beta + \ln{(\beta)}.
+\end{equation}
+%The same can be done in the second case, using now the re-parametrization, that is
+%\begin{equation}
+%	\begin{split}
+%		\He_{n-1}(\sqrt{N} \alpha) & \stackrel{(a = b = 1/2)}{=}   \frac{n! N^{-N/4}}{2\pi \ii} \int_{\Gamma}  \ee^{-N(-2 \alpha \beta+ \beta^2 + \frac{1}{2}\ln{(\beta)})} \beta^{-1} \dd \beta
+%	\end{split}
+%\end{equation}
+%So that we have
+%\begin{equation}	
+%	\He_{n-1}(\sqrt{N}\alpha) = C_n^1 \int_{\Gamma}  \ee^{-N \phi_\alpha(\beta)} \beta^{-1} \dd \beta.
+%\end{equation}
+%As noted, for both cases, we have the same defining function $\phi_\alpha(\beta)$.
+As we want to calculate the asymptotic by steepest descent, we need to determine the critical points of such a function and then the steepest descent paths passing through this points. We can easily determine the critical points as $\beta_c^\pm = \frac{\alpha \pm \sqrt{{\alpha}^2 - 4}}{2}$ - solutions to the quadratic formula given by solving the critical point of the function (the zeros of its derivatives). Now, the behavior of the critical points will depend on the interval of the real parameter $\alpha$. 
+\begin{equation}
+	\beta_c^{\pm} = \frac{\alpha \pm \sqrt{\alpha^2 - 4}}{2} =
+	\begin{cases}
+		\begin{aligned}
+			\ee^{\pm \gamma}, \quad & \alpha = 2 \cosh{(\gamma)} > 2, \quad \gamma > 0; \\
+			\ee^{\pm \ii \gamma}, \quad & \alpha = 2 \cos{(\gamma)} \in [0,2), \quad \gamma \in (0,\pi/2]; \\
+			1, \quad & \alpha = 2.
+		\end{aligned}
+	\end{cases}
+\end{equation}
+Therefore, the following theorem follows.
 
-So that we have \[H_{n-1}(\sqrt{n}\alpha) = C_n^1 \int_{\Gamma}  \ee^{-N(\phi_\alpha(\beta))} \beta^{-\frac{1}{2}} \dd \beta\] with, again,  $\phi_\alpha(\beta) = -2 \alpha \beta+ \beta^2 + \log{(\beta)}$. As noted, for both cases, we have the same defining function $\phi_\alpha(\beta)$. As we want to calculate the asymptotic by steepest descent, we need to detemrine the critical points of such a function and then the steepest descent paths passing throught this points. We can easily determine the critical points as $\beta_c^\pm = \frac{\alpha \pm \sqrt{{\alpha}^2 - 2}}{2}$ as solutions to the quadratic formula given. Now, the behavior of the critical points will depend on the interval of the real parameter $\alpha$. We divide it into the three cases: $0 < \alpha < \sqrt{2}$, $\alpha = \sqrt{2}$ and  $\alpha > \sqrt{2}$.
+\begin{thm}
+The Hermite Polynomials $\He_n(x)$ have the following three representation when $x = \Boh(\sqrt{n})$ and $x > 0$:
+\begin{enumerate}
+	\item Small $x$ values $-2\sqrt{N} < x < 2\sqrt{N}$: For fixed $\gamma \in (0, \pi/2)$ set $x = 2\sqrt{N} \cos{(\gamma)}$ and we obtain
+	 \begin{equation}
+		\He_n(2\sqrt{N}\cos{(\gamma)}) = \sqrt{\frac{2}{\sin{(\gamma)}}} N^{-\frac{N}{2}} (N-1)^{\left(N - \frac{1}{2}\right)} \ee^{N\left(-3\cos^2{(\gamma)} + \frac{1}{2} \right) + 1} \sin{\left(\theta(\beta_c^+) -N\left(\frac{\sin{(2\gamma)}}{2}+\gamma\right)\right)} 
+		(1 + \Boh(N^{-1})),
+		\label{Eq: Hermite small asymptotic (n)}
+	\end{equation}
+	\begin{equation}
+		\He_{n-1}(2\sqrt{N}\cos(\gamma)) = \sqrt{\frac{2}{\sin{(\gamma)}}} \frac{(N-2)^{N - \frac{3}{2}}}{(N-1)^{\frac{N-1}{2}}} \frac{\ee^{N\left(-3\cos^2{(\gamma)} + \frac{1}{2} \right) + 1}}{\ee^{\left(3\cos^2{(\gamma)} - \frac{1}{2} \right)}} \sin{\left(\theta(\beta_c^+) -(N-1)\left(\frac{\sin{(2\gamma)}}{2}+\gamma\right)\right)}
+		(1 + \Boh(N^{-1})).
+		\label{Eq: Hermite small asymptotic (n-1)}
+	\end{equation}
+	\item Large $x$ values $|x| > 2\sqrt{N}$: For fixed $\gamma > 1$, write $x = 2\sqrt{N} \cosh{(\gamma)}$. We obtain
+	\begin{equation}
+		\He_n(2\sqrt{N}\cosh{(\gamma)}) = \ee^{-N\left( \frac{\ee^{-2\gamma}}{2} + \gamma +  1\right) + 1} \frac{(N-1)^{N - \frac{1}{2}} N^{-\frac{N}{2}}}{\sqrt{|1 - \ee^{2\gamma}|}} \left(1 + \Boh(N^{-1}) \right),
+		\label{Eq: Hermite large asymptotic (n)}
+	\end{equation}
+	\begin{equation}
+		\He_{n-1}(2\sqrt{N}\cosh{(\gamma)}) = \frac{\ee^{-N\left( \frac{\ee^{-2\gamma}}{2} + \gamma +  1\right)}}{\ee^{-\left( \frac{\ee^{-2\gamma}}{2} + \gamma - 2\right)}} \frac{(N-1)^{-\frac{N-1}{2}}}{\sqrt{|1 - \ee^{2\gamma}|}} 
+		\left(1 + \Boh(N^{-1}) \right).
+		\label{Eq: Hermite large asymptotic (n-1)}
+	\end{equation}
+	\item Edge $x$ values $x = \pm 2\sqrt{N} + \Boh(N^{-\frac{1}{6}})$: For fixed $u \in \R$, set x = $2\sqrt{N} + N^{-1/6}\xi$, then we obtain
+	\begin{equation}
+		\He_n(2\sqrt{N} + N^{-1/6}\xi) = \sqrt{2\pi} (N-1)^{\frac{1}{2}} N^{1/6 - N/2} \ee^{\left(1/2 + N^{-1} - 2\xi \beta_c N^{-2/3} \right)} \Ai(\xi) (1 + \boh(1)),
+		\label{Eq: Hermite edge asymptotic (n)}
+	\end{equation}
+		\begin{equation}
+		\He_{n-1}(2\sqrt{N} + N^{-1/6}\xi) = \sqrt{2\pi} (N-2)^{\frac{1}{2}} (N-1)^{4/6 - N/2} \ee^{\left(1/2 + (N-1)^{-1} - 2\xi \beta_c (N-1)^{-2/3} \right)} \Ai(\xi) (1 + \boh(1)).
+		\label{Eq: Hermite edge asymptotic (n-1)}
+	\end{equation}
+\end{enumerate}
+\end{thm}
 
 \subsubsection{Case 1 }
 
-\begin{wrapfigure}{h!}{8.5cm}
+\begin{wrapfigure}{h}{8.5cm}
 	\caption{Figure for Case 1}\label{wrap-fig:1}
 	\includegraphics[width=8.5cm]{./Assets/g-contour_plot_theta_0.5.png}
 \end{wrapfigure} 
 
-Here, with $0 < \alpha < \sqrt{2}$, as the plot \ref{wrap-fig:1} suggests, we have both critical points as complex values, this can be easily determined noting that if we set $0 < \alpha < \sqrt{2}$ , we will have
-\[ \beta_c^\pm  = \frac{\alpha}{2} \pm \frac{\ii}{2}\sqrt{2 -\alpha^2}.\]
-And, if we parametrize $\alpha = \sqrt{2} \cos{(\gamma)}$ for $\gamma \in (0, \pi/2)$ we can rewrite 
-\[ \beta_c^\pm = \frac{\sqrt{2}}{2} \ee^{\pm \ii \gamma}.\]
+For $-2\sqrt{N} < x < 2\sqrt{N}$, or, equivalently, $-2 < \alpha < 2$ we have, as Figure \ref{wrap-fig:1} suggests, both critical points as complex values, this can also be easily determined noting that if we set $\alpha$ constant with $0 < \alpha < \sqrt{2}$ , we will have
+\begin{equation}
+	\beta_c^\pm  = \frac{\alpha}{2} \pm \frac{\ii}{2}\sqrt{4 -\alpha^2}.
+\end{equation}
+And, if we parametrize $\alpha = 2 \cos{(\gamma)}$ for $\gamma \in (0, \pi/2]$ we can rewrite 
+\begin{equation}
+	\beta_c^\pm = \ee^{\pm \ii \gamma}.
+\end{equation}
 
-If we are indeed interested in solving the paths where the imaginary parts are constant, as needed for the Laplace method, we will have to sove an equation such as 
-\[ \Im(\phi_{\alpha}(z) - \phi_{\alpha}(\beta_c^\pm)) = 0,\] 
-for some $z = r \ee^{\ii \theta}$. We first solve for the positive critical point and he negative will be analogous. This can be rewritten as  as quadratic equation 
-\[ r^2 \sin{(2\theta)} - 2r \cos{(\gamma)}\sin{(\theta)} + (\theta - \theta_0) = 0\]
-where we have set $\theta_0 = \gamma - \frac{1}{2} \sin{(2\gamma)}.$ Where we solve for the two solutions $r_a^+$ and $r_d^-$  by meshing the two quadratic solutinos given by the equations. This give us two smooth paths for the positive critical point
+If we are indeed interested in solving the paths where the imaginary parts are constant, as needed for the Laplace method, we will have to solve an equation such as 
+\begin{equation}
+	\Im(\phi_{\alpha}(z) - \phi_{\alpha}(\beta_c^\pm)) = 0,
+\end{equation} 
+for some $z = r \ee^{\ii \theta}$. We first solve for the positive critical point - the negative will be analogous. This equation can be rewritten as a quadratic formulae 
+\begin{equation}
+	\frac{1}{2} r^2 \sin{(2\theta)} - r \cos{(\gamma)}\sin{(\theta)} + (\theta - \theta_0) = 0
+\end{equation} 
+where we have set $\theta_0 = \gamma - \frac{1}{2} \sin{(2\gamma)}.$ Where we solve for the two solutions $r_a^+$ and $r_d^-$  by meshing the two quadratic solutions given by the equations. This give us two smooth paths for the positive critical point
 
 \begin{multicols}{2}
 		\begin{center}
@@ -68,78 +178,131 @@ where we have set $\theta_0 = \gamma - \frac{1}{2} \sin{(2\gamma)}.$ Where we so
 		\end{center}
 	\columnbreak
 	\hspace{1cm}
-	\begin{equation*}
+	\begin{equation}
 		r_d^+(\theta)  = 
 		\begin{cases}
-			\frac{\sqrt{2}  \left(\cos{(\gamma)}  - \sqrt{\cos^2{(\gamma)} - (\theta - \theta_0)/(\tan{(\theta)})}  \right)}{2\cos{(\theta)}}; \ \ \theta \in [\gamma, \pi ) \\
-			\frac{\sqrt{2} \left(\cos{(\gamma)}  +.\sqrt{\cos^2{(\gamma)} - (\theta - \theta_0)/(\tan{(\theta)})}  \right)}{2\cos{(\theta)}}; \ \ \theta \in (0, \gamma ) 
+			\frac{\cos{(\gamma)}  - \sqrt{\cos^2{(\gamma)} - (\theta-\theta_0)/\tan{(\theta)}}}{\cos{(\theta)}}; \ \ \theta \in [\gamma, \pi ) \\
+			\frac{\cos{(\gamma)}  + \sqrt{\cos^2{(\gamma)} - (\theta-\theta_0)/\tan{(\theta)}}}{\cos{(\theta)}}; \ \ \theta \in (0, \gamma) 
 		\end{cases}
-	\end{equation*}
-	\begin{equation*}
+	\end{equation}
+	\begin{equation}
 		r_a^+(\theta) = 
 		\begin{cases}
-			\frac{\sqrt{2}  \left(\cos{(\gamma)}  + \sqrt{\cos^2{(\gamma)} - (\theta - \theta_0)/(\tan{(\theta)})}  \right)}{2\cos{(\theta)}};  \ \ \theta \in [\gamma, \pi/2 )\\
-			\frac{\sqrt{2}  \left( \cos{(\gamma)}  - \sqrt{\cos^2{(\gamma)} - (\theta - \theta_0)/(\tan{(\theta)})}  \right)}{2\cos{(\theta)}}; \ \ \theta \in [\theta_0, \gamma )
+			\frac{\cos{(\gamma)}  + \sqrt{\cos^2{(\gamma)} - (\theta-\theta_0)/\tan{(\theta)}}}{\cos{(\theta)}};  \ \ \theta \in [\gamma, \pi/2 )\\
+			\frac{\cos{(\gamma)}  - \sqrt{\cos^2{(\gamma)} - (\theta-\theta_0)/\tan{(\theta)}}}{\cos{(\theta)}}; \ \ \theta \in [\theta_0, \gamma )
 		\end{cases}
-	\end{equation*}
+	\end{equation}
 \end{multicols}
 With which we can construct both paths of constant imaginary part 
-\[\Gamma_d^+ = \{ r_d^+(\theta) \ee^{\ii \theta} : \theta \in (0, \pi) \}; \ \ \ \Gamma_a^+ = \{ r_a^+(\theta) \ee^{\ii \theta} : \theta \in (0, \pi/2) \} \]
+\begin{equation}
+	\Gamma_d^+ = \{ r_d^+(\theta) \ee^{\ii \theta} : \theta \in (0, \pi) \}; \ \ \ \Gamma_a^+ = \{ r_a^+(\theta) \ee^{\ii \theta} : \theta \in (0, \pi/2) \}
+\end{equation}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=9cm]{./Assets/Hermite1positivepaths.png}
 \end{figure}
 
 Analogously, for the negative part,
-\[\Gamma_d^- = \{ r_d^-(\theta) \ee^{\ii \theta} : \theta \in (0, \pi) \}; \ \ \ \Gamma_a^- = \{ r_a^-(\theta) \ee^{\ii \theta} : \theta \in (0, \pi/2) \} \]
+\begin{equation}
+	\Gamma_d^- = \{ r_d^-(\theta) \ee^{\ii \theta} : \theta \in (0, \pi) \}; \ \ \ \Gamma_a^- = \{ r_a^-(\theta) \ee^{\ii \theta} : \theta \in (0, \pi/2) \}
+\end{equation}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=10cm]{./Assets/HermiteCompletePaths.png}
 \end{figure}
 
-Now, we only need to determine the steepest descent path. This should be easy as we know the asymptotic behaviour $\phi_\alpha(t) \asymp t^2$ for $t \rightarrow \infty$ and that  $\phi_{\alpha}(t) \asymp \ln{(t)}$ for $t \rightarrow 0$. From this, follows that $\Gamma_d^+$ and $\Gamma_d^-$ are the paths we were looking for.  We create therefore, a new path $\Gamma_x$ that connects both $\Gamma_d$ at the vertical line $x$. Then, doing $\Gamma \mapsto \Gamma_d^+ \cup \Gamma_d^- \cup \Gamma_x$ and noting that, as $x$ goes to infinity, we have
-\[
+Now, we only need to determine the steepest descent path. This should be easy as we know the asymptotic behavior $\phi_\alpha(t) \sim t^2$ for $t \rightarrow \infty$ and that  $\phi_{\alpha}(t) \sim \ln{(t)}$ for $t \rightarrow 0$. From this, follows that $\Gamma_d^+$ and $\Gamma_d^-$ are the paths we were looking for.  We create therefore, a new path $\Gamma_x$ that connects both $\Gamma_d$ at the vertical line $x$. Then, doing $\Gamma \mapsto \Gamma_d^+ \cup \Gamma_d^- \cup \Gamma_x$ and noting that, as $x$ goes to infinity, we have
+\begin{equation}
 	\left|  \int_{\Gamma_x} g(x) \ee^{-n\phi_\alpha(\beta)} \dd \beta  \right| \leq \max_{y \in \Gamma_x}{\left|  g(x) \ee^{-n\phi_\alpha(\beta)} \right|} \int_{\Gamma_x} |\dd \beta| \stackrel{t \rightarrow \infty}{\rightarrow} 0
-\] 
-where $g(t)$ can be both the inverse square root or inverse function. Therefore, we only need to consider the other two paths when considering the asymptotic.
-
-Finally, retaking the expression for the Hermite Polynomial,
-\begin{equation*}
+\end{equation} 
+where $g(t)$ can be both the inverse square root or inverse function. Therefore, we only need to consider the other two paths when considering the asymptotic. Finally, retaking the expression for the Hermite Polynomial,
+\begin{equation}
  	\begin{split}
- 		 H_n(\sqrt{2n}\cos(\gamma)) &= C_n^0 \int_{\Gamma}  \ee^{-N(\phi_\alpha(\beta))} \beta^{-1} \dd \beta  = C_n^0  \left[ \int_{\Gamma_d^-}  \ee^{-N(\phi_\alpha(\beta))} \beta^{-1} \dd \beta + \int_{\Gamma_d^+}  \ee^{-N(\phi_\alpha(\beta))} \beta^{-1} \dd \beta  \right]\\
- 		 & \stackrel{(Steepest)}{=}  C_n^0  \frac{\sqrt{2\pi}}{\sqrt{2n}} \left[  \frac{\ee^{-n(\phi_\alpha(\beta_c^+))}}{\ee^{\ii \gamma/2}/2} \frac{\ee^{-\ii (\theta(\beta_c^+))}}{4 \sin{(\gamma)}} + \frac{\ee^{-n(\overline{\phi_\alpha(\beta_c^+)})}}{\ee^{-\ii \gamma/2}/2} \frac{\ee^{-\ii (\overline{\theta(\beta_c^+)})}}{4 \sin{(\gamma)}}\right] \\
- 		 & =  C_n^0 \frac{\sqrt{2\pi}}{2 \sin{(\gamma)}\sqrt{2n}} \left[ \ee^{-\ii(\gamma/2 + \theta(\beta_c^+)) - n \phi_\alpha(\beta_c^+)}  + \ee^{\ii \pi} \ee^{\ii(\gamma/2 +\theta(\beta_c^+)) - n \overline{\phi_\alpha(\beta_c^+)}}  \right] \\
- 		 & =  C_n^0 \frac{\sqrt{2\pi}}{2 \sin{(\gamma)}\sqrt{2n}} \left[ \ee^{-\ii(\gamma/2 + \theta(\beta_c^+)) - n (-2 \alpha \beta_c^+ + (\beta_c^+)^2 + \log{(\beta_c^+)}) }  + \ee^{\ii \pi} \ee^{\ii(\gamma/2 +\theta(\beta_c^+)) - n \overline{(-2 \alpha \beta_c^+ + (\beta_c^+)^2 + \log{(\beta_c^+)}) }}  \right]  \\
- 		 & =  C_n^0 \frac{\sqrt{\pi} \ee^{-n\ln{\frac{\sqrt{2}}{2}}}}{2 \sin{(\gamma)}\sqrt{n}} \left[ \ee^{-\ii(\gamma/2 + \theta(\beta_c^+) + n \gamma) - n \ee^{\ii \gamma} (-\alpha \sqrt{2} + \frac{ \ee^{\ii \gamma}}{2}) }  -  \ee^{\ii(\gamma/2 + \theta(\beta_c^+) + n \gamma) - n \ee^{-\ii \gamma} (-\alpha \sqrt{2} + \frac{ \ee^{-\ii \gamma}}{2}) }  \right] 
+ 		 \He_n(2\sqrt{N}\cos(\gamma)) &= C_n^0 \int_{\Gamma}  \ee^{-N \phi_\alpha(\beta)} \dd \beta  = C_n^0  \left[ \int_{\Gamma_d^-}  \ee^{-N \phi_\alpha(\beta)} \dd \beta + \int_{\Gamma_d^+}  \ee^{-N \phi_\alpha(\beta)} \dd \beta  \right]\\
+ 		 & \stackrel{(Steepest)}{=}  
+ 		 C_n^0 \left(
+ 		 \ee^{N(\phi_\alpha(\beta_c^+))} 
+ 		 \left[
+ 		 \frac{\sqrt{2\pi}}{N^{\frac{1}{2}}}
+ 		 \frac{\ee^{\ii (\theta(\beta_c^+))}}{\sqrt{2\sin{(\gamma)}}} 
+ 		 + \Boh(N^{-\frac{3}{2}})
+ 		 \right]
+ 		 +
+ 		 \ee^{N(\overline{\phi_\alpha(\beta_c^+)})} 
+ 		 \left[
+ 		 \frac{\sqrt{2\pi}}{N^{\frac{1}{2}}}
+ 		 \frac{\ee^{\ii (\overline{\theta(\beta_c^+)})}}{\sqrt{2\sin{(\gamma)}}}
+ 		 + \Boh(N^{-\frac{3}{2}})
+ 		 \right]   
+ 		 \right)
+ 		 \\
+ 		 & = C_n^0 \sqrt{\frac{2\pi}{2N\sin{(\gamma)}}} \left(
+ 		 \ee^{N(\phi_\alpha(\beta_c^+))} 
+ 		 \left[
+ 		 \ee^{\ii(\theta(\beta_c^+))} 
+ 		 + \Boh(N^{-1})
+ 		 \right]
+ 		 +
+ 		 \ee^{N(\overline{\phi_\alpha(\beta_c^+)})} 
+ 		 \left[
+ 		 \ee^{\ii(\overline{\theta(\beta_c^+)})}
+ 		 + \Boh(N^{-1})
+ 		 \right]   
+ 		 \right)
+ 		 \\
+ 		 & = C_n^0 \sqrt{\frac{\pi}{N\sin{(\gamma)}}}
+ 		 \left(
+ 		 \ee^{N(\phi_\alpha(\beta_c^+)) + \ii(\theta(\beta_c^+))} +
+ 		 \ee^{N(\overline{\phi_\alpha(\beta_c^+)})+\ii(\overline{\theta(\beta_c^+)})} 
+ 		 \right)
+ 		 (1 + \Boh(N^{-1}))   
+ 		 \\
+ 		 & =  C_n^0 \sqrt{\frac{\pi}{N\sin{(\gamma)}}}
+ 		 \left(
+ 		 \ee^{-\ii\theta(\beta_c^+) + N (-\alpha \beta_c^+ + \frac{1}{2} (\beta_c^+)^2 + \ln{(\beta_c^+)}) }
+ 		 +
+ 		 \ee^{\ii \pi} \ee^{\ii\theta(\beta_c^+) + N \overline{(-\alpha \beta_c^+ + \frac{1}{2} (\beta_c^+)^2 + \ln{(\beta_c^+)}) }}  
+ 		 \right)
+ 		 (1 + \Boh(N^{-1})) 
+ 		 \\
+ 		 & =  C_n^0 \sqrt{\frac{\pi}{N\sin{(\gamma)}}} \ee^{N(-3\cos^2{(\gamma)} - \frac{1}{2})}
+ 		 \left(
+ 		 \ee^{-\ii \left(-N\left(\frac{\sin{(2\gamma)}}{2}+\gamma\right)+ \theta(\beta_c^+)
+ 		 \right)}
+ 		 -
+ 		 \ee^{\ii
+ 		 \left(-N\left(\frac{\sin{(2\gamma)}}{2}+\gamma\right)+\theta(\beta_c^+)
+ 		 \right)}  
+ 		 \right)
+ 		 (1 + \Boh(N^{-1})) 
+ 		 \\
+ 		 & =  C_n^0 \sqrt{\frac{\pi}{N\sin{(\gamma)}}} \ee^{N(-3\cos^2{(\gamma)} - \frac{1}{2})}
+ 		 2\ii \sin{\left(\theta(\beta_c^+)-N\left(\frac{\sin{(2\gamma)}}{2}+\gamma\right)\right)} 
+ 		 (1 + \Boh(N^{-1})) \\
+ 		 & = \frac{(N-1)! N^{\frac{1}{2}\left(1-N\right)}}{2\pi \ii} \sqrt{\frac{\pi}{N\sin{(\gamma)}}} \ee^{N(-3\cos^2{(\gamma)} - \frac{1}{2})}
+ 		 2\ii \sin{
+ 		 \left(
+ 		 \theta(\beta_c^+)
+ 		 -N\left(\frac{\sin{(2\gamma)}}{2}+\gamma\right)
+ 		 \right)} 
+ 		 (1 + \Boh(N^{-1})) \\
+ 		 & = \sqrt{\frac{2}{\sin{(\gamma)}}} N^{-\frac{N}{2}} (N-1)^{\left(N - \frac{1}{2}\right)} \ee^{N\left(-3\cos^2{(\gamma)} + \frac{1}{2} \right) + 1} \sin{\left(\theta(\beta_c^+) -N\left(\frac{\sin{(2\gamma)}}{2}+\gamma\right)
+ 		 \right)} 
+ 		 (1 + \Boh(N^{-1}))
  	\end{split}
-\end{equation*}
-
-Now, since
-\begin{equation*}
+\end{equation}
+Where we used Stirling's Formula and the fact that we have
+\begin{equation}
 	\begin{cases}
-	Re[- n \ee^{\ii \gamma} (-\alpha \sqrt{2} + \frac{ \ee^{\ii \gamma}}{2})]= \frac{-\sqrt{2}}{2}  n; \ \ Im[- n \ee^{\ii \gamma} (-\alpha \sqrt{2} + \frac{ \ee^{\ii \gamma}}{2})] = 0 \\
-	Re[ - n \ee^{-\ii \gamma} (-\alpha \sqrt{2} + \frac{ \ee^{-\ii \gamma}}{2})] = \frac{-\sqrt{2}}{2}  n; \ \  Im[ - n \ee^{-\ii \gamma} (-\alpha \sqrt{2} + \frac{ \ee^{-\ii \gamma}}{2})] = 0 .
+		\Re[(-\alpha \beta_c^+ + \frac{1}{2} (\beta_c^+)^2 + \ln{(\beta_c^+)})] = -3\cos^2{(\gamma)} - \frac{1}{2}; \qquad \Im[(-\alpha \beta_c^+ + \frac{1}{2} (\beta_c^+)^2 + \ln{(\beta_c^+)})] = \frac{\sin{(2\gamma)}}{2} + \gamma; \\
+		\Re[ \overline{(-\alpha \beta_c^+ + \frac{1}{2} (\beta_c^+)^2 + \ln{(\beta_c^+)})} ] = -3\cos^2{(\gamma)} - \frac{1}{2}; \qquad  \Im[ \overline{(-\alpha \beta_c^+ + \frac{1}{2} (\beta_c^+)^2 + \ln{(\beta_c^+)})}] = -(\frac{\sin{(2\gamma)}}{2} + \gamma).
 	\end{cases}
-\end{equation*}
-
-We will have that,
-\begin{equation*}
-	\begin{split}
-		H_n(\sqrt{2n}\cos(\gamma)) &=   C_n^0 \frac{\sqrt{\pi} \ee^{-n\ln{\frac{\sqrt{2}}{2}}}}{2 \sin{(\gamma)}\sqrt{n}} \ee^{-n \frac{\sqrt{2}}{2}} \left[ \ee^{-\ii(\gamma/2 + \theta(\beta_c^+) + n \gamma)}  -  \ee^{\ii(\gamma/2 + \theta(\beta_c^+) + n \gamma) }  \right]  \\
-		&=  \frac{n! \sqrt{n} \ee^{-\frac{(n+1)}{2} \ln{(n)}}}{2\pi \ii}  \frac{\sqrt{\pi} \ee^{-n\ln{\frac{\sqrt{2}}{2}}}}{2 \sin{(\gamma)}\sqrt{n}} \ee^{-n \frac{\sqrt{2}}{2}} 2\ii \sin{\left(\gamma/2 + \theta(\beta_c^+) + n \gamma \right)} \\
-		&= \frac{n!  n^{-\frac{(n+1)}{2}}}{2 \sin{(\gamma)} \pi^{\frac{3}{2}}} \ee^{-n \left( \ln{\frac{\sqrt{2}}{2}} + \frac{\sqrt{2}}{2} \right)} \sin{\left(\gamma/2 + \theta(\beta_c^+) + n \gamma \right)} 
-	\end{split}
-\end{equation*}
-
-Of course, if we cange for the other case we can simply rewrite
-
-\begin{equation*}
-	\begin{split}
-		H_{n-1}(\sqrt{2n}\cos(\gamma)) &=   C_n^1 \frac{\sqrt{\pi} \ee^{-n\ln{\frac{\sqrt{2}}{2}}}}{2 \sin{(\gamma)}\sqrt{n}} \ee^{-n \frac{\sqrt{2}}{2}} \left[ \ee^{-\ii(\gamma + \theta(\beta_c^+) + n \gamma)}  -  \ee^{\ii(\gamma + \theta(\beta_c^+) + n \gamma) }  \right]  \\
-		&=  \frac{n! \sqrt{n} \ee^{-\frac{(n+1)}{2} \ln{(n)}}}{2\pi \ii}  \frac{\sqrt{\pi} \ee^{-n\ln{\frac{\sqrt{2}}{2}}}}{2 \sin{(\gamma)}\sqrt{n}} \ee^{-n \frac{\sqrt{2}}{2}} 2\ii \sin{\left(\gamma + \theta(\beta_c^+) + n \gamma \right)} \\
-		&= \frac{n!  n^{-\frac{(n+1)}{2}}}{2 \sin{(\gamma)} \pi^{\frac{3}{2}}} \ee^{-n \left( \ln{\frac{\sqrt{2}}{2}} + \frac{\sqrt{2}}{2} \right)} \sin{\left(\gamma + \theta(\beta_c^+) + n \gamma \right)} 
-	\end{split}
-\end{equation*}
+\end{equation}
+Of course, if we change for the other case we can simply rewrite
+\begin{equation}
+	\He_{n-1}(2\sqrt{N}\cos(\gamma)) = \sqrt{\frac{2}{\sin{(\gamma)}}} \frac{(N-2)^{N - \frac{3}{2}}}{(N-1)^{\frac{N-1}{2}}} \frac{\ee^{N\left(-3\cos^2{(\gamma)} + \frac{1}{2} \right) + 1}}{\ee^{\left(3\cos^2{(\gamma)} - \frac{1}{2} \right)}} \sin{\left(\theta(\beta_c^+) -(N-1)\left(\frac{\sin{(2\gamma)}}{2}+\gamma\right)\right)}
+	(1 + \Boh(N^{-1}))
+\end{equation}
 
 \subsubsection{Case 2}
 
@@ -148,16 +311,23 @@ Of course, if we cange for the other case we can simply rewrite
 	\includegraphics[width=8.5cm]{./Assets/g-contour_plot_theta_2.png}
 \end{wrapfigure} 
 
-Here, with $ \alpha > \sqrt{2}$, as the plot \ref{wrap-fig:2} suggests, we have both critical points as real values, this can be easily determined noting that if we set $\alpha > \sqrt{2}$ , we will have
-\[ \beta_c^\pm  = \frac{\alpha}{2} \pm \frac{1}{2}\sqrt{\alpha^2 - 2}.\]
-And, if we parametrize $\alpha = \sqrt{2} \cosh{(\gamma)}$ for $\gamma > 0$ we can rewrite 
-\[ \beta_c^\pm = \frac{\sqrt{2}}{2} \ee^{\pm \gamma}.\]
-
+Here, with $|x| > 2\sqrt{N}$, or equivalently $ \alpha > 2$,  we have - as the plot \ref{wrap-fig:2} suggests - both critical points as real values, this can be easily determined noting that if we set $\alpha > 2$ , we will have
+\begin{equation}
+	\beta_c^\pm  = \frac{\alpha}{2} \pm \frac{1}{2}\sqrt{\alpha^2 - 4}.
+\end{equation}
+And, if we parametrize $\alpha = 2 \cosh{(\gamma)}$ for $\gamma > 1$ we can rewrite 
+\begin{equation}
+	\beta_c^\pm = \ee^{\pm \gamma}.
+\end{equation}
 If we are indeed interested in solving the paths where the imaginary parts are constant, as needed for the Laplace method, we will have to sove an equation such as 
-\[ \Im(\phi_{\alpha}(z) - \phi_{\alpha}(\beta_c^\pm)) = 0,\] 
+\begin{equation}
+	 \Im(\phi_{\alpha}(z) - \phi_{\alpha}(\beta_c^\pm)) = 0,
+\end{equation} 
 for some $z = r \ee^{\ii \theta}$. We first solve for the positive critical point and he negative will be analogous. This can be rewritten as  as quadratic equation 
-\[ r^2 \sin{(2\theta)} - 2r \cosh{(\gamma)}\sin{(\theta)} + \frac{\theta}{2} = 0\]
-where we solve for the two solutions $r_a^+$ and $r_d^-$  by meshing the two quadratic solutinos given by the equations. This give us two smooth paths for the positive critical point
+\begin{equation}
+	 \frac{1}{2}r^2 \sin{(2\theta)} - r \cosh{(\gamma)}\sin{(\theta)} + \theta = 0
+\end{equation}
+where we solve for the two solutions $r_a^+$ and $r_d^-$  by meshing the two quadratic solutions given by the equations. This give us two smooth paths for the positive critical point
 
 \begin{multicols}{2}
 	\begin{center}
@@ -165,43 +335,59 @@ where we solve for the two solutions $r_a^+$ and $r_d^-$  by meshing the two qua
 	\end{center}
 	\columnbreak
 	\hspace{0.2cm}
-	\begin{equation*}
-		r_d(\theta)  = \frac{\sqrt{2}  \left(\cosh{(\gamma)}  - \sqrt{\cosh^2{(\gamma)} - \frac{\theta}{\tan{(\theta)}} } \right)}{2\cos{(\theta)}}; \ \ \theta \in [0, \pi )
-	\end{equation*}
-	\begin{equation*}
-		r_a(\theta)  = \frac{\sqrt{2}  \left(\cosh{(\gamma)}  + \sqrt{\cosh^2{(\gamma)} - \frac{\theta}{\tan{(\theta)}} } \right)}{2\cos{(\theta)}}; \ \ \theta \in [0, \pi )
-	\end{equation*}
+	\begin{equation}
+		r_d(\theta)  = \frac{\cosh{(\gamma)}  - \sqrt{\cosh^2{(\gamma)} - \frac{\cosh{(\gamma)} \theta}{\sin{(\theta)}}}}{\cos{(\theta)}}; \ \ \theta \in [0, \pi )
+	\end{equation}
+	\begin{equation}
+		r_a(\theta)  = \frac{\cosh{(\gamma)}  + \sqrt{\cosh^2{(\gamma)} - \frac{\cosh{(\gamma)} \theta}{\sin{(\theta)}}}}{\cos{(\theta)}}; \ \ \theta \in [0, \pi )
+	\end{equation}
 \end{multicols}
 
 With which we can construct both paths of constant imaginary part 
-\[\Gamma_d = \{ r_d(\theta) \ee^{\ii \theta} : \theta \in (0, \pi) \}; \ \ \ \Gamma_a = \{ r_a(\theta) \ee^{\ii \theta} : \theta \in (0, \pi) \} \]
+\begin{equation}
+	\Gamma_d = \{ \tilde{r}_d(\theta) \ee^{\ii \theta} : \theta \in (0, 2\pi) \}; \ \ \ \Gamma_a = \{ \tilde{r}_a(\theta) \ee^{\ii \theta} : \theta \in (0, 2\pi) \} 
+\end{equation}
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=10cm]{./Assets/HermiteCase2PathsPositive.png}
 \end{figure}
 
-We need now to determine the Steepest Descent Path. In this case is more clear what the path should be the one passing through the critical point $\ee^{-\gamma}$.  Then, repeting the process we did on Case 1 - changing the path of integration - we can make the substitution
-\begin{equation*}
-	\begin{split}
-		H_{n-1}(\sqrt{2n}\cosh{(\gamma)}) &= C_n^1 \int_{\Gamma}  \ee^{-N(\phi_\alpha(\beta))} \beta^{-\frac{1}{2}} \dd \beta \\
-		&= C_n^1   \int_{\Gamma_d}  \ee^{-N(\phi_\alpha(\beta))} \beta^{-\frac{1}{2}} \dd \beta \\
-		&= \stackrel{(Steepest)}{=}  C_n^1  \frac{\sqrt{2\pi}}{\sqrt{2n}} \left[  \frac{\ee^{-n(\phi_\alpha(\beta_c^+))}}{\ee^{\gamma/2}/2} \frac{\ee^{-\ii (\theta(\beta_c^+))}}{\sqrt{|1 - \ee^{2\gamma}|}}\right]  \\
-		&= \frac{n! n^{-\frac{(n+1)}{2}}}{\ii  \pi^{\frac{3}{2}}} \left[  \frac{\ee^{-n(\phi_\alpha(\beta_c^+))}}{\ee^{\gamma/2}} \frac{\ee^{-\ii (\theta(\beta_c^+))}}{\sqrt{|1 - \ee^{2\gamma}|}}\right]  \\
-		&= \frac{n! n^{-\frac{(n+1)}{2}}}{\pi^{\frac{3}{2}} \sqrt{|1 - \ee^{2\gamma}|} } \ee^{-n(\phi_\alpha(\beta_c^+) + \frac{\gamma}{2n})}
-	\end{split}
-\end{equation*}
-
-Similary, for the other case
-\begin{equation*}
-	\begin{split}
-		H_{n}(\sqrt{2n}\cosh{(\gamma)}) &= C_n^0 \int_{\Gamma}  \ee^{-N(\phi_\alpha(\beta))} \beta^{-1} \dd \beta \\
-		&= C_n^0  \int_{\Gamma_d}  \ee^{-N(\phi_\alpha(\beta))} \beta^{-1} \dd \beta \\
-		&= \stackrel{(Steepest)}{=}  C_n^1  \frac{\sqrt{2\pi}}{\sqrt{2n}} \left[  \frac{\ee^{-n(\phi_\alpha(\beta_c^+))}}{\ee^{\gamma}/2} \frac{\ee^{-\ii (\theta(\beta_c^+))}}{\sqrt{|1 - \ee^{2\gamma}|}}\right]  \\
-		&=  \frac{n!n^{-\frac{(n+1)}{2}}}{\pi^{\frac{3}{2}} \ii} \left[  \frac{\ee^{-n(\phi_\alpha(\beta_c^+))}}{\ee^{\gamma}} \frac{\ee^{-\ii (\theta(\beta_c^+))}}{\sqrt{|1 - \ee^{2\gamma}|}}\right]  \\
-		&= \frac{n! n^{-\frac{(n+1)}{2}}}{\pi^{\frac{3}{2}} \sqrt{|1 - \ee^{2\gamma}|} } \ee^{-n(\phi_\alpha(\beta_c^+) + \frac{\gamma}{n})}
-	\end{split}
-\end{equation*}
+We need now to determine the Steepest Descent Path. In this case is more clear what the path should be the one passing through the critical point $\ee^{-\gamma}$.  Then, repeating the process we did on Case 1 - changing the path of integration - we can make the substitution
+\begin{align}
+		\He_{n}(2\sqrt{N}\cosh{(\gamma)}) &= C_n^0 \int_{\Gamma}  \ee^{-N \phi_\alpha(\beta)} \dd \beta \\
+		&= C_n^0 \int_{\Gamma_d}  \ee^{-N \phi_\alpha(\beta)} \dd \beta \\
+		& \stackrel{(Steepest)}{=}  C_n^0  \ee^{N(\phi_\alpha(\beta_c^-))} 
+		\left[
+		\frac{\sqrt{2\pi}}{N^{\frac{1}{2}}}
+		\frac{\ee^{\ii (\theta(\beta_c^-))}}{\sqrt{|1 - \ee^{2\gamma}|}} 
+		+ \Boh(N^{-\frac{3}{2}})
+		\right]
+		\\
+		&= C_n^0  
+		\ee^{N(\phi_\alpha(\beta_c^-))}
+		\frac{\sqrt{2\pi}}{N^{\frac{1}{2}}}
+		\frac{\ee^{\ii (\theta(\beta_c^-))}}{\sqrt{|1 - \ee^{2\gamma}|}} 
+		\left(1 + \Boh(N^{-1}) \right)
+	    \\
+		&= 	\ee^{N(\phi_\alpha(\beta_c^-))} \frac{(N-1)! N^{\frac{1}{2}\left(1-N\right)}}{2\pi \ii} 
+		\frac{\sqrt{2\pi}}{N^{\frac{1}{2}}}
+		\frac{\ii}{\sqrt{|1 - \ee^{2\gamma}|}} 
+		\left(1 + \Boh(N^{-1}) \right)
+		\\
+		&= 	\ee^{N(\phi_\alpha(\beta_c^-) - 1) + 1} \frac{(N-1)^{N - \frac{1}{2}} N^{-\frac{N}{2}}}{\sqrt{|1 - \ee^{2\gamma}|}} 
+		\left(1 + \Boh(N^{-1}) \right)
+		\\
+		& =	\ee^{N( - 1) + 1} \frac{(N-1)^{N - \frac{1}{2}} N^{-\frac{N}{2}}}{\sqrt{|1 - \ee^{2\gamma}|}} 
+		\left(1 + \Boh(N^{-1}) \right) \\
+		& =	\ee^{-N\left( \frac{\ee^{-2\gamma}}{2} + \gamma +  1\right) + 1} \frac{(N-1)^{N - \frac{1}{2}} N^{-\frac{N}{2}}}{\sqrt{|1 - \ee^{2\gamma}|}} 
+		\left(1 + \Boh(N^{-1}) \right)
+\end{align}
+Similarly, for the other case
+\begin{equation}
+	\He_{n-1}(2\sqrt{N}\cosh{(\gamma)}) = \frac{\ee^{-N\left( \frac{\ee^{-2\gamma}}{2} + \gamma +  1\right)}}{\ee^{-\left( \frac{\ee^{-2\gamma}}{2} + \gamma - 2\right)}} \frac{(N-1)^{-\frac{N-1}{2}}}{\sqrt{|1 - \ee^{2\gamma}|}} 
+	\left(1 + \Boh(N^{-1}) \right)
+\end{equation}
 
 
 
@@ -212,45 +398,296 @@ Similary, for the other case
 	\includegraphics[width=8.5cm]{./Assets/g-contour_plot_theta_1.4.png}
 \end{wrapfigure} 
 
-For the case $(1)$ we can see that the contribution for the asymptotic will come from $t_c^+$ while for case $(2)$ the contribution comes from both critical points, although depending on the real part one of the asymptotic may be exponential bigger than the other. The interesting case comes from $(3)$ where both critical point have the same value and $f''(t_c) = 0$. We need to rescale the variable somehow to get the behavior of the asymptotic. 
+%Take the Definition \ref{Def: Airy Function} for the Airy Function. Take $\langle$ to be the union of the lines  $\{t\ee^{\ii 2\pi/6} : t \geq 0\}$ and $\{ t\ee^{-\ii 2\pi/6}: t \geq 0\}$. Applying the change of variables $t=-\ii z$ - which rotates the integration contour $\wedge$ into $\langle$, with $\dd w = - \frac{\dd t}{\ii}$ and $z^3 = t^3$, we see that the Airy Function can be written
+%\begin{equation}
+%	\Ai(u) = \frac{1}{2\pi} \int_{\rangle} \exp{\left( \frac{\ii}{3} z^3 + \ii u z \right)} \dd z
+%\end{equation} 
 
-The idea is to perform a blow-up on the integral. We would have
-$$\int_{\Gamma} \ee^{-N(-2 x t + t^2 + \log{(t)})} t^{-1} \dd t \deff \int_{\Gamma} \ee^{-N\Phi(t)} g(t) \dd t $$
-where we know $\Phi$ to have first and second derivative equal to zero at $t_c = \sqrt{2}/2$. First we need to divide the integral in three parts
-$$ \int_{\Gamma_1} \ee^{-N\Phi(t)} g(t) \dd t + \int_{t_c - \delta}^{t_c + \delta} \ee^{-N\Phi(t)} g(t) \dd t + \int_{\Gamma_2} \ee^{-N\Phi(t)} g(t) \dd t \approx \int_{t_c - \delta}^{t_c + \delta} \ee^{-N\Phi(t)} g(t) \dd t$$
-So we would write
-$$\Phi(t) = \frac{\Phi^{(3)}(t_c)}{3!} t^3 + \Boh(t^4).$$
-We now want to find a change of variable $\Phi(t) = s^3$ such that $s^3 = \Phi(t) = \tilde{\Phi}(t) t^2$. If we have such an equality we know $\tilde{\Phi}$ to be analytic, $\tilde{\Phi}'(t_c) \neq 0$ and $\tilde{\Phi}(t) = \frac{\Phi^{(3)}(t_c)}{3!} t + \Boh{(  t^2)} \deff c_0 t + \Boh{(t^2)}$. 
+Let's start with a sketch of the proof for this behavior.
+\begin{enumerate}
+	\item \textbf{Step One}: Write the integral for $N = n + 1$
+	\begin{equation}
+		\He_n(\sqrt{N}\alpha) = C_n^0 \int_{\Gamma}  \ee^{-N \phi_\alpha(\beta) } \dd \beta
+	\end{equation} 
+	where $\phi_\alpha(\beta) = \beta^2 -2 \alpha \beta + \ln{(\beta)}$;
+	\item \textbf{Step two}: The function $\phi_{\alpha}(\beta)$ has a double critical point at $2$. The steepest descent curve is defined by $\Im(\phi_{\alpha}(z) - \phi_{\alpha}(2)) = 0$;
+	\item \textbf{Step three}: Deform the contour such that the only contribution for the integral comes from the critical point . Computing the Taylor approximation to the third order we have
+	\begin{equation}
+		\phi_{\alpha}(\beta) = \phi_\alpha(\sqrt{2}/2) + \phi^{(3)}_\alpha(\sqrt{2}/2) (\beta - \beta_c)^3 + \Boh(\beta^4)  
+	\end{equation}
+	and perform the change fo variables $\lambda = N^{\frac{1}{3}}(\beta-\beta_c)$ to obtain
+	\begin{equation}
+		\He_n(\sqrt{N}\alpha) \approx \tilde{C_n} \int_{\Gamma}  \ee^{\lambda^3} \dd \lambda
+	\end{equation} 
+	\item \textbf{Step four} Recognize the Airy Function and write
+	\begin{equation}
+		\He_n(\sqrt{N}\alpha) \propto \Ai(0)
+	\end{equation}
+\end{enumerate}
 
-To find such a change of variable we need to investigate the function
-$$H(t, s) = t^2 \tilde{\Phi}(t) - s^3.$$
-We first note that we can not find apply the Inverse Function Theorem in such a function because it's derivative is zero at $(t_c, 0)$. For that we introduce a new variable function $v = v(t)$ such that $t = v s$. Now,
-$$ H(t, s) = s^3 \left( \frac{v^2}{s} \tilde{\Phi}(vs) -1 \right) \deff s^3 Q(v, s) .$$
-We can of course also write $\partial_s Q(v, s) = v' \partial_v Q + \partial_s Q = 0$ giving us
-$$ \frac{\partial v(t)}{\partial s} = - \frac{\partial_s Q}{\partial_v Q}.$$
-It remains to check that we can indeed apply the Implicit Function Theorem to this function $Q$. For that we compute teh derivative of the function. As
-$$Q(s, v(s)) = -1 + \frac{v^2}{s} (c_0 vs + \Boh(v^2s^2)) = -1 + c_0v^3 + \Boh(v^4s)$$
-and because of that
-$$\partial_v Q = 3 c_0 v^2 + \Boh{(v^3s)} \neq 0, \ \ \text{if} \ \ v(t_c) \neq 0.$$
+We start with the expression determined in \eqref{Equation: Hermite Integral}, working on the edge, we will set $x = 2\sqrt{N} + \xi N^{-\frac{1}{6}}$, that is, $\alpha = 2 + \xi N^{-\frac{2}{3}}$. Remember the expression
+\begin{equation}
+	\He_n(\sqrt{N}\alpha) = C_n^0 \int_{\Gamma}  \ee^{-N \left( \frac{1}{2} \beta^2 - \alpha \beta + \ln{(\beta)} \right) } \dd \beta.
+\end{equation}
+Applying the scale above, we have
+\begin{equation}
+	\phi_{2 + \xi N^{-\frac{2}{3}}}(\beta) = -(2 + \xi N^{-\frac{2}{3}})\beta + \frac{1}{2} \beta^2 + \ln(\beta) = \phi_{2}(\beta) - \xi N^{-\frac{2}{3}} \beta,
+\end{equation}
+such that substituting it into the integral
+\begin{equation}
+	\He_n(\sqrt{N}(2 + \xi N^{-\frac{2}{3}})) = C_n^0 \int_{\Gamma}  \ee^{-N \left( \phi_{2}(\beta) - \xi \beta N^{-\frac{2}{3}} \right) } \dd \beta.
+\end{equation}
 
-Because of the theorem we can say that there exists a function $v(t)$ such that $H(vs, s) = 0$ and $v(t_c) = v_0$. Getting back to the integral we use $t = vs$ to write
+Now, it is clear from the previous cases that when we evaluate the integral, the contributions from the critical point $\beta_c = 1$ should be exponentially bigger - that is, the asymptotic of the integral can be deduces from the values around this point. We know that 
+\begin{align}
+	\phi^{(0)}_{2}(1) & = - \frac{3}{2} \\
+	\phi^{(1)}_{2}(1) & = 0\\
+	\phi^{(2)}_{2}(1) & = 0\\
+	\phi^{(3)}_{2}(1) & = 2
+\end{align}
+such that we can define for a neighborhood of the critical point the Taylor expansion of $\phi$ given by
+\begin{equation}
+	\phi_{2}(\beta) = \phi_{2}(1) + \frac{\phi^{(3)}_{2}(1)}{3!} (\beta - \beta_c)^3 + \Boh((\beta - \beta_c)^4)
+\end{equation}
+such that for $\beta = \beta_c + u N^{-\frac{1}{3}}$, for $u$ coming from $\infty \ee^{\ii \frac{4\pi}{3}}$ to $\infty \ee^{\ii \frac{2\pi}{3}}$, we write
+\begin{align}
+	\He_n(2 N^{\frac{1}{2}} + \xi N^{-\frac{1}{6}}) & = 
+	C_n^0 \ee^{\frac{3N}{2}} 
+	\int_{\langle}  
+	\ee^{-N 
+	\left(
+	\frac{1}{3}(\beta - \beta_c)^3 - \xi \beta N^{-\frac{2}{3}} + \Boh((\beta - \beta_c)^4) 
+	\right)}
+	\dd \beta 
+	\\
+ 	& = C_n^0 \ee^{\frac{3N}{2}} 
+ 	\int_{\langle}  
+ 	\ee^{-N \left(\frac{1}{3}(u N^{-\frac{1}{3}})^3 - \xi (\beta_c + u N^{-\frac{1}{3}}) N^{-\frac{2}{3}} + 
+ 	\Boh((u N^{-\frac{1}{3}})^4) \right)} \dd (u N^{-\frac{1}{3}})
+ 	\\
+	& = C_n^0 N^{-\frac{1}{3}} \ee^{-2\xi\beta_c N^{\frac{1}{3}}} \ee^{\frac{3N}{2}}
+	\int_{\langle}  \ee^{\frac{1}{3} u^3 - \xi u + \Boh(u^4 N^{-\frac{4}{3}})} \dd u
+\end{align}
+Then we will have, remembering the definition of the Airy function \ref{Def: Airy Function},
+\begin{equation}
+	\He_n(2N^{\frac{1}{2}} + \xi N^{-\frac{1}{6}}) = \tilde{C}_N \int_{\langle}  \ee^{\left(\frac{u^3}{3} - \xi u\right)} \dd u (1 + \boh(1)) = \tilde{C}_N \Ai(\xi) (1 + \boh(1)),
+\end{equation}
+for $\tilde{C}_N = (N-1)! N^{\frac{1}{6} - \frac{N}{2}} \ee^{-2\xi\beta_c N^{\frac{1}{3}} + \frac{3N}{2}} = \sqrt{2\pi} (N-1)^{\frac{1}{2}} N^{1/6 - N/2} \ee^{\left(1/2 + N^{-1} - 2\xi \beta_c N^{-2/3} \right)} (1 + \Boh(N^{-1}))$. The result follow from the asymptotic for the Airy function given in \ref{Subsection: Airy Asymptotic}. Again, we can change variables to express
+\begin{equation}
+	\He_{n-1}(2\sqrt{N} + N^{-1/6}\xi) = \sqrt{2\pi} (N-2)^{\frac{1}{2}} (N-1)^{4/6 - N/2} \ee^{\left(1/2 + (N-1)^{-1} - 2\xi \beta_c (N-1)^{-2/3} \right)} \Ai(\xi) (1 + \boh(1))
+\end{equation}
+%For the case $(1)$ we can see that the contribution for the asymptotic will come from $t_c^+$ while for case $(2)$ the contribution comes from both critical points, although depending on the real part one of the asymptotic may be exponential bigger than the other. The interesting case comes from $(3)$ where both critical point have the same value and $f''(t_c) = 0$. We need to rescale the variable somehow to get the behavior of the asymptotic. 
+
+%The idea is to perform a blow-up on the integral. We would have
+%$$\int_{\Gamma} \ee^{-N(-2 x t + t^2 + \ln{(t)})} t^{-1} \dd t \deff \int_{\Gamma} \ee^{-N\Phi(t)} g(t) \dd t $$
+%where we know $\Phi$ to have first and second derivative equal to zero at $t_c = \sqrt{2}/2$. First we need to divide the integral in three parts
+%$$ \int_{\Gamma_1} \ee^{-N\Phi(t)} g(t) \dd t + \int_{t_c - \delta}^{t_c + \delta} \ee^{-N\Phi(t)} g(t) \dd t + \int_{\Gamma_2} \ee^{-N\Phi(t)} g(t) \dd t \approx \int_{t_c - \delta}^{t_c + \delta} \ee^{-N\Phi(t)} g(t) \dd t$$
+%So we would write
+%$$\Phi(t) = \frac{\Phi^{(3)}(t_c)}{3!} t^3 + \Boh(t^4).$$
+%We now want to find a change of variable $\Phi(t) = s^3$ such that $s^3 = \Phi(t) = \tilde{\Phi}(t) t^2$. If we have such an equality we know $\tilde{\Phi}$ to be analytic, $\tilde{\Phi}'(t_c) \neq 0$ and $\tilde{\Phi}(t) = \frac{\Phi^{(3)}(t_c)}{3!} t + \Boh{(  t^2)} \deff c_0 t + \Boh{(t^2)}$. 
+
+%To find such a change of variable we need to investigate the function
+%$$H(t, s) = t^2 \tilde{\Phi}(t) - s^3.$$
+%We first note that we can not find apply the Inverse Function Theorem in such a function because it's derivative is zero at $(t_c, 0)$. For that we introduce a new variable function $v = v(t)$ such that $t = v s$. Now,
+%$$ H(t, s) = s^3 \left( \frac{v^2}{s} \tilde{\Phi}(vs) -1 \right) \deff s^3 Q(v, s) .$$
+%We can of course also write $\partial_s Q(v, s) = v' \partial_v Q + \partial_s Q = 0$ giving us
+%$$ \frac{\partial v(t)}{\partial s} = - \frac{\partial_s Q}{\partial_v Q}.$$
+%It remains to check that we can indeed apply the Implicit Function Theorem to this function $Q$. For that we compute teh derivative of the function. As
+%$$Q(s, v(s)) = -1 + \frac{v^2}{s} (c_0 vs + \Boh(v^2s^2)) = -1 + c_0v^3 + \Boh(v^4s)$$
+%and because of that
+%$$\partial_v Q = 3 c_0 v^2 + \Boh{(v^3s)} \neq 0, \ \ \text{if} \ \ v(t_c) \neq 0.$$
+
+%Because of the theorem we can say that there exists a function $v(t)$ such that $H(vs, s) = 0$ and $v(t_c) = v_0$. Getting back to the integral we use $t = vs$ to write
+%\begin{equation}%
+%	\begin{split}
+%		& = \int_{\alpha}^{\beta} \ee^{-Ns^3} (v(s) + v'(s)s) g(v(s)s) \dd s, \ \ \alpha = - \sqrt[3]{\Phi(\delta - t_c)} \ \ \text{and} \ \ \beta = \sqrt[3]{\Phi(\delta + t_c)} \\
+%		&  = \int_{\alpha}^{\beta} \ee^{-Ns^3} \frac{(v(s) + v'(s)s)}{v(s) s} \dd s \\
+%		& = \int_{\alpha}^{\beta} \ee^{-Ns^3} \left( \frac{1}{s} + \frac{v'(s)}{v(s)} \right) \dd s
+%	\end{split}
+%\end{equation}
+%where hopefully I can apply Laplace.
+
+%\begin{figure}[h] 
+%	\centering
+%	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_0.png}}
+%	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_0.5.png}}
+%	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_1.png}}
+%	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_1.4.png}}
+%	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_2.png}}
+%	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_3.png}}
+%	\caption{Scenarios for $x$}
+%	\label{Fig: x cases for hermite}
+%\end{figure}
+
+
+\section{Kernels}
+
+When dealing with the asymptotic of the j.p.d.f we will actually consider the Kernel. This is the object described in \ref{Theorem: Kernel}. However, we will actually work with the simplification given by \ref{Proposition: Kernel Simplification beta 2}. The first step is to consider the following expression
+\begin{equation}
+	\He_n(\alpha \sqrt{N} + y N^{-1/2}),
+\end{equation}
+which will allow us to take the limit to get $K_n^{(2)}(x,x)$.
+
+\subsection{Sine Kernel}
+
+The computations don't change too much. Consider the expression
+\begin{align}
+	\He_n(\sqrt{N}\alpha + N^{-1/2} y) & =  \frac{(N-1)! N^{\frac{1}{2}\left(1-N\right)}}{2\pi \ii} \int_{\Gamma}  \ee^{-N(- \alpha \beta+ \frac{1}{2} \beta^2 + \ln{(\beta)}) + y \beta} \dd \beta \\
+	& = C_n^0 \int_{\Gamma}  \ee^{-N \phi_\alpha(\beta) + y \beta} \dd \beta \\
+	& = C_n^0 \int_{\Gamma}  \ee^{-N \phi_\alpha(\beta)} g_y(\beta) \dd \beta
+	\label{Equation: Hermite Integral}
+\end{align}
+with 
+\begin{equation}
+	\phi_\alpha(\beta) = \frac{1}{2} \beta^2 - \alpha \beta + \ln{(\beta)}; \quad g_y(\beta) = \ee^{y \beta}
+\end{equation}
+The analysis remains the same - the difference now being that we have a function $g_y(\beta)$ that enters in the steepest descent expression. Setting our case for $-2\sqrt{N} < x < 2\sqrt{N}$, or, equivalently, $-2 < \alpha < 2$, we remember that $\beta_c^\pm = \ee^{\pm \ii \gamma}$. Now, with this, and setting $\Delta = 2\sqrt{N}\cos(\gamma) + N^{-1/2} y$,
 \begin{equation}
 	\begin{split}
-		& = \int_{\alpha}^{\beta} \ee^{-Ns^3} (v(s) + v'(s)s) g(v(s)s) \dd s, \ \ \alpha = - \sqrt[3]{\Phi(\delta - t_c)} \ \ \text{and} \ \ \beta = \sqrt[3]{\Phi(\delta + t_c)} \\
-		&  = \int_{\alpha}^{\beta} \ee^{-Ns^3} \frac{(v(s) + v'(s)s)}{v(s) s} \dd s \\
-		& = \int_{\alpha}^{\beta} \ee^{-Ns^3} \left( \frac{1}{s} + \frac{v'(s)}{v(s)} \right) \dd s
+		\He_n(\Delta) &= C_n^0 \int_{\Gamma}  \ee^{-N \phi_\alpha(\beta)} g_y(\beta) \dd \beta  = C_n^0  \left[ \int_{\Gamma_d^-}  \ee^{-N \phi_\alpha(\beta)} g_y(\beta) \dd \beta + \int_{\Gamma_d^+}  \ee^{-N \phi_\alpha(\beta)} g_y(\beta) \dd \beta  \right]\\
+		& \stackrel{(Steepest)}{=}  
+		C_n^0 \left(
+		\ee^{N(\phi_\alpha(\beta_c^+))} 
+		\left[
+		\frac{\sqrt{2\pi}}{N^{\frac{1}{2}}}
+		\frac{g_y(\beta^+_c) \ee^{\ii (\theta(\beta_c^+))}}{\sqrt{2\sin{(\gamma)}}} 
+		+ \Boh(N^{-\frac{3}{2}})
+		\right]
+		+
+		\ee^{N(\overline{\phi_\alpha(\beta_c^+)})} 
+		\left[
+		\frac{\sqrt{2\pi}}{N^{\frac{1}{2}}}
+		\frac{g_y(\beta^-_c) \ee^{\ii (\overline{\theta(\beta_c^+)})}}{\sqrt{2\sin{(\gamma)}}}
+		+ \Boh(N^{-\frac{3}{2}})
+		\right]   
+		\right)
+		\\
+		& = C_n^0 \sqrt{\frac{2\pi}{2N\sin{(\gamma)}}} \left(
+		\ee^{N(\phi_\alpha(\beta_c^+))} 
+		\left[
+		g_y(\beta^+_c)
+		\ee^{\ii(\theta(\beta_c^+))} 
+		+ \Boh(N^{-1})
+		\right]
+		+
+		\ee^{N(\overline{\phi_\alpha(\beta_c^+)})} 
+		\left[
+		g_y(\beta^-_c)
+		\ee^{\ii(\overline{\theta(\beta_c^+)})}
+		+ \Boh(N^{-1})
+		\right]   
+		\right)
+		\\
+		& = C_n^0 \sqrt{\frac{\pi}{N\sin{(\gamma)}}} \ee^{y \cos{(\gamma)}}
+		\left(
+		\ee^{N(\phi_\alpha(\beta_c^+)) + \ii(\theta(\beta_c^+) + y \sin{(\gamma)})} +
+		\ee^{N(\overline{\phi_\alpha(\beta_c^+)})+\ii(\overline{\theta(\beta_c^+)} - y \sin{(\gamma)})} 
+		\right)
+		(1 + \Boh(N^{-1}))   
+		\\
+%		& =  C_n^0 \sqrt{\frac{\pi}{N\sin{(\gamma)}}} \ee^{y\cos{(\gamma)}}
+%		\left(
+%		\ee^{-\ii(\theta(\beta_c^+) - y \sin{(\gamma)}) + N (-\alpha \beta_c^+ + \frac{1}{2} (\beta_c^+)^2 + \ln{(\beta_c^+)}) }
+%		+
+%		\ee^{\ii \pi} \ee^{\ii(\theta(\beta_c^+) - y \sin{(\gamma)}) + N \overline{(-\alpha \beta_c^+ + \frac{1}{2} (\beta_c^+)^2 + \ln{(\beta_c^+)}) }}  
+%		\right)
+%		(1 + \Boh(N^{-1})) 
+%		\\
+%		& =  C_n^0 \sqrt{\frac{\pi}{N\sin{(\gamma)}}}
+%		\ee^{y\cos{(\gamma)}} \ee^{N(-3\cos^2{(\gamma)} - \frac{1}{2})}
+%		\left(
+%		\ee^{-\ii \left(-N\left(\frac{\sin{(2\gamma)}}{2}+\gamma\right)+ \theta(\beta_c^+) - y \sin{(\gamma)}
+%		\right)}
+%		-
+%		\ee^{\ii
+%			\left(-N\left(\frac{\sin{(2\gamma)}}{2}+\gamma\right)+
+%			\theta(\beta_c^+) - y \sin{(\gamma)}
+%			\right)}  
+%		\right)
+%		(1 + \Boh(N^{-1})) 
+%		\\
+		& =  C_n^0 \sqrt{\frac{\pi}{N\sin{(\gamma)}}}
+		\ee^{y\cos{(\gamma)}}
+		\ee^{N(-3\cos^2{(\gamma)} - \frac{1}{2})}
+		2\ii \sin{\left(\theta(\beta_c^+) + y \sin{(\gamma)}
+		-N\left(\frac{\sin{(2\gamma)}}{2}+\gamma\right)\right)} 
+		(1 + \Boh(N^{-1})) \\
+		& = \frac{(N-1)! N^{\frac{1}{2}\left(1-N\right)}}{2\pi \ii}
+		\sqrt{\frac{\pi}{N\sin{(\gamma)}}} 
+		\ee^{y\cos{(\gamma)}}
+		\ee^{N(-3\cos^2{(\gamma)} - \frac{1}{2})}
+		2\ii \sin{
+			\left(
+			\theta(\beta_c^+) + y \sin{(\gamma)}
+			-N\left(\frac{\sin{(2\gamma)}}{2}+\gamma\right)
+			\right)} 
+		(1 + \Boh(N^{-1})) \\
+		& = \sqrt{\frac{2}{\sin{(\gamma)}}} N^{-\frac{N}{2}} (N-1)^{\left(N - \frac{1}{2}\right)}
+		\ee^{N\left(-3\cos^2{(\gamma)} + \frac{1}{2} \right) + 1 + y\cos{(\gamma)}} \sin{\left(\theta(\beta_c^+) + y \sin{(\gamma)}-N\left(\frac{\sin{(2\gamma)}}{2}+\gamma\right)\right)} 
+		(1 + \Boh(N^{-1}))
 	\end{split}
 \end{equation}
-where hopefully I can apply Laplace.
+and for $N-1$,
+\begin{equation}
+	\He_{n-1}(\Delta) = \sqrt{\frac{2}{\sin{(\gamma)}}} \frac{(N-2)^{N - \frac{3}{2}}}{(N-1)^{\frac{N-1}{2}}} \frac{\ee^{N\left(-3\cos^2{(\gamma)} + \frac{1}{2} \right) + 1 + y\cos{(\gamma)}}}{\ee^{\left(-3\cos^2{(\gamma)} + \frac{1}{2} \right)}} \sin{\left(\theta(\beta_c^+) + y \sin{(\gamma)} - (N-1) \left(\frac{\sin{(2\gamma)}}{2}-\gamma\right)\right)} 
+	(1 + \Boh(N^{-1}))
+\end{equation}
 
-\begin{figure}[h] 
-	\centering
-	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_0.png}}
-	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_0.5.png}}
-	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_1.png}}
-	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_1.4.png}}
-	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_2.png}}
-	\subfigure{\includegraphics[width=0.49\textwidth]{./Assets/g-contour_plot_theta_3.png}}
-	\caption{Scenarios for $x$}
-	\label{Fig: x cases for hermite}
-\end{figure}
+Remembering the expression for the Kernel, taking $\Delta_x = \sqrt{N}\alpha + N^{-1/2} x$ and $\Delta_y = \sqrt{N}\alpha + N^{-1/2} y$
+\begin{align}
+	K_n^{(2)}(\Delta_x,\Delta_y) & = \frac{\sqrt{\wf(\Delta_x) \wf(\Delta_y)}}{r_{n-1}^{(2)}} \frac{H_n(\Delta_x)H_{n-1}(\Delta_y) - H_{n-1}(\Delta_x)H_n(\Delta_y)}{\Delta_x-\Delta_y} \\
+	& = W_{(N,x,y)} \frac{H_n(\Delta_x)H_{n-1}(\Delta_y) - H_{n-1}(\Delta_x)H_n(\Delta_y)}{(\sqrt{N}\alpha + N^{-1/2} x)-(\sqrt{N}\alpha + N^{-1/2} y)} \\
+	& = W_{(N,x,y)} N^{1/2} \frac{H_n(\Delta_x)H_{n-1}(\Delta_y) - H_{n-1}(\Delta_x)H_n(\Delta_y)}{x-y}
+\end{align}
+with 
+\begin{align}
+	W_{(N,x,y)} & = \frac{\sqrt{\wf(\sqrt{N}\alpha + N^{-1/2} x) \wf(\sqrt{N}\alpha + N^{-1/2} y)}}{r_{n-1}^{(2)}} \\
+	& = \left(\frac{\exp{\left( -\frac{1}{2} \left(\sqrt{N}\alpha + N^{-1/2} x \right)^2 \right)}}{\sqrt{2\pi}}  \frac{\exp{\left( -\frac{1}{2} \left(\sqrt{N}\alpha + N^{-1/2} y \right)^2 \right)}}{\sqrt{2\pi}} \right)^{-\frac{1}{2}} \\
+	& = \frac{1}{\sqrt{2\pi}} \left( \exp{\left\{ -\frac{1}{2} \left( 4 N \cos{(\gamma)} + 4 x \cos{(\gamma)} + x^2 N^{-1} + 4 N \cos{(\gamma)} + 4 y \cos{(\gamma)} + y^2 N^{-1} \right) \right\}} \right)^{\frac{1}{2}} \\
+	& = \frac{1}{\sqrt{2\pi}} \ee^{-2N\cos{(\gamma)}}
+	\exp{\left\{ -\left( 2 \cos{(\gamma)} (x+y) +  \frac{1}{2N} (x^2 + y^2) \right) \right\}} 
+\end{align}
+Note that
+\begin{equation}
+	H_n(\Delta_x)H_{n-1}(\Delta_y) \propto \sin{\left(\theta(\beta_c^+) + x \sin{(\gamma)}-N\left(\frac{\sin{(2\gamma)}}{2}+\gamma\right)\right)} \sin{\left(\theta(\beta_c^+) + y \sin{(\gamma)} - (N-1) \left(\frac{\sin{(2\gamma)}}{2}-\gamma\right)\right)} 
+\end{equation}
+and
+\begin{equation}
+	H_{n-1}(\Delta_x)H_n(\Delta_y) \propto \sin{\left(\theta(\beta_c^+) + y \sin{(\gamma)}- N\left(\frac{\sin{(2\gamma)}}{2}+ \gamma\right)\right)} \sin{\left(\theta(\beta_c^+) + x \sin{(\gamma)} - (N-1) \left(\frac{\sin{(2\gamma)}}{2}-\gamma\right)\right)} 
+\end{equation}
+therefore,
+\begin{equation}
+	H_n(\Delta_x)H_{n-1}(\Delta_y) - H_{n-1}(\Delta_x)H_n(\Delta_y) \propto \sin{\left(\frac{\sin{(2\gamma)}}{2}-\gamma\right)} \sin{\left( \sin{(\gamma)}(x - y) \right)}
+\end{equation}
+Then, letting $x = x \sin{(\gamma)}$ and $y = y \sin{(\gamma)}$
+\begin{align}
+	K_n^{(2)}(\Delta_x,\Delta_y) & = W_{(N,x,y)} N^{1/2} C \ee^{\frac{1}{2}\sin{(2\gamma)}(x + y)} \sin{\left(\frac{\sin{(2\gamma)}}{2}-\gamma\right)} \frac{\sin{(x - y)}}{x-y}
+\end{align}
+where
+\begin{align}
+	C & = \left(\sqrt{\frac{2}{\sin{(\gamma)}}} N^{-\frac{N}{2}} (N-1)^{\left(N - \frac{1}{2}\right)}
+	\ee^{N\left(-3\cos^2{(\gamma)} + \frac{1}{2} \right) + 1} \right) \left( \sqrt{\frac{2}{\sin{(\gamma)}}} \frac{(N-2)^{N - \frac{3}{2}}}{(N-1)^{\frac{N-1}{2}}} \frac{\ee^{N\left(-3\cos^2{(\gamma)} + \frac{1}{2} \right) + 1}}{\ee^{\left(3\cos^2{(\gamma)} - \frac{1}{2} \right)}}\right) \\
+	& = \frac{2}{\sin{(\gamma)}} \left(\frac{(N-1)(N-2)^{2-3N^{-1}}}{N}\right)^{\frac{N}{2}} \frac{\ee^{2N\left(-3\cos^2{(\gamma)} + \frac{1}{2} \right) + 1}}{\ee^{-3\cos^2{(\gamma)} + \frac{1}{2}}}
+\end{align}
+and
+\begin{equation}
+	W_{(N,x,y)} = \frac{1}{\sqrt{2\pi}} \ee^{-2N\cos{(\gamma)}}
+	\exp{\left\{ -\left(\sin{(2\gamma)} (x+y) +  \frac{\sin^2{(\gamma)}}{2N} (x^2 + y^2) \right) \right\}} 
+\end{equation}
+Here, we get to the point of interest. 
+\begin{definition}
+	The Kernel
+	\begin{equation}
+		\Sine(x, y) \deff \frac{\sin{(x  -y)}}{x - y}
+	\end{equation}
+	is called the \textit{Sine Kernel}.
+\end{definition}
+With this definition, we can now say that 
+\begin{thm}
+	For the conditions $-2\sqrt{N} < x < 2\sqrt{N}$, or, equivalently, $-2 < \alpha < 2$, we remember that $\beta_c^\pm = \ee^{\pm \ii \gamma}$. Set $\Delta_x = 2\sqrt{N}\cos(\gamma) + \frac{\sin{(\gamma)}}{\sqrt{N}} x$ and $\Delta_y = 2\sqrt{N}\cos(\gamma) + \frac{\sin{(\gamma)}}{\sqrt{N}} y$. Then, we have that
+	\begin{multline}
+		K_n^{(2)}\left(\Delta_x, \Delta_y\right) = \frac{2 N^{\frac{1}{2}}}{\sin{(\delta)}\sqrt{2\pi}}
+		\exp{\left\{-\frac{1}{2}\left(\sin{(2\gamma)} (x+y) +  \frac{\sin^2{(\gamma)}}{N} (x^2 + y^2) \right) - 3\left(\cos{(\gamma)} - \frac{1}{2}\right) \right\}} \\ \left(\frac{(N-1)(N-2)^{2-\frac{3}{N}}}{N}\right)^{\frac{N}{2}} \Sine(x, y) (1 + \Boh(N^{-1}))
+	\end{multline}
+\end{thm}
+\subsection{Airy Kernel}

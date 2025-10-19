@@ -1,4 +1,4 @@
-\section{Laplace's Method}
+\subsection{Laplace's Lemma}
 
 A seemly natural extension of the type of function we were dealing with are functions of the type
 \begin{equation}
@@ -17,9 +17,7 @@ for some $k\geq 0$ and $|t| < \delta$. As $\phi_{2k+1}$, the $(2k+1)$th-derivati
 		& \stackrel{(s=u^{2k+1})}{\approx} \ee^{-\lambda \phi(0)} \frac{g(0)}{ (2k+1)(\lambda \phi_{2k+1})^{\frac{1}{2k+1}}} \int_{0}^{\infty} \ee^{-s} \dd u
 	\end{split}
 \end{equation*}
-Where the integral can be evaluated as an Gamma function.
-
-More than anything we need to focus on an important assumption that was made: that $\phi$ has a global minima at one of the endpoints of integration. Is that were not the case, for example if $a < 0 < b$ and $\phi(t)$ had a global minima at $t=0$ we would now have to consider the expansion
+Where the integral can be evaluated as an Gamma function. More than anything we need to focus on an important assumption that was made: that $\phi$ has a global minima at one of the endpoints of integration. Is that were not the case, for example if $a < 0 < b$ and $\phi(t)$ had a global minima at $t=0$ we would now have to consider the expansion
 $$\phi(t) \approx \phi(0) + \phi_{2k} t^{2k}$$
 which would lead us to the expression
 $$\Phi(\lambda) \approx \ee^{-\lambda \phi(0)} \frac{g(0)}{(\lambda \phi_{2k})^{\frac{1}{2k}}} \int_{-\infty}^{\infty} \ee^{-u^{2k}} \dd u$$

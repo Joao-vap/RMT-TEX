@@ -1,136 +1,189 @@
 \section{Random Matrices}
 
-This is based on the \cite{rahman2023recursivecharacterisationsrandommatrix}
+The chapter that follows is heavily based (to be very generous with my writing) on the incredibly organized and written Thesis \cite{rahman2023recursivecharacterisationsrandommatrix}. To the author, my best wishes. The idea of this chapter is to motivate and introduce the concepts we will touch on later for the main part of the work. Also, if it is of any worth, this chapter serves as a good recap for any reader and a disclaimer of all the notation and conventions we will use in this work. What follows is my best attempt in introducing the part of Random Matrices that are pertinent to my scope of work and are of general interested, albeit inside my limitations. 
 
-An ensemble can be though as a virtual collection of all possible states that a system can be in, with more probable states appearing more often in the collection. More concretely, in the context of Random Matrix Theory
+\subsection{Random Matrices Ensembles}
+
+Borrowing some concepts from physics, an ensemble can be though as a virtual collection of all possible states that a system can be in, with more probable states appearing more often in the collection. There is a analogy to be made with ensembles of thermodynamic: When considering sets of matrices with equal probability - in some sense to be more clear soon - we get the Gibbs weight for the probability distribution as we would in the \textit{Canonical Ensemble} of constant temperature. More concretely, in the context of Random Matrix Theory
 
 \begin{definition}
-	A random matrix ensemble $E = (S, P)$ is a set of matrices of fixed size equipped with a probability density function (p.d.f) $P: S \rightarrow [0, \infty)$. If we say that a matrix $X$ is drawn from the random ensemble $E$, we are saying that it is a random variable assuming values in $S$ with p.d.f. $P$.
+	A random matrix ensemble $\eE = (\eS, \eP)$ is a set of matrices of fixed size equipped with a probability density function (p.d.f) $\eP: \eS \rightarrow [0, \infty)$. If we say that a matrix $\m{X}$ is drawn from the random ensemble $\eE$, we are saying that it is a random variable assuming values in $\eS$ with p.d.f. $\eP$.
+	\label{Def: Ensemble}
 \end{definition}
 
-A commonplace thing to do when defining ensembles is to prescribe the p.d.f's $P_{i,j}$ on the independent entries $X_{i,j}$ of a representative matrix $X \in E$. In such cases, we say that arXiv:2301.11428v1 [math-ph] 26 Jan 2023
-\[
-	P(X) = \prod_{i,j | X_{i,j} independent} P_{i,j}(X_{i,j}).
-\]
-With this definition we can already define many ensembles of interest. For many, the set of matrices is described by applying constraints to the set of real matrices $M_{m,n}(\R)$, the set of complex matrices $M_{m,n}(\C)$ or the set of quaternionic matrices $M_{m,n}(\He)$. Then, oftentimes, $S$ is simply the set of symmetric, Hermitian or skew-symmetric matrices. When it comes to determining the p.d.f $P$ on $S$, there are many options that have been worked on. A simple example is that of \textit{Bernoulli matrices} $B$ whose entries $B_{i,j}$ are al independently and identically distributed Bernoulli random variables $\pm 1$: $S=M_{n,n}(\R)$ and $$P_{i,j}(B_{i,j}) = \frac{1}{2} \left[ \delta(B_{i,j}-1) + \delta(B_{i,j}+1)\right].$$ If we instead require $B$ to be symmetric, its diagonal entries to be zero, and its independent entries have p.d.f. $$P_{i,j}(B_{i,j}) = \frac{c}{n} \delta(B_{i,j}-1) + \left(1 - \frac{c}{n} \delta\left(B_{i,j}\right)\right),$$ then $B$ belongs to the ensemble of \textit{Erdos-Renyi}.
+A commonplace thing to do when defining ensembles is to prescribe the p.d.f's $\eP_{i,j}$ on the independent entries $X_{i,j}$ of a representative matrix $\m{X} \in \eE$. In such cases, we say that
+\begin{equation}
+	\eP(\m{X}) = \prod_{i,j | X_{i,j} independent} \eP_{i,j}(X_{i,j}).
+\end{equation}
+With this definition we can already define many ensembles of interest. For many, the set of matrices is described by applying constraints to the set of real matrices $\mathbb{M}_{m,n}(\R)$, the set of complex matrices $\mathbb{M}_{m,n}(\C)$ or the set of quaternionic matrices $\mathbb{M}_{m,n}(\He)$. Then, oftentimes, $\eS$ is simply the set of symmetric, hermitian or skew-symmetric matrices. When it comes to determining the p.d.f $\eP$ on $\eS$, there are many options that have been worked on. A simple example is that of \textit{Bernoulli matrices} $\m{B}$ whose entries $B_{i,j}$ are all independently and identically distributed Bernoulli random variables $\pm 1$: $\eS=\mathbb{M}_{n,n}(\R)$ and $$P_{i,j}(B_{i,j}) = \frac{1}{2} \left[ \delta(B_{i,j}-1) + \delta(B_{i,j}+1)\right].$$ If we instead require $\m{B}$ to be symmetric, its diagonal entries to be zero, and its independent entries have p.d.f. $$P_{i,j}(B_{i,j}) = \frac{c}{n} \delta(B_{i,j}-1) + \left(1 - \frac{c}{n} \delta\left(B_{i,j}\right)\right),$$ then $\m{B}$ belongs to the ensemble of \textit{Erdos-Renyi}. Consider now one of the most important ensembles we will define.
 
 \begin{definition}
-	(Ginibre Ensemble). The $m \times n$ real, complex, and quaternionic Ginibre ensembles are respectively $M_{m,n}(\R), M_{m,n}(\C), M_{m,n}(\He)$ with p.d.f $$p^{(Gin)}(G) = \pi^{-mn\frac{\beta}{2}} \exp{\left( -\tr(G^{\dagger}G)\right)} = \prod_{i=1}^{m} \prod_{j=1}^{n} \pi^{\frac{\beta}{2}} \exp{\left(-|G_{i,j}|^2 \right)},$$ defined in respect to the Lebesge measure $$\dd G = \prod_{i=1}^{m} \prod_{j=1}^{n} \prod_{s=1}^\beta \dd G_{i,j}^{(s)}.$$ THe coefficient $\beta$ is called the Dyson index and counts the generic number of real components of each matrix entry $G_{i,j}$, so that $\beta=1,2,4$ refers to real, complex and quaternionic entries. These are the Ginibre orthogonal, unitary and symplectic ensembles.
+	(Ginibre Ensemble). The $m \times n$ real, complex, and quaternionic \textit{Ginibre Ensembles} are respectively $\mathbb{M}_{m,n}(\R), \mathbb{M}_{m,n}(\C), \mathbb{M}_{m,n}(\He)$ with p.d.f
+	\begin{equation}
+		\eP^{(Gin)}(\m{G}) = \pi^{-mn\frac{\beta}{2}} \exp{\left( -\tr(\m{G}^{\dagger}\m{G})\right)} = \prod_{i=1}^{m} \prod_{j=1}^{n} \pi^{\frac{\beta}{2}} \exp{\left(-|G_{i,j}|^2 \right)},
+	\end{equation}
+	defined in respect to the Lebesge measure
+	\begin{equation}
+		\dd \m{G} = \prod_{i=1}^{m} \prod_{j=1}^{n} \prod_{s=1}^\beta \dd G_{i,j}^{(s)}.
+	\end{equation}
+	The coefficient $\beta$ is called the Dyson index and counts the generic number of real components of each matrix entry $G_{i,j}$, so that $\beta=1,2,4$ refers to real, complex and quaternionic entries. These are the Ginibre orthogonal, unitary and symplectic ensembles.
 	\label{Def: Ginibre}
 \end{definition}
 
-For most applications there are three ideologies that stand out. The first one is to assume little on the system and focus on universal results. This is the \textit{Wigner matrix ensembles}: Let $X$ be drawn from either the real symmetric, complex hermitian or quaternionic  skew-symmetric $n \times n$ matrix ensemble. Then its entries $X_{i,j}$ are independently distribute with mean zero and bounded moments. Also, its diagonal entries are equally distributed as are its upper triangular entries. Many results hold for independently and identically distributed centered random variables.
+For most applications there are three ideologies that stand out. The first one is to assume little on the system and focus on universal results. This results in the study of the \textit{Wigner matrix ensembles}: Let $\m{X}$ be drawn from either the real symmetric, complex hermitian or quaternionic  skew-symmetric $n \times n$ matrix ensemble. Then its entries $X_{i,j}$ are independently distributed with mean zero and bounded moments. Also, its diagonal entries are equally distributed as are its upper triangular entries. Many results hold for independently and identically distributed centered random variables. To construct the general form of such matrices take the matrix $\m{Y} = \{Y_n\}_{i,j}$ with $Y_{i,j} = Y_{j,i}^\dagger$ and such that
+\begin{enumerate}
+	\item $\{Y_{i,j}\}_{1\leq i \leq j \leq n}$ are independent;
+	\item $\{Y_{i,j}\}$ are identically distributed. $\{Y_{i,i}\}$ are identically distributed;
+	\item $\E(Y_{i,j}) = 0$  and $ \E(Y_{i,j}^k)< \infty$, i.e, $r_k = \max{(\E(Y_{i,j}^k), \E(Y_{i,j}^k))} < \infty$.
+\end{enumerate}
+
+\begin{definition}
+	Let every $\{Y_n\}_{i,j}$ be as before and set $r_2 < \infty$ with $\E(Y_{1,2}^2) > 0$. Then, we say $\m{Y}$ is a Wigner Matrix. Furthermore, if $\m{X}_n = n^{-\frac{1}{2}} \m{Y}_n$, $\m{X}$ is what we call a \textit{normalized Wigner Matrix}.
+	\label{Def: Wigner Matrix}
+\end{definition}
+
+The scale and moment assumption taken are not as unnatural as they may seem at first. To properly understand this definition, note that if $\mmany{\lambda^2}{n}$ are the ordered eigenvalues of $\{Y_n\}_{i,j}$, we can estimate that 
+\begin{equation}
+\lambda_1^2 + \cdots + \lambda_n^2 \leq n \max_{j=1}^{n}(\lambda_j^2) = n \max(\lambda_1^2, \lambda_n^2)
+\end{equation}
+therefore, if we want the eigenvalues to be limited when we take large matrices we should impose that $1/n \cdot (\lambda_1^2 + \cdots + \lambda_n^2)$ must be limited. This is the Hilbert-Schmidt or Frobenius norm for these normal matrices:
+\begin{equation}
+||\m{Y}||_{HS} = \frac{1}{n} \sum_{i=1}^{n} \lambda_i^2 = \frac{1}{n} \sum_{i,j} Y_{i,j}^2 = \frac{1}{n} Tr(\m{Y}^2)
+\end{equation}
+then if we only take $\m{X}_n = \alpha_n \m{Y}_n$
+\begin{equation}
+	\begin{split}
+		\E(||\m{X}_n||_{HS}) & = \alpha_n^2 \E(||\m{Y}_n||_{HS}) \\
+		& = \frac{\alpha_n^2}{n} \sum_{i,j} \E({Y_{i,j}^2}) \\
+		& = \alpha_n^2 \E(Y_{1,1}^2) + (n-1) \alpha_n^2 \E(Y_{1,2}^2)
+	\end{split}
+\end{equation}
+then it is clear that there are two cases
+\begin{enumerate}
+	\item $\E(Y^2_{1,2}) = 0$: This is the non-interesting case where $\alpha_n \approx 1$ 
+	\item $\E(Y^2_{1,2}) > 0$: Here, we must take $\alpha_n \approx n^{-\frac{1}{2}}$ 
+\end{enumerate}
+Now, it is likely more clear the motivation of the definition: limit the eigenvalues to a compact region. As the norm is limited, also are the eigenvalues of the scaled matrix.
 
 The second ideology is assuming equal probability on each state os the system - this is a common assumption in thermodynamics.  So this approach is to assume that every matrix is equally likely. 
 
 \begin{obs}
-	We have focused on random matrix ensembles distributed according to p.d.f.s $P$ defined with respect to the flat Lebesgue measure induced by the canonical embedding of $S$ into Euclidean space. Note here, which was not obvious for me, that the measures $\nu$ we define are given in terms of the p.d.f.s $P$ and the Lebesgue measure $\mu$ by Radom-Nikodin $$\nu(A) = \int_{A} P \dd \mu,$$ or more simply, $\dd \nu = P \dd \mu$.
+	We have focused on random matrix ensembles distributed according to p.d.f.s $\eP$ defined with respect to the flat Lebesgue measure induced by the canonical embedding of $\eS$ into Euclidean space. Note here, which was not obvious for me, that the measures $\nu$ we define are given in terms of the p.d.f.s $\eP$ and the Lebesgue measure $\mu$ by Radom-Nikodin \begin{equation}\nu(A) = \int_{A} \eP \dd \mu,\end{equation} or more simply, $\dd \nu = \eP \dd \mu$.
 \end{obs}
 
 \begin{thm}
-	(Haar, compact case). Given a compact group $S$, let $U \in S$ be a generic variable. There exists a unique (up to normalization measure) $\dd \mu(U)$ on $S$, called the \textbf{Haar measure} such that $$\int_{S} \dd \mu(U) < \infty$$ and for any fixed $U_0 \in S$, $$\dd\mu(U_0U) = \dd\mu(U) = \dd\mu(UU_0),$$ that is, finite for compact sets and invariant by left and right actions. If $\dd \mu(U)$ integrates to unity in $S$ it is referred as the \textbf{Haar probability measure}.
+	(Haar, compact case). Given a compact group $\eS$, let $U \in \eS$ be a generic variable. There exists a unique (up to normalization measure) $\dd \mu(U)$ on $\eS$, called the \textbf{Haar measure} such that \begin{equation}\int_{\eS} \dd \mu(U) < \infty\end{equation} and for any fixed $U_0 \in \eS$, $$\dd\mu(U_0U) = \dd\mu(U) = \dd\mu(UU_0),$$ that is, finite for compact sets and invariant by left and right actions. If $\dd \mu(U)$ integrates to unity in $\eS$ it is referred as the \textbf{Haar probability measure}.
 \end{thm}
 
 \begin{definition}
-	The $n \times n$ \textit{circular unitary ensemble} (CUE) is the unitary group $U(n)$ with its Haar measure. If $U \in$ CUE($n$), then the symmetric unitary matrix $U^TU$ represents the $n \times n$ \textit{circular orthogonal ensemble} (COE); we have $S \cong U(n)/O(n)$. Note that if $U \in U(n)$ and $O \in O(n)$, we have that $U^TU = (OU)^T(OU)$, that is, $U$ and $OU$ are in the same co-class.
+	The $n \times n$ \textit{circular unitary ensemble} (CUE) is the unitary group $U(n)$ with its Haar measure. If $U \in$ CUE($n$), then the symmetric unitary matrix $U^TU$ represents the $n \times n$ \textit{circular orthogonal ensemble} (COE); we have $\eS \cong U(n)/O(n)$. Note that if $U \in U(n)$ and $O \in O(n)$, we have that $U^TU = (OU)^T(OU)$, that is, $U$ and $OU$ are in the same co-class.
 \end{definition}
 
-The third ideology is that of working with algebraic combinations of matrices whose entries are independently and identically distributed.
+The third ideology is that of working with algebraic combinations of matrices whose entries are independently and identically distributed. This will not be as much discussed.
 
 \subsection{Some quantities}
 
-Assume a matrix is such that is able to be determined by eigenvalues and eigenvectors. While eigenvector may be of interested in some cases, eigenvalue statistics have been considerably more explored. Hence, in addition to the p.d.fs $P(X)$ of say $n \times n$ random matrices $X$, we are also interested in the eigenvalue j.p.d.f $p(\mmany{\lambda}{n})$ of the eigenvalues $\{\lambda_i\}_{i=1}^{n}$ of $X$. The eigenvalue j.p.d.f is defined to be such that 
-\[
+To study random matrices, we need to determine which quantities related to the matrix we want to measure. This may be the expectation of some function on the matrices or even on the eigenvalues and eigenvector, if they exist. Assume a matrix is such that is able to be determined by eigenvalues and eigenvectors. While eigenvector may be of interest in some cases, eigenvalue statistics have been considerably more explored. Hence, in addition to the p.d.f.s $\eP(X)$ of say $n \times n$ random matrices $\m{X}$, we are also interested in the eigenvalue j.p.d.f. $\p(\mmany{\lambda}{n})$ of the eigenvalues $\{\lambda_i\}_{i=1}^{n}$ of $\m{X}$. The eigenvalue j.p.d.f. is defined to be such that 
+\begin{equation}
 \int_{[a_1, b_1] \times \cdots \times [a_n, b_n]} p(\mmany{\lambda}{n}) \dd \lambda_1 \cdots \dd \lambda_n
-\]
+\end{equation}
 is the probability that $a_i < \lambda_i < b_i$ for every $i$.
 
 \begin{ex}
 	The eigenvalue j.p.d.f of the $n \times n$ circular ensembles is 
-	\[
-		p^{(C)}(\ee^{\ii \theta_1}, \cdots, \ee^{\ii \theta_n}, \beta) = \frac{1}{Z_{n,\beta}^{(C)}} |\Delta_N(\ee^{\ii \theta})|^\beta
-	\]
+	\begin{equation}
+		\p^{(C)}(\ee^{\ii \theta_1}, \cdots, \ee^{\ii \theta_n}; \beta) = \frac{1}{\pZ{n,\beta}{(C)}} |\Delta_n(\ee^{\ii \theta})|^\beta
+	\end{equation}
 	where $Z_{n,\beta}^{(C)}$ is a normalization constant and
-	\[
-		\Delta_N(\lambda) \deff \det\left[ \lambda_i^{j-1}\right]_{i,j=1}^{n} = \prod_{1\leq i<j \leq n} (\lambda_i - \lambda_j)
-	\]
+	\begin{equation}
+		\Delta_n(\lambda) \deff \det\left[ \lambda_i^{j-1}\right]_{i,j=1}^{n} = \prod_{1\leq i<j \leq n} (\lambda_i - \lambda_j)
+	\end{equation}
 	is the Vandermonde determinant, and $\beta=1,2,4$ correspond to the COE, CUE and CSE, respectively.
 \end{ex}
 
 Related do the eigenvalue j.p.d.f is the univariate eigenvalue density defined by 
-\[
-	\p(\lambda_1, n) \deff n \int_{\R^{N-1}} p(\mmany{\lambda}{n}) \dd \lambda_1 \cdots \dd \lambda_n,
-\]
-which is normalized such that the expect number of eigenvalues lying between $a$ and $b$ is given by $\int p(\lambda) \dd \lambda$. Note that this is not a p.d.f is $n\neq1$. Consider now the linear statistic of the eigenvalue density given by
-\[
-	p(\lambda) = \sum_{i = 1}^n \langle \delta(\lambda - \lambda_i) \rangle
-\] 
+\begin{equation}
+	\pe(\lambda_1; n) \deff n \int_{\R^{n-1}} \p(\mmany{\lambda}{n}) \dd \lambda_2 \cdots \dd \lambda_n,
+\end{equation}
+which is normalized such that the expect number of eigenvalues lying between $a$ and $b$ is given by $\int_{a}^{b} \pe(\lambda) \dd \lambda$. Note that this is not a p.d.f if $n\neq1$. Consider now the linear statistic of the eigenvalue density given by
+\begin{equation}
+	\pe(\lambda) = \sum_{i = 1}^n \langle \delta(\lambda - \lambda_i) \rangle
+\end{equation} 
 where the brackets are understood as acting on an operator as
-\[
-	\langle \mathcal{O} \rangle = \int_{\R^n} {\mathcal{O} p(\lambda_1, \cdots, \lambda_n)} \dd \lambda_1 \cdots \lambda_n.
-\]
+\begin{equation}
+	\langle \mathcal{O} \rangle = \int_{\R^n} \{\mathcal{O} \p(\lambda_1, \cdots, \lambda_n)\} \dd \lambda_1 \cdots \lambda_n.
+\end{equation}
 
-Many times, eigenvalues density are fully characterized by their \textit{spectral moments} $$m_k \deff \int_{\R} \lambda^k p(\lambda) \dd \lambda, \ k \in \N.$$ Indeed, if we are interested in a linear statistic $\sum_{i=1}^{n} f(\lambda_i)$ of the eigenvalues such that $f(\lambda)$ is analytic at zero with Taylor expansion $f(\lambda) = \sum_{k=0}^{\infty} f_k \lambda^k$, we can compute its expectation to be
-\[
-	\left\langle \sum_{i=1}^{n} f(\lambda_i) \right\rangle = \int_{\R} f(\lambda) p(\lambda) \dd \lambda = \sum_{k=0}^{\infty} f_k m_k
-\]
-The spectral moments can additionally be expresses as an average with respect ot the eigenvalue j.p.d.f $p(\mmany{\lambda}{n})$ and the p.d.f $P(X)$ of the random matrix $X$ according to
-\[
-	m_k = \left\langle \sum_{i=1}^{n} \lambda_i^k \right\rangle = \left\langle \tr(X^k) \right\rangle_{P(X)}
-\]
-where we define 
-\[
-\left\langle \mathcal{O} \right\rangle_{P(X)} \deff \int_{S} \{\mathcal{O} P(X)\} \dd X
-\]
+Many times, eigenvalues density are fully characterized by their \textit{spectral moments} 
+\begin{equation}
+	\me_k \deff \int_{\R} \lambda^k \pe(\lambda) \dd \lambda, \ k \in \N.
+\end{equation} 
+Indeed, if we are interested in a linear statistic $\sum_{i=1}^{n} f(\lambda_i)$ of the eigenvalues such that $f(\lambda)$ is analytic at zero with Taylor expansion $f(\lambda) = \sum_{k=0}^{\infty} f_k \lambda^k$, we can compute its expectation to be
+\begin{equation}
+	\left\langle \sum_{i=1}^{n} f(\lambda_i) \right\rangle = \int_{\R} f(\lambda) \pe(\lambda) \dd \lambda = \sum_{k=0}^{\infty} f_k m_k
+\end{equation}
+The spectral moments can additionally be expressed as an average with respect ot the eigenvalue j.p.d.f. $\p(\mmany{\lambda}{n})$ and the p.d.f $\eP(X)$ of the random matrix $\m{X}$ according to
+\begin{equation}
+	\me_k = \left\langle \sum_{i=1}^{n} \lambda_i^k \right\rangle = \left\langle \tr(\m{X}^k) \right\rangle_{\eP(\m{X})}
+\end{equation}
+where we define
+\begin{equation}
+\left\langle \mathcal{O} \right\rangle_{\eP(\m{X})} \deff \int_{\eS} \{\mathcal{O} \eP(\m{X})\} \dd \m{X}
+\end{equation}
 
 \subsubsection{Moment Generating Function}
 
 We can also define an useful tool for studying the spectral moments: The \textit{Moment Generating Function} given by
-\[
-	W_1(x) \deff \sum_{k=0}^{\infty} \frac{m_k}{x^{k+1}},
-\] 
+\begin{equation}
+	\W_1(x) \deff \sum_{k=0}^{\infty} \frac{\me_k}{x^{k+1}},
+\end{equation} 
 which is also know as the \textit{Resolvent} due to it being equal to the \textit{Stieltjes Transform} of the eigenvalue density
-\[
-	W_1(x) = \int_{\text{supp} \p} \frac{\p(x)}{x - \lambda} \dd \lambda, \ \ \text{for} \ x \in \C \backslash \text{supp} \p.
-\]
+\begin{equation}
+	\W_1(x) = \int_{\supp(\pe)} \frac{\pe(x)}{x - \lambda} \dd \lambda, \quad \text{for} \ x \in \C \backslash \supp(\pe).
+\end{equation}
 Obtaining a closed form expression for the resolvent allows one to use the \textit{Sokhotski-Plemeji} inversion formula to recover the eigenvalue density
-\[
-	\p(\lambda) = \lim_{\epsilon \rightarrow 0} \frac{W_1(\lambda - \ii \epsilon) - W_1(\lambda + \ii \epsilon)}{2\pi \ii}
-\]
-as long as $\p(\lambda)$ is know to be continuous on its support. As we did before, we can re-express the resolvent as an ensemble average w.r.t to the eigenvalue j.p.d.f $p(\mmany{\lambda}{n})$ and the p.d.f $P(X)$ on $S$:
-\[
-	W_1(x) = \left\langle \sum_{i=1}^{n} \frac{1}{x - \lambda_i} \right\rangle =  \left\langle \tr \frac{1}{x - X} \right\rangle_{P(X)}
-\]  
+\begin{equation}
+	\pe(\lambda) = \lim_{\epsilon \rightarrow 0} \frac{\W_1(\lambda - \ii \epsilon) - \W_1(\lambda + \ii \epsilon)}{2\pi \ii}
+\end{equation}
+as long as $\pe(\lambda)$ is know to be continuous on its support. As we did before, we can re-express the resolvent as an ensemble average w.r.t. to the eigenvalue j.p.d.f. $\p(\mmany{\lambda}{n})$ and the p.d.f. $\eP(X)$ on $\eS$:
+\begin{equation}
+	\W_1(x) = \left\langle \sum_{i=1}^{n} \frac{1}{x - \lambda_i} \right\rangle =  \left\langle \tr \frac{1}{x - \m{X}} \right\rangle_{\eP(\m{X})}
+\end{equation}  
 These three expression facilitates the dealing of the eigenvalue densities. In fact, dealing with the resolvent will be many times preferred as it presents an asymptotic expansion the densities does not.
 
 \begin{thm}
-	(Borot-Guionnet) Assuming certain hypothesis on the eigenvalues j.p.d.f. $\p(\mmany{\lambda}{N})$, and the resolvent $W_1(x)$ and, more generally, the undefined connected n-point correlator $W_n(\mmany{x}{n})$, have large $N$ expansions of the form $$W_n(\mmany{x}{n}, N) = N^{2-n} \sum_{l=0}^{\infty} \frac{W^l_n(\mmany{x}{n})}{N^l},$$ where the correlator expasion coefficients $W^l_n(\mmany{x}{n})$ have no dependence on $n$.
+	(Borot-Guionnet) Assuming certain hypothesis on the eigenvalues j.p.d.f. $\p(\mmany{\lambda}{n})$, the resolvent $\W_1(x)$ and, more generally, the undefined connected m-point correlator $\W_m(\mmany{x}{m})$, have large $n$ expansions of the form
+	\begin{equation}
+		\W_m(\mmany{x}{m}, n) = n^{2-m} \sum_{l=0}^{\infty} \frac{\W^l_m(\mmany{x}{m})}{n^l},
+	\end{equation}
+	where the correlator expansion coefficients $\W^l_m(\mmany{x}{m})$ have no dependence on $n$.
 \end{thm}
 
-Some of the conditions of the theorem above guide us to rescale the eigenvalues of certain ensembles so that they are contained in a compact connected set in the large limit $N \rightarrow \infty$ regime. In these cases, we study the \textit{global scaled eigenvalue density} $\tilde{\p}(\lambda)$ and the \textit{scaled resolvent} $\tilde{W}_1(x)$ given by
-\[
-	\tilde{\p}(\lambda) \deff \frac{c_N}{N} \p(c_N \lambda)
-\]
-\[
-	\tilde{W}_1(x) \deff c_N W_1(c_N x = N \int_{\text{supp} \tilde{\p}} \frac{\tilde{\p}(\lambda)}{x - \lambda} \dd \lambda
-\]
-where $c_N$ is a scaling parameter that differs from ensemble from ensemble. Now, assuming the theorem holds, one have that $\tilde{W}_1 =\sum_{i=1}^{\infty} W_1^l(x) N^{1-l}$. Using the Sokohotski-Plemelj inversion formula we define
-\[
-	p^l(\lambda) \deff \lim_{\epsilon \rightarrow 0} \frac{W_1^l(\lambda - \ii \epsilon) - W_1^l(\lambda + \ii \epsilon)}{2\pi \ii}.
-\] 
-Then, $\tilde{\p}(\lambda)$ and $\sum_{l=0}^{\infty} \p^l(\lambda) N^{-l}$ do not agree at finite $N$, as one might expect. Instead, the latter sum is referred to as the \textit{smoothed eigenvalue density}, as it lacks the oscillatory terms that are known to be present in the true scaled eigenvalue density $\tilde{\p}(\lambda)$.
+Some of the conditions of the theorem above guide us to rescale the eigenvalues of certain ensembles so that they are contained in a compact connected set in the large limit $n \rightarrow \infty$ regime. In these cases, we study the \textit{global scaled eigenvalue density} $\Spe(\lambda)$ and the \textit{scaled resolvent} $\SW_1(x)$ given by
+\begin{equation}
+	\Spe(\lambda) \deff \frac{c_n}{n} \pe(c_n \lambda)
+\end{equation}
+\begin{equation}
+	\SW_1(x) \deff c_n \W_1(c_n x) = n \int_{\supp(\Spe)} \frac{\Spe(\lambda)}{x - \lambda} \dd \lambda \quad \text{for} \ x \in \C \backslash \supp(\Spe).
+\end{equation}
+where $c_n$ is a scaling parameter that differs from ensemble from ensemble. Now, assuming the theorem holds, one have that $\SW_1 =\sum_{l=1}^{\infty} \W_1^l(x) n^{1-l}$. Using the Sokohotski-Plemelj inversion formula we define
+\begin{equation}
+	\pe^l(\lambda) \deff \lim_{\epsilon \rightarrow 0} \frac{\W_1^l(\lambda - \ii \epsilon) - \W_1^l(\lambda + \ii \epsilon)}{2\pi \ii}.
+\end{equation} 
+Then, $\Spe(\lambda)$ and $\sum_{l=0}^{\infty} \pe^l(\lambda) n^{-l}$ do not agree at finite $n$, as one might expect. Instead, the latter sum is referred to as the \textit{smoothed eigenvalue density}, as it lacks the oscillatory terms that are known to be present in the true scaled eigenvalue density $\Spe(\lambda)$.
 
-\subsubsection{Classical Ensembles}
+\subsection{Classical Ensembles}
 
-The denomination Classical Ensemble usually denotes the Gaussian, Laguerre and Jacobi ensembles because of their future discussed relation to the orthogonal polynomials.
+The denomination \textit{Classical Ensemble} classically denotes the Gaussian, Laguerre and Jacobi ensembles because of their - future discussed - relation to the orthogonal polynomials. We can define them as below.
 
 \begin{definition}
 	We define the following classical ensembles
 	\begin{itemize}
-		\item Let $G$ be drawn from the $n \times n$ real, complex or quaternionic Ginibre Ensemble. Then, the random matrix $H = \frac{1}{2} (G^{\dagger} + G)$ represents the corresponding \textit{Gaussian ensemble} (also known as Hermite).
-		\item Let $G$ be drawn from the $n \times m$ real, complex or quaternionic Ginibre Ensemble. Then, the random matrix $W = (G^{\dagger} G)$ represents the corresponding $(m,n)$ \textit{Laguerre ensemble} (also known as Wishart).
-		\item We say $Y$ an element of the $(m_1, m_2, n)$ real, complex and quaternionic \textit{Jacobi Ensemble} it it is of the form $Y = W_1 (W_1 + W_2)^{-1}$ where the $W_i$ belong to the corresponding $(m_i, n)$ Laguerre ensembles with $m_i \geq n$.
+		\item Let $\m{G}$ be drawn from the $n \times n$ real, complex or quaternionic Ginibre Ensemble. Then, the random matrix $\m{H} = \frac{1}{2} (\m{G}^{\dagger} + \m{G})$ represents the corresponding \textit{Gaussian ensemble} (also known as Hermite).
+		\item Let $\m{G}$ be drawn from the $n \times m$ real, complex or quaternionic Ginibre Ensemble. Then, the random matrix $\m{W} = (\m{G}^{\dagger} \m{G})$ represents the corresponding $(m,n)$ \textit{Laguerre ensemble} (also known as Wishart).
+		\item We say $\m{Y}$ an element of the $(m_1, m_2, n)$ real, complex and quaternionic \textit{Jacobi Ensemble} if it is of the form $\m{Y} = \m{W}_1 (\m{W}_1 + \m{W}_2)^{-1}$ where each $\m{W}_i$ belong to the corresponding $(m_i, n)$ Laguerre ensembles with $m_i \geq n$.
 	\end{itemize}
+	\label{Def: Direct Gaussian, Laguerre, Jacobi}
 \end{definition}
 
 Note that all ensembles presented are self-adjoint and therefore have all $n$ eigenvalues. Gaussian ensembles are also examples of Wigner Matrices.
@@ -138,59 +191,58 @@ Note that all ensembles presented are self-adjoint and therefore have all $n$ ei
 \begin{prop}
 	Let $k \deff \beta /2$, $a=k(m_1-n+1)-1$ and $b=k(m_2-n+1)-1$. From the p.d.f. of the Ginibre ensembles, we can change variables to obtain the p.d.f.s of the $n \times n$ Gaussian, $(m_1, n)$  Laguerre, and $(m_1,m_2,n)$ Jacobi ensembles, respectively
 	\begin{equation}
-		\p^{(G)}(H) = \frac{1}{Z_{n,\beta}^{(G)}} \exp{(-\tr(H^2))}
+		\p^{(G)}(\m{H}) = \frac{1}{\pZ{n,\beta}{(G)}} \exp{(-\tr(\m{H}^2))}
 	\end{equation}
 	\begin{equation}
-		\p^{(L)}(W) = \frac{1}{Z_{n,a}^{(L)}} (\det(W))^a \exp{(-\tr(W))}
+		\p^{(L)}(\m{W}) = \frac{1}{\pZ{n,a}{(L)}} (\det(\m{W}))^a \exp{(-\tr(\m{W}))}
 	\end{equation}
 	\begin{equation}
-		\p^{(J)}(Y) = \frac{1}{Z_{n,a,b}^{(J)}} (\det(Y))^a (\det{(I_n - Y)})
+		\p^{(J)}(\m{Y}) = \frac{1}{\pZ{n,a,b}{(J)}} (\det(\m{Y}))^a (\det{(\m{I}_n - \m{Y})})
 	\end{equation}
 	\label{Prop: Gaussian, Laguerre, Jacobi}
 \end{prop}
-With $\beta = 1, 2, 4$ corresponding to the choice of $F = \R, \C, \He$, the random matrix ensembles introduces in the definition are defined introducing these p.d.fs to the matrix sets
+With $\beta = 1, 2, 4$ corresponding to the choice of $\F = \R, \C, \He$, the random matrix ensembles introduced in the definition are defined with the latter p.d.f,s onto the respective matrix sets
 \begin{equation}
 	\begin{aligned}
-		S^{(G)} & = \{ H \in M_{n,n}(F) | H = H^\dagger \} \\
-		S^{(L)} & = \{ W \in S^{(G)} | W \text{positive definite} \} \\
-		S^{(J)} & = \{ Y \in S^{(L)} | I_n - Y \text{positive definite} \} \\
+		\eS^{(G)} & = \{ \m{H} \in M_{n,n}(\F) | \m{H} = \m{H}^\dagger \} \\
+		\eS^{(L)} & = \{ \m{W} \in \eS^{(G)} | \m{W} \quad \text{positive definite} \} \\
+		\eS^{(J)} & = \{ \m{Y} \in \eS^{(L)} | \m{I}_n - \m{Y} \quad \text{positive definite} \} \\
 	\end{aligned}
 \end{equation}
 The contemporary definition of classical ensembles introduces another ensemble into the family.
 
 \begin{definition}
-	A random matrix ensemble is said to be a classical matrix ensemble if its eigenvalue j.p.d.f is of the form
-	\[
-		p^{(w)}(\mmany{\lambda}{n};\beta) = \frac{1}{\mathcal{N}^{(w)}_{n,\beta}} \prod_{i=1}^{n} w(\lambda_i) |\Delta_n(\lambda)|^\beta, \quad \beta = 1,2,4,
-	\]
-	where $\mathcal{N}^{(w)}_{n,\beta}$ is the normalization constant, $\Delta_n(\lambda)$ is the Vandermonde determinant and the weight function $w(\lambda)$ is such that
-	\[
-		\frac{\dd}{\dd \lambda} \log(w(\lambda)) = \frac{w'(\lambda)}{w(\lambda)} = \frac{f(\lambda)}{g(\lambda)}
-	\]
+	A random matrix ensemble is said to be a classical matrix ensemble if its eigenvalue j.p.d.f. is of the form
+	\begin{equation}
+		\p^{(w)}(\mmany{\lambda}{n};\beta) = \frac{1}{\pN{n,\beta}{(\wf)}} \prod_{i=1}^{n} \wf(\lambda_i) |\Delta_n(\lambda)|^\beta, \quad \beta = 1,2,4,
+	\end{equation}
+	where $\pN{n,\beta}{(\wf)}$ is the normalization constant, $\Delta_n(\lambda)$ is the Vandermonde determinant and the weight function $\wf(\lambda)$ is such that
+	\begin{equation}
+		\frac{\dd}{\dd \lambda} \log(\wf(\lambda)) = \frac{\wf'(\lambda)}{\wf(\lambda)} = \frac{f(\lambda)}{g(\lambda)}
+	\end{equation}
 	with $f$ and $g$ polynomials of degree at most one and two, respectively.
+	\label{Def: Classical Ensembles}
 \end{definition}
 
-Up to fractional linear transformations $\lambda \mapsto (a_{11} \lambda + a_{12})/(a_{21} \lambda + a_{22})$ with $a_{ij}\in GL_2(\R)$, there are precisely 4 weight function that satisfies the condition.
-
+Up to fractional linear transformations $\lambda \mapsto (a_{11} \lambda + a_{12})/(a_{21} \lambda + a_{22})$ with $a_{ij}\in GL_2(\R)$, there are precisely four weight functions that satisfies the condition. These are
 \begin{equation}
-	w(\lambda) = \begin{cases}
+	\wf(\lambda) = \begin{cases}
 		\ee^{-\lambda^2} & \text{Gaussian}, \\
-		\lambda^a \ee^{-\lambda} \chi_{\lambda>0} & \text{Laguerre}, \\
-		\lambda^a (1-\lambda)^b \chi_{0<\lambda<1} & \text{Jacobi}, \\
-		(1-\ii\lambda)^{\eta}(1+\ii\lambda)^{\overline{\eta}} & \text{generalized Cauchy}.
+		\lambda^a \ee^{-\lambda} \chi_{\{\lambda>0\}} & \text{Laguerre}, \\
+		\lambda^a (1-\lambda)^b \chi_{\{0<\lambda<1\}} & \text{Jacobi}, \\
+		(1-\ii\lambda)^{\eta}(1+\ii\lambda)^{\overline{\eta}} & \text{Generalized Cauchy}.
 	\end{cases}
 \end{equation}
-
 where $\chi$ is the indicator function.
 
 \begin{definition}
 	Taking $k = \beta/2$ and $c_n = \sqrt{kn}, kn, 1$ respectively for the Gaussian, Laguerre and Jacobi ensembles. The global scaled eigenvalue densities of the classical matrix ensembles are
 	\begin{equation}
 		\begin{aligned}
-			\tilde{\p}^{(G)}(\lambda) & = \sqrt{\frac{k}{n}} \p^{(G)}(\sqrt{kn} \lambda) \\
-			\tilde{\p}^{(L)}(\lambda) & = k \p^{(L)}(kn\lambda) \\
-			\tilde{\p}^{(J)}(\lambda) & = \frac{1}{n} \p^{(J)}(\lambda) \\
-			\tilde{\p}^{(Cy)}(\lambda) & = \frac{1}{n} \p^{(J)}(\lambda)
+			\tilde{\pe}^{(G)}(\lambda) & = \sqrt{\frac{k}{n}} \pe^{(G)}(\sqrt{kn} \lambda) \\
+			\tilde{\pe}^{(L)}(\lambda) & = k \pe^{(L)}(kn\lambda) \\
+			\tilde{\pe}^{(J)}(\lambda) & = \frac{1}{n} \pe^{(J)}(\lambda) \\
+			\tilde{\pe}^{(Cy)}(\lambda) & = \frac{1}{n} \pe^{(J)}(\lambda)
 		\end{aligned}
 	\end{equation}
 \end{definition}

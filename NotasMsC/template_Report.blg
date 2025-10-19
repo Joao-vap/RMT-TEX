@@ -1,59 +1,46 @@
 This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: template_Report.aux
-A level-1 auxiliary file: ./Text/Ensembles.aux
-A level-1 auxiliary file: ./Text/InvariantMeasure.aux
-A level-1 auxiliary file: ./Text/Vandermond.aux
-A level-1 auxiliary file: ./Text/OrthogonalPolynomials.aux
-A level-1 auxiliary file: ./Text/EquilibriumMeasure.aux
-A level-1 auxiliary file: ./Text/IntegralAsymptotic.aux
-A level-1 auxiliary file: ./Text/WatsonLemma.aux
-A level-1 auxiliary file: ./Text/LaplaceLemma.aux
-A level-1 auxiliary file: ./Text/SteepestDescent.aux
-A level-1 auxiliary file: ./Text/AiryExample.aux
-A level-1 auxiliary file: ./Text/HermiteExample.aux
-A level-1 auxiliary file: ./Text/LaplaceTransform.aux
-A level-1 auxiliary file: ./Text/FourrierTransform.aux
 The style file: plain.bst
 Database file #1: references.bib
-You've used 1 entry,
+You've used 4 entries,
             2118 wiz_defined-function locations,
-            514 strings with 4501 characters,
-and the built_in function-call counts, 217 in all, are:
-= -- 17
-> -- 7
+            515 strings with 4612 characters,
+and the built_in function-call counts, 946 in all, are:
+= -- 78
+> -- 50
 < -- 0
-+ -- 3
-- -- 2
-* -- 8
-:= -- 41
-add.period$ -- 2
-call.type$ -- 1
-change.case$ -- 4
++ -- 21
+- -- 16
+* -- 45
+:= -- 161
+add.period$ -- 8
+call.type$ -- 4
+change.case$ -- 20
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 7
-empty$ -- 23
-format.name$ -- 2
-if$ -- 44
+cite$ -- 4
+duplicate$ -- 28
+empty$ -- 89
+format.name$ -- 16
+if$ -- 197
 int.to.chr$ -- 0
-int.to.str$ -- 1
+int.to.str$ -- 4
 missing$ -- 0
-newline$ -- 7
-num.names$ -- 2
-pop$ -- 9
+newline$ -- 19
+num.names$ -- 8
+pop$ -- 40
 preamble$ -- 1
-purify$ -- 3
+purify$ -- 16
 quote$ -- 0
-skip$ -- 8
+skip$ -- 33
 stack$ -- 0
-substring$ -- 5
-swap$ -- 1
+substring$ -- 21
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
+type$ -- 16
 warning$ -- 0
-while$ -- 2
-width$ -- 2
-write$ -- 10
+while$ -- 8
+width$ -- 5
+write$ -- 34
