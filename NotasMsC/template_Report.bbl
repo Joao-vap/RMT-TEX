@@ -1,19 +1,57 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{Byun_2023}
+Sung-Soo Byun, Nam-Gyu Kang, and Seong-Mi Seo.
+\newblock Partition functions of determinantal and pfaffian coulomb gases with radially symmetric potentials.
+\newblock {\em Communications in Mathematical Physics}, 401(2):1627–1663, March 2023.
+
+\bibitem{deift2006universalitymathematicalphysicalsystems}
+Percy Deift.
+\newblock Universality for mathematical and physical systems, 2006.
+
+\bibitem{Montgomery}
+J.~Goldston and G.~Montgomery.
+\newblock {\em Pair Correlation of Zeros and Primes in Short Intervals}.
+
+\bibitem{Kieburg_2014}
+Mario Kieburg, Jacobus J.~M. Verbaarschot, and Savvas Zafeiropoulos.
+\newblock Dirac spectra of two-dimensional qcd-like theories.
+\newblock {\em Physical Review D}, 90(8), October 2014.
+
+\bibitem{majumdar2007randommatricesulamproblem}
+Satya~N. Majumdar.
+\newblock Random matrices, the ulam problem, directed polymers, growth models, and sequence matching, 2007.
 
 \bibitem{nica2025gaussianintegralformulahermite}
 Mihai Nica and Janosch Ortmann.
-\newblock A gaussian integral formula for the hermite polynomials:
-  Combinatorics, asymptotics and applications, 2025.
+\newblock A gaussian integral formula for the hermite polynomials: Combinatorics, asymptotics and applications, 2025.
 
 \bibitem{rahman2023recursivecharacterisationsrandommatrix}
 Anas~A. Rahman.
-\newblock Recursive characterisations of random matrix ensembles and associated
-  combinatorial objects, 2023.
+\newblock Recursive characterisations of random matrix ensembles and associated combinatorial objects, 2023.
+
+\bibitem{10.1214/10-AOP628}
+Dan Romik.
+\newblock {Arctic circles, domino tilings and square Young tableaux}.
+\newblock {\em The Annals of Probability}, 40(2):611 -- 647, 2012.
+
+\bibitem{Schroder2019}
+Dominik Schroder.
+\newblock From dyson to pearcey: Universal statistics in random matrix theory, 2019.
 
 \bibitem{shi2021errorboundsasymptoticexpansions}
 Wei Shi, Gergő Nemes, Xiang-Sheng Wang, and Roderick Wong.
-\newblock Error bounds for the asymptotic expansions of the hermite
-  polynomials, 2021.
+\newblock Error bounds for the asymptotic expansions of the hermite polynomials, 2021.
+
+\bibitem{Tracy_1993}
+Craig~A. Tracy and Harold Widom.
+\newblock Level-spacing distributions and the airy kernel.
+\newblock {\em Physics Letters B}, 305(1–2):115–118, May 1993.
+
+\bibitem{Ulam}
+S.~M. Ulam.
+\newblock On some statistical properties of dynamical systems.
+\newblock In Jerzy Neyman, editor, {\em Fourth Berkeley Symposium on Mathematical Statistics and Probability}, pages 315--320, jan 1961.
 
 \bibitem{Zhipeng-Liu-ClassNotes}
 Zhipeng-Liu.

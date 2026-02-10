@@ -5,16 +5,16 @@ Invariant ensembles of random matrices are probability spaces which are invarian
 \begin{enumerate}
 	\item \textit{Orthogonal Ensembles} consist of $n \times n$ real symmetric matrices $\m{M} = \cjgt{\m{M}} = \m{M}^T$ together with a probability distribution that is invariant under orthogonal conjugation $\m{M} \mapsto \m{O} \m{M} \m{O}^T$, $\m{O}$ orthogonal, i.e., $\m{O} \m{O}^T = \m{O}^T \m{O} = \m{I}$.  
 	\item \textit{Unitary Ensembles} consists of $n \times n$ Hermitian matrices $\m{M} = \m{M}^*$ together with a probability distribution that is invariant under unitary conjugation $\m{M} \mapsto \m{U} \m{M} \m{U}^*$, $\m{U}$ unitary, i.e., $\m{U} \m{U}^* = \m{U}^* \m{U} = \m{I}$.  
-	\item \textit{Sympĺectic Ensembles} consists of $2m \times 2m$ Hermitian self-dual matrices $\m{M} = \m{M}^* = \m{J} \m{M}^T \m{J}^T$ where $\m{J} = \diag{(\sigma, \cdots, \sigma)}$ with $$\sigma = \begin{pmatrix} 0 & -1\\	1 & 0 \end{pmatrix}$$  together with a probability distribution that is invariant under unitary-symplectic conjugation $\m{M} \mapsto \m{U} \m{M} \m{U}$, with $\m{U}$ unitary and symplectic, i.e. $\m{U} \m{U}^* = \m{U}^* \m{U} = \m{I}$ and $\m{U} \m{J} \m{U}^T = \m{J}$.
+	\item \textit{Symplectic Ensembles} consists of $2m \times 2m$ Hermitian self-dual matrices $\m{M} = \m{M}^* = \m{J} \m{M}^T \m{J}^T$ where $\m{J} = \diag{(\sigma, \cdots, \sigma)}$ with $$\sigma = \begin{pmatrix} 0 & -1\\	1 & 0 \end{pmatrix}$$  together with a probability distribution that is invariant under unitary-symplectic conjugation $\m{M} \mapsto \m{U} \m{M} \m{U}$, with $\m{U}$ unitary and symplectic, i.e. $\m{U} \m{U}^* = \m{U}^* \m{U} = \m{I}$ and $\m{U} \m{J} \m{U}^T = \m{J}$.
 \end{enumerate}
 
-Examples of such invariant ensembles are the Gaussian Orthogonal, Unitary and Sympĺectic ensembles - \textit{GOE}, \textit{GUE}, \textit{GSE}. These take Gaussian distributed and independent entries. We may also choose to include the Ginibre Ensembles in the types of invariance we will work with. The three types of Ginibre Emsembles: Ginibre Orthogonal, Unitary and Sympĺectic are matrices with independent, identically distributed standard complex Gaussian entries. In this case, the eigenvalues are distributed in the complex plane. 
+Examples of such invariant ensembles are the Gaussian Orthogonal, Unitary and Symplectic ensembles - \textit{GOE}, \textit{GUE}, \textit{GSE}. These take Gaussian distributed and independent entries. We may also choose to include the Ginibre Ensembles in the types of invariance we will work with. The three types of Ginibre Emsembles are: Ginibre Orthogonal, Unitary and Symplectic are matrices with independent, identically distributed standard complex Gaussian entries. In this case, the eigenvalues are distributed in the complex plane. 
 
 Let's make it precise. Given a group $\mathcal{G}$ and a group action $\mathcal{A}: \mathcal{G}\times \eS \rightarrow \eS$, a random matrix ensemble $\eE = (\eS, \eP)$ is said to be $\mathcal{A}$-invariant if the probability measure $\dd \eP(\m{X}) \deff \eP(\m{X}) \dd \m{X}$ satisfies
 \begin{equation}
 	\dd \eP(\mathcal{A}(g, \m{X})) = \dd \eP(\m{X})
 \end{equation}
-for every $g \in \mathcal{G}$. The term \textit{invariant matrix ensemble} usually refers to invariance under the mapping $\m{X} \mapsto g\m{X}g^{-1}$ for $g$ drawn from the appropriate compact group $\mathcal{G}$; when a matrix ensemble is considered to be irreducible and its underlying set of matrix is $S \subseteq \mathbb{M}_{n,n}(\R), \mathbb{M}_{n,n}(\C), \mathbb{M}_{n,n}(\He)$, the group $\mathcal{G}$ must be one of $O(n), U(n), Sp(2n)$. Then, we say the ensemble is orthogonal, unitary or symplectic.
+for every $g \in \mathcal{G}$. The term \textit{invariant matrix ensemble} usually refers to invariance under the mapping $\m{X} \mapsto g\m{X}g^{-1}$ for $g$ drawn from the appropriate compact group $\mathcal{G}$; when a matrix ensemble is considered to be irreducible and its underlying set of matrix is $S \subseteq \mathbb{M}_{n,n}(\R), \mathbb{M}_{n,n}(\C), \mathbb{M}_{n,n}(\Hh)$, the group $\mathcal{G}$ must be one of $O(n), U(n), Sp(2n)$. Then, we say the ensemble is orthogonal, unitary or symplectic.
 
 We can also determine the probability measure $\dd \eP(\m{X})$ to be invariant under the adjoint action of a group $\mathcal{G}$ is we establish that both the p.d.f. $\eP(\m{X})$ and the Lebesgue measure $\dd \m{X}$ are invariant under this action. We can say directly using \ref{Def: Ginibre} and \ref{Prop: Gaussian, Laguerre, Jacobi} that the p.d.f.s for Ginibre, Gaussian, Laguerre and Jacobi are invariant under the appropriate adjoint actions.
 
@@ -53,7 +53,7 @@ where $\dd \m{\Lambda}$ is the Lebesgue measure on the space housing the eigenva
 To obtain the eigenvalue j.p.d.f. $\p(\mmany{\lambda}{n})$ from the probability measure $\dd \eP(\m{X})$, one changes variable to the eigenvalues and a set of auxiliary variables, then integrates over the latter. This will be something like this sketch
 \begin{equation}
 	\begin{split}
-		\eP(\m{X}) \dd \m{X} & = \eP(X_{1,1}, \cdots , X_{n,n}) \prod_{i,j} \dd M_{i,j} \\
+		\eP(\m{X}) \dd \m{X} & = \eP(X_{1,1}, \cdots , X_{n,n}) \prod_{i,j} \dd X_{i,j} \\
 		& = \eP \left(X_{1,1}(\m{\Lambda}, \m{U}), \cdots , X_{n,n}(\m{\Lambda}, \m{U}) | J(\m{X} \mapsto \{\m{\Lambda}, \m{U}\})\right) \dd \m{\Lambda} \dd \m{U}. \\
 		\implies \p(\mmany{\lambda}{n}) & = \int_{\mathcal{G}(n)/\mathcal{G}(1)^n} \eP(X_{1,1}(\m{\Lambda}, \m{U}), \cdots , X_{n,n}(\m{\Lambda}, \m{U})| J(\m{X} \mapsto \{\m{\Lambda}, \m{U}\})) \dd \m{\Lambda} \dd \m{U} \\
 		& \stackrel{invariance}{=} \eP(X_{1,1}(\m{\Lambda}), \cdots , X_{n,n}(\m{\Lambda})| J(\m{X} \mapsto \{\m{\Lambda}\})) \dd \m{\Lambda} \int_{\mathcal{G}(n)/\mathcal{G}(1)^n} \dd \m{U} \\
@@ -137,4 +137,4 @@ for bounded continuous test functions $f$. A natural class of test functions are
 \begin{equation}
 	\int (z^k + c_{k-1} z^{k-1} + \cdots + c_{0}) \dd \mu_{M} = \frac{1}{n} \sum_{i=1}^n (\lambda_i^k + c_{k-1} \lambda_i^{k-1} + \cdots + c_{0}) = \frac{1}{n} \ Tr(V(\m{M}))
 \end{equation}
-In a way, the potential somehow influences the convergence.
+In a way, the potential $V$ somehow influences the convergence.

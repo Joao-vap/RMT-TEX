@@ -1,0 +1,88 @@
+Random Matrices can be though of in two ways: As a measurable function from a probability space into a set of matrices or, more concretely, as a matrix whose entries are random variables with some joint distribution. In some cases there is an explicit density formula for the eigenvalues of such a random matrix. When there is none for finite size matrices, one can try, with the help of some mathematical tools such as orthogonal polynomials, express the equilibrium measures for the eigenvalues asymptotically. There are many instances of \enquote{models} of random matrices, each one with its symmetries and own probability density. Those are what we call \textit{ensembles}. 
+
+Borrowing some concepts from physics, an ensemble can be though as a virtual collection of all possible states that a system can be in, with more probable states appearing more often in the collection. There is a analogy to be made with ensembles in a thermodynamic setting: When considering sets of matrices with equal probability - in some sense to be more clear soon - we get the Gibbs weight for the probability distribution as we would in the physical \textit{Canonical Ensemble}, thought of as a system of particles with constant temperature. More concretely, in the context of Random Matrix Theory, we have the definition.
+
+\begin{definition}
+	A random matrix ensemble $\eE = (\eS, \eP)$ is a set of matrices $\eS$ of fixed size equipped with a probability density function (p.d.f.) $\eP: \eS \rightarrow [0, \infty)$. If we say that a matrix $\m{X}$ is drawn from the random ensemble $\eE$, we are saying that it is a random variable assuming values in $\eS$ with p.d.f. $\eP$.
+	\label{Def: Intro Ensemble}
+\end{definition}
+
+A commonplace thing to do when defining ensembles is to prescribe the p.d.f.'s $\eP_{i,j}$ on the independent entries $X_{i,j}$ of a representative matrix $\m{X} \in \eE$. In such cases, we say that
+\begin{equation}
+	\eP(\m{X}) = \prod_{i,j | X_{i,j} independent} \eP_{i,j}(X_{i,j}).
+\end{equation}
+With this definition we can already define many ensembles of interest. For many, the set of matrices is described by applying constraints to the set of real matrices $\mathbb{M}_{m,n}(\R)$, the set of complex matrices $\mathbb{M}_{m,n}(\C)$ or the set of quaternionic matrices $\mathbb{M}_{m,n}(\He)$. Then, oftentimes, $\eS$ is simply the set of symmetric, hermitian or skew-symmetric matrices. When it comes to determining the p.d.f. $\eP$ on $\eS$, there are many options that have been worked on.
+
+The definition of ensembles is of great use when modeling other phenomena with the use of Random Matrix. Each ensemble has some symmetries and scaling properties that can better describe a chosen system. We still need to understand what it means to model such a system. This idea is illustrated in the following citation by Deif.
+
+\begin{sic}
+	\cite{deift2006universalitymathematicalphysicalsystems}
+	\enquote{This procedure can  be viewed as follows: A scientist wishes to investigate some statistical phenomenon. What he has at hand is a microscope and a handbook of matrix ensembles. The data $\{a_k\}$ are embedded on a slide which can be inserted into the microscope. The only freedom that the scientist has is to center the slide, $a_k \rightarrow a_k - A$, and then adjust the focus $a_k - A \rightarrow \tilde{a}_k = \gamma_a(a_k - A)$ so that on average one data point $\tilde{a}_k$ appears per unit length on the slide. At that point the scientist takes out his handbook, and then tries to match the statistics of the $\tilde{a}_k$’s with those of the eigenvalues of some ensemble. If the fit is good, the scientist then says that the system is well-modeled by RMT.}
+\end{sic}
+
+Perhaps the first instance of the modeling by random matrices was in the works of Wigner on the scattering of heavy nuclei. Physicists have been doing scattering for very long: Project a small (interactive or not) particle in the direction of a nuclei of interest and change the energy of the incoming particle. You should observe what physicist call a cross-section (an classical equivalent radius of the deflecting object). If one plots this phenomena, one obtains a graph of hundreds of peaks $E-1 < E_2 < \cdots$  and valleys $E'_1 < E'_2 < \cdots $. If $E \approx E_j$ for some $j$, the projected particle must have been repelled from the nucleus, and if $E \approx E'_j$ for some $j$, then the particle goes through the nucleus, essentially unchanged. The $E_j$’s are the scattering resonances. If one is interested, and many physicists are, on the typical distances of theses scattering energies, one could of course write down a Schrodinger-type equation for the scattering system. This has, however, very high dimensionality and therefore offers no easy way of treatment for a solution for the $E_j$’s - either analytically or numerically. However, as more experiments were done on heavy nuclei, a consensus emerged that the theory of resonances may as well be statistical, and here Wigner led the way.
+
+\begin{sic}
+	(Eugene Wigner - On the Wigner Surmise (1956))
+	“Perhaps I am now too courageous when I try to guess the distribution of the distances between successive levels (of energies of heavy nuclei). Theoretically, the situation is quite simple if one attacks the problem in a simpleminded fashion. The question is simply what are the distances of the characteristic values of a symmetric matrix with random coefficients.” 
+\end{sic}
+
+This description gave way for a whole lot of development, as Wigner also proposed that the curve must hold some universality that only depends on a few of the main properties of the nuclei - namely its symmetries. This modeling was repeated for many other highly correlated processes and was very successful as a general theory of random correlated systems. This can now be observed in the plenitude of posterior system modeled with such statistics, for example: Ulam's Problem \cite{Ulam}, Zeros of the Riemann Zeta Function \cite{Montgomery}, Matching Random Sub-sequences \cite{majumdar2007randommatricesulamproblem}, Tiling problems (Aztec Diamond for instance) and Interacting Random Walks, to name a few. 
+
+In this development, another point of interest became clear: There was a universal law in the edge of the distribution of the eigenvalues - and, more shockingly, it appears to insert itself in many of the other random correlated phenomena. Already at Wigner's Matrices one could note an instance of these distributions: The Tracy-Widom \cite{Tracy_1993}. At some point, Majumdar and Schehr have shown for large $N$, the Tracy-Widom distribution describes the crossover function between stable and unstable regimes of a random dynamical system, a specific phase transition, which also occurs in the Coulomb gas, two-dimensional QCD \cite{Kieburg_2014}, and several other systems of mathematical and physical interest. This distribution appears to be somehow related to the universality of phase transitions - such as the physical transition of water or superconductivity. This made way for a whole theory of universality and led the theory to the study of edge scaling.
+
+On the scale of the eigenvalue spacing the fluctuation of individual eigenvalues becomes relevant. It has first been conjectured by Wigner, and subsequently formalized as the Wigner-Dyson-Mehta (WDM) conjecture, that the local statistics of eigenvalues is universal in the sense that their distribution is independent of any model specifics. The emerging distributions should be viewed as the random matrix analogue of the central limit theorem and the normal distribution. They depend only on the symmetry class of the matrix and the local singularity type of the density, but on no other model specifics. The classification indicates that for symmetric matrices, up to scaling by a constant, the density around single eigenvalues can only exhibit three different behaviors. Within the spectral bulk the density $\rho$ is positive and real analytic and therefore, on the scale $1/N$ of individual eigenvalues, is essentially constant. Around edges and cusps the density is simply given by $x^{1/2}$ or $x^{1/3}$, indicating that the typical distance between consecutive eigenvalues is $N^{-2/3}$ and $N^{-3/4}$. The WDM conjecture roughly states that eigenvalue fluctuations depend only on the local behavior of the density, and not on far away effects or any other characteristics of the ensemble.
+
+\begin{conjecture}
+	(WDM conjecture for hermitian symmetry class \cite{Schroder2019})
+	Assume that $b$, $e$ and $c$ are bulk, edge and cusp points of some density $\p$ with parameters $\gamma_e$, $\gamma_c$ defined in such a way that
+	\begin{equation}
+		\rho(e \pm x) = \gamma_{e}^{3/2} x^{1/2} / \pi + \Boh(x^{1/2}), \quad  \rho(c + x) = \sqrt{3} \gamma_c^{4/3} |x|^{1/3}/2\pi + \Boh(|x|^{1/3}).
+	\end{equation}
+	Then the universal correlation functions are given by
+	\begin{align}
+		\frac{1}{\rho(b)^k} \p_k^{N}(b + \frac{x}{\rho(b) N }) & \approx \det{\left(\frac{\sin{\pi(x_i - x_j)}}{\pi(x_i - x_j)} \right)_{i,j \in [k]}}, \quad (Bulk) \\
+		\frac{N^{k/3}}{\gamma_e^k} \p_k^{N}(e + \frac{x}{\gamma_e N^{2/3} }) & \approx \det{\left(\K_{\text{Airy}}(x_i, x_j) \right)_{i,j \in [k]}}, \quad (Edge) \\
+		\frac{N^{k/4}}{\gamma_c^k} \p_k^{N}(c + \frac{x}{\gamma_c N^{3/4} }) & \approx \det{\left(\K_{\text{Pearcey}}(x_i, x_j) \right)_{i,j \in [k]}}, \quad (Cusp)
+	\end{align}
+\end{conjecture}
+
+The Airy functions (related to the Airy Kernel and Tracy-Widom function) themselves are given by integrals in which the exponents have a cubic singularity, arising from the coalescence of two saddle points in an asymptotic analysis. However, in the scope of this work, we will be concerned with the \textit{Pearcey Processes}. Pearcey functions are given by integrals in which the exponents have a quartic singularity, arising from the coalescence of three saddle points - these are the functions which give rise to the Pearcey Processes. The Pearcey process describes the local eigenvalue statistics of large random matrices near the points of the spectrum where the limiting mean eigenvalue density vanishes as a cubic root. This has been established rigorously for random matrix ensembles with an external source. More precisely, let $\m{H}$ be an $n \times n$ GUE matrix (with $n$ even), suitably scaled, and $\m{H}_0$ a fixed Hermitian matrix with eigenvalues $\pm a$ each of multiplicity $n/2$. Let $n \rightarrow \infty$. If $a$ is small the density of eigenvalues is supported in the limit on a single interval. If a is large then it is supported on two intervals. At the “closing of the gap” the limiting eigenvalue distribution is described by the Pearcey kernel. These models of matrices have p.d.f. given by functions 
+\begin{equation}
+	\eP(M) \dd M = \frac{1}{Z_{N, \beta}} \ee^{- N \left( \tr{V(M)} + AM \right)} \dd M,\quad  M \in \Se  \quad \text{and} \quad A \in \Lambda,
+	\label{Equation: external source measure}
+\end{equation}
+where $Z_{N, \beta}$ is a partition function, such that $\eP$ is a probability density of the matrices. The potential $V:\mathbb \R \to \R$ is a suitably regular function, acting as a confining potential on the eigenvalues $\lambda_1,\hdots, \lambda_N$. The set $\Lambda$ is the set of diagonal real matrices (generally hermitian, but simply diagonal) and $\Se$ is such as the real, complex, or quaternionic sets.  Especially, we can describe the model by its partition function
+\begin{equation}
+	Z_{N, \beta} = \int \ee^{- N \left( \tr{V(M)} + AM \right)} \dd M.
+	\label{Equation: Partition Function for External Field}
+\end{equation}
+Moreover, we say that $A = \diag{(a_1, \cdots, a_p)}$ and that each $a_i$ has multiplicity $n_p$. Note that $\sum n_p = n$.  This type of model has many reasons to exist and possible interpretation. One could think of a system with impurities where the Hamiltonian looked like $\mathcal{H}= \mathcal{H}_0 + V$ where $V$ is a potential for the impurity in the system. With that, one can create critical points of some new type and study its properties by the asymptotic of its partition function. 
+
+%To make this matter clear, consider the Random Matrix Model related to the line-restricted two dimensional Coulomb Gas subjected to a quartic potential
+%\begin{equation}
+%	V(x)  = \frac{x^4}{4} + t \frac{x^2}{2}.
+%	\label{Equation: Quartic Potential}
+%\end{equation} 
+%This can be though as the ensemble $(\Se, \p)$ where $\Se$ is the set of hermitian random matrices and $\p$ is given by
+%\begin{equation}
+%	\p(M) \dd M = \frac{1}{Z_{N, \beta}} \ee^{- N \tr{V(M)}} \dd M,\quad  M \in \Se
+%	\label{Equation: invariant measure}
+%\end{equation}
+%where $Z_{N, \beta}$ is a partition function, such that $\p$ is a probability density of the matrices. The potential $V:\mathbb \R \to \R$ is a suitably regular function, acting as a confining potential on the eigenvalues $\lambda_1,\hdots, \lambda_N$.  In this case, the potential is as in Equation \eqref{Equation: Quartic Potential}.
+%
+%Here, we a note a very different behavior of the ones observed by Wigner for the Gaussian ensembles (Related to $V(x) = x^2/2$). Depending on $t$ we see a separating of the equilibrium measure of the eigenvalues $\mu^*_V$. The critical point is set on $t=-2$, where, for $t < -2$, the interval is $[-b_t, b_t]$ and, after the transition for $t> -2$ it becomes $[-b_t, -a_t] \bigcup [a_t, b_t]$. Such a measure is expressed a
+%\begin{itemize}
+%	\item \(t \geq -2\)
+%	\begin{equation}
+	%		\supp \mu^*_V(x) = [-b_t, b_t], \ \ \mu^*_V(x) = \frac{1}{2\pi} (x^2 + c_t^2) \sqrt{b_t^2 - x^2},\label{Equação: Quartico +}
+	%	\end{equation}
+%	com $c_t^2 \deff\frac{1}{2} b_t^2 + t \deff \frac{1}{3} (2t + \sqrt{t^2 + 12})$.
+%	\item \(t < -2\)
+%	\begin{equation}
+	%		\supp \mu^*_V(x) = [-b_t, -a_t] \cup [a_t, b_t], \ \ \mu^*_V(x) = \frac{1}{2\pi} |x| \sqrt{(x^2 - a_t^2)(b_t^2 - x^2)},
+	%		\label{Equação: Quartico -}
+	%	\end{equation}
+%	com $ a_t \deff \sqrt{-2-t}, b_t \deff \sqrt{2-t}$.
+%\end{itemize}
+%This critical point in $t_c = -2$ has a different scaling that what we would find in the border, where the scaling should be governed by a Tracy-Widom-like distribution. However, the model we are interested required one more layer to the description. We will consider potentials with \textit{external sources}. In terms of our previous expression for the measure, not much is changed. 

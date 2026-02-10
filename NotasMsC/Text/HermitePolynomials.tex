@@ -8,17 +8,22 @@ This means that \textit{Hermite Polynomials} are such that
 \begin{equation}
 	\int_{-\infty}^{\infty} \He_n(x) \He_m(x) \wf^{(G)}(x) \dd x = 
 	\begin{cases}
-		0, \quad \text{if} n \neq m \\
-		n!, \quad \text{if} n = m.
+		0, \quad \text{if} \quad n \neq m \\
+		n!, \quad \text{if} \quad n = m.
 	\end{cases}
 \end{equation}
 There are some other representation for the polynomial - one of the most common is their derivative formula
 \begin{equation}
 	\He_n(x) = (-1)^{(n)}\ee^{\frac{1}{2} x^2} \frac{\dd}{\dd x^n} \ee^{-\frac{1}{2} x^2}
 \end{equation}
-or even the recursion formula 
+the recursion formula 
 \begin{equation}
 	\He_{n+1}(x) = x \He_n(x) - n \He_{n-1}(x).
+\end{equation}
+or even the differential equation
+\begin{equation}
+	\He''_n(x) - 2 x \He'_n(x) = -2 n \He_n(x)
+	\label{Equation: Differential equation}
 \end{equation}
 One can also write the explicit representation (or \textit{Standart}),
 \begin{equation}
@@ -61,8 +66,8 @@ The notation has the tilde because historically there is a preference for the de
 	\begin{equation}
 		\int_{-\infty}^{\infty} \Het_n(x;t) \Her_m(x;t) (\sqrt{2\pi t})^{-1} \ee^{-\frac{1}{2} \frac{x^2}{t}} \dd x = 
 		\begin{cases}
-			0, \quad \text{if} n \neq m \\
-			n!, \quad \text{if} n = m.
+			0, \quad \text{if} \quad n \neq m \\
+			n!, \quad \text{if} \quad n = m.
 		\end{cases}
 	\end{equation}
 \end{definition}
@@ -178,5 +183,3 @@ Follow \cite[Proposition 2.1]{Zhipeng-Liu-ClassNotes}. A standard method of asym
 \begin{prop}
 	I believe there is a connection between the two integral representations if we start with the Gaussian expectation formula, expand the binomial and rewrite the moments with the Cauchy formula, as its done to derive this representation starting from the derivative formula. Missing proof. 
 \end{prop}
-
-

@@ -7,18 +7,18 @@ The chapter that follows is heavily based (to be very generous with my writing) 
 Borrowing some concepts from physics, an ensemble can be though as a virtual collection of all possible states that a system can be in, with more probable states appearing more often in the collection. There is a analogy to be made with ensembles of thermodynamic: When considering sets of matrices with equal probability - in some sense to be more clear soon - we get the Gibbs weight for the probability distribution as we would in the \textit{Canonical Ensemble} of constant temperature. More concretely, in the context of Random Matrix Theory
 
 \begin{definition}
-	A random matrix ensemble $\eE = (\eS, \eP)$ is a set of matrices of fixed size equipped with a probability density function (p.d.f) $\eP: \eS \rightarrow [0, \infty)$. If we say that a matrix $\m{X}$ is drawn from the random ensemble $\eE$, we are saying that it is a random variable assuming values in $\eS$ with p.d.f. $\eP$.
+	A random matrix ensemble $\eE = (\eS, \eP)$ is a set of matrices $\eS$ of fixed size equipped with a probability density function (p.d.f.) $\eP: \eS \rightarrow [0, \infty)$. If we say that a matrix $\m{X}$ is drawn from the random ensemble $\eE$, we are saying that it is a random variable assuming values in $\eS$ with p.d.f. $\eP$.
 	\label{Def: Ensemble}
 \end{definition}
 
-A commonplace thing to do when defining ensembles is to prescribe the p.d.f's $\eP_{i,j}$ on the independent entries $X_{i,j}$ of a representative matrix $\m{X} \in \eE$. In such cases, we say that
+A commonplace thing to do when defining ensembles is to prescribe the p.d.f.'s $\eP_{i,j}$ on the independent entries $X_{i,j}$ of a representative matrix $\m{X} \in \eE$. In such cases, we say that
 \begin{equation}
 	\eP(\m{X}) = \prod_{i,j | X_{i,j} independent} \eP_{i,j}(X_{i,j}).
 \end{equation}
-With this definition we can already define many ensembles of interest. For many, the set of matrices is described by applying constraints to the set of real matrices $\mathbb{M}_{m,n}(\R)$, the set of complex matrices $\mathbb{M}_{m,n}(\C)$ or the set of quaternionic matrices $\mathbb{M}_{m,n}(\He)$. Then, oftentimes, $\eS$ is simply the set of symmetric, hermitian or skew-symmetric matrices. When it comes to determining the p.d.f $\eP$ on $\eS$, there are many options that have been worked on. A simple example is that of \textit{Bernoulli matrices} $\m{B}$ whose entries $B_{i,j}$ are all independently and identically distributed Bernoulli random variables $\pm 1$: $\eS=\mathbb{M}_{n,n}(\R)$ and $$P_{i,j}(B_{i,j}) = \frac{1}{2} \left[ \delta(B_{i,j}-1) + \delta(B_{i,j}+1)\right].$$ If we instead require $\m{B}$ to be symmetric, its diagonal entries to be zero, and its independent entries have p.d.f. $$P_{i,j}(B_{i,j}) = \frac{c}{n} \delta(B_{i,j}-1) + \left(1 - \frac{c}{n} \delta\left(B_{i,j}\right)\right),$$ then $\m{B}$ belongs to the ensemble of \textit{Erdos-Renyi}. Consider now one of the most important ensembles we will define.
+With this definition we can already define many ensembles of interest. Common sets can be the set of symmetric matrices $\mathbb{M}_{m,n}(\R)$, the set of complex matrices $\mathbb{M}_{m,n}(\C)$ or the set of quaternionic matrices $\mathbb{M}_{m,n}(\He)$. Then, oftentimes, $\eS$ is simply the set of symmetric, hermitian or skew-symmetric matrices. When it comes to determining the p.d.f $\eP$ on $\eS$, there are many options that have been worked on. A simple example is that of \textit{Bernoulli matrices} $\m{B}$ whose entries $B_{i,j}$ are all independently and identically distributed Bernoulli random variables $\pm 1$: $\eS=\mathbb{M}_{n,n}(\R)$ and $$P_{i,j}(B_{i,j}) = \frac{1}{2} \left[ \delta(B_{i,j}-1) + \delta(B_{i,j}+1)\right].$$ If we instead require $\m{B}$ to be symmetric, its diagonal entries to be zero, and its independent entries have p.d.f. $$P_{i,j}(B_{i,j}) = \frac{c}{n} \delta(B_{i,j}-1) + \left(1 - \frac{c}{n} \delta\left(B_{i,j}\right)\right),$$ then $\m{B}$ belongs to the ensemble of \textit{Erdos-Renyi}. Consider now one of the most important ensembles we will define.
 
 \begin{definition}
-	(Ginibre Ensemble). The $m \times n$ real, complex, and quaternionic \textit{Ginibre Ensembles} are respectively $\mathbb{M}_{m,n}(\R), \mathbb{M}_{m,n}(\C), \mathbb{M}_{m,n}(\He)$ with p.d.f
+	(Ginibre Ensemble). The $m \times n$ real, complex, and quaternionic \textit{Ginibre Ensembles} are respectively $\mathbb{M}_{m,n}(\R), \mathbb{M}_{m,n}(\C), \mathbb{M}_{m,n}(\Hh)$ with p.d.f
 	\begin{equation}
 		\eP^{(Gin)}(\m{G}) = \pi^{-mn\frac{\beta}{2}} \exp{\left( -\tr(\m{G}^{\dagger}\m{G})\right)} = \prod_{i=1}^{m} \prod_{j=1}^{n} \pi^{\frac{\beta}{2}} \exp{\left(-|G_{i,j}|^2 \right)},
 	\end{equation}
@@ -30,7 +30,7 @@ With this definition we can already define many ensembles of interest. For many,
 	\label{Def: Ginibre}
 \end{definition}
 
-For most applications there are three ideologies that stand out. The first one is to assume little on the system and focus on universal results. This results in the study of the \textit{Wigner matrix ensembles}: Let $\m{X}$ be drawn from either the real symmetric, complex hermitian or quaternionic  skew-symmetric $n \times n$ matrix ensemble. Then its entries $X_{i,j}$ are independently distributed with mean zero and bounded moments. Also, its diagonal entries are equally distributed as are its upper triangular entries. Many results hold for independently and identically distributed centered random variables. To construct the general form of such matrices take the matrix $\m{Y} = \{Y_n\}_{i,j}$ with $Y_{i,j} = Y_{j,i}^\dagger$ and such that
+For most applications there are three ideologies that stand out. The first one is to assume little on the system and focus on universal results. This results in the study of the \textit{Wigner matrix ensembles}: Let $\m{X}$ be drawn from either the independently distributed real symmetric, complex hermitian or quaternionic skew-symmetric $n \times n$ matrix ensemble. Then its entries $X_{i,j}$ are independently distributed with mean zero and bounded moments. Also, its diagonal entries are equally distributed as are its upper triangular entries. Many results hold for independently and identically distributed centered random variables. To construct the general form of such matrices take the matrix $\m{Y} = \{Y_n\}_{i,j}$ with $Y_{i,j} = Y_{j,i}^\dagger$ and such that
 \begin{enumerate}
 	\item $\{Y_{i,j}\}_{1\leq i \leq j \leq n}$ are independent;
 	\item $\{Y_{i,j}\}$ are identically distributed. $\{Y_{i,i}\}$ are identically distributed;
@@ -83,14 +83,14 @@ The third ideology is that of working with algebraic combinations of matrices wh
 
 \subsection{Some quantities}
 
-To study random matrices, we need to determine which quantities related to the matrix we want to measure. This may be the expectation of some function on the matrices or even on the eigenvalues and eigenvector, if they exist. Assume a matrix is such that is able to be determined by eigenvalues and eigenvectors. While eigenvector may be of interest in some cases, eigenvalue statistics have been considerably more explored. Hence, in addition to the p.d.f.s $\eP(X)$ of say $n \times n$ random matrices $\m{X}$, we are also interested in the eigenvalue j.p.d.f. $\p(\mmany{\lambda}{n})$ of the eigenvalues $\{\lambda_i\}_{i=1}^{n}$ of $\m{X}$. The eigenvalue j.p.d.f. is defined to be such that 
+To study random matrices, we need to determine which quantities related to the matrix we want to measure. This may be the expectation of some function on the matrices or even on the eigenvalues and eigenvector, if they exist. Assume a matrix is such that is able to be determined by eigenvalues and eigenvectors. While eigenvectors may be of interest in some cases, eigenvalue statistics have been considerably more explored. Hence, in addition to the p.d.f.s $\eP(X)$ of, say, $n \times n$ random matrices $\m{X}$, we are also interested in the eigenvalue j.p.d.f. $\p(\mmany{\lambda}{n})$ of the eigenvalues $\{\lambda_i\}_{i=1}^{n}$ of $\m{X}$. The eigenvalue j.p.d.f. is defined to be such that 
 \begin{equation}
 \int_{[a_1, b_1] \times \cdots \times [a_n, b_n]} p(\mmany{\lambda}{n}) \dd \lambda_1 \cdots \dd \lambda_n
 \end{equation}
 is the probability that $a_i < \lambda_i < b_i$ for every $i$.
 
 \begin{ex}
-	The eigenvalue j.p.d.f of the $n \times n$ circular ensembles is 
+	The eigenvalue j.p.d.f. of the $n \times n$ circular ensembles is 
 	\begin{equation}
 		\p^{(C)}(\ee^{\ii \theta_1}, \cdots, \ee^{\ii \theta_n}; \beta) = \frac{1}{\pZ{n,\beta}{(C)}} |\Delta_n(\ee^{\ii \theta})|^\beta
 	\end{equation}
@@ -101,11 +101,11 @@ is the probability that $a_i < \lambda_i < b_i$ for every $i$.
 	is the Vandermonde determinant, and $\beta=1,2,4$ correspond to the COE, CUE and CSE, respectively.
 \end{ex}
 
-Related do the eigenvalue j.p.d.f is the univariate eigenvalue density defined by 
+Related do the eigenvalue j.p.d.f. is the univariate eigenvalue density defined by 
 \begin{equation}
 	\pe(\lambda_1; n) \deff n \int_{\R^{n-1}} \p(\mmany{\lambda}{n}) \dd \lambda_2 \cdots \dd \lambda_n,
 \end{equation}
-which is normalized such that the expect number of eigenvalues lying between $a$ and $b$ is given by $\int_{a}^{b} \pe(\lambda) \dd \lambda$. Note that this is not a p.d.f if $n\neq1$. Consider now the linear statistic of the eigenvalue density given by
+which is normalized such that the expect number of eigenvalues lying between $a$ and $b$ is given by $\int_{a}^{b} \pe(\lambda) \dd \lambda$. Note that this is not a p.d.f. if $n\neq1$. Consider now the linear statistic of the eigenvalue density given by
 \begin{equation}
 	\pe(\lambda) = \sum_{i = 1}^n \langle \delta(\lambda - \lambda_i) \rangle
 \end{equation} 
@@ -122,7 +122,7 @@ Indeed, if we are interested in a linear statistic $\sum_{i=1}^{n} f(\lambda_i)$
 \begin{equation}
 	\left\langle \sum_{i=1}^{n} f(\lambda_i) \right\rangle = \int_{\R} f(\lambda) \pe(\lambda) \dd \lambda = \sum_{k=0}^{\infty} f_k m_k
 \end{equation}
-The spectral moments can additionally be expressed as an average with respect ot the eigenvalue j.p.d.f. $\p(\mmany{\lambda}{n})$ and the p.d.f $\eP(X)$ of the random matrix $\m{X}$ according to
+The spectral moments can additionally be expressed as an average with respect ot the eigenvalue j.p.d.f. $\p(\mmany{\lambda}{n})$ and the p.d.f. $\eP(X)$ of the random matrix $\m{X}$ according to
 \begin{equation}
 	\me_k = \left\langle \sum_{i=1}^{n} \lambda_i^k \right\rangle = \left\langle \tr(\m{X}^k) \right\rangle_{\eP(\m{X})}
 \end{equation}
@@ -201,7 +201,7 @@ Note that all ensembles presented are self-adjoint and therefore have all $n$ ei
 	\end{equation}
 	\label{Prop: Gaussian, Laguerre, Jacobi}
 \end{prop}
-With $\beta = 1, 2, 4$ corresponding to the choice of $\F = \R, \C, \He$, the random matrix ensembles introduced in the definition are defined with the latter p.d.f,s onto the respective matrix sets
+With $\beta = 1, 2, 4$ corresponding to the choice of $\F = \R, \C, \Hh$, the random matrix ensembles introduced in the definition are defined with the latter p.d.f,s onto the respective matrix sets
 \begin{equation}
 	\begin{aligned}
 		\eS^{(G)} & = \{ \m{H} \in M_{n,n}(\F) | \m{H} = \m{H}^\dagger \} \\

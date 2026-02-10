@@ -1,46 +1,56 @@
-This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2026/dev/Arch Linux)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: template_Report.aux
 The style file: plain.bst
 Database file #1: references.bib
-You've used 4 entries,
+I was expecting a `,' or a `}'---line 128 of file references.bib
+ :   
+ :   bookTitle={Analytic Number Theory and Diophantine Problems: Pro
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--can't use both author and editor fields in Montgomery
+Warning--empty chapter and pages in Montgomery
+Warning--empty publisher in Montgomery
+Warning--empty year in Montgomery
+You've used 13 entries,
             2118 wiz_defined-function locations,
-            515 strings with 4612 characters,
-and the built_in function-call counts, 946 in all, are:
-= -- 78
-> -- 50
-< -- 0
-+ -- 21
-- -- 16
-* -- 45
-:= -- 161
-add.period$ -- 8
-call.type$ -- 4
-change.case$ -- 20
+            578 strings with 6145 characters,
+and the built_in function-call counts, 3563 in all, are:
+= -- 319
+> -- 151
+< -- 1
++ -- 61
+- -- 47
+* -- 222
+:= -- 585
+add.period$ -- 31
+call.type$ -- 13
+change.case$ -- 61
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 28
-empty$ -- 89
-format.name$ -- 16
-if$ -- 197
+cite$ -- 17
+duplicate$ -- 128
+empty$ -- 329
+format.name$ -- 47
+if$ -- 750
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 0
-newline$ -- 19
-num.names$ -- 8
-pop$ -- 40
+int.to.str$ -- 13
+missing$ -- 7
+newline$ -- 60
+num.names$ -- 28
+pop$ -- 100
 preamble$ -- 1
-purify$ -- 16
+purify$ -- 49
 quote$ -- 0
-skip$ -- 33
+skip$ -- 111
 stack$ -- 0
-substring$ -- 21
-swap$ -- 4
-text.length$ -- 0
+substring$ -- 185
+swap$ -- 24
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
-warning$ -- 0
-while$ -- 8
-width$ -- 5
-write$ -- 34
+type$ -- 50
+warning$ -- 4
+while$ -- 33
+width$ -- 15
+write$ -- 120
+(There was 1 error message)

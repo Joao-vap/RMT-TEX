@@ -1,0 +1,71 @@
+Consider now that we couple a deterministic source matrix $\m{A}$ to the random matrix $\m{M}$, in a way that the weight
+\begin{equation}
+	\dd \mu_n(M) = \frac{1}{Z_A} \exp{\left\{-n \left( \tr{\left(V(\m{M})-  \m{A}\m{M} \right)}\right)\right\} } \dd M.
+\end{equation}
+describes the model distribution. We take $\m{A}$ to be an Hermitian matrix and $\dd M$ to be the entry-wise Lebesgue measure. The eigenvalues of $\m{M}$ represent the energy levels of a system without time-reversal invariance. When the external source $\m{A}$ is nonzero and $V(\m{M}) = \m{M}^2 / 2$, this measure arises in the study of Hamiltonian that can be written as the sum of a random matrix and a deterministic source matrix. In this definition,
+\begin{equation}
+	Z_A = \int  \exp{\left\{-n \left( \tr{\left(V(\m{M})-  \m{A}\m{M} \right)}\right)\right\} } \dd M
+\end{equation}
+Without any loss of generality, we can assume $\m{A}$ to be diagonal.
+
+Of course,  when $\m{A} = 0$, that is, no external source, and $V(\m{M}) = \m{M}^2/2$, this measure describes the Gaussian Unitary Ensemble - GUE. For reasonable choices of $V(z)$ the spectrum tends to accumulate on closed intervals of the real axis. Introducing an external source A can have the effect of perturbing the expected position of the spectrum. Some study has been done on the case for the matrix $\m{A}$ with two eigenvalues $\pm a$, each of multiplicity $n/2$. When $a$ is sufficiently small, the eigenvalues of $\m{M}$ accumulate with probability one on a single interval, just as when $\m{A} = 0$. As $a$ increases the interval splits into two disconnected intervals. There is a transitional value of $a$ between these two cases where the local eigenvalue density is described by the so-called \textit{Pearcey process}. This is precisely the case witch we will explore an asymptotic for. Define the monic polynomial
+\begin{equation}
+	P_n(z) = \int \det{(z - \m{M})} \dd \mu_n(M)	
+\end{equation}
+then, we have the following proposition
+\begin{prop} Suppose $\m{A}$ has $p$ distinct eigenvalues $a_i$ with respective multiplicity $n_i$, so that $n_1 + \cdots + n_p = n$. Let $n^{(i)} = n_1 + \cdots + n_i$ and $n^{(0)} = 0$. Define
+	\begin{equation}
+		w_j(x) = x^{d_j -1} \ee^{-(V(x) - a_j x)}, \quad j = 1, \cdots, n.
+	\end{equation}
+	where $i = i_j$ is such that $n^{(i-1)} < j < n^{(i)}$ and $d_j = j - n^{(i-1)}$. Then the following hold
+	\begin{itemize}
+		\item There is a constant $\tilde{Z}_n$, with $\dd \lambda = \dd \lambda_1 \cdots \dd \lambda_n$, such that
+		\begin{equation}
+			P_n(z) = \frac{1}{\tilde{Z}} \int \prod_{j=1}^{n} (z - \lambda_j) \prod_{j=1}^{n} w_j(\lambda_j) \prod_{i > j} (\lambda_i - \lambda_j) \dd \lambda
+		\end{equation}
+		\item Let 
+		\begin{equation}
+			m_{j,k} = \int_{-\infty}^{\infty} x^k w_j(x) \dd x
+		\end{equation} 
+		Then we have the determinantal formula
+		\begin{equation}
+			P_n(z) = \frac{1}{\tilde{Z}_n} = 
+			\begin{vmatrix}
+				m_{1,0} & m_{1,1} & \cdots & m_{1,n}\\
+				\vdots & \vdots & \ddots & \cdots \\
+				m_{n,0} & m_{n,1} & \cdots & m_{n,n} & \\
+				1 & z & \cdots & z^n
+			\end{vmatrix}
+		\end{equation}
+		\item For $j = 1, \cdots, p$,
+		\begin{equation}
+			\int_{-\infty}^{\infty} P_n(x) x^j  \ee^{V(x) - a_j x)} \dd x = 0, \quad j = 0, \cdots, n_i-1
+		\end{equation}
+		and these equations uniquely determine $P_n(x)$.
+	\end{itemize}
+\end{prop}
+
+The relations can be viewed as multiple orthogonality conditions for the polynomial $P_n$. There are $p$ weights $\ee^{-(V (x)-a_jx)}$, $j = 1, \cdots , p$, and for each weight there are a number of orthogonality conditions, so that the total number of them is $n$. This point of view is especially useful in the case when $\m{A}$ has only a small number of distinct eigenvalues. Let $\sum_n$ be the collection of functions 
+\begin{equation}
+	\sum_n \deff \{ x_j \ee^{a_i x} | i = 1, \cdots , p, \ j = 0, \cdots , n_i - 1 \}
+\end{equation}
+We start with a lemma.
+\begin{lemma}
+	There exists a unique function $Q_{n-1}$ in the linear span of $\sum_n$ such that
+	\begin{equation}
+		\int_{-\infty}^{\infty} x^j Q_{n-1}(x) \ee^{-V(x)} \dd x = 0, \quad j = 0, \quad , n-2,
+	\end{equation}
+	and 
+	\begin{equation}
+		\int_{-\infty}^{\infty} x^{n-1} Q_{n-1}(x) \ee^{-V(x)} \dd x = 1. 
+	\end{equation}
+\end{lemma}
+Consider $P_0, \cdots, P_n$, a sequence of multiple orthogonal polynomials such that $\deg P_k = k$, with an increasing sequence of the multiplicity vectors, so that $k_i \leq l_i, i = 1, \cdots , p$, when $k \leq l$. Consider the biorthogonal system of functions, $\{ Q_k(x), k = 0, \cdots , n-1\}$, 
+\begin{equation}
+	\int_{-\infty}^{\infty} P_j(x) Q_k(x) \ee^{-V(x)} \dd x = \delta_{jk}, \quad \text{for} j, k = 0, \cdots , n-1. 
+\end{equation}
+Define the kernel 
+\begin{equation}
+	K_n(x, y) = \ee^{-\frac{1}{2}(V(x)+V(y))}  \sum^{n-1}_{k=0} P_k(x)Q_k(y). 
+\end{equation}
+This kernel, as in the simplest case, will enable us to determine asymptotic on the equilibrium measure.

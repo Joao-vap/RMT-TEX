@@ -11,11 +11,11 @@ where $\{\lambda_i\}$ are the undistinguishable eigenvalues of $\m{X}$ and $\wf(
 	\begin{equation}
 		\p^{(w)}(\mmany{\lambda}{n};\beta) = \frac{1}{\pN{n,\beta}{(w)}} \prod_{i=1}^{n} \wf(\lambda_i) |\Delta_n(\lambda)|^\beta
 	\end{equation}
-	describes the $n$-sized orthogonal polynomial ensemble (OPE) when $\beta = 2$, skew-orthogonal polynomial ensemble of real type ($\R$-SOPE) when $\beta=1$, and the skew-orthogonal polynomial ensemble of quaternion type ($\He$-SOPE) when $\beta = 4$.
+	describes the $n$-sized orthogonal polynomial ensemble (OPE) when $\beta = 2$, skew-orthogonal polynomial ensemble of real type ($\R$-SOPE) when $\beta=1$, and the skew-orthogonal polynomial ensemble of quaternion type ($\Hh$-SOPE) when $\beta = 4$.
 	\label{Definition: measure-weight}
 \end{definition}
 
-The condition on the weight function guarantees that the j.p.d.f has a well-defined normalization constant. To properly understand the nomenclature used, one must discuss the Vandermonde determinant. Check \ref{Vandermonde} for this. 
+The condition on the weight function guarantees that the j.p.d.f. has a well-defined normalization constant. To properly understand the nomenclature used, one must discuss the Vandermonde determinant. Check \ref{Vandermonde} for this. 
 
 If one wishes to integrate the determinantal and Pfaffian structures given by the Jacobian against the product of weight functions, it is beneficial to use monic polynomials $\{q_j(\lambda)\}_{j=0}^\infty$ that are skew-orthogonal with respect to the weight $\wf(\lambda)$.
 
@@ -103,8 +103,9 @@ This implies, that he eigenvalue density $p^{(w)} = p_1^{(w)}(\lambda)$ is given
 
 
 \subsection{The case for $\beta = 2$}
+\label{Subsection: The case for beta 2}
 
-We start illustrating the results above for the case $\beta=1$. Begin with the following characterization of the Jacobian as a Vandermonde determinant illustrated in \ref{Vandermonde}
+We start illustrating the results above for the case $\beta=2$. Begin with the following characterization of the Jacobian as a Vandermonde determinant illustrated in \ref{Vandermonde}
 \begin{equation}
 	\prod_{i<j}^{n} |\lambda_i - \lambda_j|^2 = {\det(\lambda_i^{j-1})^2}_{i,j=1,\cdots,n}.
 \end{equation}
@@ -144,7 +145,31 @@ where the coefficients depend on the choice of weight. We use this recurrence to
 \end{prop}
 Taking the limit $y \rightarrow x$ using L`Hopital's rule shows that for finite $n$ the density has the form
 \begin{equation}
-	\pe^{(w)}(\lambda) = K_n^{(2)}(\lambda, \lambda) = \frac{\sqrt{\wf(x) \wf(y)}}{r_{n-1}^{(2)}} \left( q_{n-1}^{(2)}(\lambda)\partial_\lambda q_{n}^{(2)}(\lambda) - q_{n}^{(2)}(\lambda)\partial_\lambda q_{n-1}^{(2)}(\lambda)  \right)
+	\pe^{(w)}(\lambda) = K_n^{(2)}(\lambda, \lambda) = \frac{\wf(\lambda)}{r_{n-1}^{(2)}} \left( q_{n-1}^{(2)}(\lambda)\partial_\lambda q_{n}^{(2)}(\lambda) - q_{n}^{(2)}(\lambda)\partial_\lambda q_{n-1}^{(2)}(\lambda)  \right)
+	\label{Equation: Equilibrium Measure and Kernel}
 \end{equation}
 
-All that remains to make $\pe^{(w)}(\lambda)$ fully explicit is knowledge of the orthogonal polynomials $\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$. In the Gaussian, Laguerre and Jacobi cases, there are Hermite, Laguerre and Jacobi orthogonal polynomials, respectively.
+All that remains to make $\pe^{(w)}(\lambda)$ fully explicit is knowledge of the orthogonal polynomials $\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$. In the Gaussian, Laguerre and Jacobi cases, there are Hermite, Laguerre and Jacobi orthogonal polynomials, respectively. Another important identity we should clarify is the following
+
+\begin{prop}
+	\begin{equation}
+		\pZ{n,2}{} = n! \prod_{k=0}^{n-1} r_k^{-2}
+	\end{equation}
+	where $r_k$ is the normalizing constant as in $\langle q_j^{(2)}, q_k^{(2)} \rangle^{(2)} = r_j^{(2)} \chi_{j=k}$.
+	\label{Proposition: Partition function}
+\end{prop}
+\begin{proof}
+	We start stating the following equality which follows from \ref{Theorem: Kernel} that
+	\begin{align}
+			\det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{n} & =  p^{(w)}(\mmany{\lambda}{n};\beta), \\
+			\prod_{k=1}^n r_k^{-2}  \det\left[ \sqrt{\wf(x) \wf(y)} \sum_{k=0}^{N-1} q_k^{(2)}(x) q_k^{(2)}(y) \right]_{i,j=1}^{n} & = \prod_{1 < i \leq j < n} (\lambda_j - \lambda_i)^2 \prod_{k=0}^{n} w(\lambda_k)
+	\end{align}
+	therefore
+	\begin{equation}
+		n! \det\left[ \tilde{K}_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{n} = n! \prod_{k=1}^n r_k^{-2} \prod_{1 < i \leq j < n} (\lambda_j - \lambda_i)^2 \prod_{k=0}^{n} w(\lambda_k)
+	\end{equation}
+	where
+	\begin{equation}
+		\pZ{n,2}{} = n! \prod_{k=1}^n r_k^{-2}
+	\end{equation}
+\end{proof}

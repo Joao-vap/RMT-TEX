@@ -1,15 +1,7 @@
 \babel@toc {portuguese}{}\relax 
 \beamer@sectionintoc {1}{Introdução à Matrizes Aleatórias}{3}{0}{1}
 \beamer@subsectionintoc {1}{1}{Porquê RMT}{4}{0}{1}
-\beamer@subsectionintoc {1}{2}{Medida Invariante}{9}{0}{1}
-\beamer@subsectionintoc {1}{3}{Ensembles Gaussianos}{17}{0}{1}
-\beamer@subsectionintoc {1}{4}{Gases de Coulomb}{21}{0}{1}
-\beamer@subsectionintoc {1}{5}{Medidas de Equilíbrio}{28}{0}{1}
-\beamer@sectionintoc {2}{Simulação de Partículas}{57}{0}{2}
-\beamer@subsectionintoc {2}{1}{Dinâmica de Langevin Monte Carlo}{61}{0}{2}
-\beamer@subsectionintoc {2}{2}{Integração Numérica - Verlet}{64}{0}{2}
-\beamer@subsectionintoc {2}{3}{Passo de Metropolis}{68}{0}{2}
-\beamer@sectionintoc {3}{Implementação e Resultados}{70}{0}{3}
-\beamer@subsectionintoc {3}{1}{Implementação}{71}{0}{3}
-\beamer@subsectionintoc {3}{2}{Resultados}{76}{0}{3}
-\beamer@sectionintoc {4}{Conclusão}{88}{0}{4}
+\beamer@subsectionintoc {1}{2}{Medida Invariante}{7}{0}{1}
+\beamer@subsectionintoc {1}{3}{Gases de Coulomb}{8}{0}{1}
+\beamer@subsectionintoc {1}{4}{Resultados}{13}{0}{1}
+\beamer@sectionintoc {2}{Conclusão}{23}{0}{2}
