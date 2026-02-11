@@ -338,4 +338,15 @@ where we used $\partial^3_t(V_{\tau(t)}(r_{\tau(t)})) |_{t=m_N} = \Boh(N^{-3} (\
 	& = N \left( \frac{1}{2} \int_{S \backslash S_{\tau(m_N)}} Q \Delta Q \dd A - \log(r_1) + (\tau(m_N))^2 \log(r_{\tau(m_N)} + \frac{1}{2} \left( q(r_1) - \tau(m_N) q(r_{\tau(m_N)}) \right) \right) \\
 	& = N I_Q[\mu_Q] - \frac{N}{2} \int_{S_{\tau(m_N)}} Q \Delta Q \dd A + \frac{m_N^2}{N} \log(r_{\tau(m_N)}) - \frac{m_N}{2} q(r_{\tau(m_N)}) 
 \end{align}
-
+where, \textcolor{red}{because 
+\begin{equation}
+	r_\tau = \left(\frac{2 \tau}{q^{(2)}(0)} \right)^{\frac{1}{2}} + \Boh(\tau) = \left(\frac{\tau}{\Delta Q(0)} \right)^{\frac{1}{2}} + \Boh(\tau), \qquad \text{as} \quad \tau \rightarrow 0
+\end{equation}}
+we have that
+\begin{equation}
+	\log(r_{\tau(m_N)}) = \frac{1}{2} \log{\left(\frac{\tau(m_N)}{\Delta Q(0)}\right)} + \Boh(\tau(m_N)^{\frac{1}{2}}) = \frac{1}{2} \log{\left(\frac{\tau(m_N)}{\Delta Q(0)}\right)} + \Boh(N^{-\frac{1}{2}(1-\epsilon)}) 
+\end{equation}
+and
+\begin{equation}
+	q(r_{\tau(m_N)}) = q(0) + \frac{1}{2} q^{(2)}(0)(r_{\tau(m_N)})^2 + \Boh((\tau(m_N)^{\frac{3}{2}})) = q(0) + \tau(m_N) + \Boh(N^{-\frac{3}{2}(1 - \epsilon)})
+\end{equation}
