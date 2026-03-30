@@ -1,0 +1,33 @@
+We start by describing a familiar distribution or physicists: The Boltzmann-Gibbs distribution. This is a probability distribution that represents the probability of a given state for a system of particles as a function of the state's \enquote{energy} ($\Hf$) and the \enquote{temperature} ($1/(\beta N^2)$) of the system. This is the distribution that maximizes the entropy: lower energy states have higher probability of being occupied than states with higher energy. Under the appropriate conditions, we name Coulomb Gas $\p_N$ the Boltzmann-Gibbs probability measure given in $(\R^d)^N$. The measure $\p_N$ models an interacting gas of charged indistinguishable particles under some external field. Particles are interpreted to be at positions $\mmany{x}{N} \in \Se$ of dimension $d$ embedded in some space $\R^n$. We write  
+\begin{equation}
+	\dd \p_N(\mmany{x}{N}) = \frac{e^{-\beta N^2 \Hf_N(\vec{x})}}{\pZ{N}{(beta)}} \mcmany{\dd x}{N}{}
+	\label{Equation: Coulomb Gas Measure}
+\end{equation}
+to be te measure of such system, where 
+\begin{equation}
+\Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x) + \frac{1}{2N^2} \sum_{i \neq j}^{N} \g(x_i - x_j)	
+\end{equation}
+is usually called the Hamiltonian, or more concretely, the energy of the system. The function $\V \colon \Se \mapsto \R$ is the external potential. If one wishes $\p_N$ to be a probability measure,  then one must ensure that $\V$ is such that the normalizing constant $Z_{N, \beta}$ is finite for all $N$ and the measure support is compact. This is all to say that the potential should be confining: As the number of particles increases, it must counter the repulsion effect and keep limited the region where particles move around. The function $\g \colon \Se \mapsto (-\infty, \infty]$ is the \textit{Coulomb Interacting Kernel}, solution to the Poisson equation given by $- \nabla g(\vec{x}) = c_n\delta_0$. The factor $\beta N^2$ is called the inverse temperature.
+
+Recall the expression for invariant ensembles and note that, for a appropriate $\V \colon \R \rightarrow \R$, we can take the appropriate dimensions for $d=1$ and $n = 2$ to recover the, for example, Gaussian ensemble measure
+\begin{equation}
+	\p_N(\vec{x}) = \frac{e^{-\beta_N \Hf_N(\vec{x})}}{Z_{N,\beta}}, \ \ \Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x_i) + \frac{1}{N^2} \sum_{i < j}^{N} \log{\frac{1}{|x_i - x_j|}}.
+\end{equation}
+In this case, we would be dealing with particles on the plane confined to move only on the real line. However, the gases measure accepts a natural extension for any potential that we call acceptable - that obeys some growth and smoothness conditions. Together with the dimensions, we can recover other random matrix models. On the complex plane one could write explicitly
+\begin{equation}
+	\dd \p_N^{(\beta)} (z_1, \cdots, z_N) \deff \frac{1}{\pZ{N}{(beta)}} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta \prod_{j=1}^{N} \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j)
+	\label{Equation: Measure Normal Matrix}
+\end{equation}
+where $\dd A(z) \deff \dd^2 z / \pi$ is the area measure. This measure would imply the normalization constant - or in our context, the \textit{Partition Function},
+\begin{equation}
+	\pZ{N}{(beta)} \deff \int_{\C^N} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta \prod_{j=1}^{N} \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j).
+\end{equation}
+This is the expression, if $\beta = 2$ for the measure of the \textbf{random normal matrix} ensemble. We still have the potential to tinker, for example, setting $Q(z) = |z|^2$ this would be the so-called \textbf{complex Ginibre ensemble}. We could also define the measure for the configurational canonical Coulomb gas ensemble in the upper-half plane  - which has an additional complex conjugation symmetry and is governed by the law 
+\begin{equation}
+	\dd \tilde{\p}_N^{(\beta)} (z_1, \cdots, z_N) \deff \frac{1}{\tilde{\pZ{N}{(beta)}}} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta |z_j - \bar{z}_k|^\beta \prod_{j=1}^{N} |z_j - \bar{z}_j|^\beta  \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j)
+\end{equation}
+and would imply the normalization constant
+\begin{equation}
+	\tilde{\pZ{N}{(beta)}} \deff \int_{\C^N} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta |z_j - \bar{z}_k|^\beta \prod_{j=1}^{N} |z_j - \bar{z}_j|^\beta  \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j)
+\end{equation}
+and is related, for $\beta = 2$ to the \textbf{planar symplectic ensemble}. For $Q(z) = |z|^2$ this would be the so-called \textbf{symplectic Ginibre ensemble}. Virtually all results we saw for the random normal matrix ensemble are valid in the context of the planar symplectic ensemble with only a few adaptions. However, in the name of history telling and simplicity we will omit this measure: Adding this case to our chapter would cloud the point. For now on, we will only consider $\beta = 2$, this has some algebraic advantages that become clear by the Determinantal Point Processes (see Chapter \ref{Chapter: Determinantal} for details) - because of this, we omit the $\beta$ in the variables ($\pZ{N}{(\beta)} = \pZ{N}{}$).

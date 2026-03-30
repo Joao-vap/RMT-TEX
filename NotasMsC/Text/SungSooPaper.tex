@@ -1,0 +1,17 @@
+We are going to discuss in this chapter the ideas developed in the paper \cite{Byun_2023}, where asymptotics were develop for a large class of random matrix ensembles using relatively straightforward asymptotic techniques taking advantage of the orthogonal polynomials present in these models. In the end, we hope to clarify the origin for the novel limit-behavior expression for the so-called \textit{Partition Function} $\pZ{N}{\beta}$. Namely, we get an expression of the type: 
+\begin{equation}
+	\log(\pZ{N, \beta=2}{Q}) = -I^Q N^2+\frac{1}{2} N\log N+E^Q N+G\log N+F^Q + o(1).
+\end{equation}
+These functions perform the role of the normalization for the probability measure relative to the Coulomb Gas being worked on - a system of interacting particles confined by some potential. In this instance, we deal with complex plane gases, parameterized by some variable $\beta = 2$. This relates in RMT, to the famous \textit{random normal matrix} and \textit{planar symplectic ensembles}, depending on the symmetry imposed. If one takes, for example, the quadratic potential keeping the $2-\beta$ regime, one gets ensembles correspondent to the \textit{complex} and \textit{planar} Ginibre ensembles, falling back into the classical models. For the results, another restriction is made, the confining potentials must be radially symmetric. For a large class of potentials $Q$, the first term $I^Q$ was known for a long time, being given by the energy of the associated equilibrium measure. The coefficient $1/2$ of the order $N\log N$, as well as the entropy term $E^Q$, were known from recent work of Leblé and Serfaty \cite{Leble2017-yj}, also for rather large classes of $Q$. The remaining terms in this expansion are new. The term $G$ appears to depend only on whether the limiting spectrum is an annulus or a disc which, surprisingly, seems to not have been observed in the previous literature. 
+
+Although some recent work may indicate the direction to expand some of these results to larger classes of potentials \cite{hedenmalm2020planarorthogonalpolynomialsboundary}, this is, so far, still a necessary condition for the techniques presented henceforth.  Once the model is established, the techniques are involved, but should be reasonable: We express the partition function in terms of a summation of some orthogonal polynomials, for which we have a integral representation. Then, the integral can be estimated using the Laplace technique - separating the integral in a central main-contributing region and a bounded error-contributing complement region. Finally, the limit on the summation can be estimated with some quadrature techniques, namely the Euler-Maclaurin formula, giving us the final results after computations.
+
+\section{Some Complex Context}
+
+\input{./Text/Sections/PaperContext.tex}
+
+\section{Droplet Results}
+
+\input{./Text/Sections/OrthogonalAsymptotics.tex}
+
+\section{Examples}

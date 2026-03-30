@@ -1,0 +1,44 @@
+We will use some potential $Q(z) : \C \rightarrow \R$ 
+which satisfies some nice growth and smoothness conditions, as specified in \eqref{Equation: Properties Complex Potential}. Because of the radial symmetry, one can take some function $q: \R \mapsto \R$ such that $q(|z|) = Q(z)$; then we can say that the previous conditions on the potential $Q$ implies that $r q'(r)$ is increasing in $\C$ and strictly increasing in the droplet. Using \eqref{Proposition: Partition function}, one can write the free energy
+\begin{equation}
+	\ln \pZ{N}{} = \ln{N!} - 2 \sum_{j=0}^{N-1} \log{h_j},  \qquad h_k \deff \int_{\C} |z|^{2j} \ee^{-N Q(z)} \dd A(z).
+	\label{Equation: Partition Function}
+\end{equation}
+where $h_k$ is the norming constant for the monomial family of orthogonal polynomials in respect to $\wf$. One could also write, for the planar symplectic ensemble 
+\begin{equation}
+	\ln \tilde{\pZ{N}{}} = \ln{N!} - 2 \sum_{j=0}^{N-1} \log{2 \tilde{h}_{2j + 1}}  \qquad \tilde{h}_k \deff \int_{\C} |z|^{2j} \ee^{- 2 N Q(z)} \dd A(z). 
+\end{equation} 
+The expressions derived for the normal ensemble would be easily adapted for this model and it is done in \cite{Byun_2023}, however we will not follow that computation in name of clarity and storytelling.
+
+In order to derive the asymptotic formulas for the free energy we need to derive the asymptotics for the orthogonal polynomials and its norming constants. The first step in the asymptotics for the normal matrices is to prepare for the Laplace method. Our goal is to identify a region that gives the main contribution, in order, for value of the integral - and consequently to identify a error-contributing region of the integration region. Let's reformulate our integral to identify the integral as usual in the Laplace method, such as in Section \ref{Section: Laplace Method}. We know $Q(z) = q(|z|)$ a radially symmetric potential such that, defining $z \deff r \ee^{\ii \theta}$, that is, $|z| = r$, we would have
+\begin{align}
+	h_j & = \int_{\Theta} \int_{\R_+} r^{2j} \ee^{-N q(r)} \frac{r}{\pi} \dd r \dd \theta \\
+	& = \frac{2 \pi}{\pi} \int_{\R_+} r^{2j+1} \ee^{-N q(r)} \dd r \\
+	& =  \int_{\R_+} 2 r \ee^{-N \left( q(r) - \frac{2j}{N} \log(r) \right)} \dd r
+\end{align}
+We first redefine our potential such that the integrand has a expression better suited to apply the Laplace method. Using $V_{\tau(j)} = q(r) - 2 \tau(j) \log(r)$, where $\tau(j) \deff j/N \in [0, 1)$, one can rewrite the integral as
+\begin{equation}
+	h_j = \int_{\R_+} 2r \ee^{-N V_{\tau(j)}(r)} \dd r
+\end{equation}
+Where we have set the stage for the Laplace technique. Note that now $\tau$ will perform the function of the previous index $j$ and relates to which coefficient we're calculating. Taking a look at the first derivative of the newly defined potential we find for the critical point
+\begin{equation}
+	V'_\tau(r) = q'(r) - \frac{2\tau}{r} \quad \implies \quad r_c q'(r_c) = 2 \tau.
+\end{equation}
+This is: We can find a critical point of the potential $r_c$, parameterized by the degree of the polynomial we are calculating, or more concretely, by $\tau$. Of course, because we know the range of $\tau$, it is worth defining the limital points
+\begin{equation}
+	\begin{cases}
+		r_0, \quad \text{the largest solution of} \ r_0 q'(r_0) = 0 \\
+		r_ 1, \quad \text{the smallest solution of} \ r_1 q'(r_1) = 2
+	\end{cases}
+\end{equation}
+Our main goal here is to evaluate the integral using the surroundings of the critical point. If this point is unique, then we need no more than to calculate the integral in a single small interval around $r_c(\tau)$. This is, of course, true: We have mentioned that the properties on the potential directly implies that $r q'(r)$ is a strictly increasing function on $[r_0, r_1]$, then the solution must be unique. Now, as outside the droplet the growth is not strict, the definitions of $r_0$ ad $r_1$ had to be as mentioned before: Respectively the largest and smallest solution to the proper instance of $rq'(r) = 2\tau$. An important distinction must be made between the cases when $r_0 = 0$ and $r_0 > 0$, corresponding to Subsections \ref{Subsection: Disk} and \ref{Subsection: Annulus}, respectively.  We begin noticing that $r_\tau | r_\tau q'(r_\tau) = 2 \tau$ is an increasing function on $\tau$ and that $r_0 \leq r_\tau \leq r_1\quad \forall \tau \in [0,2]$. 
+
+\subsection{Asymptotics - Annulus}
+\label{Subsection: Annulus}
+
+\input{./Text/Subsections/RingAsymptotics.tex}
+
+\subsection{Asymptotics - Disk}
+\label{Subsection: Disk}
+
+\input{./Text/Subsections/DiskAsymptotics.tex}

@@ -1,0 +1,118 @@
+\begin{thebibliography}{10}
+
+\bibitem{Trapezoidal-Maclaurin}
+Bradley~K. Alpert.
+\newblock Hybrid gauss-trapezoidal quadrature rules.
+\newblock {\em SIAM J. Sci. Comput.}, 20(5):1551–1584, January 1999.
+
+\bibitem{Byun_2023}
+Sung-Soo Byun, Nam-Gyu Kang, and Seong-Mi Seo.
+\newblock Partition functions of determinantal and pfaffian coulomb gases with
+  radially symmetric potentials.
+\newblock {\em Communications in Mathematical Physics}, 401(2):1627–1663,
+  March 2023.
+
+\bibitem{deift2006universalitymathematicalphysicalsystems}
+Percy Deift.
+\newblock Universality for mathematical and physical systems, 2006.
+
+\bibitem{ManuelaGirottiPhD}
+Manuela Girotti.
+\newblock {\em Riemann-Hilbert approach to Gap Probabilities of Determinantal
+  Point Processes}.
+\newblock PhD thesis, Concordia University, August 2014.
+\newblock Unpublished.
+
+\bibitem{Montgomery}
+J.~Goldston and G.~Montgomery.
+\newblock {\em Pair Correlation of Zeros and Primes in Short Intervals}.
+
+\bibitem{hedenmalm2020planarorthogonalpolynomialsboundary}
+Haakan Hedenmalm and Aron Wennman.
+\newblock Planar orthogonal polynomials and boundary universality in the random
+  normal matrix model, 2020.
+
+\bibitem{JOHANSSON20061}
+Kurt Johansson.
+\newblock Course 1 - random matrices and determinantal processes.
+\newblock In Anton Bovier, François Dunlop, Aernout {van Enter}, Frank {den
+  Hollander}, and Jean Dalibard, editors, {\em Mathematical Statistical
+  Physics}, volume~83 of {\em Les Houches}, pages 1--56. Elsevier, 2006.
+
+\bibitem{Karlin-McGregor}
+Samuel Karlin and James McGregor.
+\newblock {Coincidence probabilities.}
+\newblock {\em Pacific Journal of Mathematics}, 9(4):1141 -- 1164, 1959.
+
+\bibitem{Kieburg_2014}
+Mario Kieburg, Jacobus J.~M. Verbaarschot, and Savvas Zafeiropoulos.
+\newblock Dirac spectra of two-dimensional qcd-like theories.
+\newblock {\em Physical Review D}, 90(8), October 2014.
+
+\bibitem{Leble2017-yj}
+Thomas Lebl{\'e} and Sylvia Serfaty.
+\newblock Large deviation principle for empirical fields of log and riesz
+  gases.
+\newblock {\em Invent. Math.}, 210(3):645--757, December 2017.
+
+\bibitem{majumdar2007randommatricesulamproblem}
+Satya~N. Majumdar.
+\newblock Random matrices, the ulam problem, directed polymers, growth models,
+  and sequence matching, 2007.
+
+\bibitem{nica2025gaussianintegralformulahermite}
+Mihai Nica and Janosch Ortmann.
+\newblock A gaussian integral formula for the hermite polynomials:
+  Combinatorics, asymptotics and applications, 2025.
+
+\bibitem{NISTMathFunc}
+Frank Olver, Daniel Lozier, Ronald Boisvert, and Charles Clark.
+\newblock Nist handbook of mathematical functions.
+\newblock 01 2010.
+
+\bibitem{rahman2023recursivecharacterisationsrandommatrix}
+Anas~A. Rahman.
+\newblock Recursive characterisations of random matrix ensembles and associated
+  combinatorial objects, 2023.
+
+\bibitem{10.1214/10-AOP628}
+Dan Romik.
+\newblock {Arctic circles, domino tilings and square Young tableaux}.
+\newblock {\em The Annals of Probability}, 40(2):611 -- 647, 2012.
+
+\bibitem{Schroder2019}
+Dominik Schroder.
+\newblock From dyson to pearcey: Universal statistics in random matrix theory,
+  2019.
+
+\bibitem{SERFOZO19901}
+Richard~F. Serfozo.
+\newblock Chapter 1 point processes.
+\newblock In {\em Stochastic Models}, volume~2 of {\em Handbooks in Operations
+  Research and Management Science}, pages 1--93. Elsevier, 1990.
+
+\bibitem{shi2021errorboundsasymptoticexpansions}
+Wei Shi, Gergő Nemes, Xiang-Sheng Wang, and Roderick Wong.
+\newblock Error bounds for the asymptotic expansions of the hermite
+  polynomials, 2021.
+
+\bibitem{Tracy_1993}
+Craig~A. Tracy and Harold Widom.
+\newblock Level-spacing distributions and the airy kernel.
+\newblock {\em Physics Letters B}, 305(1–2):115–118, May 1993.
+
+\bibitem{Tremblay}
+Nicolas Tremblay.
+\newblock A short introduction to determinantal point processes, January 2025.
+
+\bibitem{Ulam}
+S.~M. Ulam.
+\newblock On some statistical properties of dynamical systems.
+\newblock In Jerzy Neyman, editor, {\em Fourth Berkeley Symposium on
+  Mathematical Statistics and Probability}, pages 315--320, jan 1961.
+
+\bibitem{Zhipeng-Liu-ClassNotes}
+Zhipeng-Liu.
+\newblock Random matrix theory, Unknown 0.
+
+\end{thebibliography}

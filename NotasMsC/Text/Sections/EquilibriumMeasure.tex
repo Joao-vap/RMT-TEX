@@ -1,0 +1,93 @@
+Remember in \ref{Subsection: The case for beta 2} when we expressed the equilibrium measure in terms of the Kernel of the point process - given in \ref{Equation: Equilibrium Measure and Kernel}. It was noted then that we would only need to understand the asymptotics of the orthogonal polynomial associated with the weight function to properly recover the equilibrium measure. Now, we have such an asymptotic. Remember the expression
+\begin{equation}
+	\pe^{(w)}(x) = K_n^{(2)}(x, x) = \frac{\wf(x)}{r_{n-1}^{(2)}} \left( \He_{n-1}(x)\partial_x \He_n(x) - \He_{n}(x)\partial_x \He_{n-1}(x)  \right)
+\end{equation}
+We will make use of the following relation
+\begin{definicao}
+	The Hermite polynomial satisfies the following propertie
+	\begin{equation}
+		\partial_x \He_{n}(x) = n \He_{n-1}(x)
+	\end{equation}
+\end{definicao}
+\begin{proof}
+\begin{align}
+		 \frac{\dd}{\dd x} \He_n(x) & = \frac{\dd}{\dd x} \left( (-1)^{(n)}\ee^{\frac{1}{2} x^2} \frac{\dd^n}{\dd x^n} \ee^{-\frac{1}{2} x^2} \right) \\
+		 & = (-1)^{(n)}  \left( x \ee^{\frac{1}{2} x^2} \frac{\dd^n}{\dd x^n} \ee^{-\frac{1}{2} x^2} +  \ee^{\frac{1}{2} x^2} \frac{\dd^{n+1}}{\dd x^{n+1}} \ee^{-\frac{1}{2} x^2}  \right) \\
+		 & =  x \left( (-1)^{(n)}  \ee^{\frac{1}{2} x^2} \frac{\dd^n}{\dd x^n} \ee^{-\frac{1}{2} x^2} \right) -   (-1)^{(n+1)} \left(  \ee^{\frac{1}{2} x^2} \frac{\dd^{n+1}}{\dd x^{n+1}} \ee^{-\frac{1}{2} x^2} \right)  \\
+		 & = x \He_n(x) - \He_{n+1}(x) \\
+		 & = x \He_n(x) - \left(  x\He_n(x) - n \He_{n-1}(x) \right) \\
+		 & =  n \He_{n-1}(x) 
+	\end{align}
+\end{proof}
+using this result, one can write that
+\begin{align}
+		\pe^{(w)}(x) = K_n^{(2)}(x, x) & = \frac{\wf(x)}{r_{n-1}^{(2)}} \left( He_{n-1}(x)  n \He_{n-1}(x) - \He_{n}(x)(n-1) \He_{n-2}(x)   \right) \\
+		& = \frac{\wf(x)}{r_{n-1}^{(2)}} \left( n \He^2_{n-1}(x) - (n-1)  \He_{n}(x)\He_{n-2}(x)   \right) \\
+		& = \frac{\wf(x)}{r_{n-1}^{(2)}} \left( (N-1) \He^2_{n-1}(x) - (N-2)  \He_{n}(x)\He_{n-2}(x)   \right) \\
+\end{align}
+and now it suffices to have the expression for $\He_{n-2}(x)$.
+\begin{equation}
+	\He_n(2\sqrt{N}\cos{(\gamma)}) = \sqrt{\frac{2}{\sin{(\gamma)}}}
+	N^{\frac{1}{2} \left(N - 1\right)}
+	\ee^{N\left(\cos^2{(\gamma)} - \frac{1}{2} \right)} 
+	\sin{
+		\left(
+		\theta(\beta_c^+) 
+		-N\left(\frac{\sin{(2\gamma)}}{2}
+		-\gamma\right)
+		\right)
+	} 
+	(1 + \Boh(N^{-1}))
+\end{equation}
+\begin{equation}
+	\He_{n-1}(2\sqrt{N}\cos(\gamma)) = \sqrt{\frac{2}{\sin{(\gamma)}}}
+	N^{\frac{1}{2} \left(N -2\right)}
+	\frac{\ee^{N\left(\cos^2{(\gamma)} - \frac{1}{2} \right)}}{\ee^{\cos^2{(\gamma)}}}
+	\sin{
+		\left(
+		\theta(\beta_c^+) 
+		-(N-1)\left(\frac{\sin{(2\gamma)}}{2}
+		-\gamma\right)
+		\right)
+	} 
+	(1 + \Boh(N^{-1}))
+\end{equation}
+\begin{equation}
+	\He_{n-2}(2\sqrt{N}\cos(\gamma)) = \sqrt{\frac{2}{\sin{(\gamma)}}}
+	N^{\frac{1}{2} \left(N - 3\right)}
+	\frac{\ee^{N\left(\cos^2{(\gamma)} - \frac{1}{2} \right)}}{\ee^{2\cos^2{(\gamma)}}}
+	\sin{
+		\left(
+		\theta(\beta_c^+) 
+		-(N-2)\left(\frac{\sin{(2\gamma)}}{2}
+		-\gamma\right)
+		\right)
+	} 
+	(1 + \Boh(N^{-1}))
+\end{equation}
+Therefore
+\begin{align}
+		\pe^{(w)}(x) & =  \Pi_N \left[(N-1) \sin^2{\left(\theta(\beta_c^+)-(N-1)\Theta \right)} - (N-2) \sin{\left(\theta(\beta_c^+)-(N-2)\Theta\right)}  \sin{\left(\theta(\beta_c^+)-N\Theta \right)} \right] \\
+		& =  \Pi_N N \left[\sin^2{\left(\theta(\beta_c^+)-(N-1)\Theta \right)} - \sin{\left(\theta(\beta_c^+)-(N-2)\Theta\right)}  \sin{\left(\theta(\beta_c^+)-N\Theta \right)} \right] \left(1 + \Boh(1) \right)
+\end{align}
+with
+\begin{align}
+	\Pi_N & = \frac{\ee^{-\frac{1}{2}\left(2\cos{\gamma}\sqrt{N}\right)^2}}{(N-2)!} \left( \frac{2}{\sin(\gamma)} 	\frac{\ee^{2N\left(\cos^2{(\gamma)} - \frac{1}{2} \right)}}{\ee^{2\cos^2{(\gamma)}}} N^{N-2}\right) \\
+	& = \frac{2 \ee^{-2\cos^2{(\gamma)}}}{\sin(\gamma) \sqrt{2\pi N}} \\
+\end{align} 
+and
+\begin{equation}
+	\Theta = \left(\frac{\sin{(2\gamma)}}{2}+\gamma\right)
+\end{equation}
+Finally, using the identity $\cos^2(a + b) - \cos(a)\cos(a+2b) = \sin^2(b)$,
+\begin{align}
+		\pe^{(w)}(\alpha) & =  \frac{2 \ee^{-2\cos^2{(\gamma)}}}{\sin(\gamma) \sqrt{2\pi N}} \left[\sin^2{\left(\theta(\beta_c^+)-(N-1)\Theta \right)} - \sin{\left(\theta(\beta_c^+)-(N-2)\Theta\right)}  \sin{\left(\theta(\beta_c^+)-N\Theta \right)} \right] \left(1 + \Boh(1) \right) \\
+		& =  \frac{2 \ee^{-2\cos^2{(\gamma)}}}{\sin(\gamma) \sqrt{2\pi N}} \left[\cos^2{\left(a + \gamma \right)} - \cos{\left( a \right)} \cos{\left(a + 2\gamma \right)}  \right] \left(1 + \Boh(1) \right) \\
+		& =  \frac{2 \ee^{-2\cos^2{(\gamma)}}}{\sin(\gamma) \sqrt{2\pi N}} \sin^2{(\gamma)} \left(1 + \Boh(1) \right) \\
+		& = \frac{2 \ee^{-2\cos^2{(\gamma)}}}{ \sqrt{2\pi N}} \sin{(\gamma)} \left(1 + \Boh(1) \right) \\
+		& = \frac{\ee^{-\frac{1}{2}\alpha^2}}{\sqrt{2\pi N}} \sqrt{4 - \alpha^2}
+\end{align}
+using that
+\begin{equation}
+	a - \frac{\pi}{2} = \theta(\beta_c^+) - N \Theta - \frac{\sin{(2\gamma)}}{2}
+\end{equation}

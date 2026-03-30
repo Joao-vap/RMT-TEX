@@ -1,0 +1,364 @@
+\section{Coulomb Gases}
+\label{section: Coulomb Gas}
+
+We start by describing a familiar distribution or physicists: The Boltzmann-Gibbs distribution. This is a probability distribution that represents the probability of a given state for a system of particles as a function of the state's \textit{energy} ($\Hf$) and the \textit{temperature} ($1/(\beta N^2)$) of the system. This is the distribution that maximizes the entropy: lower energy states have higher probability of being occupied than states with higher energy. Under the appropriate conditions, we name Coulomb Gas $\p_N$ the Boltzmann-Gibbs probability measure given in $(\R^d)^N$. The measure $\p_N$ models an coulomb-interacting gas of charged indistinguishable particles under some external field $\Q$. Particles are interpreted to be at positions $\mmany{x}{N} \in \Se$ of dimension $d$, or some configuration $\xi_N = (\mmany{x}{N})$, embedded in some space $\R^n$. We write  
+\begin{equation}
+	\dd \p_N(\mmany{x}{N}) = \frac{e^{-\beta N^2 \Hf_N(\xi_N)}}{Z_{N}^{\beta}} \mcmany{\dd x}{N}{}
+	\label{Equation: Coulomb Gas Measure}
+\end{equation}
+to be te measure of such system, where 
+\begin{equation}
+	\Hf_N(\xi_N) = \frac{1}{N} \sum_{i = 1}^{N} \Q(x_i) + \frac{1}{2N^2} \sum_{i \neq j}^{N} \g(x_i - x_j)	
+\end{equation}
+is usually called the Hamiltonian, or more concretely, the energy of the system. The function $\Q \colon \Se \mapsto \R$ is the external potential. If one wishes $\p_N$ to be a probability measure,  then one must ensure that $\Q$ is such that the normalizing constant $Z_{N, \beta}$ is finite for all $N$ and the measure support is compact. This is all to say that the potential should be confining: As the number of particles increases, it must counter the repulsion effect and keep limited the region where particles move around. The function $\g \colon \Se \mapsto (-\infty, \infty]$ is the \textit{Coulomb Interacting Kernel}, solution to the Poisson equation given by $- \nabla g(\vec{x}) = c_n\delta_0$.
+
+Recall the expression for invariant ensembles in \autoref{Definition: Invariant}, note that, rearranging the terms in \autoref{Equation: Coulomb Gas Measure} and considering a logarithm interaction kernel, we should get
+\begin{equation}
+	\dd \p_N(\mmany{x}{N}) = \frac{1}{Z_{N}^{\beta}}\prod_{1\leq j < k \leq n}^N |x_j - x_k|^\beta \prod_{j=1}^{N} \ee^{- \beta N \Q(x_j)}.
+\end{equation}
+This is to say that for invariant ensembles, their eigenvalues behave as a Coulomb gas. This opens the way for interpretations on the distribution of eigenvalues but also to computations using simulation methods for particle dynamics \cite{Chafal}.
+
+\begin{exemplo}
+	For some $\Q \colon \R \rightarrow \R$, we can take the appropriate dimensions for $d=1$ and $n = 2$ to recover the, for example, GUE ensemble density
+	\begin{equation}
+		\p_N(\vec{x}) = \frac{e^{-\beta N^2 \Hf_N(\vec{x})}}{Z_{N,\beta}}, \quad \Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \frac{x_i^2}{2} + \frac{1}{N^2} \sum_{i < j}^{N} \ln{\frac{1}{|x_i - x_j|}}.
+	\end{equation}
+	In this case, we would be dealing with particles on the plane confined to move only on the real line. However, the gases measure accepts a natural extension for any potential that we call acceptable - that obeys some growth and smoothness conditions. Together with the dimensions, we can recover other invariant random matrix models.
+\end{exemplo}
+
+\section{Equilibrium Measure}
+\label{Section: Equilibrium}
+
+The description of the eigenvalues as a Coulomb gas and as a point process lead us to the idea of minimizing some type of energy of the system by finding equilibrium configurations. Suppose we are dealing with the measure
+\begin{equation}
+	\pe_n(\xi_n) = \frac{e^{-\beta n^2 \Hf_n(\vec{x})}}{Z_{n,\beta}}, \quad \Hf_n(\vec{x}) = \frac{2}{n} \sum_{i = 1}^{n} Q(x_i) + \frac{1}{n^2} \sum_{i < j}^{n} \ln{\frac{1}{|x_i - x_j|}}. 
+\end{equation}
+
+Then, for any $n$-configuration $\xi_n = \mmany{x}{n}$, if we let $\mu_x$ be the normalized counting measure on $\C$,
+\begin{equation}
+	\mu_x = \frac{1}{n} \sum_{i=1}^{n} \delta_{x_i}, \quad \int_{\R} \dd \mu_x = 1,
+ \end{equation} 
+ then
+\begin{equation}
+	\frac{1}{n^2} \sum_{i\neq j} \ln{|x_i - x_j|^{-1}} + \frac{2}{n} \sum_{i=1}^n \Q(x_i)
+\end{equation}
+may be written in the form 
+\begin{equation}
+	\int \int \ln |t - s|^{-1} \dd \mu_x(t) \dd \mu_x(s) + 2 \int \Q(x_i) \dd  \mu_x (s).
+\end{equation}
+This lead us to the energy minimization problem 
+\begin{align}
+	E^{(\Q)} & = \inf_{\mu \in \M^1(\R)} \left[ \int \int \ln |t - s|^{-1} \dd \mu_x(t) \dd \mu_x(s) + 2 \int \Q(s) \dd  \mu_x (s) \right] \\\ & \deff \inf_{\mu \in \M^1(\R)} \left[ I_\Q(\mu_x) \right]
+\end{align}
+where
+\begin{equation}
+	\M^1(\R) = \left\{ \mu \in \text{Borel measures on} \ \R \ \bigg| \int \dd \mu = 1 \right\}.
+\end{equation}
+The quantity $E^{(Q)}$ is the \textit{equilibrium energy} of the system and $I_Q(\mu_x)$ is the \textit{energy integral}. However, we must step backwards so that we can advance.
+
+The classical case for such minimization problems corresponds to the cases when the conductor $\Sigma$ is compact and the external field $\Q$ is zero. Under some mild conditions on the external field, however, the equilibrium measure $\mu_\Q$ - the measure that minimizes such problem - has a unique solution which is a measure of compact support. For it to be compact, $\Q$ the confining potential, must increase sufficiently fast around infinity. Let $\Sigma \subseteq \C$ be a compact subset of the complex plane and $\M(\Sigma)$ be the collection of all positive Borel measure of compact support in $\Sigma$. Let $\mu \in \M(\Sigma)$ be such a measure in the complex plane $\C$. The associated \textit{logarithmic potential} is defined by 
+\begin{equation}
+	U^{\mu}(z) \deff \int \ln \frac{1}{|z - t|} \dd \mu(t).
+\end{equation}
+Also, $I(\mu)$, called the \textit{logarithm energy} of a $\mu \in \M(\Sigma)$ is defined
+\begin{equation}
+	I(\mu) \deff \int \int \ln \frac{1}{|z-t|} \dd \mu(z) \dd \mu (t),
+\end{equation}
+and the energy $V$ of $\Sigma$
+\begin{equation}
+	V \deff \inf\{ I(\mu) | \mu \in \M(\Sigma)\}.
+\end{equation}
+We can say that
+\begin{proposicao} \cite{saff2024logarithmic}
+	The logarithmic potential are super-harmonic on the whole plane, that is, they have the following properties.
+	\begin{enumerate}
+		\item $U^{\mu}(z) > -\infty$ for all $z$,
+		\item $U^{\mu}$ is lower semi-continuous,
+		\item $U^{\mu}(z) \geq \frac{1}{2\pi} \int_{-\pi}^{\pi} U^{\mu}(z)(x + r \ee^{\ii \theta}) \dd \theta$ for all $z$ and all $r \geq 0$. 
+	\end{enumerate}
+\end{proposicao}
+\begin{proof}
+	Firstly, property $(1)$ follows directly by the properties of $\mu$, especially the compact support. The property $(2)$ can be proven noticing that
+	\begin{equation}
+		U^\mu(z) = \lim_{M \rightarrow \infty} \int \min\left( M, \ln \frac{1}{|z - t|} \right) \dd \mu (t).
+	\end{equation}
+	The functions on the right-hand side are continuous and increasing with $M$, such limit of an increasing sequence of functions must be lower semi-continuous. To prove $(3)$, note that the kernel $\ln(1/|z-t|)$ is super-harmonic in $\C$ for each $t$. If some $F$ is analytic in a domain $D$ and $\rho > 0$, then $|F(z)|^\rho$ is sub-harmonic in $D$; furthermore, $\ln |F(z)|$ is sub-harmonic in $D$ provided $F$ is not identically zero. Thus, 
+	\begin{equation}
+		\frac{1}{2\pi} \int_{-\pi}^{\pi} \ln{\frac{1}{|z - r\ee^{\ii \theta} - t|}} \dd \theta \leq \ln \frac{1}{|z-t|}, \quad z, t \in \C.
+	\end{equation}
+	Using the Fubini-Toneli theorem and the inequality above
+	\begin{align}
+		\frac{1}{2\pi} \int_{-\pi}^{\pi} U^\mu (z + r \ee^{\ii \theta}) \dd \theta & = \int \frac{1}{2\pi} \int_{-\pi}^{\pi} \ln{\frac{1}{|z - r\ee^{\ii \theta} - t|}} \dd \theta \dd \mu(t), \\
+		& \leq \int \ln \frac{1}{|z-t|} \dd \mu(t) = U^\mu (z)
+	\end{align}
+\end{proof}
+
+Also, a result that will become useful soon but we do not prove.
+
+\begin{lema} \cite{saff2024logarithmic}
+	Let $\mu = \mu_1 - \mu_2$ be a signed Borel measure with compact support	and total mass $\mu(\C) = 0$. Suppose further that each of the positive measures $\mu_1$ and $\mu_2$ has finite logarithmic energy. Then the logarithmic energy of $\mu$ is nonnegative:
+	\begin{equation}
+		I(\mu) \deff \int \int \ln \frac{1}{|z-t|} \dd \mu(z) \dd \mu (t),
+	\end{equation}
+	and it is zero if and only if $\mu = 0$.
+	\label{Lema: positive kernel}
+\end{lema}
+
+The energy $V$ can be finite or $+\infty$, and in the finite case there is a unique measure $\mu = \mu_\Sigma \in \M(\Sigma)$ for which the minimum defining energy $V$ is reachable. Such a measure $\mu_\Sigma$ is called the \textit{equilibrium distribution} or \textit{equilibrium measure} of the compact set $\Sigma$. Fro such a function we have that its logarithm potential is always smaller or equal to the energy $I_\Sigma$. Define also the \textit{logarithmic capacity}
+\begin{equation}
+	\cpct{(\Sigma)} \deff \ee^{-V}.
+\end{equation} 
+The capacity for an arbitrary Borel set $E$ is defined by the supreme of the capacity of all the compact subsets $K \subseteq E$. Naturally, the capacity of a subset of a Borel set of capacity zero is said to be zero. The union of zero-capacity Borel sets can also be shown to be a zero-capacity Borel set. A property is said to hold \sigla{q.e.}{\textit{quasi-everywhere}} on a set $E$ if the set of non  conforming points is of capacity zero. Then, we can say that
+\begin{equation}
+	U^\mu_\Sigma(z) = V, \quad \text{q.e.} z \in \Sigma. 
+\end{equation} 
+
+We should at this point reintroduce the external potential $Q$. The main difference now is that we can loose the compacity restriction on the sets $\Sigma$ and impose that there is no positive mass around infinity. There is a natural way to introduce this idea. Let $\Sigma \subset \C$ be a closed set and $\wf : \Sigma \rightarrow [0, \infty)$. We call such a function a \textit{weight function} on $\Sigma$.
+
+\begin{definicao}
+	A weight function $\wf$ is said to be \textbf{admissible} is it satisfies the following three conditions
+	\begin{enumerate}
+		\item $\wf$ is upper semi-continuous;
+		\item $\Sigma_0 \deff \{ z \in \Sigma | \wf(z) > 0 \}$ has positive capacity;
+		\item if $\Sigma$ is unbounded, then $|z| \wf(z) \rightarrow 0$ as $|z| \rightarrow \infty$, $z \in \Sigma$.
+	\end{enumerate} 
+\end{definicao}
+
+We can define
+\begin{equation}
+	\wf(z) \deff \ee^{-n Q(z)}.
+\end{equation}
+Then, for the weight to be admissible, $Q : \Sigma \rightarrow (\infty, \infty]$ must be lower semi-continuous, $Q(z) < \infty$ on a set of positive capacity and if $\Sigma$ is unbounded, then
+\begin{equation}
+	\lim_{|z| \rightarrow \infty, z \in \Sigma} \{ Q(z) - \ln |z| \} = \infty.
+\end{equation}
+Then, let $\M(\Sigma)$ be the collection of all positive unit Borel measures $\mu$ with support in $\Sigma$. Our definition for the weighted energy integral
+\begin{equation}
+	I_\wf(\mu) = \int \int \ln |t - s|^{-1} \dd \mu(t) \dd \mu_x(s) + 2 \int \Q(s) \dd  \mu(s)
+\end{equation}
+is recovered if both integrals exist and are finite. We can now move on to prove the existence of the \textit{equilibrium measure} $\mu^{\Q}$ for a given external field $\Q$ given by some polynomial
+\begin{equation}
+	Q(x) = t_{2m} x^{2m} + t_{2m-1} x^{2m - 1} + \cdots + t_0, \quad t_{2m} > 0, V(x) \geq 0.
+	\label{Equation: Potential Q}
+\end{equation}
+
+\begin{teorema} \cite{deiftorthogonal}
+	Let $Q$ be as in \autoref{Equation: Potential Q}. Then, there exists a unique probability measure $\mu = \mu^{\wf}$ such that
+	\begin{equation}
+		E^{\wf} = \inf_{\mu \in \M^1} I^{\wf}(\mu) = I^{\wf}(\mu^{\wf}).
+	\end{equation}
+	Moreover, $\mu^\wf$ has compact support.
+	\label{Theorem: existence equilibrium}
+\end{teorema}
+\mycomment{
+\begin{proof}
+	Let 
+	\begin{equation}
+		k^{\Q}(t,s) \deff \ln |t-s|^{-1} + \frac{1}{2} V(t) + \frac{1}{2} V(s)
+	\end{equation}
+	such that 
+	\begin{equation}
+		I^{\Q}(\mu) = \int \int k^{\Q}(t,s) \dd \mu(t) \ss \m(s).
+	\end{equation}
+	Then, because $|t-s| \leq \sqrt{1+|t|^2} \sqrt{1+|s|^2}$ for $t,s \in \C$, we see that
+	\begin{equation}
+		\ln |t - s|^{-1} \geq  - \frac{1}{2} \ln (1+ |t|^2) - \frac{1}{2} \ln(1+|s|^2)
+	\end{equation}
+	and therefore, if we let 
+	\begin{equation}
+		\psi^{\Q}(x) \deff Q(x) - \ln(|x|^2 + 1),
+	\end{equation}
+	and note that $\psi^{\Q}(x) \geq c_Q > - \infty$, we would have
+	\begin{equation}
+		k^{\Q}(t,s) \geq \frac{1}{2} \psi^{\Q}(t) + \frac{1}{2} \psi^{\Q}(s) \geq c_Q.
+	\end{equation}
+	Finally, we have $I^{\Q} \geq c_V$ and therefore $E^{\Q} \geq c_Q > - \infty$. Moreover, $E^Q < \infty$.
+\end{proof}
+}
+
+
+\subsection{Euler-Lagrange}
+
+Associates with the variational problem introduced on \autoref{Section: Equilibrium}
+\begin{align}
+	E^{\wf} & = \inf_{\mu \in \M^1} I^{\wf} (\mu) \\
+	& =   \inf_{\mu \in \M^1} \left[ \int \int \ln |t - s|^{-1} \dd \mu(t) \dd \mu(s) + 2 \int \Q(s) \dd  \mu(s) \right] \\
+	&  = I^{\wf} (\mu^{\wf})
+\end{align}
+there are so-called \textit{Euler-Lagrange} type variational equations. For some cases it is possible to solve these equations for $\mu^{\wf}$.
+
+\begin{teorema} (Variational Equations, \cite{deiftorthogonal})
+	The equilibrium measure $\mu^\wf$ for the given variational problem satisfies the following conditions. 
+	
+	There exists a real constant $l$ such that 
+	\begin{enumerate}
+		\item
+		\begin{equation}
+			\int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) \right] \dd \tilde{\mu}(x) \geq l
+		\end{equation}
+		for all $\tilde{\mu} \in \M^1(\C)$ of compact support with $I^\wf(\tilde{\mu}) < \infty$.
+		\item
+			\begin{equation}
+		2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) = l
+		\end{equation}
+		for $\mu^\wf$-almost everywhere.
+	\end{enumerate}
+	Conversely, if $\mu \in \M^1(\C)$ has compact support, satisfies conditions $(1)$ and $(2)$ above, and $I^\wf(\mu) < \infty$, then $\mu = \mu^\wf$.
+\end{teorema}
+
+\begin{proof}
+	($\implies$) We recall that $\mu^\wf$ has compact support by \autoref{Theorem: existence equilibrium} and $I^\wf(\mu^\wf) = E^\wf < \infty$. Suppose $\mu^* \in \M^1(\C)$ has compact support and $I^\wf(\mu^*) < \infty$. Then, defining some convex combination
+	\begin{equation}
+		\mu_t = t \mu^* + (1-t) \mu^\wf = \mu^\wf + t (\mu^* - \mu^\wf) \in \M^1(\C), \quad 0 \leq t \leq 1,
+	\end{equation}
+	we should have
+	\begin{multline}
+		I^\wf(\mu_t) = \int \int \ln |t - s|^{-1} \dd \mu^\wf(t) \dd \mu^\wf(s) + 2 \int \Q(s) \dd  \mu^\wf(s) \\
+		+ 2t \int \int \ln |t - s|^{-1} \dd \mu^\wf(t) \dd (\mu^* - \mu^\wf)(s) \\
+		+ 2t  \int \Q(s) \dd  (\mu^* - \mu^\wf) (s) \\
+		+ t^2 \int \int \ln |t - s|^{-1} \dd (\mu^* - \mu^\wf) \dd (\mu^* - \mu^\wf)(s).
+	\end{multline}
+	This is all well since $\mu^\wf, \mu^*$ have compact support and $I^\wf (\mu^\wf), I^\wf(\mu^*) < \infty$. As $I^\wf(\mu_t) \geq I^\wf (\mu^\wf)$ for $0 \leq t \leq 1$ by assumption of minimality and \autoref{Lema: positive kernel}, is is necessary that
+	\begin{equation}
+		\int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) \right] \dd (\mu^* - \mu^\wf)(x) \geq 0
+		\label{Equation: Proof Euler >0}
+	\end{equation}   
+	and therefore
+	\begin{equation}
+		\int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) \right] \dd \mu^*(x) \geq l
+		\label{Equation: Proof Euler >l}
+	\end{equation}
+	where
+	\begin{equation}
+		\int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) \right] \dd \mu^\wf(x) \deff l
+	\end{equation}
+	proving the first assertion in $(1)$. Now, let
+	\begin{equation}
+		B = \left\{ x \ \bigg| \ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) < l \right\}.
+	\end{equation}
+	Then, $B$ must be a bounded set of $\C$. Suppose $\mu^*(B) > 0$ and set
+	\begin{equation}
+		\mu^*_B = \frac{\chi_B}{\mu^*(B)} \mu^*
+	\end{equation}
+	where $\chi_B$ is the characteristic function of the set $B$. Then $\mu^*_B \in \M^1(\C)$ has compact support and $I^\wf(\mu^*) < \infty$. inserting $\dd \mu^*_B$ in \autoref{Equation: Proof Euler >l}, we find
+	\begin{equation}
+		l \leq \int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) \right] \dd \frac{\chi_B}{\mu^*(B)} \mu^*(x) < l
+	\end{equation}
+	a contradiction. Therefore, 
+	\begin{equation}
+		\mu^*(B) = \mu^*\left( \left\{ x \ \bigg| \ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) < l \right\} \right) = 0
+	\end{equation}
+	for all measures $\mu^* \in \M^1(\C)$ with support compact and $I^\wf(\mu^*) < \infty$. in particular, it is true for $\mu^* = \mu^\wf$. Since,
+	\begin{align}
+		0 & =  \int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) - l \right] \dd \mu^\wf(x) \\
+		& = \int_{\C - B} \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) - l \right] \dd \mu^\wf(x)
+	\end{align}
+	and $(2)$ follows.
+	
+	($\impliedby$) If, now, $\mu \in \M^1$ satisfies $(1)$ and $(2)$, $I^\wf(\mu) < \infty$, and suppose $\mu$ has compact support. Then write $\mu^\wf = \mu + (\mu^\wf - \mu)$. We have, as before
+	\begin{align}
+		I^\wf(\mu) & \geq I^\wf(\mu^\wf) \\
+		& \begin{multlined}
+			= I^\wf(\mu) +  \int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu(y) + 2 \Q(x) - l \right] \dd (\mu^\wf - \mu)(x) \\ +  \int \int \ln |t - s|^{-1}\dd (\mu^\wf - \mu)(t) \dd (\mu^\wf - \mu)(s).
+		\end{multlined}
+	\end{align}
+	Using $(2)$,
+	\begin{equation}
+		\int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu(y) + 2 \Q(x) - l \right] \dd \mu^\wf(x) - l \geq l - l = 0
+	\end{equation}
+	but also the third term is strictly positive by \autoref{Lema: positive kernel} unless it is identically null. If, however, $\mu^\wf - \mu \neq 0$, then we showed that
+	\begin{equation}
+		I^\wf(\mu) \geq I^\wf(\mu^\wf) > I^\wf(\mu),
+	\end{equation}
+	a contradiction. Thus, if $\mu$ satisfies $(1), (2)$, then it must be $\mu^\wf$.
+\end{proof}
+
+If there is the knowledge that 
+\begin{equation}
+	\dd \mu^\wf = \phi(x) \dd x 
+	\label{Equation: eqmeasure density}
+\end{equation}
+for some continuous function $\phi$ of compact support, then
+\begin{equation}
+	 2 \int \ln{|x-y|^{-1}} \dd \mu(y) + 2 \Q(x)
+\end{equation}
+is continuous and the previous theorem takes the following form
+
+\begin{teorema} (Strong Variational Equations, \cite{deiftorthogonal})
+	Suppose that $\dd \mu^\wf = \phi(x) \dd x$ for some continuous function $\phi$ of compact support. Then the conditions of \autoref{Theorem: existence equilibrium} can be replaced by
+	\begin{enumerate}
+		\item
+		\begin{equation}
+			2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) \geq l
+		\end{equation}
+		for all $z \in \C$.
+		\item
+		\begin{equation}
+			2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) = l
+		\end{equation}
+		on $\{z : \phi(z) > 0\}$.
+	\end{enumerate}
+\end{teorema} 
+
+
+\section{Recovering the Equilibrium Measure}
+
+We mentioned \autoref{Equation: eqmeasure density} the possibility of knowing the density $\phi$ of the equilibrium measure $\mu^\wf$ in relation to the Lebesgue measure. We will know determine $\phi$. As we did many times, assume that $\mu$ is finite and of compact support in the complex plane. For notation, let $A$ denote the two-dimensional Lebesgue measure on $\C$ and $\Delta$ denote the Laplacian operator
+\begin{equation}
+	\Delta F \deff \frac{\partial^2 F}{\partial x^2} + \frac{\partial^2 F}{\partial y^2}.
+\end{equation}
+\mycomment{
+Now, using the following lemma,
+
+\begin{lema} (Unicity Theorem, \cite{saff2024logarithmic})
+	Suppose that the positive measures $\mu$ and $\nu$ have compact support and in a region $D \subset \C$ the potentials $U^\mu$ and $U^\nu$ satisfy
+	\begin{equation}
+		U^\mu = U^\nu + u(z)
+	\end{equation}
+	almost everywhere with respect to two-dimensional Lebesgue measure, where the function $u$ is harmonic in $D$. Then in $D$ the measures $\mu$ and $\nu$ coincide, i.e.
+	\begin{equation}
+		\mu |_D = \nu |_D
+	\end{equation}
+	\label{Theorem: unicity of measure}
+\end{lema}
+}
+We have the theorem below.
+
+\begin{teorema} \cite{saff2024logarithmic}
+	If in a region $R$ the potential $U^\mu$ has continuous second partial
+	derivatives, then $\mu$ is absolutely continuous in $R$ with respect to two-dimensional	Lebesgue measure $A$, and on $R$ we have the formula
+	\begin{equation}
+		\dd \mu = - \frac{1}{2\pi} \Delta U^\mu \dd A
+	\end{equation}
+\end{teorema}
+\mycomment{
+\begin{proof}
+	First let us suppose that in the region $R$ the potential $U^\mu$ has continuous second partial derivatives, and we prove that then $\dd \mu|R$ coincides with
+	\begin{equation}
+		 - \frac{1}{2\pi} \Delta U^\mu \dd A|_R.
+	\end{equation}
+	Let $R_0$ be a simply connected subdomain of $R$ with continuously differentiable boundary curve $\delta R_0$ such that the closure of $R_0$ is contained in $R$. We are going to prove that the sum
+	\begin{equation}
+		\int_{R_0} (\Delta U^\mu(t)) \ln \frac{1}{|z-t|} \dd A(t) + 2 \pi U^\mu(z)
+	\end{equation}
+	is harmonic on $R_0$. Then, by \autoref{Theorem: unicity of measure}, the signed measure
+	\begin{equation}
+		\frac{1}{2\pi} \Delta U^\mu \dd A|_R + \mu
+	\end{equation}
+	does not have mass in $R_0$; hence
+	\begin{equation}
+		\dd \mu |_{R_0} = - \frac{1}{2\pi} \Delta U^\mu \dd A|_{R_0}.
+	\end{equation}
+	Since here $R_0$ is arbitrary with the above properties, this will yield the desired result.
+\end{proof}
+}
+
+
+
+
+
+
+
+
+
+

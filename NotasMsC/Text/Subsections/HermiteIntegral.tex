@@ -1,0 +1,35 @@
+
+Follow \cite[Proposition 2.1]{Zhipeng-Liu-ClassNotes}. A standard method of asymptotic of orthogonal polynomials is the so called \textit{Deift-Zhou} steepest descent method, which considers to asymptotically solve a Riemann-Hilbert problem associated to the orthogonal polynomials. However, the asymptotic may me simpler to compute if the polynomial has an integral representation by direct inspection. The Hermite polynomials have such representation.
+
+\begin{prop}
+	The Hermite polynomial $\He_{n}(x)$ has the following ntegral representation
+	\begin{equation}
+		\He_{n}(x) = \frac{n!}{2\pi\ii} \int_{|t| = 1} \frac{\ee^{tx - \frac{t^2}{2}}}{t^{n+1}} \dd t
+	\end{equation}
+	\label{Prop: Hermite Integral Representation}
+\end{prop}
+\begin{proof}
+	We will explicitly arrive at the \textit{Standart} notation for the polynomial using the integral representation
+	\begin{equation}
+		\He_{n}(x) = \frac{n!}{2\pi\ii} \int_{|t| = 1} \frac{\ee^{tx - \frac{t^2}{2}}}{t^{n+1}} \dd t
+	\end{equation}
+	Take the Taylor expansion for the exponential
+	\begin{align}
+		\ee^{tx} & = \sum_{i=0}^{\infty} \frac{(x)^i}{i!} t^i \\
+		\ee^{-\frac{t^2}{2}} & = \sum_{j=0}^{\infty} \frac{(-1)^j}{2^j j!} t^{2j}\\
+	\end{align}
+	and explicitly substitute the expressions into the integral form
+	\begin{equation}
+		\He_{n}(x) = \frac{n!}{2\pi\ii} \sum_{i=0}^{\infty} \frac{(x)^i}{i!} \sum_{j=0}^{\infty} \frac{(-1)^j}{2^j j!} \int_{|t| = 1} t^{-n-1+i+2j} \dd t
+	\end{equation}
+	and note that this integral is valued zero except when $2j - (i-n) = 0$. Then, we can write, for every even $i-n$,
+	\begin{align}
+		\He_n(x) & = n! \sum_{i=0|i-n\text{even}}^{\infty} (-1)^{\frac{n-i}{2}} \frac{x^i}{2^{\frac{n-i}{2}} i! \left( \frac{n-i}{2} \right)!} \\
+		& = n! \sum_{l=0}^{\lfloor \frac{n}{2} \rfloor} (-1)^{l} \frac{x^{n-2l}}{2^l l! (n-2l)!}
+	\end{align}
+	which is exactly the expression given by \ref{Equation: Standart Hermite Notation}.
+\end{proof}
+
+\begin{prop}
+	I believe there is a connection between the two integral representations if we start with the Gaussian expectation formula, expand the binomial and rewrite the moments with the Cauchy formula, as its done to derive this representation starting from the derivative formula. Missing proof. 
+\end{prop}

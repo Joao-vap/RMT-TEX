@@ -1,0 +1,32 @@
+
+Our attention will be on the Asymptotic of the Hermite Polynomials, to get there, we will work our way with some combinatorial arguments. We start with the \textit{Wick Formula/Isserlis' Theorem} for Gaussian expectations.
+\begin{thm}
+	(Wick Formula/Isserlis' Theorem) If $\mmany{Z}{n}$ are a collection of mean zero, jointly Gaussian random variables, then the expectation of the product $Z_1 \cdots Z_n$ can be written in terms of the individual correlations $\E[Z_a Z_b]$ in the following way
+	\begin{equation}
+		\E[Z_1 \cdots Z_n] = \sum_{\pi \in \Prt(\{1,\cdots,n\})} \prod_{\{a,b\} \in \pi} \E[Z_a Z_b]
+	\end{equation}
+	where $\Prt(\{1,\cdots,n\})$ are the set of pairings (or pair partitions) on the set $S = \{1, \cdots, n\}$. That is, $\Prt(S)$ denotes the way of dividing $S$ into disjoint pairs.
+	\label{Theorem: Wick-Isserlis}
+\end{thm}
+
+If one applies this result for example, for $\E[Z^n]$, the expectation of a $n$-repeated Gaussian Variable, this result gives the moments of the normal distribution
+\begin{equation}
+	\E[Z^n] = |\Prt(\{1,\cdots,n\})| \cdot \E[Z^2]^{n/2} = 
+	\begin{cases}
+		(n-1)!! \cdot \Var[Z]^{n/2}, \quad \text{if $n$ is even}, \\
+		0, \quad \text{if $n$ is odd}.
+	\end{cases}
+	\label{Equation: Normal Moments}
+\end{equation}
+
+If we want to apply this combinatorial argument for the polynomials $\Het_n(x;t) = \E_{Z \sim \mathcal{N}(0,1)}[(x+\ii \sqrt{t}Z)^n]$, we must expand the product in one of the terms on each of the brackets - which yields a sum over $2^n$ monomials. Then, taking the expectation over $Z$ amounts to adding up the pairings for each term as in \ref{Theorem: Wick-Isserlis}. The number of pairings depends on the number of times $m$ that $\ii \sqrt{t} Z$ was chosen: there are $(m-1)!!$ such pairings if $m$ is even and $0$ pairings if $m$ is odd. Therefore, the only contributions come from the terms with even order.
+
+When exactly $m$ factors $\ii \sqrt{t} Z$ are chosen, there must be $n-m$ copies of $x$ chosen, and so the resulting contribution of the term is $(\ii \sqrt{t})^m x^{n-m}$. Since $m$ is even we will actually have $(-t)^{m/2} x^{n-m}$. We can count $\binom{n}{m}(m-1)!!$ such terms - $m$ choices of the term and the subsequent $(m-1)!!$ ways of pairing it up. This can be formalized as
+\begin{align}
+	\Het_n(x;t) & = \sum_{S \subset \{1,\cdots,n\}, \pi \in \Prt(S)} (\ii \sqrt{t})^{|\pi|} x^{n-|S|} \\
+	& = \sum_{\{m=0 | m \ \text{is even}\}} \binom{n}{m} (m-1)!! (-t)^{m/2} x^{n-m} \\
+	& = \sum_{k=0}^{\floor{\frac{n}{2}}} \binom{n}{2k} (2k-1)!! (-t)^{k} x^{n-2k} \\
+	& = x^n - \binom{n}{2} 1!! \cdot t x^{n-2} + \binom{n}{4} 3!! \cdot t^2 x^{n-4} - \cdots
+\end{align} 
+
+This property can also be used to prove the orthogonality and recursion of the polynomials - for the proof, check \cite{nica2025gaussianintegralformulahermite}.

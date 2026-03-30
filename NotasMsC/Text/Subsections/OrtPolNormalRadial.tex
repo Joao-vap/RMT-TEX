@@ -1,0 +1,64 @@
+For the models of random matrices we are interested in, we must consider $\{P_n(z) = \sum_{j=0}^{n} a_j z^j\}_{n}^{(w)}$ a family of orthogonal polynomials in respect to $w$ where $P_m$ has order $m$. We're dealing with weight functions of the type
+\begin{equation}
+	w(z) = \ee^{-N Q(z)}
+\end{equation} 
+where $Q(z)$ is some complex potential that satisfies:
+\begin{enumerate}
+	\item We have $Q(z) = q(|z|)$ for some $q: \R \mapsto \R$, i.e., $Q$ is a radially symmetric potential;
+	\item The potential $Q$ grows sufficiently fast, that is, 
+	\begin{equation}
+		\liminf_{|z| \rightarrow \infty} \frac{Q(z)}{2 \log(|z)} > 1;
+	\end{equation}
+	\item Furthermore, assume $Q$ to be is smooth, subharmonic in $\C$, and strictly subharmonic in a neighborhood of the droplet.
+	\label{Equation: properties Complex Potential}
+\end{enumerate}
+There is still a question of what are these polynomials. We know by the assumption of orthogonality that
+\begin{equation}
+	\langle P_n, P_m \rangle_w = 
+	\begin{cases}
+		0 & \text{if $m = n$}, \\
+		1 & \text{if $m \neq n$}.
+	\end{cases}
+\end{equation} 
+Let us take some arbitrary base of the polynomial space $\{z^j\}_j^{(w)}$. We can apply the Gram Schmidt scheme to get the proper orthogonality in respect to the weight $w$. If $P_n = x^n$, then the orthogonal element of the basis $\tilde{P}_n$ should be
+\begin{equation}
+	\tilde{P}_n = P_n - \sum_{j=0}^{n-1} \frac{\langle P_n, P_{j} \rangle_w}{\langle P_{j}, P_{j}, \rangle_w} P_{j}
+\end{equation}
+but notice that
+\begin{align}
+	\langle P_n, P_{j} \rangle_w & = \int_{\C} z^{n-j} \ee^{-N Q(z)} \dd A(z), \\
+	& = \int_{0}^{\infty} \int_{0}^{2\pi} r^{n-j} \ee^{\ii \theta (n - j)} \ee^{-N q(r)} r \dd r \dd \theta, \\
+	& = \int_{0}^{2\pi} \ee^{\ii \theta (n - j)} \dd \theta \int_{0}^{\infty} r^{n-j+1} \ee^{-N q(r)} \dd r, \\
+	& = 0, \quad \text{since} \  n \neq j.
+\end{align}
+Therefore, we have that $\{z^j\}_j^{(w)}$ is the proper orthogonal family. More than that, if we impose the normality,
+\begin{align}
+	\int_{\C} a_n^2 z^{n-n} \ee^{-N Q(z)} \dd A(z) & = \int_{\C} a_n^2 \ee^{-N Q(z)} \dd A(z) = 1 \\
+	& \implies a_n = \sqrt{\frac{1}{\int_{\C} w(z) \dd A(z)}}.
+\end{align}
+Note that we will have the same family if the internal product is defined in respect to some arbitrary $\rho \neq 0$, that is, if
+\begin{equation}
+		\langle P_n, P_m \rangle_w = \int_{D(\rho)} z^{n-m} \ee^{-N Q(z)} \dd A(z),
+\end{equation}
+then
+\begin{align}
+	\langle P_n, P_{j} \rangle_w & = \int_{D(\rho)} z^{n-j} \ee^{-N Q(z)} \dd A(z), \\
+	& = \int_{0}^{\rho} \int_{0}^{2\pi} r^{n-j} \ee^{\ii \theta (n - j)} \ee^{-N q(r)} r \dd r \dd \theta, \\
+	& = \int_{0}^{2\pi} \ee^{\ii \theta (n - j)} \dd \theta \int_{0}^{\rho} r^{n-j+1} \ee^{-N q(r)} \dd r, \\
+	& = 0 \quad \text{since} \  n \neq j.
+\end{align}
+One can say that the choice of basis was weirdly good. Not to worry, one could also suppose arbitrary polynomials $P_m$ and $P_n$ to see that as
+\begin{equation}
+	P_n(z) \bar{P}_m(z) = \sum_{k=0}^{n}\sum_{j=0}^{m} a_k b_j z^{k - j},
+\end{equation}
+then the inner product $I$ can be written as
+\begin{align}
+	I & = \sum_{k=0}^{n}\sum_{j=0}^{m} a_k b_j  \int_{0}^{\infty} \int_{0}^{2\pi}  r^{k - j + 1} \ee^{\ii (k - j) \theta} \ee^{-N q(r)} \dd r \dd \theta, \\
+	& = \sum_{k=0}^{n}\sum_{j=0}^{m} a_k b_j  \int_{0}^{2\pi}  \ee^{\ii (k - j) \theta} \dd \theta, \int_{0}^{\infty} r^{k - j + 1} \ee^{-N q(r)} \dd r \\
+	& = 2\pi  \sum_{j=0}^{n} a_j b_j \int_{0}^{\infty} r \ee^{-N q(r)} \dd r,
+\end{align}
+where the same argument as before, in the angular integral, was used to annihilate the off-diagonal terms of the summation. Now, note that we need 
+\begin{equation}
+	 \sum_{j=0}^{n} a_j b_j  = 0 \quad \text{for} \ m \neq n.
+\end{equation}
+This is easily satisfied by the family of monomials as $b_j = 0 \ \forall j < m$.

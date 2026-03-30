@@ -1,0 +1,62 @@
+
+Hermite Polynomials are the average characteristic polynomials of the Gaussian Ensemble. That is, if $\m{M}$ is an order $n$ matrix which is hermitian and with joint density given by
+\begin{equation}
+	\frac{1}{\pZ{}{}} \ee^{-\tr{\m{M}^2}} \dd M
+\end{equation}
+then the average characteristic polynomial
+\begin{equation}
+	P_n(x) = \E\left[\det\left( x \m{I}_n - \m{M}_n  \right)\right]
+\end{equation}
+satisfies
+\begin{equation}
+	P_n(x) = x P_{n-1}(x) - \frac{n-1}{2} P_{n-2}(x).
+\end{equation}
+If one notices that $P_0(x) = 1$ and $P_1(x) = x$, then one can also see that the recurrence equation give us the Hermite Polynomials.
+
+\begin{proof}
+	We begin by calculating the characteristic determinant
+	\begin{align}
+		\det{\left( \lambda \m{I}_n - \m{M}_n \right)} & = 
+		\begin{vmatrix}
+			\lambda - m_{1,1} & - m_{1,2} & \cdots & - m_{1,n} \\
+			- m_{2,1} & \lambda - m_{2,2} & \cdots & - m_{2,n} \\
+			\vdots & \vdots & \ddots & \vdots \\
+			- m_{n,1} &  - m_{n,2} & \cdots & \lambda - m_{n,n} \\				
+		\end{vmatrix} \\
+		& = (\lambda - m_{n,n})\det{\left(\lambda \m{I}_{n-1} - \m{M}_{n-1} \right)} + \sum_{k=1}^{n-1} (-1)^{n+k} (-m_{n,k}) \det{\left(\lambda \m{I}_{n} - \m{M}_{n} \right)_{[n,k]}}
+	\end{align}
+	where
+	\begin{equation}
+		\det{\left(\lambda \m{I}_{n} - \m{M}_{n} \right)_{[n,k]}}
+	\end{equation}
+	is the determinant of the matrix obtained from $\lambda \m{I}_{n} - \m{M}_{n}$ by deleting row $n$ and column $k$. Moreover, 
+	\begin{equation}
+			\det{\left(\lambda \m{I}_{n} - \m{M}_{n} \right)_{[n,n]}} = \det{\left(\lambda \m{I}_{n-1} - \m{M}_{n-1} \right)}.
+	\end{equation}
+	Where we still have some dependence between term in the summation because of the index $n$. To solve for this, once more expand in cofactors, 
+		\begin{align}
+		& = (\lambda - m_{n,n})\det{\left(\lambda \m{I}_{n-1} - \m{M}_{n-1} \right)} + \sum_{k=1}^{n-1} (-1)^{n+k} (-m_{n,k}) \det{\left(\lambda \m{I}_{n} - \m{M}_{n} \right)_{[n,k]}} \\
+		& = (\lambda - m_{n,n})\det{\left(\lambda \m{I}_{n-1} - \m{M}_{n-1} \right)} + \sum_{k=1}^{n-1} \sum_{j=1}^{n-1} (-1)^{n+k} (-1)^{n-1+j} (m_{n,k} m_{j, n}) \det{\left(\lambda \m{I}_{n} - \m{M}_{n} \right)_{[n,k], [j,n]}}.
+	\end{align}
+	Finally, because
+	\begin{align}
+		& \E\left[ \lambda - m_{n,n} \right] = \lambda, \\
+		& \E \left[ \det\left( \lambda \m{I}_n - \m{M}_n \right) \right] = P_{n-1}, \\
+		& \E \left[ m_{n,k} m_{j, n} \right] =
+		\begin{cases}
+			0 \quad \text{if} \ j \neq k \\
+			\E \left[ \Re(m_{n,n})^2 + \Im(m_{n,n})^2 \right] \quad \text{if} \ j = k
+		\end{cases} \\
+		& \E \left[ \det{\left(\lambda \m{I}_{n} - \m{M}_{n} \right)_{[n,k], [j,n]}}\right] = P_{n-2}
+	\end{align}
+	then we get the recurrence expression
+	\begin{equation}
+		P_n(x) = x P_{n-1} - \frac{n-1}{2} P_{n-2}
+	\end{equation}
+	which give rise to the Hermite polynomials.
+\end{proof}
+
+This is also true for other ensembles and give rise to Laguerre and Jacobi polynomials. Moreover, using Weyls formula, one can say that
+\begin{equation}
+	\E\left[\det\left(x\m{I}_n - \m{M} \right) \right] = \frac{1}{Z_n}  \int_{\R^n} \prod_{j=1}^{n} (x - x_j) \prod_{i<j} (x_j - x_i)^2 \prod_{j=1}^{n} \ee^{-V(x)} \dd x_1 \cdots \dd x_n.
+\end{equation}

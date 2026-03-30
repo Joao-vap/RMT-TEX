@@ -1,0 +1,49 @@
+Let \many{\mu}{r} be $r$ positive measures on the real line and $\vec{n} = (\mmany{n}{r}) \ in \N^r$ with length $|\vec{n}| = n_1 + \cdots + n_r$.
+
+\begin{definition}
+	The type I multiple orthogonal polynomials $(A_{\vec{n}, 1}, \cdots, A_{\vec{n}, r})$ for the multi-index $\vec{n} = (\mmany{n}{r}) $ are such that $\deg(A_{\vec{n},j}) \leq n_j - 1$ and 
+	\begin{equation}
+		\sum_{j=1}^{r} \int x^k A_{\vec{n}, j}(x) \dd \mu_j(x) = 0, \quad 0 \leq k \leq |\vec{n}| - 2, 
+	\end{equation}
+	with normalization
+	\begin{equation}
+		\sum_{j=1}^{r} \int x^{|\vec{n}| - 1} A_{\vec{n}, j}(x) \dd \mu_j(x) = 1.
+	\end{equation}
+\end{definition}
+
+Or also
+
+\begin{definition}
+	The type II multiple orthogonal polynomials $P_{\vec{n}}$ for the multi-index $\vec{n} = (\mmany{n}{r}) $is the monic polynomial of degree $|\vec{n}|$ that satisfies 
+	\begin{equation}
+	\int x^k P_{\vec{n}} \dd \mu_j(x) = 0, \quad 0 \leq k \leq n_j - 1, 
+	\end{equation}
+	for $1 \leq j \leq r$.
+\end{definition}
+
+For the type I polynomials, take $\mu = \mu_1 + \cdots + \mu_r$, and put $\wf_j(x) = \dd \mu_j(x) / \dd \mu(x)$ and set
+\begin{equation}
+	Q_{\vec{n}}(x) = \sum_{j=1}^{r} A_{\vec{n}, j}(x) \wf_j(x)
+\end{equation}
+such that we can set
+\begin{equation}
+	\int P_{\vec{n}}(x) Q_{\vec{m}}(x) \dd \mu(x) = 
+	\begin{cases}
+		0, \quad \text{if} \ \vec{m} \leq \vec{n},\\
+		0, \quad \text{if} \ |\vec{m}| > |\vec{n}|+ 1,\\\
+		1, \quad \text{if} \ |\vec{m}| = |\vec{n}| + 1,\
+	\end{cases}
+\end{equation}
+The question that remains is if there is such a thing as a determinantal point process happening here. Consider the Kernel 
+\begin{equation}
+	K_{\vec{n}}(x, y)  = \sum_{k=0}^{|\vec{n}|-1} P_{\vec{n}_k}(x) Q_{\vec{n}_{k+1}}(y) 
+\end{equation}
+where $(\vec{n}_k)_{0 \leq k \leq |\vec{n}|}$ is a path in $\N^r$ from which $\vec{n}_0 = \vec{0}$, $\vec{n}_{|\vec{n}|} = \vec{n}$ and $\vec{n}_{k+1}  - \vec{n}_k = \vec{e}_i = (0, \cdots, \delta_i, \cdots, 0)$ for some $1 \leq i \leq r$. The point process with joint density 
+\begin{equation}
+	P(\mmany{x}{N}) = \frac{1}{N!} \left( K_{\vec{n}}(x_i, x_j) \right)_{i,j=1}^N, \quad N = |\vec{n}|
+\end{equation}
+defines a \textit{multiple orthogonal polynomial ensemble} whenever this density is non-negative for every $(\mmany{x}{N}) \in \R^N$. The self-reproducing property is also valid in this case, the problem is to know under which conditions over \many{\mu}{r} we have $K_{\vec{n}}(x,x) \geq 0$. Similarly for the limit on the multi-index of the Kernel. Some cool open problems can be discussed here.
+
+\subsection{Multiple Hermite Polynomials}
+
+\input{./Text/Subsections/MultHermitePolynomials.tex}

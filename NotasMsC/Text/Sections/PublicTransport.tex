@@ -1,0 +1,22 @@
+
+The city of Cuernavaca in Mexico (population about $500.000$) has an extensive bus system, but there is no municipal transit authority to control the city transport. In particular there is no timetable, which gives rise to Poisson-like phenomena, with bunching and long waits between buses. Typically, the buses are owned by drivers as individual entrepreneurs, and all too often a bus arrives at a stop just as another bus is loading up. The driver then has to move on to the next stop to find his fares. In order to remedy the situation the drivers in Cuernavaca came up with a novel solution: they introduced “recorders” at specific locations along the bus routes in the city. The recorders kept track of when buses passed their locations, and then sold this information to the next driver, who could then speed up or slow down in order to optimize the distance to the preceding bus. The upshot of this ingenious scheme is that the drivers do not lose out on fares and the citizens of Cuernavaca now have a reliable and regular bus service. In the late $1990$’s two Czech physicists with interest in transportation problems, M. Krbalek and P. Seba, heard about the buses in Cuernavaca and went down to Mexico to investigate. For about a month they studied the statistics of bus arrivals on Line $4$ close to the city center. In particular, they studied the bus spacing distribution, and also the bus number variance measuring the fluctuations of the total number of buses arriving at a fixed location during a time interval $T$.
+
+Krbalek and Seba found that both the bus spacing distribution and the number
+variance are well modeled by GUE. In order to provide a plausible explanation of the observations in, the authors in introduced a microscopic model for the bus linethat leads simply and directly to GUE.
+
+The main features of the bus system in Cuernavaca are
+\begin{enumerate}
+	\item the stop-start nature of the motion of the buses,
+	\item the “repulsion” of the buses due to the presence of recorders.
+\end{enumerate}
+To capture these features, the authors introduced a model for the buses consisting of $n$ (number of buses) independent, rate $1$ Poisson processes moving from the bus depot at time $t = 0$ to the final terminus at time $T$, and conditioned not to intersect for $0 \leq t \leq T$. The authors then showed that at any observation point $x$ along the route of length $N > n$, the probability distribution for the (rescaled) arrival times of the buses, $y_j = \frac{2tj}{T} - 1 \in [-1, 1]$ for $i < j < n$ is given by
+\begin{equation}
+	c \prod_{j=1}^{n} w_J(y_j) \prod_{1 \leq i < j \leq n} (y_i - y_j)^2 \dd y_1 \cdots \dd y_n
+\end{equation}
+where
+\begin{equation}
+	w_J(y) = (1 + y)^{x-1} (1 - y)^{N-x-n+1}, \quad -1 < y < 1
+\end{equation}
+This formula is precisely the eigenvalue distribution for the so-called Jacobi Unitary Ensemble . In the appropriate scaling limit, GUE then emerges by universality. The authors also compute the distributions of the positions $x_1, \cdots , x_n$ of the buses at any time $t \in (0, T)$. Again the statistics of the $x_j$’s are described by a Unitary Ensemble, but now $w_J$ is the same, but replaced by the weight for the Krawtchouk polynomials: by universality, GUE again emerges in the appropriate scaling limit.
+
+In an intriguing recent paper, Abul-Magd [Abu] noted that drivers have a tendency “to park their cars near to each other and at the same time keep a distance sufficient for manoeuvring.” He then analyzed data measuring the gaps between parked cars on four streets in central London and showed quite remarkably that the gap size distribution was well represented by the spacing distribution of GUE. It is an interesting challenge to develop a microscopic model for the parking problem, analogous to the model for the bus problem.

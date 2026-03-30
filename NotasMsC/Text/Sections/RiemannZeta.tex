@@ -1,0 +1,23 @@
+
+Here we consider the work of H. Montgomery in the early $1970$’s on the zeros of the Riemann zeta function $\zeta(s)$. Assuming the Riemann hypothesis, Montgomery rescaled the imaginary parts $\gamma_1 \leq \gamma_2 \leq \cdots$ of the (nontrivial) zeros $\{ 1/2 + \ii \gamma_j\}$ of $\zeta(s)$,
+\[
+\gamma_j \rightarrow \tilde{\gamma}_j = \frac{\gamma_j \log{\gamma_j}}{2\pi}
+\]
+to have mean spacing $1$ as $T \rightarrow \infty$, i.e.
+\[
+\lim_{T \rightarrow \infty} \frac{\#\{j \geq 1 : \tilde{\gamma}_j \leq T\}}{T} = 1
+\]
+For any $a < b$, he then computed the two-point correlation function for the $\tilde{\gamma}_j$’s
+\[
+\#\{\text{ordered pairs} (j_1, j_2), j_1 \neq j_2 : 1 \leq j_1, j_2 \leq N, \tilde{\gamma}_1 - \tilde{\gamma}_2 \in (a, b)\}
+\]
+and showed, modulo certain technical restrictions, that
+\[
+R(a, b) \equiv \lim_{N \rightarrow \infty}\frac{1}{N} \#\{\text{ordered pairs} (j_1, j_2), j_1 \neq j_2 : 1 \leq j_1, j_2 \leq N, \tilde{\gamma}_1 - \tilde{\gamma}_2 \in (a, b)\}
+\]
+exists and is given by a certain explicit formula. Soon after completing his work on the scaling limit (40) of the two-point correlation function for the zeros of zeta, Montgomery was visiting the Institute for Advanced Study in Princeton and it was suggested that he show his result to Dyson. What happened is a celebrated, and oft repeated, story in the lore of the Institute: before Montgomery could describe his hard won result to Dyson, Dyson took out
+a pen, wrote down a formula, and asked Montgomery “And did you get this?”
+\[
+R(a, b) = \int_{a}^{b} 1 - \left( \frac{\sin(\pi r)}{\pi r}\right)^2 \dd r
+\]
+Montgomery was stunned: this was exactly the formula he had obtained. Dyson explained: “If the zeros of the zeta function behaved like the eigenvalues of a random GUE matrix, then would be exactly the formula for the two-point correlation function!”

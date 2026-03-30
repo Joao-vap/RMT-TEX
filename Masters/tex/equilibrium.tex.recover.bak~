@@ -1,0 +1,145 @@
+\section{Coulomb Gases}
+\label{section: Coulomb Gas}
+
+We start by describing a familiar distribution or physicists: The Boltzmann-Gibbs distribution. This is a probability distribution that represents the probability of a given state for a system of particles as a function of the state's \textit{energy} ($\Hf$) and the \textit{temperature} ($1/(\beta N^2)$) of the system. This is the distribution that maximizes the entropy: lower energy states have higher probability of being occupied than states with higher energy. Under the appropriate conditions, we name Coulomb Gas $\p_N$ the Boltzmann-Gibbs probability measure given in $(\R^d)^N$. The measure $\p_N$ models an coulomb-interacting gas of charged indistinguishable particles under some external field $\Q$. Particles are interpreted to be at positions $\mmany{x}{N} \in \Se$ of dimension $d$, or some configuration $\xi_N = (\mmany{x}{N})$, embedded in some space $\R^n$. We write  
+\begin{equation}
+	\dd \p_N(\mmany{x}{N}) = \frac{e^{-\beta N^2 \Hf_N(\xi_N)}}{Z_{N}^{\beta}} \mcmany{\dd x}{N}{}
+	\label{Equation: Coulomb Gas Measure}
+\end{equation}
+to be te measure of such system, where 
+\begin{equation}
+	\Hf_N(\xi_N) = \frac{1}{N} \sum_{i = 1}^{N} \Q(x_i) + \frac{1}{2N^2} \sum_{i \neq j}^{N} \g(x_i - x_j)	
+\end{equation}
+is usually called the Hamiltonian, or more concretely, the energy of the system. The function $\Q \colon \Se \mapsto \R$ is the external potential. If one wishes $\p_N$ to be a probability measure,  then one must ensure that $\Q$ is such that the normalizing constant $Z_{N, \beta}$ is finite for all $N$ and the measure support is compact. This is all to say that the potential should be confining: As the number of particles increases, it must counter the repulsion effect and keep limited the region where particles move around. The function $\g \colon \Se \mapsto (-\infty, \infty]$ is the \textit{Coulomb Interacting Kernel}, solution to the Poisson equation given by $- \nabla g(\vec{x}) = c_n\delta_0$.
+
+Recall the expression for invariant ensembles in \autoref{Definition: Invariant}, note that, rearranging the terms in \autoref{Equation: Coulomb Gas Measure} and considering a logarithm interaction kernel, we should get
+\begin{equation}
+	\dd \p_N(\mmany{x}{N}) = \frac{1}{Z_{N}^{\beta}}\prod_{1\leq j < k \leq n}^N |x_j - x_k|^\beta \prod_{j=1}^{N} \ee^{- \beta N \Q(x_j)}.
+\end{equation}
+This is to say that for invariant ensembles, their eigenvalues behave as a Coulomb gas. This opens the way for interpretations on the distribution of eigenvalues but also to computations using simulation methods for particle dynamics \cite{Chafal}.
+
+\begin{exemplo}
+	For some $\Q \colon \R \rightarrow \R$, we can take the appropriate dimensions for $d=1$ and $n = 2$ to recover the, for example, GUE ensemble density
+	\begin{equation}
+		\p_N(\vec{x}) = \frac{e^{-\beta N^2 \Hf_N(\vec{x})}}{Z_{N,\beta}}, \quad \Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \frac{x_i^2}{2} + \frac{1}{N^2} \sum_{i < j}^{N} \log{\frac{1}{|x_i - x_j|}}.
+	\end{equation}
+	In this case, we would be dealing with particles on the plane confined to move only on the real line. However, the gases measure accepts a natural extension for any potential that we call acceptable - that obeys some growth and smoothness conditions. Together with the dimensions, we can recover other invariant random matrix models.
+\end{exemplo}
+
+\section{Equilibrium Measure}
+
+The description of the eigenvalues as a Coulomb gas and as a point process lead us to the idea of minimizing some type of energy of the system by finding equilibrium configurations. Suppose we are dealing with the measure
+\begin{equation}
+	\pe_n(\xi_n) = \frac{e^{-\beta n^2 \Hf_n(\vec{x})}}{Z_{n,\beta}}, \quad \Hf_n(\vec{x}) = \frac{2}{n} \sum_{i = 1}^{n} Q(x_i) + \frac{1}{n^2} \sum_{i < j}^{n} \log{\frac{1}{|x_i - x_j|}}. 
+\end{equation}
+
+Then, for any $n$-configuration $\xi_n = \mmany{x}{n}$, if we let $\mu_x$ be the normalized counting measure on $\C$,
+\begin{equation}
+	\mu_x = \frac{1}{n} \sum_{i=1}^{n} \delta_{x_i}, \quad \int_{\R} \dd \mu_x = 1,
+ \end{equation} 
+ then
+\begin{equation}
+	\frac{1}{n^2} \sum_{i\neq j} \log{|x_i - x_j|^{-1}} + \frac{2}{n} \sum_{i=1}^n \Q(x_i)
+\end{equation}
+may be written in the form 
+\begin{equation}
+	\int \int \log |t - s|^{-1} \dd \mu_x(t) \dd \mu_x(s) + 2 \int \Q(x_i) \dd  \mu_x (s).
+\end{equation}
+This lead us to the energy minimization problem 
+\begin{align}
+	E^{(\Q)} & = \inf_{\mu \in \M^1(\R)} \left[ \int \int \log |t - s|^{-1} \dd \mu_x(t) \dd \mu_x(s) + 2 \int \Q(s) \dd  \mu_x (s) \right] \\\ & \deff \inf_{\mu \in \M^1(\R)} \left[ I_\Q(\mu_x) \right]
+\end{align}
+where
+\begin{equation}
+	\M^1(\R) = \left\{ \mu \in \text{Borel measures on} \ \R \ \bigg| \int \dd \mu = 1 \right\}.
+\end{equation}
+The quantity $E^{(Q)}$ is the \textit{equilibrium energy} of the system and $I_Q(\mu_x)$ is the \textit{energy integral}. However, we must step backwards so that we can advance.
+
+The classical case for such minimization problems corresponds to the cases when the conductor $\Sigma$ is compact and the external field $\Q$ is zero. Under some mild conditions on the external field, however, the equilibrium measure $\mu_\Q$ - the measure that minimizes such problem - has a unique solution which is a measure of compact support. For it to be compact, $\Q$ the confining potential, must increase sufficiently fast around infinity. Let $\Sigma \subseteq \C$ be a compact subset of the complex plane and $\M(\Sigma)$ be the collection of all positive Borel measure of compact support in $\Sigma$. Let $\mu \in \M(\Sigma)$ be such a measure in the complex plane $\C$. The associated \textit{logarithmic potential} is defined by 
+\begin{equation}
+	U^{\mu}(z) \deff \int \log \frac{1}{|z - t|} \dd \mu(t).
+\end{equation}
+Also, $I(\mu)$, called the \textit{logarithm energy} of a $\mu \in \M(\Sigma)$ is defined
+\begin{equation}
+	I(\mu) \deff \int \int \log \frac{1}{|z-t|} \dd \mu(z) \dd \mu (t),
+\end{equation}
+and the energy $V$ of $\Sigma$
+\begin{equation}
+	V \deff \inf\{ I(\mu) | \mu \in \M(\Sigma)\}.
+\end{equation}
+We can say that
+\begin{proposicao} \cite{saff2024logarithmic}
+	The logarithmic potential are super-harmonic on the whole plane, that is, they have the following properties.
+	\begin{enumerate}
+		\item $U^{\mu}(z) > -\infty$ for all $z$,
+		\item $U^{\mu}$ is lower semi-continuous,
+		\item $U^{\mu}(z) \geq \frac{1}{2\pi} \int_{-\pi}^{\pi} U^{\mu}(z)(x + r \ee^{\ii \theta}) \dd \theta$ for all $z$ and all $r \geq 0$. 
+	\end{enumerate}
+\end{proposicao}
+\begin{proof}
+	Firstly, property $(1)$ follows directly by the properties of $\mu$, especially the compact support. The property $(2)$ can be proven noticing that
+	\begin{equation}
+		U^\mu(z) = \lim_{M \rightarrow \infty} \int \min\left( M, \log \frac{1}{|z - t|} \right) \dd \mu (t).
+	\end{equation}
+	The functions on the right-hand side are continuous and increasing with $M$, such limit of an increasing sequence of functions must be lower semi-continuous. To prove $(3)$, note that the kernel $\log(1/|z-t|)$ is super-harmonic in $\C$ for each $t$. If some $F$ is analytic in a domain $D$ and $\rho > 0$, then $|F(z)|^\rho$ is sub-harmonic in $D$; furthermore, $\log |F(z)|$ is sub-harmonic in $D$ provided $F$ is not identically zero. Thus, 
+	\begin{equation}
+		\frac{1}{2\pi} \int_{-\pi}^{\pi} \log{\frac{1}{|z - r\ee^{\ii \theta} - t|}} \dd \theta \leq \log \frac{1}{|z-t|}, \quad z, t \in \C.
+	\end{equation}
+	Using the Fubini-Toneli theorem and the inequality above
+	\begin{align}
+		\frac{1}{2\pi} \int_{-\pi}^{\pi} U^\mu (z + r \ee^{\ii \theta}) \dd \theta & = \int \frac{1}{2\pi} \int_{-\pi}^{\pi} \log{\frac{1}{|z - r\ee^{\ii \theta} - t|}} \dd \theta \dd \mu(t), \\
+		& \leq \int \log \frac{1}{|z-t|} \dd \mu(t) = U^\mu (z)
+	\end{align}
+\end{proof}
+
+The energy $V$ can be finite or $+\infty$, and in the finite case there is a unique measure $\mu = \mu_\Sigma \in \M(\Sigma)$ for which the minimum defining energy $V$ is reachable. Such a measure $\mu_\Sigma$ is called the \textit{equilibrium distribution} or \textit{equilibrium measure} of the compact set $\Sigma$. Fro such a function we have that its logarithm potential is always smaller or equal to the energy $I_\Sigma$. Define also the \textit{logarithmic capacity}
+\begin{equation}
+	\cpct{(\Sigma)} \deff \ee^{-V}.
+\end{equation} 
+The capacity for an arbitrary Borel set $E$ is defined by the supreme of the capacity of all the compact subsets $K \subseteq E$. Naturally, the capacity of a subset of a Borel set of capacity zero is said to be zero. The union of zero-capacity Borel sets can also be shown to be a zero-capacity Borel set. A property is said to hold \sigla{q.e.}{\textit{quasi-everywhere}} on a set $E$ if the set of non  conforming points is of capacity zero. Then, we can say that
+\begin{equation}
+	U^\mu_\Sigma(z) = V, \quad \text{q.e.} z \in \Sigma. 
+\end{equation} 
+
+We should at this point reintroduce the external potential $Q$. The main difference now is that we can loose the compacity restriction on the sets $\Sigma$ and impose that there is no positive mass around infinity. There is a natural way to introduce this idea. Let $\Sigma \subset \C$ be a closed set and $\wf : \Sigma \rightarrow [0, \infty)$. We call such a function a \textit{weight function} on $\Sigma$.
+
+\begin{definicao}
+	A weight function $\wf$ is said to be \textbf{admissible} is it satisfies the following three conditions
+	\begin{enumerate}
+		\item $\wf$ is upper semi-continuous;
+		\item $\Sigma_0 \deff \{ z \in \Sigma | \wf(z) > 0 \}$ has positive capacity;
+		\item if $\Sigma$ is unbounded, then $|z| \wf(z) \rightarrow 0$ as $|z| \rightarrow \infty$, $z \in \Sigma$.
+	\end{enumerate} 
+\end{definicao}
+
+We can define
+\begin{equation}
+	\wf(z) \deff \ee^{-n Q(z)}.
+\end{equation}
+Then, for the weight to be admissible, $Q : \Sigma \rightarrow (\infty, \infty]$ must be lower semi-continuous, $Q(z) < \infty$ on a set of positive capacity and if $\Sigma$ is unbounded, then
+\begin{equation}
+	\lim_{|z| \rightarrow \infty, z \in \Sigma} \{ Q(z) - \log |z| \} = \infty.
+\end{equation}
+Then, let $\M(\Sigma)$ be the collection of all positive unit Borel measures $\mu$ with support in $\Sigma$. Our definition for the weighted energy integral
+\begin{equation}
+	I_\wf(\mu) \int \int \log |t - s|^{-1} \dd \mu(t) \dd \mu_x(s) + 2 \int \Q(s) \dd  \mu(s)
+\end{equation}
+is recovered if both integrals exist and are finite. We can now move on to prove the existence of the \textit{equilibrium measure} $\mu^{\Q}$ for a given external field $\Q$ given by some polynomial
+\begin{equation}
+	Q(x) = t_{2m} x^{2m} + t_{2m-1} x^{2m - 1} + \cdots + t_0, \quad t_{2m} > 0, V(x) \geq 0.
+	\label{Equation: Potential Q}
+\end{equation}
+
+\begin{teorema} \cite{deiftorthogonal}
+	Let $Q$ be as in \autoref{Equation: Potential Q}. Then, there exists a unique probability measure $\mu = \mu^{\wf}$ such that
+	\begin{equation}
+		E^{\wf} \equiv \inf_{\mu \in \M^1} I^{\wf}(\mu) = I^{\wf}(\mu^{\wf}).
+	\end{equation}
+	Moreover, $\mu^{}$ has compact support.
+\end{teorema}
+\begin{proof}
+	content...
+\end{proof}
+
+
+\subsection{Euler-Lagrange}

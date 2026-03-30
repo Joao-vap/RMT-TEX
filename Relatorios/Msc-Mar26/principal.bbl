@@ -1,0 +1,31 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.6 }
+
+\bibitem{Byun_2023}
+\abntrefinfo{Byun, Kang e Seo}{BYUN; KANG; SEO}{2023}
+{BYUN, S.-S.; KANG, N.-G.; SEO, S.-M. Partition functions of determinantal and
+  pfaffian coulomb gases with radially symmetric potentials.
+\emph{Communications in Mathematical Physics}, Springer Science and Business
+  Media LLC, v.~401, n.~2, p. 1627–1663, mar. 2023.
+ISSN 1432-0916.
+Dispon{\'\i}vel em: $<$http://dx.doi.org/10.1007/s00220-023-04673-1$>$.}
+
+\bibitem{feynmanstatistical}
+\abntrefinfo{Feynman}{FEYNMAN}{1998}
+{FEYNMAN, R. \emph{Statistical Mechanics: A Set Of Lectures}. Avalon
+  Publishing, 1998.  (Advanced Books Classics).
+ISBN 9780813346106. Dispon{\'\i}vel em:
+  $<$https://books.google.com.br/books?id=Ou4ltPYiXPgC$>$.}
+
+\bibitem{Leble2017-yj}
+\abntrefinfo{Lebl{\'e} e Serfaty}{LEBL{\'E}; SERFATY}{2017}
+{LEBL{\'E}, T.; SERFATY, S. Large deviation principle for empirical fields of
+  log and riesz gases.
+\emph{Invent. Math.}, Springer Science and Business Media LLC, v.~210, n.~3, p.
+  645--757, dec 2017.}
+
+\end{thebibliography}

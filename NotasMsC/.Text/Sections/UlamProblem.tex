@@ -1,0 +1,55 @@
+
+This section is based on the Notes of the MasterClass given in Angers, France (2024) by Mattia Cafasso and Sofia Tarricone.
+
+Let us consider the symmetric group $S_N$ of the permutations of the finite set $\{1, 2, \cdots, N\}$.
+\begin{definition}
+	Let $\pi \in S_n$ be a permutation. Given $k$ integers
+	\begin{equation}
+		1 \leq i_1 \leq i_2 \leq \cdots \leq i_k \leq N
+	\end{equation}
+	we say that $\pi(i_1), \cdots, \pi(i_k)$ is an increasing sub-sequence of $\pi$ of length $k$ if $\pi$ preserves the order of the integers $i_j$, $j = 1, \cdots, k$, i.e.
+	\begin{equation}
+		\pi(i_1) < \pi(i_2) < \cdots < \pi(i_k).
+	\end{equation}
+\end{definition}
+We denote $l_N(\pi)$ the maximal length of all the increasing sub-sequences of $\pi$.
+
+\begin{ex}
+	Let $\pi = 54172386$. Then (by direct inpection), $l_N(\pi) = 4$. The maximal length sequences are $(1, 2, 3, 6)$ and $(1, 2, 3, 8)$.
+\end{ex}
+
+Some history on the problem can be enunciated as
+
+\begin{enumerate}
+	\item Stanislaw Ulam, in an article published in 1961, discussed the idea of using Monte Carlo approaches to study the asymptotic behavior of $\E[l_N]$, when $N \rightarrow \infty$. Based on his simulations, Ulam conjectured that it exists a constant $c$ such that $$\lim_{N \rightarrow \infty} \frac{\E[l_N]}{\sqrt{N}} = c.$$ The term Ulam's problem, originally, referred to the proof of this conjecture and the identification of the constant $c$. 
+	\item Hammersley, in 1972, introduced a Poissonized version of this problem and proved that the constant $c$ exists. 
+	\item In 1977, Logan and Shepp and, independently, Vershik and Kherov showed that $c = 2$. 
+	\item Odlyzko and Rains, in the $90$'s, performed analytical simulations indicating that 
+	\[
+	\lim_{N \rightarrow \infty} \frac{\Var[l_N]}{N^{\frac{1}{3}}} = c_0 \equiv 0,819\cdots
+	\]
+	and also that
+	\[
+	\lim_{N \rightarrow \infty} \frac{\E[l_N] - 2\sqrt{N}}{N^{\frac{1}{6}}} = c_1 \equiv -1.748\cdots
+	\]
+\end{enumerate}
+
+Finally, Ulam's problem was solved by Baik, Deift and Johansson in $1999$, who studied the convergence in distribution of the re-scaled variable 
+\begin{equation}
+	\chi_N \deff \frac{l_N - 2\sqrt{N}}{N^{\frac{1}{6}}}
+\end{equation}
+given by
+\begin{thm}
+	(Baik-Deift-Johansson, $1999$). Let $\chi$ be a random variable with distribution function $F_{GUE}(x)$. Then $\chi_N$, defined as before, converges in distribution to $\chi$: 
+	\begin{equation}
+		\lim_{N \rightarrow \infty} \p\left\{ \frac{l_N - 2\sqrt{N}}{N^{\frac{1}{6}}} \leq x\right\} \rightarrow F_{(2)}(x)
+	\end{equation}
+	we have, moreover, convergence of moments
+	\begin{equation}
+		\lim_{N \rightarrow \infty} \E[\chi_N^m] = \E[\chi^m], \ \forall m \geq 1.
+	\end{equation}
+\end{thm}
+
+To study, there is a nice representation of the permutated sequences that is worth exploring.
+
+\input{./Text/Subsections/Young.tex}

@@ -1,0 +1,72 @@
+This is BibTeX, Version 0.99e (TeX Live 2026/Arch Linux)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesis.aux
+The style file: packages/abntexalfenglish.bst
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated wiz_functions (elt_size=8) to 9000 items from 6000.
+Database file #1: abntex2-options.bib
+Database file #2: references.bib
+I was expecting a `,' or a `}'---line 272 of file references.bib
+ :  
+ :  bookTitle={Analytic Number Theory and Diophantine Problems: Pro
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=8) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=8) to 20 items from 10.
+Warning--campo year vazio ou faltando em deiftorthogonal
++---------------------------------------------------------+
+| Estilo bibliográfico abntex2-alf.bst versão v<VERSION>           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://abntex2.googlecode.com                           |
++---------------------------------------------------------+
+You've used 21 entries,
+            6667 wiz_defined-function locations,
+            1319 strings with 12712 characters,
+and the built_in function-call counts, 14541 in all, are:
+= -- 1250
+> -- 446
+< -- 29
++ -- 218
+- -- 137
+* -- 965
+:= -- 1913
+add.period$ -- 70
+call.type$ -- 23
+change.case$ -- 167
+chr.to.int$ -- 49
+cite$ -- 16
+duplicate$ -- 719
+empty$ -- 1178
+format.name$ -- 647
+if$ -- 3603
+int.to.chr$ -- 5
+int.to.str$ -- 3
+missing$ -- 335
+newline$ -- 91
+num.names$ -- 76
+pop$ -- 379
+preamble$ -- 1
+purify$ -- 74
+quote$ -- 0
+skip$ -- 1009
+stack$ -- 1
+substring$ -- 401
+swap$ -- 355
+text.length$ -- 19
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 4
+warning$ -- 1
+while$ -- 96
+width$ -- 0
+write$ -- 261
+(There was 1 error message)

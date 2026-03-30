@@ -1,4 +1,4 @@
-Consider now that we couple a deterministic source matrix $\m{A}$ to the random matrix $\m{M}$, in a way that the weight
+Some random matrix ensembles are in terms of multiple orthogonal polynomials. Consider now that we couple a deterministic source matrix $\m{A}$ to the random matrix $\m{M}$, in a way that the weight
 \begin{equation}
 	\dd \mu_n(M) = \frac{1}{Z_A} \exp{\left\{-n \left( \tr{\left(V(\m{M})-  \m{A}\m{M} \right)}\right)\right\} } \dd M.
 \end{equation}
@@ -8,7 +8,13 @@ describes the model distribution. We take $\m{A}$ to be an Hermitian matrix and 
 \end{equation}
 Without any loss of generality, we can assume $\m{A}$ to be diagonal.
 
-Of course,  when $\m{A} = 0$, that is, no external source, and $V(\m{M}) = \m{M}^2/2$, this measure describes the Gaussian Unitary Ensemble - GUE. For reasonable choices of $V(z)$ the spectrum tends to accumulate on closed intervals of the real axis. Introducing an external source A can have the effect of perturbing the expected position of the spectrum. Some study has been done on the case for the matrix $\m{A}$ with two eigenvalues $\pm a$, each of multiplicity $n/2$. When $a$ is sufficiently small, the eigenvalues of $\m{M}$ accumulate with probability one on a single interval, just as when $\m{A} = 0$. As $a$ increases the interval splits into two disconnected intervals. There is a transitional value of $a$ between these two cases where the local eigenvalue density is described by the so-called \textit{Pearcey process}. This is precisely the case witch we will explore an asymptotic for. Define the monic polynomial
+Of course,  when $\m{A} = 0$, that is, no external source, and $V(\m{M}) = \m{M}^2/2$, this measure describes the Gaussian Unitary Ensemble - GUE. In this case, we can say that the average characteristic polynomial is 
+\begin{equation}
+	\E\left[ x \m{I}_n - \m{M}_n\right] \deff \He_{\vec{n}}(x)
+\end{equation}
+where $\He_{\vec{n}}(x)$ is a (type II) multiple Hermite polynomial.
+
+ For reasonable choices of $V(z)$ the spectrum tends to accumulate on closed intervals of the real axis. Introducing an external source A can have the effect of perturbing the expected position of the spectrum. Some study has been done on the case for the matrix $\m{A}$ with two eigenvalues $\pm a$, each of multiplicity $n/2$. When $a$ is sufficiently small, the eigenvalues of $\m{M}$ accumulate with probability one on a single interval, just as when $\m{A} = 0$. As $a$ increases the interval splits into two disconnected intervals. There is a transitional value of $a$ between these two cases where the local eigenvalue density is described by the so-called \textit{Pearcey process}. This is precisely the case witch we will explore an asymptotic for. Define the monic polynomial
 \begin{equation}
 	P_n(z) = \int \det{(z - \m{M})} \dd \mu_n(M)	
 \end{equation}

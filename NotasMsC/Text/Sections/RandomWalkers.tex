@@ -1,0 +1,30 @@
+In his investigation of wetting and melting phenomena, Fisher introduced various “vicious” walker models. Here we will consider the so-called random turns vicious walker model. In this model, the walks take place on the integer lattice $\Z$ and initially the walkers are located at $0, 1, 2, \cdots$ . The rules for a walk are as follows:
+\begin{enumerate}
+	\item at each tick of the clock, precisely one walker makes a step to the left
+	\item no two walkers can occupy the same site (hence “vicious walkers”)
+\end{enumerate}
+For example, consider the following walk from time $t = 0$ to time $t = 6$:
+\begin{center}
+	· × · · × × × · × \\
+	· · × · × × × · × \\
+	· · × · × × · × × \\
+	· · × · × · × × × \\
+	· · · × × · × × × \\
+	· · · × · × × × × \\
+	· · · · × × × × × \\
+\end{center}
+At $t = 0$, clearly only the walker at $0$ can move. At time $t = 1$, either the walker at $-1$ or at $+1$ can move, and so on. Let $\dd N$ be the distance traveled by the walker starting from $0$. In the above example, $\dd 6 = 3$. For any time $N$, there are clearly only a finite number of possible walks of duration $t = N$. Suppose that all such walks are equally likely.
+
+It has been proved that, as $N \rightarrow \infty$, $\dd N$, the distance traveled by
+the walker starting from $0$, behaves statistically like the largest eigenvalue of a GOE
+matrix. More precisely, they showed that
+\begin{equation}
+	\lim_{n\rightarrow \infty} \p\left( \frac{\dd N - 2 \sqrt{N}}{N^{\frac{1}{6}}} \leq t \right) = \F_{1}(t)
+\end{equation}
+where $\F_1$ is the $(1)$-Tracy-Widow. In a variant of this model, [For3], the walkers again start at $0,1,2,\cdots$, and move to the left for a time $N$; thereafter they must move to the
+right, returning to their initial positions $0,1,2,\cdots$ at time $2N$. Let $\dd'N$ denote the
+maximum excursion of the walker starting from $0$. Then Forrester shows that $\dd'N$ behaves statistically like the largest eigenvalue of a GUE matrix,
+\begin{equation}
+	\lim_{n\rightarrow \infty} \p\left( \frac{\dd N - 2 \sqrt{N}}{N^{\frac{1}{6}}} \leq t \right) = \F_{2}(t)
+\end{equation}
+where $\F_2$ is the $(2)$-Tracy-Widow.

@@ -1,0 +1,1005 @@
+We are going to discuss in this chapter the ideas developed in the paper \cite{Byun_2023}, where asymptotics were develop for a large class of random matrix ensembles using relatively straightforward asymptotic techniques taking advantage of the orthogonal polynomials present in these models. In the end, we hope to clarify the origin for the novel limit-behavior expression for the so-called \textit{Partition Function} $\pZ{N}{\beta}$. Namely, we get an expression of the type: 
+\begin{equation}
+	\ln(\pZ{N, \beta=2}{Q}) = -I^Q N^2+\frac{1}{2} N\ln N+E^Q N+G\ln N+F^Q + o(1).
+\end{equation}
+These functions perform the role of the normalization for the probability measure relative to the Coulomb Gas being worked on - a system of interacting particles confined by some potential. In this instance, we deal with complex plane gases, parameterized by some variable $\beta = 2$. This relates in RMT, to the famous \textit{random normal matrix} and \textit{planar symplectic ensembles}, depending on the symmetry imposed. If one takes, for example, the quadratic potential keeping the $2-\beta$ regime, one gets ensembles correspondent to the \textit{complex} and \textit{planar} Ginibre ensembles, falling back into the classical models. For the results, another restriction is made, the confining potentials must be radially symmetric. For a large class of potentials $Q$, the first term $I^Q$ was known for a long time, being given by the energy of the associated equilibrium measure. The coefficient $1/2$ of the order $N\ln N$, as well as the entropy term $E^Q$, were known from recent work of Leblé and Serfaty \cite{Leble2017-yj}, also for rather large classes of $Q$. The remaining terms in this expansion are new. The term $G$ appears to depend only on whether the limiting spectrum is an annulus or a disc which, surprisingly, seems to not have been observed in the previous literature. 
+
+Although some recent work may indicate the direction to expand some of these results to larger classes of potentials \cite{hedenmalm2020planarorthogonalpolynomialsboundary}, this is, so far, still a necessary condition for the techniques presented henceforth.  Once the model is established, the techniques are involved, but should be reasonable: We express the partition function in terms of a summation of some orthogonal polynomials, for which we have a integral representation. Then, the integral can be estimated using the Laplace technique - separating the integral in a central main-contributing region and a bounded error-contributing complement region. Finally, the limit on the summation can be estimated with some quadrature techniques, namely the Euler-Maclaurin formula, giving us the final results after computations.
+
+\section{Solving for the Free Energy}
+
+Check Introduction to Random Matrices theory and Practice Chapter 4 for more details. 
+
+\section{Working Model}
+\label{Section: Working Model}
+
+In this section we properly define the model and specifics of the working model to which we will apply the asymptotics techniques. We have discussed in \autoref{Subsection: Coulomb Gas} how eigenvalue statistics can be interpret as some appropriate Coulomb gas. On the complex plane one could have for example the Coulomb gas
+\begin{equation}
+	\dd \p_N^{(\beta)} (z_1, \cdots, z_N) \deff \frac{1}{\pZ{N}{(\beta)}} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta \prod_{j=1}^{N} \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j)
+	\label{Equation: Measure Normal Matrix}
+\end{equation}
+where $\dd A(z) \deff \dd^2 z / \pi$ is the area measure. This measure would imply the normalization constant - or in our context, the \textit{Partition Function},
+\begin{equation}
+	\pZ{N}{(\beta)} \deff \int_{\C^N} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta \prod_{j=1}^{N} \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j).
+\end{equation}
+
+\begin{definicao}
+	$\p_N^{(\beta)}$ defined as above is the expression, if $\beta = 2$, for the measure of the \textbf{random normal matrix} ensemble. If, for example, one sets $Q(z) = |z|^2$ this would be the so-called \textbf{complex Ginibre ensemble}.
+\end{definicao}
+
+We could also define the measure for the configurational canonical Coulomb gas ensemble in the upper-half plane  - which has an additional complex conjugation symmetry and is governed by the law 
+\begin{equation}
+	\dd \tilde{\p}_N^{(\beta)} (z_1, \cdots, z_N) \deff \frac{1}{\tilde{\pZ{N}{(beta)}}} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta |z_j - \bar{z}_k|^\beta \prod_{j=1}^{N} |z_j - \bar{z}_j|^\beta  \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j)
+\end{equation}
+and would imply the normalization constant
+\begin{equation}
+	\tilde{\pZ{N}{(beta)}} \deff \int_{\C^N} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta |z_j - \bar{z}_k|^\beta \prod_{j=1}^{N} |z_j - \bar{z}_j|^\beta  \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j)
+\end{equation}
+
+\begin{definicao}
+	$\tilde{\p}_N^{(\beta)}$ defined as above is the expression, if $\beta = 2$, for the measure of the \textbf{planar symplectic ensemble}. For $Q(z) = |z|^2$ this would be the so-called \textbf{symplectic Ginibre ensemble}. 
+\end{definicao}
+
+Virtually all results we saw for the random normal matrix ensemble are valid in the context of the planar symplectic ensemble with only a few adaptions. However, in the name of history telling and simplicity we will omit this measure: Adding this case to our chapter would cloud the point. For now on, we will only consider $\beta = 2$, this has some algebraic advantages that become clear by the Determinantal Point Processes (see \autoref{chapter: pointprocesses} for details) - because of this, we omit the $\beta$ in the variables ($\pZ{N}{(\beta)} \deff \pZ{N}{}$).
+
+For the models of random matrices we are interested in, we must consider $\{P_n(z) = \sum_{j=0}^{n} a_j z^j\}_{n}^{(w)}$ a family of orthogonal polynomials in respect to $w$ where $P_m$ has order $m$. We're dealing with weight functions of the type
+\begin{equation}
+	w(z) = \ee^{-N Q(z)},
+\end{equation} 
+where $Q(z)$ is some complex potential that satisfies:
+
+\begin{enumerate}
+	\item We have $Q(z) = q(|z|)$ for some $q: \R \mapsto \R$, i.e., $Q$ is a radially symmetric potential;
+	\item The potential $Q$ grows sufficiently fast, that is, 
+	\begin{equation}
+		\liminf_{|z| \rightarrow \infty} \frac{Q(z)}{2 \ln(|z)} > 1;
+	\end{equation}
+	\item Furthermore, assume $Q$ to be is smooth, subharmonic in $\C$, and strictly subharmonic in a neighborhood of the droplet.
+\end{enumerate}
+There is still a question of what are these polynomials exactly. 
+
+\begin{lema}
+	The set $\{z^j\}_j^{(w)}$ is the proper orthogonal family in relation to the weight function $w(z) = \ee^{-N Q(z)}$ given.
+\end{lema}
+
+\begin{proof}
+	We know by the assumption of orthogonality that
+	\begin{equation}
+		\langle P_n, P_m \rangle_w = 
+		\begin{cases}
+			0 & \text{if $m = n$}, \\
+			1 & \text{if $m \neq n$}.
+		\end{cases}
+	\end{equation} 
+	Let us take some arbitrary base of the polynomial space $\{z^j\}_j^{(w)}$. We can apply the Gram Schmidt scheme to get the proper orthogonality in respect to the weight $w$. If $P_n = x^n$, then the orthogonal element of the basis $\tilde{P}_n$ should be
+	\begin{equation}
+		\tilde{P}_n = P_n - \sum_{j=0}^{n-1} \frac{\langle P_n, P_{j} \rangle_w}{\langle P_{j}, P_{j}, \rangle_w} P_{j},
+	\end{equation}
+	but notice that
+	\begin{align}
+		\langle P_n, P_{j} \rangle_w & = \int_{\C} z^{n-j} \ee^{-N Q(z)} \dd A(z), \\
+		& = \int_{0}^{\infty} \int_{0}^{2\pi} r^{n-j} \ee^{\ii \theta (n - j)} \ee^{-N q(r)} r \dd r \dd \theta, \\
+		& = \int_{0}^{2\pi} \ee^{\ii \theta (n - j)} \dd \theta \int_{0}^{\infty} r^{n-j+1} \ee^{-N q(r)} \dd r, \\
+		& = 0, \quad \text{since} \  n \neq j.
+	\end{align}
+	Therefore, we have that $\{z^j\}_j^{(w)}$ is the proper orthogonal family. More than that, if we impose the normality,
+	\begin{align}
+		\int_{\C} a_n^2 z^{n-n} \ee^{-N Q(z)} \dd A(z) & = \int_{\C} a_n^2 \ee^{-N Q(z)} \dd A(z) = 1 \\
+		& \implies a_n = \sqrt{\frac{1}{\int_{\C} w(z) \dd A(z)}}.
+	\end{align}
+\end{proof}
+
+\section{Asymptotics on Droplets}
+
+We will use some potential $Q(z) : \C \rightarrow \R$ 
+which satisfies some nice growth and smoothness conditions, as specified in \autoref{Section: Working Model}. Because of the radial symmetry, one can take some function $q: \R \mapsto \R$ such that $q(|z|) = Q(z)$; then we can say that the previous conditions on the potential $Q$ implies that $r q'(r)$ is increasing in $\C$ and strictly increasing in the droplet. Consider the result:
+
+\begin{lema}
+	When dealing with a p.d.f. of invariant measure, one can write
+	\begin{equation}
+		\pZ{n,2}{} = n! \prod_{k=0}^{n-1} r_k^{-1},
+	\end{equation}
+	where $r_k$ is the normalizing constant as in $\langle q_j^{(2)}, q_k^{(2)} \rangle^{(2)} = r_j^{(2)} \chi_{j=k}$.
+	\label{proposicaoosition: Partition function}
+\end{lema}
+\begin{proof}
+	We start stating the following equality which follows from \ref{Theorem: Kernel} that
+	\begin{align}
+		\det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{n} & =  p^{(w)}(\mmany{\lambda}{n};\beta), \\
+		\prod_{k=1}^n r_k^{-1}  \det\left[ \sqrt{\wf(x) \wf(y)} \sum_{k=0}^{N-1} q_k^{(2)}(x) q_k^{(2)}(y) \right]_{i,j=1}^{n} & = \prod_{1 < i \leq j < n} (\lambda_j - \lambda_i)^2 \prod_{k=0}^{n} w(\lambda_k)
+	\end{align}
+	therefore
+	\begin{equation}
+		n! \det\left[ \tilde{K}_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{n} = n! \prod_{k=1}^n r_k \prod_{1 < i \leq j < n} (\lambda_j - \lambda_i)^2 \prod_{k=0}^{n} w(\lambda_k)
+	\end{equation}
+	where
+	\begin{equation}
+		\pZ{n,2}{} = n! \prod_{k=1}^n r_k
+	\end{equation}
+\end{proof}
+Thus, one can write the free energy
+\begin{equation}
+	\ln \pZ{N}{} = \ln{N!} - 2 \sum_{j=0}^{N-1} \ln{h_j},  \qquad h_k \deff \int_{\C} |z|^{2j} \ee^{-N Q(z)} \dd A(z).
+	\label{Equation: Partition Function}
+\end{equation}
+where $h_k$ is the norming constant for the monomial family of orthogonal polynomials in respect to $\wf$. One could also write, for the planar symplectic ensemble 
+\begin{equation}
+	\ln \tilde{\pZ{N}{}} = \ln{N!} - 2 \sum_{j=0}^{N-1} \ln{2 \tilde{h}_{2j + 1}}  \qquad \tilde{h}_k \deff \int_{\C} |z|^{2j} \ee^{- 2 N Q(z)} \dd A(z). 
+\end{equation} 
+The expressions derived for the normal ensemble would be easily adapted for this model and it is done in \cite{Byun_2023}, however we will not follow that computation in name of clarity and storytelling.
+
+In order to derive the asymptotic formulas for the free energy we need to derive the asymptotics for the orthogonal polynomials and its norming constants. The first step in the asymptotics for the normal matrices is to prepare for the Laplace method. Our goal is to identify a region that gives the main contribution, in order, for value of the integral - and consequently to identify a error-contributing region of the integration region. Let's reformulate our integral to identify the integral as usual in the Laplace method, such as in \autoref{chapter:asymptotics}. We know $Q(z) = q(|z|)$ a radially symmetric potential such that, defining $z \deff r \ee^{\ii \theta}$, that is, $|z| = r$, we would have
+\begin{align}
+	h_j & = \int_{\Theta} \int_{\R_+} r^{2j} \ee^{-N q(r)} \frac{r}{\pi} \dd r \dd \theta \\
+	& = \frac{2 \pi}{\pi} \int_{\R_+} r^{2j+1} \ee^{-N q(r)} \dd r \\
+	& =  \int_{\R_+} 2 r \ee^{-N \left( q(r) - \frac{2j}{N} \ln(r) \right)} \dd r
+\end{align}
+We first redefine our potential such that the integrand has a expression better suited to apply the Laplace method. Using $V_{\tau(j)} = q(r) - 2 \tau(j) \ln(r)$, where $\tau(j) \deff j/N \in [0, 1)$, one can rewrite the integral as
+\begin{equation}
+	h_j = \int_{\R_+} 2r \ee^{-N V_{\tau(j)}(r)} \dd r
+\end{equation}
+Where we have set the stage for the Laplace technique. Note that now $\tau$ will perform the function of the previous index $j$ and relates to which coefficient we're calculating. Taking a look at the first derivative of the newly defined potential we find for the critical point
+\begin{equation}
+	V'_\tau(r) = q'(r) - \frac{2\tau}{r} \quad \implies \quad r_c q'(r_c) = 2 \tau.
+\end{equation}
+This is: We can find a critical point of the potential $r_c$, parameterized by the degree of the polynomial we are calculating, or more concretely, by $\tau$. Of course, because we know the range of $\tau$, it is worth defining the limital points
+\begin{equation}
+	\begin{cases}
+		r_0, \quad \text{the largest solution of} \ r_0 q'(r_0) = 0 \\
+		r_ 1, \quad \text{the smallest solution of} \ r_1 q'(r_1) = 2
+	\end{cases}
+\end{equation}
+Our main goal here is to evaluate the integral using the surroundings of the critical point. If this point is unique, then we need no more than to calculate the integral in a single small interval around $r_c(\tau)$. This is, of course, true: We have mentioned that the properties on the potential directly implies that $r q'(r)$ is a strictly increasing function on $[r_0, r_1]$, then the solution must be unique. Now, as outside the droplet the growth is not strict, the definitions of $r_0$ ad $r_1$ had to be as mentioned before: Respectively the largest and smallest solution to the proper instance of $rq'(r) = 2\tau$. An important distinction must be made between the cases when $r_0 = 0$ and $r_0 > 0$, corresponding to \autoref{Subsection: Disk} and \autoref{Subsection: Annulus}, respectively.  We begin noticing that $r_\tau | r_\tau q'(r_\tau) = 2 \tau$ is an increasing function on $\tau$ and that $r_0 \leq r_\tau \leq r_1\quad \forall \tau \in [0,2]$. The following proposition should be important when computing the asymptotics.
+
+	\begin{proposicao}
+	The Gaussian integrals below can be evaluated as follows.
+	\begin{equation}
+		\int_{\R} \ee^{-2ar^2} \dd r = \sqrt{\frac{\pi}{2}} \frac{1}{a^{1/2}} \quad \implies \quad \int_{\R} \ee^{- 2 \left( \frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4} \right) y^2} = \sqrt{\frac{\pi}{2}} \left( \frac{4}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{1}{2}},
+	\end{equation}
+	\begin{equation}
+		\int_{\R} \ee^{-2ar^2} r^4 \dd r = \sqrt{\frac{\pi}{2}} \frac{3}{16} \frac{1}{a^{5/2}} \quad \implies \quad \int_{\R} \ee^{- 2 \left( \frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4} \right) y^2} y^4 = \sqrt{\frac{\pi}{2}} \frac{3}{16} \left(\frac{4}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{5}{2}},
+	\end{equation}
+	\begin{equation}
+		\int_{\R} \ee^{-2ar^2} r^6 \dd r = \sqrt{\frac{\pi}{2}} \frac{15}{64} \frac{1}{a^{7/2}} \quad \implies \quad \int_{\R}\ee^{- 2 \left( \frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4} \right) y^2} y^6 = \sqrt{\frac{\pi}{2}} \frac{15}{64} \left( \frac{4}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{7}{2}}.
+	\end{equation}
+	\label{Prop: Gaussian integrals}
+\end{proposicao}
+
+\subsection{Asymptotics - Annulus}
+\label{Subsection: Annulus}
+
+We start by considering, in this regime, $r_0 > 0$. We know the measure in \autoref{Equation: Measure Normal Matrix} to be the law for the distribution of the particles in this problem. When we say that $r_0 > 0$, we are saying that the region of space $[r_0, r_1]$ where this measure is non-zero for $N \rightarrow \infty$ has the annulus shape. If we think of the equivalent Coulomb gas, this means the particles will concentrate in this shape when we perform an asymptotic on $N$.  This is the support for the limit measure.
+
+\begin{center}
+	\includegraphics[width=.4\linewidth]{images/Annulus.png}
+\end{center}
+
+\begin{teorema}
+	For the annulus case, where $r_0 > 0$, we should have the following asymptotic for the free energy
+	\begin{equation}
+		\ln{\pZ{N}{}} = - 2 N^2 I_Q[\mu_Q] + N \left( 3\ln(2\pi) - E_Q[\mu_Q] - 1\right) + \frac{1}{2} \ln(N) + 2 \int_S \mathfrak{B}_1 \dd \mu_Q + \Boh(N^{-1})
+	\end{equation}
+	where we have set
+	\begin{equation}
+		\mathfrak{B}_1(r_{\tau(j)})  = \frac{V^{(4)}_{\tau(j)}(r_{\tau(j)})}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^2} \frac{1}{4} - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})^2}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^{\frac{5}{2}}} \frac{5}{12} + \frac{1}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \frac{2}{3 r_{\tau(j)}},
+	\end{equation}
+	\begin{equation}
+		I_Q[\mu_Q] = \left[\frac{1}{4} \int_{r_0}^{r_1} q(s) s V^{(2)}_{\tau(j)}(s) \dd s- \ln(r_1) + \frac{1}{2} q(r_1) \right],
+	\end{equation}
+	and
+	\begin{equation}
+		E_Q[\mu_Q] = \frac{1}{2} \int_{r_0}^{r_1} \ln(V^{(2)}(s)) (sq'(s))' \dd s.
+	\end{equation}
+	\label{Theorem: Annulus Free Energy}
+\end{teorema}
+
+We start by studying the asymptotic for $h_j$ and then for the summation $\sum \ln(h_j)$. This theorem then should follow from the following lemmas concerning this two asymptotics.
+
+\subsubsection{Asymptotic for the orthogonal polynomial}
+
+\begin{teorema}
+	We have the following asymptotic for $h_j$,
+	\begin{equation}
+		h_j = \frac{\ee^{-N V_{\tau(j)}(r_{\tau(j)})}}{\sqrt{N}} \left( \frac{8\pi r_{\tau(j)}^2}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{1}{2}} \left[ 1 + \frac{1}{N} \mathfrak{B}_1(r_{\tau(j)}) + \Boh(N^{-2}) \right].
+		\label{Equation: Asymptotic hj annulus}
+	\end{equation}
+	where
+	\begin{equation}
+		\mathfrak{B}_1(r_{\tau(j)})  = \frac{V^{(4)}_{\tau(j)}(r_{\tau(j)})}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^2} \frac{1}{4} - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})^2}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^{\frac{5}{2}}} \frac{5}{12} + \frac{1}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \frac{2}{3 r_{\tau(j)}}
+	\end{equation}
+	\label{Theorem: hj annulus}
+\end{teorema}
+
+The proof for such theorem passes trough Lemmas \ref{Lema: error annulus} and \ref{Lema: value annulus}. We begin as is usual when applying asymptotic techniques in integrals; separating a central part where the integral value is concentrated and another part where we can control the order of contribution. This is of course possible because the integrand is proportional to some exponential, with negative exponent, with a unique critical point, around which, the value of the expression concentrates. Defined $\delta_N = \ln(N)/\sqrt{N}$ - this will be our the cut-size for the interest region and will be justified during the calculations - we have
+\begin{align}
+	h_j =  \int_{|r - r_j| > \delta_N} 2r \ee^{-N V_{\tau(j)}(r)} \dd r + \int_{|r - r_j| < \delta_N} 2r \ee^{-N V_{\tau(j)}(r)} \dd r = (1) + (2).
+\end{align}
+As mentioned, the first integral must be somehow controlled and the second estimated as the main value for the result.  We begin by showing that the first term has an error contribution.
+
+\begin{lema}
+	If we choose $M$ to be such that
+	\begin{equation}
+		\int_{|r - r_j| > \delta_N} \left( \ee^{-q(r)} r^{2} \right)^M r \dd r < \infty,
+	\end{equation}
+	then
+	\begin{equation}
+		(1) = \int_{|r - r_j| > \delta_N} 2r \ee^{-N V_{\tau(j)}(r)} \dd r = \ee^{-N V_{\tau(j)}(r_{\tau(j)})} \epsilon_N
+	\end{equation}
+	with $\epsilon_N = \Boh(\ee^{-c(\ln(N))^2})$.  
+	\label{Lema: error annulus}
+\end{lema}
+\begin{proof}
+	Let's first show that we can control the first part of the integral, for that, rewrite
+	\begin{align}
+		(1) & = \ee^{-N V_{\tau(j)}(r_{\tau(j)})} \int_{|r - r_j| > \delta_N} 2r \ee^{-N \left( V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)}) \right)} \dd r, \\
+		& = \ee^{-N V_{\tau(j)}(r_{\tau(j)})} \int_{|r - r_j| > \delta_N} 2r \ee^{-N \left( V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)}) \right)}  \ee^{-(M-M) \left( V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)}) \right)} \dd r, \\
+		& = \ee^{-N V_{\tau(j)}(r_{\tau(j)})} \int_{|r - r_j| > \delta_N} 2r \ee^{-M \left( V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)}) \right)}  \ee^{-(N-M) \left( V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)}) \right)} \dd r.
+	\end{align}
+	Now, we need some way to estimate the difference $(V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)})$. If we are able to say that this difference is at least $\Boh(N^{-1})$, we could control the growth of the integral choosing $M$ to be large enough such that
+	\begin{equation}
+		\int_{|r - r_j| > \delta_N} \left( \ee^{-q(r)} r^{2 \tau(j)} \right)^M r \dd r
+	\end{equation}
+	converges. Using the definition of the function $V$ and the mean value theorem, we start by evaluating the difference $\Delta(j) = V_{\tau(j+1)}(r_{\tau(j+1)}) - V_{\tau(j)}(r_{\tau(j)})$ in the following manner
+	\begin{align}
+		\Delta(j) &= q(r_{\tau(j+1)}) - q(r_{\tau(j)}) - 2 \left( \tau(j+1) \ln(r_{\tau(j+1)}) - \tau(j) \ln(r_{\tau(j)}) \right), \\
+		& = q'(c_1) (r_{\tau(j+1)} - r_{\tau(j)}) - \frac{2}{N} \left(\ln(r_{\tau(j+1)})+j\ln\left(\frac{r_{\tau(j+1)}}{r_{\tau(j)}} \right) \right), \\
+		& = q'(c_1) r'(c_2) (\tau(j+1) - \tau(j)) - \frac{2}{N} \left(\ln(r_{\tau(j+1)})+j \Boh(N^{-1}) \right), \\
+		& = q'(c_1) r'(c_2) \Boh(N{-1}) - \Boh(N^{-1}), \\
+		& = \Boh(N^{-1}).
+	\end{align}
+	The last equality holds as both functions are continuous and $c_1, c_2$ are values that are limited; in a compact disk on the plane. Then, we can add zero and use the estimation
+	\begin{equation}
+		V_{\tau(j+1)}(r_{\tau(j+1)})  - V_{\tau(j+1)}(r) + V_{\tau(j+1)}(r) - V_{\tau(j)}(r_{\tau(j)}) = \Boh(N^{-1}).
+	\end{equation}
+	to derive the result we are after. It is enough to estimate $V_{\tau(j+1)}(r) - V_{\tau(j)}(r_{\tau(j)})$. For that, because $r q'(r)$ is increasing, for all $r > r_{\tau(j)} + \delta_N$ we can say that
+	\begin{align}
+		V_{\tau(j+1)}(r) & \geq V_{\tau(j+1)}(r_{\tau(j)} + \delta_N) \\
+		& =  V_{\tau(j+1)}(r_{\tau(j+1)}) + \frac{1}{2} V''_{\tau(j+1)}(r_{\tau(j+1)}) (r_{\tau(j)} + \delta_N - r_{\tau(j+1)})^2 + \Boh(\delta_N^3),
+	\end{align} 
+	and therefore can write
+	\begin{align}
+		V_{\tau(j+1)}(r) - V_{\tau(j)}(r_{\tau(j)}) & =  \frac{1}{2} V''_{\tau(j+1)}(r_{\tau(j+1)}) (r_{\tau(j)} + \delta_N - r_{\tau(j+1)})^2 + \Boh(\delta_N^3) \\
+		& = \delta^2 c + \Boh(N^{-1}) + \Boh(\delta_N^3) \\
+		& \geq  \delta^2 c
+	\end{align}
+	Finally, using this one can say
+	\begin{equation}
+		V_{\tau(j+1)}(r) - V_{\tau(j+1)}(r_{\tau(j+1)}) \geq c \delta_N^2.
+	\end{equation}
+
+	Getting this inequality back to the integral expression end up with
+	\begin{align}
+		(1) & =  \ee^{-N V_{\tau(j)}(r_{\tau(j)})} \int_{|r - r_j| > \delta_N} 2r \ee^{-M \left( V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)}) \right)}  \ee^{-(N-M) \left( V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)}) \right)} \dd r \\
+		& = \ee^{-N V_{\tau(j)}(r_{\tau(j)})}  \ee^{- c \delta_N^2 (N - M)} \int_{|r - r_j| > \delta_N} 2r \ee^{-M \left( V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)}) \right)} \dd r
+	\end{align}
+	where you can check that
+	\begin{align}
+		\int_{|r - r_j| > \delta_N} & 2r \ee^{-M \left( V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)}) \right)} \dd r\\ 
+		& = \int_{|r - r_j| > \delta_N} 2r \ee^{-M \left( (q(r) - 2 \tau(j) \ln(r)) - (q(r_{\tau(j)}) - 2 \tau(j) \ln(r_{\tau(j)})) \right)} \dd r,  \\
+		& = 2 \left( \ee^{-q(r_{\tau(j)})} r_{\tau(j)}^{-2 \tau(j)} \right)^M \int_{|r - r_j| > \delta_N} \left( \ee^{-q(r)} r^{2 \tau(j)} \right)^M r \dd r.
+	\end{align}
+	By assumption, we chose $M$ to be a big enough number such that the integral above converges. If that is true, 
+	\begin{equation}
+		(1) = \int_{|r - r_j| > \delta_N} 2r \ee^{-N V_{\tau(j)}(r)} \dd r = \ee^{-N V_{\tau(j)}(r_{\tau(j)})} \epsilon_N,
+	\end{equation}
+	with $\epsilon_N = \Boh(\ee^{-c(\ln(N))^2})$.  
+\end{proof}
+	
+We now move on to the value-contributing part of the integral. The other order term should be absolved in this one if Theorem \ref{Theorem: hj annulus} is to be right.
+	
+\begin{lema}
+		For the second part of the integral we have
+		\begin{equation}
+			(2) =  \frac{\ee^{-N V_{\tau(j)}(r_{\tau(j)})}}{\sqrt{N}} \left( \frac{8\pi r_{\tau(j)}^2}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{1}{2}} \left[ 1 + \frac{1}{N} \mathfrak{B}_1(r_{\tau(j)}) + \Boh(N^{-2}) \right]
+			\label{Equation: main part annulus}
+		\end{equation}
+		where
+		\begin{equation}
+			\mathfrak{B}_1(r_{\tau(j)})  = \frac{V^{(4)}_{\tau(j)}(r_{\tau(j)})}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^2} \frac{1}{4} - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})^2}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^{\frac{5}{2}}} \frac{5}{12} + \frac{1}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \frac{2}{3 r_{\tau(j)}}.
+		\end{equation}
+	\label{Lema: value annulus}
+\end{lema}	
+
+\begin{proof}
+	Now we must deal with the second part of the integral. As we're dealing with a symmetric (in relation to the critical point) integral, we might as well set a centralized variable $x = r - r_\tau$, with this, the integral becomes
+	\begin{align}
+		(2) & = \int_{-\delta_N}^{\delta_N} 2 (x + r_{\tau(j)}) \ee^{-N V_{\tau(j)}(x + r_{\tau(j)})} \dd x \\
+		& = \ee^{-N V_{\tau(j)}(r_{\tau(j)})}  \int_{-\delta_N}^{\delta_N} 2 (x + r_{\tau(j)}) \ee^{-N \left[ V_{\tau(j)}(x + r_{\tau(j)}) - V_{\tau(j)}(r_{\tau(j)})\right]} \dd x.
+	\end{align}
+	There is also a question of scale. Our interval grows with $\sqrt{N}/\ln(N)$. By re-scaling the reference variable using $y = \sqrt{N} x$ we get
+	\begin{equation}
+		(2) = \frac{\ee^{-N V_{\tau(j)}(r_{\tau(j)})}}{\sqrt{N}}  \int_{-\ln(N)}^{\ln(N)} 2 \left(\frac{y}{\sqrt{N}} + r_{\tau(j)} \right) \ee^{-N \left[ V_{\tau(j)}(\frac{y}{\sqrt{N}} + r_{\tau(j)}) - V_{\tau(j)}(r_{\tau(j)})\right]} \dd y.
+	\end{equation}
+	Now, the idea here is quite direct: to use the Taylor expansion for $V_{\tau(j)}\left(\frac{y}{\sqrt{N}} + r_{\tau(j)}\right )$ near the critical point $r_{\tau(j)}$. That is,  
+	\begin{align}
+		& (2) =\frac{\ee^{-N V_{\tau(j)}(r_{\tau(j)})}}{\sqrt{N}}  \int_{-\ln(N)}^{\ln(N)} 2 \left(\frac{y}{\sqrt{N}} + r_{\tau(j)} \right) \ee^{-N \left(\frac{y^2}{2N} V^{(2)}_{\tau(j)}(r_{\tau(j)}) + \frac{y^3}{3! N^{\frac{3}{2}}} V^{(3)}_{\tau(j)}(r_{\tau(j)}) + \frac{y^4}{4! N^2} V^{(4)}_{\tau(j)}(r_{\tau(j)})+ \Boh\left(\left(\frac{y}{\sqrt{N}}\right)^5\right) \right)} \dd y, \\
+		& = \frac{\ee^{-N V_{\tau(j)}(r_{\tau(j)})}}{(2 r_{\tau(j)} )^{-1}\sqrt{N}}  \int_{-\ln(N)}^{\ln(N)} \left(\frac{y}{r_{\tau(j)}\sqrt{N}} + 1 \right) \ee^{-\frac{y^2}{2} V^{(2)}_{\tau(j)}(r_{\tau(j)}) - \frac{y^3}{3! \sqrt{N}} V^{(3)}_{\tau(j)}(r_{\tau(j)}) - \frac{y^4}{4! N} V^{(4)}_{\tau(j)}(r_{\tau(j)}) + \Boh\left(\frac{y^5}{N^\frac{3}{2}}\right)} \dd y, \\
+		& = \frac{\ee^{-N V_{\tau(j)}(r_{\tau(j)})}}{(2 r_{\tau(j)} )^{-1}\sqrt{N}}  \int_{-\ln(N)}^{\ln(N)} \left(\frac{y}{r_{\tau(j)}\sqrt{N}} + 1 \right) \ee^{-\frac{y^2}{2} V^{(2)}_{\tau(j)}(r_{\tau(j)})} \left(\ee^{- \frac{y^3}{3! \sqrt{N}} V^{(3)}_{\tau(j)}(r_{\tau(j)}) - \frac{y^4}{4! N} V^{(4)}_{\tau(j)}(r_{\tau(j)}) + \Boh\left(\frac{y^5}{N^\frac{3}{2}}\right)}\right) \dd y.
+	\end{align}
+	Now we take the Taylor Series for 
+	\begin{multline}
+		\ee^{- \frac{y^3}{3! \sqrt{N}} V^{(3)}_{\tau(j)}(r_{\tau(j)}) - \frac{y^4}{4! N} V^{(4)}_{\tau(j)}(r_{\tau(j)}) + \Boh\left(\frac{y^5}{N^\frac{3}{2}}\right)} = 1 - \left[ \frac{y^3}{3! \sqrt{N}} V^{(3)}_{\tau(j)}(r_{\tau(j)}) + \frac{y^4}{4! N} V^{(4)}_{\tau(j)}(r_{\tau(j)}) + \Boh\left(\frac{y^5}{N^\frac{3}{2}}\right) \right] \\ 
+		- \frac{1}{2} \left[ \frac{y^6}{N} \left(\frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})}{6} \right)^2 + \frac{y^8}{N^2} \left(\frac{V^{(4)}_{\tau(j)}(r_{\tau(j)})}{24} \right)^2 + \frac{y^7}{N^3} \left(\frac{V^{(4)}_{\tau(j)}(r_{\tau(j)})}{6} \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})}{24} \right) + \Boh\left(\frac{y^8}{N^2}\right)  \right] + \Boh\left(\frac{y^a}{N^b}\right).
+	\end{multline}
+	To get the asymptotic expansion (since odd terms vanish) we reorganize the terms in the integral again to obtain
+	\begin{multline}
+		(2) = 2 r_{\tau(j)} \frac{\ee^{-N V_{\tau(j)}(r_{\tau(j)})}}{\sqrt{N}}  \int_{-\ln(N)}^{\ln(N)} \ee^{-\frac{y^2}{2} V^{(2)}_{\tau(j)}(r_{\tau(j)})} \left[ 1 - \frac{y^4}{3! r_{\tau(j)} N} V^{(3)}_{\tau(j)}(r_{\tau(j)}) \right. \\
+		\left. - \frac{y^4}{4! N} V^{(4)}_{\tau(j)}(r_{\tau(j)}) - \frac{y^6}{2 \cdot (3!)^2 N} V^{(3)}_{\tau(j)}(r_{\tau(j)})^2 \right] \dd y,
+		\label{Equation: value-contributing integral}
+	\end{multline}
+	then, distributing the integral,
+	\begin{multline}
+		(2) = 2 r_{\tau(j)} \frac{\ee^{-N V_{\tau(j)}(r_{\tau(j)})}}{\sqrt{N}}
+		 \left[
+		\left(- \frac{V^{(4)}_{\tau(j)}(r_{\tau(j)})}{24 N} - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})}{6 r_{\tau(j)} N} \right)
+		\int_{-\ln(N)}^{\ln(N)} \ee^{-\frac{y^2}{2} V^{(2)}_{\tau(j)}(r_{\tau(j)})} y^4 \right. \\
+		\left. - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})^2}{72 N}
+		\int_{-\ln(N)}^{\ln(N)} \ee^{-\frac{y^2}{2} V^{(2)}_{\tau(j)}(r_{\tau(j)})} y^6 +
+		\int_{-\ln(N)}^{\ln(N)} \ee^{-\frac{y^2}{2} V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right].
+	\end{multline}
+	At this point, the result can be directly evaluated using the Gaussian integrals in Proposition \ref{Prop: Gaussian integrals}.	So that we can finally substitute the values to get
+	\begin{multline}
+		(2) = \sqrt{2\pi} r_{\tau(j)} \frac{\ee^{-N V_{\tau(j)}(r_{\tau(j)})}}{\sqrt{N}} \left[
+		\left(- \frac{V^{(4)}_{\tau(j)}(r_{\tau(j)})}{24 N} - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})}{6 r_{\tau(j)} N} \right) \left( \frac{4}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{1}{2}} \right. \\
+		\left. - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})^2}{72 N}
+		\frac{3}{16} \left(\frac{4}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{5}{2}} +
+		\frac{15}{64} \left( \frac{4}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{7}{2}} \right],
+	\end{multline}
+	and, rearranging the terms we should get our result
+	\begin{equation}
+		(2) =  \frac{\ee^{-N V_{\tau(j)}(r_{\tau(j)})}}{\sqrt{N}} \left( \frac{8\pi r_{\tau(j)}^2}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{1}{2}} \left[ 1 + \frac{1}{N} B_1(r_{\tau(j)}) + \Boh(N^{-2}) \right]
+		\label{Equation: main part annulus}
+	\end{equation}
+	where we defined $	\mathfrak{B}_1(r_{\tau(j)})$ to be given by
+	\begin{equation}
+		\mathfrak{B}_1(r_{\tau(j)})  = \frac{V^{(4)}_{\tau(j)}(r_{\tau(j)})}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^2} \frac{1}{4} - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})^2}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^{\frac{5}{2}}} \frac{5}{12} + \frac{1}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \frac{2}{3 r_{\tau(j)}}
+	\end{equation}
+	
+	Notice that the error term of Lemma \ref{Lema: error annulus} is absorbed into the error order of \autoref{Equation: main part annulus}. Therefore we have the asymptotic expression for $h_j$ given by \eqref{Equation: Asymptotic hj annulus} and the proof for \autoref{Theorem: hj annulus} follows directly.
+\end{proof}
+
+\subsubsection{Asymptotics on the Summation}
+
+So now we need to return to  \eqref{Equation: Partition Function} and calculate each term for $	\sum_{j=0}^{N-1} \ln{h_j}$ using th expansion in terms of Theorem \ref{Theorem: hj annulus}
+\begin{equation}
+ \sum_{j=0}^{N-1} -N V_{\tau(j)}(r_{\tau(j)}) + \\ \frac{1}{2} \left(\ln(8\pi r^2_{\tau(j)}) - \ln N - \ln V^{(2)}_{\tau(j)}(r_{\tau(j)}) \right) + \frac{1}{N} \mathfrak{B}_1(r_{\tau(j)}) + \Boh(N^{-2}). 
+	\label{Equation: sum log annulus}
+\end{equation}
+
+That is, we need to prove the following theorem.
+
+\begin{teorema}
+	\begin{multline}
+		\sum_{j=0}^{N-1} \ln{h_j} = - N^2 I_Q[\mu_Q] - \frac{N}{2} \ln N + N \left(\frac{3\ln(2\pi)}{2} - \frac{1}{2} E_Q[\mu_Q]\right) \\ - \frac{1}{2} \ln\left(\frac{r_1}{r_0} \right) + \frac{1}{4} \ln\left(\frac{V^{(2)}(r_1)}{V^{(2)}(r_0)} \right) + \int_S \mathfrak{B}_1 \dd \mu_Q + \Boh(N^{-1})
+	\end{multline}
+	where we have set
+	\begin{equation}
+		\mathfrak{B}_1(r_{\tau(j)})  = \frac{V^{(4)}_{\tau(j)}(r_{\tau(j)})}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^2} \frac{1}{4} - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})^2}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^{\frac{5}{2}}} \frac{5}{12} + \frac{1}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \frac{2}{3 r_{\tau(j)}},
+	\end{equation}
+	\begin{equation}
+		I_Q[\mu_Q] = \left[\frac{1}{4} \int_{r_0}^{r_1} q(s) s V^{(2)}_{\tau(j)}(s) \dd s- \ln(r_1) + \frac{1}{2} q(r_1) \right],
+	\end{equation}
+	and
+	\begin{equation}
+		E_Q[\mu_Q] = \frac{1}{2} \int_{r_0}^{r_1} \ln(V^{(2)}(s)) (sq'(s))' \dd s.
+	\end{equation}
+	\label{Theorem: Annulus sum}
+\end{teorema}
+
+The proof comes from gathering the terms in \autoref{Equation: sum log annulus} with the expressions in \autoref{Equation: sum V annulus}, \autoref{Equation: logV annulus} and \autoref{Equation: log(r) annulus}. To get there, for each term depending on $j$ we need an summation expression. We go term by term. Lemma \ref{Lemma: Annulus sum N2} refers to the asymptotic of $$\sum_{j=0}^{N-1} -N V_{\tau(j)}(r_{\tau(j)}),$$ Lemma \ref{Lemma: Annulus Sum 1/2} refers to the asymptotics of both terms $$\sum_{j=0}^{N-1}\left(\ln(2\pi r^2_{\tau(j)}) - \ln V^{(2)}_{\tau(j)}(r_{\tau(j)}) \right).$$ Then, the final expression becomes a question of gathering terms.
+
+\begin{lema}
+	\begin{equation}
+		- N \sum_{j=0}^{N-1} V_{\tau(j)}(r_{\tau(j)}) = - N^2 I^Q[\mu_Q] - 2 N U_{\mu_Q}(0) - \frac{1}{6} \ln{\left( \frac{r_0}{r_1}\right)} + \Boh(N^{-2})
+		\label{Equation: sum V annulus}
+	\end{equation}
+	where
+	\begin{equation}
+		 I^Q[\mu_Q] \deff \left[\frac{1}{4} \int_{r_0}^{r_1} q(s) s V^{(2)}_{\tau(j)}(s) \dd s- \ln(r_1) + \frac{1}{2} q(r_1) \right]
+	\end{equation}
+	and
+	\begin{equation}
+		2 U_{\mu_Q}(0) \deff (r_1) - q(r_0) - 2 \ln(r_1).
+	\end{equation}
+	\label{Lemma: Annulus sum N2}
+\end{lema}
+	
+\begin{proof}
+	Using the Euler-Maclaurin formula
+	\begin{multline}
+		\sum_{j=0}^{N-1} V_{\tau(j)}(r_{\tau(j)}) = \int_0^N V_{\tau(j)}(r_{\tau(j)})  \dd t - \frac{1}{2} \left( V_{\tau(j)}(r_{\tau(j)})  - V_{\tau(0)}(r_{\tau(0)}) \right) + \\ \frac{1}{12} \left[ \partial_t V_{\tau(j)}(r_{\tau(j)}) |_{t=N} - \partial_t V_{\tau(j)}(r_{\tau(j)}) |_{t=0} \right] + \Boh(N^{-3}).
+		\label{Equation: EulerMaclaurin 1 annulus}
+	\end{multline}
+	The first term in \eqref{Equation: EulerMaclaurin 1 annulus} is solved doing a integral by parts. We remember the expression for the potential $V_{\tau(j)}(r_{\tau(j)}) = q(r_{\tau(j)}) - 2 \tau(j) \ln r$, with $\tau(j) = j/N$. Therefore the differential can be written as
+	\begin{align}
+		\dd( r_{\tau(j)} q'(r_{\tau(j)}) ) & = 2 \dd \tau(j) \\
+		\dd r q'(r) + \dd r r q''(r) & = 2 \dd \tau(j) \\
+		\dd r (q'(r) + r q''(r)) & = 2 \dd \tau(j).
+	\end{align}
+	This implies that the derivative for $r$ is
+	\begin{equation}
+		\frac{\dd r}{\dd \tau} = \frac{2}{r_{\tau(j)} V^{(2)}_{\tau(j)}(r_{\tau(j)})} = \frac{2}{(r q'(r))'}.
+	\end{equation}
+	Note that in the critical point $r_{\tau(j)}$, we should have $r_{\tau(j)} q'(r_{\tau(j)}) = 2 \tau$. We then are able to rewrite, setting $s = r_{\tau(j)}$,
+	\begin{align}
+		\int_0^N V_{\tau(t)}(r_{\tau(t)})  \dd t & = \int_0^N (q(r_{\tau(t)}) - 2 \tau(t) \ln(r_{\tau(t)})) \dd t \\
+		& = \frac{1}{2} \int_{r_0}^{r_1} (q(s) - s q'(s) \ln(s)) s V^{(2)}_{\tau(j)}(s) N \dd s \\
+		& = N \left[  \frac{1}{2} \int_{r_0}^{r_1} q(s) s V^{(2)}_{\tau(j)}(s) \dd s -  \frac{1}{2} \int_{r_0}^{r_1} s^2 q'(s) \ln(s) V^{(2)}_{\tau(j)}(s) \dd s \right]
+	\end{align}
+	and finally using that $r_1 q'(r_1) = 2$ and $r_0 q'(r_0) = 0$ we can apply the integration by parts on the second term and get
+	\begin{align}
+		\frac{1}{2} \int_{r_0}^{r_1} s^2 q'(s) \ln(s) V^{(2)}_{\tau(j)}(s) \dd s & = \frac{1}{2} \int_{r_0}^{r_1} s^2 q'(s) \ln(s) \frac{1}{s} (s q'(s))' \dd s \\
+		&= \frac{1}{2} \int_{r_0}^{r_1} s q'(s) \ln(s) (s q'(s))' \dd s \\
+		& = \frac{1}{4} \int_{r_0}^{r_1} ((sq'(s))^2)' \ln(s) \dd s \\
+		& = \frac{1}{4} (s q'(s))^2 \ln(s) |_{r_0}^{r_1} + \frac{1}{4}  \int_{r_0}^{r_1} (s q'(s))^2 \frac{1}{s} \dd s \\
+		& = \ln(r_1) + \frac{1}{4} \int_{r_0}^{r_1} s q'(s)^2 \dd s \\
+		& = \ln(r_1) + \frac{1}{2} q(r_1) - \frac{1}{4} \int_{r_0}^{r_1} q(s) (s q'(s))' \dd s
+	\end{align}
+	Leaving us with
+	\begin{align}
+		\int_0^N V_{\tau(j)}(r_{\tau(j)})  \dd t & = N \left[\frac{1}{2} \int_{r_0}^{r_1} q(s) s V^{(2)}_{\tau(j)}(s) \dd s - \ln(r_1) + \frac{1}{2} q(r_1) - \frac{1}{4} \int_{r_0}^{r_1} q(s) (s q'(s))' \dd s \right]  \\
+		& = N \left[\frac{1}{4} \int_{r_0}^{r_1} q(s) s V^{(2)}_{\tau(j)}(s) \dd s- \ln(r_1) + \frac{1}{2} q(r_1) \right]  \\
+		& \deff N I_Q[\mu_Q]  
+		\label{Equation: Equilibrium energy annulus}
+	\end{align}
+	We also need an expression for $ V_{\tau(j)}(r_{\tau(j)})  - V_{\tau(0)}(r_{\tau(0)})$. This is direct noting that
+	\begin{equation}
+		V_{\tau(j)}(r_{\tau(j)})  - V_{\tau(0)}(r_{\tau(0)}) = V_1(r_1) - V_0(r_0) = q(r_1) - q(r_0) - 2 \ln(r_1) =: 2 U_{\mu_Q}(0)
+		\label{Equation: U function annulus}
+	\end{equation}
+	And finally we can the remaining term , we use the Leibniz rule and obtain
+	\begin{align}
+		\partial_t V_{\tau(t)}(r_{\tau(t)})|_{t=N}	& = \partial_t \left( q(r_{\tau(t)}) - 2 \tau(t) \ln(r_{\tau(t)}) \right)_{t=N} \\
+		& = \partial_\tau \left( q(r_{\tau(t)}) - 2 \tau(t) \ln(r_{\tau(t)}) \right)_{\tau=1} \partial_t \left( \tau(t) \right)_{t =N} \\
+		& = \frac{1}{N} \left( \partial_\tau (q(r_{\tau})) - 2 \left( \ln(r_{\tau}) + \tau \partial_\tau\left( \ln(r_{\tau}) \right)_{\tau = 1} \right) \right) \\
+		& = \frac{1}{N} \left[ \partial_t(q(r_{\tau(t)}) - 2 \ln(r_{\tau(t)}))_{\tau=1} - 2 \ln(r_1) \right] 
+	\end{align}
+	and
+	\begin{equation}
+		\partial_t V_{\tau(t)}(r_{\tau(t)})|_{t=0} = \frac{1}{N} \left[ \partial_t(q(r_{\tau(t)}) - 2 \ln(r_{\tau(t)}))_{\tau= 0} - 2 \ln(r_0) \right].
+	\end{equation}
+	And since we can calculate, from $r_1 q'(r_1) = 2$ and $r_0 q'(r_0) = 0$
+	\begin{equation}
+		\partial_\tau q(r_{\tau}) |_{\tau = 0} = \left( \frac{2 q'(r)}{(r q'(r))'}\right)_{r_0} = 0,
+	\end{equation}
+	\begin{equation}
+		\partial_\tau q(r_{\tau}) |_{\tau = 1} = \left( \frac{2 q'(r)}{(r q'(r))'}\right)_{r_1} = \frac{4}{r_1(q'(r_1) + r_1 q''(r_1))},
+	\end{equation}
+	\begin{equation}
+		\partial_\tau (2 \ln(r_\tau)) |_{\tau = 1} = \left( \frac{4}{r (r q'(r))'}\right)_{r_1} = \frac{4}{r_1(q'(r_1) + r_1 q''(r_1))},
+	\end{equation}
+	we can also express the difference as
+	\begin{equation}
+		\partial_t V_{\tau(t)}(r_{\tau(t)})|_{t=N}  - \partial_t V_{\tau(t)}(r_{\tau(t)})|_{t=0} = \frac{1}{12 N} \left[ 2 (\ln(r_0) - \ln(r_1)) \right] = \frac{1}{6 N} \ln\left(\frac{r_0}{r_1}\right) .
+		\label{Equation: log annulus}
+	\end{equation}
+	And the proof for the summation $\sum_{j=0}^{N-1} V_{\tau(j)}(r_{\tau(j)})$ is complete if one gathers the terms \eqref{Equation: Equilibrium energy annulus}, \eqref{Equation: log annulus} and \eqref{Equation: U function annulus},
+
+\end{proof}
+
+We move on to the next term from where we need to determine both terms in
+\begin{equation}
+	\sum_{j=0}^{N-1}\left(\ln(2\pi r^2_{\tau(j)}) - \ln V^{(2)}_{\tau(j)}(r_{\tau(j)}) \right).
+\end{equation}
+
+\begin{lema}
+		\begin{equation}
+		\sum_{j=0}^{N-1}  \ln V^{(2)}_{\tau(j)}(r_{\tau(j)})  = \frac{N}{2} \int_{r_0}^{r_1} \ln(V^{(2)}(s)) (sq'(s))' \dd s  -   \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) + \Boh(N^{-1})
+		\label{Equation: logV annulus}
+	\end{equation}
+	and
+	\begin{equation}
+		\sum_{j=0}^{N-1}  \ln(8\pi r^2_{\tau(j)}) = N \ln(8\pi) + 2 \left( \frac{N}{2} \int_{r_0}^{r_1} \ln(s) (s q'(s))' \dd s - \frac{1}{2} \ln\left(\frac{r_1}{r_0}\right) + \Boh(N^{-1}) \right) 
+		\label{Equation: log(r) annulus}
+	\end{equation}
+	\label{Lemma: Annulus Sum 1/2}
+\end{lema}
+
+\begin{proof}
+	Lets start now with the second summation, to which we apply Euler-Maclaurin again
+	\begin{multline}
+		\sum_{j=0}^{N-1}  \ln V^{(2)}_{\tau(j)}(r_{\tau(j)}) = \int_{0}^{N} \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) \dd t - \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) + \\ \frac{1}{12} \left[ \partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{\tau=1} - \partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{\tau=0}\right]  + \Boh(N^{-3})
+	\end{multline}
+	We first tackle the integral on the right hand side, changing variables as $s = r_{\tau(t)}$ we would have
+	\begin{equation}
+		\int_{0}^{N} \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) \dd t = \frac{N}{2} \int_{r_0}^{r_1} \ln(V^{(2)}(s)) (sq'(s))' \dd s \\
+	\end{equation}
+	And, noticing that
+	\begin{equation}
+		\partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) = \partial_V \left( \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) \right) \partial_r \left( V^{(2)}_{\tau(t)}(r_{\tau(t)}) \right) \partial_\tau \left( r_{\tau(t)} \right) = \frac{\left(\partial_r V^{(2)}\right)(r_{\tau(t)})}{r_{\tau(t)} \left( V^{(2)}(r_{\tau(t)})\right)^2}
+	\end{equation}
+	We have for the third term on the right hand side, 
+	\begin{align}
+		\partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{\tau=1} - \partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{\tau=0} & = \frac{1}{2N} \left( \frac{\left(\partial_r V^{(2)}\right)(r_{1})}{r_1 \left( V^{(2)}(r_1)\right)^2} - \frac{\left(\partial_r V^{(2)}\right)(r_{0})}{r_0 \left( V^{(2)}(r_0)\right)^2}\right) \\ & = \Boh(N^{-1})
+	\end{align}
+	then,
+	\begin{equation}
+		\sum_{j=0}^{N-1}  \ln V^{(2)}_{\tau(j)}(r_{\tau(j)})  = \frac{N}{2} \int_{r_0}^{r_1} \ln(V^{(2)}(s)) (sq'(s))' \dd s  -   \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) + \Boh(N^{-1})
+		\label{Equation: logV annulus}
+	\end{equation}
+	Similarly, for the first summation, we apply Euler-Maclaurin again
+	\begin{multline}
+		\sum_{j=0}^{N-1}  \ln(8 \pi r^2_{\tau(j)}) = \ln(8\pi) + 2 \left( \int_{0}^{N} \ln(r_{\tau(t)})  \dd t - \frac{1}{2} \ln\left(\frac{r_1}{r_0}\right) \right. \\ \left. + \frac{1}{12} \left[ \partial_t \ln r_{\tau(t)} |_{\tau=1} - \partial_t \ln r_{\tau(t)} |_{\tau=0}\right] + \Boh(N^{-3}) \right)
+	\end{multline}
+	We first tackle the integral on the right hand side, changing variables as $s = r_{\tau(t)}$ we would have
+	\begin{equation}
+		\int_{0}^{N} \ln r_{\tau(t)} \dd t = \frac{N}{2} \int_{r_0}^{r_1} \ln(s) (s q'(s))' \dd s \\
+	\end{equation}
+	And, noticing that
+	\begin{equation}
+		\partial_t \ln r_{\tau(t)} =  \partial_r \left( \ln(r_{\tau(t)}) \right) \partial_\tau \left( r_{\tau(t)} \right) = \frac{2}{V^{(2)}(r_{\tau(t)}) \left( r_{\tau(t)} \right)^2}
+	\end{equation}
+	We have for the third term on the right hand side, 
+	\begin{align}
+		\partial_t \ln  r_{\tau(t)} |_{\tau=1} - \partial_t \ln  r_{\tau(t)}  |_{\tau=0}  = \frac{1}{2N} \left( \frac{2}{V^{(2)}(r_{1}) \left( r_{1} \right)^2} - \frac{2}{V^{(2)}(r_{0}) \left( r_{0} \right)^2} \right) = \Boh(N^{-1})
+	\end{align}
+	then
+	\begin{equation}
+		\sum_{j=0}^{N-1}  \ln(8\pi r^2_{\tau(j)}) = N \ln(8\pi) + 2 \left( \frac{N}{2} \int_{r_0}^{r_1} \ln(s) (s q'(s))' \dd s - \frac{1}{2} \ln\left(\frac{r_1}{r_0}\right) + \Boh(N^{-1}) \right) 
+		\label{Equation: log(r) annulus}
+	\end{equation}
+	
+\end{proof}
+
+\subsubsection{Free Energy Annulus}
+
+We can finally prove Theorem \ref{Theorem: Annulus Free Energy}.
+
+\begin{proof} (Theorem \ref{Theorem: Annulus Free Energy})
+	From
+	\begin{multline}
+		\sum_{j=0}^{N-1} \ln(h_j) = - N^2 I_Q[\mu_Q] - \frac{N}{2} \ln N + N \left(\frac{3\ln(2\pi)}{2} - \frac{1}{2} E_Q[\mu_Q]\right) \\ - \frac{1}{2} \ln\left(\frac{r_1}{r_0} \right) + \frac{1}{4} \ln\left(\frac{V^{(2)}(r_1)}{V^{(2)}(r_0)} \right) + \int_S \mathfrak{B}_1 \dd \mu_Q + \Boh(N^{-1})
+	\end{multline}
+	We can get the asymptotic expansion for the Free energy using that
+	\begin{equation}
+		\ln(N!) = N\ln(N) - N + \frac{1}{2} \ln(N) + \frac{1}{2} \ln(2 \pi) + \Boh(N^{-1})
+	\end{equation}
+	that is,
+	\begin{align}
+		\ln \pZ{N}{} & = \ln{N!} - 2 \sum_{j=0}^{N-1} \ln{h_j} \\
+		& 
+		\begin{multlined}
+			= N\ln(N) - N + \frac{1}{2} \ln(N) + \frac{1}{2} \ln(2 \pi) + 2 \left( - N^2 I_Q[\mu_Q] - \frac{N}{2} \ln N \right. \\ \left. + N \left(\frac{3\ln(2\pi)}{2} - \frac{1}{2} E_Q[\mu_Q]\right) - \frac{1}{2} \ln\left(\frac{r_1}{r_0} \right) + \frac{1}{4} \ln\left(\frac{V^{(2)}(r_1)}{V^{(2)}(r_0)} \right) + \int_S \mathfrak{B}_1 \dd \mu_Q \right) + \Boh(N^{-1})
+		\end{multlined} \\
+		& =  - 2 N^2 I_Q[\mu_Q] + N \left( 3\ln(2\pi) - E_Q[\mu_Q] - 1\right) + \frac{1}{2} \ln(N) + 2 \int_S \mathfrak{B}_1 \dd \mu_Q + \Boh(N^{-1})
+	\end{align}
+\end{proof}
+
+
+\subsection{Asymptotics - Disk}
+\label{Subsection: Disk}
+
+In this case, we consider $r_0 = 0$. As before, the measure in \autoref{Equation: Coulomb Gas Measure} to be the law for distribution of the particles in this model. When we say $r_0 = 0$, we say that the support for this configuration space of particles is a Disk in the complex plane. The expression we get is different from taking the limit in the case $r_0 > 0$.
+
+\begin{center}
+	\includegraphics[width=.4\linewidth]{images/diskfar.png}
+	\hspace{.15\linewidth}
+	\includegraphics[width=.4\linewidth]{images/diskclose.png}
+\end{center}
+
+\begin{teorema}
+	For the annulus case, where $r_0 = 0$, we should have the following asymptotic for the free energy
+	\begin{equation}
+		\ln{\pZ{N}{}} = 
+	\end{equation}
+	where we have set
+	\begin{equation}
+		\mathfrak{B}_1(r_{\tau(j)})  = \frac{V^{(4)}_{\tau(j)}(r_{\tau(j)})}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^2} \frac{1}{4} - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})^2}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^{\frac{5}{2}}} \frac{5}{12} + \frac{1}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \frac{2}{3 r_{\tau(j)}},
+	\end{equation}
+	\begin{equation}
+		I_Q[\mu_Q] = \left[\frac{1}{4} \int_{r_0}^{r_1} q(s) s V^{(2)}_{\tau(j)}(s) \dd s- \ln(r_1) + \frac{1}{2} q(r_1) \right]
+	\end{equation}
+	and
+	\begin{equation}
+		E_Q[\mu_Q] = \frac{1}{2} \int_{r_0}^{r_1} \ln(V^{(2)}(s)) (sq'(s))' \dd s.
+	\end{equation}
+	\label{Theorem: Disk Free Energy}
+\end{teorema}
+
+Again, we start by studying the asymptotic for $h_j$ and then for the summation $\sum \ln(h_j)$. This theorem then should follow from the following lemmas concerning this two asymptotics.
+
+\subsubsection{Asymptotic for the orthogonal polynomial}
+
+In the asymptotic expansions of $h_j$, one should distinguish the following two cases depending on a small constant $1/5 > \epsilon > 0$. 
+\begin{itemize}
+	\item Case 1: $r_{j/N} >> N^{-\epsilon}$. For the annular droplet case where $r_0 > 0$, this case covers all $j = 0, 1, \cdots , N-1$. On the other hand, for the disc droplet case where $r_0 = 0$, this case covers only $j = m_N, m_N + 1, \cdots , N-1$ for $m_N = N^\epsilon$ with some $\epsilon > 0$;
+	\item Case 2: $r_{j/N} << N^{-\epsilon}$. This covers the remaining disc droplet case with $j = 0, 1, \cdots, m_N-1$. Notably, the asymptotic expansion involves gamma functions in this case. 
+\end{itemize}
+
+We separate this in two proofs, the first one for $j = m_N, m_N + 1, \cdots, N-1$  is very similar to our previous proof so we begin by this case.
+
+\begin{teorema}
+	For $j \geq m_N$,
+	\begin{equation}
+		h_j =  \frac{\ee^{-N V_{\tau(j)}(r_{\tau(j)})}}{\sqrt{N}} \left( \frac{8\pi r^2_{\tau(j)}}{V^{(2)}(r_{\tau(j)})} \right)^{\frac{1}{2}} \left( 1 + \frac{1}{N} \mathfrak{B}_1(r_{\tau(j)}) + \epsilon_{N, 1} \right) 
+	\end{equation}
+	where
+	\begin{equation}
+		\mathfrak{B}_1(r_{\tau(j)})  = \frac{V^{(4)}_{\tau(j)}(r_{\tau(j)})}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^2} \frac{1}{4} - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})^2}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^{\frac{5}{2}}} \frac{5}{12} + \frac{1}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \frac{2}{3 r_{\tau(j)}},
+	\end{equation}
+	and
+	\begin{equation}
+		\epsilon_{N, 1} =  \Boh(j^{-\frac{3}{2}} (\ln N)^\alpha)
+	\end{equation}
+	for some $\alpha > 0$.
+	\label{Theorem: hj disk j>mn}
+\end{teorema}
+
+To actually expand on the details, we need some useful facts. We will make use in this case of the proposition
+
+\begin{proposicao}
+	Due to strict subharmonicity of Q in a neighborhood of the droplet, $r_\tau$, defined as before, satisfies 
+	\begin{equation}
+		r_\tau = \left( \frac{2\tau}{q''(0)} \right)^{\frac{1}{2}} + \Boh(\tau) = \left( \frac{4\tau}{V^{(2)}(r_\tau)} \right)^{\frac{1}{2}} + \Boh(\tau) 
+	\end{equation}
+	or more simply
+	\begin{equation}
+		r_\tau = \Boh (\tau^{\frac{1}{2}})
+	\end{equation}
+	as $\tau \rightarrow 0$.
+	\label{Proposition: Behavior rt}
+\end{proposicao}
+\begin{proof}
+	This is a inverse function theorem with a Taylor expansion for equalizing powers.
+\end{proof}
+
+Note also that for $d \geq 1$, we can choose $C_1$ a constant uniformly for all $\tau$ and write
+\begin{equation}
+	|V^{(d)}_\tau(r_\tau)| = |q^{(d)}(r_\tau) + (-1)^{d} 2 \tau (d-1)! r_\tau^{-d} | \leq C_1 (1 + \tau^{-\frac{d}{2} + 1}).
+\end{equation} 
+We then start as usual dividing the integral into two parts
+\begin{align}
+	h_j & = \int_{0}^{\infty} 2 r^{2j + 1} \ee^{-N q(r)} \dd r = \int_{0}^{\infty} 2 r \ee^{-N V_{\tau(j)} (r)} \dd r \\
+	&= \int_{r_{\tau(j)} - \delta_N}^{r_{\tau(j)} + \delta_N} 2 r \ee^{-N V_{\tau(j)}(r)} \dd r+ \int_{|r - r_{\tau(j)}| > \delta_N} 2 r \ee^{-NV_{\tau(j)}(r)} \dd r = (1) + (2)
+\end{align}
+and now we have two integrals to solve. Let's start with the outer integral, which we should be able to control the growth. 
+
+\begin{lema}
+	Consider the case $m_N \leq j \leq N-1$. For the error-bound integral we have the asymptotic
+	\begin{equation}
+	(2) =  \ee^{-N V_{\tau(j)}(r_{\tau(j)})} \Boh(\ee^{c_2 (\ln(N))^2}).
+	\end{equation}
+	for some positive constant $c_2$.
+\end{lema}
+\begin{proof}
+
+For $m_N \leq j < N$, we have
+\begin{equation}
+	r_{\tau(j + 1)} - r_{\tau(j)} = \Boh((jN)^{-\frac{1}{2}}).
+\end{equation}
+Since the potential is increasing in $(r_\tau, \infty)$, the Taylor series expansion for $V_\tau$ is for all $r > r_{\tau(j)} + \delta_N$
+\begin{align}
+	V_{\tau(j + 1)}(r) & \geq V_{\tau(j + 1)}(r_{\tau(j)} + \delta_N) \\
+	& = V_{\tau(j + 1)}(r_{\tau(j + 1)}) + \frac{1}{2} V^{(2)}_{\tau(j + 1)}(r_{\tau(j + 1)}) (r_{\tau(j)} + \delta_N - r_{\tau(j + 1)})^2 + \Boh(\tau(j)^{-1/2} \delta^3_N).
+\end{align}
+where $\Boh(\tau(j)^{-1/2} \delta^3_N) = \Boh(N^{-1} j^{-1/2}(\ln(N))^3)$. Similarly, since $V_{\tau}$ is decreasing in $(0, r_\tau)$, we have for all $r < r_{\tau(j)} - \delta_N$
+\begin{align}
+	V_{\tau(j + 1)}(r) & \geq V_{\tau(j +1)}(r_{\tau(j)} - \delta_N) \\
+	& = V_{\tau(j + 1)}(r_{\tau(j + 1)}) + \frac{1}{2} V^{(2)}_{\tau(j + 1)}(r_{\tau(j + 1)}) (r_{\tau(j)} - \delta_N - r_{\tau(j + 1)})^2 + \Boh(\tau(j)^{-1/2} \delta^3_N).
+\end{align}
+Using the Taylor series for $V_\tau$ again, we have
+\begin{align}
+	V_{\tau(j+1)}(r_{\tau(j+1)}) - V_{\tau(j)}(r_{\tau(j)}) & = V_{\tau(j)}(r_{\tau(j+1)}) - V_{\tau(j)}(r_{\tau(j)}) - \frac{1}{N} \ln r_{\tau(j+1)} \\
+	& = \Boh((jN)^{-1})  - \frac{1}{N} \ln r_{\tau(j+1)}.
+\end{align}
+Thus, if follows from the last two inequalities that
+\begin{align}
+	\ee^{N V_{\tau(j)}(r_{\tau(j)})} & \int_{|r - r_{\tau(j)}| > \delta_N} 2 r^{2j+1} \ee^{-N q(r)} \dd r = \int_{|r - r_{\tau(j)}| > \delta_N} 2 \ee^{-N \left( V_{\tau(j + 1/2)}(r) - V_{\tau(j)}(r_{\tau(j)}) \right)} \dd r \\
+	& \leq \ee^{-c_1 (\ln(N))^2} \ee^{\frac{N-M}{N} \ln(r_{\tau(j+1/2)})}  \int_{|r - r_{\tau(j)}| > \delta_N} 2 \ee^{-M \left( V_{\tau(j + 1/2)}(r) - V_{\tau(j)}(r_{\tau(j)}) \right)} \dd r \\
+	& = \Boh(\ee^{c_2 (\ln(N))^2})
+\end{align}
+for some constants $c_1, c_2 > 0$. 
+\end{proof}
+
+
+\begin{lema}
+	Consider the case $m_N \leq j \leq N-1$. For the value-contributing integral we have the asymptotic
+	\begin{equation}
+		(1) = \ee^{-N V_{\tau(j)}}(r_{\tau(j)}) \left[ \frac{1}{\sqrt{N}} \left( \frac{8\pi r^2_{\tau(j)}}{V^{(2)}(r_{\tau(j)})} \right)^{\frac{1}{2}} \left( 1 + \frac{1}{N} \mathfrak{B}_1(r_{\tau(j)}) + \epsilon_{N, 1} \right) \right] 
+	\end{equation}
+	where
+	\begin{equation}
+		\epsilon_{N,1} = \Boh(j^{-\frac{3}{2}} (\ln N)^\alpha)
+	\end{equation}
+	for some $\alpha > 0$.
+\end{lema}
+
+\begin{proof}
+We now need to examine the integral near the critical point. That is, 
+\begin{align}
+	& \int_{r_{\tau(j)} - \delta_N}^{r_{\tau(j)} + \delta_N} 2r \ee^{-N V_{\tau(j)}} \dd r \\
+	& =  \ee^{-N V_{\tau(j)}(r_{\tau(j)})} \int_{-\delta_N}^{\delta_N} 2(r_{\tau(j)} + t) \ee^{-N \left( \frac{1}{2} V^{(2)}_{\tau(j)}(r_{\tau(j)}) (t)^2 + \frac{1}{3!} V^{(3)}_{\tau(j)}(r_{\tau(j)}) (t)^3 + \frac{1}{4!} V^{(4)}_{\tau(j)}(r_{\tau(j)}) (t)^4 + \Boh(\tau(j)^{-\frac{3}{2}}  t^5) \right)} \dd t \\
+	&  
+	\begin{multlined}
+	=  \ee^{-N V_{\tau(j)}(r_{\tau(j)})}  \int_{-\sqrt{N} \delta_N}^{\sqrt{N} \delta_N} 2 \ee^{-\frac{1}{2} V^{(2)}_{\tau(j)}(r_{\tau(j)}) t^2} (r_{\tau(j)} + \frac{t}{\sqrt{N}})  \left(  1 - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)}) (t)^3 }{6 \sqrt{N}} \right. \\ \left. - \frac{V^{(4)}_{\tau(j)}(r_{\tau(j)}) (t)^4}{24 N}  + \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})^2 (t)^6}{72 N} + \epsilon'_{N,1} \right) \dd t
+	\end{multlined}
+\end{align}
+where  $\epsilon_{N,1} = \Boh(j^{-\frac{3}{2}} (\ln N)^\alpha)$ for some $\alpha > 0$. From here, the expression can be directly identified with \autoref{Equation: value-contributing integral} and the techniques for getting the result are one-to-one with the ones already done in that case.
+\end{proof}
+
+\begin{proof} (Theorem \ref{Theorem: hj disk j>mn})
+	This is now only a matter to notice that $(2)$ is absolved in to the error term of $(1)$ and the result follows.
+\end{proof}
+
+So far, nothing different has happened, we are dealing with point distant from the origin. Naturally then one might assume, and would correct, that nothing is that different in the two regimes if the points are distant from $r_0$. 
+
+ We must now deal with the more delicate case, for $j \leq m_N$, we have the Theorem.
+
+\begin{teorema}
+	For $j < m_N$, we will have the following asymptotic for the norming constant
+	\begin{equation}
+	 h_j =  \ee^{-N q(0)} \left[ N^{-(j+1)} \Gamma(j+1)\left(\frac{1}{2} q''(0)\right)^{-(j+1)} \left( 1 + \Boh(N^{-\frac{1}{2}} (j+1/2)^{\frac{3}{2}} (\ln N)^3) \right)+ \epsilon_N(j) \right]
+	\end{equation}
+	where $\Gamma$ is the usual Gamma function and 
+	\begin{equation}
+		\epsilon_N(j) = \Boh\left(\ee^{-c_2 (j + 1) (\ln N)^2}  \left(\frac{j+1}{N} (\ln(N))^2 \right)^{(j+1) \frac{N-M}{N}} \right)
+	\end{equation}
+	with $c_2 > 0$ a constant.
+	\label{Theorem: hj disk j<mn}
+\end{teorema}
+
+\begin{proof}
+For $j < m_N$, we need to define some $r^*_\tau \deff r_\tau \ln(N)$ from which we separate the integral in a important part close to the origin and another part which has a lesser order. Consider then the decomposition
+\begin{equation}
+	h_j = \int_{0}^{\infty} 2r^{2j+1} \ee^{-N q(r)} \dd r =\int_{0}^{r^*_{\tau(j+1)}} 2r^{2j+1} \ee^{-N q(r)} \dd r + \int_{r^*_{\tau(j+1)}}^{\infty} 2r^{2j+1} \ee^{-N q(r)} \dd r.
+\end{equation}
+Due to strict subharmonicity of Q in a neighborhood of the droplet, $r_\tau$ satisfies $r_\tau = \Boh (\tau^{\frac{1}{2}})$ as $\tau \rightarrow 0$, this is given by Proposition \ref{Proposition: Behavior rt}. Since $V_\tau$ has a global minimum at $r = r_\tau$ and increases for larger values, for all $r > r^*_{\tau(j + 1)}$ we have
+\begin{align}
+	V_{\tau(j+1/2)}(r) & \geq V_{\tau(j+1)}(r)(r^*_{\tau(j+1)}) = q(r^*_{\tau(j+1)}) - \frac{2j + 1}{N} \ln(r^*_{\tau(j+1)}) \\
+	& = q(0) + \frac{1}{2} q''(0)(r^*_{\tau(j+1)})^2 - \frac{2j + 1}{N} \ln(r^*_{\tau(j+1)}) + \Boh(r^*_{\tau(j+1)})^3.
+\end{align}
+Note that $q'(0) = 0$ since $\Delta Q(z) \in (0, \infty)$ near the origin and $\Delta Q(z) \propto q'(0)/r + q''(0)$. Take
+\begin{align}
+	\ee^{-N q(0)} \int_{r^*_{\tau(j+1)}}^{\infty} 2r^{2j+1} \ee^{-N q(r) + N q(0)} \dd r & =  \ee^{-N q(0)} \int_{r^*_{\tau(j+1)}}^{\infty} 2 \ee^{(2j+1) \ln(r) -N q(r) + N q(0)} \dd r, \\
+	& = \ee^{-N q(0)} \int_{r^*_{\tau(j+1)}}^{\infty} 2 \ee^{- N \left(-\frac{2}{N}\left( j + \frac{1}{2} \right) \ln(r) - q(r) + q(0)\right)} \dd r, \\
+	& = \int_{r^*_{\tau(j+1)}}^{\infty} 2 \ee^{-N (V_{\tau(j+1/2)}(r) - q(0))} \dd r
+\end{align}
+and, using the inequality explicited above
+\begin{align}
+	\ee^{- N V_{\tau(j+1)}(r) + N q(0)} & = \ee^{- N V_{\tau(j+1)}(r) + N q(0) + M V_{\tau(j+1)}(r) - M V_{\tau(j+1)}(r)} \\
+	& = \ee^{- (N - M) V_{\tau(j+1)}(r) + N q(0) - M V_{\tau(j+1)}(r)} \\
+	& \leq \ee^{- (N - M) V_{\tau(j+1)}(r^*) + N q(0) - M V_{\tau(j+1)}(r)} \\
+	& = \ee^{- (N - M) \left(V_{\tau(j+1)}(r^*) - q(0) \right)} \ee^{- M \left(V_{\tau(j+1)}(r) - q(0) \right)}
+\end{align}
+then
+\begin{align}
+	&  \int_{r^*_{\tau(j+1)}}^{\infty} 2 \ee^{-N (V_{\tau(j+1)}(r) - q(0))} \dd r \\
+	& \leq  \ee^{ - (N - M) V_{\tau(j+1)}(r^*)} \ee^{(N-M) q(0)}\int_{r^*_{\tau(j+1)}}^{\infty} 2 \ee^{-M V_{\tau(j+1)}(r) } \dd r \\
+	& =  \ee^{ - (N - M) \left[ q(r^*_{\tau(j+1)}) - \frac{2j+2}{N} \ln(r^*_{\tau(j+1)}) \right]} \ee^{(N-M) q(0)} \int_{r^*_{\tau(j+1)}}^{\infty} 2 \ee^{-M V_{\tau(j+1)}(r) } \dd r \\
+	& = \ee^{- (N-M) q(r^*_{\tau(j+1)})} {r^*_{\tau(j+1)}}^{(2j+2) \frac{N-M}{N}} \ee^{(N-M) q(0)} \int_{r^*_{\tau(j+1)}}^{\infty} 2 \ee^{-M V_{\tau(j+1)}(r) } \dd r \\
+	& = \ee^{- (N-M) \left[\frac{q''(0)}{2}  (r^*_{\tau(j+1)})^2 + \Boh(r^*_{\tau(j+1)})^3\right] } {r^*_{\tau(j+1)}}^{(2j+2) \frac{N-M}{N}} \int_{r^*_{\tau(j+1)}}^{\infty} 2 \ee^{-M V_{\tau(j+1)}(r)} \dd r \\
+	& \leq \ee^{- \frac{(N-M)}{2} q''(0) (r^*_{\tau(j+1)})^2)} {r^*_{\tau(j+1)}}^{(2j+2)\frac{N-M}{N}} \int_{r^*_{\tau(j+1)}}^{\infty} 2 \ee^{-M V_{\tau(j+1)}(r)} \dd r \\
+	& = \ee^{- c_1 \frac{(N-M)}{2}r_{\tau(j+1)}^2 \ln(N)^2} {r^*_{\tau(j+1)}}^{(2j+2)\frac{N-M}{N}} \int_{r^*_{\tau(j+1)}}^{\infty} 2 \ee^{-M V_{\tau(j+1)}(r)} \dd r \deff \epsilon_N(j) \\
+\end{align}
+for some $c_1 > 0$ and $M$ as given in the other proof such that the integral converges.  Since $r_\tau = \Boh(\tau^{\frac{1}{2}})$, there is a constant $c_2 > 0$ such that as $N$ goes to infinity
+\begin{align}
+	\epsilon_N(j)  & = \Boh \left(\ee^{- c_1 \frac{(N-M)}{2} \tau(j+1) \ln(N)^2} {r^*_{\tau(j+1)}}^{(2j+2)\frac{N-M}{N}}\right) \\
+	&= \Boh \left(\ee^{- c_2 (j+1) \ln(N)^2} {r^*_{\tau(j+1)}}^{(2j+2)\frac{N-M}{N}}\right) \\
+	& = \Boh\left(\ee^{-c_2 (j + 1) (\ln N)^2}  \left(\frac{j+1}{N} (\ln(N))^2 \right)^{(j+1) \frac{N-M}{N}} \right)
+\end{align}
+
+Therefore we obtain
+\begin{align}
+	h_j & = \int_{0}^{\infty} 2r^{2j+1} \ee^{-N q(r)} \dd r = \int_{0}^{r^*_{\tau(j+1)}} 2r^{2j+1} \ee^{-N q(r)} \dd + \ee^{-N q(0)} \epsilon_N(j) \\
+	& = \int_{0}^{r^*_{\tau(j+1)}} 2r^{2j+1} \ee^{-N \left( q(0) + \frac{1}{2} q''(0) r^2 \right) + \Boh(N(r^*_{\tau(j+1)})^3)} \dd  r + \ee^{-N q(0)} \epsilon_N(j) \\
+	& =  \ee^{-N q(0)} \left[ \int_{0}^{r^*_{\tau(j+1)}} 2r^{2j+1} \ee^{-\frac{1}{2} q''(0) r^2 N} \dd r \left( 1 + \Boh(N(r^*_{\tau(j+1)})^3) \right)+ \epsilon_N(j) \right] \\
+	&=  \ee^{-N q(0)} \left[ N^{-(j+1)} \Gamma(j+1)\left(\frac{1}{2} q''(0)\right)^{-(j+1)} \left( 1 + \Boh(N^{-\frac{1}{2}} (j+1/2)^{\frac{3}{2}} (\ln N)^3) \right)+ \epsilon_N(j) \right]
+\end{align}
+where $\Gamma$ is the usual gamma function with integral representation
+\begin{equation}
+	\Gamma(j+1) = \int_{0}^{\infty} t^j \ee^{-t} \dd t
+\end{equation}
+and we used $t = 1/2 q''(0) r^2 N$.
+  
+\end{proof}
+
+\subsubsection{Asymptotics on the Summation}
+
+So now we need to return to  \eqref{Equation: Partition Function} and calculate each term for $	\sum_{j=0}^{N-1} \ln{h_j}$ using the expansion in terms of Theorem \ref{Theorem: hj disk j>mn} and \ref{Theorem: hj disk j<mn} for the expression
+
+\begin{equation}
+	\sum_{j=0}^{N} \ln(h_j) = \sum_{j=0}^{m_N - 1} \ln(h_j)  + \sum_{j=m_N}^{N - 1} \ln(h_j).
+\end{equation}
+
+\begin{teorema}
+	\begin{equation}
+		\sum_{j=0}^{N} \ln(h_j)
+	\end{equation}
+\end{teorema}
+
+To prove this theorem, we must give the asymptotics for both summations. This means we need both Lemmas \ref{Lemma: Summation disk <mn} and \ref{Lemma: Summation disk >mn}. We start by the lower power terms.
+
+\begin{lema}
+	We have the following asymptotic for the summation of $\ln(h_j)$ from $0$ to $m_N - 1$,
+	\begin{multline}
+		\sum_{j=0}^{m_N - 1} \ln(h_j)  = -m_N N q(0) - \frac{m_N(m_N + 1)}{2} \left( \ln(N) + \ln\left( \frac{1}{2} q''(0) \right)  \right) +  \frac{m_N^2 \ln(m_N)}{2} - \frac{3}{4} m_N^2 \\ + \frac{\ln(2\pi) m_N}{2} - \frac{\ln(m_N)}{12} + \zeta'(-1)+ \Boh(m_N^{-2}+ N^{-\frac{1}{2}(1-5\epsilon)} (\ln(N))^3).
+	\end{multline}
+	\label{Lemma: Summation disk <mn}
+\end{lema}
+
+\begin{proof}
+
+The first term in the right is straightforwardly determined, we need only to write, using Theorem \ref{Theorem: hj disk j<mn},
+\begin{align}
+	\sum_{j=0}^{m_N - 1} \ln(h_j)
+	&
+	\begin{multlined}
+		= -m_N N q(0) - \frac{m_N(m_N + 1)}{2} \left( \ln(N) + \ln\left( \frac{1}{2} q''(0) \right) \right) \\ + \ln(G(m_N + 1)) + \Boh(N^{-\frac{1}{2}(1-5\epsilon)} (\ln(N))^3)
+	\end{multlined} \\
+	& 
+	\begin{multlined}
+		= -m_N N q(0) - \frac{m_N(m_N + 1)}{2} \left( \ln(N) + \ln\left( \frac{1}{2} q^{(2)}(0) \right)  \right) +  \frac{m_N^2 \ln(m_N)}{2} - \frac{3}{4} m_N^2 \\ + \frac{\ln(2\pi) m_N}{2} - \frac{\ln(m_N)}{12} + \zeta'(-1)+ \Boh(m_N^{-2}+ N^{-\frac{1}{2}(1-5\epsilon)} (\ln(N))^3)
+	\end{multlined}
+\end{align}
+where $G$ is the Barnes $G$-function defined recursively as
+\begin{equation}
+	G(z+1) = \Gamma(z) G(z)
+\end{equation}
+and we have used the asymptotic for the G-Barnes function
+\begin{equation}
+	\ln(G(z+1)) = \frac{z^2 \ln(z)}{2} - \frac{3}{4} z^2 + \frac{\ln(2\pi) z}{2} - \frac{\ln(z)}{12} + \zeta'(-1) + \Boh(\frac{1}{z^2}).
+\end{equation}
+\end{proof}
+
+\begin{lema}
+	We have the following asymptotic for the summation of $\ln(h_j)$ from $m_N$ to $N-1$,
+	\begin{equation}
+		\sum_{j=m_N}^{N - 1} \ln(h_j)  = 
+	\end{equation}
+	\label{Lemma: Summation disk >mn}
+\end{lema}
+
+The second summation is a bit more detailed, we use the previously defined asymptotics in Theorem \ref{Theorem: hj disk j>mn},
+\begin{equation}
+	\ln(h_j) = -N V_{\tau(j)} (r_{\tau(j)}) + \frac{1}{2} \ln{\left( \frac{8\pi r^2_{\tau(j)}}{N V^{(2)}(r_{\tau(j)})}  \right)} + \frac{1}{N} \mathfrak{B}_1(r_{\tau(j)}) + \Boh(j^{-\frac{3}{2}} (\ln(N))^\alpha)
+\end{equation}
+and need to determine three things in order to get the full summation,
+\begin{align}
+	& \sum_{j=m_N}^{N-1} V_{\tau(j)}(r_{\tau(j)}), \qquad \sum_{j=m_N}^{N-1} \ln V^{(2)}(r_{\tau(j)}) \quad \text{and} \qquad \sum_{j=m_N}^{N-1} \ln(r_{\tau(j)}).
+\end{align}
+
+\begin{proposicao}
+	The following asymptotic holds under the same context as Lemma \ref{Lemma: Summation disk >mn}.
+	\begin{multline}
+		\sum_{j=m_N}^{N-1} V_{\tau(j)}(r_{\tau(j)}) = N I_Q[\mu_Q]  - U_{\mu_Q}(0) - \frac{1}{6N} \ln(r_1) - m_N q(0) - \frac{3}{4} \frac{m_N^2}{N} \\ + \frac{1}{2N} \left(m_N^2 - m_N + \frac{1}{6} \right) \ln{\left(\frac{4 m_N}{N V^{(2)}(0)}\right)} + \frac{m_N}{2N} + \Boh(N^{-1/2(3-5\epsilon)}).
+	\end{multline}
+	Here, 
+	\begin{equation}
+		I_Q[\mu_Q] = \left[\frac{1}{4} \int_{r_0}^{r_1} q(s) s V^{(2)}_{\tau(j)}(s) \dd s- \ln(r_1) + \frac{1}{2} q(r_1) \right]
+	\end{equation}
+	and
+	\begin{equation}
+		 2 U_{\mu_Q}(0) = q(r_1) - 2 \ln(r_1) - q(0).
+	\end{equation}
+\end{proposicao}
+
+\begin{proof}
+For the first we proceed as before and perform the Euler-Maclaurin formula. 	\begin{multline}
+	\sum_{j=m_N}^{N-1} V_{\tau(j)}(r_{\tau(j)}) = \int_{m_N}^N V_{\tau(j)}(r_{\tau(j)})  \dd t - \frac{1}{2} \left( V_{\tau(j)}(r_{\tau(j)})  - V_{\tau(m_N)}(r_{\tau(m_N)}) \right) + \\ \frac{1}{12} \left[ \partial_t V_{\tau(j)}(r_{\tau(j)}) |_{t=N} - \partial_t V_{\tau(j)}(r_{\tau(j)}) |_{t=m_N} \right] + \Boh(N^{-3}).
+	\label{Equation: EulerMaclaurin 1 annulus}
+\end{multline}
+We then are able to rewrite, setting $s = r_{\tau(j)}$,
+\begin{align}
+	\int_{m_N}^N V_{\tau(t)}(r_{\tau(t)})  \dd t & = \int_{m_N}^N (q(r_{\tau(t)}) - 2 \tau(t) \ln(r_{\tau(t)})) \dd t \\
+	& = \frac{1}{2} \int_{r_{\tau(m_N)}}^{r_1} (q(s) - s q'(s) \ln(s)) s V^{(2)}_{\tau}(s) N \dd s \\
+	& = N \left[  \frac{1}{2} \int_{r_{\tau(m_N)}}^{r_1} q(s) s V^{(2)}_{\tau}(s) \dd s -  \frac{1}{2} \int_{r_{\tau(m_N)}}^{r_1} s^2 q'(s) \ln(s) V^{(2)}_{\tau}(s) \dd s \right]
+\end{align}
+and finally using that $r_1 q'(r_1) = 2$ we can apply the integration by parts on the second term and get
+\begin{align}
+	\frac{1}{2} \int_{r_{\tau(m_N)}}^{r_1} s^2 q'(s) \ln(s) V^{(2)}_{\tau}(s) \dd s 
+	& = \frac{1}{2} \int_{r_{\tau(m_N)}}^{r_1} s^2 q'(s) \ln(s) \frac{1}{s} (s q'(s))' \dd s \\
+	& = \frac{1}{4} \int_{r_{\tau(m_N)}}^{r_1} ((sq'(s))^2)' \ln(s) \dd s
+\end{align}
+and then, by integration by parts
+\begin{align}
+	& = \frac{1}{4} (s q'(s))^2 \ln(s) |_{r_{\tau(m_N)}}^{r_1} - \frac{1}{4}  \int_{r_{\tau(m_N)}}^{r_1} (s q'(s))^2 \frac{1}{s} \dd s \\
+	& = \ln(r_1) - \frac{1}{4} \int_{r_{\tau(m_N)}}^{r_1} s q'(s)^2 \dd s - \frac{m_N^2}{N^2} \ln(r_{\tau(m_N)}) \\
+		& = \ln(r_1) - \frac{1}{4} (s q'(s) q(s)) |_{r_{\tau(m_N)}}^{r_1} + \frac{1}{4} \int_{r_{\tau(m_N)}}^{r_1} q(s) (s q'(s))' \dd s  - \frac{m_N^2}{N^2} \ln(r_{\tau(m_N)}) \\
+	& = \ln(r_1) - \frac{1}{2} q(r_1) + \frac{1}{4} \int_{r_{\tau(m_N)}}^{r_1} q(s) (s q'(s))'\dd s  - \frac{m_N^2}{N^2} \ln(r_{\tau(m_N)}) + \frac{m_N}{2 N} q(r_{\tau(m_N)})
+\end{align}
+Leaving us with
+\begin{align}
+	\int_{m_N}^N V_{\tau(j)}(r_{\tau(j)})  \dd t
+	& \begin{multlined}
+		= N \left[\frac{1}{4} \int_{r_{\tau(m_N)}}^{r_1} q(s) s V^{(2)}_{\tau}(s) \dd s - \ln(r_1) + \frac{1}{2} q(r_1) - \frac{m_N^2}{N^2} \ln(r_{\tau(m_N)}) + \frac{m_N}{2 N} q(r_{\tau(m_N)})  \right] 
+	\end{multlined} \\
+	& \deff N I_Q[\mu_Q]  - \frac{1}{4} \int_{r_0}^{r_{\tau(m_N)}} q(s) s  V^{(2)}_{\tau}(s) \dd s  - \frac{m_N^2}{N} \ln(r_{\tau(m_N)}) + \frac{m_N}{2} q(r_{\tau(m_N)})
+	\label{Equation: Equilibrium energy disk}
+\end{align}
+where, because of Proposition \ref{Proposition: Behavior rt},
+\begin{equation}
+	\ln(r_{\tau(m_N)}) = \frac{1}{2} \ln{\left(\frac{4 \tau(m_N)}{V^{(2)}(0)}\right)} + \Boh(\tau(m_N)^{\frac{1}{2}}) = \frac{1}{2} \ln{\left(\frac{4 \tau(m_N)}{V^{(2)}(0)}\right)} + \Boh(N^{-\frac{1}{2}(1-\epsilon)}),
+\end{equation}
+\begin{equation}
+	q(r_{\tau(m_N)}) = q(0) + \frac{1}{2} q''(0)(r_{\tau(m_N)})^2 + \Boh((\tau(m_N)^{\frac{3}{2}})) = q(0) + \tau(m_N) + \Boh(N^{-\frac{3}{2}(1 - \epsilon)})
+\end{equation}
+and, using again integration by parts
+\begin{align}
+	 \frac{1}{4} \int_{r_0}^{r_{\tau(m_N)}} q(s) s  V^{(2)}_{\tau}(s) \dd s  & =
+	  \frac{1}{4} \int_{r_0}^{r_{\tau(m_N)}} q(s) (s q'(s))' \dd s \\
+	  & = \frac{1}{2} \tau(m_N) q(r_{\tau(m_N)}) - \frac{1}{4} \int_{0}^{r_{\tau(m_N)}} s (q'(s))^2 \dd s \\
+	  & = \frac{1}{2} \tau(m_N) q(r_{\tau(m_N)})  - \frac{1}{4} (q''(0))^2  \int_{0}^{r_{\tau(m_N)}} s^3 \dd s + \Boh{(r^5_{\tau(m_N)})} \\
+	  & = \frac{1}{2} \tau(m_N) q(r_{\tau(m_N)}) - \frac{1}{4} \tau(m_N)^2 + \Boh(N^{-5/2(1-\epsilon)}).
+\end{align}
+Finally, 
+\begin{align}
+	& \begin{multlined}
+			\int_{m_N}^N V_{\tau(t)}(r_{\tau(t)})  \dd t  = N I_Q[\mu_Q]  -  \frac{1}{2} \tau(m_N) q(r_{\tau(m_N)}) - \frac{1}{4} \tau(m_N)^2 + \Boh(N^{-5/2(1-\epsilon)}) \\ - \frac{m_N^2}{2N} \ln{\left(\frac{4 \tau(m_N)}{V^{(2)}(0)}\right)}  + \Boh(N^{-\frac{3}{2}(1 - \epsilon)}) + \frac{m_N}{2} \left(q(0) + \tau(m_N)  \right) + \Boh(N^{-\frac{1}{2}(1-\epsilon)})
+	\end{multlined} \\
+	& = N I_Q[\mu_Q]  - m_N q(0) - \frac{3}{4} \frac{m_N^2}{N} + \frac{m_N^2}{2N} \ln{\left( \frac{4 m_N}{N V^{(2)}(0)} \right)} + \Boh{\left(N^{-\frac{1}{2}(3-5\epsilon)}\right)}
+\end{align}
+For the other terms in the Euler-Maclaurin formula we have by the results above
+\begin{align}
+	V_{\tau(N)}(r_{\tau(N)})  &- V_{\tau{(m_N)}}(r_{\tau(m_N)}) = q(r_1) - 2 \ln(r_1) - q(r_{\tau(m_N)}) + 2 \tau(m_N) \ln(r_{\tau(m_N)}) \\
+	& = q(r_1) - 2 \ln(r_1) - q(0) - \frac{m_N}{N} + \frac{m_N}{N} \ln{\left(\frac{4 m_N}{N V^{(2)}(0)}\right)} + \Boh(N^{-3/2(1-\epsilon)}) \\
+	& = 2 U_{\mu_Q}(0) - \frac{m_N}{N} + \frac{m_N}{N} \ln{\left(\frac{4 m_N}{N V^{(2)}(0)}\right)} + \Boh(N^{-3/2(1-\epsilon)})
+\end{align}
+Furthermore,
+\begin{align}
+		\partial_t (V_{\tau(t)}(r_{\tau(t)})) |_{t=N} - \partial_t (V_{\tau(t)}(r_{\tau(t)})) |_{t=m_N} & = \frac{2}{N}(\ln(r_{\tau(m_N)}) - \ln(r_1)) \\
+		& = \frac{1}{N} \ln{\left(\frac{4 m_N}{N V^{(2)}(0)}\right)}  - \frac{2}{N} \ln(r_1) + \Boh(N^{-1/2(3-\epsilon)}).
+\end{align}
+And, gathering terms, we get the lemma.
+\end{proof}
+
+\begin{proposicao}
+	The following asymptotic holds under the same context as Lemma \ref{Lemma: Summation disk >mn}.
+	\begin{equation}
+		\sum_{j=m_N}^{N-1} \ln V^{(2)}(r_{\tau(j)}) = \frac{N}{2} \int_{r_{\tau(m_N)}}^{r_1} \ln(V^{(2)}(s)) (sq'(s))' \dd s  -   \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{r_{\tau(m_N)}}(r_{\tau(m_N)})} \right) + \Boh(N^{-1})
+	\end{equation}
+\end{proposicao}
+\begin{proof}
+	Again, we start with the Euler-Maclaurin formula
+		\begin{multline}
+		\sum_{j=m_N}^{N-1}  \ln V^{(2)}_{\tau(j)}(r_{\tau(j)}) = \int_{m_N}^{N} \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) \dd t - \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{\tau(m_N)}(r_{\tau(m_N)})} \right) + \\ \frac{1}{12} \left[ \partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=N} - \partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=m_N}\right]  + \Boh(N^{-3})
+	\end{multline}
+	We first tackle the integral on the right hand side. Changing variables $s = r_{\tau(t)}$ and noting that $\ln(V^{(2)}(r_{\tau(m_N)})) = \ln(V^{(2)}(0)) + \Boh(r_{\tau(m_N)})$, we would have
+	\begin{equation}
+		\int_{m_N}^{N} \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) \dd t = \frac{N}{2} \int_{r_{\tau(m_N)}}^{r_1} \ln(V^{(2)}(s)) (sq'(s))' \dd s. \\
+	\end{equation}
+	And, noticing that
+	\begin{equation}
+		\partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) = \partial_V \left( \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) \right) \partial_r \left( V^{(2)}_{\tau(t)}(r_{\tau(t)}) \right) \partial_\tau \left( r_{\tau(t)} \right) = \frac{\left(\partial_r V^{(2)}\right)(r_{\tau(t)})}{r_{\tau(t)} \left( V^{(2)}(r_{\tau(t)})\right)^2},
+	\end{equation}
+	we have for the third term on the right hand side, 
+	\begin{align}
+		\partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=N} - \partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=m_N} & = \frac{1}{2N} \left( \frac{\left(\partial_r V^{(2)}\right)(r_{1})}{r_1 \left( V^{(2)}(r_1)\right)^2} - \frac{\left(\partial_r V^{(2)}\right)(r_{\tau(m_N)})}{r_{\tau(m_N)} \left( V^{(2)}(r_{\tau(m_N)})\right)^2}\right) \\ & = \Boh(N^{-1})
+	\end{align}
+	then,
+	\begin{equation}
+		\sum_{j=0}^{N-1}  \ln V^{(2)}_{\tau(j)}(r_{\tau(j)})  = \frac{N}{2} \int_{r_{\tau(m_N)}}^{r_1} \ln(V^{(2)}(s)) (sq'(s))' \dd s  -   \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{r_{\tau(m_N)}}(r_{\tau(m_N)})} \right) + \Boh(N^{-1})
+		\label{Equation: logV annulus}
+	\end{equation}
+\end{proof}
+
+\begin{proposicao}
+	The following asymptotic holds under the same context as Lemma \ref{Lemma: Summation disk >mn}.
+	\begin{equation}
+		\sum_{j=m_N}^{N-1} \ln(r_{\tau(j)})
+	\end{equation}
+\end{proposicao}
+\begin{proof}
+	content...
+\end{proof}
+
+\subsubsection{Free Energy Disk}
+
+
+We can finally prove Theorem \ref{Theorem: Disk Free Energy}.
+
+\begin{proof} (Theorem \ref{Theorem: Disk Free Energy})
+	From
+	\begin{multline}
+		\sum_{j=0}^{N-1} \ln(h_j) = 
+	\end{multline}
+	We can get the asymptotic expansion for the Free energy using that
+	\begin{equation}
+		\ln(N!) = N\ln(N) - N + \frac{1}{2} \ln(N) + \frac{1}{2} \ln(2 \pi) + \Boh(N^{-1})
+	\end{equation}
+	that is,
+	\begin{align}
+		\ln \pZ{N}{} & = \ln{N!} - 2 \sum_{j=0}^{N-1} \ln{h_j} \\
+		& = \\
+		& =
+	\end{align}
+\end{proof}

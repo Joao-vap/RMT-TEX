@@ -1,0 +1,138 @@
+Invariant ensembles of random matrices are probability spaces which are invariant under conjugation of the approposicaoriate matrix group - these ensembles only depend on their eigenvalue distributions while their eigenvectors become independent and are Haar distributed. To proposicaoerly understand this concept, let's make precise the definition of three infamous ensembles: Unitary, Orthogonal and Symplectic ensembles. Other ensembles many times can be of interest, but their theory may be less straightforward.
+
+\begin{enumerate}
+	\item \textit{Orthogonal Ensembles} consist of $n \times n$ real symmetric matrices $\m{M} = \cjgt{\m{M}} = \m{M}^T$ together with a probability distribution that is invariant under orthogonal conjugation $\m{M} \mapsto \m{O} \m{M} \m{O}^T$, $\m{O}$ orthogonal, i.e., $\m{O} \m{O}^T = \m{O}^T \m{O} = \m{I}$.  
+	\item \textit{Unitary Ensembles} consists of $n \times n$ Hermitian matrices $\m{M} = \m{M}^*$ together with a probability distribution that is invariant under unitary conjugation $\m{M} \mapsto \m{U} \m{M} \m{U}^*$, $\m{U}$ unitary, i.e., $\m{U} \m{U}^* = \m{U}^* \m{U} = \m{I}$.  
+	\item \textit{Symplectic Ensembles} consists of $2m \times 2m$ Hermitian self-dual matrices $\m{M} = \m{M}^* = \m{J} \m{M}^T \m{J}^T$ where $\m{J} = \diag{(\sigma, \cdots, \sigma)}$ with $$\sigma = \begin{pmatrix} 0 & -1\\	1 & 0 \end{pmatrix}$$  together with a probability distribution that is invariant under unitary-symplectic conjugation $\m{M} \mapsto \m{U} \m{M} \m{U}$, with $\m{U}$ unitary and symplectic, i.e. $\m{U} \m{U}^* = \m{U}^* \m{U} = \m{I}$ and $\m{U} \m{J} \m{U}^T = \m{J}$.
+\end{enumerate}
+
+Examples of such invariant ensembles are the Gaussian Orthogonal, Unitary and Symplectic ensembles - \textit{GOE}, \textit{GUE}, \textit{GSE}. These take Gaussian distributed and independent entries. We may also choose to include the Ginibre Ensembles in the types of invariance we will work with. The three types of Ginibre Emsembles are: Ginibre Orthogonal, Unitary and Symplectic are matrices with independent, identically distributed standard complex Gaussian entries. In this case, the eigenvalues are distributed in the complex plane. 
+
+Let's make it precise. Given a group $\mathcal{G}$ and a group action $\mathcal{A}: \mathcal{G}\times \eS \rightarrow \eS$, a random matrix ensemble $\eE = (\eS, \eP)$ is said to be $\mathcal{A}$-invariant if the probability measure $\dd \eP(\m{X}) \deff \eP(\m{X}) \dd \m{X}$ satisfies
+\begin{equation}
+	\dd \eP(\mathcal{A}(g, \m{X})) = \dd \eP(\m{X})
+\end{equation}
+for every $g \in \mathcal{G}$. The term \textit{invariant matrix ensemble} usually refers to invariance under the mapping $\m{X} \mapsto g\m{X}g^{-1}$ for $g$ drawn from the approposicaoriate compact group $\mathcal{G}$; when a matrix ensemble is considered to be irreducible and its underlying set of matrix is $S \subseteq \mathbb{M}_{n,n}(\R), \mathbb{M}_{n,n}(\C), \mathbb{M}_{n,n}(\Hh)$, the group $\mathcal{G}$ must be one of $O(n), U(n), Sp(2n)$. Then, we say the ensemble is orthogonal, unitary or symplectic.
+
+We can also determine the probability measure $\dd \eP(\m{X})$ to be invariant under the adjoint action of a group $\mathcal{G}$ is we establish that both the p.d.f. $\eP(\m{X})$ and the Lebesgue measure $\dd \m{X}$ are invariant under this action. We can say directly using \ref{Def: Ginibre} and \ref{proposicao: Gaussian, Laguerre, Jacobi} that the p.d.f.s for Ginibre, Gaussian, Laguerre and Jacobi are invariant under the approposicaoriate adjoint actions.
+
+\begin{proof}
+	(p.d.f.s for Ginibre, Gaussian, Laguerre and Jacobi are invariant under the approposicaoriate adjoint actions.)
+\end{proof}
+
+The invariance of the Lebesgue measure is more involved and depends on whether or not the associated matrix set $\eS$ consists of purely of self-adjoint matrices. Because of that, we start with the case of the Gaussian, Laguerre and Jacobi ensembles.
+
+\begin{proposicao}
+	Given an $n\times n$ real $(\beta = 1)$, complex $(\beta = 2)$ or quaternionic $(\beta = 4)$ self-adjoint matrix variable $\m{X}$, diagonalize it as $\m{X} = \m{U} \m{\Lambda} \m{U}^{\dagger}$ where $\m{\Lambda} = \diag(\mmany{\lambda}{n})$ is a diagonal matrix of eigenvalues, and $\m{U}$ is corresponding matrix of eigenvectors; the spectral theorem dictates that $\m{U}$ is an element of $O(n)$ in the real case, $U(n)$ in the complex case, and $Sp(2n)$ in the quaternionic case. To make the mapping $\m{X} \mapsto \m{U}\m{\Lambda}\m{U}^{\dagger}$ bijective, we insist that the eigenvalues are listed in increasing order and the first row of $\m{U}$ is non-negative real. The canonical Lebesgue measure 
+	\begin{equation}
+		\dd \m{X} = \prod_{i=1}^{n} \dd X_{ii} \prod_{1\leq j < k \leq n} \prod_{s=1}^{\beta} \dd X^{s}_{jk}
+	\end{equation}
+	on the set of adjoint matrices decomposes as 
+	\begin{equation}
+		\dd \m{X} = |\Delta_n|^{\beta} \dd \m{\Lambda} \dd \pe_{Haar}(\m{U})
+	\end{equation}
+	where $\dd \m{\Lambda} = \prod_{i=1}^n \dd \lambda_i$ is the Lebesgue measure on the \textit{Weyl Chamber} ${\lambda_1 < \cdots < \lambda_n} \subset \R^n$ and
+	\begin{equation}
+		\dd \pe_{Haar}(\m{U}) = \bigwedge_{1\leq l < k \leq n} \bigwedge_{s=1}^\beta \left( \m{U}^{\dagger} [\dd U_{ij}]_{i,j=1}^n \right)_{lk}^{(s)}
+	\end{equation}
+	is the unnormalized Haar measure on the quotient space $O(n)/O(1)^n$ ($\beta = 1$), $U(n)/U(1)^n$ ($\beta = 2$), or $Sp(2n)/Sp(2)^n$ ($\beta = 4$), given by the exterior product of the independent real components of the entries of the matrix of differentials $\m{U}^{\dagger} [\dd U_{ij}]_{i,j=1}^n$.
+\end{proposicao}
+
+At this point, one can check (albeit with some non-trivial computations) that the Lebesgue measure is indeed invariant in these cases for the approposicaoriate group action. 
+
+The situation concerning the $n \times n$ Ginibre Ensemble is more complicated. In the $1965$ work, Ginibre extended the proposicaoosition above and its arguments starting with the diagonalization formula $\m{G} = \m{P}\m{\Lambda}\m{P}^{-1}$ - note that, with $\m{\Lambda}$ diagonal of eigenvalues and $\m{P}$ of eigenvectors, this formula is valid with probability one since the subset of matrices with repeated eigenvalues has measure zero. However, $\m{P}$, diagonalizing matrix, is not necessarily orthogonal, unitary, nor symplectic. Nonetheless, QR decomposition can be used to write $\m{P} = \m{U}\m{T}$ where $\m{U}$ is as before and $\m{T}$ is an upper triangular matrix with real positive diagonal entries. Then,
+\begin{equation}
+	\dd \m{G} = \J(\lambda) \dd \m{\Lambda} \dd \pe_{Tri}(\m{T}) \dd \pe_{Haar}(\m{U})
+\end{equation}
+where $\dd \m{\Lambda}$ is the Lebesgue measure on the space housing the eigenvalues, $\dd \pe_{Haar}(\m{U})$ is the Haar measure defined before, $J(\lambda)$ is a Jacobian consisting of products of Vandermonde determinants involving the eigenvalues, and $\pe_{Tri}(\m{T})$ is some measure dependent on the entries of T. From here, it follows that the Lebesgue measure on $\m{G}$ is invariant under the desired conjugation action.
+
+\subsection{Eigenvalues j.p.d.f.s}
+
+To obtain the eigenvalue j.p.d.f. $\p(\mmany{\lambda}{n})$ from the probability measure $\dd \eP(\m{X})$, one changes variable to the eigenvalues and a set of auxiliary variables, then integrates over the latter. This will be something like this sketch
+\begin{equation}
+	\begin{split}
+		\eP(\m{X}) \dd \m{X} & = \eP(X_{1,1}, \cdots , X_{n,n}) \prod_{i,j} \dd X_{i,j} \\
+		& = \eP \left(X_{1,1}(\m{\Lambda}, \m{U}), \cdots , X_{n,n}(\m{\Lambda}, \m{U}) | J(\m{X} \mapsto \{\m{\Lambda}, \m{U}\})\right) \dd \m{\Lambda} \dd \m{U}. \\
+		\implies \p(\mmany{\lambda}{n}) & = \int_{\mathcal{G}(n)/\mathcal{G}(1)^n} \eP(X_{1,1}(\m{\Lambda}, \m{U}), \cdots , X_{n,n}(\m{\Lambda}, \m{U})| J(\m{X} \mapsto \{\m{\Lambda}, \m{U}\})) \dd \m{\Lambda} \dd \m{U} \\
+		& \stackrel{invariance}{=} \eP(X_{1,1}(\m{\Lambda}), \cdots , X_{n,n}(\m{\Lambda})| J(\m{X} \mapsto \{\m{\Lambda}\})) \dd \m{\Lambda} \int_{\mathcal{G}(n)/\mathcal{G}(1)^n} \dd \m{U} \\
+		& = \eP(X_{1,1}(\m{\Lambda}), \cdots , X_{n,n}(\m{\Lambda})) |\Delta_n(\lambda)|^\beta \vol(\mathcal{G}(n)/\mathcal{G}(1)^n) \dd \m{\Lambda}
+	\end{split}
+\end{equation}
+A nice observation is that we know $\p(\mmany{\lambda}{n})$ to be a multivariate symmetric function - this implies that $\eP(X_{1,1}(\m{\Lambda}), \cdots , X_{n,n}(\m{\Lambda})) \deff \eP(\m{\Lambda})$ to be a function of $\{\tr(\m{\Lambda}^k)\}_{k=0}^{n}$, hence $\{\tr(\m{X}^k)\}_{k=0}^{n}$. For the self-adjoint cases, these auxiliary variables were the quotient spaces of orthogonal, unitary and symplectic matrices. For Ginibre, is the upper triangular entries. Leaving the details of Ginibre behind, we focus on the Gaussian, Laguerre and Jacobi ensembles. Set $\eP(\m{X})$ the p.d.f. for one of the ensembles, fix $(\beta,\mathcal{G}(n)) = (1, O(n)), (2, U(n)), (4, Sp(2n))$. The proposicaoositions cited implies that
+\begin{equation}
+	\int_{\mathcal{G}(n)/\mathcal{G}(1)^n} \dd \eP(\m{X}) = \eP(\Lambda) |\Delta_n(\lambda)|^\beta \dd \m{\Lambda} \int_{\mathcal{G}(n)/\mathcal{G}(1)^n} \dd \pe_{Haar}(\m{U})
+\end{equation}
+As the eigenvalue and eigenvector statistics are decoupled, one reads off the eigenvalue j.p.d.f. is thus given by 
+\begin{equation}
+	\p(\mmany{\lambda}{n}) = \frac{\vol(\mathcal{G}(n)/\mathcal{G}(1)^n)}{N!} \eP(\m{\Lambda}) |\Delta_n(\lambda)|^\beta,
+\end{equation}
+where, of course,
+\begin{equation}
+ \vol(\mathcal{G}(n)/\mathcal{G}(1)^n) = \int_{\mathcal{G}(n)/\mathcal{G}(1)^n} \dd \pe_{Haar}(\m{U}).
+\end{equation}
+Now, with $\wf(\lambda)$ the approposicaoriate classical weight, we can check that
+$$\eP(\m{\Lambda}) = \prod_{i=1}^n \wf(\lambda_i),$$ which confirms the consistence with the definition of the eigenvalue j.p.d.f. on the classical ensembles. Furthermore, note that
+\begin{equation}
+	\pZ{n,\beta}{} = \frac{\vol(\mathcal{G}(n)/\mathcal{G}(1)^n)}{N!} \pN{n,\beta}{}
+\end{equation}
+as long as the volume is known.
+
+\subsection{Gaussian Ensembles}
+
+Let's make it explicit the probability distribution on Gaussian Ensembles. We define $\m{M} = n^{-\frac{1}{2}} \m{M'} \in \mathcal{M}_{n,n}(\mathcal{F})$ to be of the Gaussian Ensemble if the entries of $\m{M'}$ are independent and distributed as follows: 
+$$
+M'_{i,j} \sim
+\begin{cases}
+	\mathcal{N}_{\mathcal{F}}(0,1/2) &  \ \text{for} \ i \neq j,\\
+	\mathcal{N}_{\mathcal{F}}(0,1) & \ \text{for} \ i = j,
+\end{cases}
+\ \ \text{if} \ i \leq j.
+$$
+where $\mathcal{F}$ is such as the real line, complex plane or quaternion space. Note that this turns $\m{M}$ into a Scaled Wigner Matrix. Now, take for example $\mathcal{F} = \R$ and 
+\begin{equation}
+\eP(\m{M}) = \prod_{i=1}^{n}\frac{\exp{\left(-\frac{M_{i,i}^2}{2}\right)}}{\sqrt{2\pi}} \prod_{i<j}^{n} \frac{\exp{\left(-M_{i,i}^2\right)}}{\sqrt{\pi}} = 2^{-n/2} \pi^{-n(n + 1)/4} \exp{\left(-\frac{1}{2} \ \tr{\m{M}^2}\right)}.
+\end{equation} 
+Then, we know the distribution of eigenvectors and eigenvalues is the product of the distribution of entries times the Jacobian of the diagonalization, that is 
+\begin{equation}
+ \eP(\m{M}) = \eP(\m{\Lambda}, \m{O}) \prod_{i<j} |\lambda_j - \lambda_i|
+\end{equation}
+Now, for the distribution on the eigenvalues, we integrate on $\mathbb{V}_n$ as
+\begin{equation}
+ \p(\mmany{\lambda}{n}) = \int_{\mathbb{V}_n} \eP(\m{\Lambda}) \prod_{i<j} |\lambda_j - \lambda_i| \dd \m{O} = \eP(\m{\Lambda}) \prod_{i<j} |\lambda_j - \lambda_i| \vol(\mathbb{V}_n)
+\end{equation}
+which lead us to write
+\begin{equation}
+\p(\mmany{\lambda}{n}) = \frac{1}{\pZ{n, \beta = 1}{}} \exp{\left\{-\frac{1}{2} \sum_{i = 1}^{n} \lambda_i^2\right\}} \prod_{i < j}^{n} |\lambda_i - \lambda_j|.
+\end{equation}
+with $\pZ{n, \beta}{}$ the partition function, or normalizer of the expression. We could also do the same calculation for the GUE and GSE ensembles, which would result in a similar expression
+\begin{equation}
+	\begin{split}
+		\p(\mmany{\lambda}{n}) 
+		&= \frac{1}{ n! \pZ{n, \beta}{(ord)}} \exp{\left\{- \left(\sum_{i = 1}^{n} \frac{\lambda_i^2}{2} - \sum_{i < j}^{n} \log{|\lambda_i - \lambda_j|^{\beta}} \right)\right\}}, \\
+		&= \frac{1}{\pZ{n, \beta}{(ord)}} \ee^{-\beta_n \mathcal{H}_n(\vec{\lambda})},
+	\end{split}
+	\label{Equation: medida Gaussian}
+\end{equation}
+a very familiar expression for a physicist, as it is a Gibbs measure.
+
+
+\subsection{Empirical Measure}
+
+
+In many application one is usually concerned with the limiting behavior of the spectra as the size of the matrix tends to infinity, either to proposicaoerly understand large matrices or to approximate infinite-dimensional operators. A usual tool to describe the eigenvalues of a random matrix is the empirical measure: If $\m{M}$ has eigenvalues $\mmany{\lambda}{n}$, then its empirical spectral measure $\pe_M$ is the random probability measure putting equal mass at each of the eigenvalues:
+\begin{equation}
+	\pe_M = \frac{1}{n} \sum_{i=1}^n \delta_{\lambda_i}
+\end{equation}
+We want to say that this measure converges, in some sense, for some other measure. A common way of doing this is the concept of \textit{convergence in expectation}. Define $\E(\pe_M)$ to be as follows: for a test function $f$, define
+\begin{equation}
+	\int f \dd \E(\pe_M) \deff \E \left(\int f \dd \pe_M \right) 
+\end{equation}
+If we have a sequence of matrices $\{\m{M}_n\}$ we say that their spectral measure converges in expectation to a limiting measure $\pe$ if the sequence $\{\E(\pe_{M_n})\}$ converges weakly to $\pe$, that is, if
+\begin{equation}
+	\int f \dd \E(\pe_{M_n}) \stackrel{n \rightarrow \infty}{\rightarrow} \int f \dd \pe 
+\end{equation} 
+for bounded continuous test functions $f$. A natural class of test functions are polynomials. Note that if $\mmany{\lambda}{n}$ are the random eigenvalues of $\m{M}$ random matrix we have that
+\begin{equation}
+	\int (z^k + c_{k-1} z^{k-1} + \cdots + c_{0}) \dd \pe_{M} = \frac{1}{n} \sum_{i=1}^n (\lambda_i^k + c_{k-1} \lambda_i^{k-1} + \cdots + c_{0}) = \frac{1}{n} \ Tr(V(\m{M}))
+\end{equation}
+In a way, the potential $V$ somehow influences the convergence.

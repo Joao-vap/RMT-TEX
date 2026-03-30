@@ -1,0 +1,32 @@
+
+We can study the asymptotic of this polynomial for $x = \Boh(n)$ only using the combinatorial argument given in this chapter.
+
+\begin{prop}
+	Let $c \in \R$ be fixed, and set $x = c n$. We have the following asymptotic formula as $n \rightarrow \infty$:
+	\begin{equation}
+		\He_n(cn) = (cn)^n \ee^{-\frac{1}{2c^2}} (1 + \boh(1))
+	\end{equation}
+	that is,
+	\begin{equation}
+		\He_n(cn) \approx x^n \ee^{-\frac{n^2}{2x^2}}
+	\end{equation}
+	for $x = \Boh(n)$.
+	\label{Prop: Hermite Asymptotic o(n)}
+\end{prop}
+\begin{proof}
+	Using the integral formula \ref{Def: Gaussian integral-expectation formula} we can write
+	\begin{equation}
+		\He_n(cn) = \E[(cn + \ii Z)^n] = (cn)^n \E\left[\left(1 + \ii\frac{Z}{cn} \right)^n \right].
+	\end{equation}
+	Now, note that 
+	\begin{equation}
+		\lim_{n\rightarrow \infty} \left(1 + \ii\frac{Z}{cn} \right)^n = \ee^{\ii \frac{Z}{c}}
+	\end{equation}
+	almost surely in $Z$, and in light of the expectation $\E[\ee^{\beta Z}] = \ee^{\frac{1}{2} \beta^2}$we find that 
+	\begin{equation}
+		\E\left[\left(1 + \ii\frac{Z}{cn} \right)^n \right] = \ee^{-\frac{1}{2c^2}}(1+ \boh(1))
+	\end{equation}
+	from where the results follows.
+\end{proof}
+
+Other regimes for the asymptotic will have to use some more sophisticated techniques.

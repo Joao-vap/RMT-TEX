@@ -1,0 +1,41 @@
+
+Consider the weight $w(x) = \ee^{-V(x)}$ and the corresponding orthogonal polynomials
+\begin{equation}
+	\int_{-\infty}^{\infty} P_n(x) P_m(x) \ee^{V(x)} \dd x = 0 \quad \iff \quad m \neq n.
+\end{equation}
+An important property of the weight function is its moments defined by
+\begin{equation}
+	\wf_k = \int_{-\infty}^{\infty} x^k \ee^{-V(x)} \dd x, \quad k \in \N.
+\end{equation}
+Using the moments, one can define the \textit{Hankel determinant} $D_n$ defined as
+\begin{equation}
+	D_n = 
+	\begin{vmatrix}
+		\wf_0 & 	\wf_1  & \wf_2 & \cdots & \wf_{n-1} \\
+		\wf_1 & 	\wf_2  & \wf_3 & \cdots & \wf_{n} \\
+		\wf_2 & 	\wf_3  & \wf_4 & \cdots & \wf_{n+1} \\
+		\vdots & \vdots & \vdots & \cdots & \vdots \\
+		\wf_{n-1} & 	\wf_n  & \wf_{n+1} & \cdots & \wf_{2n-2} \\
+	\end{vmatrix},
+\end{equation}
+to which there is a integral expression given by
+\begin{equation}
+	D_n = \frac{1}{n!} \int_{\R^n} \prod_{i<j} (x_j - x_i)^2 \prod_{j=1}^{n} \ee^{-V(x)} \dd x_1 \cdots \dd x_n.
+\end{equation}
+The intuition for this formula is that you can extract the integrals for each of the rows of the determinant and then the Vandermonde can the extracted from what remains. Interestingly, the monic polynomial $P_n(x) = x^n + \cdots$ is given by 
+\begin{equation}
+	P_n(x) = \frac{1}{D_n}
+	\begin{vmatrix}
+		\wf_0 & 	\wf_1  & \wf_2 & \cdots & \wf_{n} \\
+		\wf_1 & 	\wf_2  & \wf_3 & \cdots & \wf_{n+1} \\
+		\wf_2 & 	\wf_3  & \wf_4 & \cdots & \wf_{n+2} \\
+		\vdots & \vdots & \vdots & \cdots & \vdots \\
+		\wf_{n-1} & 	\wf_n  & \wf_{n+1} & \cdots & \wf_{2n-1} \\
+		1 & x  & x^2 & \cdots & x^n
+	\end{vmatrix},
+\end{equation}
+From the same intuition as before,
+\begin{equation}
+	P_n(x) = \frac{1}{n! D_n} \int_{\R^n} \prod_{j=1}^{n} (x - x_j) \prod_{i<j} (x_j - x_i)^2 \prod_{j=1}^{n} \ee^{-V(x)} \dd x_1 \cdots \dd x_n.
+\end{equation}
+which can be identified as the expected characteristic polynomial over the density we began with. This is a way to show that the orthogonal polynomial is the expected characteristic polynomial.

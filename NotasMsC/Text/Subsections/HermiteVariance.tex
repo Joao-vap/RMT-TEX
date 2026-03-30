@@ -1,0 +1,25 @@
+
+We can use this formula to work with Hermite Polynomials of arbitrary variance. Assume one adds a temporal dependence parameter $t$. Denote this polynomial $\Het_n(x;t)$ defined as
+\begin{definition}
+	\begin{equation}
+		\Het_n(x;t) \deff \E_{B_t \sim \mathcal{N}(0,t)}\left[(x+\ii B_t)^n\right] = \E_{Z \sim \mathcal{N}(0,1)}\left[(x+\ii \sqrt{t} Z)^n\right]
+	\end{equation}
+\end{definition}
+The notation has the tilde because historically there is a preference for the derivative formula instead of the integral formula. The notation $\Her_n$ is reserved for the dual of this polynomial, defined as below
+\begin{definition}
+	\begin{equation}
+		\Her_n(x;t) \deff \E_{Z \sim \mathcal{N}(0,\frac{1}{t})}\left[(\frac{x}{t}+\ii Z)^n\right] = \E_{Z \sim \mathcal{N}(0,1)}\left[(\frac{x}{t}+\ii \frac{Z}{\sqrt{t}})^n\right].
+	\end{equation}
+	Which is dual in the sense that
+	\begin{equation}
+		\int_{-\infty}^{\infty} \Het_n(x;t) \Her_m(x;t) (\sqrt{2\pi t})^{-1} \ee^{-\frac{1}{2} \frac{x^2}{t}} \dd x = 
+		\begin{cases}
+			0, \quad \text{if} \quad n \neq m \\
+			n!, \quad \text{if} \quad n = m.
+		\end{cases}
+	\end{equation}
+\end{definition}
+Finally, note that
+\begin{equation}
+	\Het_n(x;t) = t^{n/2} \Het\left(\frac{x}{\sqrt{t}};1\right) = t^{n/2} \He\left(\frac{x}{\sqrt{t}}\right), \quad \Her_n(x;t) = t^{-n/2} \Het\left(\frac{x}{\sqrt{t}};1\right) = t^{-n/2} \He\left(\frac{x}{\sqrt{t}}\right).
+\end{equation}

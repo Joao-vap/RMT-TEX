@@ -1,0 +1,32 @@
+Under the appropriate conditions, a Coulomb Gas $\p_N$ is the Boltzmann-Gibbs probability measure given in $(\R^d)^N$. The measure $\p_N$ models an interacting gas of charged indistinguishable particles under some external field. Particles are at positions $\mmany{x}{N} \in \Se$ of dimension $d$ embedded in some space $\R^n$. We write the measure 
+\begin{equation}
+	\dd \p_N(\mmany{x}{N}) = \frac{e^{-\beta N^2 \Hf_N(\vec{x})}}{Z_{N,\beta}} \mcmany{\dd x}{N}{},
+	\label{Equation: Coulomb Gas Measure}
+\end{equation}
+where $$\Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x) + \frac{1}{2N^2} \sum_{i \neq j}^{N} \g(x_i - x_j)$$ is usually called the Hamiltonian , or the energy of the system. The function $\V \colon \Se \mapsto \R$ is the external potential and $\g \colon \Se \mapsto (-\infty, \infty]$ the Coulomb Interacting Kernel, solution to the Poisson equation given by $- \nabla g(\vec{x}) = c_n\delta_0$. The factor $\beta N^2$ is called the inverse temperature. Take $V$ so that \eqref{Equation: Coulomb Gas Measure} is a finite measure, i.e., the normalizing constant $Z_{N, \beta}$ be finite for all $N$ and the measure support be compact.
+
+Recall the expression for invariant ensembles and note that, for a appropriate $\V \colon \R \rightarrow \R$, we can take the appropriate dimensions for $d=1$ and $n = 2$ to recover the, for example, gaussian ensemble measure
+\begin{equation}
+	\p_N(\vec{x}) = \frac{e^{-\beta_N \Hf_N(\vec{x})}}{Z_{N,\beta}}, \ \ \Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x_i) + \frac{1}{N^2} \sum_{i < j}^{N} \log{\frac{1}{|x_i - x_j|}}.
+\end{equation}
+In this case, we're dealing with particles on the plane confined to the real line. However, the gases measure accepts a natural extension for any potential that we call acceptable. Together with the dimensions, we can recover other random matrix models. On the complex plane one could write explicitly
+\begin{equation}
+	\dd \p_N^{(\beta)} (z_1, \cdots, z_N) \deff \frac{1}{Z_{N,\beta}} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta \prod_{j=1}^{N} \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j)
+\end{equation}
+where $\dd A(z) \deff \dd^2 z / \pi$ is the area measure. This measure would imply the normalization constant
+\begin{equation}
+	Z_N^{(\beta)} \deff \int_{\C^N} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta \prod_{j=1}^{N} \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j)
+\end{equation}
+this is the expression, if $\beta = 2$ for the measure of the \textbf{random normal matrix}. For $Q(z) = |z|^2$ this would be the so-called \textbf{complex Ginibre ensemble}.
+
+We could also define the measure for the configurational canonical Coulomb gas ensemble in the upper-half plane  - which has an additional complex conjugation symmetry and is governed by the law 
+\begin{equation}
+	\dd \tilde{\p}_N^{(\beta)} (z_1, \cdots, z_N) \deff \frac{1}{\tilde{Z}_{N,\beta}} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta |z_j - \bar{z}_k|^\beta \prod_{j=1}^{N} |z_j - \bar{z}_j|^\beta  \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j)
+\end{equation}
+and would imply the normalization constant
+\begin{equation}
+	\tilde{Z}_N^{(\beta)} \deff \int_{\C^N} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta |z_j - \bar{z}_k|^\beta \prod_{j=1}^{N} |z_j - \bar{z}_j|^\beta  \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j)
+\end{equation}
+and is related, for $\beta = 2$ to the \textbf{planar symplectic ensemble}. For $Q(z) = |z|^2$ this would be the so-called \textbf{symplectic Ginibre ensemble}.
+
+For now on, we will only consider $\beta = 2$.
