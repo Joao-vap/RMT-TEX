@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.19)  30 MAR 2026 15:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.19)  31 MAR 2026 18:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2650,6 +2650,11 @@ Underfull \vbox (badness 5288) has occurred while \output is active []
 (./thesis.mw)
 \openout4 = `thesis.mw'.
 
+
+Overfull \hbox (1.5877pt too wide) detected at line 51
+ \T1/lmss/bx/n/12 101
+ []
+
 )
 \openout4 = `thesis.mw'.
 
@@ -2684,9 +2689,12 @@ Chapter 1.
 
 Chapter 2.
 (./tex/rmt.tex
+Underfull \vbox (badness 6575) has occurred while \output is active []
+
 \openout4 = `thesis.mw'.
 
- [23] (./thesis.mw)
+ [23]
+(./thesis.mw)
 \openout4 = `thesis.mw'.
 
 \openout4 = `thesis.mw'.
@@ -2699,22 +2707,23 @@ Chapter 2.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
 36.
-
-(/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
+ (/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<ot1tt.cmap>>
 \openout4 = `thesis.mw'.
 
- [24{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}] (./thesis.mw)
+
+[24{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 \openout4 = `thesis.mw'.
 
- [25] (./thesis.mw)
+
+[25] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 
-Underfull \vbox (badness 1168) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \openout4 = `thesis.mw'.
 
@@ -2727,13 +2736,17 @@ Underfull \vbox (badness 1168) has occurred while \output is active []
  [27] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 \openout4 = `thesis.mw'.
 
- [28] (./thesis.mw)
+ [28]
+(./thesis.mw)
 \openout4 = `thesis.mw'.
 
 LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 203.
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 205.
 
 \openout4 = `thesis.mw'.
 
@@ -2742,8 +2755,7 @@ LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <14.4> not available
 
 \openout4 = `thesis.mw'.
 
- [30]
-(./thesis.mw)
+ [30] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 \openout4 = `thesis.mw'.
@@ -2756,17 +2768,20 @@ LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <14.4> not available
 
 \openout4 = `thesis.mw'.
 
-\openout4 = `thesis.mw'.
-
-\openout4 = `thesis.mw'.
-
- [31] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 )
 \openout4 = `thesis.mw'.
 
- [32] (./thesis.mw)
+ [31] (./thesis.mw)
+\openout4 = `thesis.mw'.
+
+\openout4 = `thesis.mw'.
+
+
+[32
+
+] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 
@@ -2774,9 +2789,7 @@ Chapter 3.
 (./tex/pointprocesses.tex
 \openout4 = `thesis.mw'.
 
- [33
-
-] (./thesis.mw)
+ [33] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 \openout4 = `thesis.mw'.
@@ -3065,7 +3078,7 @@ t line 16.
  [71] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
-<images/Annulus.png, id=909, 700.6175pt x 642.4pt>
+<images/Annulus.png, id=906, 700.6175pt x 642.4pt>
 File: images/Annulus.png Graphic file (type png)
 <use images/Annulus.png>
 Package pdftex.def Info: images/Annulus.png  used on input line 174.
@@ -3078,6 +3091,30 @@ Underfull \vbox (badness 5893) has occurred while \output is active []
  [72]
 (./thesis.mw)
 \openout4 = `thesis.mw'.
+
+
+Overfull \hbox (26.44455pt too wide) detected at line 181
+[][][][] [] \U/ntxmia/m/it/12 = \LMS/ntxsy/m/n/12 ^^@\OML/ntxmi/m/it/12 N[]I[]\
+LMS/ntxsy/m/n/12 »\OML/ntxmi/m/it/12 ^^V[]\LMS/ntxsy/m/n/12 ¼ Ï [] [] Ï [] []¹\
+OML/ntxmi/m/it/12 N\LMS/ntxsy/m/n/12 º Ï [] []¹\OML/ntxmi/m/it/12 N\LMS/ntxsy/m
+/n/12 º Ï \OT1/minntx/m/n/12 2 [][] \U/ntxmia/m/it/12 B[]\OT1/minntx/m/n/12 d\O
+ML/ntxmi/m/it/12 ^^V[] \LMS/ntxsy/m/n/12 Ï O¹\OML/ntxmi/m/it/12 N[]\LMS/ntxsy/m
+/n/12 º
+ []
+
+
+Overfull \hbox (4.09695pt too wide) detected at line 185
+[][][]\U/ntxmia/m/it/12 B[]\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 r[]\LMS/ntxsy/
+m/n/12 º \U/ntxmia/m/it/12 = [][] \LMS/ntxsy/m/n/12 ^^@ [][] ^^@ [][] Ï [][]\OM
+L/ntxmi/m/it/12 ;
+ []
+
+
+Overfull \hbox (4.36096pt too wide) detected at line 209
+[][][]\U/ntxmia/m/it/12 B[]\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 r[]\LMS/ntxsy/
+m/n/12 º \U/ntxmia/m/it/12 = [][] \LMS/ntxsy/m/n/12 ^^@ [][] ^^@ [][] Ï [][]\OM
+L/ntxmi/m/it/12 :
+ []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3096,6 +3133,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [75] (./thesis.mw)
 \openout4 = `thesis.mw'.
+
+
+Overfull \hbox (3.36096pt too wide) detected at line 299
+[][][]\U/ntxmia/m/it/12 B[]\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 r[]\LMS/ntxsy/
+m/n/12 º \U/ntxmia/m/it/12 = [][] \LMS/ntxsy/m/n/12 ^^@ [][] ^^@ [][] Ï [][]\OM
+L/ntxmi/m/it/12 :
+ []
 
 
 Overfull \hbox (32.65155pt too wide) detected at line 318
@@ -3143,29 +3187,43 @@ Overfull \hbox (30.64952pt too wide) detected at line 323
  [82] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
-<images/diskfar.png, id=1088, 700.6175pt x 642.4pt>
+
+Overfull \hbox (2.99173pt too wide) detected at line 565
+[]
+ []
+
+<images/diskfar.png, id=1085, 700.6175pt x 642.4pt>
 File: images/diskfar.png Graphic file (type png)
 <use images/diskfar.png>
 Package pdftex.def Info: images/diskfar.png  used on input line 575.
 (pdftex.def)             Requested size: 181.99722pt x 166.87303pt.
-<images/diskclose.png, id=1089, 700.6175pt x 642.4pt>
+<images/diskclose.png, id=1086, 700.6175pt x 642.4pt>
 File: images/diskclose.png Graphic file (type png)
 <use images/diskclose.png>
 Package pdftex.def Info: images/diskclose.png  used on input line 577.
 (pdftex.def)             Requested size: 181.99722pt x 166.87303pt.
-\openout4 = `thesis.mw'.
 
- [83 <./images/diskfar.png> <./images/diskclose.png>] (./thesis.mw)
-\openout4 = `thesis.mw'.
+Underfull \vbox (badness 7081) has occurred while \output is active []
 
 \openout4 = `thesis.mw'.
 
- [84] (./thesis.mw)
+ [83]
+(./thesis.mw)
+\openout4 = `thesis.mw'.
+
+\openout4 = `thesis.mw'.
+
+ [84 <./images/diskfar.png> <./images/diskclose.png>] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 \openout4 = `thesis.mw'.
 
  [85] (./thesis.mw)
+\openout4 = `thesis.mw'.
+
+\openout4 = `thesis.mw'.
+
+ [86] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 
@@ -3175,21 +3233,16 @@ Overfull \hbox (0.26628pt too wide) detected at line 716
 
 \openout4 = `thesis.mw'.
 
-[86] (./thesis.mw)
+[87] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 
-Underfull \vbox (badness 1762) has occurred while \output is active []
+Underfull \vbox (badness 2393) has occurred while \output is active []
 
 \openout4 = `thesis.mw'.
 
- [87]
+ [88]
 (./thesis.mw)
-\openout4 = `thesis.mw'.
-
-\openout4 = `thesis.mw'.
-
- [88] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 \openout4 = `thesis.mw'.
@@ -3197,36 +3250,81 @@ Underfull \vbox (badness 1762) has occurred while \output is active []
  [89] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 \openout4 = `thesis.mw'.
 
- [90] (./thesis.mw)
+ [90]
+(./thesis.mw)
+\openout4 = `thesis.mw'.
+
+\openout4 = `thesis.mw'.
+
+ [91] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 
-Overfull \hbox (28.92209pt too wide) detected at line 908
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+\openout4 = `thesis.mw'.
+
+ [92]
+(./thesis.mw)
+\openout4 = `thesis.mw'.
+
+
+Overfull \hbox (28.92209pt too wide) detected at line 923
 []
  []
 
 \openout4 = `thesis.mw'.
 
-[91] (./thesis.mw)
+[93] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 \openout4 = `thesis.mw'.
 
- [92] (./thesis.mw)
+ [94] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 \openout4 = `thesis.mw'.
 
- [93] (./thesis.mw)
+ [95] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 
-Underfull \hbox (badness 10000) detected at line 994
- []$[]   [] []\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 h[]\LMS/ntxsy/m/n/12 º \U/n
-txmia/m/it/12 =$ [][]  
+Underfull \vbox (badness 2080) has occurred while \output is active []
+
+\openout4 = `thesis.mw'.
+
+ [96]
+(./thesis.mw)
+\openout4 = `thesis.mw'.
+
+
+Overfull \hbox (8.82626pt too wide) detected at line 1075
+[]
  []
+
+\openout4 = `thesis.mw'.
+
+[97] (./thesis.mw)
+\openout4 = `thesis.mw'.
+
+
+Overfull \hbox (37.44817pt too wide) detected at line 1093
+[][][][] \U/ntxmia/m/it/12 B[]\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 r[]\LMS/ntx
+sy/m/n/12 º \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 F[]\LMS/ntxsy/m/n/12 »\OML/n
+txmi/m/it/12 D[]\LMS/ntxsy/m/n/12 ¼ Ï [] []¹\OML/ntxmi/m/it/12 r[]\LMS/ntxsy/m/
+n/12 º ^^@ [] [] [] ^^@ [] [] [] Ï [] [] \OML/ntxmi/m/it/12 V[]\LMS/ntxsy/m/n/1
+2 ¹\OT1/minntx/m/n/12 0\LMS/ntxsy/m/n/12 º Ï O []
+ []
+
+\openout4 = `thesis.mw'.
+
+[98] (./thesis.mw)
+\openout4 = `thesis.mw'.
 
 ) (./thesis.bbl (./thesis.brf)
 \tf@brf=\write135
@@ -3234,16 +3332,22 @@ txmia/m/it/12 =$ [][]
 
 \openout4 = `thesis.mw'.
 
- [94] (./thesis.mw)
+ [99] (./thesis.mw)
+\openout4 = `thesis.mw'.
+
+\openout4 = `thesis.mw'.
+
+ [100
+
+]
+(./thesis.mw)
 \openout4 = `thesis.mw'.
 
 
 bibitemlist
 \openout4 = `thesis.mw'.
 
-[95
-
-] (./thesis.mw)
+[101] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 ) (./tex/glossario.tex
@@ -3752,12 +3856,12 @@ bibitemlist
 
 )
 No file thesis.gls.
-<packages/contra-capa.pdf, id=1327, 597.51233pt x 845.0471pt>
+<packages/contra-capa.pdf, id=1390, 597.51233pt x 845.0471pt>
 File: packages/contra-capa.pdf Graphic file (type pdf)
 <use packages/contra-capa.pdf>
 Package pdftex.def Info: packages/contra-capa.pdf  used on input line 217.
 (pdftex.def)             Requested size: 597.51086pt x 845.04504pt.
-<packages/contra-capa.pdf, id=1329, page=1, 597.51233pt x 845.0471pt>
+<packages/contra-capa.pdf, id=1392, page=1, 597.51233pt x 845.0471pt>
 File: packages/contra-capa.pdf Graphic file (type pdf)
 <use packages/contra-capa.pdf, page 1>
 Package pdftex.def Info: packages/contra-capa.pdf , page1 used on input line 21
@@ -3770,7 +3874,7 @@ Package pdftex.def Info: packages/contra-capa.pdf , page1 used on input line 21
 (pdftex.def)             Requested size: 597.53821pt x 845.08372pt.
 \openout4 = `thesis.mw'.
 
-[96] (./thesis.mw)
+[102] (./thesis.mw)
 \openout4 = `thesis.mw'.
 
 \openout4 = `thesis.mw'.
@@ -3832,7 +3936,7 @@ Package pdftex.def Info: packages/contra-capa.pdf , page1 used on input line 21
 (pdftex.def)             Requested size: 597.53821pt x 845.08372pt.
 \openout4 = `thesis.mw'.
 
- [97
+ [103
 
  <./packages/contra-capa.pdf>] (./thesis.mw)
 \openout4 = `thesis.mw'.
@@ -4229,7 +4333,7 @@ LaTeX Warning: There were multiply-defined labels.
 \openout4 = `thesis.brf'.
 
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 1C22349B214D06E63015DBA95A721799;1281.
+(rerunfilecheck)             Checksum: 979BF773812310723BC5B66453FAF8A6;1281.
 \openout4 = `thesis.nlo'.
 
 \openout4 = `thesis.glo'.
@@ -4244,11 +4348,11 @@ Package rerunfilecheck Info: File `thesis.brf' has not changed.
 
  ) 
 Here is how much of TeX's memory you used:
- 55980 strings out of 469515
- 1017233 string characters out of 5470807
- 1666735 words of memory out of 5000000
+ 56050 strings out of 469515
+ 1018056 string characters out of 5470807
+ 1666771 words of memory out of 5000000
  80986 multiletter control sequences out of 15000+600000
- 807771 words of font info for 552 fonts, out of 8000000 for 9000
+ 807644 words of font info for 550 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  125i,19n,122p,3252b,919s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texmf
@@ -4268,10 +4372,10 @@ ype1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.
 pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texmf-
 dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/newtx/ztmri.pfb>
-Output written on thesis.pdf (99 pages, 777631 bytes).
+Output written on thesis.pdf (105 pages, 797310 bytes).
 PDF statistics:
- 1744 PDF objects out of 2073 (max. 8388607)
- 1566 compressed objects within 16 object streams
- 752 named destinations out of 1000 (max. 500000)
+ 1817 PDF objects out of 2073 (max. 8388607)
+ 1632 compressed objects within 17 object streams
+ 795 named destinations out of 1000 (max. 500000)
  128447 words of extra memory for PDF output out of 154059 (max. 10000000)
 

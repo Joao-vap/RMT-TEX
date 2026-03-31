@@ -1,10 +1,10 @@
-The chapter that follows is heavily based (to be very generous with my writing) on the incredibly organized and written Thesis \cite{rahman2023recursivecharacterisationsrandommatrix}. To the author, my best wishes. The idea of this chapter is to motivate and introduce the concepts we will touch on later for the main part of the work. Also, if it is of any worth, this chapter serves as a good recap for any reader and a disclaimer of all the notation and conventions we will use in this work. What follows is my best attempt in introducing the part of Random Matrices that are pertinent to my scope of work and are of general interested, albeit inside the limitations of time, effort and experience. 
+Random Matrices can be though of in two ways: As a measurable function from a probability space into a set of matrices or, more concretely, as a matrix whose entries are random variables with some joint distribution. In some cases there is an explicit density formula for the eigenvalues of such a random matrix. The idea of this chapter is to motivate and introduce the concepts we will touch on later for the main part of the work. 
 
-Random Matrices can be though of in two ways: As a measurable function from a probability space into a set of matrices or, more concretely, as a matrix whose entries are random variables with some joint distribution. In some cases there is an explicit density formula for the eigenvalues of such a random matrix.
+The chapter that follows is heavily based (to be very generous with my writing) on the incredibly organized and written Thesis by  \citeonline{rahman2023recursivecharacterisationsrandommatrix}. What follows is my best attempt in introducing the part of Random Matrices that are pertinent to the scope of this work and of general interest, albeit inside the limitations of time, effort and experience. 
 
 \section{Random Matrix}
 
-Borrowing some concepts from physics, an \textit{ensemble} can be though as a virtual collection of all possible states that a system can be in, with more probable states appearing more often in the collection. There is a analogy to be made with ensembles of thermodynamic: When considering sets of matrices with equal probability - in some sense to be more clear soon - we get the Gibbs weight for the probability distribution as we would in the \textit{Canonical Ensemble} of constant temperature. More concretely, in the context of \sigla{RMT}{Random Matrix Theory} we have the following definition.
+Borrowing a concept from physics, an \textit{ensemble} can be though as a virtual collection of all possible states that a system can be in, with more probable states appearing more often in the collection. There is a analogy to be made with ensembles of thermodynamic: When considering sets of matrices with equal probability - in some sense to be more clear soon - we consider the \textit{Gibbs weight} for the states distribution as we would in the \textit{Canonical Ensemble}, of constant temperature. More concretely, in the context of \sigla{RMT}{Random Matrix Theory} we have the following definition.
 
 \begin{definicao}
 	A \textbf{random matrix ensemble} $\eE = (\eS, \eP)$ is a set of matrices $\eS$ of fixed size equipped with \sigla{p.d.f}{probability density function} $\eP: \eS \rightarrow [0, \infty)$. If we say that a matrix $\m{X}$ is drawn from the random ensemble $\eE$, we are saying that it is a random variable assuming values in $\eS$ with p.d.f. $\eP$.
@@ -48,6 +48,7 @@ is the probability that $a_i < \lambda_i < b_i$ for every $i$.
 	This is the expression, if $\beta = 2$ for the measure of the \textit{random normal matrix} ensemble. Setting $Q(z) = |z|^2$ this would be the so-called \textit{complex Ginibre ensemble}. Consider, however, $Q(z) = q(|z|)$ for some $q: \R \mapsto \R$, i.e., $Q$ is a radially symmetric potential. The theory says that the roots of such ensemble should be distributed in a disk or annulus. However, $\set{z^j}_j$ are the family of expected characteristic polynomials. Clearly its roots, which concentrate at zero, could not agree with the distribution os eigenvalues.
 \end{exemplo}  
 
+\mycomment{
 \begin{exemplo}
 	The eigenvalue j.p.d.f. of the $n \times n$ circular ensembles is 
 	\begin{equation}
@@ -59,6 +60,7 @@ is the probability that $a_i < \lambda_i < b_i$ for every $i$.
 	\end{equation}
 	is the Vandermonde determinant, and $\beta=1,2,4$ correspond to the COE, CUE and CSE, respectively.
 \end{exemplo}
+}
 
 Related do the eigenvalue j.p.d.f. is the univariate eigenvalue density defined by 
 \begin{equation}
@@ -142,7 +144,7 @@ Interestingly, there is only one ensemble in the intersection of both of these a
 
 \section{Invariant Ensembles}
 
-Invariant ensembles of random matrices are probability spaces which are invariant under conjugation of the appropriate matrix group - these ensembles only depend on their eigenvalue distributions while their eigenvectors become independent and are Haar distributed. Conjugation invariance is a physically natural assumption and simply signifies that all coordinate systems are equivalent. This also implies that the distributions of matrices is uniform conditional on its eigenvalues. To properly understand this concept, let's make precise the definition of three infamous ensembles: Unitary, Orthogonal and Symplectic ensembles. Other ensembles many times can be of interest, but their theory may be less straightforward.
+Invariant ensembles of random matrices are probability spaces which are invariant under conjugation of the appropriate matrix group - these ensembles only depend on their eigenvalue distributions while their eigenvectors become independent and are Haar distributed. Conjugation invariance is a physically natural assumption and simply signifies that all coordinate systems are equivalent. This also implies that the distributions of matrices is uniform conditional on its eigenvalues. To properly understand this concept, let's make precise the definition of three infamous ensembles: \textit{Unitary}, \textit{Orthogonal} and \textit{Symplectic} ensembles. Other ensembles many times can be of interest, but their theory may be less straightforward.
 
 \begin{enumerate}
 	\item \textit{Orthogonal Ensembles} consist of $n \times n$ real symmetric matrices $\m{M} = \cjgt{\m{M}} = \m{M}^T$ together with a probability distribution that is invariant under orthogonal conjugation $\m{M} \mapsto \m{O} \m{M} \m{O}^T$, $\m{O}$ orthogonal, i.e., $\m{O} \m{O}^T = \m{O}^T \m{O} = \m{I}$.  
@@ -196,9 +198,9 @@ At this point, one can check (albeit with some non-trivial computations) that th
 
 The situation concerning the $n \times n$ Ginibre Ensemble is more complicated. In the $1965$ work, Ginibre extended the proposition above and its arguments starting with the diagonalization formula $\m{G} = \m{P}\m{\Lambda}\m{P}^{-1}$ - note that, with $\m{\Lambda}$ diagonal of eigenvalues and $\m{P}$ of eigenvectors, this formula is valid with probability one since the subset of matrices with repeated eigenvalues has measure zero. However, $\m{P}$, diagonalizing matrix, is not necessarily orthogonal, unitary, nor symplectic. Nonetheless, QR decomposition can be used to write $\m{P} = \m{U}\m{T}$ where $\m{U}$ is as before and $\m{T}$ is an upper triangular matrix with real positive diagonal entries. Then,
 \begin{equation}
-	\dd \m{G} = \J(\lambda) \dd \m{\Lambda} \dd \p_{Tri}(\m{T}) \dd \p_{Haar}(\m{U})
+	\dd \m{G} = \J(\lambda) \dd \m{\Lambda} \dd \pe_{Tri}(\m{T}) \dd \pe_{Haar}(\m{U})
 \end{equation}
-where $\dd \m{\Lambda}$ is the Lebesgue measure on the space housing the eigenvalues, $\dd \p_{Haar}(\m{U})$ is the Haar measure defined before, $J(\lambda)$ is a Jacobian consisting of products of Vandermonde determinants involving the eigenvalues, and $\pe_{Tri}(\m{T})$ is some measure dependent on the entries of T. From here, it follows that the Lebesgue measure on $\m{G}$ is invariant under the desired conjugation action.
+where $\dd \m{\Lambda}$ is the Lebesgue measure on the space housing the eigenvalues, $\dd \pe_{Haar}(\m{U})$ is the Haar measure defined before, $J(\lambda)$ is a Jacobian consisting of products of Vandermonde determinants involving the eigenvalues, and $\pe_{Tri}(\m{T})$ is some measure dependent on the entries of T. From here, it follows that the Lebesgue measure on $\m{G}$ is invariant under the desired conjugation action.
 
  \subsection{Orthogonal Polynomial Ensembles}
  \label{Subsection: Orthogonal Ensembles}
