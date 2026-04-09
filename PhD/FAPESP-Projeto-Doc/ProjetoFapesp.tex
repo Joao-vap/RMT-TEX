@@ -1,0 +1,336 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[english,brazil]{babel}
+\usepackage{verbatim}
+\usepackage{setspace}
+% \usepackage{harvard}
+\usepackage[]{graphicx}
+\usepackage{caption}
+\usepackage{url}
+\usepackage{subfigure}
+%\usepackage{wasysym} - Se usá-lo, não usar amsmath
+\hyphenation{heu-ris-ti-cas}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{tcolorbox}
+% Referências e hiperlinks sem o "box" vermelho.
+\usepackage[hypertexnames=false,pdfborder={0 0 0}]{hyperref}
+
+% Lê a codificação de fonte T1 (font encoding default é 0T1).
+\usepackage[T1]{fontenc}
+
+% Equações, símbolos matemáticos e fontes providos pela American Mathematical Society (AMS).
+%\usepackage{amssymb}
+\usepackage{amssymb,amsfonts}	
+
+%\usepackage[center]{caption2}
+% \usepackage[portuguese,algoruled,longend]{algorithm2e}
+% \usepackage{algorithmic}
+\usepackage{lipsum}
+\usepackage[cm]{fullpage}
+
+\setlength{\paperheight}{29.79cm}
+\setlength{\paperwidth}{21.1cm}
+\setlength{\voffset}{0.32cm}
+\setlength{\hoffset}{0.055cm}
+\setlength{\oddsidemargin}{0.02cm}
+\setlength{\evensidemargin}{-0.605cm}
+\setlength{\topmargin}{0.0cm}
+\setlength{\headheight}{14.5pt}
+\setlength{\headsep}{0.3cm}
+\setlength{\textheight}{24.025cm}
+\setlength{\textwidth}{15.7cm}
+\setlength{\marginparsep}{0.0cm}
+\setlength{\marginparwidth}{0.0cm}
+\setlength{\marginparpush}{0.0cm}
+\setlength{\footskip}{0.0cm}
+
+%\textwidth = 17cm
+%\textheight= 22.0cm
+%\oddsidemargin = 1.3cm
+%\evensidemargin = 0.7cm
+%\voffset = -1.0cm
+%\hoffset = -2cm
+%\belowcaptionskip = 10pt
+
+% Formatação de cabeçalhos.
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% Apaga as configurações padrão.
+\fancyhf{}
+\rhead{\thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+
+% Lista de siglas e abreviações.
+%\usepackage[printonlyused]{acronym}
+\usepackage[nolist]{acronym}
+% Uso da mesma fonte utilizada no texto nas siglas e abreviações.
+\def\bflabel#1{{\textbf{#1}\hfill}}
+
+%% Indentação do primeiro parágrafo dos capítulos.
+\usepackage{indentfirst}
+
+%%% Recuo do parágrafo.
+\parindent 1.25cm
+
+% Posicionamento de figuras e tabelas.
+\usepackage{float}
+
+\usepackage{xcolor}
+
+% As legendas das figuras e tabelas são espacejadas com espaçamento simples
+% e os títulos das mesmas são separados da legenda por um hífen.
+%\usepackage[labelsep=endash,font=singlespacing]{caption}	
+
+% Formato ABNT
+\usepackage[alf,bibjustif]{abntcite} 
+
+
+% Comando para marcar o texto para revisão.
+\newcommand{\rev}[1]{\textcolor{red}{#1}}
+
+% Permite escrever aspas normais "text" em vez de ``text''
+\usepackage[autostyle]{csquotes}
+\MakeOuterQuote{"}
+
+
+%-----------------------------------------------------------
+% polynomials and such
+\newcommand{\He}{\mathrm{He}} %Hermite
+\newcommand{\Het}{\tilde{\mathrm{H}}} %Hermite Polynomials
+\newcommand{\Her}{\mathrm{H}} %Hermite Polynomials
+\newcommand{\Ai}{Ai}
+\newcommand{\Sine}{\mathcal{S}}
+%----------------------------------------
+% math when ellipsis
+\newcommand{\many}[2]{$#1_1, #1_2, \dots, #1_#2$}
+\newcommand{\cmany}[3]{$#1_1 #3 #1_2 #3 \dots #3 #1_#2$}
+\newcommand{\mmany}[2]{ #1_1, #1_2, \dots, #1_#2 }
+\newcommand{\mcmany}[3]{#1_1 #3 #1_2 #3 \dots #3 #1_#2}
+%----------------------------------------
+\newcommand{\m}[1]{\hat#1} % matrices
+%----------------------------------------
+% \e ensemble
+\newcommand{\eE}{\mathcal{E}} % ensemble
+\newcommand{\eS}{\mathcal{S}} % ensemble set
+\newcommand{\eP}{\mathcal{P}} % ensemble measure
+\newcommand{\pe}{\mathfrak{p}} % eigenvalue measure
+\newcommand{\Spe}{\tilde{\mathfrak{p}}} % scaled eigenvalue measure
+\newcommand{\p}{\mathtt{p}} % eigenvalues measure
+\newcommand{\Sp}{\tilde{\mathtt{p}}} % scaled eigenvalues measure
+\newcommand{\pZ}[2]{\mathcal{Z}_{#1}^{#2}} %partition function
+\newcommand{\pN}[2]{\mathcal{N}_{#1}^{#2}} %partition function
+\newcommand{\wf}{w}
+%----------------------------------------
+% quantities
+\newcommand{\me}{m} % moment of eigenvalue densitie
+\newcommand{\W}{W} % Moment generating function
+\newcommand{\SW}{\tilde{W}} % scaled Moment generating function
+\newcommand{\sh}{sh} % shape of young tableau
+%----------------------------------------
+%----------------------------------------
+% math
+\DeclareMathOperator{\supp}{supp}
+\newcommand{\F}{\mathbb{F}} % generic field
+\newcommand{\Prt}{\mathrm{P}} % Partition
+\newcommand{\Var}{\mathbb{V}ar}
+\newcommand{\J}{J} %Jacobiano
+\newcommand{\Hh}{\mathbb{H}}
+%----------------------------------------
+\newcommand{\boh}{\mathit{o}}
+\newcommand{\Boh}{\mathcal{O}}
+%----------------------------------------
+
+\newcommand\underrel[2]{\mathrel{\mathop{#2}\limits_{#1}}}
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\cjgt}[1]{\overline{#1}}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\vol}{Vol}
+\DeclareMathOperator{\tr}{Tr}
+\DeclareMathOperator{\pf}{Pf}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\Df}{D}
+\DeclareMathOperator{\Ee}{E}
+\DeclareMathOperator{\h}{h_1}
+\DeclareMathOperator{\f}{f}
+\DeclareMathOperator{\U}{U}
+\DeclareMathOperator{\K}{K}
+\DeclareMathOperator{\Hf}{\mathcal{H}}
+\DeclareMathOperator{\Qf}{Q}
+\DeclareMathOperator{\Gl}{\mathcal{L}}
+\DeclareMathOperator{\g}{g}
+\DeclareMathOperator{\V}{V}
+\DeclareMathOperator{\Glin}{GL}
+\newcommand{\iu}{\mathrm{i}\mkern1mu}
+\renewcommand{\Im}{\mathop{\textrm Im}}
+\DeclareMathOperator{\ee}{e}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Id}{\mathbb{1}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Se}{\mathbb{S}}
+\newcommand{\bbp}{\bm K_{\mathrm{BBP}}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand*{\deff}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+			\hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+	=}
+\newcommand*{\revdeff}{=\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+			\hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+}
+\newcommand{\dd}{\mathrm{d}}
+
+
+% MATH DECLARATIONS
+\newtheorem{lemma}{Lema}[section]
+\newtheorem{thm}[lemma]{Theorem}
+\newtheorem{claim}[lemma]{Affirmation}
+\newtheorem{cor}[lemma]{Corollary}
+\newtheorem{definition}[lemma]{Definition}
+\newtheorem{conjecture}[lemma]{Conjecture}
+\newtheorem{prop}[lemma]{Proposition}
+\newtheorem{assumption}[lemma]{Assumption}
+\newtheorem{sic}[lemma]{Citation}
+\numberwithin{equation}{section} %numeracao dentro de secoes
+
+% !TeX encoding = UTF-8
+\begin{document}
+
+% Lista de Siglas e de Símbolos.
+\input{Siglas_Simbolos}
+
+% Formato ABNT Autor-Data
+\bibliographystyle{abnt-alf}
+% Abreviação de apresentação de 4 ou mais autores no texto.
+\citeoption{abnt-etal-cite=3}
+% Subistituição do nome repetido de um autor por 6 traços underline.
+\citeoption{abnt-repeated-author-omit=yes}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Capa
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocounter{page}{-1}
+\thispagestyle{empty}
+    
+\vspace{-4.0cm}
+\begin{figure}[t]
+	\centering
+		\includegraphics[width=0.31\textwidth]{USP.jpg}
+	\label{fig:USP}
+\end{figure}
+
+\begin{center}
+	\vspace{2 cm}
+	\Large{\textbf{UNIVERSIDADE DE SÃO PAULO}}\\[0.5cm]
+
+\large{\bf Instituto de Ciências Matemáticas e de Computação}\\[0.5cm]
+
+\end{center}
+
+\doublespacing	
+
+\vspace{1.5 cm}
+\begin{center}
+{\bf RESEARCH PROJECT
+	
+Ph.D.}
+\end{center}
+
+\vspace{1.5 cm}
+\begin{center}
+	\Large{\textbf{Asymptotic for Partition Functions of External Field Models in Random Matrix} }
+\end{center}
+
+\singlespacing
+
+\vspace{2 cm}
+\begin{center}
+	
+Student: João Victor Alcantara Pimenta\\[0.5cm]
+	
+Supervisor: Guilherme Silva
+\end{center}
+
+\vspace{1 cm}
+%\maketitle
+\begin{center}
+\today
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Resumo e Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\selectlanguage{brazil}
+% Índices --------------------------------------------------------------
+\setlength{\parskip}{0mm}
+
+% \maketitle
+
+\onehalfspacing
+    
+\begin{abstract}
+	A Teoria de Matrizes Aleatórias demonstra aplicabilidade em uma gama diversa de áreas na matemática e na física, com destaque no estudo de mecânica estatística e probabilidade. No estudo da distribuição de autovalores de matrizes aleatórias, analogias à sistemas físicos - especialmente termodinâmicos - se tornam evidentes e motivações físicas podem ser consideradas. A função de normalização da distribuição de tais autovalores, por exemplo, é tipicamente identificada com a infame função partição, que em termodinâmica, por exemplo, codifica informações sobre propriedades do sistema descrito. Desenvolvimentos recentes tem progredido intensamente na compreensão da expansão assintótica, no limite termodinâmico, da função partição de sistemas termodinâmicos equivalentes à ensembles de matrizes aleatórias de uma classe determinada invariante. O objetivo deste trabalho é aplicar tais desenvolvimentos em um sistema de difícil tratamento denominado modelo de matrizes aleatórias com campo externo. Sua relevância é principalmente expressa pelo comportamento de Kernel do tipo Pearcing apresentado por tal modelo, o tornando atraente para melhor entendimento - e extensão - da corrente teoria de matrizes aleatórias.  
+\end{abstract}
+
+\selectlanguage{english}
+
+\begin{abstract}
+	The theory of Random Matrices finds its way in a diverse range of areas of Mathematics and Physics, and in particular to statistical mechanics. In the study of the spectra of eigenvalues of some random matrices ensembles, a physical analogy regarding thermodynamic systems becomes evident and the use of physical motivations in its study is of great importance. An example of such motivation is the study of the partition function, which holds in thermodynamics a great deal of information on the system at hand. Recent developments have been intensely unraveling new critical phenomena in random matrix theory, through a deep understanding of asymptotic expansions of the associated partition functions in the thermodynamic limit. The main goal of this work is to apply these  developments in a particularly difficult situation denominated external field random matrix model. Its relevant is well assured by its Pearcing edge uncommon scaling - making it vary appealing not only for the better understanding of the current theory but for extending it for some more general cases.
+\end{abstract}
+
+\break
+This proposal was elaborated according to FAPESP norms, following the guidelines available at \url{https://fapesp.br/253/projeto-de-pesquisa}
+
+\tableofcontents
+
+\break
+
+\selectlanguage{brazil}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Introdução %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\setlength{\parskip}{3mm}
+\doublespacing
+
+\let\clearpage\relax
+\include{cap1/introducaobeta2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Justificativa %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Justification}
+\include{cap2/Jus}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Objetivos %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objectives}
+\label{sec:Objetivos}
+\include{cap3/Obj}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Cronograma %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{cap4/Cron}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Material e Métodos %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Methods and Material}
+\include{cap5/Met}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Forma de análise dos resultados %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Result Analysis}
+\include{cap6/Resul}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Referências bibliográficas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+% Trocando título da seção Referências
+\renewcommand\refname{\vskip -2cm}
+\section*{Referências Bibliográficas}
+\bibliography{mybibfile}
+\newpage
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}          

@@ -1,4 +1,4 @@
-Random Matrices can be though of in two ways: As a measurable function from a probability space into a set of matrices or, more concretely, as a matrix whose entries are random variables with some joint distribution. In some cases there is an explicit density formula for the eigenvalues of such a random matrix. The idea of this chapter is to motivate and introduce the concepts we will touch on later for the main part of the work. 
+Random Matrices can be though of in two ways: As a measurable function from a probability space into a set of matrices or, more concretely, as a matrix whose entries are random variables with some joint distribution. In some cases there is an explicit density formula for the eigenvalues of such a random matrix. We will be interested in these cases, which we call the \textit{Invariant Ensembles}. Moreover, we will be particularly interest in a subset on which this density can be expressed as a \textit{Kernel} - an matricial object that will hold the statistical characterization of our system. For us, upon a restriction, this will indicate a determinantal structure and will lead us to the concepts introduced in \autoref{chapter: pointprocesses}, of Determinantal point processes.
 
 The chapter that follows is heavily based (to be very generous with my writing) on the incredibly organized and written Thesis by  \citeonline{rahman2023recursivecharacterisationsrandommatrix}. What follows is my best attempt in introducing the part of Random Matrices that are pertinent to the scope of this work and of general interest, albeit inside the limitations of time, effort and experience. 
 
@@ -12,17 +12,233 @@ Borrowing a concept from physics, an \textit{ensemble} can be though as a virtua
 \end{definicao}
 
 \begin{exemplo}
+
+	The $m \times n$ real, complex, and quaternionic \textit{Ginibre Ensembles} are respectively $\mathbb{M}_{m,n}(\R), \mathbb{M}_{m,n}(\C), \mathbb{M}_{m,n}(\Hh)$ with p.d.f.
+	\begin{equation}
+		\eP^{(Gin)}(\m{G}) = \pi^{-mn\frac{\beta}{2}} \exp{\left( -\tr(\m{G}^{*}\m{G})\right)} = \prod_{i=1}^{m} \prod_{j=1}^{n} \pi^{\frac{\beta}{2}} \exp{\left(-|G_{i,j}|^2 \right)},
+	\end{equation}
+	defined in respect to the Lebesgue measure
+	\begin{equation}
+		\dd \m{G} = \prod_{i=1}^{m} \prod_{j=1}^{n} \prod_{s=1}^\beta \dd G_{i,j}^{(s)}.
+	\end{equation}
+	The coefficient $\beta$ is called the Dyson index and counts the generic number of real components of each matrix entry $G_{i,j}$, so that $\beta=1,2,4$ refers to real, complex and quaternionic entries. These are the Ginibre orthogonal, unitary and symplectic ensembles.
+	\label{Definition: Ginibre Ensemble}
+	
+	\mycomment{
 	The $n \times n$ \textit{circular unitary ensemble} (CUE) is the unitary group $U(n)$ with its Haar measure. If $U \in$ CUE($n$), then the symmetric unitary matrix $U^TU$ represents the $n \times n$ \textit{circular orthogonal ensemble} (COE); we have $\eS \cong U(n)/O(n)$. Note that if $U \in U(n)$ and $O \in O(n)$, we have that $U^TU = (OU)^T(OU)$, that is, $U$ and $OU$ are in the same co-class.
+}
 \end{exemplo}
 
-To study random matrices, we need to determine which quantities related to the matrix we want to measure. This may be the expectation of some function on the matrices or even on the eigenvalues and eigenvector, if they exist. Assume a matrix is such that it is determined by a set of eigenvalues and eigenvectors. While eigenvectors may be of interest in some cases, eigenvalue statistics have been considerably more explored. For eigenvalues $\set{\lambda}_i \in \spec{M}$, one could talk about the expected characteristic polynomial 
-\begin{equation}
-	P_n(x) = \E[ \det\left(\lambda \m{I}_n - \m{M}\right)], \quad n \in \N.
-\end{equation}
-Naturally, the characteristic polynomial should have roots coinciding with the eigenvalues. For some ensembles this goes further: Taken the limit for the size of the matrix - consequently the order of the expected characteristic polynomial - one should expect the measure on the roots of the polynomial to coincide with the one on the eigenvalues. This is true for ensembles with real eigenvalues. Taking the asymptotic on the polynomials reveal something about the nature of the distribution of eigenvalues! This is not necessarily true for ensembles for non-real roots.
 
-\begin{exemplo} (Expected characteristic polynomial for Gaussian Matrices)
-		Hermite Polynomials are the average characteristic polynomials of the Gaussian Ensemble. That is, if $\m{M}$ is an order $N$ matrix which is hermitian and with joint density given by
+For most applications there are three ideologies that stand out for defining ensembles: By universality, uniformity and compositions. We will mainly consider in this work the second one, although the first holds some illustrative power due to its simplicity. The third approach wont be expanded but consists of ensembles of matrices defined by product of random matrices \cite{Marcin_Pozniak_1998}. We briefly mention describe the universality approach so that we can illustrate certain important results in the theory. This ideology consists on assuming very little on the system and to focus on the universal results, as the name suggests. Take a matrix $\m{Y} = \{Y_N\}_{i,j}$ to be such that $Y_{i,j} = Y_{j,i}^*$ and is satisfies the following properties: $\{Y_{i,j}\}_{1\leq i \leq j \leq n}$ are independent; $\{Y_{i,j}\}_{i \neq j}$ are identically distributed and also $\{Y_{i,i}\}$ are identically distributed; $\E(Y_{i,j}) = 0$ and $ \E(Y_{i,j}^k)< \infty$, i.e, $r_k = \max{(\E(Y_{i,j}^k), \E(Y_{i,j}^k))} < \infty$. Then we can define the \textit{Wigner ensemble}, central to this approach.
+
+%A straightforward thing to do when defining ensembles is to prescribe the p.d.f.'s $\eP_{i,j}$ on the independent entries $X_{i,j}$ of a representative matrix $\m{X} \in \eE$. In such cases, we say that
+%\begin{equation}
+%	\eP(\m{X}) = \prod_{i,j | X_{i,j} independent} \eP_{i,j}(X_{i,j}).
+%\end{equation}
+%There are many ensembles that follow from this construction. Commonly used are the set of symmetric matrices $\mathbb{M}_{m,n}(\R)$, the set of complex matrices $\mathbb{M}_{m,n}(\C)$ or the set of quaternionic matrices $\mathbb{M}_{m,n}(\Hq)$. Because of this, somehow often, $\eS$ is simply the set of symmetric, hermitian or skew-symmetric matrices. Then, it comes down to defining the p.d.f. $\eP$ on $\eS$. For this, we could work in many different ways: Imposing independent entries that follows some distribution such as the Gaussian or Bernoulli, or alternatively, symmetrize such entry-independent matrix to get other ensembles. 
+
+\begin{definicao}
+	Let every $\m{Y}$ be as before and set $r_2 < \infty$ with $\E(Y_{1,2}^2) > 0$. Then, we say $\m{Y}$ is a \textbf{Wigner matrix}. Furthermore, if $\m{X}_n = n^{-\frac{1}{2}} \m{Y}_n$, $\m{X}$ is what we call a \textbf{normalized Wigner matrix}.
+	\label{Definition: Wigner Matrix}
+\end{definicao}
+
+\begin{exemplo}
+	Let $\m{G}$ be drawn from the $n \times n$ real, complex or quaternionic Ginibre Ensemble. Then, the random matrix $\m{H} = \frac{1}{2} (\m{G}^{*} + \m{G})$ represents the corresponding \textit{Gaussian ensemble} (also known as Hermite). Note that such a matrix is a Wigner matrix as it is the symmetrization of a matrix from the Ginibre Ensemble - given by centered independent and identically distributed Gaussian random variables.
+	\label{Example: Gaussian construction}
+\end{exemplo}
+
+Many results hold for independently and identically distributed centered random variables - and those are the advantages of such approach. The universality name comes from a very important theorem from Wigner. Give the name of \textit{semicircle distribution} to the measure $\pe^{(SC)}$ defined by 
+$
+	\pe^{(SC)}(\dd x) \deff 1/(R^2 \pi) \sqrt{(R^2 - x^2)_{+}} \dd x,
+$
+where $\supp{\pe^{(SC)}} = [-2, 2]$ is the support of $\pe^{(SC)}$. 
+
+Is is not hard to notice why the distribution take such name; it is shaped such as the upper half of a circle. More interestingly, this distribution has a very important role when discussing Wigner matrices: It is an universal distribution. This means that, for Wigner matrices, for whichever random variable you choose for the entries given the restrictions, when taken to the limit all of them converge to this limiar shape. This is the \textit{Wigner's Semicircle Law}.
+
+\begin{teorema} (Wigner's Semicircle Law)
+	The averaged eigenvalue distribution $\pe_N$ for Wigner matrices converges weakly to the semicircle distribution $\pe^{(SC)}$.
+\end{teorema}
+
+This type of result is named \textit{universality} in the RMT and can be better explained when we discuss the theory of \textit{point processes} and an object called \textit{Kernel}. However, in general terms, universality refers to the phenomena in RMT where different ensembles have the same limit statistic, generally in terms of the so called Kernel, that is, the Kernel is some shared limit object. Wigner Matrices have the same limit distribution for eigenvalues, for example.  Other classes of universality may share the same statistic in various scales and regime:  Eigenvalue spacing and maximum eigenvalue distribution are one of the statistics one might be interest in. 
+
+\begin{exemplo}
+ (Numerical analysis of Semicircle Law)
+	We can numerically see the convergence theorem in action. If we take the Gaussian Orthogonal, Unitary and Symplectic Ensemble - correspondent in Example \ref{Example: Gaussian construction} to starting respectively with the real, complex or quaternionic Ginibre matrix, then we expect to see, with $N \rightarrow \infty$, the eigenvalue measure $\pe_N$ approximating the semicircle distribution $\pe^{SC}$. The numeric for this situation are exhibit below. 
+	\begin{figure}[H]
+		\begin{subfigure}{0.3\textwidth}
+				\centering
+				\begin{tikzpicture}
+					\begin{axis}[
+						xmin=-1.5, xmax=1.5,
+					    ymin=0, ymax=0.85,
+						xticklabel=\empty,
+						title= {$n=10$},
+						ylabel={GOE}
+						]
+						\addplot[solid, black,  thin] table [col sep=comma] {./plotdata/GOE-10.csv};
+						\addplot[dashed] table [col sep=comma] {./plotdata/SemiCircle.csv};
+					\end{axis}
+				\end{tikzpicture}
+		\end{subfigure} \hspace{1.1cm}
+		\begin{subfigure}{0.3\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-1.5, xmax=1.5,
+					ymin=0, ymax=0.85,
+					xticklabel=\empty,
+					yticklabel=\empty,
+					title= {$n=50$}
+					]
+					\addplot[solid, black,  thin] table [col sep=comma] {./plotdata/GOE-50.csv};
+					\addplot[dashed] table [col sep=comma] {./plotdata/SemiCircle.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+		\begin{subfigure}{0.3\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-1.5, xmax=1.5,
+					ymin=0, ymax=0.85,
+					xticklabel=\empty,
+					yticklabel=\empty,
+					title= {$n=100$}
+					]
+					\addplot[solid, black,  thin] table [col sep=comma] {./plotdata/GOE-100.csv};
+					\addplot[dashed] table [col sep=comma] {./plotdata/SemiCircle.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+	\end{figure}
+	\begin{figure}[H]
+				\begin{subfigure}{0.3\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-1.5, xmax=1.5,
+					ymin=0, ymax=0.85,
+					xticklabel=\empty,
+					ylabel={GUE}
+					]
+					\addplot[solid, black,  thin] table [col sep=comma] {./plotdata/GUE-10.csv};
+					\addplot[dashed] table [col sep=comma] {./plotdata/SemiCircle.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hspace{1.1cm}
+		\begin{subfigure}{0.3\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-1.5, xmax=1.5,
+					ymin=0, ymax=0.85,
+					xticklabel=\empty,
+					yticklabel=\empty
+					]
+					\addplot[solid, black,  thin] table [col sep=comma] {./plotdata/GUE-50.csv};
+					\addplot[dashed] table [col sep=comma] {./plotdata/SemiCircle.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+		\begin{subfigure}{0.3\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-1.5, xmax=1.5,
+					ymin=0, ymax=0.85,
+					xticklabel=\empty,
+					yticklabel=\empty
+					]
+					\addplot[solid, black, thin] table [col sep=comma] {./plotdata/GUE-100.csv};
+					\addplot[dashed] table [col sep=comma] {./plotdata/SemiCircle.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+	\end{figure}
+	\begin{figure}[H]
+				\begin{subfigure}{0.3\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-1.5, xmax=1.5,
+					ymin=0, ymax=0.85,
+					ylabel={GSE}
+					]
+					\addplot[solid, black,  thin] table [col sep=comma] {./plotdata/GSE-10.csv};
+					\addplot[dashed] table [col sep=comma] {./plotdata/SemiCircle.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hspace{1.1cm}
+		\begin{subfigure}{0.3\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-1.5, xmax=1.5,
+					ymin=0, ymax=0.85,
+					yticklabel=\empty
+					]
+					\addplot[solid, black,  thin] table [col sep=comma] {./plotdata/GSE-50.csv};
+					\addplot[dashed] table [col sep=comma] {./plotdata/SemiCircle.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+		\begin{subfigure}{0.3\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-1.5, xmax=1.5,
+					ymin=0, ymax=0.85,
+					yticklabel=\empty
+					]
+					\addplot[solid, black,  thin] table [col sep=comma] {./plotdata/GSE-100.csv};
+					\addplot[dashed] table [col sep=comma] {./plotdata/SemiCircle.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure}
+		\caption{For all graphs, we have in dashed line the Semicircle distribution. In black the average distribution of eigenvalues is displayed. The columns correspond to $n = 10,50,100$ from left to right. The lines correspond to the GOE, GUE and GSE from top to bottom. The matrices, and corresponding eigenvalues, were sampled with the ensemble distribution $10000$ for each graph.}
+	\end{figure}
+
+\end{exemplo}
+
+We now move on to the main approach we will deal with in this work. The second ideology to construct ensembles is equivalent to assume equal probability on each state of a system, a very common assumption in thermodynamics and other physical scenarios. This would be analogous to the Canonical Ensemble in physics. We consider each matrix to be equally likely, and more common states - similar matrices - appears more often in the set. Similar to the choice of uniform measure on the sphere being defined by rotational invariance, to construct such ensembles we will equip them with the \textit{Haar Measure}.
+
+%When it comes to determining the p.d.f $\eP$ on $\eS$, there are many options that have been worked on. A simple example is that of \textit{Bernoulli matrices} $\m{B}$ whose entries $B_{i,j}$ are all independently and identically distributed Bernoulli random variables $\pm 1$: $\eS=\mathbb{M}_{n,n}(\R)$ and $$P_{i,j}(B_{i,j}) = \frac{1}{2} \left[ \delta(B_{i,j}-1) + \delta(B_{i,j}+1)\right].$$ If we instead require $\m{B}$ to be symmetric, its diagonal entries to be zero, and its independent entries have p.d.f. $$P_{i,j}(B_{i,j}) = \frac{c}{n} \delta(B_{i,j}-1) + \left(1 - \frac{c}{n} \delta\left(B_{i,j}\right)\right),$$ then $\m{B}$ belongs to the ensemble of \textit{Erdos-Renyi}. 
+
+
+\begin{teorema}
+	(Haar, compact case). Given a compact group $\eS$ (a topological group with compact topology), let $U \in \eS$ be a generic variable. There exists a unique (up to normalization measure) $\dd \p(U)$ on $\eS$, called the \textit{Haar measure} such that \begin{equation}\int_{\eS} \dd \p(U) < \infty\end{equation} and for any fixed $U_0 \in \eS$, $$\dd\p(U_0U) = \dd\p(U) = \dd\p(UU_0),$$ that is, finite for compact sets and invariant by left and right actions. If $\dd \p(U)$ integrates to unity in $\eS$ it is referred as the \textit{Haar probability measure}.
+\end{teorema}
+
+This measure will allow us ot define the ensembles we are interest in, nominally it will lead us to \autoref{Section: Invariant Ensembles} to discuss the \textit{Invariant Ensembles}. Interestingly, there is only one ensemble in the intersection of both of these approaches: The Gaussian Ensembles. No other ensemble of Wigner matrices is also invariant.
+
+\begin{exemplo}
+	We define the following classical ensembles, all examples of invariant ensembles. We know by the spectral theorem that these self-adjoint matrices can be decomposed using a orthogonal, unitary or symplectic matrix which we consider to be Haar distributed.
+\begin{itemize}
+	\item Let $\m{G}$ be drawn from the $n \times n$ real, complex or quaternionic Ginibre Ensemble. Then, the random matrix $\m{H} = \frac{1}{2} (\m{G}^{\dagger} + \m{G})$ represents the corresponding \textit{Gaussian ensemble} (also known as Hermite). That is, $\eS^{(G)} = \{ \m{H} \in M_{n,n}(\F) | \m{H} = \m{H}^* \}$ and
+	\begin{equation}
+		\eP^{(G)}(\m{H}) = \frac{1}{\pZ{n,\beta}{(G)}} \exp{(-\tr(\m{H}^2))}.
+	\end{equation} 
+	\item Let $\m{G}$ be drawn from the $n \times m$ real, complex or quaternionic Ginibre Ensemble. Then, the random matrix $\m{W} = (\m{G}^{\dagger} \m{G})$ represents the corresponding $(m,n)$ \textit{Laguerre ensemble} (also known as Wishart). That is, $\eS^{(L)} = \{ \m{W} \in \eS^{(G)} | \m{W} \ \text{positive definite}\}$ and
+	\begin{equation}
+		\eP^{(L)}(\m{W}) = \frac{1}{\pZ{n,a}{(L)}} (\det(\m{W}))^a \exp{(-\tr(\m{W}))}.
+	\end{equation}
+	\item We say $\m{Y}$ an element of the $(m_1, m_2, n)$ real, complex and quaternionic \textit{Jacobi Ensemble} if it is of the form $\m{Y} = \m{W}_1 (\m{W}_1 + \m{W}_2)^{-1}$ where each $\m{W}_i$ belong to the corresponding $(m_i, n)$ Laguerre ensembles with $m_i \geq n$. That is, $\eS^{(J)} = \{ \m{Y} \in \eS^{(L)} | \m{I}_n - \m{Y} \ \text{positive definite} \}$ and
+	\begin{equation}
+		\eP^{(J)}(\m{Y}) = \frac{1}{\pZ{n,a,b}{(J)}} (\det(\m{Y}))^a (\det{(\m{I}_n - \m{Y})}).
+	\end{equation}
+\end{itemize}
+\label{Definicao: Direct Gaussian, Laguerre, Jacobi}
+\end{exemplo}
+
+To study random matrices, we need to determine which quantities related to the matrix we want to measure. This may be the expectation of some function on the matrices or even on the eigenvalues and eigenvector, if they exist. Assume a matrix is such that it is determined by a set of eigenvalues and eigenvectors. While eigenvectors may be of interest in some cases, eigenvalue statistics have been noticeably more explored. One of the quantities one might want to take on are the \textit{average} or \textit{expected characteristic polynomial} 
+\begin{equation}
+	P_n(x) = \E[ \det\left(x \m{I}_n - \m{M}\right)], \quad n \in \N.
+\end{equation}
+The characteristic polynomial have roots that coincides with the eigenvalues. Therefore, morally, roots of an averaged characteristic polynomial could be though of as the typical set of eigenvalues for the random matrix model chosen for $\m{M}$. For random Hermitian matrices associated with some probability distribution $\det({\wf(\m{M})})$, then the average characteristic polynomial is simply the monic orthogonal polynomial $P_n^\wf(x)$ of degree $n$ in respect to the weight function $\wf(X)$. \cite{EdelmanConditionNumbers}
+
+\begin{exemplo} (Expected characteristic polynomial for Gaussian Unitary Matrices)
+		Hermite Polynomials are the average characteristic polynomials of the Gaussian Unitary Ensemble. That is, if $\m{M}$ is an order $N$ matrix which is hermitian and with joint density given by
 	\begin{equation}
 		\frac{1}{\pZ{N}{}} \ee^{-\tr{\m{M}^2}} \dd M
 	\end{equation}
@@ -30,23 +246,109 @@ Naturally, the characteristic polynomial should have roots coinciding with the e
 	\begin{equation}
 		P_n(x) = x P_{n-1}(x) - \frac{n-1}{2} P_{n-2}(x).
 	\end{equation}
-	If one notices that $P_0(x) = 1$ and $P_1(x) = x$, then one can also see that the recurrence equation give us the Hermite Polynomials. \textcolor{red}{One can show numerically that their concentrations coincide.}
+	If one notices that $P_0(x) = 1$ and $P_1(x) = x$, then one can also see that the recurrence equation give us the Hermite Polynomials. One can show numerically that the concentration of roots of the appropriately normalized Hermite polynomial and the eigenvalues coincide. The roots are the typical set of eigenvalues.
+	\begin{figure}[H]
+		\begin{subfigure}{0.3\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-1.5, xmax=1.5,
+					ymin=0, ymax=0.85,
+					title= {$n=10$},
+					scatter/classes={%
+						a={draw=black, mark size=2pt}}
+					]
+					\addplot[scatter, mark=|] table [col sep=comma] {./plotdata/roots-10.csv};
+					\addplot[solid, black, thin] table [col sep=comma] {./plotdata/GUE-10.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hspace{0.75cm}
+		\begin{subfigure}{0.3\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-1.5, xmax=1.5,
+					ymin=0, ymax=0.85,
+					yticklabel=\empty,
+					title= {$n=50$},
+					scatter/classes={%
+						a={draw=black, mark size=2pt}}
+					]
+					\addplot[scatter, mark=|]  table [col sep=comma] {./plotdata/roots-50.csv};
+					\addplot[solid, black, thin] table [col sep=comma] {./plotdata/GUE-50.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+		\begin{subfigure}{0.3\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-1.5, xmax=1.5,
+					ymin=0, ymax=0.85,
+					title= {$n=100$},
+					yticklabel=\empty,
+					scatter/classes={%
+						a={draw=black, mark size=1pt}}
+					]
+					\addplot[scatter,mark=|]  table [col sep=comma] {./plotdata/roots-100.csv};
+					\addplot[solid, black, thin] table [col sep=comma] {./plotdata/GUE-100.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+				\caption{For all graphs, the line is the average distribution of eigenvalues for the GUE. The columns correspond to the polynomial order (and matrix size) $n = 10,50,100$ from left to right. The dashes in the axis correspond to the roots of the $n$-th Hermite polynomial.}
+	\end{figure}
+	\label{Example: Hermite-GUE}
 \end{exemplo}
 
-We are naturally interested in the eigenvalue j.p.d.f. $\p(\mmany{\lambda}{n})$ of the eigenvalues $\{\lambda_i\}_{i=1}^{n}$ of $\m{M}$. The eigenvalue j.p.d.f. is defined to be such that 
-\begin{equation}
-	\int_{[a_1, b_1] \times \cdots \times [a_n, b_n]} \p(\mmany{\lambda}{n}) \dd \lambda_1 \cdots \dd \lambda_n
-\end{equation}
-is the probability that $a_i < \lambda_i < b_i$ for every $i$.
+This results holds true only for the case presented. For real and symplectic symmetric matrices, for example, $P_n^\wf(x)$ can be calculated only for a few functions - an example would be the so-called \textit{classical weight functions} (Example \ref{Example: Classical Ensembles}). Taking the limit for $n$ - consequently the order of the expected characteristic polynomial - one might expect the distribution of roots to coincide with the distribution of eigenvalues. This can be seen in Example \ref{Example: Hermite-GUE}. Taking the asymptotic on the orthogonal polynomials reveal something about the nature of the distribution of eigenvalues! This is not necessarily true however in general and especially not true for ensembles with non-real roots. In these cases, the orthogonal polynomial associated with the weight function has to clear reason to be the expected characteristic polynomial. However, this a powerful idea that motivates future results in this work.
 
-\begin{exemplo}(The complex case for Characteristic Polynomial)
+By this point is clear that we are naturally interested in the eigenvalue \sigla{j.p.d.f.}{joint probability density function} $\p_n(\mmany{\lambda}{n})$ of the eigenvalues $\{\lambda_i\}_{i=1}^{n}$ of $\m{M}$. This is especially true because we will be dealing with ensembles where the distribution is uniform in the eigenvectors, that is, all that matters is the distribution of eigenvalues. The eigenvalue j.p.d.f. $\p_n$ is defined to be such that 
+\begin{equation}
+	\int_{[a_1, b_1] \times \cdots \times [a_n, b_n]} \p_n(\mmany{\lambda}{n}) \dd \lambda_1 \cdots \dd \lambda_n
+\end{equation}
+is the probability that $a_i < \lambda_i < b_i$ for every $i$. Sometimes we may also want to talk about the expected number of eigenvalues in a single interval of the real line - as in concentration or measure for the eigenvalues. Therefore we define, related do the eigenvalue j.p.d.f., the \textit{univariate eigenvalue density} defined by 
+\begin{equation}
+	\pe(\lambda;n) \deff n \int_{\R^{n-1}} \p_n(\mmany{\lambda}{n}) \dd \lambda_2 \cdots \dd \lambda_n,
+\end{equation}
+which is normalized such that
+\begin{equation}
+	\int_{a}^{b} \pe(\lambda) \dd \lambda
+\end{equation}
+is the expect number of eigenvalues lying between $a$ and $b$.
+
+\begin{exemplo}(The complex case for Orthogonal Polynomial)
 	On the complex plane one could write an ensemble with measure
 	\begin{equation}
-		\dd \p_N^{(\beta)} (z_1, \cdots, z_N) \deff \frac{1}{\pZ{N}{(\beta)}} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta \prod_{j=1}^{N} \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j)
+		\dd \p_n^{(\beta)} (z_1, \cdots, z_n) \deff \frac{1}{\pZ{n}{(\beta)}} \prod_{j > k = 1}^{n} |z_j - z_k|^\beta \prod_{j=1}^{n} \ee^{- \frac{\beta n}{2} Q(z_j)} \dd A(z_j)
 		\label{Equation: Measure Normal Matrix}
 	\end{equation}
-	This is the expression, if $\beta = 2$ for the measure of the \textit{random normal matrix} ensemble. Setting $Q(z) = |z|^2$ this would be the so-called \textit{complex Ginibre ensemble}. Consider, however, $Q(z) = q(|z|)$ for some $q: \R \mapsto \R$, i.e., $Q$ is a radially symmetric potential. The theory says that the roots of such ensemble should be distributed in a disk or annulus. However, $\set{z^j}_j$ are the family of expected characteristic polynomials. Clearly its roots, which concentrate at zero, could not agree with the distribution os eigenvalues.
+	This is the expression, if $\beta = 2$ for the measure of the \textit{random normal matrix} ensemble. Setting $Q(z) = |z|^2$ this would be the so-called \textit{complex Ginibre ensemble}. Consider, however, $Q(z) = q(|z|)$ for some $q: \R \mapsto \R$, i.e., $Q$ is a radially symmetric potential. The theory says that the roots of such ensemble should be distributed in a disk or annulus. However, $\set{z^j}_j$ are the family of orthogonal polynomials associated with $\wf =  \ee^{- \frac{\beta n}{2} Q(z)}$. Clearly its roots, which concentrate at zero, could not agree with the distribution of eigenvalues.
 \end{exemplo}  
+
+There is another way to express the eigenvalue j.p.d.f. taking advantage of its discrete nature. Consider the linear statistic of the eigenvalue density given by
+\begin{equation}
+	\pe(\lambda) = \sum_{i = 1}^n \langle \delta(\lambda - \lambda_i) \rangle
+\end{equation} 
+where the brackets are understood as acting on an operator as
+\begin{equation}
+	\langle \mathcal{O} \rangle = \int_{\R^n} \{\mathcal{O} \cdot \p_n(\lambda_1, \cdots, \lambda_n)\} \dd \lambda_1 \cdots \lambda_n.
+\end{equation}
+Indeed, if we are interested in a linear statistic $\sum_{i=1}^{n} f(\lambda_i)$, think polynomial, of the eigenvalues such that $f(\lambda)$ is analytic at zero with Taylor expansion $f(\lambda) = \sum_{k=0}^{\infty} f_k \lambda^k$, we can compute its expectation to be
+\begin{equation}
+	\left\langle \sum_{i=1}^{n} f(\lambda_i) \right\rangle = \int_{\R} f(\lambda) \pe(\lambda) \dd \lambda = \sum_{k=0}^{\infty} f_k m_k
+\end{equation}
+where $m_k$ is their \textit{spectral moments} defined by
+\begin{equation}
+	m_k \deff \int_{\R} \lambda^k \pe(\lambda) \dd \lambda, \ k \in \N.
+\end{equation} 
+The spectral moments can additionally be expressed as an average with respect ot the eigenvalue j.p.d.f. $\p(\mmany{\lambda}{n})$ and the p.d.f. $\eP(X)$ of the random matrix $\m{X}$ according to
+\begin{equation}
+	m_k = \left\langle \sum_{i=1}^{n} \lambda_i^k \right\rangle = \left\langle \tr(\m{X}^k) \right\rangle_{\eP(\m{X})}
+\end{equation}
+where we define
+\begin{equation}
+	\left\langle \mathcal{O} \right\rangle_{\eP(\m{X})} \deff \int_{\eS} \{\mathcal{O} \eP(\m{X})\} \dd \m{X}
+\end{equation}
 
 \mycomment{
 \begin{exemplo}
@@ -62,114 +364,50 @@ is the probability that $a_i < \lambda_i < b_i$ for every $i$.
 \end{exemplo}
 }
 
-Related do the eigenvalue j.p.d.f. is the univariate eigenvalue density defined by 
-\begin{equation}
-	\pe(\lambda_1; n) \deff n \int_{\R^{n-1}} \p(\mmany{\lambda}{n}) \dd \lambda_2 \cdots \dd \lambda_n,
-\end{equation}
-which is normalized such that the expect number of eigenvalues lying between $a$ and $b$ is given by $\int_{a}^{b} \pe(\lambda) \dd \lambda$. For most applications there are three ideologies that stand out for defining ensembles: By universality, uniformity and compositions. The third won't be considered in this work, but consists of ensembles of matrices defined by products of other random matrices \cite{Marcin_Pozniak_1998}. The first approach, on the other hand, will be important and consists on assuming very little on the system and to focus on the universal results. This lead us to the study of the \textit{Wigner matrix ensembles}: Let $\m{X}$ be drawn from either the independently distributed real symmetric, complex hermitian or quaternionic skew-symmetric $N \times N$ matrix ensemble. Then its entries $X_{i,j}$ are independently distributed with mean zero and bounded moments. Also, its diagonal entries are equally distributed as are its upper triangular entries. Many results hold for independently and identically distributed centered random variables - and those are the advantages of such approach. Take the matrix $\m{Y} = \{Y_N\}_{i,j}$ to be such that $Y_{i,j} = Y_{j,i}^\dagger$ and satisfying the following properties that $\{Y_{i,j}\}_{1\leq i \leq j \leq n}$ are independent; $\{Y_{i,j}\}_{i \neq j}$ are identically distributed and also $\{Y_{i,i}\}$ are identically distributed; $\E(Y_{i,j}) = 0$  and $ \E(Y_{i,j}^k)< \infty$, i.e, $r_k = \max{(\E(Y_{i,j}^k), \E(Y_{i,j}^k))} < \infty$. Then we can define the following ensemble, central to this approach.
-
-%A straightforward thing to do when defining ensembles is to prescribe the p.d.f.'s $\eP_{i,j}$ on the independent entries $X_{i,j}$ of a representative matrix $\m{X} \in \eE$. In such cases, we say that
-%\begin{equation}
-%	\eP(\m{X}) = \prod_{i,j | X_{i,j} independent} \eP_{i,j}(X_{i,j}).
-%\end{equation}
-%There are many ensembles that follow from this construction. Commonly used are the set of symmetric matrices $\mathbb{M}_{m,n}(\R)$, the set of complex matrices $\mathbb{M}_{m,n}(\C)$ or the set of quaternionic matrices $\mathbb{M}_{m,n}(\Hq)$. Because of this, somehow often, $\eS$ is simply the set of symmetric, hermitian or skew-symmetric matrices. Then, it comes down to defining the p.d.f. $\eP$ on $\eS$. For this, we could work in many different ways: Imposing independent entries that follows some distribution such as the Gaussian or Bernoulli, or alternatively, symmetrize such entry-independent matrix to get other ensembles. 
-
-\begin{definicao}
-	Let every $\m{Y}$ be as before and set $r_2 < \infty$ with $\E(Y_{1,2}^2) > 0$. Then, we say $\m{Y}$ is a \textbf{Wigner Matrix}. Furthermore, if $\m{X}_n = n^{-\frac{1}{2}} \m{Y}_n$, $\m{X}$ is what we call a \textbf{normalized Wigner Matrix}.
-	\label{Definition: Wigner Matrix}
-\end{definicao}
-
-We give the name of semicircle distribution to the measure $\pe^{(SC)}$ defined by 
-\begin{equation}
-	\pe^{(SC)}(\dd x) \deff \frac{1}{2\pi} \sqrt{(4 - x^2)_{+}} \dd x,
-\end{equation} 
-where the support is given by $\supp{\pe^{(SC)}} = [-2, 2]$. Is is not hard to notice why the distribution take such name; it is shaped such as the upper half of a circle. More interestingly, this distribution has a very important role when discussing Wigner Matrices: It is an universal distribution. This means that, for Wigner Matrices, however they are constructed, when taken to the limit, all of them must converge to this limiar shape. This is better structured in \textit{Wigner's Semicircle Law}.
-
-\begin{teorema} (Wigner's Semicircle Law)
-	The averaged eigenvalue distribution $\pe_N$ for Wigner matrices converges weakly to the semicircle distribution $\pe^{(SC)}$.
-\end{teorema}
-
-\begin{exemplo} (Numerical analysis of Semicircle Law)
-	We can numerically see the convergence theorem in action. If we take , then we expect to see, with $N \rightarrow \infty$, the eigenvalue measure $\pe_N$ approximating the semicircle distribution $\pe^{SC} \cdots$
-\end{exemplo}
-
-This type of result is named \textit{universality} in the theory and can be better explained when we discuss the theory of \textit{point processes}. The second ideology is assuming equal probability on each state os the system - this is a common assumption in thermodynamics.  So this approach is to assume that every matrix is equally likely. 
-
-%When it comes to determining the p.d.f $\eP$ on $\eS$, there are many options that have been worked on. A simple example is that of \textit{Bernoulli matrices} $\m{B}$ whose entries $B_{i,j}$ are all independently and identically distributed Bernoulli random variables $\pm 1$: $\eS=\mathbb{M}_{n,n}(\R)$ and $$P_{i,j}(B_{i,j}) = \frac{1}{2} \left[ \delta(B_{i,j}-1) + \delta(B_{i,j}+1)\right].$$ If we instead require $\m{B}$ to be symmetric, its diagonal entries to be zero, and its independent entries have p.d.f. $$P_{i,j}(B_{i,j}) = \frac{c}{n} \delta(B_{i,j}-1) + \left(1 - \frac{c}{n} \delta\left(B_{i,j}\right)\right),$$ then $\m{B}$ belongs to the ensemble of \textit{Erdos-Renyi}. 
-
-\mycomment{
-\begin{exemplo} (Classical Ensembles). 
-	
-	Consider the important, but auxiliary definition.
-	
-	\begin{definicao}
-		The $m \times n$ real, complex, and quaternionic \textit{Ginibre Ensembles} are respectively $\mathbb{M}_{m,n}(\R), \mathbb{M}_{m,n}(\C), \mathbb{M}_{m,n}(\Hh)$ with p.d.f.
-		\begin{equation}
-			\eP^{(Gin)}(\m{G}) = \pi^{-mn\frac{\beta}{2}} \exp{\left( -\tr(\m{G}^{\dagger}\m{G})\right)} = \prod_{i=1}^{m} \prod_{j=1}^{n} \pi^{\frac{\beta}{2}} \exp{\left(-|G_{i,j}|^2 \right)},
-		\end{equation}
-		defined in respect to the Lebesgue measure
-		\begin{equation}
-			\dd \m{G} = \prod_{i=1}^{m} \prod_{j=1}^{n} \prod_{s=1}^\beta \dd G_{i,j}^{(s)}.
-		\end{equation}
-		The coefficient $\beta$ is called the Dyson index and counts the generic number of real components of each matrix entry $G_{i,j}$, so that $\beta=1,2,4$ refers to real, complex and quaternionic entries. These are the Ginibre orthogonal, unitary and symplectic ensembles.
-		\label{Definition: Ginibre Ensemble}
-	\end{definicao}
-
-	Then we can define the very important classical ensembles.
-	
-	\begin{definicao}
-		We define the following classical ensembles
-		\begin{itemize}
-			\item Let $\m{G}$ be drawn from the $n \times n$ real, complex or quaternionic Ginibre Ensemble. Then, the random matrix $\m{H} = \frac{1}{2} (\m{G}^{\dagger} + \m{G})$ represents the corresponding \textit{Gaussian ensemble} (also known as Hermite).
-			\item Let $\m{G}$ be drawn from the $n \times m$ real, complex or quaternionic Ginibre Ensemble. Then, the random matrix $\m{W} = (\m{G}^{\dagger} \m{G})$ represents the corresponding $(m,n)$ \textit{Laguerre ensemble} (also known as Wishart).
-			\item We say $\m{Y}$ an element of the $(m_1, m_2, n)$ real, complex and quaternionic \textit{Jacobi Ensemble} if it is of the form $\m{Y} = \m{W}_1 (\m{W}_1 + \m{W}_2)^{-1}$ where each $\m{W}_i$ belong to the corresponding $(m_i, n)$ Laguerre ensembles with $m_i \geq n$.
-		\end{itemize}
-		\label{Definicao: Direct Gaussian, Laguerre, Jacobi}
-	\end{definicao}
-	
-	The Gaussian ensembles are one the most important examples of Wigner matrices.
-	
-\end{exemplo}
-}
-
-\begin{teorema}
-	(Haar, compact case). Given a compact group $\eS$, let $U \in \eS$ be a generic variable. There exists a unique (up to normalization measure) $\dd \p(U)$ on $\eS$, called the \textit{Haar measure} such that \begin{equation}\int_{\eS} \dd \p(U) < \infty\end{equation} and for any fixed $U_0 \in \eS$, $$\dd\p(U_0U) = \dd\p(U) = \dd\p(UU_0),$$ that is, finite for compact sets and invariant by left and right actions. If $\dd \p(U)$ integrates to unity in $\eS$ it is referred as the \textit{Haar probability measure}.
-\end{teorema}
-
-\begin{exemplo}
-	The $n \times n$ \textit{circular unitary ensemble} (CUE) is the unitary group $U(n)$ with its Haar measure. If $U \in$ CUE($n$), then the symmetric unitary matrix $U^TU$ represents the $n \times n$ \textit{circular orthogonal ensemble} (COE); we have $\eS \cong U(n)/O(n)$. Note that if $U \in U(n)$ and $O \in O(n)$, we have that $U^TU = (OU)^T(OU)$, that is, $U$ and $OU$ are in the same co-class.
-\end{exemplo}
-
-Interestingly, there is only one ensemble in the intersection of both of these approaches: The Gaussian Ensembles. No other ensemble of Wigner matrices are also invariant. For the purpose of this work, we will mainly discuss the latter approach.
-
 \section{Invariant Ensembles}
+\label{Section: Invariant Ensembles}
 
-Invariant ensembles of random matrices are probability spaces which are invariant under conjugation of the appropriate matrix group - these ensembles only depend on their eigenvalue distributions while their eigenvectors become independent and are Haar distributed. Conjugation invariance is a physically natural assumption and simply signifies that all coordinate systems are equivalent. This also implies that the distributions of matrices is uniform conditional on its eigenvalues. To properly understand this concept, let's make precise the definition of three infamous ensembles: \textit{Unitary}, \textit{Orthogonal} and \textit{Symplectic} ensembles. Other ensembles many times can be of interest, but their theory may be less straightforward.
+Invariant ensembles of random matrices can be though as probability spaces which are invariant under conjugation of some appropriate matrix group - think of these ensembles as having probability distribution only depending on their eigenvalue distributions while their eigenvectors are independent are Haar (uniformly) distributed.  The distribution of matrices should be uniform conditional on its eigenvalues. This is not completely unmotivated of course, conjugation invariance is for example a very natural physically assumption; it simply signifies that all coordinate systems are equivalent. To properly understand this concept, let's first introduce three instances of these ensembles: The \textit{Unitary}, \textit{Orthogonal} and \textit{Symplectic} ensembles.  Then we will make precise the definition of such an ensemble. Other ensembles many times can be of interest, but their theory may be less straightforward.
 
 \begin{enumerate}
-	\item \textit{Orthogonal Ensembles} consist of $n \times n$ real symmetric matrices $\m{M} = \cjgt{\m{M}} = \m{M}^T$ together with a probability distribution that is invariant under orthogonal conjugation $\m{M} \mapsto \m{O} \m{M} \m{O}^T$, $\m{O}$ orthogonal, i.e., $\m{O} \m{O}^T = \m{O}^T \m{O} = \m{I}$.  
+	\item \textit{Orthogonal Ensembles} consist of $n \times n$ real symmetric matrices $\m{M} = \m{M}^* = \m{M}^T$ together with a probability distribution that is invariant under orthogonal conjugation $\m{M} \mapsto \m{O} \m{M} \m{O}^T$, $\m{O}$ orthogonal, i.e., $\m{O} \m{O}^T = \m{O}^T \m{O} = \m{I}$.  
 	\item \textit{Unitary Ensembles} consists of $n \times n$ Hermitian matrices $\m{M} = \m{M}^*$ together with a probability distribution that is invariant under unitary conjugation $\m{M} \mapsto \m{U} \m{M} \m{U}^*$, $\m{U}$ unitary, i.e., $\m{U} \m{U}^* = \m{U}^* \m{U} = \m{I}$.  
 	\item \textit{Symplectic Ensembles} consists of $2m \times 2m$ Hermitian self-dual matrices $\m{M} = \m{M}^* = \m{J} \m{M}^T \m{J}^T$ where $\m{J} = \diag{(\sigma, \cdots, \sigma)}$ with $$\sigma = \begin{pmatrix} 0 & -1\\	1 & 0 \end{pmatrix}$$  together with a probability distribution that is invariant under unitary-symplectic conjugation $\m{M} \mapsto \m{U} \m{M} \m{U}$, with $\m{U}$ unitary and symplectic, i.e. $\m{U} \m{U}^* = \m{U}^* \m{U} = \m{I}$ and $\m{U} \m{J} \m{U}^T = \m{J}$.
 \end{enumerate}
 
-Examples of such invariant ensembles are the Gaussian Orthogonal, Unitary and Symplectic ensembles - \textit{GOE}, \textit{GUE}, \textit{GSE}. These take Gaussian distributed and independent entries. We may also choose to include the Ginibre Ensembles in the types of invariance we will work with. The three types of Ginibre Emsembles are: Ginibre Orthogonal, Unitary and Symplectic are matrices with independent, identically distributed standard complex Gaussian entries. In this case, the eigenvalues are distributed in the complex plane. 
+Examples of such invariant ensembles are the Gaussian Orthogonal, Unitary and Symplectic ensembles - \textit{GOE}, \textit{GUE}, \textit{GSE}: these are matrices that take \sigla{i.i.d.}{independent and identically distributed} real, complex and quaternionic Gaussian entries (minus the symmetries). The Gaussian Ensembles are infamous and deserve a lot more discussing, however, there is another class of ensembles more important to this work, the \textit{Ginibre Ensembles}. The three types of Ginibre Ensembles are, again: Ginibre Orthogonal, Unitary and Symplectic. These are matrices with i.i.d. standard real, complex and quaternionic Gaussian entries. In this case, the eigenvalues are distributed in the complex plane. We will come back to this examples, for now, let's make the definition precise. 
 
-Let's make it precise. Given a group $\mathcal{G}$ and a group action $\mathcal{A}: \mathcal{G}\times \eS \rightarrow \eS$, a random matrix ensemble $\eE = (\eS, \eP)$ is said to be $\mathcal{A}$-invariant if the probability measure $\dd \eP(\m{X}) \deff \eP(\m{X}) \dd \m{X}$ satisfies
-\begin{equation}
-	\dd \eP(\mathcal{A}(g, \m{X})) = \dd \eP(\m{X})
-\end{equation}
-for every $g \in \mathcal{G}$. The term \textit{invariant matrix ensemble} usually refers to invariance under the mapping $\m{X} \mapsto g\m{X}g^{-1}$ for $g$ drawn from the appropriate compact group $\mathcal{G}$; when a matrix ensemble is considered to be irreducible and its underlying set of matrix is $S \subseteq \mathbb{M}_{n,n}(\R), \mathbb{M}_{n,n}(\C), \mathbb{M}_{n,n}(\Hh)$, the group $\mathcal{G}$ must be one of $O(n), U(n), Sp(2n)$. Then, we say the ensemble is orthogonal, unitary or symplectic.
-
-\begin{definicao} (Invariant Ensemble)
-	We call $(\eS, \eP)$ an \textbf{Invariant Ensemble} if $\eS$ is the set of real, complex or quaternionic matrices ($\beta = 1, 2, 4$) with the probability density funciton
+\begin{definicao} (Invariance)
+	Given a group $\mathcal{G}$ and a group action $\mathcal{A}: \mathcal{G}\times \eS \rightarrow \eS$, a random matrix ensemble $\eE = (\eS, \eP)$ is said to be \textbf{$\mathcal{A}$-invariant} if the probability measure $\dd \eP(\m{X}) \deff \eP(\m{X}) \dd \m{X}$ satisfies
 	\begin{equation}
-		\eP(\m{M}) = \frac{1}{\pZ{N,\beta}{}}\prod_{1\leq j < k \leq n}^N |\lambda_j - \lambda_k|^\beta \prod_{j=1}^{N} \ee^{- \beta N V(\lambda_j)}.
+		\dd \eP(\mathcal{A}(g, \m{X})) = \dd \eP(\m{X})
 	\end{equation}
-	\label{Definition: Invariant}
+	for every $g \in \mathcal{G}$. 
+	\label{Definition: Invariance}
 \end{definicao}
 
-We can also determine the probability measure $\dd \eP(\m{X})$ to be invariant under the adjoint action of a group $\mathcal{G}$ is we establish that both the p.d.f. $\eP(\m{X})$ and the Lebesgue measure $\dd \m{X}$ are invariant under this action. The invariance of the Lebesgue measure is more involved and depends on whether or not the associated matrix set $\eS$ consists of purely of self-adjoint matrices. Because of that, we start with the case of the Gaussian, Laguerre and Jacobi ensembles.
+The term \textit{invariant matrix ensemble} usually refers to invariance under the mapping $\m{X} \mapsto g\m{X}g^{-1}$ for $g$ drawn from the appropriate compact group $\mathcal{G}$; when a matrix ensemble is considered to be irreducible and its underlying set of matrix is $S \subseteq \mathbb{M}_{n,n}(\R), \mathbb{M}_{n,n}(\C), \mathbb{M}_{n,n}(\Hh)$, the group $\mathcal{G}$ must be one of $O(n), U(n), Sp(2n)$ - the orthogonal, unitary and symplectic space of matrices. Then, we say the ensemble is \textit{Orthogonal}, \textit{Unitary} or \textit{Symplectic}.
 
+\begin{exemplo}
+	A random matrix ensemble is said to be a \textit{Classical Matrix Ensemble} if its eigenvalue j.p.d.f. is of the form
+	\begin{equation}
+		\p^{(w)}_n(\mmany{\lambda}{n};\beta) = \frac{1}{\pN{n,\beta}{(\wf)}} \prod_{i=1}^{n} \wf(\lambda_i) |\Delta_n(\lambda)|^\beta, \quad \beta = 1,2,4,
+	\end{equation}
+	where $\pN{n,\beta}{(\wf)}$ is the normalization constant, $\Delta_n(\lambda)$ is the Vandermonde determinant and the weight function has, among others, one of the following forms
+	\begin{equation}
+		\wf(\lambda) = \begin{cases}
+			\ee^{-\lambda^2} & \text{Gaussian}, \\
+			\lambda^a \ee^{-\lambda} \chi_{\{\lambda>0\}} & \text{Laguerre}, \\
+			\lambda^a (1-\lambda)^b \chi_{\{0<\lambda<1\}} & \text{Jacobi}.
+		\end{cases}
+	\end{equation}
+	where $\chi$ is the indicator function. Especially, these are invariant ensembles under the orthogonal, unitary and symplectic conjugation (for $\beta = 1, 2, 4$).
+	\label{Example: Classical Ensembles}
+\end{exemplo}
+
+We should be able to show that the probability measure $\dd \eP(\m{X}) = \eP(\m{X}) \dd \m{X}$ for the Ginibre and Classical Ensembles have the foretold orthogonal, unitary and symplectic invariance under the adjoint action of the appropriate group $\mathcal{G} \in \{O(n), U(n), Sp(2n)\}$. This is to say that we should establish that both the p.d.f. $\eP(\m{X})$ and the Lebesgue measure $\dd \m{X}$ are invariant under this action. This is not trivial and also not the focus of this text. However, believing this to be an interesting concept that elucidates the definition we move forward using as guide the very well written thesis by \citeonline{rahman2023recursivecharacterisationsrandommatrix}. The p.d.f. $\eP(\m{X})$ is straightforward as it only depends on the eigenvalues which remain unchanged by any of the actions. The invariance of the Lebesgue measure is more involved and depends on whether or not the associated matrix set $\eS$ consists of purely self-adjoint matrices. For the Classical Ensembles we can use the following proposition.
+
+%Because of that, we start with the case of the Gaussian, Laguerre and Jacobi ensembles.
 
 %We can say directly using \ref{Def: Ginibre} and \ref{Prop: Gaussian, Laguerre, Jacobi} that the p.d.f.s for Ginibre, Gaussian, Laguerre and Jacobi are invariant under the appropriate adjoint actions.
 
@@ -178,29 +416,29 @@ We can also determine the probability measure $\dd \eP(\m{X})$ to be invariant u
 %\end{proof}
 
 
-\begin{proposicao}
-	Given an $n\times n$ real $(\beta = 1)$, complex $(\beta = 2)$ or quaternionic $(\beta = 4)$ self-adjoint matrix variable $\m{X}$, diagonalize it as $\m{X} = \m{U} \m{\Lambda} \m{U}^{\dagger}$ where $\m{\Lambda} = \diag(\mmany{\lambda}{n})$ is a diagonal matrix of eigenvalues, and $\m{U}$ is corresponding matrix of eigenvectors; the spectral theorem dictates that $\m{U}$ is an element of $O(n)$ in the real case, $U(n)$ in the complex case, and $Sp(2n)$ in the quaternionic case. To make the mapping $\m{X} \mapsto \m{U}\m{\Lambda}\m{U}^{\dagger}$ bijective, we insist that the eigenvalues are listed in increasing order and the first row of $\m{U}$ is non-negative real. The canonical Lebesgue measure 
+\begin{proposicao} \cite{rahman2023recursivecharacterisationsrandommatrix}
+	Given an $n\times n$ real $(\beta = 1)$, complex $(\beta = 2)$ or quaternionic $(\beta = 4)$ self-adjoint matrix variable $\m{X}$, diagonalize it as $\m{X} = \m{U} \m{\Lambda} \m{U}^{*}$ where $\m{\Lambda} = \diag(\mmany{\lambda}{n})$ is a diagonal matrix of eigenvalues, and $\m{U}$ is corresponding matrix of eigenvectors; the spectral theorem dictates that $\m{U}$ is an element of $O(n)$ in the real case, $U(n)$ in the complex case, and $Sp(2n)$ in the quaternionic case. To make the mapping $\m{X} \mapsto \m{U}\m{\Lambda}\m{U}^{*}$ bijective, we insist that the eigenvalues are listed in increasing order and the first row of $\m{U}$ is non-negative real. The canonical Lebesgue measure 
 	\begin{equation}
 		\dd \m{X} = \prod_{i=1}^{n} \dd X_{ii} \prod_{1\leq j < k \leq n} \prod_{s=1}^{\beta} \dd X^{s}_{jk}
 	\end{equation}
 	on the set of adjoint matrices decomposes as 
 	\begin{equation}
-		\dd \m{X} = |\Delta_n|^{\beta} \dd \m{\Lambda} \dd \pe_{Haar}(\m{U})
+		\dd \m{X} = |\Delta_n|^{\beta} \dd \m{\Lambda} \dd \eP_{Haar}(\m{U})
 	\end{equation}
-	where $\dd \m{\Lambda} = \prod_{i=1}^n \dd \lambda_i$ is the Lebesgue measure on the \textit{Weyl Chamber} ${\lambda_1 < \cdots < \lambda_n} \subset \R^n$ and
+	where $\dd \m{\Lambda} = \prod_{i=1}^n \dd \lambda_i$ is the Lebesgue measure on the \textit{Weyl Chamber} with ${\lambda_1 < \cdots < \lambda_n} \subset \R^n$ and
 	\begin{equation}
-		\dd \pe_{Haar}(\m{U}) = \bigwedge_{1\leq l < k \leq n} \bigwedge_{s=1}^\beta \left( \m{U}^{\dagger} [\dd U_{ij}]_{i,j=1}^n \right)_{lk}^{(s)}
+		\dd \eP_{Haar}(\m{U}) = \bigwedge_{1\leq l < k \leq n} \bigwedge_{s=1}^\beta \left( \m{U}^{*} [\dd U_{ij}]_{i,j=1}^n \right)_{lk}^{(s)}
 	\end{equation}
-	is the unnormalized Haar measure on the quotient space $O(n)/O(1)^n$ ($\beta = 1$), $U(n)/U(1)^n$ ($\beta = 2$), or $Sp(2n)/Sp(2)^n$ ($\beta = 4$), given by the exterior product of the independent real components of the entries of the matrix of differentials $\m{U}^{\dagger} [\dd U_{ij}]_{i,j=1}^n$.
+	is the unnormalized Haar measure on the quotient space $O(n)/O(1)^n$ ($\beta = 1$), $U(n)/U(1)^n$ ($\beta = 2$), or $Sp(2n)/Sp(2)^n$ ($\beta = 4$), given by the exterior product of the independent real components of the entries of the matrix of differentials $\m{U}^{*} [\dd U_{ij}]_{i,j=1}^n$.
 \end{proposicao}
 
-At this point, one can check (albeit with some non-trivial computations) that the Lebesgue measure is indeed invariant in these cases for the appropriate group action. 
+At this point, it is possible to check (albeit with some very non-trivial computations) that the Lebesgue measure is indeed invariant in these cases for the appropriate group action. This is a matter of checking that the Lebesgue measure on the Weyl Chamber is invariant, which is relatively straightforward, and that, less trivially, the unnormalized Haar measure on the quotient space is also invariant. 
 
-The situation concerning the $n \times n$ Ginibre Ensemble is more complicated. In the $1965$ work, Ginibre extended the proposition above and its arguments starting with the diagonalization formula $\m{G} = \m{P}\m{\Lambda}\m{P}^{-1}$ - note that, with $\m{\Lambda}$ diagonal of eigenvalues and $\m{P}$ of eigenvectors, this formula is valid with probability one since the subset of matrices with repeated eigenvalues has measure zero. However, $\m{P}$, diagonalizing matrix, is not necessarily orthogonal, unitary, nor symplectic. Nonetheless, QR decomposition can be used to write $\m{P} = \m{U}\m{T}$ where $\m{U}$ is as before and $\m{T}$ is an upper triangular matrix with real positive diagonal entries. Then,
+The situation concerning the $n \times n$ Ginibre Ensemble is more complicated. In the $1965$ work, Ginibre extended the proposition above and its arguments starting with the diagonalization formula $\m{G} = \m{P}\m{\Lambda}\m{P}^{-1}$ - note that, with $\m{\Lambda}$ diagonal of eigenvalues and $\m{P}$ of eigenvectors, this formula is valid with probability one since the subset of matrices with repeated eigenvalues has measure zero. However, $\m{P}$, diagonalizing matrix, is not necessarily orthogonal, unitary, nor symplectic. Nonetheless, QR decomposition can be used to write $\m{P} = \m{U}\m{T}$ where $\m{U}$ is as it was before and $\m{T}$ is an upper triangular matrix with real positive diagonal entries. Then,
 \begin{equation}
-	\dd \m{G} = \J(\lambda) \dd \m{\Lambda} \dd \pe_{Tri}(\m{T}) \dd \pe_{Haar}(\m{U})
+	\dd \m{G} = \J(\lambda) \dd \m{\Lambda} \dd \eP_{Tri}(\m{T}) \dd \eP_{Haar}(\m{U})
 \end{equation}
-where $\dd \m{\Lambda}$ is the Lebesgue measure on the space housing the eigenvalues, $\dd \pe_{Haar}(\m{U})$ is the Haar measure defined before, $J(\lambda)$ is a Jacobian consisting of products of Vandermonde determinants involving the eigenvalues, and $\pe_{Tri}(\m{T})$ is some measure dependent on the entries of T. From here, it follows that the Lebesgue measure on $\m{G}$ is invariant under the desired conjugation action.
+where $\dd \m{\Lambda}$ is the Lebesgue measure on the space housing the eigenvalues, $\dd \eP_{Haar}(\m{U})$ is the Haar measure defined before, $J(\lambda)$ is a Jacobian consisting of products of Vandermonde determinants involving the eigenvalues, and $\dd \eP_{Tri}(\m{T})$ is some measure dependent on the entries of T. From here, it can be shown that the Lebesgue measure on $\m{G}$ is invariant under the desired conjugation action.
 
  \subsection{Orthogonal Polynomial Ensembles}
  \label{Subsection: Orthogonal Ensembles}
@@ -208,108 +446,205 @@ where $\dd \m{\Lambda}$ is the Lebesgue measure on the space housing the eigenva
  The subclass of invariant matrix ensembles this section refers to are those self-adjoint matrices $\m{X}$ with p.d.f.s $\eP(\m{X})$ such that one has the decomposition
  \begin{equation}
  	\eP(\m{X}) = \prod_{i=1}^n \wf(\lambda_i),
+ 	\label{Equation: invariance pseudodefinition}
  \end{equation}
- where $\{\lambda_i\}$ are the indistinguishable eigenvalues of $\m{X}$ and $\wf(\lambda)$ is some continuous weight function that is real valued on $\R$ and decays fast enough as $|\lambda| \rightarrow \infty$. This is the same as removing the constrain on the weight function of the classical ensembles. We are interested in the probability distribution of the eigenvalues $\lambda_1, \cdots, \lambda_m$ of $\m{X}$. Those eigenvalues must be simple.
+ where $\{\lambda_i\}$ are the indistinguishable eigenvalues of $\m{X}$ and $\wf(\lambda)$ is some continuous weight function that is real valued on $\R$ and decays fast enough as $|\lambda| \rightarrow \infty$. This is the same as removing the constrain on the weight function of the classical ensembles. With all of this, we can make the definition more formal.
  
- \begin{proposicao}
- 	The set of Hermitian matrices with simple spectra is open and dense in $\M$ and has full measure, that is, generally, hermitian matrices have simple eigenvalues.
+ \begin{definicao}
+	Let $\beta = 1, 2, 4$, fix $n \in \N$ and let $\wf(\lambda)$ be a continuous, non-negative, real-valued function such that $\wf(\lambda) = o(\lambda^{-\beta(n-1)-1})$. Then, the j.p.d.f.
+	\begin{equation}
+		\p^{(w)}_n(\mmany{\lambda}{n};\beta) = \frac{1}{\pN{n,\beta}{(w)}} \prod_{i=1}^{n} \wf(\lambda_i) |\Delta_n(\lambda)|^\beta
+	\end{equation}
+	describes the $n$-sized \sigla{OPE}{\textbf{orthogonal polynomial ensemble}} when $\beta = 2$, \sigla{$\R$-SOPE}{\textbf{skew-orthogonal polynomial ensemble of real type}} when $\beta=1$, and the \sigla{$\Hh$-SOPE}{\textbf{skew-orthogonal polynomial ensemble of quaternion type}} when $\beta = 4$.
+	\label{Definition: polynomial ensemble}
+\end{definicao}
+
+If we stare at this formula strongly and for long, the terms become less mysterious. One  may notice that this expression is simply given by the normalized product of some weight function $\wf(\lambda) = \ee^{- \beta N V(\lambda)}$ and the Jacobian of the transformation $\m{M} \mapsto \m{G} \m{\Lambda} \m{G}^*$ given by the Vandermonde determinant to some exponent $\beta$. This is an interesting observation and it is in accordance to \autoref{Equation: invariance pseudodefinition}. More than that, there is an observation to be made here in terms of the behavior of the eigenvalues. Notice that the Jacobian takes arbitrarily small values if there are equally arbitrarily close eigenvalues in the set. At first instance this means that our set is most likely simple, i.e. without repeated eigenvalues. Moreover it also means that the eigenvalues show some repulsion with each-other. Why then one might not expect the eigenvalues to scatter in the line? This is the role of the weight function. More than characterizing the ensemble, in the formula it has the role of ensuring integrability, i.e., holding the eigenvalues in a compact set. If this feels like some physical repelling system, fear not, this interpretation will be expanded in \autoref{Section: Coulomb Gas}.
+
+\begin{exemplo}
+	The univariate eigenvalue density for the Gaussian Ensembles is expressed by
+	\begin{equation}
+	\p_n(\mmany{\lambda}{n}) = \frac{1}{\pZ{n, \beta}{}} \exp{\left\{-\frac{1}{2} \sum_{i = 1}^{n} \lambda_i^2\right\}} \prod_{i < j} |\lambda_i - \lambda_j|^\beta.
+	\end{equation}
+	where naturally we can identify
+	\begin{equation}
+		 \exp{\left\{-\frac{1}{2} \sum_{i = 1}^{n} \lambda_i^2\right\}} \revdeff \prod_{i=1}^{n} \wf(\lambda_i).
+	\end{equation}
+\end{exemplo}
+
+This is the furthest we will take the theory for $\beta = 1, 4$. Although those cases are of interest, the structure for $\beta = 2$ allow us to work with in a simpler way. More than that, our main ensemble, to be treated in \autoref{chapter: planarensembles}, has $\beta = 2$. In any way, we mentioned the eigenvalues to be simple but did not provide any proof. For Hermitian matrices, the following proposition give us such result. 
+
+\begin{proposicao}
+	The set of Hermitian matrices with simple spectra is open and dense in $\M_n$ ($n$-dimensional Hermitian matrices) and has full measure, that is, generally, hermitian matrices have simple eigenvalues.
  \end{proposicao}
  \begin{proof}
- 	Let the Hermitian matrix $\m{M}$ have the spectral decomposition
- 	\begin{equation}
- 		\m{M} = \m{U} \m{\Lambda} \m{U}^*.
- 	\end{equation}
- 	There exists $\mmany{\epsilon}{n}$ real, with $\sum_{i=1}^n |\epsilon_i| \rightarrow 0$, such that 
- 	\begin{equation}
- 		\m{M}_\epsilon = \m{U}
- 		\begin{bmatrix}
- 			\lambda_1 + \epsilon_1 & \cdots & 0 \\
- 			\vdots & \ddots & \vdots \\
- 			0 & \cdots & \lambda_n + \epsilon_n \\
- 		\end{bmatrix}
- 		\m{U}^* = \m{M}^*_\epsilon
- 	\end{equation} 
- 	has a simple spectrum. As $\m{M} \rightarrow \m{M}$, matrices with simple spectra are dense in $\M$ the space of hermitian matrices.
+	Let the Hermitian matrix $\m{M}$ have the spectral decomposition
+	\begin{equation}
+		\m{M} = \m{U} \m{\Lambda} \m{U}^*.
+	\end{equation}
+	There exists $\mmany{\epsilon}{n}$ real, with $\sum_{i=1}^n |\epsilon_i| \rightarrow 0$, such that 
+	\begin{equation}
+		\m{M}_\epsilon = \m{U}
+		\begin{bmatrix}
+			\lambda_1 + \epsilon_1 & \cdots & 0 \\
+			\vdots & \ddots & \vdots \\
+			0 & \cdots & \lambda_n + \epsilon_n \\
+		\end{bmatrix}
+		\m{U}^* = \m{M}^*_\epsilon
+	\end{equation} 
+	has a simple spectrum. As $\m{M}_\epsilon \rightarrow \m{M}$, matrices with simple spectra are dense in $\M_n$ the space of $n$-dimensional Hermitian matrices.
  \end{proof}
  
- 
- 
- Because the matrices are self-adjoint, there exists $\m{U} \in U(n)$ such that
+ We also stated that the expression encompasses the Jacobian of the transformation $\m{M} \mapsto \m{G} \m{\Lambda} \m{G}^*$: Now its time to show why that's true. 
+ We are interested in the probability distribution of the eigenvalues $\lambda_1, \cdots, \lambda_m$ of $\m{X}$.  Because the matrices are self-adjoint, there exists $\m{U} \in U(n)$, the Unitary group, such that
  \begin{equation}
- 	\m{U}^* \m{X} \m{U} = \m{\Lambda} = \diag{(\mmany{\lambda}{n})}.
+	\m{U}^* \m{X} \m{U} = \m{\Lambda} \deff \diag{(\mmany{\lambda}{n})}.
  \end{equation} 
- We make such a transformation
+ To arrive at the expression for the eigenvalue distribution we make the previously stated transformation
  \begin{equation}
- 	\m{X} \mapsto (\m{U}, \m{\Lambda})	
+	\m{X} \mapsto (\m{U}, \m{\Lambda})	
  \end{equation}
- and then integrate the eigenvector element away, so that we are left with the part depending on the eigenvalues. This can be done using Weyls formula.
+ and then integrate the eigenvector element away, so that we are left with the part depending on the eigenvalues
+ \begin{align}
+	\dd \p_n^{(w)}(\mmany{\lambda}{n}; \beta=2) & = \int_{U(n)/U(1)^n} \eP(X_{1,1}, \cdots , X_{n,n}) \dd \m{X}, \\
+	& = \int_{U(n)/U(1)^n} \eP(X_{1,1}(\m{\Lambda}, \m{U}), \cdots , X_{n,n}(\m{\Lambda}, \m{U})| J(\m{X} \mapsto \{\m{\Lambda}, \m{U}\})) \dd \m{\Lambda} \dd \m{U}.
+ \end{align}
+ This integral can be evaluated using Weyls formula. 
  \begin{teorema}
- 	\textit{(Weyl)} Suppose $f$ is an integrable class function on $\Se_n$, i.e., $f(\m{U} \m{X} \m{U}^*) = f(M)$ for all $\m{U} \in U(n)$. Then we have
- 	\begin{equation}
- 		\int_{\He_n} f(\m{X}) \dd \m{X} = c_n \int_{R^n} f(\mmany{\lambda}{n}) \prod_{i < j} (\lambda_j - \lambda_i)^\beta \dd \lambda_1 \cdots \dd \lambda_n,
- 	\end{equation}
- 	where $\Se_n$ are the self-adjoint matrices of order $n$ and
- 	\begin{equation}
- 		c_n = \frac{\pi^{n(n-1)/2}}{\prod_{j=1}^{n} j!}.
- 	\end{equation}
- 	More generally, 
- 	\begin{equation}
- 		\dd M = c_n \prod_{i < j} (\lambda_i - \lambda_j)^\beta  \dd \lambda_1 \cdots \dd \lambda_n \dd \m{U},
- 	\end{equation}
- 	where $\dd \m{U}$ is the Haar measure on $U(n)$
+	\textit{(Weyl)} Suppose $f$ is an integrable class function on $\Se_n$, i.e., $f(\m{U} \m{X} \m{U}^*) = f(M)$ for all $\m{U} \in U(n)$. Then we have
+	\begin{equation}
+		\int_{\He_n} f(\m{X}) \dd \m{X} = c_n \int_{R^n} f(\mmany{\lambda}{n}) \prod_{i < j} (\lambda_j - \lambda_i)^\beta \dd \lambda_1 \cdots \dd \lambda_n,
+	\end{equation}
+	where $\Se_n$ are the self-adjoint matrices of order $n$ and
+	\begin{equation}
+		c_n = \frac{\pi^{n(n-1)/2}}{\prod_{j=1}^{n} j!}.
+	\end{equation}
+	More generally, 
+	\begin{equation}
+		\dd M = c_n \prod_{i < j} (\lambda_i - \lambda_j)^\beta  \dd \lambda_1 \cdots \dd \lambda_n \dd \m{U},
+	\end{equation}
+	where $\dd \m{U}$ is the Haar measure on $U(n)$
+	\label{Theorem: Weyls}
  \end{teorema}
- Because of this, we arrive at the following definition.
+
+The condition on the weight function guarantees that the j.p.d.f. has a well-defined normalization constant. With \autoref{Theorem: Weyls} we can finally state, as mentioned in the definition,
+\begin{align}
+	\p_n^{(w)}(\mmany{\lambda}{n}; \beta=2) & = \vol(\mathcal{G}(n)/\mathcal{G}(1)^n) \eP(X_{1,1}(\m{\Lambda}), \cdots , X_{n,n}(\m{\Lambda})) |\Delta_n(\lambda)|^\beta \\
+	& = \vol(\mathcal{G}(n)/\mathcal{G}(1)^n) \eP(X_{1,1}(\m{\Lambda}), \cdots , X_{n,n}(\m{\Lambda}))  \prod_{i < j} (\lambda_i - \lambda_j)^2 \\
+	& \revdeff  \vol(\mathcal{G}(n)/\mathcal{G}(1)^n) \prod_{i=1}^n \wf(\lambda_i) \prod_{i < j} (\lambda_i - \lambda_j)^2 \\
+	& \revdeff \frac{1}{\pN{n,2}{(w)}}  \prod_{i=1}^n \wf(\lambda_i)  \prod_{i < j} (\lambda_i - \lambda_j)^2.
+\end{align}
+
+Moreover, if one wishes to integrate the structures given by the Jacobian against the product of weight functions, it is beneficial to use monic polynomials $\{q_j(\lambda)\}_{j=0}^\infty$ that are skew-orthogonal with respect to the weight $\wf(\lambda)$. This is the reason for the name of the polynomial ensembles. To properly show how to use this structure, we will manipulate the expression of $\p_n$ a little. Notice that
+\begin{equation}
+	\prod_{i<j}^{n} |\lambda_i - \lambda_j|^2 = {\det\left(q_{j-1}^{(2)}(\lambda_i)\right)}^2_{n\times n}.
+\end{equation}
+Using the fact that $(\det(A))^2 = \det(\sum_{j=1}^{n} A_{ji} A_{jk})$ we can rewrite
+\begin{equation}
+	\prod_{i<j}^{n} |\lambda_i - \lambda_j|^2 = {\det\left(\sum_{j=1}^{n} q_{j-1}^{(2)}(\lambda_i) q_{j-1}^{(2)}(\lambda_k) \right)}_{n\times n}.
+\end{equation}
+Then, start by putting the weight function inside the determinant in the following manner: Take $\wf(\lambda_i) = \sqrt{\wf(\lambda_i)}\sqrt{\wf(\lambda_i)}$ and multiply the $i$-th column of the matrix by one of the terms. The other term we multiply by the $i$-th line of the matrix. Now, we should get something like
+\begin{align}
+	\p^{(w)}_n(\mmany{\lambda}{n};\beta=2) & = \frac{1}{\pN{n,2}{(w)}} {\det\left(\sqrt{\wf(\lambda_i)\wf(\lambda_k)} \sum_{j=1}^{n} q_{j-1}^{(2)}(\lambda_i) q_{j-1}^{(2)}(\lambda_k) \right)}_{i,k=1}^{n}, \\
+	& \deff  \frac{1}{\pN{n,2}{(w)}} \det\left[ K_n^{(2)}(\lambda_i, \lambda_k) \right]_{i,k=1}^{n}.
+	\label{Equation: determinantal}
+\end{align}
+
+This is the so-called \textit{Determinantal Structure} of the $\beta=2$ orthogonal polynomial ensembles. This will be recapitulated in \autoref{chapter: pointprocesses}.
+
+\begin{exemplo} (Gaussian Measure)
+	 Let's make it explicit the probability distribution on Gaussian Ensembles. We define $\m{M} = n^{-\frac{1}{2}} \m{M'} \in \mathcal{M}_{n,n}(\mathcal{F})$ to be of the Gaussian Ensemble if the entries of $\m{M'}$ are independent and normally distributed as follows: 
+	 \begin{equation}
+	 M'_{i,j} \sim
+	 \begin{cases}
+	 	\mathcal{N}_{\mathcal{F}}(0,1/2) &  \ \text{for} \ i \neq j,\\
+	 	\mathcal{N}_{\mathcal{F}}(0,1) & \ \text{for} \ i = j,
+	 \end{cases}
+	 \quad \text{if} \ i \leq j.
+	 \end{equation}
+	 where $\mathcal{F}$ is such as the real line, complex plane or quaternion space. Note that this turns $\m{M}$ into a Scaled Wigner Matrix. We know by the spectral theorem and Weyls formula that we can write
+	\begin{align}
+		\p_n(\mmany{\lambda}{n}) 
+		& = \int_{\mathbb{V}_n} \eP(\m{M}) \dd \m{M} \\
+		&=  \int_{\mathbb{V}_n} \eP(\m{\Lambda}, \m{O}) \prod_{i<j} |\lambda_j - \lambda_i|^2 \dd \m{O} \dd \m{\Lambda} \\
+		& = \eP(\m{\Lambda}) \prod_{i<j} |\lambda_j - \lambda_i|^2 \int_{\mathbb{V}_n}  \dd \m{O} \\
+		 & = \eP(\m{\Lambda}) \prod_{i<j} |\lambda_j - \lambda_i|^2 \vol(\mathbb{V}_n)
+	\end{align}
+	which lead us to write because of the Gaussian $\wf$ form
+	\begin{equation}
+		\p_n(\mmany{\lambda}{n}) = \frac{1}{\pZ{n, \beta=2}{}} \exp{\left\{-\frac{1}{2} \sum_{i = 1}^{n} \lambda_i^2\right\}} \prod_{i < j} |\lambda_i - \lambda_j|^2.
+	\end{equation}
+	with $\pZ{n, \beta}{}$ the partition function, or normalizer of the expression. We could also do the same calculation for the GUE and GSE ensembles, which would result in the following general expression, with $\beta = 1, 4$,
+	\begin{align}
+			\p_n(\mmany{\lambda}{n}) 
+			&= \frac{1}{ n! \pZ{n, \beta}{}} \exp{\left\{- \left(\sum_{i = 1}^{n} \frac{\lambda_i^2}{2} - \sum_{i < j}^{n} \log{|\lambda_i - \lambda_j|^{\beta}} \right)\right\}}, \\
+			& = \frac{1}{\pZ{n, \beta}{(ord)}} \ee^{-\beta_n \mathcal{H}_n(\vec{\lambda})},
+		\label{Equation: Gaussian measure gibbs}
+	\end{align}
+	a very familiar expression for a physicist, as it is a Gibbs measure.
+\end{exemplo}
+
+Let's retrace this steps with mathematically proper definitions.  We start by properly defining the orthogonality condition on the polynomials.
+ 
  \begin{definicao}
- 	Let $\beta = 1, 2, 4$, fix $n \in \N$ and let $\wf(\lambda)$ be a continuous, non-negative, real-valued function such that $\wf(\lambda) = o(\lambda^{-\beta(n-1)-1})$. Then, the j.p.d.f.
- 	\begin{equation}
- 		\p^{(w)}(\mmany{\lambda}{n};\beta) = \frac{1}{\pN{n,\beta}{(w)}} \prod_{i=1}^{n} \wf(\lambda_i) |\Delta_n(\lambda)|^\beta
- 	\end{equation}
- 	describes the $n$-sized \sigla{OPE}{\textbf{orthogonal polynomial ensemble}} when $\beta = 2$, \sigla{$\R$-SOPE}{\textbf{skew-orthogonal polynomial ensemble of real type}} when $\beta=1$, and the \sigla{$\Hh$-SOPE}{\textbf{skew-orthogonal polynomial ensemble of quaternion type}} when $\beta = 4$.
- 	\label{Definition: measure-weight}
+	With $\wf(\lambda)$ a suitable function, define the following inner products on polynomial space:
+	\begin{equation}
+		\langle f,g \rangle^{(2)} \deff \int_{\R} f(x) g(x) \wf(x) \dd x
+	\end{equation}
+	For $\beta = 2$, let $\{q_j^{(\beta)}\}_{j=0}^\infty$ be a family of monic polynomials such that each $q_j^{(\beta)}(\lambda)$ is of degree $j$. Impose also that exists finite positive constants $\{r_j^{(\beta)}\}_{j=0}^\infty$ s.t.
+	\begin{equation}
+		\langle q_j^{(2)}, q_k^{(2)} \rangle^{(2)} = r_j^{(2)} \chi_{j=k}
+	\end{equation}	
+	for any $j,k>0$. Then, we say that the family \textbf{$\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$ is orthogonal in respect to $\wf(\lambda)$}.
  \end{definicao}
  
- The condition on the weight function guarantees that the j.p.d.f. has a well-defined normalization constant. If one wishes to integrate the determinantal and Pfaffian structures given by the Jacobian against the product of weight functions, it is beneficial to use monic polynomials $\{q_j(\lambda)\}_{j=0}^\infty$ that are skew-orthogonal with respect to the weight $\wf(\lambda)$.
- 
- \begin{definicao}
- 	With $\wf(\lambda)$ a suitable function, define the following inner products on polynomial space:
- 	\begin{equation}
- 		\langle f,g \rangle^{(2)} \deff \int_{\R} f(x) g(x) \wf(x) \dd x
- 	\end{equation}
- 	For $\beta = 2$, let $\{q_j^{(\beta)}\}_{j=0}^\infty$ be a family of monic polynomials such that each $q_j^{(\beta)}(\lambda)$ is of degree $j$. Impose also that exists finite positive constants $\{r_j^{(\beta)}\}_{j=0}^\infty$ s.t.
- 	\begin{equation}
- 		\langle q_j^{(2)}, q_k^{(2)} \rangle^{(2)} = r_j^{(2)} \chi_{j=k}
- 	\end{equation}	
- 	for any $j,k>0$. Then, we say that the family $\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$ is orthogonal in respect to $\wf(\lambda)$.
- \end{definicao}
- 
- We can now express the eigenvalue j.p.d.f. $\p^{(w)}(\mmany{\lambda}{n};\beta)$ as a determinant. For other values of $\beta$, i.e. $\beta = 1, 4$ this could also have a \textit{Pfaffian} structure with a very similar construction. 
+ The result we found in \autoref{Equation: determinantal} is an infamous theorem that is better expressed in the following way.
  
  \begin{teorema}
- 	Let $\{q_j^{(\beta)}(x)\}_{j=0}^{\infty}, \{r_j^{(\beta)}\}_{j=0}^{\infty}$, be as in the definition above, and let $n \in \N$. The kernel corresponding respectively to the complex case is
- 	\begin{equation}
- 		K_n^{(2)}(x,y) \deff \sqrt{\wf(x) \wf(y)} \sum_{k=0}^{N-1} \frac{1}{r_k^{(2)}} q_k^{(2)}(x) q_k^{(2)}(y).
- 	\end{equation}
- 	Then, the eigenvalue j.p.d.f. of Definition \ref{Definition: measure-weight} is given by
- 	\begin{equation}
- 		p^{(w)}(\mmany{\lambda}{n};\beta) = \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{n}, \quad \beta = 2.
- 	\end{equation}
- 	\label{Theorem: Kernel}
+	Let $\{q_j^{(\beta)}(x)\}_{j=0}^{\infty}, \{r_j^{(\beta)}\}_{j=0}^{\infty}$, be as in the definition above, and let $n \in \N$. The kernel corresponding respectively to the complex case is
+	\begin{equation}
+		K_n^{(2)}(x,y) \deff \sqrt{\wf(x) \wf(y)} \sum_{k=0}^{N-1} \frac{1}{r_k^{(2)}} q_k^{(2)}(x) q_k^{(2)}(y).
+	\end{equation}
+	Then, the eigenvalue j.p.d.f. of Definition \ref{Definition: measure-weight} is given by
+	\begin{equation}
+		p^{(w)}_n(\mmany{\lambda}{n};\beta=2) = \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{n}.
+	\end{equation}
+	\label{Theorem: Kernel}
  \end{teorema}
  
  
- The significance of this theorem is that, for $\beta = 2$, as for other values, the kernels $K_n^{(\beta)}(x,y)$ have \textit{Reproducing properties} such as
+ The significance of this theorem is that, for $\beta = 2$, as for other values of beta in an analogous way, the kernels $K_n^{(\beta)}(x,y)$ have \textit{Reproducing properties} such as
  \begin{equation}
- 	\int_{\R} \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k+1} \dd \lambda_{k+1} = (n-k) \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k}
+	\int_{\R} \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k+1} \dd \lambda_{k+1} = (n-k) \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k}.
  \end{equation}
  Thus, one may integrate the j.p.d.f. over $\dd \lambda_{k+1} \cdots \dd \lambda_n$ to obtain the \textit{k-point correlation function}
  \begin{align}
- 	\p_k^{(w)}(\mmany{\lambda}{k};n;\beta) & \deff \frac{n!}{(n-k)!} \int_{\R^{n-k}} \p^{(w)}(\mmany{\lambda}{n};\beta) \dd \lambda_{k+1} \cdots \dd \lambda_n \\
- 	& = \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k}, \quad \beta = 2.
+	\p_k^{(w)}(\mmany{\lambda}{k};n;\beta=2) & \deff \frac{n!}{(n-k)!} \int_{\R^{n-k}} \p^{(w)}_n(\mmany{\lambda}{n};\beta) \dd \lambda_{k+1} \cdots \dd \lambda_n \\
+	& = \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k}, \quad \beta = 2.
  \end{align}
- This implies that he eigenvalue density $\pe^{(w)} = \p_1^{(w)}(\lambda)$ is given by the formula
+ This implies that the univariate eigenvalue density $\pe^{(w)} = \p_1^{(w)}(\lambda)$ is given by the formula
  \begin{equation}
- 	\pe^{(w)}(\lambda; \beta) = K_n^{(2)}(\lambda, \lambda), \quad \beta = 2.
+	\pe^{(w)}(\lambda; \beta=2) = K_n^{(2)}(\lambda, \lambda).
  \end{equation}
- Most properties of a determinantal point process - such as the eigenvalues of a random matrix from a unitary ensemble - follow from properties of the Kernel.  We will come back to this results on \autoref{chapter: pointprocesses}. 
-
+ Most properties of a determinantal point process - such as the eigenvalues of a random matrix from a unitary ensemble - follow from properties of the Kernel.  Even more interestingly, for $\beta = 2$ we can use the \textit{Christoffel-Darboux} formula:
  
+ \begin{proposicao} (Christoffel-Darboux)
+ 	The $\beta=2$ kernel $K_n^{(2)}(x,y) $ defined before simplifies as
+ 	\begin{equation}
+ 		K_n^{(2)}(x,y) = \frac{\sqrt{\wf(x) \wf(y)}}{r_{n-1}^{(2)}} \frac{q_n^{(2)}(x)q_{n-1}^{(2)}(y) - q_{n-1}^{(2)}(x)q_n^{(2)}(y)}{x-y}
+ 	\end{equation}
+ 	where  $r_j^{(2)}$ is a constant and $q_j^{(2)}$ is a monic polynomial are such that
+ 	\begin{equation}
+ 		\langle q_j^{(2)}, q_k^{(2)} \rangle^{(2)} = r_j^{(2)} \chi_{j=k}.
+ 	\end{equation}	
+ 	\label{Proposition: Christoffel-Darboux}
+ \end{proposicao}
+ We will come back to this results on \autoref{chapter: pointprocesses} and \autoref{chapter:asymptotics} to expand on it and in \autoref{chapter: planarensembles} to properly calculate some asymptotics. 
+ 
+ \begin{observacao}
+ 	Taking the limit $y \rightarrow x$ using L'Hopital's rule shows that for finite $n$ the density has the form
+ 	\begin{equation}
+ 		\pe^{(w)}(\lambda) = K_n^{(2)}(\lambda, \lambda) = \frac{\wf(\lambda)}{r_{n-1}^{(2)}} \left( q_{n-1}^{(2)}(\lambda)\partial_\lambda q_{n}^{(2)}(\lambda) - q_{n}^{(2)}(\lambda)\partial_\lambda q_{n-1}^{(2)}(\lambda)  \right).
+ 		\label{Equation: Equilibrium Measure and Kernel}
+ 	\end{equation}
+ \end{observacao}

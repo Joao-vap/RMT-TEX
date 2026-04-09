@@ -1,29 +1,29 @@
-The definitions given in this section are a heavily adaptation from \cite{SERFOZO19901}, \cite{JOHANSSON20061} and \cite{ManuelaGirottiPhD}.
-
 There are many instances where one might want to describe the behavior of a set of random points in time or in space. This could come from an investigation on system of diffusing particles or occurrences in time of some type of phenomena. Point processes are models to describe such random objects: The number of occurrence of events in a given time-frame or, alternatively, the number of points in regions of some space. For this work, we mainly focus on the latter application: density of points in regions of space. Those can be associated later with measure for eigenvalues of random matrices and the theory developed on those processes, especially the so-called determinantal point processes, will help us studying distributions for these matrices eigenvalues and associated quantities.
+
+The definitions given in this section and some ideas follow very closely the well structured works in \cite{SERFOZO19901}, \cite{JOHANSSON20061} and \cite{ManuelaGirottiPhD}.
 
 \section{Point Processes}
 
-Suppose there are $m$ points at the random locations in some region $\Lambda$ a complete separable metric space, given by some configuration $\chi_m = \set{\mmany{x}{m}}$. We can define a quantity $\xi(A)$ that measures the amount of points ($\#\set{\chi_m \cap A}$) for any sub-region $A \subset \Lambda$ in the following way:
+Suppose there are $m$ points at random locations in some region $\Lambda$, a complete separable metric space, given by some configuration $\chi_m = \set{\mmany{x}{m}}$. We can define a quantity $\xi(A)$ that measures the amount of points ($\#\set{\chi_m \cap A}$) for any sub-region $A \subset \Lambda$ in the following way:
 \begin{equation}
 	\xi(A) = \sum_{k=1}^{m} \Ind_{A}(x_k).
 \end{equation}
-Moreover, let $\mathcal{I}$ denote all intervals, or rectangles, in $\Lambda$, $\mathcal{E}$ denote the class of Borel sets and $\mathcal{B}$ the class of bounded Borel sets. One can notice that this function $\xi$ defines a \textit{random counting measure} in the usual sense, i.e., a mapping $\pe: \mathcal{E} \rightarrow \{0,1,\cdots, \infty\}$ such that 
+Moreover, let $\mathcal{I}$ denote all intervals or rectangles in $\Lambda$, $\mathcal{E}$ denote the class of Borel sets and $\mathcal{B}$ the class of bounded Borel sets. One can notice that this function $\xi$ defines a \textit{random counting measure} in the usual sense, i.e., a mapping $f: \mathcal{E} \rightarrow \{0,1,\cdots, \infty\}$ such that 
 \begin{equation}
-	\pe(\varnothing) = 0, \quad \pe(B) < \infty, \ \text{for} \ B \in \mathcal{B},
+	f(\varnothing) = 0, \quad f(B) < \infty, \ \text{for} \ B \in \mathcal{B},
 \end{equation} 
 and that, for disjoint $B_1, B_2, \cdots$ in $\mathcal{B},$
 \begin{equation}
-	\pe\left( \bigcup_k B_k \right) = \sum_k \pe(B_k).
+	f\left( \bigcup_k B_k \right) = \sum_k f(B_k).
 \end{equation} 
 We also say that $\xi$ is boundedly finite. Let $\mathcal{N}(\Lambda)$ denote the space of all counting measures $\xi$ on $\Lambda$. If $B \in \mathcal{B}$, then $\xi(B)$ is finite and we can write
 \begin{equation}
-	\xi|_B = \sum_{i=1}^{\xi(B)} \delta_{x_i},
+	\xi|_B(A) = \sum_{i=1}^{\xi(B)} \Ind_{A}{(x_i)},
 \end{equation}
-for some $\chi = \{\mmany{x}{{\xi(B)}}\}$, $x_i \in \Lambda \forall 1 \leq i \leq \xi(B)$. Finally, we can explicitly define point processes.
+for some $\chi = \{\mmany{x}{{\xi(B)}}\}$, $x_i \in B \ \forall \ 1 \leq i \leq \xi(B)$. Finally, we can explicitly define point processes.
 
 \begin{definicao} (\textit{Point Processes})
-	Let $\Lambda$ be a complete separable metric space. A \textbf{point process} $\mathbb{P}$ on $\Lambda$ is a probability measure on the space of all configuration of points $\chi$ or counting measures $\mathcal{N}(\Lambda)$. We say $\mathbb{P}$ to be a \textit{$n$-point process} if $\mathbb{P}(\# \chi = n) = 1$ or, equivalently, $\mathbb{P}(\xi(\Lambda) = n)  = 1$. We say that the counting measure $\xi$ is simple if $\xi(\{x\}) \leq 1$ for all $x \in \Lambda$, then, the point process is \textit{simple} if $\mathbb{P}( \xi \ \text{is simple}) = 1$.
+	Let $\Lambda$ be a complete separable metric space. A \textbf{point process} $\mathbb{P}$ on $\Lambda$ is a probability measure on the space of all configuration of points $\chi$ or counting measures $\mathcal{N}(\Lambda)$. We say $\mathbb{P}$ to be a \textit{$n$-point process} if  $\mathbb{P}(\# \chi = n) = 1$ or, equivalently, $\mathbb{P}(\xi(\Lambda) = n)  = 1$. We say that the counting measure $\xi$ is simple if $\xi(\{x\}) \leq 1$ for all $x \in \Lambda$, then, the point process is \textit{simple} if $\mathbb{P}( \xi \ \text{is simple}) = 1$.
 	\label{Definition: Point Process}
 \end{definicao}
 
@@ -34,11 +34,11 @@ An important note is that $\xi$ is the same for any ordering of the subscripts o
 then $u_n$ defines naturally a point process.
 
 \begin{exemplo} (The j.p.d.f. of eigenvalues for GUE)
-	Consider the measure for the hermitian matrices $\m{M}$,
+	Consider the measure for the Hermitian matrices $\m{H}$,
 	\begin{equation}
-		\p^{(G)}(\m{H}) = \frac{1}{\pZ{N,\beta}{(G)}} \ee^{-\tr(\m{H}^2)} = \frac{1}{\pZ{N,\beta}{(G)}} \prod_{j>k}^N |\lambda_j - \lambda_k|^\beta \prod_{j=1}^{N} \ee^{- \lambda_j^2} = \p_N(\mmany{\lambda}{N}).
+		\eP^{(G)}(\m{H}) = \frac{1}{\pZ{n,\beta}{(G)}} \ee^{-\tr(\m{H}^2)} = \frac{1}{\pZ{n,\beta}{(G)}} \prod_{j>k}^n |\lambda_j - \lambda_k|^\beta \prod_{j=1}^{n} \ee^{- \lambda_j^2} = \p_n(\mmany{\lambda}{n}).
 	\end{equation}
-	This is, of course, a probability functions on the space of configuration of eigenvalues in $\R$ if $\pZ{n,\beta}{(G)}$, finite, is a normalization. Moreover, it is simple, as configurations with repeated eigenvalues must have probability $0$. Note also that the function $\p$ is invariant under permutations: This is the origin of the name Gaussian Unitary, Orthogonal and Symplectic Ensembles, the invariance by those respective transformations (equivalent to taking $\beta = 1,2,4$ and real, complex and quaternionic entries).
+	This is a probability functions on the space of configuration of eigenvalues in $\R$ if $\pZ{n,\beta}{(G)}$ is a finite normalization function. Moreover, it is simple, as configurations with repeated eigenvalues must have probability $0$. Note also that the function $\p_n$ is invariant under permutations: This is of course the origin of the name Gaussian Unitary, Orthogonal and Symplectic Ensembles mentioned previously.
 \end{exemplo}
 
 The mapping $\mathcal{E} \ni A \mapsto \E[\#(\chi \cap A)]$, that assigns to the the Borel set $A$ the expected value of the number of points in itself under the configuration $\chi$, is a measure on $\R$. 
@@ -46,56 +46,56 @@ The mapping $\mathcal{E} \ni A \mapsto \E[\#(\chi \cap A)]$, that assigns to the
 \begin{definicao}
 	The \textbf{mean measure}, or \textbf{first moment}, of a point process on $\Lambda$ is defined by 
 	\begin{equation}
-		\pe(A) = \E[\xi(A)] \deff \E[\#(\chi \cap A)], \quad A \in \mathcal{E}.
+		p(A) = \E[\xi(A)] \deff \E[\#(\chi \cap A)], \quad A \in \mathcal{E}.
 	\end{equation}
 \end{definicao}
 
-This $\pe$ is a measure on $\Lambda$ in the standard sense that $\pe : \mathcal \rightarrow [0, \infty]$ satisfies $\pe(\emptyset)) = 0$ and, for disjoint $\Lambda_1, \Lambda_2, \cdots$ in $\mathcal{E}$, 
+This $p$ is a measure on $\Lambda$ in the standard sense that $p : \mathcal \rightarrow [0, \infty]$ satisfies $p(\emptyset) = 0$ and, for disjoint $\Lambda_1, \Lambda_2, \cdots$ in $\mathcal{E}$, 
 \begin{equation}
-	\pe\left( \bigcup_k \Lambda_k \right) = \sum_k \pe(\Lambda_k).
+	p\left( \bigcup_k \Lambda_k \right) = \sum_k p(\Lambda_k).
 \end{equation} 
-Assuming there exists a density $\rho_1: \mathcal{E} \ni A \rightarrow \R_+$ with respect to the Lebesgue measure (\textbf{$1$-point correlation function}), there is also a way to define the mean measure as the integral of such density:
+Assuming there exists a density $\p_1: \mathcal{E} \ni A \rightarrow \R_+$ with respect to the Lebesgue measure (\textbf{$1$-point correlation function}), there is also a way to define the mean measure as the integral of such density:
 \begin{equation}
-	\pe(A) = \int_A \rho_1(x) \dd x.
+	p(A) = \int_A \p_1(x) \dd x.
 \end{equation}
-This can be called the \textit{rate} or \textit{intensity} of $\xi$ and is the infinitesimal probability of a point at $x$, i.e. $\mathbb{P}(\xi(\dd x) = 1) = \rho_1(x) \dd x$. In this case $\pe$ is written as $\pe(\dd x) = \rho_1(x) \dd x$. This mean measure shows up in expressions of expectations for functionals of $\xi$. 
+This $\p_1(x)$ can also be called the \textit{rate} or \textit{intensity} of $\xi$ and is the infinitesimal probability of a point at $x$, i.e. $\mathbb{P}(\xi(\dd x) = 1) = \p_1(x) \dd x$. In this case $p$ is written as $p(\dd x) = \p_1(x) \dd x$. This mean measure shows up in expressions of expectations for functionals of $\xi$. 
 \begin{definicao}
-	More generally, the \textbf{k-th moment} $\pe_k$ of $\xi$ , written
+	More generally, the \textbf{k-th moment} $p_k$ of $\xi$ , written
 	\begin{equation}
-		\p_k(\mcmany{A}{k}{\times}) \deff \E \left[ \xi_1(A) \xi_2(A)\cdots \xi_k(A) \right], \quad \mmany{A}{k} \in \mathcal{E},
+		p_k(\mcmany{A}{k}{\times}) \deff \E \left[ \xi_1(A) \xi_2(A)\cdots \xi_k(A) \right], \quad \mmany{A}{k} \in \mathcal{E},
 	\end{equation}
-	can be expressed in respect to the \textbf{k-th correlation function} $\rho_k: A^k \rightarrow \R_+$ in the following way
+	can be expressed in respect to the \textbf{k-th correlation function} $\p_k: A^k \rightarrow \R_+$ in the following way
 	\begin{equation}
-		\p_k(\mcmany{A}{k}{\times}) = \E \left[ \prod_{j=1}^{k} (\# \chi \cap A_j) \right]= \int_{A_1} \cdots \int_{A_k} \rho_k(x_1, \cdots, x_k) \dd x_1 \cdots \dd x_k.
+		p_k(\mcmany{A}{k}{\times}) = \E \left[ \prod_{j=1}^{k} (\# \chi \cap A_j) \right]= \int_{A_1} \cdots \int_{A_k} \p_k(x_1, \cdots, x_k) \dd x_1 \cdots \dd x_k.
 		\label{Equation: kth moment measure}
 	\end{equation}
 \end{definicao}
-This variable stand for the expected number of $k$-tuples $\chi_k = \{\mmany{x}{k}\} \in \chi^k$ such that $x_j \in A_j\ \forall j.$ For example, if $u_n(\mmany{x}{n})$ is a probability density function on $\Lambda^n$, invariant under permutation of coordinates, then we can build an $n$-point process on $\Lambda$ with correlation functions
+This $k$-th correlation variable stand for the expected number of $k$-tuples $\chi_k = \{\mmany{x}{k}\} \in \chi^k$ such that $x_j \in A_j\ \forall j.$ For example, if $u_n(\mmany{x}{n})$ is a probability density function on $\Lambda^n$, invariant under permutation of coordinates, then we can build an $n$-point process on $\Lambda$ with correlation functions
 \begin{equation}
-	\rho_k(\mmany{x}{k}) \deff \frac{n!}{(n-k)!} \int_{\Lambda^{n-k}} u_n(\mmany{x}{n}) \dd x_{k+1} \cdots \dd x_n.
+	\p_k(\mmany{x}{k}) \deff \frac{n!}{(n-k)!} \int_{\Lambda^{n-k}} u_n(\mmany{x}{n}) \dd x_{k+1} \cdots \dd x_n.
 	\label{Equation: Symmetric correlation}
 \end{equation}
 
 \begin{exemplo}
-	Let $\mathcal{H}_N$ be the space of all $N\times N$ Hermitian matrices. This space can be identified naturally with $\R^{N^2}$. If $\p_N$ is a probability measure on $\mathcal{H}_N$ and $\{\lambda_1(M), \cdots, \lambda_N(M) \}$ denotes the set of eigenvalues of $M \in \mathcal{H}_N$, then
+	Let $\mathcal{H}_n$ be the space of all $n\times n$ Hermitian matrices. This space can be identified naturally with $\R^{n^2}$. If $\eP_n$ is a probability measure on $\mathcal{H}_n$ and $\{\lambda_1(M), \cdots, \lambda_n(M) \}$ denotes the set of eigenvalues of $M \in \mathcal{H}_n$, then
 	\begin{equation}
-		M \rightarrow \sum_{j=1}^{N} \delta_{\lambda_j(M)}
+		M \mapsto \sum_{j=1}^{n} \Ind_{M}{(\lambda_j)}
 	\end{equation}
-	maps $\p_N$ to a finite point process $P$ on $\R$. If $\dd M$ is the Lebesgue measure on $\mathcal{H}_N$, then
+	maps $\eP_n$ to a finite point process $\mathbb{P}$ on $\R$. If $\dd M$ is the Lebesgue measure on $\mathcal{H}_n$, then
 	\begin{equation}
-		\dd \p_N(M) = \frac{1}{\pZ{N}{}} \ee^{-\tr{M^2}} \dd M
+		\dd \eP_n(M) = \frac{1}{\pZ{n}{}} \ee^{-\tr{M^2}} \dd M
 	\end{equation}
-	is a Gaussian probability measure on $\mathcal{H}_N$, called the $GUE$. It can be shown that for any symmetric, continuous function $f$ on $\R^N$ with compact support
+	is a Gaussian probability measure on $\mathcal{H}_n$, called the $GUE$. It can be shown that for any symmetric, continuous function $f$ on $\R^n$ with compact support it holds that
 	\begin{equation}
-		\int_{\mathcal{H}_N} f(\lambda_1(M), \cdots, \lambda_N(M)) \dd \pe_N(M) = \int_{\R^N} f(\mmany{x}{N}) u_N(\mmany{x}{N}) \dd^N x 
+		\int_{\mathcal{H}_n} f(\lambda_1(M), \cdots, \lambda_N(M)) \dd \eP_N(M) = \int_{\R^n} f(\mmany{x}{n}) \p_n(\mmany{x}{n}) \dd^n x 
 	\end{equation}
 	where
 	\begin{equation}
-		u_N(\mmany{x}{N}) = \frac{1}{\pZ{N}{} N!} \prod_{1 \leq i < j \leq j}^N (x_i - x_j)^2 \prod_{j=1}^{N} \ee^{-x^2_j}
+		\p_n(\mmany{x}{n}) = \frac{1}{\pZ{n}{} n!} \prod_{1 \leq i < j \leq j}^n (x_i - x_j)^2 \prod_{j=1}^{n} \ee^{-x^2_j}
 	\end{equation}
-	is the induced eigenvalue measure on $\R^N$. Hence the point process $P$ on $\R$ defined by this induced measure has correlation functions
+	is the induced eigenvalue measure on $\R^n$. Hence the point process $\mathbb{P}$ on $\R$ defined by this induced measure has correlation functions
 	\begin{equation}
-		\p_k(\mmany{x}{k}) = \frac{N!}{(N-k)!} \int_{\R^{n-k}} \frac{1}{\pZ{N}{} N!} \prod_{1 \leq i < j \leq j}^N (x_i - x_j)^2 \prod_{j=1}^{N} \ee^{-x^2_j} \dd x_{k+1} \cdots \dd x_n,
+		\p_k(\mmany{x}{k}) = \frac{n!}{(n-k)!} \int_{\R^{n-k}} \frac{1}{\pZ{n}{} n!} \prod_{1 \leq i < j \leq j}^n (x_i - x_j)^2 \prod_{j=1}^{n} \ee^{-x^2_j} \dd x_{k+1} \cdots \dd x_n,
 	\end{equation}
 	as given by \eqref{Equation: Symmetric correlation}.
 \end{exemplo}
@@ -114,9 +114,9 @@ if the integral $\int_E |f(x)| \p(\dd x)$ is finite.
 
 For simple points processes on $\R$ there is a direct way to understand correlation functions. Let $A_i = [x_i, x_i + \Delta x_i], 1 \leq i \leq k$, be disjoint intervals. If the $\Delta x_i$ are small enough, then we should expect either one or zero particles in each interval $A_i$. Hence, the product $\xi(A_1) \cdots \xi(A_k)$ is typically either $1$ or $0$ depending on whether we have one particle in each interval. From \eqref{Equation: kth moment measure}, we should expect
 \begin{equation}
-	\rho_k(\mmany{\lambda}{k}) = \lim_{\Delta x_i \rightarrow 0} \frac{\mathbb{P}(\text{one particle in each} \ A_i)}{\mcmany{\Delta x}{k}{}}.
+	\p_k(\mmany{x}{k}) = \lim_{\Delta x_i \rightarrow 0} \frac{\mathbb{P}(\text{one particle in each} \ A_i)}{\mcmany{\Delta x}{k}{}}.
 \end{equation}
-This means that $\rho_1(\lambda)$ is the density of particles at $\lambda$, but since we have many particles, the events of finding particles at their respective points are not disjoint events, even for distinct points. It follows from the definition that if we have a simple point process, then $\rho_k(\mmany{x}{k})$ is exactly the probability of finding particles at \many{x}{n}.
+This means that $\p_1(x)$ is the density of particles at $x$, but since we have many particles, the events of finding particles at their respective points are not disjoint events, even for distinct points. It follows from the definition that if we have a simple point process, then $\p_k(\mmany{x}{k})$ is exactly the probability of finding particles at \many{x}{k}.
 
 %If $\rho_N$ is a symmetric probability density on $\R^N$, then %$(\mmany{x}{N}) \rightarrow \sum_{i=1}^N \delta_{x_i}$ maps the %probability measure with density $\rho_N$ to a finite point process on %$\R$. The correlation functions are given by
 %\begin{equation}
@@ -125,16 +125,16 @@ This means that $\rho_1(\lambda)$ is the density of particles at $\lambda$, but 
 %\end{equation}
 %i.e., they are multiple marginal densities. 
 
-\section{Determinantal Point Processes}
+\section{Determinantal Point Processes (DPP)}
 
-Repulsive random processes are, in general, intractable, that is, they are usually difficult of even impossible to, for example, compute marginals and conditional probabilities. In these cases, their theoretical analysis is a major challenge. However, there is a class of processes, even repulsive ones, that are an rare exception to this rule: \sigla{DDP}{Determinantal Point Processes}; or Fermionic point processes in the physics literature, are random processes that have the property of being both repulsive and tractable \cite{Tremblay}. This property comes from the fact that their correlation function can be expressed as a certain determinantal form. Let's make this precise.
+Repulsive random processes are, in general, intractable, that is, they are usually difficult of even impossible to, for example, compute marginals and conditional probabilities. In these cases, their theoretical analysis is a major challenge. However, there is a class of processes, even repulsive ones, that are an rare exception to this rule: \textit{\sigla{DPP}{Determinantal Point Processes}}; or Fermionic point processes in the physics literature, are random processes that have the property of being both repulsive and tractable \cite{Tremblay}. This property comes from the fact that their correlation function can be expressed as a certain determinantal form. Let's make this precise.
 
 \begin{definicao}
-	Consider a point process $P$ on a complete separable metric space $\Lambda$, with reference measure $\p_N$, all of whose correlation functions $\rho_k$ exist. If there is a function $K: \Lambda \times \Lambda \rightarrow \C$ such that 
+	Consider a point process $\mathbb{P}$ on a complete separable metric space $\Lambda$, with reference measure $\p_n$, all of whose correlation functions $\p_k$ exist. If there is a function $K: \Lambda \times \Lambda \rightarrow \C$ such that 
 	\begin{equation}
-		\rho_k(\mmany{x}{k}) = \det(K(x_i, x_j))_{i,j = 1}^{k}
+		\p_k(\mmany{x}{k}) = \det(K(x_i, x_j))_{i,j = 1}^{k}
 	\end{equation}
-	for all $\mmany{x}{k} \in \Lambda, \ k \geq 1$, then we say that $P$ is a \textbf{determinantal point process}. We call $K$ the \textbf{correlation kernel} of the process. 
+	for all $\mmany{x}{k} \in \Lambda, \ k \geq 1$, then we say that $\mathbb{P}$ is a \textbf{Determinantal Point Process}. We call $K$ the \textbf{correlation kernel} of the process. 
 \end{definicao}
 
 \begin{exemplo} (Eigenvalue for orthogonal polynomial ensembles)
@@ -142,7 +142,7 @@ Repulsive random processes are, in general, intractable, that is, they are usual
 	\begin{equation}
 		 	\p_k^{(w)}(\mmany{\lambda}{k};n;\beta=2)  = \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k},
 	\end{equation}
-	for a subclass of the invariant ensembles called orthogonal polynomial ensembles. This is the main connection for the theory of random matrices and determinantal point process; and one that we take major advantage of. For $\beta = 2$, we should have
+	for a subclass of the invariant ensembles called orthogonal polynomial ensembles. This is the main connection for the theory of random matrices and DDPs - and one that we take major advantage of. For $\beta = 2$, we should have
 	\begin{equation}
 		\p_n^{(w)}(\mmany{\lambda}{n};2) \propto \prod_{i=1}^{n} \wf(\lambda_i) |\Delta_n(\lambda)|^2 = {\det\left(\wf(\lambda_i)q_{j-1}^{(2)}(\lambda_i)\right)}^2_{n\times n}
 	\end{equation}
@@ -160,14 +160,14 @@ Repulsive random processes are, in general, intractable, that is, they are usual
 \end{exemplo}
 
 
-All important information is contained in the correlation kernel for these processes and, therefore, all quantities of interest can be expresses i terms of the same $K$. The kernel $K$ can be seen as an integral kernel of an operator $K$ on $L^2(\Lambda, \lambda)$,
+All important information is contained in the correlation kernel for these processes and, therefore, all quantities of interest can be expresses in terms of the same $K$. The kernel $K$ can be seen as an integral kernel of an operator $K$ on $L^2(\Lambda, \lambda)$,
 \begin{equation}
 	Kf(x) = \int_\Lambda K(x, y) f(y) \dd \lambda(y)
 	\label{Equation: integral operator K}
 \end{equation}
-as long as the right and side is well defined. Important examples of DDP's are constructed by using the following result
+as long as the right and side is well defined. Important examples of DDPs are constructed by using the following result
 
-\begin{teorema} (Construction for DDP \cite{ManuelaGirottiPhD})
+\begin{teorema} (Construction for DDP, \cite{ManuelaGirottiPhD})
 	Consider a kernel $K: \R \times \R \rightarrow \R_+$ with the following properties:
 	\begin{itemize}
 		\item Trace-class: $\tr(K) = \int_{\R} K(x,x) \dd x = n < + \infty$;
@@ -185,7 +185,23 @@ as long as the right and side is well defined. Important examples of DDP's are c
 \end{teorema}
 
 \begin{exemplo}
-	content...
+	Consider the \textit{Airy Kernel},
+	\begin{equation}
+		A(x, y) = \int_{0}^{\infty} \Ai(x+t) \Ai(y + t) \dd t
+	\end{equation}
+	where $\Ai$ is the Airy function, a positive convex and exponentially decreasing function, defined as
+	\begin{equation}
+		\Ai(x) = \frac{1}{\pi} \int_{0}^{\infty} \cos{\left( \frac{t^3}{3} + x t \right)} \dd t.
+	\end{equation}	
+	This kernel is Hermitian and has 
+	\begin{equation}
+		\int_{t}^{\infty} A(x,x) \dd x < \infty, \quad \forall t \in \R
+	\end{equation}
+	due to orthogonality of the Airy function. It can be shown that $A(x,y)_{(t,\infty)}$ is the kernel of a trace class operator and there is a point process $\mathbb{P}$ on $\R$, the \textit{Airy Kernel Determinantal Point Process}, which is determinantal with kernel $A(x,y)$. We also have
+	\begin{equation}
+		F_{TW}(t) \deff \eP[\lambda^*(\xi) \leq t] = \det(I - A)_{L^2(t, \infty)}.
+	\end{equation} 
+	The distribution function $F_{TW}(t)$ for the last particle in the Airy kernel point process is a natural scaling limit of certain finite determinantal point processes. We call it the \textit{Tracy-Widow distribution}.
 \end{exemplo}
 
 \mycomment{
@@ -263,16 +279,17 @@ The distribution function $F_{TW}(t)$ for the last particle in the Airy kernel p
 \end{exemplo}
 }
 
-\section{Limit and Transformations of Determinantal Point Processes}
+\section{Limit and Transformations of DPP}
 
-Let $f \in C^1(\R)$ be a bijection , with continuously differentiable inverse $f^{-1} = g \in \C^1(\R)$. Then, $f$ maps configurations on $\R$ to configuration on $\R$. The push-forward of a point process $\mathbb{P}$ under such mapping is $f(\mathbb{P})$ and it is again a point process.
+Let $f \in C^1(\R)$ be a bijection, with continuously differentiable inverse $f^{-1} = g \in \C^1(\R)$. Then, $f$ maps configurations on $\R$ to configurations on $\R$. The push-forward of a point process $\mathbb{P}$ under such mapping is $f(\mathbb{P})$ and it is again a point process.
 
 \begin{proposicao} \cite{ManuelaGirottiPhD}
 	If K is the kernel of a DDP $\mathbb{P}$, then $f(\mathbb{P})$ is also a DDP with kernel
 	\begin{equation}
-		\hat{K}(x, y) = \sqrt{g'(x) g'(y)} K(g(x), g(y)).
+		\hat{K}(x, y) = \sqrt{g'(x) g'(y)} K(g(x), g(y))
 	\end{equation}
 	where $f^{-1} = g$.
+	\label{Proposition: Scaling Kernel}
 \end{proposicao}
 
 In particular, if we consider a linear function $f(x) = \alpha (x - x^*),$ for $\alpha > 0$ and $x^* \in \R$, then the transformed point process $f(\mathbb{P})$ is a scaled and translated version of the original point process $\mathbb{P}$. The new correlation kernel is
@@ -280,45 +297,134 @@ In particular, if we consider a linear function $f(x) = \alpha (x - x^*),$ for $
 	\hat{K}(x, y) = \frac{1}{\alpha} K\left(x^* + \frac{x}{\alpha}, x^* + \frac{y}{\alpha}\right).
 \end{equation}
 
-Others transformations are also possible. Consider what happens when one fixes $x^* \in \R$ and, given that $x^* \in \chi$, removes $x^*$ from the configuration. The resulting process $\chi \setminus \{x^*\}$ is a new point process.
+\begin{exemplo} (Karlin-McGregor Theorem \& Dyson Bridges \cite{ArnoNotes})
+	
+	Consider $n$ independent copies $X_1(t), \cdots, X_n(t)$ of a one-dimensional strong Markov Process with continuous sample paths conditioned so that $X_j(0) = a_j$, where $\mcmany{a}{n}{<}$ are certain given values. Let $p_t(x, y)$ be some transition probability function of the Markov process. Moreover, let \many{E}{n} be Borel sets so that $\sup{E_j} < \inf{E_{j+1}}$ for $j = 1, \cdots, n-1$. Then
+	\begin{equation}
+		\int_{E_1} \dots \int_{E_n} \det{[p_t(a_i, x_j)]^{n}_{i,j=1}}  dx_1 \dots dx_n
+	\end{equation} 
+	is equal to the probability that the paths have not intersected in the time interval $[0,t]$ and $X_j(t) \in E_j$ for $j = 1, \cdots, n.$ This is the Karlin-McGregor theorem. Take now $p_t(a, x) = 1/\sqrt{(2\pi t)} \exp\{-(x-a)^2/2t\}$, a Gaussian transition and consider that we condition our path to not only start at positions \many{a}{n} but finish at positions \many{b}{n} at some time $T > t$. If we let $a_j \rightarrow a$ and $b_j \rightarrow b$, the new j.p.d.f. can be non-trivially calculated as
+	\begin{align}
+			P(x_1, \dots, x_n)
+			& = \frac{1}{\mathcal{Z}_n} \det{[p_t(a_i, x_j)]^{n}_{i,j=1}} \det{[p_{T-t}(x_i, b_j)]^{n}_{i,j=1}} \\
+			& = \frac{1}{\mathcal{Z}_n} \det{[x_{j}^{i-1}]}^{n}_{i,j=1} \prod_{j=1}^{n} e^{-\frac{x_j^2}{2t}} \det{[x_{j}^{i-1}]}^{n}_{i,j=1} \prod_{j=1}^{n} e^{-\frac{x_j^2}{2(T-t)}} \\
+			& =\frac{1}{\mathcal{Z}_n} \det{[x_{j}^{i-1}]}^{n}_{i,j=1} \det{[x_{j}^{i-1}]}^{n}_{i,j=1} \prod_{j=1}^{n} e^{-\frac{T x_j^2}{2t(T-t)}} \\
+			& =\frac{1}{\mathcal{Z}_n} \prod_{1\leq i < j \leq n} (x_j - x_i)^2 \prod_{j=1}^{n} e^{-\frac{T x_j^2}{2t(T-t)}}
+	\end{align}
+	Two things are worth noting on this point. The first is that this can be reduced to the j.p.d.f. of the Gaussian Unitary Ensemble as in Example \ref{Definicao: Direct Gaussian, Laguerre, Jacobi}! The second thing is that it has a scaling in the weight function based on $t$. This means that for every $t$ the distribution obeys the same law with a different scaling - it keeps being an determinant process as specified in Proposition \ref{Proposition: Scaling Kernel}. One can simulate such Brownian motions as below for $T = 1$.
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				width=1\textwidth,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				grid style=dashed,
+				yticklabel=\empty,
+				xticklabel pos=top,
+				]
+				\foreach \p in {0,...,19} {
+					\addplot+[black, solid,mark=none]
+					table [col sep=comma]
+					{plotdata/brownian/b\p};	
+				}
+			\end{axis}
+		\end{tikzpicture}
+		\caption{$20$ Non-intersecting Brownian paths for $0 < t < 1$ s.t. they start and end at $y=0.$}
+	\end{figure}
+	\vspace{-0.4cm}
+	Notice on the images below that the distribution of points is kept the same minus the re-scaling of $x / ((2t(1-t))\sqrt{N})$.
+	\vspace{-0.4cm}
+	\begin{figure}[H]
+			\begin{subfigure}{0.3\textwidth}
+			\centering
+			\begin{tikzpicture}
+					\begin{axis}[
+					xmin=-1.5, xmax=1.5,
+					ymin=0, ymax=0.85,
+					title= {$t=0.1$},
+					scatter/classes={%
+						a={draw=black, mark size=3pt}}
+					]
+					\addplot[scatter, mark=|] table [col sep=comma] {./plotdata/01-Dyson-sample-20.csv};
+					\addplot[solid, black, thin] table [col sep=comma] {./plotdata/01-Dyson-20.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hspace{0.75cm}
+			\begin{subfigure}{0.3\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+				xmin=-1.5, xmax=1.5,
+				ymin=0, ymax=0.85,
+				title= {$t=0.5$},
+				yticklabel=\empty,
+				scatter/classes={%
+					a={draw=black, mark size=2pt}}
+				]
+				\addplot[scatter, mark=|] table [col sep=comma] {./plotdata/05-Dyson-sample-20.csv};
+				\addplot[solid, black, thin] table [col sep=comma] {./plotdata/05-Dyson-20.csv};
+			\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+			\begin{subfigure}{0.3\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+				xmin=-1.5, xmax=1.5,
+				ymin=0, ymax=0.85,
+				title= {$t=0.9$},
+				yticklabel=\empty,
+				scatter/classes={%
+					a={draw=black, mark size=2pt}}
+				]
+				\addplot[scatter, mark=|] table [col sep=comma] {./plotdata/09-Dyson-sample-20.csv};
+				\addplot[solid, black, thin] table [col sep=comma] {./plotdata/09-Dyson-20.csv};
+			\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+		\caption{Three conditions simulated form the $20$ Dyson Bridges taken from $t = 0.1, 0.5, 0.9$. For each one the experimental density (line plot) and one sampled position (dashes in axis) were plotted. The three plots are re-scaled by $((2t(1-t))\sqrt{N}).$}
+	\end{figure}
+
+\end{exemplo}
+
+Others transformations are also possible. For example, consider what happens when one fixes $c \in \R$ and, given that $c \in \chi$, removes $c$ from the configuration. The resulting process $\chi \setminus \{c\}$ is a new point process.
 
 \begin{proposicao} \cite{ManuelaGirottiPhD}
-	Let K be the correlation kernel of a DDP and let $x^*$ be a point such that $0 < K(x^*, x^*) < + \infty$. Then, the point process obtained by removing $x^*$ is determinantal with kernel
+	Let K be the correlation kernel of a DDP and let $c$ be a point such that $0 < K(c, c) < + \infty$. Then, the point process obtained by removing $c$ is determinantal with kernel
 	\begin{equation}
-		\hat{K}(x, y) = K(x, y) - \frac{K(x, x^*) K(x^*, x)}{K(x^*, x^*)}.
+		\hat{K}(x, y) = K(x, y) - \frac{K(x, c) K(c, x)}{K(c, c)}.
 	\end{equation}
 \end{proposicao}
 
-We now want to consider sequences of finite determinantal point processes $\mathbb{P}_n$ with correlation kernel $K_n$ and understand how the limit behaves. 
+Even more importantly we will take limits of Kernels. We now want to consider sequences of finite determinantal point processes $\mathbb{P}_n$ with correlation kernel $K_n$ and understand how the limit behaves. 
 
 \begin{proposicao} \cite{ManuelaGirottiPhD}
-	Let $\mathbb{P}$ and $\mathbb{P}_n$ be determinantal point processes with kernels $K$ and $K_n$ respectively. Let $K_n$ converge pointwise to $K$
+	Let $\mathbb{P}$ and $\mathbb{P}_n$ be determinantal point processes with kernels $K$ and $K_n$ respectively. Let $K_n$ converge point-wise to $K$
 	\begin{equation}
 		\lim_{n \rightarrow \infty} K_n(x, y) = K(x, y)
 	\end{equation}
 	uniformly in $x, y$ over compact subsets of $\R$. Then, the point processes $\mathbb{P}_n$ converge to $\mathbb{P}$ weakly. 
 \end{proposicao}
 
-A very important case studied here is of the limit of an scaled and centered determinantal point process. Suppose a sequence of kernels $K_n$ and fixed point $x^*$ of interest. We first perform a centering and rescaling of the form
+A very important case studied here is of the limit of an scaled and centered determinantal point process. Suppose a sequence of kernels $K_n$ and fixed point $c$ of interest. We first perform a centering and re-scaling of the form
 \begin{equation}
-	x \mapsto Cn^\alpha (x - x^*)
+	x \mapsto Cn^\alpha (x - c)
 \end{equation} 
 for some suitable value of $C, \gamma > 0$. Then the scaled kernels have a limit
 \begin{equation}
-	\lim_{n \rightarrow \infty} \frac{1}{C n^\alpha} K_n \left( x^* + \frac{x}{C n^\alpha}, x^* + \frac{y}{C n^\alpha} \right) = K(x, y)
+	\lim_{n \rightarrow \infty} \frac{1}{C n^\alpha} K_n \left( c + \frac{x}{C n^\alpha}, c + \frac{y}{C n^\alpha} \right) = K(x, y)
 \end{equation}
 Therefore, the scaling limit $K$ is a kernel that corresponds to a determinantal point process with
-an infinite number of points.  Interestingly, in many situations, the same scaling limit $K$ may appear. The phenomenon in known as \textbf{universality} in RMT. Examples of such kernels are the sine kernel
+an infinite number of points.  Interestingly, in many situations, \textit{the same scaling limit $K$ may appear}. This phenomenon in known as \textbf{universality} in RMT. Examples of such kernels are the sine kernel
 \begin{equation}
 	K_{\sin} = \frac{\sin \pi(x - y)}{x - y}
 \end{equation}
-and the Airy kernel
+that appears in bulk statistics of distributions of eigenvalues. Furthermore, we also have the important Airy kernel that describes edge behavior and is defined by
 \begin{equation}
 	K_{\Ai} = \frac{\Ai(x)\Ai'(y) - \Ai'(x) \Ai(y)}{x - y}
 \end{equation}
-where $\Ai$ is the Airy function. Both these kernels can be identified as local laws on the bulk and edge of invariant ensembles, as posed in \autoref{Theorem: Local law}.
-
-\textcolor{red}{Text that associates eigenvalues with point process}
+where $\Ai$ is the Airy function. Both these kernels can be identified as local laws on the bulk and edge of invariant ensembles, as posed in Theorem \ref{Theorem: Local law} below.
 
 \begin{teorema}
 	If
@@ -344,3 +450,17 @@ where $\Ai$ is the Airy function. Both these kernels can be identified as local 
 	where $\Ai$ is the Airy function.
 	\label{Theorem: Local law}
 \end{teorema}
+
+\begin{exemplo}
+		(WDM conjecture for hermitian symmetry class \cite{Schroder2019})
+		Assume that $b$, $e$ and $c$ are bulk, edge and cusp points of some density $\rho$ with parameters $\gamma_e$, $\gamma_c$ defined in such a way that
+		\begin{equation}
+			\rho(e \pm x) = \gamma_{e}^{3/2} x^{1/2} / \pi + \Boh(x^{1/2}), \quad  \rho(c + x) = \sqrt{3} \gamma_c^{4/3} |x|^{1/3}/2\pi + \Boh(|x|^{1/3}).
+		\end{equation}
+		Then the universal correlation functions are given by
+		\begin{align}
+			\frac{1}{\rho(b)^k} \p_k^{n}\left(b + \frac{x}{\rho(b) n }\right) & \approx \det{\left(\frac{\sin{\pi(x_i - x_j)}}{\pi(x_i - x_j)} \right)_{i,j \in [k]}}, \quad (Bulk) \\
+			\frac{n^{k/3}}{\gamma_e^k} \p_k^{n}\left(e + \frac{x}{\gamma_e n^{2/3} }\right) & \approx \det{\left(K_{\text{Airy}}(x_i, x_j) \right)_{i,j \in [k]}}, \quad (Edge) \\
+			\frac{n^{k/4}}{\gamma_c^k} \p_k^{n}\left(c + \frac{x}{\gamma_c n^{3/4} }\right) & \approx \det{\left(K_{\text{Pearcey}}(x_i, x_j) \right)_{i,j \in [k]}}. \quad (Cusp)
+		\end{align}
+\end{exemplo}

@@ -1,23 +1,33 @@
+
+The section on Equilibrium Measures was based on the works of \citeonline{saff2024logarithmic} and \citeonline{deiftorthogonal}.
+
 \section{Coulomb Gases}
-\label{section: Coulomb Gas}
+\label{Section: Coulomb Gas}
 
-We start by describing a familiar distribution or physicists: The Boltzmann-Gibbs distribution. This is a probability distribution that represents the probability of a given state for a system of particles as a function of the state's \textit{energy} ($\Hf$) and the \textit{temperature} ($1/(\beta N^2)$) of the system. This is the distribution that maximizes the entropy: lower energy states have higher probability of being occupied than states with higher energy. Under the appropriate conditions, we name Coulomb Gas $\p_N$ the Boltzmann-Gibbs probability measure given in $(\R^d)^N$. The measure $\p_N$ models an coulomb-interacting gas of charged indistinguishable particles under some external field $\Q$. Particles are interpreted to be at positions $\mmany{x}{N} \in \Se$ of dimension $d$, or some configuration $\xi_N = (\mmany{x}{N})$, embedded in some space $\R^n$. We write  
-\begin{equation}
-	\dd \p_N(\mmany{x}{N}) = \frac{e^{-\beta N^2 \Hf_N(\xi_N)}}{Z_{N}^{\beta}} \mcmany{\dd x}{N}{}
-	\label{Equation: Coulomb Gas Measure}
-\end{equation}
-to be te measure of such system, where 
-\begin{equation}
-	\Hf_N(\xi_N) = \frac{1}{N} \sum_{i = 1}^{N} \Q(x_i) + \frac{1}{2N^2} \sum_{i \neq j}^{N} \g(x_i - x_j)	
-\end{equation}
-is usually called the Hamiltonian, or more concretely, the energy of the system. The function $\Q \colon \Se \mapsto \R$ is the external potential. If one wishes $\p_N$ to be a probability measure,  then one must ensure that $\Q$ is such that the normalizing constant $Z_{N, \beta}$ is finite for all $N$ and the measure support is compact. This is all to say that the potential should be confining: As the number of particles increases, it must counter the repulsion effect and keep limited the region where particles move around. The function $\g \colon \Se \mapsto (-\infty, \infty]$ is the \textit{Coulomb Interacting Kernel}, solution to the Poisson equation given by $- \nabla g(\vec{x}) = c_n\delta_0$.
+We start by describing a familiar distribution or physicists: The Boltzmann-Gibbs distribution. This is a probability distribution that represents the probability of a given state for a system of particles as a function of the system state's \textit{energy} ($\Hf$) and the \textit{temperature} ($1/(\beta n^2)$). This is the distribution that maximizes the entropy: lower energy states have higher probability of being occupied than states with higher energy. 
 
-Recall the expression for invariant ensembles in \autoref{Definition: Invariant}, note that, rearranging the terms in \autoref{Equation: Coulomb Gas Measure} and considering a logarithm interaction kernel, we should get
-\begin{equation}
-	\dd \p_N(\mmany{x}{N}) = \frac{1}{Z_{N}^{\beta}}\prod_{1\leq j < k \leq n}^N |x_j - x_k|^\beta \prod_{j=1}^{N} \ee^{- \beta N \Q(x_j)}.
-\end{equation}
-This is to say that for invariant ensembles, their eigenvalues behave as a Coulomb gas. This opens the way for interpretations on the distribution of eigenvalues but also to computations using simulation methods for particle dynamics \cite{Chafal}.
+Suppose a set of $n$ particles at positions $\mmany{x}{n} \in \Sigma$, a \textit{conductor} of dimension $d$, or some configuration $\xi_n = (\mmany{x}{n})$, embedded in some space $\R^{dn}$.
+\begin{definicao}
+	If $\p_n$ is a probability measure on $(\R^d)^n$, we name it \textbf{Coulomb gas} if it has the form of a Boltzmann-Gibbs probability measure, namely if  
+	\begin{equation}
+		\dd \p_n(\xi_n) = \frac{e^{-\beta n^2 \Hf_n(\xi_n)}}{\pZ{n}{\beta}} \mcmany{\dd x}{n}{},
+		\label{Equation: Coulomb Gas Measure}
+	\end{equation}
+	where 
+	\begin{equation}
+		\Hf_n(\xi_n) = \frac{1}{n} \sum_{i = 1}^{n} \Q(x_i) + \frac{1}{2n^2} \sum_{i \neq j}^{n} \g(x_i - x_j)	
+	\end{equation}
+	is usually called the Hamiltonian, or more concretely, the configurational energy of the system. The function $\Q \colon \R^d \cong \Sigma \rightarrow \R$ is the external potential.
+\end{definicao}
+ The measure $\p_n$ models an Coulomb-interacting gas of charged indistinguishable particles under some external field $\Q$. If one wishes $\dd \p_n$ to be a probability measure,  then one must ensure that $\Q$ is such that the normalizing constant $\pZ{n}{\beta}$ is finite for all $n$ and that the measure support $\supp{(\dd \p_n(\chi_n))}$ is compact. This is all to say that the potential should be confining: As the number of particles increases, it must counter the repulsion effect and keep limited the region where particles move around. The function $\g \colon \Sigma \rightarrow (-\infty, \infty]$ is the \textit{Coulomb Interacting Kernel}, solution to the Poisson equation given by $- \nabla g(\vec{x}) = c_n\delta_0$ and is the reason in the first place why the particles may diverge.
 
+Recall the expression for invariant ensembles in \autoref{Definition: polynomial ensemble}, note that, rearranging the terms in \autoref{Equation: Coulomb Gas Measure} and considering a logarithm interaction kernel we get
+\begin{equation}
+	\dd \p_n(\mmany{x}{n}) = \frac{1}{\pZ{n}{\beta}}\prod_{1\leq j < k \leq n} |x_j - x_k|^\beta \prod_{j=1}^{n} \ee^{- \beta n \Q(x_j)} \mcmany{\dd x}{n}{}
+\end{equation}
+This is to say that for invariant ensembles, their eigenvalues behave as a Coulomb gas. This opens the way for interpretations on the distribution of eigenvalues but also to computations using simulation methods for particle dynamics.
+
+\mycomment{
 \begin{exemplo}
 	For some $\Q \colon \R \rightarrow \R$, we can take the appropriate dimensions for $d=1$ and $n = 2$ to recover the, for example, GUE ensemble density
 	\begin{equation}
@@ -25,22 +35,246 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 	\end{equation}
 	In this case, we would be dealing with particles on the plane confined to move only on the real line. However, the gases measure accepts a natural extension for any potential that we call acceptable - that obeys some growth and smoothness conditions. Together with the dimensions, we can recover other invariant random matrix models.
 \end{exemplo}
+}
+
+\begin{exemplo}
+	 As explored in \citeonline{Chafal}, a few classical algorithms of simulation are very successful in replicating the measures for Coulomb gas systems. Equivalently, if one is interested in sampling eigenvalues for $\beta = 2$ invariant ensembles, one can sample from its configuration equilibrium $\p_Q(\lambda)$ in respect to some potential $V$ using simulation of the particles. Consider for example the non-trivial case explored in \citeonline{balogh2016orthogonal}, where, taken $d = 2$ and $n = 2$ we will have $W(x) = g(x) = \log{|x|}$ and impose the potential
+	\begin{equation}
+		Q(z)=|z|^{2a} - \re{t z^a}.
+		\label{Equation: Complex Potential}
+	\end{equation}
+	This potential has disjoint intervals for some combinations of the parameters $t$ and $a$ - it presents a transition in $t_c \approx \sqrt{(1/a)}$. Analytically, it was just recently solved. However we can easily sample from this measure using the simulation as shown below. Data was taken from \citeonline{TCCJoaoPimenta}.
+	\begin{figure}[H]
+		\pgfplotsset{width=5cm,compat=1.9}
+		\begin{subfigure}{0.2\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[axis line style={opacity=0}, ticks=none,
+					xmin=-1.5, xmax=1.5,
+					ymin=-1.5, ymax=1.5,
+					xticklabel=\empty,
+					yticklabel=\empty,
+					xlabel={t = 0},
+					ylabel={a = 2},
+					xticklabel pos=top,
+					scatter/classes={%
+						a={ mark size=0.5pt}}
+					]
+					\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t0.csv};
+					\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t0.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hspace{1cm}
+		\begin{subfigure}{0.2\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[axis line style={opacity=0}, ticks=none,
+					xmin=-1.5, xmax=1.5,
+					ymin=-1.5, ymax=1.5,
+					xlabel={t = 0.5},
+					xticklabel pos=top,
+					xticklabel=\empty,
+					yticklabel=\empty,
+					scatter/classes={%
+						a={ mark size=0.5pt}}
+					]
+					\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t05.csv};
+					\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t05.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+		\begin{subfigure}{0.2\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[axis line style={opacity=0}, ticks=none,
+					xmin=-1.5, xmax=1.5,
+					ymin=-1.5, ymax=1.5,
+					xlabel={t = 1},
+					xticklabel pos=top,
+					xticklabel=\empty,
+					yticklabel=\empty,
+					scatter/classes={%
+						a={ mark size=0.5pt}}
+					]
+					\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t1.csv};
+					\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t1.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+		\begin{subfigure}{0.2\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[axis line style={opacity=0}, ticks=none,
+					xmin=-1.5, xmax=1.5,
+					ymin=-1.5, ymax=1.5,
+					xlabel={t = 2},
+					xticklabel=\empty,
+					yticklabel=\empty,
+					xticklabel pos=top,
+					scatter/classes={%
+						a={ mark size=0.5pt}}
+					]
+					\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t2.csv};
+					\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t2.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+	\end{figure}
+	\begin{figure}[H]
+		\pgfplotsset{width=5cm,compat=1.9}
+		\begin{subfigure}{0.2\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[axis line style={opacity=0}, ticks=none,
+				xmin=-1.5, xmax=1.5,
+				ymin=-1.5, ymax=1.5,
+				xticklabel=\empty,
+				yticklabel=\empty,
+				ylabel={a = 3},
+				scatter/classes={%
+					a={ mark size=0.5pt}}
+				]
+				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t0.csv};
+				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t0.csv};
+			\end{axis}
+		\end{tikzpicture}
+	\end{subfigure} \hspace{1cm}
+		\begin{subfigure}{0.2\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[axis line style={opacity=0}, ticks=none,
+				xmin=-1.5, xmax=1.5,
+				ymin=-1.5, ymax=1.5,
+				xticklabel=\empty,
+				yticklabel=\empty,
+				scatter/classes={%
+					a={ mark size=0.5pt}}
+				]
+				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t05.csv};
+				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t05.csv};
+			\end{axis}
+		\end{tikzpicture}
+	\end{subfigure} \hfill
+		\begin{subfigure}{0.2\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[axis line style={opacity=0}, ticks=none,
+				xmin=-1.5, xmax=1.5,
+				ymin=-1.5, ymax=1.5,
+				xticklabel=\empty,
+				yticklabel=\empty,
+				scatter/classes={%
+					a={ mark size=0.5pt}}
+				]
+				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t1.csv};
+				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t1.csv};
+			\end{axis}
+		\end{tikzpicture}
+	\end{subfigure} \hfill
+		\begin{subfigure}{0.2\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[axis line style={opacity=0}, ticks=none,
+				xmin=-1.5, xmax=1.5,
+				ymin=-1.5, ymax=1.5,
+				xticklabel=\empty,
+				yticklabel=\empty,
+				scatter/classes={%
+					a={ mark size=0.5pt}}
+				]
+				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t2.csv};
+				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t2.csv};
+			\end{axis}
+		\end{tikzpicture}
+	\end{subfigure} \hfill
+	\end{figure}
+	\begin{figure}[H]
+		\pgfplotsset{width=5cm,compat=1.9}
+		\begin{subfigure}{0.2\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[axis line style={opacity=0}, ticks=none,
+				xmin=-1.5, xmax=1.5,
+				ymin=-1.5, ymax=1.5,
+				xticklabel=\empty,
+				yticklabel=\empty,
+				ylabel={a = 5},
+				scatter/classes={%
+					a={ mark size=0.5pt}}
+				]
+				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t0.csv};
+				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t0.csv};
+			\end{axis}
+		\end{tikzpicture}
+	\end{subfigure} \hspace{1cm}
+		\begin{subfigure}{0.2\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[axis line style={opacity=0}, ticks=none,
+				xmin=-1.5, xmax=1.5,
+				ymin=-1.5, ymax=1.5,
+				xticklabel=\empty,
+				yticklabel=\empty,
+				scatter/classes={%
+					a={ mark size=0.5pt}}
+				]
+				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t05.csv};
+				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t05.csv};
+			\end{axis}
+		\end{tikzpicture}
+	\end{subfigure} \hfill
+		\begin{subfigure}{0.2\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[axis line style={opacity=0}, ticks=none,
+				xmin=-1.5, xmax=1.5,
+				ymin=-1.5, ymax=1.5,
+				xticklabel=\empty,
+				yticklabel=\empty,
+				scatter/classes={%
+					a={ mark size=0.5pt}}
+				]
+				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t1.csv};
+				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t1.csv};
+			\end{axis}
+		\end{tikzpicture}
+	\end{subfigure} \hfill
+		\begin{subfigure}{0.2\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[axis line style={opacity=0}, ticks=none,
+				xmin=-1.5, xmax=1.5,
+				ymin=-1.5, ymax=1.5,
+				xticklabel=\empty,
+				yticklabel=\empty,
+				scatter/classes={%
+					a={ mark size=0.5pt}}
+				]
+				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t2.csv};
+				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t2.csv};
+			\end{axis}
+		\end{tikzpicture}
+	\end{subfigure} \hfill
+	\caption{Shown in the shadow is the mean configurations - in some an approximation of the limit distribution of points, and in the scatter is a random $n = 50$ sample from the distribution. We show configurations for combinations of the parameters $t = 0, 0.5, 1, 2$ from left ro right and $a = 2, 3, 5$ from top to bottom.}
+	\end{figure}
+\end{exemplo}
 
 \section{Equilibrium Measure}
 \label{Section: Equilibrium}
 
-The description of the eigenvalues as a Coulomb gas and as a point process lead us to the idea of minimizing some type of energy of the system by finding equilibrium configurations. Suppose we are dealing with the measure
-\begin{equation}
-	\pe_n(\xi_n) = \frac{e^{-\beta n^2 \Hf_n(\vec{x})}}{Z_{n,\beta}}, \quad \Hf_n(\vec{x}) = \frac{2}{n} \sum_{i = 1}^{n} Q(x_i) + \frac{1}{n^2} \sum_{i < j}^{n} \ln{\frac{1}{|x_i - x_j|}}. 
-\end{equation}
+The description of the eigenvalues as a Coulomb gas and as a point process lead us to the idea of minimizing some type of energy of the system by finding equilibrium configurations  $\xi_n = \{\mmany{x}{n}\}$. Especially interesting is the case when $n$ tends to a large enough number as it simplifies some structures and the results. 
 
-Then, for any $n$-configuration $\xi_n = \mmany{x}{n}$, if we let $\mu_x$ be the normalized counting measure on $\C$,
+To clarify the point, suppose we are dealing with the measure
 \begin{equation}
-	\mu_x = \frac{1}{n} \sum_{i=1}^{n} \delta_{x_i}, \quad \int_{\R} \dd \mu_x = 1,
+	\p_n(\xi_n) = \frac{e^{-\beta n^2 \Hf_n(\chi_n)}}{Z_{n,\beta}}, \quad \Hf_n(\chi_n) = \frac{2}{n} \sum_{i = 1}^{n} Q(x_i) + \frac{1}{n^2} \sum_{i < j}^{n} \ln{\frac{1}{|x_i - x_j|}}. 
+\end{equation}
+For any $n$-configuration $\xi_n = \{\mmany{x}{n}\}$, let $\mu_x$ be the normalized counting measure on $\C$,
+\begin{equation}
+	\mu_x = \frac{1}{n} \sum_{i=1}^{n} \delta_{x_i}, \quad \text{such that} \quad \int_{\R} \dd \mu_x = 1.
  \end{equation} 
- then
+ Then
 \begin{equation}
-	\frac{1}{n^2} \sum_{i\neq j} \ln{|x_i - x_j|^{-1}} + \frac{2}{n} \sum_{i=1}^n \Q(x_i)
+	\frac{1}{n^2} \sum_{i < j} \ln{|x_i - x_j|^{-1}} + \frac{2}{n} \sum_{i=1}^n \Q(x_i)
 \end{equation}
 may be written in the form 
 \begin{equation}
@@ -56,19 +290,25 @@ where
 \end{equation}
 The quantity $E^{(Q)}$ is the \textit{equilibrium energy} of the system and $I_Q(\mu_x)$ is the \textit{energy integral}. However, we must step backwards so that we can advance.
 
-The classical case for such minimization problems corresponds to the cases when the conductor $\Sigma$ is compact and the external field $\Q$ is zero. Under some mild conditions on the external field, however, the equilibrium measure $\mu_\Q$ - the measure that minimizes such problem - has a unique solution which is a measure of compact support. For it to be compact, $\Q$ the confining potential, must increase sufficiently fast around infinity. Let $\Sigma \subseteq \C$ be a compact subset of the complex plane and $\M(\Sigma)$ be the collection of all positive Borel measure of compact support in $\Sigma$. Let $\mu \in \M(\Sigma)$ be such a measure in the complex plane $\C$. The associated \textit{logarithmic potential} is defined by 
-\begin{equation}
-	U^{\mu}(z) \deff \int \ln \frac{1}{|z - t|} \dd \mu(t).
-\end{equation}
-Also, $I(\mu)$, called the \textit{logarithm energy} of a $\mu \in \M(\Sigma)$ is defined
-\begin{equation}
-	I(\mu) \deff \int \int \ln \frac{1}{|z-t|} \dd \mu(z) \dd \mu (t),
-\end{equation}
-and the energy $V$ of $\Sigma$
-\begin{equation}
-	V \deff \inf\{ I(\mu) | \mu \in \M(\Sigma)\}.
-\end{equation}
-We can say that
+The classical case for such minimization problems corresponds to the cases when the conductor $\Sigma$ is compact and the external field $\Q$ is zero. Under some mild conditions on the external field, however, the equilibrium measure $\mu_\Q$ - the measure that minimizes such problem - has a unique solution which is a measure of compact support. For it to be compact, $\Q$ the confining potential, must increase sufficiently fast around infinity. Let $\Sigma \subseteq \C$ be a compact subset of the complex plane and $\M(\Sigma)$ be the collection of all positive Borel measure of compact support in $\Sigma$. Let $\mu \in \M(\Sigma)$ be such a measure in the complex plane $\C$.
+\begin{definicao}
+	 The associated \textbf{logarithmic potential} is defined by 
+	\begin{equation}
+		U^{\mu}(z) \deff \int \ln \frac{1}{|z - t|} \dd \mu(t).
+	\end{equation}
+	Also, $I(\mu)$, called the \textbf{logarithmic energy} of $\mu \in \M(\Sigma)$ is defined
+	\begin{equation}
+		I(\mu) \deff \int \int \ln \frac{1}{|z-t|} \dd \mu(z) \dd \mu (t),
+	\end{equation}
+	the \textbf{energy} $V$ of $\Sigma$ is
+	\begin{equation}
+		V \deff \inf\{ I(\mu) | \mu \in \M(\Sigma)\}
+	\end{equation}
+	and the measure $\mu^V_\Sigma$, if $V$ is finite, which defines the energy is the \textbf{equilibrium measure}.
+\end{definicao}
+
+This logarithmic potential can be interpreted as the equivalent interaction potential of the system of $n$ identical particles distributed with $\mu$ where the repelling force between two particles is proportional to the distance between them.  There are a few useful properties one can extract about this quantity.
+
 \begin{proposicao} \cite{saff2024logarithmic}
 	The logarithmic potential are super-harmonic on the whole plane, that is, they have the following properties.
 	\begin{enumerate}
@@ -93,7 +333,7 @@ We can say that
 	\end{align}
 \end{proof}
 
-Also, a result that will become useful soon but we do not prove.
+Also, for technical reasons we also state the following Lemma regarding the logarithmic energy that will become useful in a later result although we do not to prove it.
 
 \begin{lema} \cite{saff2024logarithmic}
 	Let $\mu = \mu_1 - \mu_2$ be a signed Borel measure with compact support	and total mass $\mu(\C) = 0$. Suppose further that each of the positive measures $\mu_1$ and $\mu_2$ has finite logarithmic energy. Then the logarithmic energy of $\mu$ is nonnegative:
@@ -104,17 +344,19 @@ Also, a result that will become useful soon but we do not prove.
 	\label{Lema: positive kernel}
 \end{lema}
 
-The energy $V$ can be finite or $+\infty$, and in the finite case there is a unique measure $\mu = \mu_\Sigma \in \M(\Sigma)$ for which the minimum defining energy $V$ is reachable. Such a measure $\mu_\Sigma$ is called the \textit{equilibrium distribution} or \textit{equilibrium measure} of the compact set $\Sigma$. Fro such a function we have that its logarithm potential is always smaller or equal to the energy $I_\Sigma$. Define also the \textit{logarithmic capacity}
-\begin{equation}
-	\cpct{(\Sigma)} \deff \ee^{-V}.
-\end{equation} 
+The energy $V$ can be finite or $+\infty$, and in the finite case there is a unique measure $\mu = \mu_\Sigma \in \M(\Sigma)$ for which the minimum defining energy $V$ is reachable. Such a measure $\mu_\Sigma$ is called the \textit{equilibrium distribution} or \textit{equilibrium measure} of the compact set $\Sigma$. For such a function we have that its logarithm potential is always smaller or equal to the energy $I_\Sigma$. 
+\begin{definicao}
+	Define also the \textit{logarithmic capacity}
+	\begin{equation}
+		\cpct{(\Sigma)} \deff \ee^{-V}.
+	\end{equation}
+\end{definicao} 
 The capacity for an arbitrary Borel set $E$ is defined by the supreme of the capacity of all the compact subsets $K \subseteq E$. Naturally, the capacity of a subset of a Borel set of capacity zero is said to be zero. The union of zero-capacity Borel sets can also be shown to be a zero-capacity Borel set. A property is said to hold \sigla{q.e.}{\textit{quasi-everywhere}} on a set $E$ if the set of non  conforming points is of capacity zero. Then, we can say that
 \begin{equation}
-	U^\mu_\Sigma(z) = V, \quad \text{q.e.} z \in \Sigma. 
+	U^\mu_\Sigma(z) = V, \quad \text{q.e.} \  z \in \Sigma. 
 \end{equation} 
 
 We should at this point reintroduce the external potential $Q$. The main difference now is that we can loose the compacity restriction on the sets $\Sigma$ and impose that there is no positive mass around infinity. There is a natural way to introduce this idea. Let $\Sigma \subset \C$ be a closed set and $\wf : \Sigma \rightarrow [0, \infty)$. We call such a function a \textit{weight function} on $\Sigma$.
-
 \begin{definicao}
 	A weight function $\wf$ is said to be \textbf{admissible} is it satisfies the following three conditions
 	\begin{enumerate}
@@ -124,7 +366,7 @@ We should at this point reintroduce the external potential $Q$. The main differe
 	\end{enumerate} 
 \end{definicao}
 
-We can define
+Assume our weight function to have the form
 \begin{equation}
 	\wf(z) \deff \ee^{-n Q(z)}.
 \end{equation}
@@ -132,16 +374,15 @@ Then, for the weight to be admissible, $Q : \Sigma \rightarrow (\infty, \infty]$
 \begin{equation}
 	\lim_{|z| \rightarrow \infty, z \in \Sigma} \{ Q(z) - \ln |z| \} = \infty.
 \end{equation}
-Then, let $\M(\Sigma)$ be the collection of all positive unit Borel measures $\mu$ with support in $\Sigma$. Our definition for the weighted energy integral
+Let $\M(\Sigma)$ be the collection of all positive unit Borel measures $\mu$ with support in $\Sigma$. Our definition for the weighted energy integral
 \begin{equation}
 	I_\wf(\mu) = \int \int \ln |t - s|^{-1} \dd \mu(t) \dd \mu_x(s) + 2 \int \Q(s) \dd  \mu(s)
 \end{equation}
-is recovered if both integrals exist and are finite. We can now move on to prove the existence of the \textit{equilibrium measure} $\mu^{\Q}$ for a given external field $\Q$ given by some polynomial
+is recovered if both integrals exist and are finite. We can now move on to the matter of existence of an \textit{equilibrium measure} $\mu^{\Q}$ for a given external field $\Q$ given by some polynomial
 \begin{equation}
 	Q(x) = t_{2m} x^{2m} + t_{2m-1} x^{2m - 1} + \cdots + t_0, \quad t_{2m} > 0, V(x) \geq 0.
 	\label{Equation: Potential Q}
 \end{equation}
-
 \begin{teorema} \cite{deiftorthogonal}
 	Let $Q$ be as in \autoref{Equation: Potential Q}. Then, there exists a unique probability measure $\mu = \mu^{\wf}$ such that
 	\begin{equation}

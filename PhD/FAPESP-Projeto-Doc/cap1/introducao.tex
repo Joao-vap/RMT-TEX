@@ -1,0 +1,353 @@
+\section{Introduction}
+
+Random Matrices can be though of in two ways: As a measurable function from a probability space into a set of matrices or, more concretely, as a matrix whose entries are random variables with some joint distribution. In some cases there is an explicit density formula for the eigenvalues of such a random matrix. With the help of some mathematical tools such as orthogonal polynomials one can expresses the equilibrium measures for the eigenvalues asymptotically.  There are many instances of \enquote{models} of random matrices, each one with its symmetries and own probability density. Those are what we call \textit{ensembles}. 
+
+Borrowing some concepts from physics, an ensemble can be though as a virtual collection of all possible states that a system can be in, with more probable states appearing more often in the collection. There is a analogy to be made with ensembles of thermodynamic: When considering sets of matrices with equal probability - in some sense to be more clear soon - we get the Gibbs weight for the probability distribution as we would in the \textit{Canonical Ensemble} of constant temperature. More concretely, in the context of Random Matrix Theory
+
+\begin{definition}
+	A random matrix ensemble $\eE = (\eS, \eP)$ is a set of matrices $\eS$ of fixed size equipped with a probability density function (p.d.f) $\eP: \eS \rightarrow [0, \infty)$. If we say that a matrix $\m{X}$ is drawn from the random ensemble $\eE$, we are saying that it is a random variable assuming values in $\eS$ with p.d.f. $\eP$.
+	\label{Def: Ensemble}
+\end{definition}
+
+A commonplace thing to do when defining ensembles is to prescribe the p.d.f's $\eP_{i,j}$ on the independent entries $X_{i,j}$ of a representative matrix $\m{X} \in \eE$. In such cases, we say that
+\begin{equation}
+	\eP(\m{X}) = \prod_{i,j | X_{i,j} independent} \eP_{i,j}(X_{i,j}).
+\end{equation}
+With this definition we can already define many ensembles of interest. For many, the set of matrices is described by applying constraints to the set of real matrices $\mathbb{M}_{m,n}(\R)$, the set of complex matrices $\mathbb{M}_{m,n}(\C)$ or the set of quaternionic matrices $\mathbb{M}_{m,n}(\He)$. Then, oftentimes, $\eS$ is simply the set of symmetric, hermitian or skew-symmetric matrices. When it comes to determining the p.d.f $\eP$ on $\eS$, there are many options that have been worked on.
+
+The definition of ensembles is of great use when modeling other phenomena with the use of Random Matrix. This idea is illustrated in the following citation by Deif.
+
+\begin{sic}
+	(Deif)
+	\enquote{This procedure can  be viewed as follows: A scientist wishes to investigate some statistical phenomenon. What he has at hand is a microscope and a handbook of matrix ensembles. The data $\{a_k\}$ are embedded on a slide which can be inserted into the microscope. The only freedom that the scientist has is to center the slide, $a_k \rightarrow a_k - A$, and then adjust the focus $a_k - A \rightarrow \tilde{a}_k = \gamma_a(a_k - A)$ so that on average one data point $\tilde{a}_k$ appears per unit length on the slide. At that point the scientist takes out his handbook, and then tries to match the statistics of the $\tilde{a}_k$’s with those of the eigenvalues of some ensemble. If the fit is good, the scientist then says that the system is well-modeled by RMT.}
+\end{sic}
+
+Perhaps the first instance of the modeling by random matrices was in the works of Wigner on the scattering of heavy nuclei. Physicists have been doing scattering for very long: Project a small (interactive or not) particle in the direction of a nuclei of interest and change the energy of the incoming particle. You should observe what physicist call a cross-section (an classical equivalent radius of the deflecting object). If one plots this phenomena, one obtains a graph of hundreds of peaks $E-1 < E_2 < \cdots$  and valleys $E'_1 < E'_2 < \cdots $. If $E \approx E_j$ for some $j$, the projected particle must have been repelled from the nucleus, and if $E \approx E'_j$ for some $j$, then the particle goes through the nucleus, essentially unchanged. The $E_j$’s are the scattering resonances. If one is interested, and many physicists are, on the typical distances of theses scattering energies, one could of course write down a Schrodinger-type equation for the scattering system. This has, however, very high dimensionality and therefore offers no easy way of treatment for a solution for the $E_j$’s - either analytically or numerically. However, as more experiments were done on heavy nuclei, a consensus emerged that the theory of resonances may as well be statistical, and here Wigner led the way.
+
+\begin{sic}
+	(Eugene Wigner - On the Wigner Surmise (1956))
+	“Perhaps I am now too courageous when I try to guess the distribution of the distances between successive levels (of energies of heavy nuclei). Theoretically, the situation is quite simple if one attacks the problem in a simpleminded fashion. The question is simply what are the distances of the characteristic values of a symmetric matrix with random coefficients.” 
+\end{sic}
+
+This description gave way for a whole lot of development, as Wigner also proposed that the curve must hold some universality that only depends on a few of the main properties of the nuclei - namely its symmetries. This modeling was repeated for many other highly correlated processes and was very successful as a general theory of random correlated systems. This can now be observed in the plenitude of posterior system modeled with such statistics, for example: Ulam's Problem, Zeros of the Riemann Zeta Function, Matching Random Sub-sequences, Tiling problems (Aztec Diamond for instance) and Interacting Random Walks, to name a few. 
+
+In this development, another point of interested became clear: There was a universal law in the edge of the distribution of the eigenvalues - and, more shockingly, it appears to insert itself in many of the other random correlated phenomena. Already at Wigner's Matrices one could note an instance of these distributions: The Tracy-Widom. At some point, Majumdar and Schehr have shown for large $N$, the Tracy-Widom distribution describes the crossover function between stable and unstable regimes of a random dynamical system, a specific phase transition, which also occurs in the Coulomb gas, two-dimensional QCD, and several other systems of mathematical and physical interest. This distribution appears to be somehow related to the universality of phase transitions - such as the physical transition of water or superconductivity. This made way for a whole theory of universality and led the theory to the study of edge scaling.
+
+On the scale of the eigenvalue spacing the fluctuation of individual eigenvalues becomes relevant. It has first been conjectured by Wigner, and subsequently formalized as the Wigner-Dyson-Mehta (WDM) conjecture, that the local statistics of eigenvalues is universal in the sense that their distribution is independent of any model specifics. The emerging distributions should be viewed as the random matrix analogue of the central limit theorem and the normal distribution. They depend only on the symmetry class of the matrix and the local singularity type of the density, but on no other model specifics. The classification indicates that, up to scaling by a constant, the density around single eigenvalues can only exhibit three different behaviors. Within the spectral bulk the density $\rho$ is positive and real analytic and therefore, on the scale $1/N$ of individual eigenvalues, is essentially constant. Around edges and cusps the density is simply given by $x^{1/2}$ or $x^{1/3}$, indicating that the typical distance between consecutive eigenvalues is $N^{-2/3}$ and $N^{-3/4}$. The WDM conjecture roughly states that eigenvalue fluctuations depend only on the local behavior of the density, and not on far away effects or any other characteristics of the ensemble.
+
+\begin{conjecture}
+	(WDM conjecture for hermitian symmetry class \cite{Schroder2019})
+	Assume that $b$, $e$ and $c$ are bulk, edge and cusp points of some density $\p$ with parameters $\gamma_e$, $\gamma_c$ defined in such a way that
+	\begin{equation}
+		\rho(e \pm x) = \gamma_{e}^{3/2} x^{1/2} / \pi + \Boh(x^{1/2}), \quad  \rho(c + x) = \sqrt{3} \gamma_c^{4/3} |x|^{1/3}/2\pi + \Boh(|x|^{1/3}).
+	\end{equation}
+	Then the universal correlation functions are given by
+	\begin{align}
+		\frac{1}{\rho(b)^k} \p_k^{N}(b + \frac{x}{\rho(b) N }) & \approx \det{\left(\frac{\sin{\pi(x_i - x_j)}}{\pi(x_i - x_j)} \right)_{i,j \in [k]}}, \quad (Bulk) \\
+		\frac{N^{k/3}}{\gamma_e^k} \p_k^{N}(e + \frac{x}{\gamma_e N^{2/3} }) & \approx \det{\left(\K_{\text{Airy}}(x_i, x_j) \right)_{i,j \in [k]}}, \quad (Edge) \\
+		\frac{N^{k/4}}{\gamma_c^k} \p_k^{N}(c + \frac{x}{\gamma_c N^{3/4} }) & \approx \det{\left(\K_{\text{Pearcey}}(x_i, x_j) \right)_{i,j \in [k]}}, \quad (Cusp)
+	\end{align}
+\end{conjecture}
+
+The Airy functions (related to the Airy Kernel and Tracy-Widom function) themselves are given by integrals in which the exponents have a cubic singularity, arising from the coalescence of two saddle points in an asymptotic analysis. However, in the scope of this work, we will be concerned with the \textit{Pearcey Processes}. Pearcey functions are given by integrals in which the exponents have a quartic singularity, arising from the coalescence of three saddle points - these are the functions which give rise to the Pearcey Processes. The Pearcey process describes the local eigenvalue statistics of large random matrices near the points of the spectrum where the limiting mean eigenvalue density vanishes as a cubic root. This has been established rigorously for random matrix ensembles with an external source. More precisely, let $\m{H}$ be an $n \times n$ GUE matrix (with $n$ even), suitably scaled, and $\m{H}_0$ a fixed Hermitian matrix with eigenvalues $\pm a$ each of multiplicity $n/2$. Let $n \rightarrow \infty$. If $a$ is small the density of eigenvalues is supported in the limit on a single interval. If a is large then it is supported on two intervals. At the “closing of the gap” the limiting eigenvalue distribution is described by the Pearcey kernel. These models of matrices have p.d.f. given by functions 
+\begin{equation}
+	\eP(M) \dd M = \frac{1}{Z_{N, \beta}} \ee^{- N \left( \tr{V(M)} + AM \right)} \dd M,\quad  M \in \Se  \quad \text{and} \quad A \in \Lambda,
+	\label{Equation: external source measure}
+\end{equation}
+where $Z_{N, \beta}$ is a partition function, such that $\p$ is a probability density of the matrices. The potential $V:\mathbb \R \to \R$ is a suitably regular function, acting as a confining potential on the eigenvalues $\lambda_1,\hdots, \lambda_N$. The set $\Lambda$ is the set of diagonal real matrices (generally hermitian, but simply diagonal) and $\Se$ is such as the real, complex, or quaternionic sets.  Especially, we can describe the model by its partition function
+\begin{equation}
+	Z_{N, \beta} = \int \ee^{- N \left( \tr{V(M)} + AM \right)} \dd M.
+\label{Equation: Partition Function for External Field}
+\end{equation}
+
+Moreover, we say that $A = \diag{(a_1, \cdots, a_p)}$ and that each $a_i$ has multiplicity $n_p$. Note that $\sum n_p = n$.  This type of model has many reasons to exist and possible interpretation. One could think of a system with impurities where the Hamiltonian looked like $\mathcal{H}= \mathcal{H}_0 + V$ where $V$ is a potential for the impurity in the system. In this type of system, scaling the eigenvalues of $A$ give us a proper scaling for the interactions. With that, one can create critical point of some new type which we plan on studying and properly understanding the properties by the asymptotic of its partition function. 
+
+%To make this matter clear, consider the Random Matrix Model related to the line-restricted two dimensional Coulomb Gas subjected to a quartic potential
+%\begin{equation}
+%	V(x)  = \frac{x^4}{4} + t \frac{x^2}{2}.
+%	\label{Equation: Quartic Potential}
+%\end{equation} 
+%This can be though as the ensemble $(\Se, \p)$ where $\Se$ is the set of hermitian random matrices and $\p$ is given by
+%\begin{equation}
+%	\p(M) \dd M = \frac{1}{Z_{N, \beta}} \ee^{- N \tr{V(M)}} \dd M,\quad  M \in \Se
+%	\label{Equation: invariant measure}
+%\end{equation}
+%where $Z_{N, \beta}$ is a partition function, such that $\p$ is a probability density of the matrices. The potential $V:\mathbb \R \to \R$ is a suitably regular function, acting as a confining potential on the eigenvalues $\lambda_1,\hdots, \lambda_N$.  In this case, the potential is as in Equation \eqref{Equation: Quartic Potential}.
+%
+%Here, we a note a very different behavior of the ones observed by Wigner for the Gaussian ensembles (Related to $V(x) = x^2/2$). Depending on $t$ we see a separating of the equilibrium measure of the eigenvalues $\mu^*_V$. The critical point is set on $t=-2$, where, for $t < -2$, the interval is $[-b_t, b_t]$ and, after the transition for $t> -2$ it becomes $[-b_t, -a_t] \bigcup [a_t, b_t]$. Such a measure is expressed a
+%\begin{itemize}
+%	\item \(t \geq -2\)
+%	\begin{equation}
+%		\supp \mu^*_V(x) = [-b_t, b_t], \ \ \mu^*_V(x) = \frac{1}{2\pi} (x^2 + c_t^2) \sqrt{b_t^2 - x^2},\label{Equação: Quartico +}
+%	\end{equation}
+%	com $c_t^2 \deff\frac{1}{2} b_t^2 + t \deff \frac{1}{3} (2t + \sqrt{t^2 + 12})$.
+%	\item \(t < -2\)
+%	\begin{equation}
+%		\supp \mu^*_V(x) = [-b_t, -a_t] \cup [a_t, b_t], \ \ \mu^*_V(x) = \frac{1}{2\pi} |x| \sqrt{(x^2 - a_t^2)(b_t^2 - x^2)},
+%		\label{Equação: Quartico -}
+%	\end{equation}
+%	com $ a_t \deff \sqrt{-2-t}, b_t \deff \sqrt{2-t}$.
+%\end{itemize}
+%This critical point in $t_c = -2$ has a different scaling that what we would find in the border, where the scaling should be governed by a Tracy-Widow-like distribution. However, the model we are interested required one more layer to the description. We will consider potentials with \textit{external sources}. In terms of our previous expression for the measure, not much is changed. 
+
+\subsection{Orthogonal Polynomial Ensembles}
+
+The subclass of invariant matrix ensembles this section refers to are those self-adjoint matrices $\m{X}$ with p.d.f.s $\eP(\m{X})$ such that one has the decomposition
+\begin{equation}
+	\eP(\m{X}) = \prod_{i=1}^n \wf(\lambda_i),
+\end{equation}
+where $\{\lambda_i\}$ are the undistinguishable eigenvalues of $\m{X}$ and $\wf(\lambda)$ is some continuous weight function that is real valued on $\R$ and decays fast enough as $|\lambda| \rightarrow \infty$. This is the same as removing the constrain on the weight function of the classical ensembles.
+
+\begin{definition}
+	Let $\beta = 1, 2, 4$, fix $n \in \N$ and let $\wf(\lambda)$ be a continuous, non-negative, real-valued function such that $\wf(\lambda) = o(\lambda^{-\beta(n-1)-1})$. Then, the j.p.d.f.
+	\begin{equation}
+		\p^{(w)}(\mmany{\lambda}{n};\beta) = \frac{1}{\pN{n,\beta}{(w)}} \prod_{i=1}^{n} \wf(\lambda_i) |\Delta_n(\lambda)|^\beta
+	\end{equation}
+	describes the $n$-sized orthogonal polynomial ensemble (OPE) when $\beta = 2$, skew-orthogonal polynomial ensemble of real type ($\R$-SOPE) when $\beta=1$, and the skew-orthogonal polynomial ensemble of quaternion type ($\Hh$-SOPE) when $\beta = 4$.
+	\label{Definition: measure-weight}
+\end{definition}
+The condition on the weight function guarantees that the j.p.d.f. has a well-defined normalization constant. To properly understand the nomenclature used, one must discuss the Vandermonde determinant.
+
+If one wishes to integrate the determinantal and Pfaffian structures given by the Jacobian against the product of weight functions, it is beneficial to use monic polynomials $\{q_j(\lambda)\}_{j=0}^\infty$ that are skew-orthogonal with respect to the weight $\wf(\lambda)$.
+
+\begin{definition}
+	With $\wf(\lambda)$ a suitable function, define the following inner products on polynomial space:
+	\begin{align}
+		\langle f,g \rangle^{(1)} & \deff \frac{1}{2} \int_{\R^2} f(x) g(y) \sign(y-x) \wf(x) \wf(y) \dd x \dd y \\
+		\langle f,g \rangle^{(2)} & \deff \int_{\R} f(x) g(x) \wf(x) \dd x \\
+		\langle f,g \rangle^{(4)} & \deff \frac{1}{2} \int_{\R} (f(x)g'(x) - f'(x)g(x)) \wf(x) \dd x
+	\end{align}
+	For $\beta = 1,2,4$, let $\{q_j^{(\beta)}\}_{j=0}^\infty$ be a family of monic polynomials such that each $q_j^{(\beta)}(\lambda)$ is of degree $j$. Impose also that exists finite positive constants $\{r_j^{(\beta)}\}_{j=0}^\infty$ s.t.
+	\begin{align}
+		\langle q_j^{(2)}, q_k^{(2)} \rangle^{(2)} & = r_j^{(2)} \chi_{j=k} \\
+		\langle q^{(\sigma)}_{2j}, q^{(\sigma)}_{2k+1} \rangle^{(\sigma)} & = - \langle q^{(\sigma)}_{2k+1}, q^{(\sigma)}_{2j} \rangle^{(\sigma)} = r_j^{(\sigma)} \chi_{j=k} \\
+		\langle q^{(\sigma)}_{2j}, q^{(\sigma)}_{2k} \rangle^{(\sigma)} & = \langle q^{(\sigma)}_{2j+1}, q^{(\sigma)}_{2k+1} \rangle^{(\sigma)} = 0
+	\end{align}	
+	for $\sigma = 1, 4$ and any $j,k>0$. Then, we say that the family $\{q_j^{(1)}(\lambda)\}_{j=0}^\infty$ if $\R$-skew-orthogonal, $\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$ is orthogonal, and $\{q_j^{(4)}(\lambda)\}_{j=0}^\infty$ is $\He$-skew-orthogonal. All in respect to $\wf(\lambda)$.
+\end{definition}
+
+We can now express the eigenvalue j.p.d.f. $\p^{(w)}(\mmany{\lambda}{n};\beta)$ as either a determinant or a Pfaffian. 
+
+\begin{thm}
+	Let $\{q_j^{(\beta)}(x)\}_{j=0}^{\infty}, \{r_j^{(\beta)}\}_{j=0}^{\infty}$, be as in the definition above, and let $n \in \N$ with $n$ even in the case for $\beta = 1$. Next, introduce the auxiliary functions
+	\begin{align}
+		\phi_j(x) & \deff \int_{\R} q_j^{(1)}(y) \sign(x-y) \wf(y) \dd y \\
+		S_j^{(1)}(x,y) & \deff \phi'_{2j+1}(x)\phi_{2j}(y) - \phi'_{2j}(x)\phi_{2j+1}(y) \\
+		S_j^{(4)}(x,y) & \deff q'_{2j+1}(x)q_{2j}(y) - q'_{2j}(x)q_{2j+1}(y) \\
+		D_j^{(4)}(x,y) & \deff q'_{2j+1}(x)q'_{2j}(y) - q'_{2j}(x)q'_{2j+1}(y) \\
+		I_j^{(4)}(x,y) & \deff q_{2j+1}(x)q_{2j}(y) - q_{2j}(x)q_{2j+1}(y)
+	\end{align}
+	and the kernels corresponding respectively to the real, complex and quaternionic cases,
+	\begin{align}
+		K_n^{(1)}(x,y) & \deff \sum_{k=0}^{N/2-1} \frac{1}{r_k^{(1)}} \begin{bmatrix}
+			\frac{1}{2} \int_{\R} \sign(x-z) S_k^{(1)}(z,y) & S_k^{(1)}(y,x) \\
+			-S_k^{(1)}(x,y) & \delta_y S_k^{(1)}(x,y)
+		\end{bmatrix} 
+		- \frac{1}{2} 
+		\begin{bmatrix}
+			\sign(x-y) & 0 \\
+			0 & 0
+		\end{bmatrix},   \\
+		K_n^{(2)}(x,y) & \deff \sqrt{\wf(x) \wf(y)} \sum_{k=0}^{N-1} \frac{1}{r_k^{(2)}} q_k^{(2)}(x) q_k^{(2)}(y), \\
+		K_n^{(4)}(x,y) & \deff \sqrt{\wf(x) \wf(y)} \sum_{k=0}^{N-1} \frac{1}{r_k^{(4)}}
+		\begin{bmatrix}
+			I_k^{(4)}(x,y) & S_k^{(4)}(y,x) \\
+			-S_k^{(4)}(x,y) & D_k^{(4)}(x,y)
+		\end{bmatrix}.
+	\end{align}
+	Then, the eigenvalue j.p.d.f. of Definition \ref{Definition: measure-weight} given by
+	\begin{equation}
+		p^{(w)}(\mmany{\lambda}{n};\beta) = 
+		\begin{cases}
+			\det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{n}, \quad \beta = 2, \\
+			\pf\left[ K_n^{(\beta)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{n}, \quad \beta = 1,4.
+		\end{cases}
+	\end{equation}
+	\label{Theorem: Kernel}
+\end{thm}
+The significance of this theorem is that, for $\beta = 1, 2, 4$ the kernels $K_n^{(\beta)}(x,y)$ have \textit{Reproducing properties} such as
+\begin{align}
+	\int_{\R} \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k+1} \dd \lambda_{k+1} & = (n-k) \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k} \\
+	\int_{\R} \pf\left[ K_n^{(\beta)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k+1} \dd \lambda_{k+1} & = (n-k)  \pf\left[ K_n^{(\beta)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k}
+	\label{Eq: Reproducibility}
+\end{align}
+Thus, one may integrate the j.p.d.f. over $\dd \lambda_{k+1} \cdots \dd \lambda_n$ to obtain the \textit{k-point correlation function}
+\begin{align}
+	\p_k^{(w)}(\mmany{\lambda}{k};n;\beta) & \deff \frac{n!}{(n-k)!} \int_{\R^{n-k}} \p^{(w)}(\mmany{\lambda}{n};\beta) \dd \lambda_{k+1} \cdots \dd \lambda_n \\
+	& =
+	\begin{cases}
+		\det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k}, \quad \beta = 2, \\
+		\pf\left[ K_n^{(\beta)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k}, \quad \beta = 1,4.
+	\end{cases}
+\end{align}
+This implies, that the eigenvalue density $p^{(w)} = p_1^{(w)}(\lambda)$ is given by the formula
+\begin{equation}
+	p^{(w)}(\lambda; \beta) = 
+	\begin{cases}
+		K_n^{(2)}(\lambda, \lambda), \quad \beta = 2, \\
+		\pf\left[ K_n^{(\beta)}(\lambda, \lambda) \right], \quad \beta = 1,4.
+	\end{cases}
+\end{equation}
+
+\subsubsection{The case for $\beta = 2$}
+\label{Subsection: The case for beta 2}
+
+We start illustrating the results above for the case $\beta=2$. Begin with the following characterization of the Jacobian as a Vandermonde determinant
+\begin{equation}
+	\prod_{i<j}^{n} |\lambda_i - \lambda_j|^2 = {\det(\lambda_i^{j-1})^2}_{i,j=1,\cdots,n}.
+\end{equation}
+Now, based on the property of Vandermonde determinants, we can rewrite the entries using some class of appropriate polynomial. For this case, we will use $\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$ orthogonal polynomials. Then,
+\begin{equation}
+	\prod_{i<j}^{n} |\lambda_i - \lambda_j|^2 = {\det\left(q_{j-1}^{(2)}(\lambda_i)\right)}^2_{n\times n}
+\end{equation}
+Using the fact that $(\det(A))^2 = \det(\sum_{j=1}^{n} A_{ji} A_{jk})$ we can rewrite
+\begin{equation}
+	\prod_{i<j}^{n} |\lambda_i - \lambda_j|^2 = {\det\left(\sum_{j=1}^{n} q_{j-1}^{(2)}(\lambda_i) q_{j-1}^{(2)}(\lambda_k) \right)}_{n\times n}
+\end{equation}
+Now, remember that
+\begin{equation}
+	\p^{(w)}(\mmany{\lambda}{n};2) \propto \prod_{i=1}^{n} \wf(\lambda_i) |\Delta_n(\lambda)|^2,
+\end{equation}
+then we will put the weight inside the determinant in the following manner: Take $\wf(\lambda_i) = \sqrt{\wf(\lambda_i)}\sqrt{\wf(\lambda_i)}$ and multiply one term by the $i$-th column and the other by the $i$-th line of the matrix. Now, we should get
+\begin{equation}
+	\p^{(w)}(\mmany{\lambda}{n};2) \propto {\det\left(\sqrt{\wf(\lambda_i)\wf(\lambda_k)} \sum_{j=1}^{n} q_{j-1}^{(2)}(\lambda_i) q_{j-1}^{(2)}(\lambda_k) \right)}_{i,k=1}^{n}
+\end{equation}
+and therefore
+\begin{equation}
+	\p^{(w)}(\mmany{\lambda}{n};2) \propto \det\left[ K_n^{(2)}(\lambda_i, \lambda_k) \right]_{i,k=1}^{n}.
+\end{equation}
+
+The general formula can also be further simplified but this computation is easier with $\beta = 2$, so that's the case we will deal with for now. First, it is known that the orthogonal polynomials $\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$ satisfy the three-term recurrence
+\begin{equation}
+	q_{j}^{(2)}(\lambda) = (\lambda + a_j) q_{j-1}^{(2)}(\lambda) - \frac{r_{j-1}^{(2)}}{r_{j-2}^{(2)}} q_{j-2}^{(2)}(\lambda)
+\end{equation} 
+where the coefficients depend on the choice of weight. We use this recurrence to write the terms in the summation of $K_n^{(2)}$ so that it gives rise to the \textit{Christoffel-Darboux} formula:
+
+\begin{prop}
+	The $\beta=2$ kernel defined before simplifies as
+	\begin{equation}
+		K_n^{(2)}(x,y) = \frac{\sqrt{\wf(x) \wf(y)}}{r_{n-1}^{(2)}} \frac{q_n^{(2)}(x)q_{n-1}^{(2)}(y) - q_{n-1}^{(2)}(x)q_n^{(2)}(y)}{x-y}
+	\end{equation}
+	\label{Proposition: Kernel Simplification beta 2}
+\end{prop}
+Taking the limit $y \rightarrow x$ using L`Hopital's rule shows that for finite $n$ the density has the form
+\begin{equation}
+	\pe^{(w)}(\lambda) = K_n^{(2)}(\lambda, \lambda) = \frac{\wf(\lambda)}{r_{n-1}^{(2)}} \left( q_{n-1}^{(2)}(\lambda)\partial_\lambda q_{n}^{(2)}(\lambda) - q_{n}^{(2)}(\lambda)\partial_\lambda q_{n-1}^{(2)}(\lambda)  \right)
+	\label{Equation: Equilibrium Measure and Kernel}
+\end{equation}
+
+All that remains to make $\pe^{(w)}(\lambda)$ fully explicit is knowledge of the orthogonal polynomials $\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$. In the Gaussian, Laguerre and Jacobi cases, there are Hermite, Laguerre and Jacobi orthogonal polynomials, respectively.
+
+\subsection{Partition Functions in Random Matrix} 
+
+A random matrix is a matrix in which the entries are random variables, not necessarily independent nor equally distributed. The algebraic-geometric properties in a matrix, such as its natural multiplication and spectral decomposition, makes this representation especially useful. Naturally, many complex systems use a matrix representation. Correlation matrices and operators, especially in physics, are some of many major reasons why this representation is important. Studying these matrices we can deduce properties from the system of interest, either that being the eigenvalues and eigenvectors of operators describing an atomic nuclei \cite{Dyson} or the description of market shares in highly correlated systems \cite[Chapter~2]{fabozziquantitative}. Either way, using an random matrix approach is relevant by the same reason random variables proved themselves crucial: it unlocks relevant statistical description of phenomena and systems.
+
+In the research proposed here, we will focus on the study of {\it normal random matrices}, which consists of the space of normal matrices, equipped with a proper probability distribution. In the beginning of its book, Feynman states \cite{feynmanstatistical} that the key principle of the statistical mechanics is that the probability that a system attains a state with energy $E$, in equilibrium, is given by a function $\frac{1}{Z} \ee^{\frac{-E}{kT}}$ where $Z$ is the partition function. In a more general sense there is a relation between the partition function and the free energy of the system, that, in itself, relates to the entropy. Knowing well the partition function is a way to describe with great detail the macro-properties of such a system.
+
+There is a great effort in the community of random matrix theory to study expansions of the partition function of various classes of Random Matrix. Recently, some advance has been made in the works of Sug-Soo Byun et al. \cite{Byun_2023}. The work they done was on Random Normal Matrix and Planar Ensembles (with Determinantal and Pfaffian structures, respectively), which present partition functions
+\begin{equation}
+	Z_N^{(\beta)} \deff \int_{\C^N}  \prod_{j>k=1}^{N} |z_j - z_k|^\beta \prod_{j=1}^{N} \ee^{-\frac{\beta N}{2} Q(z_j)} \dd A(z_j)
+\end{equation}
+where $N$ is the size of the matrix, $\beta$ is relative to the generic entries dimension and $\dd A(z) \deff \dd^2 z/\pi$ is the area measure. Here, $Q: \C \rightarrow \R$ is called the confining potential and satisfies some suitable conditions. In their work, using concepts of orthogonal polynomials and integral asymptotic by Laplace method, they derived large-$N$ asymptotic expansions up to the $O(1)$-terms for  $Z_{N,\beta}$ when $V$ is a radially symmetric potential, in the form
+%
+$$
+Z_{N,\beta=2}=-I^VN^2+\frac{1}{2}N\log N+E^V N+G\log N+F^V + o(1),\quad N\to \infty.
+$$
+%
+In such expansion, for a large class of potentials $V$ the first term $I^Q$ was known for a long time, being given by the energy of the associated equilibrium measure. The coefficient $1/2$ of the order $N\log N$, as well as the entropy term $E^V$, were known from recent work of Leblé and Serfaty \cite{leblé2017large}, also for rather large classes of $V$. The remaining terms in this expansion are new, and they are computed exploring the radially symmetry imposed on the potential. Strikingly, the term $G$ appears to be universal in $V$, depending solely on the connectivity of the limiting spectrum of eigenvalues. More precisely, they noticed that $G$ depends on whether the limiting spectrum is an annulus or a disc which, surprisingly, seems to not have been observed in the vast previous literature on the matter. 
+
+As was said, the study of the partition function is a major way to describe thermodynamic systems. With these new developments it is expected that many systems could be better understood and described by the asymptotic given. In that way this poses a great opportunity for development in the field. More than that, by the great connection that the field of random matrices holds with many other fields is possible that by the study of this work some suggestions on the behavior of many other related problems become plausible. Especially, we will be interested in external field model.
+
+%In our case, such probability distribution is given by a Gibbs-type measure, which we also impose to be invariant under the action of the unitary group. All in all, such invariance imposes a trivialization of the eigenvectors, which turn out to be simply Haar-distributed on the unitary group. In turn, all the relevant information on the matrix model is contained in their eigenvalues, and their joint probability density function is explicitly, as before, given by
+%%
+%\begin{equation}
+%	\p(M) \dd M = \frac{1}{Z_{N, \beta}} \ee^{- N \tr{V(M)}} \dd M,\quad  M \in \Se
+%	\label{Equation: invariant measure def}
+%\end{equation}
+%where $Z_{N, \beta}$ is a partition function, such that $\p$ is a probability density of the matrices. The potential $V:\mathbb \R \to \R$ is a suitably regular function, acting as a confining potential on the eigenvalues $\lambda_1,\hdots, \lambda_N$.
+%
+%Considering such a measure is natural to make an analogy to the well know Coulomb Gas. Under appropriate conditions, the Coulomb Gas is a Gibbs-Boltzmann probability measure given in $(\mathbb R^d)^N$. This measure $\p_N$ models an interacting gas of charged particles, at $\mmany{x}{N} \in \Se$ of dimension $d$ in $\R^n$ ambient space, under the influence of an external potential. Its measure its given by 
+%\begin{equation}
+%	\p_N(\mmany{x}{N}) = \frac{e^{-\beta N^2 \Hf_N(\mmany{x}{N})}}{Z_{N,\beta}},
+%	\label{Equação: Medida Gas de Coulomb}
+%\end{equation}
+%where $$\Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \V(x) + \frac{1}{2N^2} \sum_{i \neq j} \g(x_i - x_j)$$ is the Hamiltonian or energy of the system and $\g(x_i - x_j)$ is the Coulomb Kernel of interaction. In this analogy, eigenvalues $\lambda_1,\hdots, \lambda_N$ may be seen as particles under the influence of the Gibbs law, and thermodynamical arguments may be employed to describe the configurations of eigenvalues of random matrices. 
+
+\subsection{External Field Models}
+
+Consider now that we couple a deterministic source matrix $\m{A}$ to the random matrix $\m{M}$, in a way that the weight
+\begin{equation}
+	\dd \mu_n(M) = \frac{1}{Z_A} \exp{\left\{-n \left( \tr{\left(V(\m{M})-  \m{A}\m{M} \right)}\right)\right\} } \dd M.
+\end{equation}
+describes the model distribution. We take $\m{A}$ to be an Hermitian matrix and $\dd M$ to be the entry-wise Lebesgue measure. The eigenvalues of $\m{M}$ represent the energy levels of a system without time-reversal invariance. When the external source $\m{A}$ is nonzero and $V(\m{M}) = \m{M}^2 / 2$, this measure arises in the study of Hamiltonian that can be written as the sum of a random matrix and a deterministic source matrix. In this definition,
+\begin{equation}
+	Z_A = \int  \exp{\left\{-n \left( \tr{\left(V(\m{M})-  \m{A}\m{M} \right)}\right)\right\} } \dd M
+\end{equation}
+Without any loss of generality, we can assume $\m{A}$ to be diagonal.
+
+Of course,  when $A = 0$, that is, no external source, and $V(\m{M}) = \m{M}^2/2$, this measure describes the Gaussian Unitary Ensemble - GUE. For reasonable choices of $V(z)$ the spectrum tends to accumulate on closed intervals of the real axis. Introducing an external source A can have the effect of perturbing the expected position of the spectrum. Some study has been done on the case for the matrix $\m{A}$ with two eigenvalues $\pm a$, each of multiplicity $n/2$. When $a$ is sufficiently small, the eigenvalues of $\m{M}$ accumulate with probability one on a single interval, just as when $\m{A} = 0$. As $a$ increases the interval splits into two disconnected intervals. There is a transitional value of $a$ between these two cases where the local eigenvalue density is described by the so-called \textit{Pearcey process}. This is precisely the case witch we will explore an asymptotic for.
+
+Define the monic polynomial
+\begin{equation}
+	P_n(z) = \int \det{(z - \m{M})} \dd \mu_n(M)	
+\end{equation}
+then, we have the following proposition
+\begin{prop} Suppose $\m{A}$ has $p$ distinct eigenvalues $a_i$ with respective multiplicity $n_i$, so that $n_1 + \cdots + n_p = n$. Let $n^{(i)} = n_1 + \cdots + n_i$ and $n^{(0)} = 0$. Define
+	\begin{equation}
+		w_j(x) = x^{d_j -1} \ee^{-(V(x) - a_j x)}, \quad j = 1, \cdots, n.
+	\end{equation}
+	where $i = i_j$ is such that $n^{(i-1)} < j < n^{(i)}$ and $d_j = j - n^{(i-1)}$. Then the following hold
+	\begin{itemize}
+		\item There is a constant $\tilde{Z}_n$ such that
+		\begin{equation}
+			P_n(z) = \frac{1}{\tilde{Z}} \int \prod_{j=1}^{n} (z - \lambda_j) \prod_{j=1}^{n} w_j(\lambda_j) \prod_{i > j} (\lambda_i - \lambda_j) \dd \lambda
+		\end{equation}
+		where $\dd \lambda = \dd \lambda_1 \cdots \dd \lambda_n$.
+		\item Let 
+		\begin{equation}
+			m_{j,k} = \int_{-\infty}^{\infty} x^k w_j(x) \dd x
+		\end{equation} 
+		Then we have the determinantal formula
+		\begin{equation}
+			P_n(z) = \frac{1}{\tilde{Z}_n} = 
+			\begin{vmatrix}
+				m_{1,0} & m_{1,1} & \cdots & m_{1,n}\\
+				\vdots & \vdots & \ddots & \cdots \\
+				m_{n,0} & m_{n,1} & \cdots & m_{n,n} & \\
+				1 & z & \cdots & z^n
+			\end{vmatrix}
+		\end{equation}
+		\item For $j = 1, \cdots, p$,
+		\begin{equation}
+			\int_{-\infty}^{\infty} P_n(x) x^j  \ee^{V(x) - a_j x)} \dd x = 0, \quad j = 0, \cdots, n_i-1
+		\end{equation}
+		and these equations uniquely determine $P_n(x)$.
+	\end{itemize}
+\end{prop}
+
+The relations can be viewed as multiple orthogonality conditions for the polynomial $P_n$. There are $p$ weights $\ee^{-(V (x)-a_jx)}$, $j = 1, \cdots , p$, and for each weight there are a number of orthogonality conditions, so that the total number of them is $n$. This point of view is especially useful in the case when $\m{A}$ has only a small number of distinct eigenvalues. 
+
+Let $\sum_n$ be the collection of functions 
+\begin{equation}
+\sum_n \deff \{ x_j \ee^{a_i x} | i = 1, \cdots , p, \ j = 0, \cdots , n_i - 1 \}
+\end{equation}		
+We start with a lemma.
+\begin{lemma}
+	There exists a unique function $Q_{n-1}$ in the linear span of $\sum_n$ such that
+	\begin{equation}
+		\int_{-\infty}^{\infty} x^j Q_{n-1}(x) \ee^{-V(x)} \dd x = 0, \quad j = 0, \quad , n-2,
+	\end{equation}
+	 and 
+	 \begin{equation}
+	 	\int_{-\infty}^{\infty} x^{n-1} Q_{n-1}(x) \ee^{-V(x)} \dd x = 1. 
+	 \end{equation}
+\end{lemma}
+Consider $P_0, \cdots, P_n$, a sequence of multiple orthogonal polynomials such that $\deg P_k = k$, with an increasing sequence of the multiplicity vectors, so that $k_i \leq l_i, i = 1, \cdots , p$, when $k \leq l$. Consider the biorthogonal system of functions, $\{ Q_k(x), k = 0, \cdots , n-1\}$, 
+\begin{equation}
+	\int_{-\infty}^{\infty} P_j(x) Q_k(x) \ee^{-V(x)} \dd x = \delta_{jk}, \quad \text{for} j, k = 0, \cdots , n-1. 
+\end{equation}
+Define the kernel 
+\begin{equation}
+	K_n(x, y) = \ee^{-\frac{1}{2}(V(x)+V(y))}  \sum^{n-1}_{k=0} P_k(x)Q_k(y). 
+\end{equation}
+This kernel, as in the simplest case, will enable us to determine asymptotic on the equilibrium measure.

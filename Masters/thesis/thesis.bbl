@@ -5,22 +5,11 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v<VERSION> }
 
-\bibitem[Alpert 1999]{Trapezoidal-Maclaurin}
-\abntrefinfo{Alpert}{ALPERT}{1999}
-{ALPERT, B.~K. Hybrid gauss-trapezoidal quadrature rules.
-\textbf{SIAM J. Sci. Comput.}, Society for Industrial and Applied Mathematics,
-  USA, v.~20, n.~5, p. 1551–1584, Jan. 1999.
-ISSN 1064-8275.
-Available: \url{https://doi.org/10.1137/S1064827597325141}.}
-
-\bibitem[Byun, Kang and Seo 2023]{Byun_2023}
-\abntrefinfo{Byun, Kang and Seo}{BYUN; KANG; SEO}{2023}
-{BYUN, S.-S.; KANG, N.-G.; SEO, S.-M. Partition functions of determinantal and
-  pfaffian coulomb gases with radially symmetric potentials.
-\textbf{Communications in Mathematical Physics}, Springer Science and Business
-  Media LLC, v.~401, n.~2, p. 1627–1663, Mar. 2023.
-ISSN 1432-0916.
-Available: \url{http://dx.doi.org/10.1007/s00220-023-04673-1}.}
+\bibitem[Balogh, Grava and Merzi 2016]{balogh2016orthogonal}
+\abntrefinfo{Balogh, Grava and Merzi}{BALOGH; GRAVA; MERZI}{2016}
+{BALOGH, F.; GRAVA, T.; MERZI, D. Orthogonal polynomials for a class of
+  measures with discrete rotational symmetries in the complex plane.
+2016.}
 
 \bibitem[Chafaï and Ferré 2018]{Chafal}
 \abntrefinfo{Chafaï and Ferré}{CHAFAï; FERRé}{2018}
@@ -31,70 +20,18 @@ Available: \url{http://dx.doi.org/10.1007/s00220-023-04673-1}.}
 ISSN 1572-9613.
 Available: \url{http://dx.doi.org/10.1007/s10955-018-2195-6}.}
 
-\bibitem[Deift]{deiftorthogonal}
-\abntrefinfo{Deift}{DEIFT}{}
+\bibitem[Deift 1999]{deiftorthogonal}
+\abntrefinfo{Deift}{DEIFT}{1999}
 {DEIFT, P. \textbf{Orthogonal Polynomials and Random Matrices: A
   Riemann-Hilbert Approach}. Courant Institute of Mathematical Sciences, New
-  York University.  (Courant lecture notes in mathematics).
+  York University, 1999.  (Courant lecture notes in mathematics).
 ISBN 9780821883440. Available:
   \url{https://books.google.com.br/books?id=SBR8yv0LkFgC}.}
 
-\bibitem[Girotti 2014]{ManuelaGirottiPhD}
-\abntrefinfo{Girotti}{GIROTTI}{2014}
-{GIROTTI, M.
-\textbf{Riemann-Hilbert approach to Gap Probabilities of Determinantal Point
-  Processes}.
-Phd Thesis (PhD Thesis) --- Concordia University, August 2014. Unpublished.
-Available: \url{https://spectrum.library.concordia.ca/id/eprint/978910/}.}
-
-\bibitem[Hedenmalm and Wennman
-  2020]{hedenmalm2020planarorthogonalpolynomialsboundary}
-\abntrefinfo{Hedenmalm and Wennman}{HEDENMALM; WENNMAN}{2020}
-{HEDENMALM, H.; WENNMAN, A. \textbf{Planar orthogonal polynomials and boundary
-  universality in the random normal matrix model}. 2020.
-Available: \url{https://arxiv.org/abs/1710.06493}.}
-
-\bibitem[Johansson 2006]{JOHANSSON20061}
-\abntrefinfo{Johansson}{JOHANSSON}{2006}
-{JOHANSSON, K. Course 1 - random matrices and determinantal processes. In:
-  BOVIER, A.; DUNLOP, F.; {van Enter}, A.; {den Hollander}, F.; DALIBARD, J.
-  (Ed.). \textbf{Mathematical Statistical Physics}. Elsevier, 2006,  (Les
-  Houches, v.~83). p. 1--56.
-Available:
-  \url{https://www.sciencedirect.com/science/article/pii/S0924809906800387}.}
-
-\bibitem[Lebl{\'e} and Serfaty 2017]{Leble2017-yj}
-\abntrefinfo{Lebl{\'e} and Serfaty}{LEBL{\'E}; SERFATY}{2017}
-{LEBL{\'E}, T.; SERFATY, S. Large deviation principle for empirical fields of
-  log and riesz gases.
-\textbf{Invent. Math.}, Springer Science and Business Media LLC, v.~210, n.~3,
-  p. 645--757, Dec. 2017.}
-
-\bibitem[Nica and Ortmann 2025]{nica2025gaussianintegralformulahermite}
-\abntrefinfo{Nica and Ortmann}{NICA; ORTMANN}{2025}
-{NICA, M.; ORTMANN, J. \textbf{A Gaussian integral formula for the Hermite
-  polynomials: Combinatorics, Asymptotics and Applications}. 2025.
-Available: \url{https://arxiv.org/abs/2508.13910}.}
-
-\bibitem[Olver \textit{et al.} 2010]{NISTMathFunc}
-\abntrefinfo{Olver \textit{et al.}}{OLVER \textit{et al.}}{2010}
-{OLVER, F.; LOZIER, D.; BOISVERT, R.; CLARK, C. Nist handbook of mathematical
-  functions.
-01 2010.}
-
-\bibitem[Pozniak, Zyczkowski and Kus 1998]{Marcin_Pozniak_1998}
-\abntrefinfo{Pozniak, Zyczkowski and Kus}{POZNIAK; ZYCZKOWSKI; KUS}{1998}
-{POZNIAK, M.; ZYCZKOWSKI, K.; KUS, M. Composed ensembles of random unitary
-  matrices.
-\textbf{Journal of Physics A: Mathematical and General}, v.~31, n.~3, p.~1059,
-  jan 1998.
-Available: \url{https://doi.org/10.1088/0305-4470/31/3/016}.}
-
-\bibitem[Rahman 2023]{rahman2023recursivecharacterisationsrandommatrix}
-\abntrefinfo{Rahman}{RAHMAN}{2023}
-{RAHMAN, A.~A. \textbf{Recursive characterisations of random matrix ensembles
-  and associated combinatorial objects}. 2023.
-Available: \url{https://arxiv.org/abs/2301.11428}.}
+\bibitem[Pimenta and Silva 2024]{TCCJoaoPimenta}
+\abntrefinfo{Pimenta and Silva}{PIMENTA; SILVA}{2024}
+{PIMENTA, J. V.~A.; SILVA, G. L.~F. \textbf{Matrizes aleatórias e simulação
+  de Gases de Coulomb}. 2024.}
 
 \bibitem[Saff and Totik 2024]{saff2024logarithmic}
 \abntrefinfo{Saff and Totik}{SAFF; TOTIK}{2024}
@@ -102,18 +39,5 @@ Available: \url{https://arxiv.org/abs/2301.11428}.}
   Springer-Verlag, 2024.  (Grundlehren der mathematischen Wissenschaften).
 ISBN 9783031651335. Available:
   \url{https://books.google.com.bo/books?id=z2wnEQAAQBAJ}.}
-
-\bibitem[Serfozo 1990]{SERFOZO19901}
-\abntrefinfo{Serfozo}{SERFOZO}{1990}
-{SERFOZO, R.~F. Chapter 1 point processes. In:  \textbf{Stochastic Models}.
-  Elsevier, 1990,  (Handbooks in Operations Research and Management Science,
-  v.~2). p. 1--93.
-Available:
-  \url{https://www.sciencedirect.com/science/article/pii/S0927050705801653}.}
-
-\bibitem[Tremblay 2025]{Tremblay}
-\abntrefinfo{Tremblay}{TREMBLAY}{2025}
-{TREMBLAY, N. \textbf{A short introduction to Determinantal Point Processes}.
-  [S.l.]: Institut Henri Poincaré, 2025.}
 
 \end{thebibliography}

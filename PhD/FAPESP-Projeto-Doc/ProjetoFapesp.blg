@@ -1,0 +1,75 @@
+This is BibTeX, Version 0.99e (TeX Live 2026/Arch Linux)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ProjetoFapesp.aux
+The style file: abnt-alf.bst
+A level-1 auxiliary file: cap1/introducaobeta2.aux
+A level-1 auxiliary file: cap2/Jus.aux
+A level-1 auxiliary file: cap3/Obj.aux
+A level-1 auxiliary file: cap4/Cron.aux
+A level-1 auxiliary file: cap5/Met.aux
+A level-1 auxiliary file: cap6/Resul.aux
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Database file #1: abnt-options.bib
+Database file #2: mybibfile.bib
+I was expecting a `,' or a `}'---line 154 of file mybibfile.bib
+ :  
+ :  bookTitle={Analytic Number Theory and Diophantine Problems: Pro
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=8) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=8) to 20 items from 10.
+Warning--campo year vazio ou faltando em Montgomery
++---------------------------------------------------------+
+| Estilo bibliogr�fico abnt-alf.bst vers�o 1.40           |
+| Em caso de d�vidas ou problemas com este estilo procure |
+| http://abntex.codigolivre.org.br                        |
++---------------------------------------------------------+
+You've used 12 entries,
+            5887 wiz_defined-function locations,
+            1142 strings with 10482 characters,
+and the built_in function-call counts, 9125 in all, are:
+= -- 826
+> -- 280
+< -- 19
++ -- 145
+- -- 88
+* -- 595
+:= -- 1243
+add.period$ -- 45
+call.type$ -- 13
+change.case$ -- 101
+chr.to.int$ -- 31
+cite$ -- 11
+duplicate$ -- 468
+empty$ -- 702
+format.name$ -- 404
+if$ -- 2222
+int.to.chr$ -- 1
+int.to.str$ -- 2
+missing$ -- 181
+newline$ -- 62
+num.names$ -- 51
+pop$ -- 249
+preamble$ -- 1
+purify$ -- 43
+quote$ -- 0
+skip$ -- 570
+stack$ -- 1
+substring$ -- 280
+swap$ -- 235
+text.length$ -- 13
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 2
+warning$ -- 1
+while$ -- 65
+width$ -- 0
+write$ -- 175
+(There was 1 error message)

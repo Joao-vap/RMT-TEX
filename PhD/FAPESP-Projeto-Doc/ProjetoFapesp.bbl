@@ -1,0 +1,76 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{1.40 }
+
+\bibitem[Bleher e Kuijlaars 2006]{Bleher_2006}
+\abntrefinfo{Bleher e Kuijlaars}{BLEHER; KUIJLAARS}{2006}
+{BLEHER, P.~M.; KUIJLAARS, A. B.~J. Large n limit of gaussian random matrices
+  with external source, part iii: Double scaling limit.
+\emph{Communications in Mathematical Physics}, Springer Science and Business
+  Media LLC, v.~270, n.~2, p. 481–517, dez. 2006.
+ISSN 1432-0916.
+Dispon{\'\i}vel em: $<$http://dx.doi.org/10.1007/s00220-006-0159-1$>$.}
+
+\bibitem[Byun, Kang e Seo 2023]{Byun_2023}
+\abntrefinfo{Byun, Kang e Seo}{BYUN; KANG; SEO}{2023}
+{BYUN, S.-S.; KANG, N.-G.; SEO, S.-M. Partition functions of determinantal and
+  pfaffian coulomb gases with radially symmetric potentials.
+\emph{Communications in Mathematical Physics}, Springer Science and Business
+  Media LLC, v.~401, n.~2, p. 1627–1663, mar. 2023.
+ISSN 1432-0916.
+Dispon{\'\i}vel em: $<$http://dx.doi.org/10.1007/s00220-023-04673-1$>$.}
+
+\bibitem[Feynman 1998]{feynmanstatistical}
+\abntrefinfo{Feynman}{FEYNMAN}{1998}
+{FEYNMAN, R. \emph{Statistical Mechanics: A Set Of Lectures}. Avalon
+  Publishing, 1998.  (Advanced Books Classics).
+ISBN 9780813346106. Dispon{\'\i}vel em:
+  $<$https://books.google.com.br/books?id=Ou4ltPYiXPgC$>$.}
+
+\bibitem[Goldston e Montgomery]{Montgomery}
+\abntrefinfo{Goldston e Montgomery}{GOLDSTON; MONTGOMERY}{}
+{GOLDSTON, J.; MONTGOMERY, G. Pair correlation of zeros and primes in short
+  intervals.
+In:  \underline{\ \ \ \ \ \ \ \ }. [S.l.: s.n.].}
+
+\bibitem[Leblé e Serfaty 2017]{leblé2017large}
+\abntrefinfo{Leblé e Serfaty}{LEBLé; SERFATY}{2017}
+{LEBLé, T.; SERFATY, S. \emph{Large Deviation Principle for Empirical Fields
+  of Log and Riesz Gases}. 2017.}
+
+\bibitem[Majumdar 2007]{majumdar2007randommatricesulamproblem}
+\abntrefinfo{Majumdar}{MAJUMDAR}{2007}
+{MAJUMDAR, S.~N. \emph{Random Matrices, the Ulam Problem, Directed Polymers,
+  Growth Models, and Sequence Matching}. 2007.}
+
+\bibitem[Schroder 2019]{Schroder2019}
+\abntrefinfo{Schroder}{SCHRODER}{2019}
+{SCHRODER, D. \emph{From Dyson to Pearcey: Universal statistics in random
+  matrix theory}. [S.l.]: Institute of Science and Technology Austria, 2019.}
+
+\bibitem[Tracy e Widom 1993]{Tracy_1993}
+\abntrefinfo{Tracy e Widom}{TRACY; WIDOM}{1993}
+{TRACY, C.~A.; WIDOM, H. Level-spacing distributions and the airy kernel.
+\emph{Physics Letters B}, Elsevier BV, v.~305, n. 1–2, p. 115–118, maio
+  1993.
+ISSN 0370-2693.
+Dispon{\'\i}vel em: $<$http://dx.doi.org/10.1016/0370-2693(93)91114-3$>$.}
+
+\bibitem[Tracy e Widom 2006]{Tracy2006}
+\abntrefinfo{Tracy e Widom}{TRACY; WIDOM}{2006}
+{\underline{\ \ \ \ \ \ \ \ }. The pearcey process.
+\emph{Communications in Mathematical Physics}, v.~263, n.~2, p. 381--400, Apr
+  2006.
+ISSN 1432-0916.
+Dispon{\'\i}vel em: $<$https://doi.org/10.1007/s00220-005-1506-3$>$.}
+
+\bibitem[Ulam 1961]{Ulam}
+\abntrefinfo{Ulam}{ULAM}{1961}
+{ULAM, S.~M. On some statistical properties of dynamical systems. In:  NEYMAN,
+  J. (Ed.). \emph{Fourth Berkeley Symposium on Mathematical Statistics and
+  Probability}. [S.l.: s.n.], 1961. p. 315--320.}
+
+\end{thebibliography}

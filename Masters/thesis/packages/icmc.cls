@@ -135,7 +135,10 @@
 \RequirePackage{amssymb}
 \RequirePackage{multicol}
 \RequirePackage{wrapfig}
-\RequirePackage{subcaption}
+\usepackage{pgfplots}
+\usepackage{float}
+\pgfplotsset{width=6cm,compat=1.9}
+
 
 %================================================================================
 % Comando para configuracao do tipo de trabalho
