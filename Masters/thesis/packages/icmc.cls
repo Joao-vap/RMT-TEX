@@ -135,9 +135,20 @@
 \RequirePackage{amssymb}
 \RequirePackage{multicol}
 \RequirePackage{wrapfig}
+\usepackage{tikzfill}
+\usetikzlibrary{calc}
+\usetikzlibrary{plotmarks}
 \usepackage{pgfplots}
 \usepackage{float}
+\usepackage{csquotes}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}% <- added
 \pgfplotsset{width=6cm,compat=1.9}
+
+%\mathtoolsset{showonlyrefs=true}
 
 
 %================================================================================
@@ -828,7 +839,8 @@
 % math
 %------------------------------------------------------------
 %
-\newcommand{\normL}[2]{||#2||_{L^#1}}
+\newcommand{\n}{\mathfrak{n}}
+\newcommand{\normL}[3]{||#2||_{L^#1 #3}}
 % support for function
 \DeclareMathOperator{\supp}{supp}
 % Genereric Field

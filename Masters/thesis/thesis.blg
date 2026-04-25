@@ -13,11 +13,8 @@ Reallocated singl_function (elt_size=8) to 100 items from 50.
 Reallocated wiz_functions (elt_size=8) to 9000 items from 6000.
 Database file #1: abntex2-options.bib
 Database file #2: references.bib
-I was expecting a `,' or a `}'---line 316 of file references.bib
- :  
- :  bookTitle={Analytic Number Theory and Diophantine Problems: Pro
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
+Warning--string name "june" is undefined
+--line 12 of file references.bib
 Reallocated singl_function (elt_size=8) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=8) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
@@ -27,45 +24,45 @@ Reallocated glb_str_end (elt_size=8) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex2.googlecode.com                           |
 +---------------------------------------------------------+
-You've used 11 entries,
+You've used 25 entries,
             6667 wiz_defined-function locations,
-            1231 strings with 10474 characters,
-and the built_in function-call counts, 6315 in all, are:
-= -- 595
-> -- 166
-< -- 7
-+ -- 114
-- -- 53
-* -- 377
-:= -- 832
-add.period$ -- 23
-call.type$ -- 13
-change.case$ -- 70
-chr.to.int$ -- 21
-cite$ -- 5
-duplicate$ -- 247
-empty$ -- 574
-format.name$ -- 234
-if$ -- 1595
+            1351 strings with 13499 characters,
+and the built_in function-call counts, 18403 in all, are:
+= -- 1597
+> -- 540
+< -- 44
++ -- 250
+- -- 167
+* -- 1227
+:= -- 2406
+add.period$ -- 88
+call.type$ -- 27
+change.case$ -- 202
+chr.to.int$ -- 62
+cite$ -- 19
+duplicate$ -- 934
+empty$ -- 1476
+format.name$ -- 775
+if$ -- 4543
 int.to.chr$ -- 5
 int.to.str$ -- 3
-missing$ -- 156
-newline$ -- 34
-num.names$ -- 25
-pop$ -- 172
+missing$ -- 397
+newline$ -- 112
+num.names$ -- 97
+pop$ -- 447
 preamble$ -- 1
-purify$ -- 38
+purify$ -- 88
 quote$ -- 0
-skip$ -- 553
+skip$ -- 1209
 stack$ -- 1
-substring$ -- 174
-swap$ -- 104
-text.length$ -- 3
+substring$ -- 701
+swap$ -- 476
+text.length$ -- 31
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 4
 warning$ -- 0
-while$ -- 32
+while$ -- 138
 width$ -- 0
-write$ -- 88
-(There was 1 error message)
+write$ -- 336
+(There was 1 warning)

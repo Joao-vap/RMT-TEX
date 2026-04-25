@@ -5,11 +5,30 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v<VERSION> }
 
-\bibitem[Balogh, Grava and Merzi 2016]{balogh2016orthogonal}
-\abntrefinfo{Balogh, Grava and Merzi}{BALOGH; GRAVA; MERZI}{2016}
-{BALOGH, F.; GRAVA, T.; MERZI, D. Orthogonal polynomials for a class of
-  measures with discrete rotational symmetries in the complex plane.
-2016.}
+\bibitem[Abul-Magd 2006]{Abul_Magd_2006}
+\abntrefinfo{Abul-Magd}{ABUL-MAGD}{2006}
+{ABUL-MAGD, A. Modelling gap-size distribution of parked cars using
+  random-matrix theory.
+\textbf{Physica A: Statistical Mechanics and its Applications}, Elsevier BV,
+  v.~368, n.~2, p. 536–540, Aug. 2006.
+ISSN 0378-4371.
+Available: \url{http://dx.doi.org/10.1016/j.physa.2005.10.059}.}
+
+\bibitem[Baik, Deift and Johansson
+  1999]{baik1999distributionlengthlongestincreasing}
+\abntrefinfo{Baik, Deift and Johansson}{BAIK; DEIFT; JOHANSSON}{1999}
+{BAIK, J.; DEIFT, P.; JOHANSSON, K. \textbf{On the Distribution of the Length
+  of the Longest Increasing Subsequence of Random Permutations}. 1999.
+Available: \url{https://arxiv.org/abs/math/9810105}.}
+
+\bibitem[Byun, Kang and Seo 2023]{Byun_2023}
+\abntrefinfo{Byun, Kang and Seo}{BYUN; KANG; SEO}{2023}
+{BYUN, S.-S.; KANG, N.-G.; SEO, S.-M. Partition functions of determinantal and
+  pfaffian coulomb gases with radially symmetric potentials.
+\textbf{Communications in Mathematical Physics}, Springer Science and Business
+  Media LLC, v.~401, n.~2, p. 1627–1663, Mar. 2023.
+ISSN 1432-0916.
+Available: \url{http://dx.doi.org/10.1007/s00220-023-04673-1}.}
 
 \bibitem[Chafaï and Ferré 2018]{Chafal}
 \abntrefinfo{Chafaï and Ferré}{CHAFAï; FERRé}{2018}
@@ -20,24 +39,109 @@
 ISSN 1572-9613.
 Available: \url{http://dx.doi.org/10.1007/s10955-018-2195-6}.}
 
-\bibitem[Deift 1999]{deiftorthogonal}
-\abntrefinfo{Deift}{DEIFT}{1999}
-{DEIFT, P. \textbf{Orthogonal Polynomials and Random Matrices: A
-  Riemann-Hilbert Approach}. Courant Institute of Mathematical Sciences, New
-  York University, 1999.  (Courant lecture notes in mathematics).
-ISBN 9780821883440. Available:
-  \url{https://books.google.com.br/books?id=SBR8yv0LkFgC}.}
+\bibitem[Deift 2006]{deift2006universalitymathematicalphysicalsystems}
+\abntrefinfo{Deift}{DEIFT}{2006}
+{DEIFT, P. \textbf{Universality for mathematical and physical systems}. 2006.
+Available: \url{https://arxiv.org/abs/math-ph/0603038}.}
 
-\bibitem[Pimenta and Silva 2024]{TCCJoaoPimenta}
-\abntrefinfo{Pimenta and Silva}{PIMENTA; SILVA}{2024}
-{PIMENTA, J. V.~A.; SILVA, G. L.~F. \textbf{Matrizes aleatórias e simulação
-  de Gases de Coulomb}. 2024.}
+\bibitem[Dyson 1962]{Dyson1962es}
+\abntrefinfo{Dyson}{DYSON}{1962}
+{DYSON, F.~J. {Statistical theory of the energy levels of complex systems. I}.
+\textbf{J. Math. Phys.}, v.~3, p. 140--156, 1962.}
 
-\bibitem[Saff and Totik 2024]{saff2024logarithmic}
-\abntrefinfo{Saff and Totik}{SAFF; TOTIK}{2024}
-{SAFF, E.; TOTIK, V. \textbf{Logarithmic Potentials with External Fields}.
-  Springer-Verlag, 2024.  (Grundlehren der mathematischen Wissenschaften).
-ISBN 9783031651335. Available:
-  \url{https://books.google.com.bo/books?id=z2wnEQAAQBAJ}.}
+\bibitem[Gauss 1809]{gauss1809theoria}
+\abntrefinfo{Gauss}{GAUSS}{1809}
+{GAUSS, C. \textbf{Theoria motus corporum coelestium in sectionibus conicis
+  solem ambientium}. Sumtibus F. Perthes et I.H. Besser, 1809.  (Carl Friedrich
+  Gauss Werke). Available:
+  \url{https://books.google.com.br/books?id=ORUOAAAAQAAJ}.}
+
+\bibitem[Goldston and Montgomery 1987]{Montgomery}
+\abntrefinfo{Goldston and Montgomery}{GOLDSTON; MONTGOMERY}{1987}
+{GOLDSTON, J.; MONTGOMERY, G. Pair correlation of zeros and primes in short
+  intervals. In:  ADOLPHSON, A.~C.; CONREY J. B.AND~GHOSH, A.; YAGER, R.~I.
+  (Ed.). \textbf{Analytic Number Theory and Diophantine Problems: Proceedings
+  of a Conference at Oklahoma State University, 1984}. Boston, MA: Birkhauser
+  Boston, 1987. p. 183--203.
+ISBN 978-1-4612-4816-3. Available:
+  \url{https://doi.org/10.1007/978-1-4612-4816-3_10}.}
+
+\bibitem[Hammersley 1972]{Hammersley1972AFS}
+\abntrefinfo{Hammersley}{HAMMERSLEY}{1972}
+{HAMMERSLEY, J.~M. A few seedlings of research. In:  . [s.n.], 1972. Available:
+  \url{https://api.semanticscholar.org/CorpusID:36895634}.}
+
+\bibitem[Hedenmalm and Wennman
+  2020]{hedenmalm2020planarorthogonalpolynomialsboundary}
+\abntrefinfo{Hedenmalm and Wennman}{HEDENMALM; WENNMAN}{2020}
+{HEDENMALM, H.; WENNMAN, A. \textbf{Planar orthogonal polynomials and boundary
+  universality in the random normal matrix model}. 2020.
+Available: \url{https://arxiv.org/abs/1710.06493}.}
+
+\bibitem[Kieburg, Verbaarschot and Zafeiropoulos 2014]{Kieburg_2014}
+\abntrefinfo{Kieburg, Verbaarschot and Zafeiropoulos}{KIEBURG; VERBAARSCHOT;
+  ZAFEIROPOULOS}{2014}
+{KIEBURG, M.; VERBAARSCHOT, J. J.~M.; ZAFEIROPOULOS, S. Dirac spectra of
+  two-dimensional qcd-like theories.
+\textbf{Physical Review D}, American Physical Society (APS), v.~90, n.~8, Oct.
+  2014.
+ISSN 1550-2368.
+Available: \url{http://dx.doi.org/10.1103/PhysRevD.90.085013}.}
+
+\bibitem[Krbálek and Seba 2000]{Krb_lek_2000}
+\abntrefinfo{Krbálek and Seba}{KRBáLEK; SEBA}{2000}
+{KRBáLEK, M.; SEBA, P. The statistical properties of the city transport in
+  cuernavaca (mexico) and random matrix ensembles.
+\textbf{Journal of Physics A: Mathematical and General}, IOP Publishing, v.~33,
+  n.~26, p. L229–L234, 2000.
+ISSN 1361-6447.
+Available: \url{http://dx.doi.org/10.1088/0305-4470/33/26/102}.}
+
+\bibitem[Leblè and Serfaty 2017]{Leble2017-yj}
+\abntrefinfo{Leblè and Serfaty}{LEBLè; SERFATY}{2017}
+{LEBLè, T.; SERFATY, S. Large deviation principle for empirical fields of log
+  and riesz gases.
+\textbf{Invent. Math.}, Springer Science and Business Media LLC, v.~210, n.~3,
+  p. 645--757, dec 2017.}
+
+\bibitem[Logan and Shepp 1977]{LOGAN1977206}
+\abntrefinfo{Logan and Shepp}{LOGAN; SHEPP}{1977}
+{LOGAN, B.; SHEPP, L. A variational problem for random young tableaux.
+\textbf{Advances in Mathematics}, v.~26, n.~2, p. 206--222, 1977.
+ISSN 0001-8708.
+Available:
+  \url{https://www.sciencedirect.com/science/article/pii/0001870877900305}.}
+
+\bibitem[Majumdar 2007]{majumdar2007randommatricesulamproblem}
+\abntrefinfo{Majumdar}{MAJUMDAR}{2007}
+{MAJUMDAR, S.~N. \textbf{Random Matrices, the Ulam Problem, Directed Polymers,
+  Growth Models, and Sequence Matching}. 2007.
+Available: \url{https://arxiv.org/abs/cond-mat/0701193}.}
+
+\bibitem[Odlyzko and Rains 2000]{odlyzko_2000_yd8at-ym210}
+\abntrefinfo{Odlyzko and Rains}{ODLYZKO; RAINS}{2000}
+{ODLYZKO, A.~M.; RAINS, E.~M. On longest increasing subsequences in random
+  permutations. In:  \textbf{Analysis, Geometry, Number Theory: The Mathematics
+  of Leon Ehrenpreis}. American Mathematical Society, 2000. p. 439--451.
+Available: \url{https://doi.org/10.1090/conm/251/03886}.}
+
+\bibitem[Ulam 1961]{Ulam}
+\abntrefinfo{Ulam}{ULAM}{1961}
+{ULAM, S.~M. On some statistical properties of dynamical systems. In:  NEYMAN,
+  J. (Ed.). \textbf{Fourth Berkeley Symposium on Mathematical Statistics and
+  Probability}. [S.l.: s.n.], 1961. p. 315--320.}
+
+\bibitem[Vershik 1977]{VerKer77}
+\abntrefinfo{Vershik}{VERSHIK}{1977}
+{VERSHIK, S.~V.~K. A.~M. Asymptotics of the plancherel measure of the symmetric
+  group and the limiting form of young tableaux.
+\textbf{Dokl. Akad. Nauk SSSR}, v.~233, n.~6, p. 1024--1027, 1977.}
+
+\bibitem[Wishart 1928]{Wishart1928-hi}
+\abntrefinfo{Wishart}{WISHART}{1928}
+{WISHART, J. The generalised product moment distribution in samples from a
+  normal multivariate population.
+\textbf{Biometrika}, Oxford University Press (OUP), v.~20A, n.~1-2, p. 32--52,
+  1928.}
 
 \end{thebibliography}

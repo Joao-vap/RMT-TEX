@@ -31,45 +31,45 @@ Warning--campo year vazio ou faltando em Montgomery
 | Em caso de d�vidas ou problemas com este estilo procure |
 | http://abntex.codigolivre.org.br                        |
 +---------------------------------------------------------+
-You've used 12 entries,
+You've used 11 entries,
             5887 wiz_defined-function locations,
-            1142 strings with 10482 characters,
-and the built_in function-call counts, 9125 in all, are:
-= -- 826
-> -- 280
+            1136 strings with 10327 characters,
+and the built_in function-call counts, 8548 in all, are:
+= -- 790
+> -- 265
 < -- 19
-+ -- 145
-- -- 88
-* -- 595
-:= -- 1243
-add.period$ -- 45
-call.type$ -- 13
-change.case$ -- 101
-chr.to.int$ -- 31
-cite$ -- 11
-duplicate$ -- 468
-empty$ -- 702
-format.name$ -- 404
-if$ -- 2222
++ -- 140
+- -- 83
+* -- 559
+:= -- 1160
+add.period$ -- 42
+call.type$ -- 12
+change.case$ -- 95
+chr.to.int$ -- 30
+cite$ -- 10
+duplicate$ -- 439
+empty$ -- 638
+format.name$ -- 381
+if$ -- 2084
 int.to.chr$ -- 1
 int.to.str$ -- 2
-missing$ -- 181
-newline$ -- 62
-num.names$ -- 51
-pop$ -- 249
+missing$ -- 166
+newline$ -- 58
+num.names$ -- 46
+pop$ -- 228
 preamble$ -- 1
-purify$ -- 43
+purify$ -- 40
 quote$ -- 0
-skip$ -- 570
+skip$ -- 534
 stack$ -- 1
-substring$ -- 280
-swap$ -- 235
+substring$ -- 263
+swap$ -- 225
 text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 2
 warning$ -- 1
-while$ -- 65
+while$ -- 59
 width$ -- 0
-write$ -- 175
+write$ -- 161
 (There was 1 error message)

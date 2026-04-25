@@ -325,6 +325,8 @@ is the expect number of eigenvalues lying between $a$ and $b$.
 	This is the expression, if $\beta = 2$ for the measure of the \textit{random normal matrix} ensemble. Setting $Q(z) = |z|^2$ this would be the so-called \textit{complex Ginibre ensemble}. Consider, however, $Q(z) = q(|z|)$ for some $q: \R \mapsto \R$, i.e., $Q$ is a radially symmetric potential. The theory says that the roots of such ensemble should be distributed in a disk or annulus. However, $\set{z^j}_j$ are the family of orthogonal polynomials associated with $\wf =  \ee^{- \frac{\beta n}{2} Q(z)}$. Clearly its roots, which concentrate at zero, could not agree with the distribution of eigenvalues.
 \end{exemplo}  
 
+\mycomment{
+
 There is another way to express the eigenvalue j.p.d.f. taking advantage of its discrete nature. Consider the linear statistic of the eigenvalue density given by
 \begin{equation}
 	\pe(\lambda) = \sum_{i = 1}^n \langle \delta(\lambda - \lambda_i) \rangle
@@ -349,7 +351,7 @@ where we define
 \begin{equation}
 	\left\langle \mathcal{O} \right\rangle_{\eP(\m{X})} \deff \int_{\eS} \{\mathcal{O} \eP(\m{X})\} \dd \m{X}
 \end{equation}
-
+}
 \mycomment{
 \begin{exemplo}
 	The eigenvalue j.p.d.f. of the $n \times n$ circular ensembles is 
@@ -401,7 +403,7 @@ The term \textit{invariant matrix ensemble} usually refers to invariance under t
 			\lambda^a (1-\lambda)^b \chi_{\{0<\lambda<1\}} & \text{Jacobi}.
 		\end{cases}
 	\end{equation}
-	where $\chi$ is the indicator function. Especially, these are invariant ensembles under the orthogonal, unitary and symplectic conjugation (for $\beta = 1, 2, 4$).
+	where $\chi$ is the indicator function and $a,b > -1$. Especially, these are invariant ensembles under the orthogonal, unitary and symplectic conjugation (for $\beta = 1, 2, 4$).
 	\label{Example: Classical Ensembles}
 \end{exemplo}
 
@@ -438,7 +440,7 @@ The situation concerning the $n \times n$ Ginibre Ensemble is more complicated. 
 \begin{equation}
 	\dd \m{G} = \J(\lambda) \dd \m{\Lambda} \dd \eP_{Tri}(\m{T}) \dd \eP_{Haar}(\m{U})
 \end{equation}
-where $\dd \m{\Lambda}$ is the Lebesgue measure on the space housing the eigenvalues, $\dd \eP_{Haar}(\m{U})$ is the Haar measure defined before, $J(\lambda)$ is a Jacobian consisting of products of Vandermonde determinants involving the eigenvalues, and $\dd \eP_{Tri}(\m{T})$ is some measure dependent on the entries of T. From here, it can be shown that the Lebesgue measure on $\m{G}$ is invariant under the desired conjugation action.
+where $\dd \m{\Lambda}$ is the Lebesgue measure on the space housing the eigenvalues, $\dd \eP_{Haar}(\m{U})$ is the Haar measure defined before, $J(\lambda)$ is a Jacobian consisting of products of Vandermonde determinants involving the eigenvalues, and $\dd \eP_{Tri}(\m{T})$ is some measure dependent on the entries of $\m{T}$. From here, it can be shown that the Lebesgue measure on $\m{G}$ is invariant under the desired conjugation action.
 
  \subsection{Orthogonal Polynomial Ensembles}
  \label{Subsection: Orthogonal Ensembles}
@@ -601,11 +603,11 @@ Let's retrace this steps with mathematically proper definitions.  We start by pr
  The result we found in \autoref{Equation: determinantal} is an infamous theorem that is better expressed in the following way.
  
  \begin{teorema}
-	Let $\{q_j^{(\beta)}(x)\}_{j=0}^{\infty}, \{r_j^{(\beta)}\}_{j=0}^{\infty}$, be as in the definition above, and let $n \in \N$. The kernel corresponding respectively to the complex case is
+	Let $\{q_j^{(\beta)}(x)\}_{j=0}^{\infty}, \{r_j^{(\beta)}\}_{j=0}^{\infty}$, be as in the definition above, and let $n \in \N$. The kernel corresponding respectively to the $\beta = 2$ case is
 	\begin{equation}
 		K_n^{(2)}(x,y) \deff \sqrt{\wf(x) \wf(y)} \sum_{k=0}^{N-1} \frac{1}{r_k^{(2)}} q_k^{(2)}(x) q_k^{(2)}(y).
 	\end{equation}
-	Then, the eigenvalue j.p.d.f. of Definition \ref{Definition: measure-weight} is given by
+	Then, the eigenvalue j.p.d.f. of Definition \ref{Definition:  polynomial ensemble} is given by
 	\begin{equation}
 		p^{(w)}_n(\mmany{\lambda}{n};\beta=2) = \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{n}.
 	\end{equation}

@@ -27,6 +27,17 @@ for some $\chi = \{\mmany{x}{{\xi(B)}}\}$, $x_i \in B \ \forall \ 1 \leq i \leq 
 	\label{Definition: Point Process}
 \end{definicao}
 
+\begin{exemplo}
+The \textit{Poisson Point Process} $\mathbb{P}^{(P)}$ is defined on $\R$ by some parameter $\Lambda$. This (temporal) point process $\mathbb{P}^{(P)}$ takes value $k$ at some time $t$ (in the interval $(0,t)$) with probability
+\begin{equation}
+	\mathbb{P}^{(P)}[\xi^{(P)}(t) = k] = \frac{\Lambda^k e^{-\Lambda}}{k!}.
+\end{equation}
+Where $\Lambda$ is a parameter and equal to the expected value of $\xi^{(P)}(t)$. If it has the form $\Lambda = \lambda t$, then this process is homogeneous and $\lambda$ is the rate or intensity of the process.  Furthermore, for events in disjoint intervals on the line, we have independency, i.e.,
+\begin{equation}
+	\mathbb{P}^{(P)}[\xi^{(P)}(t_0, t_1) = n_1, \dots, \xi^{(P)}(t_{k-1}, t_k) = n_k] = \prod_{i=1}^{k} \frac{(\lambda (t_{i} - t_{i-1}))^k e^{-\lambda (t_{i} - t_{i-1})}}{k!}.
+\end{equation}
+\end{exemplo}
+
 An important note is that $\xi$ is the same for any ordering of the subscripts on \many{x}{n}. This lead us the the conclusion that if $u_n(\mmany{x}{n})$ is a probability function on $\R^n$ such that it is invariant under permutations, i.e.
 \begin{equation}
 	u_n(x_{\sigma(1)}, \cdots, x_{\sigma(n)}) = u_n(\mmany{x}{n}), \quad \forall \sigma \in S_n,
@@ -152,20 +163,18 @@ Repulsive random processes are, in general, intractable, that is, they are usual
 		&  \propto {\det\left(\sqrt{\wf(\lambda_i)\wf(\lambda_k)} \sum_{j=1}^{n} q_{j-1}^{(2)}(\lambda_i) q_{j-1}^{(2)}(\lambda_k) \right)}_{i,k=1}^{n}. \\
 		& \propto \det\left[ K_n^{(2)}(\lambda_i, \lambda_k) \right]_{i,k=1}^{n}.
 	\end{align}
-	The orthogonal polynomials $\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$ that compose the kernel are know to satisfy the three-term recurrence
+	The orthogonal polynomials $\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$ that compose the kernel are know to satisfy the three-term recurrence (the coefficients depend on the choice of weight)
 	\begin{equation}
 		q_{j}^{(2)}(\lambda) = (\lambda + a_j) q_{j-1}^{(2)}(\lambda) - \frac{r_{j-1}^{(2)}}{r_{j-2}^{(2)}} q_{j-2}^{(2)}(\lambda)
 	\end{equation} 
-	where the coefficients depend on the choice of weight.
 \end{exemplo}
-
 
 All important information is contained in the correlation kernel for these processes and, therefore, all quantities of interest can be expresses in terms of the same $K$. The kernel $K$ can be seen as an integral kernel of an operator $K$ on $L^2(\Lambda, \lambda)$,
 \begin{equation}
 	Kf(x) = \int_\Lambda K(x, y) f(y) \dd \lambda(y)
 	\label{Equation: integral operator K}
 \end{equation}
-as long as the right and side is well defined. Important examples of DDPs are constructed by using the following result
+as long as the right and side is well defined. Important examples of DDPs are constructed by using the following result.
 
 \begin{teorema} (Construction for DDP, \cite{ManuelaGirottiPhD})
 	Consider a kernel $K: \R \times \R \rightarrow \R_+$ with the following properties:
@@ -201,7 +210,22 @@ as long as the right and side is well defined. Important examples of DDPs are co
 	\begin{equation}
 		F_{TW}(t) \deff \eP[\lambda^*(\xi) \leq t] = \det(I - A)_{L^2(t, \infty)}.
 	\end{equation} 
-	The distribution function $F_{TW}(t)$ for the last particle in the Airy kernel point process is a natural scaling limit of certain finite determinantal point processes. We call it the \textit{Tracy-Widow distribution}.
+	The distribution function $F_{TW}^{(2)}(t)$ for the last particle in the Airy kernel point process is a natural scaling limit of certain finite determinantal point processes. We call it the \textit{Tracy-Widow distribution}. Our case is to set $\beta = 2$, but there is also distributions referring to parameters $\beta = 1, 4$ - they can be found in other (non-determinantal) point processes such as the GOE and GSE. Note the asymmetry related to the transition of regimen and the spread increasing with the decrease of $\beta$ - this can be interpreted as an increase in \enquote{temperature} of the particle system, to make sense in \autoref{chapter: equilibrium}.
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				xmin=-5, xmax=3,
+				width=\textwidth, height=6.0cm,
+				ymin=0, ymax=0.68,
+				]
+				\addplot[solid, black, thin] table [col sep=comma] {./plotdata/TracyWidom-0.csv} node [pos=0.55, above right] {$\beta = 1$};
+				\addplot[solid, black, thin] table [col sep=comma] {./plotdata/TracyWidom-1.csv} node [pos=0.45, above right] {$\beta = 2$};
+				\addplot[solid, black, thin] table [col sep=comma] {./plotdata/TracyWidom-2.csv} node [pos=0.35, above right] {$\beta = 4$};;
+			\end{axis}
+		\end{tikzpicture}
+	\caption{Plots of $F_{TW}^{(\beta)}(t)$ for $\beta = 1, 2, 4$.}
+	\end{figure}
 \end{exemplo}
 
 \mycomment{
@@ -316,7 +340,7 @@ In particular, if we consider a linear function $f(x) = \alpha (x - x^*),$ for $
 		\centering
 		\begin{tikzpicture}
 			\begin{axis}[
-				width=1\textwidth,
+				width=0.8\textwidth,
 				ymajorgrids=true,
 				xmajorgrids=true,
 				grid style=dashed,
@@ -450,17 +474,3 @@ where $\Ai$ is the Airy function. Both these kernels can be identified as local 
 	where $\Ai$ is the Airy function.
 	\label{Theorem: Local law}
 \end{teorema}
-
-\begin{exemplo}
-		(WDM conjecture for hermitian symmetry class \cite{Schroder2019})
-		Assume that $b$, $e$ and $c$ are bulk, edge and cusp points of some density $\rho$ with parameters $\gamma_e$, $\gamma_c$ defined in such a way that
-		\begin{equation}
-			\rho(e \pm x) = \gamma_{e}^{3/2} x^{1/2} / \pi + \Boh(x^{1/2}), \quad  \rho(c + x) = \sqrt{3} \gamma_c^{4/3} |x|^{1/3}/2\pi + \Boh(|x|^{1/3}).
-		\end{equation}
-		Then the universal correlation functions are given by
-		\begin{align}
-			\frac{1}{\rho(b)^k} \p_k^{n}\left(b + \frac{x}{\rho(b) n }\right) & \approx \det{\left(\frac{\sin{\pi(x_i - x_j)}}{\pi(x_i - x_j)} \right)_{i,j \in [k]}}, \quad (Bulk) \\
-			\frac{n^{k/3}}{\gamma_e^k} \p_k^{n}\left(e + \frac{x}{\gamma_e n^{2/3} }\right) & \approx \det{\left(K_{\text{Airy}}(x_i, x_j) \right)_{i,j \in [k]}}, \quad (Edge) \\
-			\frac{n^{k/4}}{\gamma_c^k} \p_k^{n}\left(c + \frac{x}{\gamma_c n^{3/4} }\right) & \approx \det{\left(K_{\text{Pearcey}}(x_i, x_j) \right)_{i,j \in [k]}}. \quad (Cusp)
-		\end{align}
-\end{exemplo}

@@ -1,4 +1,6 @@
 
+We have seen that the study of eigenvalues of random matrices is of interest and can be seen as a point process. For some specific models, one can further find a more rigid structure related to determinantal point processes. These allow us to see eigenvalue distribution in terms of some correlation Kernel much easier to deal with than the initial formulation. Now, we will see that eigenvalue dynamics for invariant models can be though of as another DDP: The so called \textit{Coulomb Gases}. These can be though of as a physical gas of repelling ions restricted to some conductor under some confining potential. Although it may be daunting to have it another model to work with, these gases lead us directly to some nice interpretations and results. Namely, one can thing of \textit{thermodynamic equilibrium} for a large enough number of particles and this makes complete sense in a physical setting. In our matrices, these equilibrium distributions refers to the univariate eigenvalue distribution, a very interesting characterization of a RMT model. On this chapter we will expand on these ideas.
+
 The section on Equilibrium Measures was based on the works of \citeonline{saff2024logarithmic} and \citeonline{deiftorthogonal}.
 
 \section{Coulomb Gases}
@@ -17,11 +19,14 @@ Suppose a set of $n$ particles at positions $\mmany{x}{n} \in \Sigma$, a \textit
 	\begin{equation}
 		\Hf_n(\xi_n) = \frac{1}{n} \sum_{i = 1}^{n} \Q(x_i) + \frac{1}{2n^2} \sum_{i \neq j}^{n} \g(x_i - x_j)	
 	\end{equation}
-	is usually called the Hamiltonian, or more concretely, the configurational energy of the system. The function $\Q \colon \R^d \cong \Sigma \rightarrow \R$ is the external potential.
+	is usually called the \textbf{Hamiltonian}, or more concretely, the \textbf{configurational energy} of the system. The function $\Q \colon \R^d \cong \Sigma \rightarrow \R$ is the external potential and $\pZ{n}{\beta}$ is the \textbf{partition function}, or normalization function, given by
+	\begin{equation}
+		\pZ{n}{\beta} = C_{N, \beta} \int_{{\R^d}^n}  \prod_{j=1}^{n} \dd x_j e^{-\beta n^2 \Hf_n(\xi_n)}.
+	\end{equation}
 \end{definicao}
  The measure $\p_n$ models an Coulomb-interacting gas of charged indistinguishable particles under some external field $\Q$. If one wishes $\dd \p_n$ to be a probability measure,  then one must ensure that $\Q$ is such that the normalizing constant $\pZ{n}{\beta}$ is finite for all $n$ and that the measure support $\supp{(\dd \p_n(\chi_n))}$ is compact. This is all to say that the potential should be confining: As the number of particles increases, it must counter the repulsion effect and keep limited the region where particles move around. The function $\g \colon \Sigma \rightarrow (-\infty, \infty]$ is the \textit{Coulomb Interacting Kernel}, solution to the Poisson equation given by $- \nabla g(\vec{x}) = c_n\delta_0$ and is the reason in the first place why the particles may diverge.
 
-Recall the expression for invariant ensembles in \autoref{Definition: polynomial ensemble}, note that, rearranging the terms in \autoref{Equation: Coulomb Gas Measure} and considering a logarithm interaction kernel we get
+Recall the expression for invariant ensembles in Definition \ref{Definition: polynomial ensemble}, note that, rearranging the terms in \autoref{Equation: Coulomb Gas Measure} and considering a logarithm interaction kernel we get
 \begin{equation}
 	\dd \p_n(\mmany{x}{n}) = \frac{1}{\pZ{n}{\beta}}\prod_{1\leq j < k \leq n} |x_j - x_k|^\beta \prod_{j=1}^{n} \ee^{- \beta n \Q(x_j)} \mcmany{\dd x}{n}{}
 \end{equation}
@@ -264,7 +269,7 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 
 The description of the eigenvalues as a Coulomb gas and as a point process lead us to the idea of minimizing some type of energy of the system by finding equilibrium configurations  $\xi_n = \{\mmany{x}{n}\}$. Especially interesting is the case when $n$ tends to a large enough number as it simplifies some structures and the results. 
 
-To clarify the point, suppose we are dealing with the measure
+To clarify the point, suppose we are dealing with the density
 \begin{equation}
 	\p_n(\xi_n) = \frac{e^{-\beta n^2 \Hf_n(\chi_n)}}{Z_{n,\beta}}, \quad \Hf_n(\chi_n) = \frac{2}{n} \sum_{i = 1}^{n} Q(x_i) + \frac{1}{n^2} \sum_{i < j}^{n} \ln{\frac{1}{|x_i - x_j|}}. 
 \end{equation}
@@ -336,11 +341,11 @@ This logarithmic potential can be interpreted as the equivalent interaction pote
 Also, for technical reasons we also state the following Lemma regarding the logarithmic energy that will become useful in a later result although we do not to prove it.
 
 \begin{lema} \cite{saff2024logarithmic}
-	Let $\mu = \mu_1 - \mu_2$ be a signed Borel measure with compact support	and total mass $\mu(\C) = 0$. Suppose further that each of the positive measures $\mu_1$ and $\mu_2$ has finite logarithmic energy. Then the logarithmic energy of $\mu$ is nonnegative:
+	Let $\mu = \mu_1 - \mu_2$ be a signed Borel measure with compact support	and total mass $\mu(\C) = 0$. Suppose further that each of the positive measures $\mu_1$ and $\mu_2$ has finite logarithmic energy. Then the logarithmic energy of $\mu$
 	\begin{equation}
-		I(\mu) \deff \int \int \ln \frac{1}{|z-t|} \dd \mu(z) \dd \mu (t),
+		I(\mu) = \int \int \ln \frac{1}{|z-t|} \dd \mu(z) \dd \mu (t),
 	\end{equation}
-	and it is zero if and only if $\mu = 0$.
+	is non-negative and it is zero if and only if $\mu = 0$.
 	\label{Lema: positive kernel}
 \end{lema}
 
@@ -364,7 +369,20 @@ We should at this point reintroduce the external potential $Q$. The main differe
 		\item $\Sigma_0 \deff \{ z \in \Sigma | \wf(z) > 0 \}$ has positive capacity;
 		\item if $\Sigma$ is unbounded, then $|z| \wf(z) \rightarrow 0$ as $|z| \rightarrow \infty$, $z \in \Sigma$.
 	\end{enumerate} 
+	\label{Definition: Weight Admissibility}
 \end{definicao}
+
+\begin{exemplo}
+	(Classical weights) The classical weights, for some real parameters $a,b > -1$, are
+		\begin{equation}
+		\wf(\lambda) = \begin{cases}
+			\ee^{-\lambda^2} & \text{Gaussian}, \\
+			\lambda^a \ee^{-\lambda} \chi_{\{\lambda>0\}} & \text{Laguerre}, \\
+			\lambda^a (1-\lambda)^b \chi_{\{0<\lambda<1\}} & \text{Jacobi}.
+		\end{cases}
+	\end{equation}
+	These are all admissible weights by Definition \ref{Definition: Weight Admissibility}. They are positive continuous functions. The Gaussian and Laguerre have $\Sigma_0$ with positive capacity as $I(\wf)$ is finite and $|z| \wf(z) \rightarrow 0$ as $|z| \rightarrow \infty$, $z \in \Sigma$. Jacobi is direct as $I(\wf)$ is evaluated in a compact interval for a finite function.
+\end{exemplo}
 
 Assume our weight function to have the form
 \begin{equation}
@@ -375,9 +393,10 @@ Then, for the weight to be admissible, $Q : \Sigma \rightarrow (\infty, \infty]$
 	\lim_{|z| \rightarrow \infty, z \in \Sigma} \{ Q(z) - \ln |z| \} = \infty.
 \end{equation}
 Let $\M(\Sigma)$ be the collection of all positive unit Borel measures $\mu$ with support in $\Sigma$. Our definition for the weighted energy integral
-\begin{equation}
-	I_\wf(\mu) = \int \int \ln |t - s|^{-1} \dd \mu(t) \dd \mu_x(s) + 2 \int \Q(s) \dd  \mu(s)
-\end{equation}
+\begin{align}
+	I_\wf(\mu) & = \int \int \ln |t - s|^{-1} \dd \mu(t) \dd \mu(s) + 2 \int \Q(s) \dd  \mu(s) \\
+	& = \int U^\mu(s)  \dd \mu(s) + 2 \int \Q(s) \dd  \mu(s)
+\end{align}
 is recovered if both integrals exist and are finite. We can now move on to the matter of existence of an \textit{equilibrium measure} $\mu^{\Q}$ for a given external field $\Q$ given by some polynomial
 \begin{equation}
 	Q(x) = t_{2m} x^{2m} + t_{2m-1} x^{2m - 1} + \cdots + t_0, \quad t_{2m} > 0, V(x) \geq 0.
@@ -417,19 +436,106 @@ is recovered if both integrals exist and are finite. We can now move on to the m
 \end{proof}
 }
 
+\begin{exemplo}
+	For example, take the invariant ensemble correspondent to taking the Coulomb gas restricted to the line on some two dimensional conductor and under the potential
+	\begin{equation}
+		Q(x) = t x^{2m}.
+	\end{equation}
+	One can determine that for such system there is an unique $\mu^*_Q$ that minimizes the logarithmic energy. This measure is defined by
+	\begin{equation}
+		\supp \mu^*_Q(x) = [-a, a], \ \ \mu^*_Q(x) = \frac{mt}{\pi} \sqrt{a^2 - x^2} h(x),
+		\label{Equation: Monic external potential}
+	\end{equation}
+	where
+	\begin{equation}
+		a \deff \left( mt \prod_{l=1}^{m} \frac{2l-1}{2l}\right)  \quad \text{and} \quad h(x) \deff x^{2m-2} + \sum_{j=1}^{m-1} x^{2m-2-2j} a^{2j} \prod_{l=1}^{j} \frac{2l-1}{2l}.
+	\end{equation}	
+	Note that this simplifies to the Gaussian case if $Q(x) = x^2/2$ ($t, m=1$). In such case we already shown that the equilibrium measure is defined by the Semicircle distribution
+	\begin{equation}
+		\supp{\mu^*_Q(x)} = [-\sqrt{2}, \sqrt{2}], \ \ \ \mu^*_Q(x) = \frac{1}{\pi} \sqrt{2 - x^2}.
+		\label{Equation: Gaussian external potential}
+	\end{equation}
+		\begin{figure}[H]
+		\pgfplotsset{width=4.9cm,compat=1.9}
+		\begin{subfigure}{0.22\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-1.6, xmax=1.6,
+					ymin=0, ymax=0.85,
+					title= {$m=1$}
+					]
+					\addplot [ thin, opacity=0.5,
+					hist={density, bins=20}
+					] table [y index=0] {./plotdata/Monic/Monict0a0.csv};
+					\addplot[solid, black, thick] table [col sep=comma] {./plotdata/Monic/MonicFunct0a0.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hspace{0.75cm}
+		\begin{subfigure}{0.22\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-1.6, xmax=1.6,
+					ymin=0, ymax=0.85,
+					title= {$m=2$},
+					yticklabel=\empty
+					]
+					\addplot [ thin, opacity=0.5,
+					hist={density, bins=20}
+					] table [y index=0] {./plotdata/Monic/Monict0a1.csv};
+					\addplot[solid, black, thick] table [col sep=comma] {./plotdata/Monic/MonicFunct0a1.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+		\begin{subfigure}{0.22\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-1.6, xmax=1.6,
+					ymin=0, ymax=0.85,
+					title= {$m=3$},
+					yticklabel=\empty
+					]
+					\addplot [ thin, opacity=0.5,
+					hist={density, bins=20}
+					] table [y index=0] {./plotdata/Monic/Monict0a2.csv};
+					\addplot[solid, black, thick] table [col sep=comma] {./plotdata/Monic/MonicFunct0a2.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+		\begin{subfigure}{0.22\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-1.6, xmax=1.6,
+					ymin=0, ymax=0.85,
+					title= {$m=5$},
+					yticklabel=\empty
+					]
+					\addplot [ thin, opacity=0.5,
+					hist={density, bins=20}
+					] table [y index=0] {./plotdata/Monic/Monict0a3.csv};
+					\addplot[solid, black, thick] table [col sep=comma] {./plotdata/Monic/MonicFunct0a3.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+		\caption{Four conditions for the Monic potential, the equilibrium measure is expressed by the line plot. For all cases we used $t=1$ and set $m=1,2,3,5$ from left to right. The bin-plot is the result of the simulation of the equivalent Coulomb Gas taken from \citeonline{TCCJoaoPimenta}. }
+	\end{figure}
+\end{exemplo}
 
 \subsection{Euler-Lagrange}
 
-Associates with the variational problem introduced on \autoref{Section: Equilibrium}
+Associated with the variational problem introduced on \autoref{Section: Equilibrium}
 \begin{align}
 	E^{\wf} & = \inf_{\mu \in \M^1} I^{\wf} (\mu) \\
 	& =   \inf_{\mu \in \M^1} \left[ \int \int \ln |t - s|^{-1} \dd \mu(t) \dd \mu(s) + 2 \int \Q(s) \dd  \mu(s) \right] \\
-	&  = I^{\wf} (\mu^{\wf})
+	&  = I^{\wf} (\mu^{\wf}),
 \end{align}
-there are so-called \textit{Euler-Lagrange} type variational equations. For some cases it is possible to solve these equations for $\mu^{\wf}$.
+one could define the so-called \textit{Euler-Lagrange} type variational equations. They are important as they provide a tool, for some cases, to solve these equations for the equilibrium measure $\mu^{\wf}$.
 
 \begin{teorema} (Variational Equations, \cite{deiftorthogonal})
-	The equilibrium measure $\mu^\wf$ for the given variational problem satisfies the following conditions. 
+	The equilibrium measure $\mu^\wf$ for the given variational problem in \autoref{Section: Equilibrium} satisfies the following conditions. 
 	
 	There exists a real constant $l$ such that 
 	\begin{enumerate}
@@ -448,7 +554,7 @@ there are so-called \textit{Euler-Lagrange} type variational equations. For some
 \end{teorema}
 
 \begin{proof}
-	($\implies$) We recall that $\mu^\wf$ has compact support by \autoref{Theorem: existence equilibrium} and $I^\wf(\mu^\wf) = E^\wf < \infty$. Suppose $\mu^* \in \M^1(\C)$ has compact support and $I^\wf(\mu^*) < \infty$. Then, defining some convex combination
+	($\implies$) We recall that $\mu^\wf$ has compact support by Theorem \ref{Theorem: existence equilibrium} and $I^\wf(\mu^\wf) = E^\wf < \infty$. Suppose $\mu^* \in \M^1(\C)$ has compact support and $I^\wf(\mu^*) < \infty$. Then, defining some convex combination
 	\begin{equation}
 		\mu_t = t \mu^* + (1-t) \mu^\wf = \mu^\wf + t (\mu^* - \mu^\wf) \in \M^1(\C), \quad 0 \leq t \leq 1,
 	\end{equation}
@@ -459,7 +565,7 @@ there are so-called \textit{Euler-Lagrange} type variational equations. For some
 		+ 2t  \int \Q(s) \dd  (\mu^* - \mu^\wf) (s) \\
 		+ t^2 \int \int \ln |t - s|^{-1} \dd (\mu^* - \mu^\wf) \dd (\mu^* - \mu^\wf)(s).
 	\end{multline}
-	This is all well since $\mu^\wf, \mu^*$ have compact support and $I^\wf (\mu^\wf), I^\wf(\mu^*) < \infty$. As $I^\wf(\mu_t) \geq I^\wf (\mu^\wf)$ for $0 \leq t \leq 1$ by assumption of minimality and \autoref{Lema: positive kernel}, is is necessary that
+	This is all well since $\mu^\wf, \mu^*$ have compact support and $I^\wf (\mu^\wf), I^\wf(\mu^*) < \infty$. As $I^\wf(\mu_t) \geq I^\wf (\mu^\wf)$ for $0 \leq t \leq 1$ by assumption of minimality and Lemma \ref{Lema: positive kernel}, is is necessary that
 	\begin{equation}
 		\int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) \right] \dd (\mu^* - \mu^\wf)(x) \geq 0
 		\label{Equation: Proof Euler >0}
@@ -507,14 +613,14 @@ there are so-called \textit{Euler-Lagrange} type variational equations. For some
 	\begin{equation}
 		\int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu(y) + 2 \Q(x) - l \right] \dd \mu^\wf(x) - l \geq l - l = 0
 	\end{equation}
-	but also the third term is strictly positive by \autoref{Lema: positive kernel} unless it is identically null. If, however, $\mu^\wf - \mu \neq 0$, then we showed that
+	but also the third term is strictly positive by Lemma \ref{Lema: positive kernel} unless it is identically null. If, however, $\mu^\wf - \mu \neq 0$, then we showed that
 	\begin{equation}
 		I^\wf(\mu) \geq I^\wf(\mu^\wf) > I^\wf(\mu),
 	\end{equation}
 	a contradiction. Thus, if $\mu$ satisfies $(1), (2)$, then it must be $\mu^\wf$.
 \end{proof}
 
-If there is the knowledge that 
+Moreover, if there is the knowledge that 
 \begin{equation}
 	\dd \mu^\wf = \phi(x) \dd x 
 	\label{Equation: eqmeasure density}
@@ -523,10 +629,10 @@ for some continuous function $\phi$ of compact support, then
 \begin{equation}
 	 2 \int \ln{|x-y|^{-1}} \dd \mu(y) + 2 \Q(x)
 \end{equation}
-is continuous and the previous theorem takes the following form
+is continuous and the previous theorem takes the following more simple form
 
 \begin{teorema} (Strong Variational Equations, \cite{deiftorthogonal})
-	Suppose that $\dd \mu^\wf = \phi(x) \dd x$ for some continuous function $\phi$ of compact support. Then the conditions of \autoref{Theorem: existence equilibrium} can be replaced by
+	Suppose that $\dd \mu^\wf = \phi(x) \dd x$ for some continuous function $\phi$ of compact support. Then the conditions of Theorem \ref{Theorem: existence equilibrium} can be replaced by
 	\begin{enumerate}
 		\item
 		\begin{equation}
@@ -541,10 +647,7 @@ is continuous and the previous theorem takes the following form
 	\end{enumerate}
 \end{teorema} 
 
-
-\section{Recovering the Equilibrium Measure}
-
-We mentioned \autoref{Equation: eqmeasure density} the possibility of knowing the density $\phi$ of the equilibrium measure $\mu^\wf$ in relation to the Lebesgue measure. We will know determine $\phi$. As we did many times, assume that $\mu$ is finite and of compact support in the complex plane. For notation, let $A$ denote the two-dimensional Lebesgue measure on $\C$ and $\Delta$ denote the Laplacian operator
+We mentioned in \autoref{Equation: eqmeasure density} the possibility of knowing the density $\phi$ of the equilibrium measure $\mu^\wf$ in relation to the Lebesgue measure. We will know determine $\phi$. As we did many times, assume that $\mu$ is finite and of compact support in the complex plane. For notation, let $A$ denote the two-dimensional Lebesgue measure on $\C$ and $\Delta$ denote the Laplacian operator
 \begin{equation}
 	\Delta F \deff \frac{\partial^2 F}{\partial x^2} + \frac{\partial^2 F}{\partial y^2}.
 \end{equation}
@@ -582,7 +685,7 @@ We have the theorem below.
 	\begin{equation}
 		\int_{R_0} (\Delta U^\mu(t)) \ln \frac{1}{|z-t|} \dd A(t) + 2 \pi U^\mu(z)
 	\end{equation}
-	is harmonic on $R_0$. Then, by \autoref{Theorem: unicity of measure}, the signed measure
+	is harmonic on $R_0$. Then, by Theorem \ref{Theorem: unicity of measure}, the signed measure
 	\begin{equation}
 		\frac{1}{2\pi} \Delta U^\mu \dd A|_R + \mu
 	\end{equation}
@@ -594,12 +697,90 @@ We have the theorem below.
 \end{proof}
 }
 
+\section{Solving for the Free Energy}
 
+Remember the expression for the Gibbs-Boltzmann measure of Coulomb gases 
+\begin{equation}
+	\dd \p_n (\xi_n) = \frac{1}{\pZ{n}{\beta}} \ee^{-\beta n^2 \Hf_n(\xi_n)} \prod_{i = 1}^{n} \dd x_i.
+\end{equation}
+As discussed, this expression refers to a thermodynamic fluid of particles with positions $\xi_n = \mmany{x}{n}$ on a conductor $\Sigma$, in equilibrium at some inverse temperature $\beta$ an submitted to a confining potential $Q$ and a repulsive logarithmic term of interaction.  Because of the term $\beta n^2$, taking the asymptotic $n \rightarrow \infty$ means at the same time zero temperature and the thermodynamic limit. Physically, understanding the equilibrium positions would be equivalent to minimizing the \textit{Free Energy} $F = - (1/\beta) \ln \pZ{n}{\beta}$. Let's describe the idea behind such minimization. More details can be found in \citeonline{Livan_2018}.
 
-
-
-
-
-
-
-
+Lets first take the normalized counting measure, already introduced in \autoref{chapter: pointprocesses},
+\begin{equation}
+	\n(x) = \frac{1}{n} \sum_{i = 1}^{n} \delta(x - x_i).
+\end{equation}
+Note that using this function we can write the unity as
+\begin{equation}
+	1 = \int \dd [\n(x)] \delta \left[ \n(x) - \frac{1}{n} \sum_{i=1}^{n} \delta(x - x_i) \right],
+\end{equation}
+and with this we can also rewrite our partition function to be written as
+\begin{equation}
+	\pZ{n}{\beta} = C_{N, \beta} \int \dd [\n(x)] \int_{\R^{dn}} \prod_{j=1}^{n} \dd x_j e^{-\beta n^2 \Hf_n(\xi_n)} \delta  \left[ \n(x) - \frac{1}{n} \sum_{i=1}^{n} \delta(x - x_i) \right].
+\end{equation}
+We don't want to deal with summations, in this context, integrals can be much easier to deal with. Then, we also want to convert the expression for the Hamiltonian. The confining term is easier, we can write
+\begin{equation}
+	\frac{1}{n} \sum_{i=1}^{n} Q(x) = \frac{1}{n} n \int_{\R^d} n(x) Q(x) \dd x.
+\end{equation}
+For the interaction term, one must first note that
+\begin{equation}
+	\frac{1}{2n^2} \sum_{i \neq j} \ln |x_i - x_j| = \frac{1}{2n^2} \left[ \sum_{i,j} \ln |x_i - x_j| - \sum_i \Delta x_i \right]
+\end{equation}
+where we call $\Delta x_i$ is the cutoff distance and refers to the term $i = j$ in the discrete case and two neighboring charges approximating in the continuous case. This should ensure that the functional will still produce a finite result. Now we can write
+\begin{equation}
+		\frac{1}{2n^2} \sum_{i \neq j} \ln |x_i - x_j| = \frac{1}{2n^2} n^2 \int \int_{\R^2d} \dd x \dd y \n(x) \n(y) \ln |x - y| - 	\frac{1}{2n^2} n \int_{\R^d} \dd x \n(x) \ln \Delta (x). 
+\end{equation}
+and then
+\begin{align}
+		\pZ{n}{\beta}&  = C_{N, \beta} \int \dd [\n(x)] e^{-\beta n^2 \Hf_n(\n(x))} \int_{\R^{dn}} \prod_{j=1}^{n} \dd x_j \delta \left[ \n(x) - \frac{1}{n} \sum_{i=1}^{n} \delta(x - x_i) \right] \\
+		& \revdeff  C_{N, \beta} \int \dd [\n(x)] e^{-\beta n^2 \Hf_n(\n(x))} I_n[\n(x)],
+\end{align}
+where
+\begin{equation}
+	\Hf_n(\n(x)) = \int_{\R^d} n(x) Q(x) \dd x + \frac{1}{2} \int \int_{\R^{2d}} \dd x \dd y \n(x) \n(y) \ln |x - y| - \frac{1}{2n} \int_{\R^d} \dd x \n(x) \ln \Delta (x). 
+\end{equation}
+There is some interpretations ot me made about $I_n[\n(x)]$.  Physically it is possible to think of it as a count of how many microstates $\xi_n$ are compatible with the macrostate $\n(x)$. The logarithm of this quantity is proportional to the entropy of such system. Rewrite this function as
+\begin{align}
+	I_n[\n(x)] & = \int \dd [\n(x)] \int_{\R^{dn}} \prod_{j=1}^{n} \dd x_j \exp{ \left[\ii n \int \dd x \n(x) \hat{\n}(x) - \ii \int \dd x \hat{\n}(x) \sum_{i=1}^{n} \delta(x - x_i) \right]} \\
+	& =  \int \dd [\n(x)]  \exp{\left[ \ii n \int_{\R^{dn}} \dd x \n(x) \hat{\n}(x) \right]} \left[ \int_{\R^d} \dd y \ee ^{\ii \int_{\R^d} \dd x \hat{\n}(x) \delta(x- x_i) } \right]^n \\
+	& = \int \dd [\hat{\n}(x)] \ee^{n S[\hat{\n}(x) | \n(x)]},
+	\label{Equation: logarithmic energyy - entropy}
+\end{align}
+where
+\begin{equation}
+	S[\hat{\n}(x) | \n(x)] = \ii \int_{\R^{dn}} \dd x \n(x) \hat{\n}(x) + \log \int_{\R^d} \dd y \ee^{-\ii \hat{\n}(x)}.
+\end{equation}
+The most important thing to notice here is that \autoref{Equation: logarithmic energyy - entropy} is of the form required for the Laplace asymptotic technique discussed in \autoref{chapter:asymptotics}. This means that t can be estimated, if $S$ has a maxima with strictly negative second derivative, by the evaluation at its maximum point. One can find 
+\begin{align}
+	0 & = \frac{\partial S}{\partial \hat{\n}(x)} = \ii \n(x) - \ii \frac{\ee^{-\ii \hat{\n}(x)}}{\int_{\R^d} \dd y \ee^{-\ii \hat{\n}(y)}} \\
+	& \implies -\ii \hat{\n}(x) = -\ln(\n(x)) - \log \int_{\R^{d}} \dd y \ee^{-\ii \hat{\n}(y)},
+\end{align}
+for the critical counting function. Then, substituting,
+\begin{equation}
+	I_n[\n(x)] \approx \exp{\left[ -n \int_{\R^{nd}} \dd x \n(x) \ln(\n(x)) \right]},
+\end{equation}
+which has the form of the Shannon entropy of the density $\n(x)$. there is an classical argument that states that $\Delta(x) \approx c / (n \n(x))$, i.e., the higher the density of particles around a point $x$, the smaller the average distance between them. Thus, 
+\begin{align}
+	\int_{\R^d} \dd x \n(x) \ln \Delta (x) & \approx \int_{\R^d} \dd x \n(x) \ln\left( \frac{c}{n \n(x)}\right)  \\
+	& = \int_{\R^d} \dd x \n(x) \left(\ln c - \ln n + \ln \n(x) \right) \\
+	& = \int_{\R^d} \dd x \n(x) \ln c  - \int_{\R^d} \dd x \n(x) \ln n + \int_{\R^d} \dd x \n(x) \ln \n(x).
+\end{align}
+Return now to the partition function and use the relations found to write
+\begin{align}
+		\pZ{n}{\beta} & \approx C_{N, \beta} \int \dd [\n(x)] \exp{\left[-\beta n^2 \Hf_n(\n(x))\right]} \exp{\left[ -n \int_{\R^{nd}} \dd x \n(x) \ln(\n(x)) \right]}, \\
+		&  \approx C_{N, \beta} \int \dd [\n(x)] \exp{\left[-\beta n^2 \mathfrak{F}_0[\n(x)] + \frac{\beta n}{2} \mathfrak{F}_1[\n(x)] + \frac{\beta}{2} n \ln(n) - \frac{\beta}{2} n \ln (c) \right]} \exp{\left[ -n \mathfrak{F}_1[\n(x)] \right]}, \\
+		& \approx C_{N, \beta} \int \dd [\n(x)] \exp{\left[-\beta n^2 \mathfrak{F}_0[\n(x)] + \frac{\beta}{2} n \ln(n) + n \left(\frac{\beta}{2} - 1\right) \mathfrak{F}_1[\n(x)] - \frac{\beta}{2} n \ln (c) \right]},
+\end{align}
+where
+\begin{align}
+	& \mathfrak{F}_0[\n(x)] \deff  \int_{\R^d} \n(x) Q(x) \dd x + \frac{1}{2} \int \int_{\R^{2d}} \dd x \dd y \n(x) \n(y) \ln |x - y|, \\
+	& \mathfrak{F}_1[\n(x)] \deff  \int_{\R^d} \dd x \n(x) \ln \n(x).
+\end{align}
+Note that, now, one can again perform a saddle point estimation for the asymptotic in a critical point $\n^*(x)$ to get
+\begin{equation}
+	\pZ{n}{\beta} \approx \exp{\left[-\beta n^2 \mathfrak{F}_0[\n^*(x)] + \frac{\beta}{2} n \ln(n) + n \left(\frac{\beta}{2} - 1\right) \mathfrak{F}_1[\n^*(x)] - \frac{\beta}{2} n \ln (c) \right]}
+\end{equation}
+and finally for the Free Energy
+\begin{equation}
+	\ln(\pZ{n}{\beta}) = -\beta n^2 \mathfrak{F}_0[\n^*(x)] + \frac{\beta}{2} n \ln(n) + n \left(\frac{\beta}{2} - 1\right) \mathfrak{F}_1[\n^*(x)] - \frac{\beta}{2} n \ln (c) + \Boh(n).
+\end{equation}
+This expression for the Free Energy is the main goal for \autoref{chapter: planarensembles}. 
