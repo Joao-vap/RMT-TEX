@@ -206,7 +206,7 @@ We start by considering the annulus regime, with $r_0 > 0$. We know the measure 
 \begin{teorema}
 	For the annulus case, where $r_0 > 0$, we should have the following asymptotic for the free energy asymptotically on $N$ given by
 	\begin{multline}
-		\ln{\pZ{N}{}} = - N^2 I_Q[\mu_Q] + \frac{N}{2} \left( \ln(8\pi) - E_Q[\mu_Q] - 2\right) + \frac{N}{2} \ln(N) \\ + \frac{\ln(2\pi)}{2} + \frac{1}{2} \ln(N)+ F_V[A_{[r_0, r_1]}] + \Boh(N^{-1})        
+		\ln{\pZ{N}{}} = - N^2 I_Q[\mu_Q] + \frac{N}{2} \left( \ln(2\pi) - E_Q[\mu_Q] - 2\right) + \frac{N}{2} \ln(N) \\ + \frac{\ln(2\pi)}{2} + \frac{1}{2} \ln(N)+ F_V[A_{[r_0, r_1]}] + \Boh(N^{-1})        
 		%- N^2 I_Q[\mu_Q] + \frac{N}{2} \left( 3\ln(2\pi) - E_Q[\mu_Q] - 1\right) + \frac{N}{2} \ln(N) + \frac{1}{2} \ln(N)+ 2 \int_S \mathfrak{B} \dd \mu_Q + \Boh(N^{-1})
 	\end{multline}
 	where we set
@@ -218,7 +218,7 @@ We start by considering the annulus regime, with $r_0 > 0$. We know the measure 
 	\end{equation}
 	and
 	\begin{equation}
-		E_Q[\mu_Q] \deff \frac{1}{2} \int_{r_0}^{r_1} \ln(V^{(2)}(s)) (sq'(s))' \dd s.
+		E_Q[\mu_Q] \deff \frac{1}{2} \int_{r_0}^{r_1} \ln\left(\frac{V^{(2)}(s)}{4}\right) (sq'(s))' \dd s.
 	\end{equation}
 	\label{Theorem: Annulus Free Energy}
 \end{teorema}
@@ -393,7 +393,7 @@ We now move on to the value-contributing part of the integral. The other order t
 
 We return to \autoref{Equation: Partition Function} and turn to the calculation of each term of $	\sum_{j=0}^{N-1} \ln{h_j}$ using the logarithm of the expansion calculated previously in Theorem \ref{Theorem: hj annulus}
 \begin{equation}
- \sum_{j=0}^{N-1} -N V_{\tau(j)}(r_{\tau(j)}) + \\ \frac{1}{2} \left(\ln(8\pi r^2_{\tau(j)}) - \ln N - \ln V^{(2)}_{\tau(j)}(r_{\tau(j)}) \right) + \frac{1}{N} \mathfrak{B}(r_{\tau(j)}) + \Boh(N^{-2}). 
+ \sum_{j=0}^{N-1} -N V_{\tau(j)}(r_{\tau(j)}) + \\ \frac{1}{2} \left(\ln(2\pi r^2_{\tau(j)}) - \ln N - \ln\left(\frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4}\right)  \right) + \frac{1}{N} \mathfrak{B}(r_{\tau(j)}) + \Boh(N^{-2}). 
 	\label{Equation: sum log annulus}
 \end{equation}
 
@@ -402,20 +402,9 @@ That is, we need to prove the following theorem.
 \begin{teorema}		
 	Asymptotically on $N$,
 	\begin{equation}
-		\sum_{j=0}^{N-1} \ln{h_j} = - N^2 I_Q[\mu_Q] - \frac{N}{2} \ln N + N \left(\frac{\ln(8\pi)}{2} - \frac{1}{2} E_Q[\mu_Q]\right) + F_V[A_{[r_0, r_1]}] + \Boh(N^{-1}) 
-		%- N^2 I_Q[\mu_Q] - \frac{N}{2} \ln N + N \left(\frac{3\ln(2\pi)}{2} - \frac{1}{2} E_Q[\mu_Q]\right) \\ - \frac{1}{2} \ln\left(\frac{r_1}{r_0} \right) + \frac{1}{4} \ln\left(\frac{V^{(2)}_1(r_1)}{V^{(2)}_0(r_0)} \right) + \int_S \mathfrak{B} \dd \mu_Q + \Boh(N^{-1})
+		\sum_{j=0}^{N-1} \ln{h_j} = - N^2 I_Q[\mu_Q] - \frac{N}{2} \ln N + N \left(\frac{\ln(2\pi)}{2} - \frac{1}{2} E_Q[\mu_Q]\right) + F_V[A_{[r_0, r_1]}] + \Boh(N^{-1}) 
 	\end{equation}
 	where $F_V[A_{[r_0, r_1]}]$, $I_Q[\mu_Q]$, $	E_Q[\mu_Q]$ are as in Theorem \ref{Theorem: Annulus Free Energy}.
-	%\begin{equation}
-		%\mathfrak{B}(r_{\tau(j)}) = -\frac{V^{(4)}_{\tau(j)}(r_{\tau(j)})}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^2} \frac{1}{8} - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^{2}} \frac{1}{2 r_{\tau(j)}} - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})^2}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^{3}} \frac{5}{24}. %=\frac{V^{(4)}_{\tau(j)}(r_{\tau(j)})}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^2} \frac{1}{4} - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^{2}} \frac{19}{12 r_{\tau(j)}} - \frac{V^{(3)}_{\tau(j)}(r_{\tau(j)})^2}{V^{(2)}_{\tau(j)}(r_{\tau(j)})^{3}} \frac{5}{12} + \frac{1}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \frac{2}{3 r_{\tau(j)}^2},
-	%\end{equation}
-	%\begin{equation}
-	%	I_Q[\mu_Q] = \left[\frac{1}{4} \int_{r_0}^{r_1} q(s) s V^{(2)}(s) \dd s- \ln(r_1) + \frac{1}{2} q(r_1) \right],
-	%\end{equation}
-	%and
-	%\begin{equation}
-	%	E_Q[\mu_Q] = \frac{1}{2} \int_{r_0}^{r_1} \ln(V^{(2)}(s)) (sq'(s))' \dd s.
-	%\end{equation}
 	\label{Theorem: Annulus sum}
 \end{teorema}
 
@@ -425,7 +414,7 @@ The proof comes from gathering the terms in \autoref{Equation: sum log annulus} 
 \end{equation}
 and Lemma \ref{Lemma: Annulus Sum 1/2} refers to the asymptotics of both terms 
 \begin{equation}
-	\sum_{j=0}^{N-1}\left(\ln(8\pi r^2_{\tau(j)}) - \ln V^{(2)}_{\tau(j)}(r_{\tau(j)}) \right).
+	\sum_{j=0}^{N-1}\left(\ln(2\pi r^2_{\tau(j)}) - \ln\left(\frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4}\right)\right).
 \end{equation}
 Then, the final expression becomes a question of balancing the results.
 
@@ -527,7 +516,7 @@ Then, the final expression becomes a question of balancing the results.
 	\end{equation}
 	and
 	\begin{equation}
-		\sum_{j=0}^{N-1}  \ln(8\pi r^2_{\tau(j)}) = N \ln(8\pi) + 2 \left( - N U_{\mu_Q}(0) - \frac{1}{2} \ln\left(\frac{r_1}{r_0}\right) + \Boh(N^{-1}) \right) 
+		\sum_{j=0}^{N-1}  \ln(2\pi r^2_{\tau(j)}) = N \ln(2\pi) + 2 \left( - N U_{\mu_Q}(0) - \frac{1}{2} \ln\left(\frac{r_1}{r_0}\right) + \Boh(N^{-1}) \right) 
 		\label{Equation: log(r) annulus}
 	\end{equation}
 	where $U_{\mu_Q}(0)$ as in Lemma \ref{Lemma: Annulus sum N2} and $	E_Q[\mu_Q]$ as in Theorem \ref{Theorem: Annulus Free Energy}.
@@ -537,29 +526,30 @@ Then, the final expression becomes a question of balancing the results.
 \begin{proof}
 	Lets start now with the second summation, to which we apply Euler-Maclaurin again
 	\begin{multline}
-		\sum_{j=0}^{N-1}  \ln V^{(2)}_{\tau(j)}(r_{\tau(j)}) = \int_{0}^{N} \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) \dd t - \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) + \\ \frac{1}{12} \left[ \partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=N} - \partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=0}\right]  + \Boh(N^{-3}).
+		\sum_{j=0}^{N-1} \ln\left(\frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4}\right) = \int_{0}^{N} \frac{1}{4} \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) \dd t - \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) + \\ \frac{1}{12} \left[ \partial_t \frac{1}{4} \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=N} - \partial_t \frac{1}{4} \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=0}\right]  + \Boh(N^{-3}).
 	\end{multline}
 	We first tackle the integral on the right hand side, changing variables as $s = r_{\tau(t)}$ we would have
 	\begin{equation}
-		\int_{0}^{N} \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) \dd t = \frac{N}{2} \int_{r_0}^{r_1} \ln(V^{(2)}(s)) (sq'(s))' \dd s. \\
+		\int_{0}^{N} \ln \frac{1}{4} V^{(2)}_{\tau(t)}(r_{\tau(t)}) \dd t = \frac{N}{2} \int_{r_0}^{r_1} \ln\left( \frac{1}{4} V^{(2)}(s)\right) (sq'(s))' \dd s. \\
 	\end{equation}
 	And, noticing that
 	\begin{equation}
-		\partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) = \partial_V \left( \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) \right) \partial_r \left( V^{(2)}_{\tau(t)}(r_{\tau(t)}) \right) \partial_\tau \left( r_{\tau(t)} \right) = \frac{\left(\partial_r V^{(2)}\right)(r_{\tau(t)})}{r_{\tau(t)} \left( V^{(2)}_{\tau(t)}(r_{\tau(t)})\right)^2},
+		\partial_t \frac{1}{4} \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) = \partial_V \left( \ln \frac{1}{4} V^{(2)}_{\tau(t)}(r_{\tau(t)}) \right) \frac{1}{4} \partial_r \left( V^{(2)}_{\tau(t)}(r_{\tau(t)}) \right) \partial_\tau \left( r_{\tau(t)} \right) = \frac{\left(\partial_r V^{(2)}\right)(r_{\tau(t)})}{r_{\tau(t)} \left( V^{(2)}_{\tau(t)}(r_{\tau(t)})\right)^2},
 	\end{equation}
 	we have for the third term on the right hand side, 
 	\begin{align}
-		\partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=N} - \partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=0} & = \frac{1}{2N} \left( \frac{\left(\partial_r V^{(2)}\right)(r_{1})}{r_1 \left( V^{(2)}_1(r_1)\right)^2} - \frac{\left(\partial_r V^{(2)}\right)(r_{0})}{r_0 \left( V^{(2)}_0(r_0)\right)^2}\right) \\ & = \Boh(N^{-1}).
+		\partial_t \ln \frac{1}{4} V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=N} - \partial_t \ln \frac{1}{4} V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=0} & = \frac{1}{2N} \left( \frac{\left(\partial_r V^{(2)}\right)(r_{1})}{r_1 \left( V^{(2)}_1(r_1)\right)^2} - \frac{\left(\partial_r V^{(2)}\right)(r_{0})}{r_0 \left( V^{(2)}_0(r_0)\right)^2}\right) \\ & = \Boh(N^{-1}).
 	\end{align}
 	Therefore,
-	\begin{equation}
-		\sum_{j=0}^{N-1}  \ln V^{(2)}_{\tau(j)}(r_{\tau(j)})  = \frac{N}{2} \int_{r_0}^{r_1} \ln(V^{(2)}(s)) (sq'(s))' \dd s  -   \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) + \Boh(N^{-1}).
+	\begin{align}
+		\sum_{j=0}^{N-1}  \ln \frac{1}{4} V^{(2)}_{\tau(j)}(r_{\tau(j)})  & = \frac{N}{2} \int_{r_0}^{r_1} \ln\left(\frac{1}{4} V^{(2)}(s)\right) (sq'(s))' \dd s  -   \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) + \Boh(N^{-1}), \\
+		& \deff N E_Q[\mu_Q]  -   \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) + \Boh(N^{-1}).		
 		\label{Equation: logV annulus}
-	\end{equation}
+	\end{align}
 	
 	Similarly, for the first summation, we apply Euler-Maclaurin again
 	\begin{multline}
-		\sum_{j=0}^{N-1}  \ln(8 \pi r^2_{\tau(j)}) = \ln(8\pi) + 2 \left( \int_{0}^{N} \ln(r_{\tau(t)})  \dd t - \frac{1}{2} \ln\left(\frac{r_1}{r_0}\right) \right. \\ \left. + \frac{1}{12} \left[ \partial_t \ln r_{\tau(t)} |_{\tau=1} - \partial_t \ln r_{\tau(t)} |_{\tau=0}\right] + \Boh(N^{-3}) \right).
+		\sum_{j=0}^{N-1}  \ln(2 \pi r^2_{\tau(j)}) = \ln(2\pi) + 2 \left( \int_{0}^{N} \ln(r_{\tau(t)})  \dd t - \frac{1}{2} \ln\left(\frac{r_1}{r_0}\right) \right. \\ \left. + \frac{1}{12} \left[ \partial_t \ln r_{\tau(t)} |_{\tau=1} - \partial_t \ln r_{\tau(t)} |_{\tau=0}\right] + \Boh(N^{-3}) \right).
 	\end{multline}
 	We first tackle the integral on the right hand side, changing variables as $s = r_{\tau(t)}$ we would have
 	\begin{equation}
@@ -575,7 +565,7 @@ Then, the final expression becomes a question of balancing the results.
 	\end{align}
 	Then
 	\begin{equation}
-		\sum_{j=0}^{N-1}  \ln(8\pi r^2_{\tau(j)}) = N \ln(8\pi) + 2 \left( \frac{N}{2} \int_{r_0}^{r_1} \ln(s) (s q'(s))' \dd s - \frac{1}{2} \ln\left(\frac{r_1}{r_0}\right) + \Boh(N^{-1}) \right) .
+		\sum_{j=0}^{N-1}  \ln(2\pi r^2_{\tau(j)}) = N \ln(2\pi) + 2 \left( \frac{N}{2} \int_{r_0}^{r_1} \ln(s) (s q'(s))' \dd s - \frac{1}{2} \ln\left(\frac{r_1}{r_0}\right) + \Boh(N^{-1}) \right) .
 		\label{Equation: log(r) annulus}
 	\end{equation}
 \end{proof}
@@ -604,12 +594,12 @@ Then, the final expression becomes a question of balancing the results.
 	\end{equation}
 	and the theorem follows from
 	\begin{multline}
-			\sum_{j=0}^{N-1} \ln{h_j} = - N^2 I_Q[\mu_Q] + N U_{\mu_Q}(0) - \frac{1}{6} \ln{\left( \frac{r_0}{r_1}\right)}  - \frac{N}{2} \ln(N) - \frac{1}{2}  \left( N E_Q[\mu_Q] -  \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) \right)	\\ + \frac{1}{2} \left( N \ln(8\pi) + 2 \left( - N U_{\mu_Q}(0) - \frac{1}{2} \ln\left(\frac{r_1}{r_0}\right) \right) \right)
+			\sum_{j=0}^{N-1} \ln{h_j} = - N^2 I_Q[\mu_Q] + N U_{\mu_Q}(0) - \frac{1}{6} \ln{\left( \frac{r_0}{r_1}\right)}  - \frac{N}{2} \ln(N) - \frac{1}{2}  \left( N E_Q[\mu_Q] -  \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) \right)	\\ + \frac{1}{2} \left( N \ln(2\pi) + 2 \left( - N U_{\mu_Q}(0) - \frac{1}{2} \ln\left(\frac{r_1}{r_0}\right) \right) \right)
 		 	- \frac{3}{32} \ln\left( \frac{V^{(2)}_1(r_1)}{V^{(2)}_0(r_0)} \right) \\ - \frac{1}{32} \left( \frac{r_1  V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \frac{r_0 V^{(3)}_0(r_0)}{V^{(2)}_0(r_0)}\right) - \frac{1}{12} \int_{r_0}^{r_1} \frac{V^{(3)}(r)^2}{V^{(2)}(r)^{2}} r \dd r +  \Boh(N^{-1})
 	\end{multline}
 	that reduces to
 	\begin{multline}
-		\sum_{j=0}^{N-1} \ln{h_j} = - N^2 I_Q[\mu_Q] - \frac{N}{2} \ln(N) + N \left(\frac{\ln(8\pi)}{2} - \frac{1}{2} E_Q[\mu_Q]\right) - \frac{2}{3}  \ln{\left( \frac{r_0}{r_1}\right)}  + \frac{5}{32} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) \\ - \frac{1}{32} \left( \frac{r_1  V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \frac{r_0 V^{(3)}_0(r_0)}{V^{(2)}_0(r_0)}\right) - \frac{1}{12} \int_{r_0}^{r_1} \frac{V^{(3)}(r)^2}{V^{(2)}(r)^{2}} r \dd r +  \Boh(N^{-1}).
+		\sum_{j=0}^{N-1} \ln{h_j} = - N^2 I_Q[\mu_Q] - \frac{N}{2} \ln(N) + N \left(\frac{\ln(2\pi)}{2} - \frac{1}{2} E_Q[\mu_Q]\right) - \frac{2}{3}  \ln{\left( \frac{r_0}{r_1}\right)}  + \frac{5}{32} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) \\ - \frac{1}{32} \left( \frac{r_1  V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \frac{r_0 V^{(3)}_0(r_0)}{V^{(2)}_0(r_0)}\right) - \frac{1}{12} \int_{r_0}^{r_1} \frac{V^{(3)}(r)^2}{V^{(2)}(r)^{2}} r \dd r +  \Boh(N^{-1}).
 	\end{multline}
 \end{proof}
 
@@ -620,7 +610,7 @@ We can finally prove Theorem \ref{Theorem: Annulus Free Energy}.
 \begin{proof} (Theorem \ref{Theorem: Annulus Free Energy})
 	From Theorem \ref{Theorem: hj annulus},
 	\begin{multline}
-		\sum_{j=0}^{N-1} \ln(h_j) = - N^2 I_Q[\mu_Q] - \frac{N}{2} \ln(N) + N \left(\frac{\ln(8\pi)}{2} - \frac{1}{2} E_Q[\mu_Q]\right) - \frac{2}{3}  \ln{\left( \frac{r_0}{r_1}\right)} +\frac{5}{32} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) \\ - \frac{1}{32} \left( \frac{r_1  V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \frac{r_0 V^{(3)}_0(r_0)}{V^{(2)}_0(r_0)}\right) - \frac{1}{12} \int_{r_0}^{r_1} \frac{V^{(3)}(r)^2}{V^{(2)}(r)^{2}} r \dd r +  \Boh(N^{-1}).  
+		\sum_{j=0}^{N-1} \ln(h_j) = - N^2 I_Q[\mu_Q] - \frac{N}{2} \ln(N) + N \left(\frac{\ln(2\pi)}{2} - \frac{1}{2} E_Q[\mu_Q]\right) - \frac{2}{3}  \ln{\left( \frac{r_0}{r_1}\right)} +\frac{5}{32} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) \\ - \frac{1}{32} \left( \frac{r_1  V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \frac{r_0 V^{(3)}_0(r_0)}{V^{(2)}_0(r_0)}\right) - \frac{1}{12} \int_{r_0}^{r_1} \frac{V^{(3)}(r)^2}{V^{(2)}(r)^{2}} r \dd r +  \Boh(N^{-1}).  
 	\end{multline}
 	We can get the asymptotic expansion for the Free energy using that
 	\begin{equation}
@@ -631,11 +621,11 @@ We can finally prove Theorem \ref{Theorem: Annulus Free Energy}.
 		\ln \pZ{N}{} & = \ln{N!} + \sum_{j=0}^{N-1} \ln{h_j} \\
 		& 
 		\begin{multlined}
-			= N\ln(N) - N + \frac{1}{2} \ln(N) + \frac{1}{2} \ln(2 \pi) + \left(  - N^2 I_Q[\mu_Q] - \frac{N}{2} \ln(N) + N \left(\frac{\ln(8\pi)}{2} - \frac{1}{2} E_Q[\mu_Q]\right) \right. \\ \left.  - \frac{2}{3}  \ln{\left( \frac{r_0}{r_1}\right)} + \frac{5}{32} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) - \frac{1}{32} \left( \frac{r_1  V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \frac{r_0 V^{(3)}_0(r_0)}{V^{(2)}_0(r_0)}\right) - \frac{1}{12} \int_{r_0}^{r_1} \frac{V^{(3)}(r)^2}{V^{(2)}(r)^{2}} r \dd r  \right) + \Boh(N^{-1})           
+			= N\ln(N) - N + \frac{1}{2} \ln(N) + \frac{1}{2} \ln(2 \pi) + \left(  - N^2 I_Q[\mu_Q] - \frac{N}{2} \ln(N) + N \left(\frac{\ln(2\pi)}{2} - \frac{1}{2} E_Q[\mu_Q]\right) \right. \\ \left.  - \frac{2}{3}  \ln{\left( \frac{r_0}{r_1}\right)} + \frac{5}{32} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) - \frac{1}{32} \left( \frac{r_1  V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \frac{r_0 V^{(3)}_0(r_0)}{V^{(2)}_0(r_0)}\right) - \frac{1}{12} \int_{r_0}^{r_1} \frac{V^{(3)}(r)^2}{V^{(2)}(r)^{2}} r \dd r  \right) + \Boh(N^{-1})           
 		\end{multlined} \\
 		&
 		\begin{multlined}
-			=  - N^2 I_Q[\mu_Q] + \frac{N}{2} \left( \ln(8\pi) - E_Q[\mu_Q] - 2\right) + \frac{N}{2} \ln(N) + \frac{1}{2} \ln(N)+ \frac{\ln(2\pi)}{2} \\ - \frac{2}{3}  \ln{\left( \frac{r_0}{r_1}\right)} + \frac{5}{32} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) - \frac{1}{32} \left( \frac{r_1  V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \frac{r_0 V^{(3)}_0(r_0)}{V^{(2)}_0(r_0)}\right) - \frac{1}{12} \int_{r_0}^{r_1} \frac{V^{(3)}(r)^2}{V^{(2)}(r)^{2}} r \dd r  \Boh(N^{-1})        
+			=  - N^2 I_Q[\mu_Q] + \frac{N}{2} \left( \ln(2\pi) - E_Q[\mu_Q] - 2\right) + \frac{N}{2} \ln(N) + \frac{1}{2} \ln(N)+ \frac{\ln(2\pi)}{2} \\ - \frac{2}{3}  \ln{\left( \frac{r_0}{r_1}\right)} + \frac{5}{32} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) - \frac{1}{32} \left( \frac{r_1  V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \frac{r_0 V^{(3)}_0(r_0)}{V^{(2)}_0(r_0)}\right) - \frac{1}{12} \int_{r_0}^{r_1} \frac{V^{(3)}(r)^2}{V^{(2)}(r)^{2}} r \dd r  \Boh(N^{-1})        
 		\end{multlined}
 	\end{align}
 	and the theorem follows.
@@ -695,8 +685,7 @@ In this case, we consider $r_0 = 0$. As before, the measure in \autoref{Equation
 \begin{teorema}
 	For the annulus case, where $r_0 = 0$, we should have the following, asymptotically on $N$, for the free energy
 	\begin{multline}
-		\ln{\pZ{N}{}} =
-		% - N^2 I_Q[\mu_Q]  -\frac{1}{2} N \ln N + N \left(\frac{\ln(4\pi)}{2} - 1- \frac{1}{2} E_Q[\mu_Q]\right) - \frac{5}{12} \ln N \\ + \frac{\ln(8\pi)}{2} + \frac{1}{2} \zeta'(-1) + \frac{1}{2} F_Q[D_{r_1}] + \frac{5}{4} \ln(2) + \frac{1}{8} \ln\left(\frac{V^{(2)}_0(0)}{V^{(2)}_1(r_1)}\right) + \Boh(N^{-1/12}(\ln N)^3)
+		\ln{\pZ{N}{}} = - N^2 I_Q[\mu_Q]  + \frac{1}{2} N \ln N + N \left(\frac{\ln(2\pi)}{2} - 1 - \frac{1}{2} E_Q[\mu_Q]\right) - \frac{5}{12} \ln N \frac{\ln(2\pi)}{2} \\ + \zeta'(-1) + F_V[D_{r_1}] + \Boh(N^{-1/12}(\ln N)^3).
 	\end{multline}
 	where we have set
 %	\begin{equation}
@@ -706,7 +695,7 @@ In this case, we consider $r_0 = 0$. As before, the measure in \autoref{Equation
 		I_Q[\mu_Q] \deff \left[\frac{1}{4} \int_{r_0}^{r_1} q(s) s V^{(2)}(s) \dd s- \ln(r_1) + \frac{1}{2} q(r_1) \right],
 	\end{equation}
 	\begin{equation}
-		E_Q[\mu_Q] \deff \frac{1}{2} \int_{r_0}^{r_1} \ln(V^{(2)}(s)) (sq'(s))' \dd s
+		E_Q[\mu_Q] \deff \frac{1}{2} \int_{r_0}^{r_1} \ln\left(\frac{V^{(2)}(s)}{4}\right) (sq'(s))' \dd s
 	\end{equation}
 	and
 	\begin{equation}
@@ -758,10 +747,7 @@ To actually expand on the details, we need some useful facts. We will make a lot
 	as $\tau \rightarrow 0$.
 	\label{Proposition: Behavior rt}
 \end{proposicao}
-\begin{proof}
-	This is a inverse function theorem with a Taylor expansion for equalizing powers.
-\end{proof}
- 
+
 We then start as usual dividing the integral into two parts
 \begin{align}
 	h_j & = \int_{0}^{\infty} 2 r^{2j + 1} \ee^{-N q(r)} \dd r = \int_{0}^{\infty} 2 r \ee^{-N V_{\tau(j)} (r)} \dd r, \\
@@ -926,7 +912,7 @@ So now we need to return to  \autoref{Equation: Partition Function} and calculat
 \begin{teorema}
 	We have the following asymptotics on $N$ for the summation of $\ln(h_j)$ from $0$ to $N - 1$,
 	\begin{multline}
-		\sum_{j=0}^{N-1} \ln (h_j) = -N^2 I[\mu_Q] - \frac{1}{2} N \ln(N)  -\frac{N}{2} \left( E_Q[\mu_Q] - \ln(8\pi) \right) - \frac{\ln(N)}{12} \\ + \zeta'(-1) + F_V[D_{r_1}] + \Boh(N^{-12} (\ln N)^3).
+		\sum_{j=0}^{N-1} \ln (h_j) = -N^2 I[\mu_Q] - \frac{1}{2} N \ln(N)  -\frac{N}{2} \left( E_Q[\mu_Q] - \ln(2\pi) \right) - \frac{\ln(N)}{12} \\ + \zeta'(-1) + F_V[D_{r_1}] + \Boh(N^{-12} (\ln N)^3).
 		% - N^2 I_Q[\mu_Q]  -\frac{1}{2} N \ln N - \frac{N}{2} \left(E_Q[\mu_Q] - \ln(8\pi) \right) \\ - \frac{\ln N}{12} + \zeta'(-1) + F_Q[D_{r_1}] + \Boh(N^{-1/12}(\ln N)^3)
 	\end{multline}
 	where $I_Q[\mu_Q] $, $F_V[D_{r_1}]$ and $E_Q[\mu_Q]$ are as in Theorem \ref{Theorem: Disk Free Energy}.
@@ -975,7 +961,7 @@ and we have used the asymptotic for the G-Barnes function
 \begin{lema}
 	We have the following asymptotic for the summation of $\ln(h_j)$ from $m_N$ to $N-1$,
 	\begin{multline}
-		\sum_{j=m_N}^{N-1} \ln (h_j) = -N^2 I[\mu_Q] + \frac{(N-m_N)}{2} \ln{\frac{8\pi}{N}} +  N m_N q(0) + \frac{3}{4} m_N^2 - \frac{N}{2} E_Q[\mu_Q] \\ - \frac{m_N}{2} \left(m_N + 1\right) \ln{\left(\frac{4}{V^{(2)}_0(0)}\right)} - \frac{1}{2} \left( m_N^2 - \frac{1}{6} \right) \ln{\left(\frac{m_N}{N}\right)} + F_V[D_{r_1}] + \Boh(N^{-12} (\ln N)^3).
+		\sum_{j=m_N}^{N-1} \ln (h_j) = -N^2 I[\mu_Q] + \frac{(N-m_N)}{2} \ln{\frac{2\pi}{N}} +  N m_N q(0) + \frac{3}{4} m_N^2 - \frac{N}{2} E_Q[\mu_Q] \\ - \frac{m_N}{2} \left(m_N + 1\right) \ln{\left(\frac{4}{V^{(2)}_0(0)}\right)} - \frac{1}{2} \left( m_N^2 - \frac{1}{6} \right) \ln{\left(\frac{m_N}{N}\right)} + F_V[D_{r_1}] + \Boh(N^{-12} (\ln N)^3).
 	\end{multline}
 	where $I_Q[\mu_Q] $,  $F_V[D_{r_1}]$ and $E_Q[\mu_Q]$ are as in Theorem \ref{Theorem: Disk Free Energy}.
 	\label{Lemma: Summation disk >mn}
@@ -987,7 +973,7 @@ The second summation is a bit more detailed, we use the previously defined asymp
 \end{equation}
 and need to determine the asymptotic of three terms in order to get the full summation,
 \begin{align}
-	& -N\sum_{j=m_N}^{N-1} V_{\tau(j)}(r_{\tau(j)}), \quad \sum_{j=m_N}^{N-1} \ln V^{(2)}_{\tau(j)}(r_{\tau(j)})  \quad \text{and} \quad \sum_{j=m_N}^{N-1}  \ln(r_{\tau(j)}).
+	& -N\sum_{j=m_N}^{N-1} V_{\tau(j)}(r_{\tau(j)}), \quad \sum_{j=m_N}^{N-1} \ln \left( \frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4}\right)  \quad \text{and} \quad \sum_{j=m_N}^{N-1}  \ln(r_{\tau(j)}).
 \end{align}
 This is done in Proposition \ref{Proposition: mn-N v disk}, \ref{Proposition: mn-N lnv disk} and \ref{Proposition: mn-N lnr disk}.
 
@@ -1076,7 +1062,7 @@ Finally, gathering terms, we get the lemma.
 \begin{proposicao}
 	We have following asymptotic
 	\begin{equation}
-		\sum_{j=m_N}^{N-1} \ln V^{(2)}_{\tau(j)}(r_{\tau(j)}) = N E_Q(\mu_Q)  - \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right)  - m_N \ln\left( V^{(2)}_0(0) \right) + \Boh(N^{-1/2(1-\epsilon)}),
+		\sum_{j=m_N}^{N-1}\ln \left( \frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4}\right) = N E_Q(\mu_Q)  - \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right)  - m_N \ln\left(  \frac{V^{(2)}_0(0)}{4} \right) + \Boh(N^{-1/2(1-\epsilon)}),
 	\end{equation}
 	where $E_Q[\mu_Q]$ is as in Theorem \ref{Theorem: Disk Free Energy}.
 	\label{Proposition: mn-N lnv disk}
@@ -1084,37 +1070,37 @@ Finally, gathering terms, we get the lemma.
 \begin{proof}
 	Again, we start with the Euler-Maclaurin formula
 		\begin{multline}
-		\sum_{j=m_N}^{N-1}  \ln V^{(2)}_{\tau(j)}(r_{\tau(j)}) = \int_{m_N}^{N} \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) \dd t - \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{\tau(m_N)}(r_{\tau(m_N)})} \right) + \\ \frac{1}{12} \left[ \partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=N} - \partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=m_N}\right]  + \Boh(N^{-3}).
+		\sum_{j=m_N}^{N-1} \ln \left( \frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4}\right) = \int_{m_N}^{N} \ln \left( \frac{V^{(2)}_{\tau(t)}(r_{\tau(t)})}{4}\right)  \dd t - \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{\tau(m_N)}(r_{\tau(m_N)})} \right) + \\ \frac{1}{12} \left[ \partial_t \ln \frac{1}{4} V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=N} - \partial_t \ln \frac{1}{4} V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=m_N}\right]  + \Boh(N^{-3}).
 	\end{multline}
 	We first tackle the integral on the right hand side. Changing variables $s = r_{\tau(t)}$ we have
 	\begin{align}
-		\int_{m_N}^{N} \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) \dd t & = \frac{N}{2} \int_{r_{\tau(m_N)}}^{r_1} \ln(V^{(2)}(s)) (sq'(s))' \dd s, \\
-		& =  \frac{N}{2} \int_{r_{\tau(m_N)}}^{r_1} \ln(V^{(2)}(s)) s V^{(2)}(s) \dd s, \\
-		& = \frac{N}{2} \left[ \int_{r_0}^{r_1} \ln(V^{(2)}(s)) s V^{(2)}(s) \dd s -  \int_{r_0}^{r_{\tau(m_N)}} \ln(V^{(2)}(s)) s V^{(2)}(s) \dd s  \right], \\
-		& = \frac{N}{2} \left[ 2 E_Q[\mu_Q] -  \int_{r_0}^{r_{\tau(m_N)}} \ln(V^{(2)}(s)) s V^{(2)}(s) \dd s  \right], 
+		\int_{m_N}^{N} \ln \left( \frac{V^{(2)}_{\tau(t)}(r_{\tau(t)})}{4}\right)  \dd t & = \frac{N}{2} \int_{r_{\tau(m_N)}}^{r_1} \ln\left(\frac{V^{(2)}(s)}{4}\right) (sq'(s))' \dd s, \\
+		& =  \frac{N}{2} \int_{r_{\tau(m_N)}}^{r_1} \ln\left(\frac{V^{(2)}(s)}{4}\right)  s V^{(2)}(s) \dd s, \\
+		& = \frac{N}{2} \left[ \int_{r_0}^{r_1}\ln\left(\frac{V^{(2)}(s)}{4}\right) s V^{(2)}(s) \dd s -  \int_{r_0}^{r_{\tau(m_N)}} \ln\left(\frac{V^{(2)}(s)}{4}\right) s V^{(2)}(s) \dd s  \right], \\
+		& = \frac{N}{2} \left[ 2 E_Q[\mu_Q] -  \int_{r_0}^{r_{\tau(m_N)}} \ln\left(\frac{V^{(2)}(s)}{4}\right) s V^{(2)}(s) \dd s  \right], 
 	\end{align}
 	where one can also compute
 	\begin{align}
-		\int_{r_0}^{r_{\tau(m_N)}} & \ln(V^{(2)}(s)) s V^{(2)}(s) \dd s \\ 
-		& = \int_{r_0}^{r_{\tau(m_N)}} \ln\left( V^{(2)}_0(0) + V^{(2)}_0(0) s + \Boh(s^2) \right) s \left( V^{(2)}_0(0) + V^{(2)}_0(0) s + \Boh(s^2) \right) \dd s, \\
-		& = \int_{r_0}^{r_{\tau(m_N)}} \ln\left( V^{(2)}_0(0) \right) s V^{(2)}_0(0)  \dd s + \Boh(r_{\tau(m_N)}^3), \\
-		& =  \ln\left( V^{(2)}_0(0) \right) r_{\tau(m_N)}^2 V^{(2)}_0(0) + \Boh(r_{\tau(m_N)}^3), \\
-		& = \frac{2m_N}{N}\ln\left( V^{(2)}_0(0) \right)  + \Boh(N^{-3(1-\epsilon)}) 
+		\int_{r_0}^{r_{\tau(m_N)}} & \ln\left(\frac{V^{(2)}(s)}{4}\right) s V^{(2)}(s) \dd s \\ 
+		& = \int_{r_0}^{r_{\tau(m_N)}} \ln\left(\frac{V^{(2)}_0(0)}{4} + \frac{V^{(2)}_0(0)}{4} s + \Boh(s^2) \right) s \left( V^{(2)}_0(0) + V^{(2)}_0(0) s + \Boh(s^2) \right) \dd s, \\
+		& = \int_{r_0}^{r_{\tau(m_N)}} \ln\left( \frac{V^{(2)}_0(0)}{4} \right) s V^{(2)}_0(0)  \dd s + \Boh(r_{\tau(m_N)}^3), \\
+		& =  \ln\left( \frac{V^{(2)}_0(0)}{4} \right) r_{\tau(m_N)}^2 V^{(2)}_0(0) + \Boh(r_{\tau(m_N)}^3), \\
+		& = \frac{2m_N}{N}\ln\left( \frac{V^{(2)}_0(0)}{4} \right)  + \Boh(N^{-3(1-\epsilon)}) 
 	\end{align}
 	noting the definition for $V$ and Proposition \ref{Proposition: Behavior rt}. Furthermore, we know 
 	\begin{align}
-		\partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) & = \partial_V \left( \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) \right) \partial_r \left( V^{(2)}_{\tau(t)}(r_{\tau(t)}) \right) \partial_\tau \left( r_{\tau(t)} \right), \\
+		\partial_t \ln \frac{1}{4}V^{(2)}_{\tau(t)}(r_{\tau(t)}) & = \partial_V \left( \ln \frac{1}{4} V^{(2)}_{\tau(t)}(r_{\tau(t)}) \right)  \frac{1}{4}  \partial_r \left( V^{(2)}_{\tau(t)}(r_{\tau(t)}) \right) \partial_\tau \left( r_{\tau(t)} \right), \\
 		& = \frac{2 \partial_r V^{(2)} (r_{\tau(t)})}{ N r_{\tau(t)} \left( V^{(2)}_{\tau(t)}(r_{\tau(t)})\right)^2}, \\
 		& = \Boh\left( N/m_N \right)^{-1/2}.
 	\end{align}
 	Therefore, for the third term on the right hand side
 	\begin{align}
-		\partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=N} - \partial_t \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=m_N} & = \frac{2 \partial_r V^{(2)}(r_{1})}{ N r_1 \left( V^{(2)}_1(r_1)\right)^2} - \Boh\left( N/m_N \right)^{-1/2}, \\ 
+		\partial_t \ln \frac{1}{4} V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=N} - \partial_t \ln \frac{1}{4} V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=m_N} & = \frac{2 \partial_r V^{(2)}(r_{1})}{ N r_1 \left( V^{(2)}_1(r_1)\right)^2} - \Boh\left( N/m_N \right)^{-1/2}, \\ 
 		& =\Boh\left( N/m_N \right)^{-1/2} = \Boh(N^{-1/2(1-\epsilon)}).
 	\end{align}
 	Then, simply expanding the series on $V^{(2)}_{\tau(m_N)}(r_{\tau(m_N)})$, we can write,
 	\begin{equation}
-		\sum_{j=0}^{N-1}  \ln V^{(2)}_{\tau(j)}(r_{\tau(j)})  = N E_Q(\mu_Q)  - \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(0)} \right)  - m_N \ln\left( V^{(2)}_0(0) \right) + \Boh(N^{-1/2(1-\epsilon)}).
+		\sum_{j=0}^{N-1}  \ln V^{(2)}_{\tau(j)}(r_{\tau(j)})  = N E_Q(\mu_Q)  - \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(0)} \right) - m_N \ln\left(  \frac{V^{(2)}_0(0)}{4} \right)  + \Boh(N^{-1/2(1-\epsilon)}).
 		\label{Equation: logV annulus}
 	\end{equation}
 	%Observe also that $\ln(V^{(2)}_{\tau(m_N)}(r_{\tau(m_N)})) = \ln(V^{(2)}_{0}(r_{0})) + \Boh(r_{\tau(m_N)})$.
@@ -1221,33 +1207,22 @@ Finally, we turn our attention to gathering these propositions and proving the o
 	\begin{multline}
 					\frac{1}{N} \sum_{j=m_N}^{N-1} \mathfrak{B}(r_{\tau(j)})  = - \frac{3}{32} \ln\left( \frac{V^{(2)}_1(r_1)}{V^{(2)}_{\tau(m_N)}(r_{\tau(m_N)})} \right) - \frac{1}{32} \left( \frac{r_1  V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \frac{r_{\tau(m_N)} V^{(3)}_{\tau(m_N)}(r_{\tau(m_N)})}{V^{(2)}_{\tau(m_N)}(r_{\tau(m_N)})}\right) \\ - \frac{1}{12} \int_{r_{\tau(m_N)}}^{r_1} \frac{V^{(3)}(r)^2}{V^{(2)}(r)^{2}} r \dd r + \Boh(N^{-2}).
 	\end{multline}
-	using Proposition \ref{Proposition: Behavior rt} and \autoref{Equation: behavior ln rt mn} we can rewrite
-	\begin{equation}
-a		
-	\end{equation}
-	\begin{equation}
-		r_\tau = \left( \frac{2\tau}{q''(0)} \right)^{\frac{1}{2}} + \Boh(\tau) = \left( \frac{4\tau}{V^{(2)}_0(0)} \right)^{\frac{1}{2}} + \Boh(\tau) 
-	\end{equation}
-	\begin{equation}
-		\ln(r_{\tau(m_N)}) = \frac{1}{2} \ln{\left(\frac{4 \tau(m_N)}{V^{(2)}_0(0)}\right)} + \Boh(\tau(m_N)^{\frac{1}{2}}) = \frac{1}{2} \ln{\left(\frac{4 \tau(m_N)}{V^{(2)}_0(0)}\right)} + \Boh(N^{-\frac{1}{2}(1-\epsilon)}),
-	\end{equation}
-	
 	
 	We should have by the asymptotic for $h_j$ in Theorem \ref{Theorem: hj disk j>mn} , referring to $j > m_N$
 	\begin{multline}
-		\sum_{j=m_N}^{N-1} \ln (h_j) = 	\sum_{j=m_N}^{N-1}  \left( -N V_{\tau(j)}(r_{\tau(j)}) + \ln(r_{\tau(j)}) -\frac{1}{2} \ln V^{(2)}_{\tau(j)}(r_{\tau(j)}) + \frac{1}{N} \mathfrak{B}(r_{\tau(j)}) \right) \\ + \frac{(N-m_N)}{2} \ln{\frac{8\pi}{N}} + \Boh(m_N^{-1/2} (\ln N)^\alpha) + \Boh(N^{\frac{1}{2}(1-5\epsilon)}).
+		\sum_{j=m_N}^{N-1} \ln (h_j) = 	\sum_{j=m_N}^{N-1}  \left( -N V_{\tau(j)}(r_{\tau(j)}) + \ln(r_{\tau(j)}) -\frac{1}{2} \ln \frac{1}{4}V^{(2)}_{\tau(j)}(r_{\tau(j)}) + \frac{1}{N} \mathfrak{B}(r_{\tau(j)}) \right) \\ + \frac{(N-m_N)}{2} \ln{\frac{2\pi}{N}} + \Boh(m_N^{-1/2} (\ln N)^\alpha) + \Boh(N^{\frac{1}{2}(1-5\epsilon)}).
 	\end{multline}
 	By the lemmas just proved, we can write as $N \rightarrow \infty$,
 	\begin{multline}
-		\sum_{j=m_N}^{N-1} \ln (h_j) = -N^2 I[\mu_Q] + \frac{(N-m_N)}{2} \ln{\frac{8\pi}{N}} +  N m_N q(0) + \frac{3}{4} m_N^2 - \frac{N}{2} E_Q[\mu_Q] - \frac{m_N}{2} \left(m_N + 1\right) \ln{\left(\frac{4}{V^{(2)}_0(0)}\right)} \\ - \frac{1}{2} \left( m_N^2 - \frac{1}{6} \right) \ln{\left(\frac{m_N}{N}\right)} + \frac{1}{6} \ln{\left(\frac{4}{V^{(2)}_0(0)}\right)} - \frac{1}{3} \ln(r_1) + \frac{5}{32} \ln\left( \frac{V^{(2)}_1(r_1)}{V^{(2)}_{\tau(m_N)}(r_{\tau(m_N)})} \right) \\ - \frac{1}{32} \left( \frac{r_1  V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \frac{r_{\tau(m_N)} V^{(3)}_{\tau(m_N)}(r_{\tau(m_N)})}{V^{(2)}_{\tau(m_N)}(r_{\tau(m_N)})}\right) - \frac{1}{12} \int_{r_{\tau(m_N)}}^{r_1} \frac{V^{(3)}(r)^2}{V^{(2)}(r)^{2}} r \dd r + \Boh(N^{-12} (\ln N)^3).
+		\sum_{j=m_N}^{N-1} \ln (h_j) = -N^2 I[\mu_Q] + \frac{(N-m_N)}{2} \ln{\frac{2\pi}{N}} +  N m_N q(0) + \frac{3}{4} m_N^2 - \frac{N}{2} E_Q[\mu_Q] - \frac{m_N}{2} \left(m_N + 1\right) \ln{\left(\frac{4}{V^{(2)}_0(0)}\right)} \\ - \frac{1}{2} \left( m_N^2 - \frac{1}{6} \right) \ln{\left(\frac{m_N}{N}\right)} + \frac{1}{6} \ln{\left(\frac{4}{V^{(2)}_0(0)}\right)} - \frac{1}{3} \ln(r_1) + \frac{5}{32} \ln\left( \frac{V^{(2)}_1(r_1)}{V^{(2)}_{\tau(m_N)}(r_{\tau(m_N)})} \right) \\ - \frac{1}{32} \left( \frac{r_1  V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \frac{r_{\tau(m_N)} V^{(3)}_{\tau(m_N)}(r_{\tau(m_N)})}{V^{(2)}_{\tau(m_N)}(r_{\tau(m_N)})}\right) - \frac{1}{12} \int_{r_{\tau(m_N)}}^{r_1} \frac{V^{(3)}(r)^2}{V^{(2)}(r)^{2}} r \dd r + \Boh(N^{-12} (\ln N)^3).
 	\end{multline}
 	We just rewrite
 	\begin{multline}
-				\sum_{j=m_N}^{N-1} \ln (h_j) = -N^2 I[\mu_Q] + \frac{(N-m_N)}{2} \ln{\frac{8\pi}{N}} +  N m_N q(0) + \frac{3}{4} m_N^2 - \frac{N}{2} E_Q[\mu_Q] \\ - \frac{m_N}{2} \left(m_N + 1\right) \ln{\left(\frac{4}{V^{(2)}_0(0)}\right)} - \frac{1}{2} \left( m_N^2 - \frac{1}{6} \right) \ln{\left(\frac{m_N}{N}\right)} + F_V[D_{r_1}] + \Boh(N^{-12} (\ln N)^3).
+				\sum_{j=m_N}^{N-1} \ln (h_j) = -N^2 I[\mu_Q] + \frac{(N-m_N)}{2} \ln{\frac{2\pi}{N}} +  N m_N q(0) + \frac{3}{4} m_N^2 - \frac{N}{2} E_Q[\mu_Q] \\ - \frac{m_N}{2} \left(m_N + 1\right) \ln{\left(\frac{4}{V^{(2)}_0(0)}\right)} - \frac{1}{2} \left( m_N^2 - \frac{1}{6} \right) \ln{\left(\frac{m_N}{N}\right)} + F_V[D_{r_1}] + \Boh(N^{-12} (\ln N)^3).
 	\end{multline}
 	where
 	\begin{equation}
-		 F_V[D_{r_1}] \deff \frac{1}{6} \ln{\left(\frac{4}{V^{(2)}_0(0)}\right)} - \frac{1}{3} \ln(r_1) + \frac{5}{32} \ln\left( \frac{V^{(2)}_1(r_1)}{V^{(2)}_{0}(r_{0})} \right) - \frac{1}{32} \frac{r_1  V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \frac{1}{12} \int_{r_{0}}^{r_1} \frac{V^{(3)}(r)^2}{V^{(2)}(r)^{2}} r \dd r 
+		 F_V[D_{r_1}] \deff \frac{1}{6} \ln{\left(\frac{4}{V^{(2)}_0(0)}\right)} - \frac{1}{3} \ln(r_1) + \frac{5}{32} \ln\left( \frac{V^{(2)}_1(r_1)}{V^{(2)}_{0}(r_{0})} \right) - \frac{1}{32} \frac{r_1  V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \frac{1}{12} \int_{r_{0}}^{r_1} \frac{V^{(3)}(r)^2}{V^{(2)}(r)^{2}} r \dd r.
 	\end{equation}
 \end{proof}
 
@@ -1256,9 +1231,9 @@ And here finally we return to the full summation
 \begin{proof} (Theorem \ref{Theorem: Disk sum})
 	Gathering Lemma \ref{Lemma: Summation disk <mn} and Lemma \ref{Lemma: Summation disk >mn}, we get
 	\begin{equation}
-		\sum_{j=0}^{N-1} \ln (h_j) = -N^2 I[\mu_Q] - \frac{1}{2} N \ln(N)  -\frac{N}{2} \left( E_Q[\mu_Q] - \ln(8\pi) \right) - \frac{\ln(N)}{12} + \zeta'(-1) + F_V[D_{r_1}] + \Boh(N^{-12} (\ln N)^3).
+		\sum_{j=0}^{N-1} \ln (h_j) = -N^2 I[\mu_Q] - \frac{1}{2} N \ln(N)  -\frac{N}{2} \left( E_Q[\mu_Q] - \ln(2\pi) \right) - \frac{\ln(N)}{12} + \zeta'(-1) + F_V[D_{r_1}] + \Boh(N^{-12} (\ln N)^3).
 	\end{equation}
-	All the terms depending on $m_N$ cancels out.
+	Incredibly, all the terms depending on $m_N$ cancels out.
 \end{proof}
 
 \subsubsection{Free Energy Disk}
@@ -1267,20 +1242,20 @@ And here finally we return to the full summation
 We can finally prove Theorem \ref{Theorem: Disk Free Energy}.
 
 \begin{proof} (Theorem \ref{Theorem: Disk Free Energy})
-	From
-	\begin{multline}
-	\sum_{j=0}^{N} \ln(h_j) = - N^2 I_Q[\mu_Q]  -\frac{1}{2} N \ln N - \frac{N}{2} \left(E_Q[\mu_Q] - \ln(8\pi) \right) \\ - \frac{\ln N}{12} + \zeta'(-1) + F_V[D_{r_1}] + \Boh(N^{-1/12}(\ln N)^3)
-	\end{multline}
-	We can get the asymptotic expansion for the Free energy noting that all termns involving $m_N$ vanish and using that
+	We restate the previous result
+	\begin{equation}
+	\sum_{j=0}^{N-1} \ln(h_j) = - N^2 I_Q[\mu_Q]  -\frac{1}{2} N \ln N - \frac{N}{2} \left(E_Q[\mu_Q] - \ln(2\pi) \right)- \frac{\ln N}{12} + \zeta'(-1) + F_V[D_{r_1}] + \Boh(N^{-1/12}(\ln N)^3).
+	\end{equation}
+	We can get the asymptotic expansion for the Free energy noting that all terms involving $m_N$ vanish and using that
 	\begin{equation}
 		\ln(N!) = N\ln(N) - N + \frac{1}{2} \ln(N) + \frac{1}{2} \ln(2 \pi) + \Boh(N^{-1})
 	\end{equation}
 	that is,
 	\begin{align}
-		\ln \pZ{N}{} & = \ln{N!} - \sum_{j=0}^{N-1} \ln{h_j} \\
-		& =
+		\ln \pZ{N}{} & = \ln{N!} + \sum_{j=0}^{N-1} \ln{h_j} \\
+		&
 		\begin{multlined}
-			- N^2 I_Q[\mu_Q]  -\frac{1}{2} N \ln N + N \left(\frac{\ln(4\pi)}{2} - 1- \frac{1}{2} E_Q[\mu_Q]\right) - \frac{5}{12} \ln N \\ + \frac{\ln(8\pi)}{2} + \frac{1}{2} \zeta'(-1) + \frac{1}{2} F_V[D_{r_1}] + \frac{5}{4} \ln(2) + \frac{1}{8} \ln\left(\frac{V^{(2)}_0(0)}{V^{(2)}_1(r_1)}\right) + \Boh(N^{-1/12}(\ln N)^3)
+			= - N^2 I_Q[\mu_Q]  + \frac{1}{2} N \ln N + N \left(\frac{\ln(2\pi)}{2} - 1 - \frac{1}{2} E_Q[\mu_Q]\right) - \frac{5}{12} \ln N \frac{\ln(2\pi)}{2} \\ + \zeta'(-1) + F_V[D_{r_1}] + \Boh(N^{-1/12}(\ln N)^3).
 		\end{multlined}
 	\end{align}
 \end{proof}

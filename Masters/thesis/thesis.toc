@@ -14,20 +14,40 @@
 \babel@toc {english}{}\relax
 \babel@toc {english}{}\relax
 \contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introduction}}{19}{chapter.1}%
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Random Matrix Theory}}{21}{chapter.2}%
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Point Processes}}{23}{chapter.3}%
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Asymptotics}}{25}{chapter.4}%
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Equilibrium}}{27}{chapter.5}%
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Planar Ensembles}}{29}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Working Model}{30}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Asymptotics on Droplets}{32}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Asymptotics - Annulus}{35}{subsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.1.1}Asymptotic for the norming constant}{36}{subsubsection.6.2.1.1}%
-\contentsline {subsubsection}{\numberline {6.2.1.2}Asymptotics on the Summation}{40}{subsubsection.6.2.1.2}%
-\contentsline {subsubsection}{\numberline {6.2.1.3}Free Energy Annulus}{45}{subsubsection.6.2.1.3}%
-\contentsline {subsection}{\numberline {6.2.2}Asymptotics - Disk}{46}{subsection.6.2.2}%
-\contentsline {subsubsection}{\numberline {6.2.2.1}Asymptotic for the norming constant}{47}{subsubsection.6.2.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.2.2}Asymptotics on the Summation}{53}{subsubsection.6.2.2.2}%
-\contentsline {subsubsection}{\numberline {6.2.2.3}Free Energy Disk}{60}{subsubsection.6.2.2.3}%
+\babel@toc {english}{}\relax
+\babel@toc {english}{}\relax
+\babel@toc {english}{}\relax
+\babel@toc {english}{}\relax
+\contentsline {section}{\numberline {1.1}Overview of the dissertation}{27}{section.1.1}%
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Random Matrix Theory}}{31}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Random Matrix}{31}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Invariant Ensembles}{37}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Orthogonal Polynomial Ensembles}{40}{subsection.2.2.1}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Point Processes}}{47}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Point Processes}{47}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Determinantal Point Processes (DPP)}{51}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Limit and Transformations of DPP}{53}{section.3.3}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Asymptotics}}{57}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Quadrature Technique}{57}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Asymptotic on Integrals}{59}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Watson's Lemma}{61}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Laplace Method}{65}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Steepest Descent}{70}{subsection.4.2.3}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Equilibrium}}{75}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Coulomb Gases}{75}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Equilibrium Measure}{77}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Euler-Lagrange}{82}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}Solving for the Free Energy}{85}{section.5.3}%
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Planar Ensembles}}{89}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Working Model}{90}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Asymptotics on Droplets}{92}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Asymptotics - Annulus}{95}{subsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.1.1}Asymptotic for the norming constant}{96}{subsubsection.6.2.1.1}%
+\contentsline {subsubsection}{\numberline {6.2.1.2}Asymptotics on the Summation}{100}{subsubsection.6.2.1.2}%
+\contentsline {subsubsection}{\numberline {6.2.1.3}Free Energy Annulus}{106}{subsubsection.6.2.1.3}%
+\contentsline {subsection}{\numberline {6.2.2}Asymptotics - Disk}{106}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}Asymptotic for the norming constant}{107}{subsubsection.6.2.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2.2}Asymptotics on the Summation}{113}{subsubsection.6.2.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.3}Free Energy Disk}{121}{subsubsection.6.2.2.3}%
 \vspace {\cftbeforechapterskip }
-\contentsline {chapter}{\MakeTextUppercase []{Bibliography}}{63}{section*.19}%
+\contentsline {chapter}{\MakeTextUppercase []{Bibliography}}{123}{section*.36}%

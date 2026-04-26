@@ -14,12 +14,26 @@
 ISSN 0378-4371.
 Available: \url{http://dx.doi.org/10.1016/j.physa.2005.10.059}.}
 
+\bibitem[Alpert 1999]{Trapezoidal-Maclaurin}
+\abntrefinfo{Alpert}{ALPERT}{1999}
+{ALPERT, B.~K. Hybrid gauss-trapezoidal quadrature rules.
+\textbf{SIAM J. Sci. Comput.}, Society for Industrial and Applied Mathematics,
+  USA, v.~20, n.~5, p. 1551–1584, Jan. 1999.
+ISSN 1064-8275.
+Available: \url{https://doi.org/10.1137/S1064827597325141}.}
+
 \bibitem[Baik, Deift and Johansson
   1999]{baik1999distributionlengthlongestincreasing}
 \abntrefinfo{Baik, Deift and Johansson}{BAIK; DEIFT; JOHANSSON}{1999}
 {BAIK, J.; DEIFT, P.; JOHANSSON, K. \textbf{On the Distribution of the Length
   of the Longest Increasing Subsequence of Random Permutations}. 1999.
 Available: \url{https://arxiv.org/abs/math/9810105}.}
+
+\bibitem[Balogh, Grava and Merzi 2016]{balogh2016orthogonal}
+\abntrefinfo{Balogh, Grava and Merzi}{BALOGH; GRAVA; MERZI}{2016}
+{BALOGH, F.; GRAVA, T.; MERZI, D. Orthogonal polynomials for a class of
+  measures with discrete rotational symmetries in the complex plane.
+2016.}
 
 \bibitem[Byun, Kang and Seo 2023]{Byun_2023}
 \abntrefinfo{Byun, Kang and Seo}{BYUN; KANG; SEO}{2023}
@@ -39,9 +53,18 @@ Available: \url{http://dx.doi.org/10.1007/s00220-023-04673-1}.}
 ISSN 1572-9613.
 Available: \url{http://dx.doi.org/10.1007/s10955-018-2195-6}.}
 
+\bibitem[Deift 1999]{deiftorthogonal}
+\abntrefinfo{Deift}{DEIFT}{1999}
+{DEIFT, P. \textbf{Orthogonal Polynomials and Random Matrices: A
+  Riemann-Hilbert Approach}. Courant Institute of Mathematical Sciences, New
+  York University, 1999.  (Courant lecture notes in mathematics).
+ISBN 9780821883440. Available:
+  \url{https://books.google.com.br/books?id=SBR8yv0LkFgC}.}
+
 \bibitem[Deift 2006]{deift2006universalitymathematicalphysicalsystems}
 \abntrefinfo{Deift}{DEIFT}{2006}
-{DEIFT, P. \textbf{Universality for mathematical and physical systems}. 2006.
+{\underline{\ \ \ \ \ \ \ \ }. \textbf{Universality for mathematical and
+  physical systems}. 2006.
 Available: \url{https://arxiv.org/abs/math-ph/0603038}.}
 
 \bibitem[Dyson 1962]{Dyson1962es}
@@ -49,12 +72,28 @@ Available: \url{https://arxiv.org/abs/math-ph/0603038}.}
 {DYSON, F.~J. {Statistical theory of the energy levels of complex systems. I}.
 \textbf{J. Math. Phys.}, v.~3, p. 140--156, 1962.}
 
+\bibitem[Edelman 1989]{EdelmanConditionNumbers}
+\abntrefinfo{Edelman}{EDELMAN}{1989}
+{EDELMAN, A.
+\textbf{Eigenvalues and condition numbers of random matrices}.
+Phd Thesis (PhD Thesis) --- Massachusetts Institute of Technology, Dept. of
+  Mathematics, 1989. Unpublished.
+Available: \url{http://hdl.handle.net/1721.1/14322}.}
+
 \bibitem[Gauss 1809]{gauss1809theoria}
 \abntrefinfo{Gauss}{GAUSS}{1809}
 {GAUSS, C. \textbf{Theoria motus corporum coelestium in sectionibus conicis
   solem ambientium}. Sumtibus F. Perthes et I.H. Besser, 1809.  (Carl Friedrich
   Gauss Werke). Available:
   \url{https://books.google.com.br/books?id=ORUOAAAAQAAJ}.}
+
+\bibitem[Girotti 2014]{ManuelaGirottiPhD}
+\abntrefinfo{Girotti}{GIROTTI}{2014}
+{GIROTTI, M.
+\textbf{Riemann-Hilbert approach to Gap Probabilities of Determinantal Point
+  Processes}.
+Phd Thesis (PhD Thesis) --- Concordia University, August 2014. Unpublished.
+Available: \url{https://spectrum.library.concordia.ca/id/eprint/978910/}.}
 
 \bibitem[Goldston and Montgomery 1987]{Montgomery}
 \abntrefinfo{Goldston and Montgomery}{GOLDSTON; MONTGOMERY}{1987}
@@ -78,6 +117,14 @@ ISBN 978-1-4612-4816-3. Available:
   universality in the random normal matrix model}. 2020.
 Available: \url{https://arxiv.org/abs/1710.06493}.}
 
+\bibitem[Johansson 2006]{JOHANSSON20061}
+\abntrefinfo{Johansson}{JOHANSSON}{2006}
+{JOHANSSON, K. Course 1 - random matrices and determinantal processes. In:
+  BOVIER, A.; DUNLOP, F.; {van Enter}, A.; {den Hollander}, F.; DALIBARD, J.
+  (Ed.). Elsevier, 2006,  (Les Houches, v.~83). p. 1--56.
+Available:
+  \url{https://www.sciencedirect.com/science/article/pii/S0924809906800387}.}
+
 \bibitem[Kieburg, Verbaarschot and Zafeiropoulos 2014]{Kieburg_2014}
 \abntrefinfo{Kieburg, Verbaarschot and Zafeiropoulos}{KIEBURG; VERBAARSCHOT;
   ZAFEIROPOULOS}{2014}
@@ -97,12 +144,26 @@ Available: \url{http://dx.doi.org/10.1103/PhysRevD.90.085013}.}
 ISSN 1361-6447.
 Available: \url{http://dx.doi.org/10.1088/0305-4470/33/26/102}.}
 
+\bibitem[Kuijlaars 2014]{ArnoNotes}
+\abntrefinfo{Kuijlaars}{KUIJLAARS}{2014}
+{KUIJLAARS, A. \textbf{Riemann-Hilbert Problems and Multiple Orthogonal
+  Polynomials}. 2014. \url{http://wis.kuleuven.be/analyse/arno}.
+[Online; accessed 08-April-2026].}
+
 \bibitem[Leblè and Serfaty 2017]{Leble2017-yj}
 \abntrefinfo{Leblè and Serfaty}{LEBLè; SERFATY}{2017}
 {LEBLè, T.; SERFATY, S. Large deviation principle for empirical fields of log
   and riesz gases.
 \textbf{Invent. Math.}, Springer Science and Business Media LLC, v.~210, n.~3,
   p. 645--757, dec 2017.}
+
+\bibitem[Livan, Novaes and Vivo 2018]{Livan_2018}
+\abntrefinfo{Livan, Novaes and Vivo}{LIVAN; NOVAES; VIVO}{2018}
+{LIVAN, G.; NOVAES, M.; VIVO, P. \textbf{Introduction to Random Matrices}.
+  Springer International Publishing, 2018.
+ISSN 2197-1765.
+ISBN 9783319708850. Available:
+  \url{http://dx.doi.org/10.1007/978-3-319-70885-0}.}
 
 \bibitem[Logan and Shepp 1977]{LOGAN1977206}
 \abntrefinfo{Logan and Shepp}{LOGAN; SHEPP}{1977}
@@ -118,12 +179,69 @@ Available:
   Growth Models, and Sequence Matching}. 2007.
 Available: \url{https://arxiv.org/abs/cond-mat/0701193}.}
 
+\bibitem[Nica and Ortmann 2025]{nica2025gaussianintegralformulahermite}
+\abntrefinfo{Nica and Ortmann}{NICA; ORTMANN}{2025}
+{NICA, M.; ORTMANN, J. \textbf{A Gaussian integral formula for the Hermite
+  polynomials: Combinatorics, Asymptotics and Applications}. 2025.
+Available: \url{https://arxiv.org/abs/2508.13910}.}
+
 \bibitem[Odlyzko and Rains 2000]{odlyzko_2000_yd8at-ym210}
 \abntrefinfo{Odlyzko and Rains}{ODLYZKO; RAINS}{2000}
 {ODLYZKO, A.~M.; RAINS, E.~M. On longest increasing subsequences in random
   permutations. In:  \textbf{Analysis, Geometry, Number Theory: The Mathematics
   of Leon Ehrenpreis}. American Mathematical Society, 2000. p. 439--451.
 Available: \url{https://doi.org/10.1090/conm/251/03886}.}
+
+\bibitem[Olver \textit{et al.} 2010]{NISTMathFunc}
+\abntrefinfo{Olver \textit{et al.}}{OLVER \textit{et al.}}{2010}
+{OLVER, F.; LOZIER, D.; BOISVERT, R.; CLARK, C. Nist handbook of mathematical
+  functions.
+01 2010.}
+
+\bibitem[Pimenta and Silva 2024]{TCCJoaoPimenta}
+\abntrefinfo{Pimenta and Silva}{PIMENTA; SILVA}{2024}
+{PIMENTA, J. V.~A.; SILVA, G. L.~F. \textbf{Matrizes aleatórias e simulação
+  de Gases de Coulomb}. 2024.}
+
+\bibitem[Pozniak, Zyczkowski and Kus 1998]{Marcin_Pozniak_1998}
+\abntrefinfo{Pozniak, Zyczkowski and Kus}{POZNIAK; ZYCZKOWSKI; KUS}{1998}
+{POZNIAK, M.; ZYCZKOWSKI, K.; KUS, M. Composed ensembles of random unitary
+  matrices.
+\textbf{Journal of Physics A: Mathematical and General}, v.~31, n.~3, p.~1059,
+  jan 1998.
+Available: \url{https://doi.org/10.1088/0305-4470/31/3/016}.}
+
+\bibitem[Rahman 2023]{rahman2023recursivecharacterisationsrandommatrix}
+\abntrefinfo{Rahman}{RAHMAN}{2023}
+{RAHMAN, A.~A. \textbf{Recursive characterisations of random matrix ensembles
+  and associated combinatorial objects}. 2023.
+Available: \url{https://arxiv.org/abs/2301.11428}.}
+
+\bibitem[Saff and Totik 2024]{saff2024logarithmic}
+\abntrefinfo{Saff and Totik}{SAFF; TOTIK}{2024}
+{SAFF, E.; TOTIK, V. \textbf{Logarithmic Potentials with External Fields}.
+  Springer-Verlag, 2024.  (Grundlehren der mathematischen Wissenschaften).
+ISBN 9783031651335. Available:
+  \url{https://books.google.com.bo/books?id=z2wnEQAAQBAJ}.}
+
+\bibitem[Serfozo 1990]{SERFOZO19901}
+\abntrefinfo{Serfozo}{SERFOZO}{1990}
+{SERFOZO, R.~F. Chapter 1 point processes. In:  \textbf{Stochastic Models}.
+  Elsevier, 1990,  (Handbooks in Operations Research and Management Science,
+  v.~2). p. 1--93.
+Available:
+  \url{https://www.sciencedirect.com/science/article/pii/S0927050705801653}.}
+
+\bibitem[Silva 2021]{guilhermeasympt}
+\abntrefinfo{Silva}{SILVA}{2021}
+{SILVA, G. L.~F. \textbf{Lecture Notes on Riemann-Hilbert Problems}. 2021.
+  \url{https://sites.google.com/site/guilhermesilvamath/publications}.
+[Online; accessed 20-April-2026].}
+
+\bibitem[Tremblay 2025]{Tremblay}
+\abntrefinfo{Tremblay}{TREMBLAY}{2025}
+{TREMBLAY, N. \textbf{A short introduction to Determinantal Point Processes}.
+  [S.l.]: Institut Henri Poincaré, 2025.}
 
 \bibitem[Ulam 1961]{Ulam}
 \abntrefinfo{Ulam}{ULAM}{1961}

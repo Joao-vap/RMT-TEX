@@ -15,6 +15,8 @@ Database file #1: abntex2-options.bib
 Database file #2: references.bib
 Warning--string name "june" is undefined
 --line 12 of file references.bib
+Warning--I'm ignoring JOHANSSON20061's extra "title" field
+--line 281 of file references.bib
 Reallocated singl_function (elt_size=8) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=8) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
@@ -24,45 +26,45 @@ Reallocated glb_str_end (elt_size=8) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex2.googlecode.com                           |
 +---------------------------------------------------------+
-You've used 25 entries,
+You've used 42 entries,
             6667 wiz_defined-function locations,
-            1351 strings with 13499 characters,
-and the built_in function-call counts, 18403 in all, are:
-= -- 1597
-> -- 540
-< -- 44
-+ -- 250
-- -- 167
-* -- 1227
-:= -- 2406
-add.period$ -- 88
-call.type$ -- 27
-change.case$ -- 202
-chr.to.int$ -- 62
-cite$ -- 19
-duplicate$ -- 934
-empty$ -- 1476
-format.name$ -- 775
-if$ -- 4543
+            1472 strings with 16930 characters,
+and the built_in function-call counts, 31337 in all, are:
+= -- 2602
+> -- 1012
+< -- 58
++ -- 424
+- -- 311
+* -- 2151
+:= -- 4177
+add.period$ -- 167
+call.type$ -- 44
+change.case$ -- 366
+chr.to.int$ -- 91
+cite$ -- 36
+duplicate$ -- 1624
+empty$ -- 2468
+format.name$ -- 1467
+if$ -- 7652
 int.to.chr$ -- 5
 int.to.str$ -- 3
-missing$ -- 397
-newline$ -- 112
-num.names$ -- 97
-pop$ -- 447
+missing$ -- 707
+newline$ -- 203
+num.names$ -- 183
+pop$ -- 830
 preamble$ -- 1
-purify$ -- 88
+purify$ -- 150
 quote$ -- 0
-skip$ -- 1209
+skip$ -- 1877
 stack$ -- 1
-substring$ -- 701
-swap$ -- 476
-text.length$ -- 31
+substring$ -- 1040
+swap$ -- 786
+text.length$ -- 41
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
+type$ -- 10
 warning$ -- 0
-while$ -- 138
+while$ -- 243
 width$ -- 0
-write$ -- 336
-(There was 1 warning)
+write$ -- 607
+(There were 2 warnings)
