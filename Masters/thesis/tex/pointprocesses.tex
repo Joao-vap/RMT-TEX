@@ -1,6 +1,6 @@
 There are many instances where one might want to describe the behavior of a set of random points in time or in space. This could come from an investigation on system of diffusing particles or occurrences in time of some type of phenomena. Point processes are models to describe such random objects: The number of occurrence of events in a given time-frame or, alternatively, the number of points in regions of some space. For this work, we mainly focus on the latter application: density of points in regions of space. Those can be associated later with measure for eigenvalues of random matrices and the theory developed on those processes, especially the so-called determinantal point processes, will help us studying distributions for these matrices eigenvalues and associated quantities.
 
-The definitions given in this section and some ideas follow very closely the well structured works in \cite{SERFOZO19901}, \cite{JOHANSSON20061} and \cite{ManuelaGirottiPhD}.
+The definitions given in this section and some ideas follow very closely the well structured works in \citeonline{SERFOZO19901}, \citeonline{JOHANSSON20061} and \citeonline{ManuelaGirottiPhD}.
 
 \section{Point Processes}
 
@@ -98,7 +98,7 @@ This $k$-th correlation variable stand for the expected number of $k$-tuples $\c
 	\end{equation}
 	is a Gaussian probability measure on $\mathcal{H}_n$, called the $GUE$. It can be shown that for any symmetric, continuous function $f$ on $\R^n$ with compact support it holds that
 	\begin{equation}
-		\int_{\mathcal{H}_n} f(\lambda_1(M), \cdots, \lambda_N(M)) \dd \eP_N(M) = \int_{\R^n} f(\mmany{x}{n}) \p_n(\mmany{x}{n}) \dd^n x 
+		\int_{\mathcal{H}_n} f(\lambda_1(M), \cdots, \lambda_N(M)) \dd \eP_n(M) = \int_{\R^n} f(\mmany{x}{n}) \p_n(\mmany{x}{n}) \dd^n x 
 	\end{equation}
 	where
 	\begin{equation}
@@ -108,7 +108,7 @@ This $k$-th correlation variable stand for the expected number of $k$-tuples $\c
 	\begin{equation}
 		\p_k(\mmany{x}{k}) = \frac{n!}{(n-k)!} \int_{\R^{n-k}} \frac{1}{\pZ{n}{} n!} \prod_{1 \leq i < j \leq j}^n (x_i - x_j)^2 \prod_{j=1}^{n} \ee^{-x^2_j} \dd x_{k+1} \cdots \dd x_n,
 	\end{equation}
-	as given by \eqref{Equation: Symmetric correlation}.
+	as given by \autoref{Equation: Symmetric correlation}.
 \end{exemplo}
 
 \mycomment{
@@ -123,7 +123,7 @@ where $f: E \rightarrow \R_+$, has expectation
 if the integral $\int_E |f(x)| \p(\dd x)$ is finite.  
 }
 
-For simple points processes on $\R$ there is a direct way to understand correlation functions. Let $A_i = [x_i, x_i + \Delta x_i], 1 \leq i \leq k$, be disjoint intervals. If the $\Delta x_i$ are small enough, then we should expect either one or zero particles in each interval $A_i$. Hence, the product $\xi(A_1) \cdots \xi(A_k)$ is typically either $1$ or $0$ depending on whether we have one particle in each interval. From \eqref{Equation: kth moment measure}, we should expect
+For simple points processes on $\R$ there is a direct way to understand correlation functions. Let $A_i = [x_i, x_i + \Delta x_i], 1 \leq i \leq k$, be disjoint intervals. If the $\Delta x_i$ are small enough, then we should expect either one or zero particles in each interval $A_i$. Hence, the product $\xi(A_1) \cdots \xi(A_k)$ is typically either $1$ or $0$ depending on whether we have one particle in each interval. From \autoref{Equation: kth moment measure}, we should expect
 \begin{equation}
 	\p_k(\mmany{x}{k}) = \lim_{\Delta x_i \rightarrow 0} \frac{\mathbb{P}(\text{one particle in each} \ A_i)}{\mcmany{\Delta x}{k}{}}.
 \end{equation}
@@ -136,9 +136,9 @@ This means that $\p_1(x)$ is the density of particles at $x$, but since we have 
 %\end{equation}
 %i.e., they are multiple marginal densities. 
 
-\section{Determinantal Point Processes (DPP)}
+\section{Determinantal Point Processes}
 
-Repulsive random processes are, in general, intractable, that is, they are usually difficult of even impossible to, for example, compute marginals and conditional probabilities. In these cases, their theoretical analysis is a major challenge. However, there is a class of processes, even repulsive ones, that are an rare exception to this rule: \textit{\sigla{DPP}{Determinantal Point Processes}}; or Fermionic point processes in the physics literature, are random processes that have the property of being both repulsive and tractable \cite{Tremblay}. This property comes from the fact that their correlation function can be expressed as a certain determinantal form. Let's make this precise.
+Repulsive random processes are, in general, intractable, that is, they are usually difficult of even impossible to, for example, compute marginals and conditional probabilities. In these cases, their theoretical analysis is a major challenge. However, there is a class of processes, even repulsive ones, that are an rare exception to this rule: \textit{Determinantal Point Processes}; or Fermionic point processes in the physics literature, are random processes that have the property of being both repulsive and tractable \cite{Tremblay}. This property comes from the fact that their correlation function can be expressed as a certain determinantal form. Let's make this precise.
 
 \begin{definicao}
 	Consider a point process $\mathbb{P}$ on a complete separable metric space $\Lambda$, with reference measure $\p_n$, all of whose correlation functions $\p_k$ exist. If there is a function $K: \Lambda \times \Lambda \rightarrow \C$ such that 
@@ -160,12 +160,12 @@ Repulsive random processes are, in general, intractable, that is, they are usual
 	where $ \wf(\lambda_i)$ is a weight function and $|\Delta_n(\lambda)|$ is the Vandermonde determinant. Then, we can write
 	\begin{align}
 		\p_n^{(w)}(\mmany{\lambda}{n};2) 
-		&  \propto {\det\left(\sqrt{\wf(\lambda_i)\wf(\lambda_k)} \sum_{j=1}^{n} q_{j-1}^{(2)}(\lambda_i) q_{j-1}^{(2)}(\lambda_k) \right)}_{i,k=1}^{n}. \\
+		&  \propto {\det\left(\sqrt{\wf(\lambda_i)\wf(\lambda_k)} \sum_{j=1}^{n} q_{j-1}^{(2)}(\lambda_i) q_{j-1}^{(2)}(\lambda_k) \right)}_{i,k=1}^{n}, \\
 		& \propto \det\left[ K_n^{(2)}(\lambda_i, \lambda_k) \right]_{i,k=1}^{n}.
 	\end{align}
 	The orthogonal polynomials $\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$ that compose the kernel are know to satisfy the three-term recurrence (the coefficients depend on the choice of weight)
 	\begin{equation}
-		q_{j}^{(2)}(\lambda) = (\lambda + a_j) q_{j-1}^{(2)}(\lambda) - \frac{r_{j-1}^{(2)}}{r_{j-2}^{(2)}} q_{j-2}^{(2)}(\lambda)
+		q_{j}^{(2)}(\lambda) = (\lambda + a_j) q_{j-1}^{(2)}(\lambda) - \frac{r_{j-1}^{(2)}}{r_{j-2}^{(2)}} q_{j-2}^{(2)}(\lambda).
 	\end{equation} 
 \end{exemplo}
 
@@ -251,7 +251,7 @@ Most, if not all, of the processes discussed on this work will have an rightmost
 	\begin{equation}
 		\eP[\text{no particle in} \ (t, s)] = \sum_{n=0}^{\infty} \frac{(-1)^n}{n!} \int_{(t, s)^n} \rho_n(\mmany{x}{n}) \dd \pe_x(x).
 	\end{equation}
-	We see from \eqref{Equation: premisse last particle} and the dominated convergence theorem that we can let $s \rightarrow \infty$ and obtain \eqref{Equation: conclusion last particle}.
+	We see from \autoref{Equation: premisse last particle} and the dominated convergence theorem that we can let $s \rightarrow \infty$ and obtain \autoref{Equation: conclusion last particle}.
 \end{demonstracao} 
 }
 
@@ -327,7 +327,7 @@ In particular, if we consider a linear function $f(x) = \alpha (x - x^*),$ for $
 	\begin{equation}
 		\int_{E_1} \dots \int_{E_n} \det{[p_t(a_i, x_j)]^{n}_{i,j=1}}  dx_1 \dots dx_n
 	\end{equation} 
-	is equal to the probability that the paths have not intersected in the time interval $[0,t]$ and $X_j(t) \in E_j$ for $j = 1, \cdots, n.$ This is the Karlin-McGregor theorem. Take now $p_t(a, x) = 1/\sqrt{(2\pi t)} \exp\{-(x-a)^2/2t\}$, a Gaussian transition and consider that we condition our path to not only start at positions \many{a}{n} but finish at positions \many{b}{n} at some time $T > t$. If we let $a_j \rightarrow a$ and $b_j \rightarrow b$, the new j.p.d.f. can be non-trivially calculated as
+	is equal to the probability that the paths have not intersected in the time interval $[0,t]$ and $X_j(t) \in E_j$ for $j = 1, \cdots, n.$ This is the Karlin-McGregor theorem. Take now $p_t(a, x) = 1/\sqrt{(2\pi t)} \exp\{-(x-a)^2/2t\}$, a Gaussian transition, and consider that we condition our path to not only start at positions \many{a}{n} but finish at positions \many{b}{n} at some time $T > t$. If we let $a_j \rightarrow a$ and $b_j \rightarrow b$, the new j.p.d.f. can be non-trivially calculated as
 	\begin{align}
 			P(x_1, \dots, x_n)
 			& = \frac{1}{\mathcal{Z}_n} \det{[p_t(a_i, x_j)]^{n}_{i,j=1}} \det{[p_{T-t}(x_i, b_j)]^{n}_{i,j=1}} \\

@@ -1,7 +1,7 @@
 
-We have seen that the study of eigenvalues of random matrices is of interest and can be seen as a point process. For some specific models, one can further find a more rigid structure related to determinantal point processes. These allow us to see eigenvalue distribution in terms of some correlation Kernel much easier to deal with than the initial formulation. Now, we will see that eigenvalue dynamics for invariant models can be though of as another DDP: The so called \textit{Coulomb Gases}. These can be though of as a physical gas of repelling ions restricted to some conductor under some confining potential. Although it may be daunting to have it another model to work with, these gases lead us directly to some nice interpretations and results. Namely, one can thing of \textit{thermodynamic equilibrium} for a large enough number of particles and this makes complete sense in a physical setting. In our matrices, these equilibrium distributions refers to the univariate eigenvalue distribution, a very interesting characterization of a RMT model. On this chapter we will expand on these ideas.
+We have seen that the study of eigenvalues of random matrices is of interest and can be seen as a Point Process. For some specific models, one can further find a more rigid structure related to Determinantal Point Processes. These allow us to see eigenvalue distribution in terms of some correlation Kernel much easier to deal with than the initial formulation. Now, we will see that eigenvalue dynamics for invariant models can be though of as another DDP: The so called \textit{Coulomb Gases}. These can be though of as a physical gas of repelling ions restricted to some conductor under some confining potential. Although it may be daunting to have yet another model to work with, these gases lead us directly to some nice interpretations and results. Namely, one can think of \textit{thermodynamic equilibrium} for a large enough number of particles and this makes complete sense in a physical setting. In our matrices, these equilibrium distributions refers to the univariate eigenvalue distribution, a very interesting characterization of a RMT model. On this chapter we will expand on these ideas.
 
-The section on Equilibrium Measures was based on the works of \citeonline{saff2024logarithmic} and \citeonline{deiftorthogonal}.
+The section on Equilibrium Measures was based on the works of \citeonline{saff2024logarithmic} and \citeonline{deiftorthogonal}. We will define Coulomb Gases and try to motivate its importance in RMT. Afterwards we will explore the concept of equilibrium measures for these particle systems and state some important results relevant to computations that follows.
 
 \section{Coulomb Gases}
 \label{Section: Coulomb Gas}
@@ -21,12 +21,12 @@ Suppose a set of $n$ particles at positions $\mmany{x}{n} \in \Sigma$, a \textit
 	\end{equation}
 	is usually called the \textbf{Hamiltonian}, or more concretely, the \textbf{configurational energy} of the system. The function $\Q \colon \R^d \cong \Sigma \rightarrow \R$ is the external potential and $\pZ{n}{\beta}$ is the \textbf{partition function}, or normalization function, given by
 	\begin{equation}
-		\pZ{n}{\beta} = C_{N, \beta} \int_{{\R^d}^n}  \prod_{j=1}^{n} \dd x_j e^{-\beta n^2 \Hf_n(\xi_n)}.
+		\pZ{n}{\beta} = C_{n, \beta} \int_{{\R^d}^n}  \prod_{j=1}^{n} \dd x_j e^{-\beta n^2 \Hf_n(\xi_n)}.
 	\end{equation}
 \end{definicao}
  The measure $\p_n$ models an Coulomb-interacting gas of charged indistinguishable particles under some external field $\Q$. If one wishes $\dd \p_n$ to be a probability measure,  then one must ensure that $\Q$ is such that the normalizing constant $\pZ{n}{\beta}$ is finite for all $n$ and that the measure support $\supp{(\dd \p_n(\chi_n))}$ is compact. This is all to say that the potential should be confining: As the number of particles increases, it must counter the repulsion effect and keep limited the region where particles move around. The function $\g \colon \Sigma \rightarrow (-\infty, \infty]$ is the \textit{Coulomb Interacting Kernel}, solution to the Poisson equation given by $- \nabla g(\vec{x}) = c_n\delta_0$ and is the reason in the first place why the particles may diverge.
 
-Recall the expression for invariant ensembles in Definition \ref{Definition: polynomial ensemble}, note that, rearranging the terms in \autoref{Equation: Coulomb Gas Measure} and considering a logarithm interaction kernel we get
+Recall the expression for invariant ensembles in Definition c{Definition: polynomial ensemble}, note that, rearranging the terms in Equation \ref{Equation: Coulomb Gas Measure} and considering a logarithm interaction kernel we get
 \begin{equation}
 	\dd \p_n(\mmany{x}{n}) = \frac{1}{\pZ{n}{\beta}}\prod_{1\leq j < k \leq n} |x_j - x_k|^\beta \prod_{j=1}^{n} \ee^{- \beta n \Q(x_j)} \mcmany{\dd x}{n}{}
 \end{equation}
@@ -66,7 +66,7 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 						a={ mark size=0.5pt}}
 					]
 					\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t0.csv};
-					\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t0.csv};
+					\addplot[opacity=0.03, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t0.csv};
 				\end{axis}
 			\end{tikzpicture}
 		\end{subfigure} \hspace{1cm}
@@ -84,7 +84,7 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 						a={ mark size=0.5pt}}
 					]
 					\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t05.csv};
-					\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t05.csv};
+					\addplot[opacity=0.03, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t05.csv};
 				\end{axis}
 			\end{tikzpicture}
 		\end{subfigure} \hfill
@@ -102,7 +102,7 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 						a={ mark size=0.5pt}}
 					]
 					\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t1.csv};
-					\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t1.csv};
+					\addplot[opacity=0.03, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t1.csv};
 				\end{axis}
 			\end{tikzpicture}
 		\end{subfigure} \hfill
@@ -120,7 +120,7 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 						a={ mark size=0.5pt}}
 					]
 					\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t2.csv};
-					\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t2.csv};
+					\addplot[opacity=0.03, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a2t2.csv};
 				\end{axis}
 			\end{tikzpicture}
 		\end{subfigure} \hfill
@@ -140,7 +140,7 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 					a={ mark size=0.5pt}}
 				]
 				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t0.csv};
-				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t0.csv};
+				\addplot[opacity=0.03, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t0.csv};
 			\end{axis}
 		\end{tikzpicture}
 	\end{subfigure} \hspace{1cm}
@@ -156,7 +156,7 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 					a={ mark size=0.5pt}}
 				]
 				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t05.csv};
-				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t05.csv};
+				\addplot[opacity=0.03, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t05.csv};
 			\end{axis}
 		\end{tikzpicture}
 	\end{subfigure} \hfill
@@ -172,7 +172,7 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 					a={ mark size=0.5pt}}
 				]
 				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t1.csv};
-				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t1.csv};
+				\addplot[opacity=0.03, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t1.csv};
 			\end{axis}
 		\end{tikzpicture}
 	\end{subfigure} \hfill
@@ -188,7 +188,7 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 					a={ mark size=0.5pt}}
 				]
 				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t2.csv};
-				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t2.csv};
+				\addplot[opacity=0.03, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a3t2.csv};
 			\end{axis}
 		\end{tikzpicture}
 	\end{subfigure} \hfill
@@ -208,7 +208,7 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 					a={ mark size=0.5pt}}
 				]
 				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t0.csv};
-				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t0.csv};
+				\addplot[opacity=0.03, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t0.csv};
 			\end{axis}
 		\end{tikzpicture}
 	\end{subfigure} \hspace{1cm}
@@ -224,7 +224,7 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 					a={ mark size=0.5pt}}
 				]
 				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t05.csv};
-				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t05.csv};
+				\addplot[opacity=0.03, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t05.csv};
 			\end{axis}
 		\end{tikzpicture}
 	\end{subfigure} \hfill
@@ -240,7 +240,7 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 					a={ mark size=0.5pt}}
 				]
 				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t1.csv};
-				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t1.csv};
+				\addplot[opacity=0.03, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t1.csv};
 			\end{axis}
 		\end{tikzpicture}
 	\end{subfigure} \hfill
@@ -256,7 +256,7 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 					a={ mark size=0.5pt}}
 				]
 				\addplot[skip coords between index={50}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t2.csv};
-				\addplot[opacity=0.04, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t2.csv};
+				\addplot[opacity=0.03, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./plotdata/Symmetric/5lines/a5t2.csv};
 			\end{axis}
 		\end{tikzpicture}
 	\end{subfigure} \hfill
@@ -267,7 +267,7 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 \section{Equilibrium Measure}
 \label{Section: Equilibrium}
 
-The description of the eigenvalues as a Coulomb gas and as a point process lead us to the idea of minimizing some type of energy of the system by finding equilibrium configurations  $\xi_n = \{\mmany{x}{n}\}$. Especially interesting is the case when $n$ tends to a large enough number as it simplifies some structures and the results. 
+The description of the eigenvalues as a Coulomb gas and as a Point Process lead us to the idea of minimizing some type of energy of the system by finding equilibrium configurations  $\xi_n = \{\mmany{x}{n}\}$. Especially interesting is the case when $n$ tends to a large enough number as it simplifies some structures and the results. 
 
 To clarify the point, suppose we are dealing with the density
 \begin{equation}
@@ -334,7 +334,7 @@ This logarithmic potential can be interpreted as the equivalent interaction pote
 	Using the Fubini-Toneli theorem and the inequality above
 	\begin{align}
 		\frac{1}{2\pi} \int_{-\pi}^{\pi} U^\mu (z + r \ee^{\ii \theta}) \dd \theta & = \int \frac{1}{2\pi} \int_{-\pi}^{\pi} \ln{\frac{1}{|z - r\ee^{\ii \theta} - t|}} \dd \theta \dd \mu(t), \\
-		& \leq \int \ln \frac{1}{|z-t|} \dd \mu(t) = U^\mu (z)
+		& \leq \int \ln \frac{1}{|z-t|} \dd \mu(t) = U^\mu (z).
 	\end{align}
 \end{proof}
 
@@ -403,7 +403,7 @@ is recovered if both integrals exist and are finite. We can now move on to the m
 	\label{Equation: Potential Q}
 \end{equation}
 \begin{teorema} \cite{deiftorthogonal}
-	Let $Q$ be as in \autoref{Equation: Potential Q}. Then, there exists a unique probability measure $\mu = \mu^{\wf}$ such that
+	Let $Q$ be as in Equation \ref{Equation: Potential Q}. Then, there exists a unique probability measure $\mu = \mu^{\wf}$ such that
 	\begin{equation}
 		E^{\wf} = \inf_{\mu \in \M^1} I^{\wf}(\mu) = I^{\wf}(\mu^{\wf}).
 	\end{equation}
@@ -526,10 +526,10 @@ is recovered if both integrals exist and are finite. We can now move on to the m
 
 \subsection{Euler-Lagrange}
 
-Associated with the variational problem introduced on \autoref{Section: Equilibrium}
+Associated with the variational problem introduced on \autoref{Section: Equilibrium} defined by
 \begin{align}
-	E^{\wf} & = \inf_{\mu \in \M^1} I^{\wf} (\mu) \\
-	& =   \inf_{\mu \in \M^1} \left[ \int \int \ln |t - s|^{-1} \dd \mu(t) \dd \mu(s) + 2 \int \Q(s) \dd  \mu(s) \right] \\
+	E^{\wf} & = \inf_{\mu \in \M^1} I^{\wf} (\mu), \\
+	& =   \inf_{\mu \in \M^1} \left[ \int \int \ln |t - s|^{-1} \dd \mu(t) \dd \mu(s) + 2 \int \Q(s) \dd  \mu(s) \right], \\
 	&  = I^{\wf} (\mu^{\wf}),
 \end{align}
 one could define the so-called \textit{Euler-Lagrange} type variational equations. They are important as they provide a tool, for some cases, to solve these equations for the equilibrium measure $\mu^{\wf}$.
@@ -587,7 +587,7 @@ one could define the so-called \textit{Euler-Lagrange} type variational equation
 	\begin{equation}
 		\mu^*_B = \frac{\chi_B}{\mu^*(B)} \mu^*
 	\end{equation}
-	where $\chi_B$ is the characteristic function of the set $B$. Then $\mu^*_B \in \M^1(\C)$ has compact support and $I^\wf(\mu^*) < \infty$. inserting $\dd \mu^*_B$ in \autoref{Equation: Proof Euler >l}, we find
+	where $\chi_B$ is the characteristic function of the set $B$. Then $\mu^*_B \in \M^1(\C)$ has compact support and $I^\wf(\mu^*) < \infty$. inserting $\dd \mu^*_B$ in Equation \ref{Equation: Proof Euler >l}, we find
 	\begin{equation}
 		l \leq \int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) \right] \dd \frac{\chi_B}{\mu^*(B)} \mu^*(x) < l
 	\end{equation}
@@ -647,7 +647,7 @@ is continuous and the previous theorem takes the following more simple form
 	\end{enumerate}
 \end{teorema} 
 
-We mentioned in \autoref{Equation: eqmeasure density} the possibility of knowing the density $\phi$ of the equilibrium measure $\mu^\wf$ in relation to the Lebesgue measure. We will know determine $\phi$. As we did many times, assume that $\mu$ is finite and of compact support in the complex plane. For notation, let $A$ denote the two-dimensional Lebesgue measure on $\C$ and $\Delta$ denote the Laplacian operator
+We mentioned in Equation \ref{Equation: eqmeasure density} the possibility of knowing the density $\phi$ of the equilibrium measure $\mu^\wf$ in relation to the Lebesgue measure. We will know determine $\phi$. As we did many times, assume that $\mu$ is finite and of compact support in the complex plane. For notation, let $A$ denote the two-dimensional Lebesgue measure on $\C$ and $\Delta$ denote the Laplacian operator
 \begin{equation}
 	\Delta F \deff \frac{\partial^2 F}{\partial x^2} + \frac{\partial^2 F}{\partial y^2}.
 \end{equation}
@@ -715,7 +715,7 @@ Note that using this function we can write the unity as
 \end{equation}
 and with this we can also rewrite our partition function to be written as
 \begin{equation}
-	\pZ{n}{\beta} = C_{N, \beta} \int \dd [\n(x)] \int_{\R^{dn}} \prod_{j=1}^{n} \dd x_j e^{-\beta n^2 \Hf_n(\xi_n)} \delta  \left[ \n(x) - \frac{1}{n} \sum_{i=1}^{n} \delta(x - x_i) \right].
+	\pZ{n}{\beta} = C_{n, \beta} \int \dd [\n(x)] \int_{\R^{dn}} \prod_{j=1}^{n} \dd x_j e^{-\beta n^2 \Hf_n(\xi_n)} \delta  \left[ \n(x) - \frac{1}{n} \sum_{i=1}^{n} \delta(x - x_i) \right].
 \end{equation}
 We don't want to deal with summations, in this context, integrals can be much easier to deal with. Then, we also want to convert the expression for the Hamiltonian. The confining term is easier, we can write
 \begin{equation}
@@ -727,7 +727,7 @@ For the interaction term, one must first note that
 \end{equation}
 where we call $\Delta x_i$ is the cutoff distance and refers to the term $i = j$ in the discrete case and two neighboring charges approximating in the continuous case. This should ensure that the functional will still produce a finite result. Now we can write
 \begin{equation}
-		\frac{1}{2n^2} \sum_{i \neq j} \ln |x_i - x_j| = \frac{1}{2n^2} n^2 \int \int_{\R^2d} \dd x \dd y \n(x) \n(y) \ln |x - y| - 	\frac{1}{2n^2} n \int_{\R^d} \dd x \n(x) \ln \Delta (x). 
+		\frac{1}{2n^2} \sum_{i \neq j} \ln |x_i - x_j| = \frac{1}{2n^2} n^2 \int \int_{\R^{2d}} \dd x \dd y \n(x) \n(y) \ln |x - y| - 	\frac{1}{2n^2} n \int_{\R^d} \dd x \n(x) \ln \Delta (x). 
 \end{equation}
 and then
 \begin{align}
@@ -749,7 +749,8 @@ where
 \begin{equation}
 	S[\hat{\n}(x) | \n(x)] = \ii \int_{\R^{dn}} \dd x \n(x) \hat{\n}(x) + \log \int_{\R^d} \dd y \ee^{-\ii \hat{\n}(x)}.
 \end{equation}
-The most important thing to notice here is that \autoref{Equation: logarithmic energyy - entropy} is of the form required for the Laplace asymptotic technique discussed in \autoref{chapter:asymptotics}. This means that t can be estimated, if $S$ has a maxima with strictly negative second derivative, by the evaluation at its maximum point. One can find 
+
+The most important thing to notice here is that Equation \ref{Equation: logarithmic energyy - entropy} is of the form required for the Laplace asymptotic technique discussed in \autoref{chapter:asymptotics}. This means that t can be estimated, if $S$ has a maxima with strictly negative second derivative, by the evaluation at its maximum point. One can find 
 \begin{align}
 	0 & = \frac{\partial S}{\partial \hat{\n}(x)} = \ii \n(x) - \ii \frac{\ee^{-\ii \hat{\n}(x)}}{\int_{\R^d} \dd y \ee^{-\ii \hat{\n}(y)}} \\
 	& \implies -\ii \hat{\n}(x) = -\ln(\n(x)) - \log \int_{\R^{d}} \dd y \ee^{-\ii \hat{\n}(y)},

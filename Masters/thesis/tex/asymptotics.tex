@@ -1,4 +1,4 @@
-We have the sense in the previous chapters that we want to study some distributions when our matrices are large enough - be that for feasibility of computations or approximation of infinite dimension operators. We also have mentioned that our main interest here is in Invariant Ensembles, or specially in orthogonal polynomial ones. Because of this, studying large matrices is equivalent, in some sense, to studying the regime of large $N$ for orthogonal polynomials. For some of those polynomials, a integral representation is available, allowing us to use asymptotic methods on integrals to solve for the large $N$ behavior. This is the main discussion of this chapter.
+There is a sense in the previous Chapters that we want to study some distributions when our matrices are large enough - be that for feasibility of computations or approximation of infinite dimension operators. We also have mentioned that our main interest here is the Invariant Ensembles, or specially in Orthogonal Polynomial ones. Because of this, studying large matrices is equivalent, in some sense, to studying the regime of large $n$ for orthogonal polynomials. For some of those polynomials, a integral representation is available, allowing us to use asymptotic methods on integrals to solve for the large $n$ behavior. This is the main discussion of this chapter.
 
 Techniques and structuring here are based on the book by \citeonline{NISTMathFunc} and \citeonline{Trapezoidal-Maclaurin} for quadrature and on the lecture notes by \citeonline{guilhermeasympt} for asymptotics on integrals. 
 
@@ -33,11 +33,11 @@ The trapezoidal rule, for example, is a Riemann sum where $x_i^*$ is chosen to b
 Of course, this has some error term. Suppose that for some $(x_i, x_{i-1})$ we have the same $k$-derivatives at both extreme points for every $k\geq 1$, i.e., the function is constant. Then, there is no error in the approximation. If however, the two extreme points differ only on the $k$th derivative, there is some curvature defined by this difference where the error comes from. Therefore, there is indication of some error function given in respect to higher order derivatives.
 
 \begin{proof}
-Following the computations in \cite{Trapezoidal-Maclaurin}, take a function $f \in C^p(\R)$ for $p \geq 1$. To derive the Euler-Maclaurin for the interval $[a,b]$, let $h = (b - a)/n$ and $c = a + j h$, then we can express
+Following the computations in \citeonline{Trapezoidal-Maclaurin}, take a function $f \in C^p(\R)$ for $p \geq 1$. To derive the Euler-Maclaurin for the interval $[a,b]$, let $h = (b - a)/n$ and $c = a + j h$, then we can express
 \begin{equation}
 	\int_{a}^{b} f(x) \dd x = \sum_{j=0}^{n-1} \int_{a+j h}^{a+(j+1)h} f(x) \dd x
 \end{equation}
-where we can use the property \eqref{Equation: Differential Bernoulli} and integration by parts to rewrite each integral as
+where we can use the property \autoref{Equation: Differential Bernoulli} and integration by parts to rewrite each integral as
 \begin{align}
 	\int_{c}^{c+h} f(x) \dd x & = h \int_{0}^{1} B_0(1-x) f(c+xh) \dd x \\
 	& = - h \frac{B_1(1-x)}{1!} f(c + xh) |_0^1 + h^2 \int_{0}^{1} \frac{B_1(1-x)}{1!} f'(c+xh) \dd x, \\
@@ -62,7 +62,7 @@ This is the Euler-Maclaurin formula, an extension of the trapezoidal rule includ
 
 \subsection{Asymptotics for Hermite}
 
-This example will be a collage of many sources: Check \cite{shi2021errorboundsasymptoticexpansions} and \cite{nica2025gaussianintegralformulahermite} for the main references and notation. We already know the asymptotic for $x = \boh(n)$, done in \ref{Subsection: Hermite x=n}. There are other two cases of interest that are related to methods explained in this Chapter. These are $x=\boh(1)$ and, more importantly, $x = \boh(\sqrt{n})$.
+This example will be a collage of many sources: Check \citeonline{shi2021errorboundsasymptoticexpansions} and \citeonline{nica2025gaussianintegralformulahermite} for the main references and notation. We already know the asymptotic for $x = \boh(n)$, done in Subsection \ref{Subsection: Hermite x=n}. There are other two cases of interest that are related to methods explained in this Chapter. These are $x=\boh(1)$ and, more importantly, $x = \boh(\sqrt{n})$.
 
 \subsubsection{Regime $x = \boh(1)$}
 \label{SubSection: Hermite x=o(1)}
@@ -104,12 +104,12 @@ This example will be a collage of many sources: Check \cite{shi2021errorboundsas
 
 There are three asymptotics regimes for $\He_n(x)$ when $x \rightarrow \infty$ depending on the value of $\lim_{N \rightarrow \infty} x/2\sqrt{N}$ for $N = n+1$, each of which has qualitatively different behavior
 \begin{itemize}
-	\item Small $x$ values $-2\sqrt{N} < x < 2\sqrt{N}$: in this regime the Hermite Polynomials will be oscillating, and a have a similar qualitative behavior as \ref{SubSection: Hermite x=o(1)} with modification to phase and amplitude. These polynomials will have some connections to the \textit{arcsine law} and \textit{semi-circle law}.
-	\item Large $x$ values $|x| > 2\sqrt{N}$: In this regime the polynomial doesn't have more oscillations and is monotone increasing. As $x$ grows larger, this approximation approaches \ref{Subsection: Hermite x=n}.
+	\item Small $x$ values $-2\sqrt{N} < x < 2\sqrt{N}$: in this regime the Hermite Polynomials will be oscillating, and a have a similar qualitative behavior as in Subsection \ref{SubSection: Hermite x=o(1)} with modification to phase and amplitude. These polynomials will have some connections to the \textit{arcsine law} and \textit{semi-circle law}.
+	\item Large $x$ values $|x| > 2\sqrt{N}$: In this regime the polynomial doesn't have more oscillations and is monotone increasing. As $x$ grows larger, this approximation approaches Subsection \ref{Subsection: Hermite x=n}.
 	\item Edge $x$ values $x = \pm 2\sqrt{N} + \Boh(N^{-\frac{1}{6}})$: in this regime the polynomials will be approximated by the Airy Function. This interpolates between the oscillatory small $x$ regime and the monotone large $x$ regimes. 
 \end{itemize} 
 
-We write the integral representation given by the Cauchy Integral applied to the Generating Function, this representation should be discussed in \ref{Subsection: Integral Hermite} and given by:
+We write the integral representation given by the Cauchy Integral applied to the Generating Function, this representation should be discussed in Subsection \ref{Subsection: Integral Hermite} and given by:
 \begin{equation}
 	\begin{split}
 		\He_n(x) & \deff \frac{n!}{2\pi \ii} \int_{\Gamma} z^{-n-1} \ee^{xz-\frac{z^2}{2}} \dd z \\
@@ -424,7 +424,7 @@ Of course, if we change for the other case we can simply rewrite
 	\includegraphics[width=8.5cm]{images/g-contour_plot_theta_2.png}
 \end{wrapfigure} 
 
-Here, with $|x| > 2\sqrt{N}$, or equivalently $ \alpha > 2$,  we have - as the plot \ref{wrap-fig:2} suggests - both critical points as real values, this can be easily determined noting that if we set $\alpha > 2$ , we will have
+Here, with $|x| > 2\sqrt{N}$, or equivalently $ \alpha > 2$,  we have - as the Plot \ref{wrap-fig:2} suggests - both critical points as real values, this can be easily determined noting that if we set $\alpha > 2$ , we will have
 \begin{equation}
 	\beta_c^\pm  = \frac{\alpha}{2} \pm \frac{1}{2}\sqrt{\alpha^2 - 4}.
 \end{equation}
@@ -511,11 +511,6 @@ Similarly, for the other case
 	\caption{Figure for case 3}\label{wrap-fig:3}
 	\includegraphics[width=8.5cm]{images/g-contour_plot_theta_1.4.png}
 \end{wrapfigure} 
-
-%Take the Definition \ref{Def: Airy Function} for the Airy Function. Take $\langle$ to be the union of the lines  $\{t\ee^{\ii 2\pi/6} : t \geq 0\}$ and $\{ t\ee^{-\ii 2\pi/6}: t \geq 0\}$. Applying the change of variables $t=-\ii z$ - which rotates the integration contour $\wedge$ into $\langle$, with $\dd w = - \frac{\dd t}{\ii}$ and $z^3 = t^3$, we see that the Airy Function can be written
-%\begin{equation}
-%	\Ai(u) = \frac{1}{2\pi} \int_{\rangle} \exp{\left( \frac{\ii}{3} z^3 + \ii u z \right)} \dd z
-%\end{equation} 
 
 Let's start with a sketch of the proof for this behavior.
 \begin{enumerate}
@@ -618,14 +613,14 @@ for
 	\tilde{C}_N & = (N-1)! N^{\frac{1}{6} - \frac{N}{2}} \ee^{-2\xi\beta_c N^{\frac{1}{3}} + \frac{3N}{2}} = \sqrt{2\pi} (N-1)^{\frac{1}{2}} N^{1/6 - N/2} \ee^{\left(1/2 + N^{-1} - 2\xi \beta_c N^{-2/3} \right)} (1 + \Boh(N^{-1})) \\
 	& = \sqrt{2\pi\ee} N^{-\frac{N}{2} + \frac{2}{3}} (1 + \Boh(N^{-1})) 
 \end{align} 
-The result follow from the asymptotic for the Airy function given in \ref{Subsection: Airy Asymptotic}. Again, we can change variables to express
+The result follow from the asymptotic for the Airy function given in Subsection \ref{Subsection: Airy Asymptotic}. Again, we can change variables to express
 \begin{equation}
 	\He_{n-1}(2\sqrt{N} + N^{-1/6}\xi) = \sqrt{2\pi} \ee N^{-\frac{N}{2} + \frac{7}{6}}  \Ai(\xi) (1 + \boh(1))
 \end{equation}
 
 \subsection{Kernels}
 
-When dealing with the asymptotic of the j.p.d.f we will actually consider the Kernel. This is the object described in \ref{Theorem: Kernel}. However, we will actually work with the simplification given by \ref{Proposition: Kernel Simplification beta 2}. The first step is to consider the following expression
+When dealing with the asymptotic of the j.p.d.f we will actually consider the Kernel. This is the object described in Theorem \ref{Theorem: Kernel}. However, we will actually work with the simplification given by Proposition \ref{Proposition: Kernel Simplification beta 2}. The first step is to consider the following expression
 \begin{equation}
 	\He_n(\alpha \sqrt{N} + y N^{-1/2}),
 \end{equation}
@@ -804,7 +799,7 @@ With this definition, we can now say that
 
 \subsection{Equilibrium Measure}
 
-Remember in \ref{Subsection: The case for beta 2} when we expressed the equilibrium measure in terms of the Kernel of the point process - given in \ref{Equation: Equilibrium Measure and Kernel}. It was noted then that we would only need to understand the asymptotics of the orthogonal polynomial associated with the weight function to properly recover the equilibrium measure. Now, we have such an asymptotic. Remember the expression
+Remember in Subsection \ref{Subsection: The case for beta 2} when we expressed the equilibrium measure in terms of the Kernel of the point process - given in \autoref{Equation: Equilibrium Measure and Kernel}. It was noted then that we would only need to understand the asymptotics of the orthogonal polynomial associated with the weight function to properly recover the equilibrium measure. Now, we have such an asymptotic. Remember the expression
 \begin{equation}
 	\pe^{(w)}(x) = K_n^{(2)}(x, x) = \frac{\wf(x)}{r_{n-1}^{(2)}} \left( \He_{n-1}(x)\partial_x \He_n(x) - \He_{n}(x)\partial_x \He_{n-1}(x)  \right)
 \end{equation}
@@ -1083,7 +1078,7 @@ In the estimation above, the Gamma function and the factor of $\lambda^{-1}$ is 
 		\Gamma(x) = \int_{0}^{\infty} \ee^{-t} t^{x-1} \dd t.
 		\label{eq: Gamma}
 	\end{equation}
-	We are interested in what happens to the function when we take the variable $x$ to $+\infty$. To see what happens, let's fit it into Proposition \ref{prop: (Laplace's Method, interior contributions)}. Rewrite equation \ref{eq: Gamma} as
+	We are interested in what happens to the function when we take the variable $x$ to $+\infty$. To see what happens, let's fit it into Proposition \ref{prop: (Laplace's Method, interior contributions)}. Rewrite \autoref{eq: Gamma} as
 	\begin{equation}
 		\int_{0}^{\infty} \ee^{-t+x\log{(t)}-\log{(t)}} \dd t.
 	\end{equation} 
@@ -1134,7 +1129,7 @@ This differentiates of the previously result more importantly by the limits of i
 \begin{teorema}
 	(Implicit Function Theorem) Assume that $S$ is an open subset of $\R^{n+k}$ and that $F: S \rightarrow \R^k$ is a function of class $C^1$. Assume also that $(a, b)$ is a point in $S$ such that
 	\begin{equation}
-		F(a, b) = 0, \quad \text{and} \quad \det(D_yF(a,b)\neq 0).
+		F(a, b) = 0, \quad \text{and} \quad D_yF(a,b)\neq 0.
 	\end{equation}
 	Then
 	\begin{enumerate}
@@ -1204,7 +1199,7 @@ Now we turn to our main interest.
 \end{proof}
 
 \begin{teorema}
-	(Laplace's Method, interior contributions) Let $\Phi$ be as in \ref{equation: Laplace}, with a finite and $g \in L^1(a,b)$. Assume that $\phi$ has a unique global minimum at $t=c \in (a,b)$. In addition, suppose that for some $\delta > 0$ and some $\alpha > -1$, the function $g$ takes the form
+	(Laplace's Method, interior contributions) Let $\Phi$ be as in \autoref{equation: Laplace}, with a finite and $g \in L^1(a,b)$. Assume that $\phi$ has a unique global minimum at $t=c \in (a,b)$. In addition, suppose that for some $\delta > 0$ and some $\alpha > -1$, the function $g$ takes the form
 	\begin{equation}
 		g(t) = (t-a)^{\alpha} g_0(t)
 	\end{equation}
@@ -1246,7 +1241,7 @@ Now we turn to our main interest.
 	\begin{equation}
 		L(s, v) = \frac{\phi''(0)}{2}v^2 + sv^3R(sv) - 1,
 	\end{equation}
-	and we can indeed apply the Implicit FunctionTheorem. In fact, we know $L \in C^2$ and as we want to solve for $L(s,v) = 0$, we need that the $v_0$ we take to satisfy $L(0, v_0) = 0$, ie,
+	and we can indeed apply the Implicit Function Theorem. In fact, we know $L \in C^2$ and as we want to solve for $L(s,v) = 0$, we need that the $v_0$ we take to satisfy $L(0, v_0) = 0$, ie,
 	\begin{equation}
 		v_0 = \sqrt{\frac{2}{\phi''(0)}}.
 	\end{equation}
@@ -1328,7 +1323,7 @@ and when $\lambda$ grows large, we have the exponentially growing/decaying term 
 where each integral can now be solved by Laplace's method.
 
 \begin{teorema} (Steepest Descent)
-	Consider $\Phi$ as in \ref{eq: general int} with a smooth contour $\Gamma$. Assume that the exponent $f = u + \ii v$ is an analytic function on a neighborhood of $\Gamma$ that satisfies
+	Consider $\Phi$ as in \autoref{eq: general int} with a smooth contour $\Gamma$. Assume that the exponent $f = u + \ii v$ is an analytic function on a neighborhood of $\Gamma$ that satisfies
 	\begin{equation}
 		v(z) \equiv v_0, \quad z \in \Gamma
 	\end{equation}
@@ -1344,7 +1339,7 @@ where each integral can now be solved by Laplace's method.
 \end{teorema}
 
 \begin{proof}
-	Fix a parametrization $\gamma : [a,b] \rightarrow \C$ of $\Gamma$ with $\gamma(c) = z_0, a < c < b$, and decompose $\Phi$ as before in $\ref{eq: decomposition}$. By the assumptions on the functions $f, g$ we can apply Laplace`s method on both equations, and yields, as $\lambda \rightarrow + \infty$,
+	Fix a parametrization $\gamma : [a,b] \rightarrow \C$ of $\Gamma$ with $\gamma(c) = z_0, a < c < b$, and decompose $\Phi$ as before in \autoref{eq: decomposition}. By the assumptions on the functions $f, g$ we can apply Laplace`s method on both equations, and yields, as $\lambda \rightarrow + \infty$,
 	\begin{equation}
 		\int_{a}^{b} (p(\gamma(t))\alpha'(t)-q(\gamma(t))\beta'(t)) \ee^{-\lambda u(\gamma(t))} \dd t = \sqrt{2\pi} \ee^{-\lambda u(z_0)} \left( \frac{p(z_0)\alpha'(c)-q(z_0)\beta'(c)}{\sqrt{|(u \circ \gamma)''(c)|} \lambda^{1/2}} + \Boh \left(\lambda^{3/2}\right) \right)
 	\end{equation}

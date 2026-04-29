@@ -148,7 +148,7 @@
 \usetikzlibrary{patterns}% <- added
 \pgfplotsset{width=6cm,compat=1.9}
 
-%\mathtoolsset{showonlyrefs=true}
+\usepackage{autonum}
 
 
 %================================================================================
