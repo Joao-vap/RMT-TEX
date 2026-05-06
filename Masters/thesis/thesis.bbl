@@ -179,6 +179,21 @@ Available:
   Growth Models, and Sequence Matching}. 2007.
 Available: \url{https://arxiv.org/abs/cond-mat/0701193}.}
 
+\bibitem[Majumdar and Schehr 2014]{Majumdar_2014}
+\abntrefinfo{Majumdar and Schehr}{MAJUMDAR; SCHEHR}{2014}
+{MAJUMDAR, S.~N.; SCHEHR, G. Top eigenvalue of a random matrix: large
+  deviations and third order phase transition.
+\textbf{Journal of Statistical Mechanics: Theory and Experiment}, IOP
+  Publishing, v.~2014, n.~1, p. P01012, Jan. 2014.
+ISSN 1742-5468.
+Available: \url{http://dx.doi.org/10.1088/1742-5468/2014/01/P01012}.}
+
+\bibitem[Metropolis 1987]{MonteCarlo}
+\abntrefinfo{Metropolis}{METROPOLIS}{1987}
+{METROPOLIS, N. The beginning of the monte carlo method.
+In:  \underline{\ \ \ \ \ \ \ \ }. [S.l.]: Los Alamos Science Special Issue,
+  1987. v.~15, p. 125--130.}
+
 \bibitem[Nica and Ortmann 2025]{nica2025gaussianintegralformulahermite}
 \abntrefinfo{Nica and Ortmann}{NICA; ORTMANN}{2025}
 {NICA, M.; ORTMANN, J. \textbf{A Gaussian integral formula for the Hermite
@@ -254,6 +269,16 @@ Available:
 {VERSHIK, S.~V.~K. A.~M. Asymptotics of the plancherel measure of the symmetric
   group and the limiting form of young tableaux.
 \textbf{Dokl. Akad. Nauk SSSR}, v.~233, n.~6, p. 1024--1027, 1977.}
+
+\bibitem[Wigner 1995]{Wigner1995}
+\abntrefinfo{Wigner}{WIGNER}{1995}
+{WIGNER, E.~P. The unreasonable effectiveness of mathematics in the natural
+  sciences.
+In:  \underline{\ \ \ \ \ \ \ \ }. \textbf{Philosophical Reflections and
+  Syntheses}. Berlin, Heidelberg: Springer Berlin Heidelberg, 1995. p.
+  534--549.
+ISBN 978-3-642-78374-6.
+Available: \url{https://doi.org/10.1007/978-3-642-78374-6_41}.}
 
 \bibitem[Wishart 1928]{Wishart1928-hi}
 \abntrefinfo{Wishart}{WISHART}{1928}

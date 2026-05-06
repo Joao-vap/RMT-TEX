@@ -108,7 +108,7 @@ This $k$-th correlation variable stand for the expected number of $k$-tuples $\c
 	\begin{equation}
 		\p_k(\mmany{x}{k}) = \frac{n!}{(n-k)!} \int_{\R^{n-k}} \frac{1}{\pZ{n}{} n!} \prod_{1 \leq i < j \leq j}^n (x_i - x_j)^2 \prod_{j=1}^{n} \ee^{-x^2_j} \dd x_{k+1} \cdots \dd x_n,
 	\end{equation}
-	as given by \autoref{Equation: Symmetric correlation}.
+	as given by Equation \ref{Equation: Symmetric correlation}.
 \end{exemplo}
 
 \mycomment{
@@ -123,7 +123,7 @@ where $f: E \rightarrow \R_+$, has expectation
 if the integral $\int_E |f(x)| \p(\dd x)$ is finite.  
 }
 
-For simple points processes on $\R$ there is a direct way to understand correlation functions. Let $A_i = [x_i, x_i + \Delta x_i], 1 \leq i \leq k$, be disjoint intervals. If the $\Delta x_i$ are small enough, then we should expect either one or zero particles in each interval $A_i$. Hence, the product $\xi(A_1) \cdots \xi(A_k)$ is typically either $1$ or $0$ depending on whether we have one particle in each interval. From \autoref{Equation: kth moment measure}, we should expect
+For simple points processes on $\R$ there is a direct way to understand correlation functions. Let $A_i = [x_i, x_i + \Delta x_i], 1 \leq i \leq k$, be disjoint intervals. If the $\Delta x_i$ are small enough, then we should expect either one or zero particles in each interval $A_i$. Hence, the product $\xi(A_1) \cdots \xi(A_k)$ is typically either $1$ or $0$ depending on whether we have one particle in each interval. From Equation \ref{Equation: kth moment measure}, we should expect
 \begin{equation}
 	\p_k(\mmany{x}{k}) = \lim_{\Delta x_i \rightarrow 0} \frac{\mathbb{P}(\text{one particle in each} \ A_i)}{\mcmany{\Delta x}{k}{}}.
 \end{equation}
@@ -153,7 +153,7 @@ Repulsive random processes are, in general, intractable, that is, they are usual
 	\begin{equation}
 		 	\p_k^{(w)}(\mmany{\lambda}{k};n;\beta=2)  = \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k},
 	\end{equation}
-	for a subclass of the invariant ensembles called orthogonal polynomial ensembles. This is the main connection for the theory of random matrices and DDPs - and one that we take major advantage of. For $\beta = 2$, we should have
+	for a subclass of the invariant ensembles called orthogonal polynomial ensembles. This is the main connection for the theory of random matrices and DPPs - and one that we take major advantage of. For $\beta = 2$, we should have
 	\begin{equation}
 		\p_n^{(w)}(\mmany{\lambda}{n};2) \propto \prod_{i=1}^{n} \wf(\lambda_i) |\Delta_n(\lambda)|^2 = {\det\left(\wf(\lambda_i)q_{j-1}^{(2)}(\lambda_i)\right)}^2_{n\times n}
 	\end{equation}
@@ -174,9 +174,9 @@ All important information is contained in the correlation kernel for these proce
 	Kf(x) = \int_\Lambda K(x, y) f(y) \dd \lambda(y)
 	\label{Equation: integral operator K}
 \end{equation}
-as long as the right and side is well defined. Important examples of DDPs are constructed by using the following result.
+as long as the right and side is well defined. Important examples of DPPs are constructed by using the following result.
 
-\begin{teorema} (Construction for DDP, \cite{ManuelaGirottiPhD})
+\begin{teorema} (Construction for DPP, \cite{ManuelaGirottiPhD})
 	Consider a kernel $K: \R \times \R \rightarrow \R_+$ with the following properties:
 	\begin{itemize}
 		\item Trace-class: $\tr(K) = \int_{\R} K(x,x) \dd x = n < + \infty$;
@@ -251,7 +251,7 @@ Most, if not all, of the processes discussed on this work will have an rightmost
 	\begin{equation}
 		\eP[\text{no particle in} \ (t, s)] = \sum_{n=0}^{\infty} \frac{(-1)^n}{n!} \int_{(t, s)^n} \rho_n(\mmany{x}{n}) \dd \pe_x(x).
 	\end{equation}
-	We see from \autoref{Equation: premisse last particle} and the dominated convergence theorem that we can let $s \rightarrow \infty$ and obtain \autoref{Equation: conclusion last particle}.
+	We see from Equation \ref{Equation: premisse last particle} and the dominated convergence theorem that we can let $s \rightarrow \infty$ and obtain Equation \ref{Equation: conclusion last particle}.
 \end{demonstracao} 
 }
 
@@ -308,7 +308,7 @@ The distribution function $F_{TW}(t)$ for the last particle in the Airy kernel p
 Let $f \in C^1(\R)$ be a bijection, with continuously differentiable inverse $f^{-1} = g \in \C^1(\R)$. Then, $f$ maps configurations on $\R$ to configurations on $\R$. The push-forward of a point process $\mathbb{P}$ under such mapping is $f(\mathbb{P})$ and it is again a point process.
 
 \begin{proposicao} \cite{ManuelaGirottiPhD}
-	If K is the kernel of a DDP $\mathbb{P}$, then $f(\mathbb{P})$ is also a DDP with kernel
+	If K is the kernel of a DPP $\mathbb{P}$, then $f(\mathbb{P})$ is also a DPP with kernel
 	\begin{equation}
 		\hat{K}(x, y) = \sqrt{g'(x) g'(y)} K(g(x), g(y))
 	\end{equation}
@@ -415,7 +415,7 @@ In particular, if we consider a linear function $f(x) = \alpha (x - x^*),$ for $
 Others transformations are also possible. For example, consider what happens when one fixes $c \in \R$ and, given that $c \in \chi$, removes $c$ from the configuration. The resulting process $\chi \setminus \{c\}$ is a new point process.
 
 \begin{proposicao} \cite{ManuelaGirottiPhD}
-	Let K be the correlation kernel of a DDP and let $c$ be a point such that $0 < K(c, c) < + \infty$. Then, the point process obtained by removing $c$ is determinantal with kernel
+	Let K be the correlation kernel of a DPP and let $c$ be a point such that $0 < K(c, c) < + \infty$. Then, the point process obtained by removing $c$ is determinantal with kernel
 	\begin{equation}
 		\hat{K}(x, y) = K(x, y) - \frac{K(x, c) K(c, x)}{K(c, c)}.
 	\end{equation}

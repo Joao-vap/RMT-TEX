@@ -37,7 +37,7 @@ Following the computations in \citeonline{Trapezoidal-Maclaurin}, take a functio
 \begin{equation}
 	\int_{a}^{b} f(x) \dd x = \sum_{j=0}^{n-1} \int_{a+j h}^{a+(j+1)h} f(x) \dd x
 \end{equation}
-where we can use the property \autoref{Equation: Differential Bernoulli} and integration by parts to rewrite each integral as
+where we can use the property Equation \ref{Equation: Differential Bernoulli} and integration by parts to rewrite each integral as
 \begin{align}
 	\int_{c}^{c+h} f(x) \dd x & = h \int_{0}^{1} B_0(1-x) f(c+xh) \dd x \\
 	& = - h \frac{B_1(1-x)}{1!} f(c + xh) |_0^1 + h^2 \int_{0}^{1} \frac{B_1(1-x)}{1!} f'(c+xh) \dd x, \\
@@ -62,7 +62,7 @@ This is the Euler-Maclaurin formula, an extension of the trapezoidal rule includ
 
 \subsection{Asymptotics for Hermite}
 
-This example will be a collage of many sources: Check \citeonline{shi2021errorboundsasymptoticexpansions} and \citeonline{nica2025gaussianintegralformulahermite} for the main references and notation. We already know the asymptotic for $x = \boh(n)$, done in Subsection \ref{Subsection: Hermite x=n}. There are other two cases of interest that are related to methods explained in this Chapter. These are $x=\boh(1)$ and, more importantly, $x = \boh(\sqrt{n})$.
+This example will be a collage of many sources: Check \citeonline{shi2021errorboundsasymptoticexpansions} and \citeonline{nica2025gaussianintegralformulahermite} for the main references and notation. We already know the asymptotic for $x = \boh(n)$, done in \autoref{Subsection: Hermite x=n}. There are other two cases of interest that are related to methods explained in this Chapter. These are $x=\boh(1)$ and, more importantly, $x = \boh(\sqrt{n})$.
 
 \subsubsection{Regime $x = \boh(1)$}
 \label{SubSection: Hermite x=o(1)}
@@ -104,12 +104,12 @@ This example will be a collage of many sources: Check \citeonline{shi2021errorbo
 
 There are three asymptotics regimes for $\He_n(x)$ when $x \rightarrow \infty$ depending on the value of $\lim_{N \rightarrow \infty} x/2\sqrt{N}$ for $N = n+1$, each of which has qualitatively different behavior
 \begin{itemize}
-	\item Small $x$ values $-2\sqrt{N} < x < 2\sqrt{N}$: in this regime the Hermite Polynomials will be oscillating, and a have a similar qualitative behavior as in Subsection \ref{SubSection: Hermite x=o(1)} with modification to phase and amplitude. These polynomials will have some connections to the \textit{arcsine law} and \textit{semi-circle law}.
-	\item Large $x$ values $|x| > 2\sqrt{N}$: In this regime the polynomial doesn't have more oscillations and is monotone increasing. As $x$ grows larger, this approximation approaches Subsection \ref{Subsection: Hermite x=n}.
+	\item Small $x$ values $-2\sqrt{N} < x < 2\sqrt{N}$: in this regime the Hermite Polynomials will be oscillating, and a have a similar qualitative behavior as in \autoref{SubSection: Hermite x=o(1)} with modification to phase and amplitude. These polynomials will have some connections to the \textit{arcsine law} and \textit{semi-circle law}.
+	\item Large $x$ values $|x| > 2\sqrt{N}$: In this regime the polynomial doesn't have more oscillations and is monotone increasing. As $x$ grows larger, this approximation approaches \autoref{Subsection: Hermite x=n}.
 	\item Edge $x$ values $x = \pm 2\sqrt{N} + \Boh(N^{-\frac{1}{6}})$: in this regime the polynomials will be approximated by the Airy Function. This interpolates between the oscillatory small $x$ regime and the monotone large $x$ regimes. 
 \end{itemize} 
 
-We write the integral representation given by the Cauchy Integral applied to the Generating Function, this representation should be discussed in Subsection \ref{Subsection: Integral Hermite} and given by:
+We write the integral representation given by the Cauchy Integral applied to the Generating Function, this representation should be discussed in \autoref{Subsection: Integral Hermite} and given by:
 \begin{equation}
 	\begin{split}
 		\He_n(x) & \deff \frac{n!}{2\pi \ii} \int_{\Gamma} z^{-n-1} \ee^{xz-\frac{z^2}{2}} \dd z \\
@@ -613,7 +613,7 @@ for
 	\tilde{C}_N & = (N-1)! N^{\frac{1}{6} - \frac{N}{2}} \ee^{-2\xi\beta_c N^{\frac{1}{3}} + \frac{3N}{2}} = \sqrt{2\pi} (N-1)^{\frac{1}{2}} N^{1/6 - N/2} \ee^{\left(1/2 + N^{-1} - 2\xi \beta_c N^{-2/3} \right)} (1 + \Boh(N^{-1})) \\
 	& = \sqrt{2\pi\ee} N^{-\frac{N}{2} + \frac{2}{3}} (1 + \Boh(N^{-1})) 
 \end{align} 
-The result follow from the asymptotic for the Airy function given in Subsection \ref{Subsection: Airy Asymptotic}. Again, we can change variables to express
+The result follow from the asymptotic for the Airy function given in \autoref{Subsection: Airy Asymptotic}. Again, we can change variables to express
 \begin{equation}
 	\He_{n-1}(2\sqrt{N} + N^{-1/6}\xi) = \sqrt{2\pi} \ee N^{-\frac{N}{2} + \frac{7}{6}}  \Ai(\xi) (1 + \boh(1))
 \end{equation}
@@ -626,7 +626,7 @@ When dealing with the asymptotic of the j.p.d.f we will actually consider the Ke
 \end{equation}
 which will allow us to take the limit to get $K_n^{(2)}(x,x)$.
 
-The computations don't change too much. Consider the expression
+The computations do not change too much. Consider the expression
 \begin{align}
 	\He_n(\sqrt{N}\alpha + N^{-1/2} y) & =  \frac{(N-1)! N^{\frac{1}{2}\left(1-N\right)}}{2\pi \ii} \int_{\Gamma}  \ee^{-N(- \alpha \beta+ \frac{1}{2} \beta^2 + \ln{(\beta)}) + y \beta} \dd \beta \\
 	& = C_n^0 \int_{\Gamma}  \ee^{-N \phi_\alpha(\beta) + y \beta} \dd \beta \\
@@ -799,7 +799,7 @@ With this definition, we can now say that
 
 \subsection{Equilibrium Measure}
 
-Remember in Subsection \ref{Subsection: The case for beta 2} when we expressed the equilibrium measure in terms of the Kernel of the point process - given in \autoref{Equation: Equilibrium Measure and Kernel}. It was noted then that we would only need to understand the asymptotics of the orthogonal polynomial associated with the weight function to properly recover the equilibrium measure. Now, we have such an asymptotic. Remember the expression
+Remember in \autoref{Subsection: The case for beta 2} when we expressed the equilibrium measure in terms of the Kernel of the point process - given in Equation \ref{Equation: Equilibrium Measure and Kernel}. It was noted then that we would only need to understand the asymptotics of the orthogonal polynomial associated with the weight function to properly recover the equilibrium measure. Now, we have such an asymptotic. Remember the expression
 \begin{equation}
 	\pe^{(w)}(x) = K_n^{(2)}(x, x) = \frac{\wf(x)}{r_{n-1}^{(2)}} \left( \He_{n-1}(x)\partial_x \He_n(x) - \He_{n}(x)\partial_x \He_{n-1}(x)  \right)
 \end{equation}
@@ -904,7 +904,7 @@ The techniques we will expand on here refers to a specific type of complex funct
 where $\Gamma$ is a given contour in the plane and $f, g$ are suitable functions. Suitable here means that we impose $g$ and $f$ to be continuous (or analytic); $g$ is integrable; $f$ have global minima with zero derivative (maybe in more than one point) and strictly positive second derivative at this point(s) of minima. There is also a more technical regularity condition on $f$ to ensure the approximations holds to still be made clear.
 
 \begin{exemplo}
-	(Airy Equation) Function such as in \autoref{Equation: Integral form phi} are not uncommon. Consider the function that satisfies the equation $\psi''(x) = x \psi(x)$. Taking the Fourrier transform we have 
+	(Airy Equation) Function such as in Equation \ref{Equation: Integral form phi} are not uncommon. Consider the function that satisfies the equation $\psi''(x) = x \psi(x)$. Taking the Fourrier transform we have 
 	\begin{equation}
 		-\omega^2 \Phi(x) = \ii \Phi'(x)
 	\end{equation}
@@ -919,7 +919,7 @@ where $\Gamma$ is a given contour in the plane and $f, g$ are suitable functions
 	For this integral, the techniques applied in this chapter are of great use to understand its behavior as $\omega \rightarrow \infty$.
 \end{exemplo}
 
-Moreover, one can somehow directly motivate such conditions. Consider $\phi(\lambda): \R \rightarrow \R$, $f$ with a single global minima and $\Gamma \equiv \R$ - for simplicity; the argument's idea should hold for other choices given the appropriate considerations. If $\phi$ is as in \autoref{Equation: Integral form phi}, and satisfying the conditions given for such function, then take $x^*$ the single minimal critical point for $f$. We first note that if that is true, then, for any $|\epsilon| > 0$, the following limit should hold:
+Moreover, one can somehow directly motivate such conditions. Consider $\phi(\lambda): \R \rightarrow \R$, $f$ with a single global minima and $\Gamma \equiv \R$ - for simplicity; the argument's idea should hold for other choices given the appropriate considerations. If $\phi$ is as in Equation \ref{Equation: Integral form phi}, and satisfying the conditions given for such function, then take $x^*$ the single minimal critical point for $f$. We first note that if that is true, then, for any $|\epsilon| > 0$, the following limit should hold:
 \begin{equation}
 	\lim_{\lambda \rightarrow \infty} \frac{\ee^{-\lambda(f(x^*))}}{\ee^{-\lambda(f(x^* - \epsilon))}} = \lim_{\lambda \rightarrow \infty} \ee^{-\lambda(f(x^*) - f(x^* - \epsilon))} = \lim_{\lambda \rightarrow \infty} \ee^{\lambda |c|} \rightarrow + \infty. 
 \end{equation}
@@ -1032,7 +1032,7 @@ where we only use the fact that $f \in L^1(0,T)$. However, we have more informat
 	\end{equation}
 	and
 	\begin{equation}
-		F(\lambda) \leq \Boh\left(\lambda^{-\alpha-2}\right) + f_0(0) \left( \frac{\Gamma(\alpha + 1)}{\lambda^{\alpha+1}} + \Boh\left(\ee^{-\epsilon\lambda}\right) \right) + \normL{1}{f}{(\delta, T)} \ee^{-\delta \lambda}.
+		F(\lambda) = \Boh\left(\lambda^{-\alpha-2}\right) + f_0(0) \left( \frac{\Gamma(\alpha + 1)}{\lambda^{\alpha+1}} + \Boh\left(\ee^{-\epsilon\lambda}\right) \right) + \normL{1}{f}{(\delta, T)} \ee^{-\delta \lambda}.
 	\end{equation}
 	By the dominance of the exponential error, we get the result
 	\begin{equation}
@@ -1078,7 +1078,7 @@ In the estimation above, the Gamma function and the factor of $\lambda^{-1}$ is 
 		\Gamma(x) = \int_{0}^{\infty} \ee^{-t} t^{x-1} \dd t.
 		\label{eq: Gamma}
 	\end{equation}
-	We are interested in what happens to the function when we take the variable $x$ to $+\infty$. To see what happens, let's fit it into Proposition \ref{prop: (Laplace's Method, interior contributions)}. Rewrite \autoref{eq: Gamma} as
+	We are interested in what happens to the function when we take the variable $x$ to $+\infty$. To see what happens, let's fit it into Proposition \ref{prop: (Laplace's Method, interior contributions)}. Rewrite Equation \ref{eq: Gamma} as
 	\begin{equation}
 		\int_{0}^{\infty} \ee^{-t+x\log{(t)}-\log{(t)}} \dd t.
 	\end{equation} 
@@ -1150,7 +1150,7 @@ This differentiates of the previously result more importantly by the limits of i
 Now we turn to our main interest.
 
 \begin{teorema}
-	(Laplace's Method, endpoint contributions) Let $\Phi$ be as in \autoref{equation: Laplace}, with a finite and $g \in L^1(a,b)$. Assume that $\phi$ has a unique global minimum at $t=a$. In addition, suppose that for some $\delta > 0$ and some $\alpha > -1$, the function $g$ takes the form
+	(Laplace's Method, endpoint contributions) Let $\Phi$ be as in Equation \ref{equation: Laplace}, with a finite and $g \in L^1(a,b)$. Assume that $\phi$ has a unique global minimum at $t=a$. In addition, suppose that for some $\delta > 0$ and some $\alpha > -1$, the function $g$ takes the form
 	\begin{equation}
 		g(t) = (t-a)^{\alpha} g_0(t)
 	\end{equation}
@@ -1199,7 +1199,7 @@ Now we turn to our main interest.
 \end{proof}
 
 \begin{teorema}
-	(Laplace's Method, interior contributions) Let $\Phi$ be as in \autoref{equation: Laplace}, with a finite and $g \in L^1(a,b)$. Assume that $\phi$ has a unique global minimum at $t=c \in (a,b)$. In addition, suppose that for some $\delta > 0$ and some $\alpha > -1$, the function $g$ takes the form
+	(Laplace's Method, interior contributions) Let $\Phi$ be as in Equation \ref{equation: Laplace}, with a finite and $g \in L^1(a,b)$. Assume that $\phi$ has a unique global minimum at $t=c \in (a,b)$. In addition, suppose that for some $\delta > 0$ and some $\alpha > -1$, the function $g$ takes the form
 	\begin{equation}
 		g(t) = (t-a)^{\alpha} g_0(t)
 	\end{equation}
@@ -1323,7 +1323,7 @@ and when $\lambda$ grows large, we have the exponentially growing/decaying term 
 where each integral can now be solved by Laplace's method.
 
 \begin{teorema} (Steepest Descent)
-	Consider $\Phi$ as in \autoref{eq: general int} with a smooth contour $\Gamma$. Assume that the exponent $f = u + \ii v$ is an analytic function on a neighborhood of $\Gamma$ that satisfies
+	Consider $\Phi$ as in Equation \ref{eq: general int} with a smooth contour $\Gamma$. Assume that the exponent $f = u + \ii v$ is an analytic function on a neighborhood of $\Gamma$ that satisfies
 	\begin{equation}
 		v(z) \equiv v_0, \quad z \in \Gamma
 	\end{equation}
@@ -1339,7 +1339,7 @@ where each integral can now be solved by Laplace's method.
 \end{teorema}
 
 \begin{proof}
-	Fix a parametrization $\gamma : [a,b] \rightarrow \C$ of $\Gamma$ with $\gamma(c) = z_0, a < c < b$, and decompose $\Phi$ as before in \autoref{eq: decomposition}. By the assumptions on the functions $f, g$ we can apply Laplace`s method on both equations, and yields, as $\lambda \rightarrow + \infty$,
+	Fix a parametrization $\gamma : [a,b] \rightarrow \C$ of $\Gamma$ with $\gamma(c) = z_0, a < c < b$, and decompose $\Phi$ as before in Equation \ref{eq: decomposition}. By the assumptions on the functions $f, g$ we can apply Laplace`s method on both equations, and yields, as $\lambda \rightarrow + \infty$,
 	\begin{equation}
 		\int_{a}^{b} (p(\gamma(t))\alpha'(t)-q(\gamma(t))\beta'(t)) \ee^{-\lambda u(\gamma(t))} \dd t = \sqrt{2\pi} \ee^{-\lambda u(z_0)} \left( \frac{p(z_0)\alpha'(c)-q(z_0)\beta'(c)}{\sqrt{|(u \circ \gamma)''(c)|} \lambda^{1/2}} + \Boh \left(\lambda^{3/2}\right) \right)
 	\end{equation}
@@ -1441,8 +1441,8 @@ As we're following the curves where  $\Im(f(z))$ is constant, we're also followi
 				title={$\alpha > 2$},
 				xmin=-2, xmax=2,
 				ymin=-2, ymax=2,
-				xlabel={x},
-				ylabel={y},
+				xlabel={$x$},
+				ylabel={$y$},
 				trig format plots=rad,
 				axis equal]					
 				\node at (axis cs:0.7,0.7) {$t_{c_+}$};
@@ -1531,7 +1531,7 @@ As we're following the curves where  $\Im(f(z))$ is constant, we're also followi
 					title={$\alpha \in [0,2)$},
 					xmin=-2, xmax=2,
 					ymin=-2, ymax=2,
-					xlabel={x},
+					xlabel={$x$},
 					yticklabel=\empty,
 					trig format plots=rad,
 					axis equal]
@@ -1585,7 +1585,7 @@ As we're following the curves where  $\Im(f(z))$ is constant, we're also followi
 					title={$\alpha = 2$},
 					xmin=-2, xmax=2,
 					ymin=-2, ymax=2,
-					xlabel={x},
+					xlabel={$x$},
 					yticklabel=\empty,
 					trig format plots=rad,
 					axis equal]
