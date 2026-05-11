@@ -13,16 +13,8 @@
 \babel@toc {english}{}\relax
 \babel@toc {english}{}\relax
 \babel@toc {english}{}\relax
-\contentsline {figure}{\numberline {1}{\ignorespaces Plot of $e^{-\frac {x^2}{2}} / \sqrt {2\pi }$, the Gaussian distribution.}}{20}{figure.caption.14}%
-\babel@toc {english}{}\relax
-\babel@toc {english}{}\relax
-\babel@toc {english}{}\relax
-\babel@toc {english}{}\relax
-\contentsline {figure}{\numberline {2}{\ignorespaces Plot of the Wigner Semi-Circle distribution.}}{24}{figure.caption.15}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Plot of $F_{(2)}(x)$, the Tracy-Widom distribution.}}{25}{figure.caption.16}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Plot of a simulation of a Coulomb gas in two dimensions under a potential with threefold symmetry. In black crosses we plotted one sample from the simulation. In shadowy dots, the \enquote {averaged} samples, suggesting the theoretical equilibrium region.}}{28}{figure.caption.17}%
-\contentsline {figure}{\numberline {7}{\ignorespaces For all graphs, we have in dashed line the Semicircle distribution. In black the average distribution of eigenvalues is displayed. The columns correspond to $n = 10,50,100$ from left to right. The lines correspond to the GOE, GUE and GSE from top to bottom. The matrices, and corresponding eigenvalues, were sampled with the ensemble distribution $10000$ for each graph.}}{36}{figure.caption.20}%
-\contentsline {figure}{\numberline {8}{\ignorespaces For all graphs, the line is the average distribution of eigenvalues for the GUE. The columns correspond to the polynomial order (and matrix size) $n = 10,50,100$ from left to right. The dashes in the axis correspond to the roots of the $n$-th Hermite polynomial.}}{38}{figure.caption.21}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Plots of $F_{TW}^{(\beta )}(t)$ for $\beta = 1, 2, 4$.}}{55}{figure.caption.22}%
-\contentsline {figure}{\numberline {10}{\ignorespaces $20$ Non-intersecting Brownian paths for $0 < t < 1$ s.t. they start and end at $y=0.$}}{56}{figure.caption.23}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Three conditions simulated form the $20$ Dyson Bridges taken from $t = 0.1, 0.5, 0.9$. For each one the experimental density (line plot) and one sampled position (dashes in axis) were plotted. The three plots are re-scaled by $((2t(1-t))\sqrt {N}).$}}{57}{figure.caption.24}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Plot of the Wigner Semi-Circle distribution normalized such that $\supp {\mathfrak {p}^{(SC)}} = [-1, 1]$.}}{23}{figure.caption.14}%
+\contentsline {figure}{\numberline {2}{\ignorespaces The dashed line is the Semi-circle distribution, whereas in solid we display the average distribution of eigenvalues from $\hat M_n$. The columns correspond to $n = 10,50,100$ from left to right. The lines correspond to the GOE, GUE and GSE from top to bottom. We took $10000$ matrix samples for each average distribution.}}{24}{figure.caption.15}%
+\contentsline {figure}{\numberline {3}{\ignorespaces For all graphs, the line is the average distribution of eigenvalues for the GUE. The columns correspond to the polynomial order (and matrix size) $n = 10,50,100$ from left to right. The dashes in the axis correspond to the roots of the $n$-th Hermite polynomial.}}{26}{figure.caption.16}%
+\contentsline {figure}{\numberline {4}{\ignorespaces $20$ Non-intersecting Brownian paths for $0 < t < 1$ s.t. they start and end at $y=0.$}}{33}{figure.caption.17}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Three conditions simulated form the $20$ Dyson Bridges taken from $t = 0.1, 0.5, 0.9$. For each one the experimental density (line plot) and one sampled position (dashes in axis) were plotted. The three plots are re-scaled by $((2t(1-t))\sqrt {N}).$}}{33}{figure.caption.18}%

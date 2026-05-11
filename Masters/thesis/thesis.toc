@@ -15,21 +15,13 @@
 \babel@toc {english}{}\relax
 \babel@toc {english}{}\relax
 \contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introduction}}{19}{chapter.1}%
-\babel@toc {english}{}\relax
-\babel@toc {english}{}\relax
-\babel@toc {english}{}\relax
-\babel@toc {english}{}\relax
-\contentsline {section}{\numberline {1.1}Overview of the dissertation}{31}{section.1.1}%
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Random Matrix Theory}}{33}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Random Matrix}{33}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Invariant Ensembles}{39}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Orthogonal Polynomial Ensembles}{42}{subsection.2.2.1}%
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Point Processes}}{49}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Point Processes}{49}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Determinantal Point Processes}{53}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Limit and Transformations of DPP}{55}{section.3.3}%
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Asymptotics}}{59}{chapter.4}%
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Equilibrium}}{61}{chapter.5}%
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Planar Ensembles}}{63}{chapter.6}%
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Random Matrix Theory}}{21}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Random Matrix}{22}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Determinantal Point Processes}{28}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Invariant Ensembles}{35}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Orthogonal Polynomial Ensembles}{37}{subsection.2.3.1}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Asymptotics}}{45}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Equilibrium}}{47}{chapter.4}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Planar Ensembles}}{49}{chapter.5}%
 \vspace {\cftbeforechapterskip }
-\contentsline {chapter}{\MakeTextUppercase []{Bibliography}}{65}{section*.28}%
+\contentsline {chapter}{\MakeTextUppercase []{Bibliography}}{51}{section*.22}%

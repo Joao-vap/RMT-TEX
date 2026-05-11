@@ -87,6 +87,13 @@ Available: \url{http://hdl.handle.net/1721.1/14322}.}
   Gauss Werke). Available:
   \url{https://books.google.com.br/books?id=ORUOAAAAQAAJ}.}
 
+\bibitem[Ginibre 1965]{Ginibre1965}
+\abntrefinfo{Ginibre}{GINIBRE}{1965}
+{GINIBRE, J. Statistical ensembles of complex, quaternion, and real matrices.
+\textbf{Journal of Mathematical Physics}, v.~6, n.~3, p. 440--449, 03 1965.
+ISSN 0022-2488.
+Available: \url{https://doi.org/10.1063/1.1704292}.}
+
 \bibitem[Girotti 2014]{ManuelaGirottiPhD}
 \abntrefinfo{Girotti}{GIROTTI}{2014}
 {GIROTTI, M.
@@ -270,21 +277,19 @@ Available:
   group and the limiting form of young tableaux.
 \textbf{Dokl. Akad. Nauk SSSR}, v.~233, n.~6, p. 1024--1027, 1977.}
 
+\bibitem[Wigner 1958]{1958Wigner}
+\abntrefinfo{Wigner}{WIGNER}{1958}
+{WIGNER, E.~P. On the distribution of the roots of certain symmetric matrices.
+\textbf{Annals of Mathematics}, v.~67, n.~2, p.~325, mar 1958.}
+
 \bibitem[Wigner 1995]{Wigner1995}
 \abntrefinfo{Wigner}{WIGNER}{1995}
-{WIGNER, E.~P. The unreasonable effectiveness of mathematics in the natural
-  sciences.
+{\underline{\ \ \ \ \ \ \ \ }. The unreasonable effectiveness of mathematics in
+  the natural sciences.
 In:  \underline{\ \ \ \ \ \ \ \ }. \textbf{Philosophical Reflections and
   Syntheses}. Berlin, Heidelberg: Springer Berlin Heidelberg, 1995. p.
   534--549.
 ISBN 978-3-642-78374-6.
 Available: \url{https://doi.org/10.1007/978-3-642-78374-6_41}.}
-
-\bibitem[Wishart 1928]{Wishart1928-hi}
-\abntrefinfo{Wishart}{WISHART}{1928}
-{WISHART, J. The generalised product moment distribution in samples from a
-  normal multivariate population.
-\textbf{Biometrika}, Oxford University Press (OUP), v.~20A, n.~1-2, p. 32--52,
-  1928.}
 
 \end{thebibliography}

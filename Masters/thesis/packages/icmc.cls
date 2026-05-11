@@ -683,7 +683,7 @@
 % Definicao dos ambientes matematicos
 %================================================================================
 
-\providecommand*{\theoremaname}{Theorem}
+\providecommand*{\teoremaname}{Theorem}
 \providecommand*{\proposicaoname}{Proposition}
 \providecommand*{\lemaname}{Lemma}
 \providecommand*{\corolarioname}{Corollary}
@@ -705,14 +705,15 @@
 
 \tcbuselibrary{breakable}
 
-\theoremstyle{definicao}
-\newtheorem{teorema}{\theoremaname}{}
+\newtheorem{teorema}{\teoremaname}{}
 \newtheorem{proposicao}{\proposicaoname}
 \newtheorem{lema}{\lemaname}
 \newtheorem{corolario}{\corolarioname}
+\newtheorem{definicao}{\definicaoname}
+
+\theoremstyle{definition}
 \newtheorem{exemplo}{\exemploname}
 \newtheorem{observacao}{\observacaoname}
-\newtheorem{definicao}{\definicaoname}
 \newenvironment{demonstracao}{\begin{proof}[\demonstracaoname]}{\end{proof}}
 
 \tcolorboxenvironment{corolario}{
@@ -792,7 +793,7 @@
 %Hermite Polynomials
 \newcommand{\Her}{\mathrm{H}} 
 % Airy Kernel
-\newcommand{\Ai}{Ai}
+\DeclareMathOperator{\Ai}{Ai}
 % sine Kernel
 \newcommand{\Sine}{\mathcal{S}}
 % weight function
@@ -1603,7 +1604,7 @@
   
   % Secao secundaria (Section) Caixa baixa, Negrito
   \renewcommand*{\cftsectionfont}{\bfseries}
-  % Secao terciaria (Subsection) Caixa baixa, Negrito, italico
+  % Secao terciaria (Subsection) Caixa baixa, Negrito, lico
   \renewcommand*{\cftsubsectionfont}{\itshape\bfseries}
   % Secao quaternaria (Subsubsection) Caixa baixa, italico
   \renewcommand*{\cftsubsubsectionfont}{\itshape}

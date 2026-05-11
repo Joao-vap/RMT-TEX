@@ -38,7 +38,7 @@ Where $\Lambda$ is a parameter and equal to the expected value of $\xi^{(P)}(t)$
 \end{equation}
 \end{exemplo}
 
-An important note is that $\xi$ is the same for any ordering of the subscripts on \many{x}{n}. This lead us the the conclusion that if $u_n(\mmany{x}{n})$ is a probability function on $\R^n$ such that it is invariant under permutations, i.e.
+An important note is that $\xi$ is the same for any ordering of the subscripts on \many{x}{n}. This lead us the conclusion that if $u_n(\mmany{x}{n})$ is a probability function on $\R^n$ such that it is invariant under permutations, i.e.
 \begin{equation}
 	u_n(x_{\sigma(1)}, \cdots, x_{\sigma(n)}) = u_n(\mmany{x}{n}), \quad \forall \sigma \in S_n,
 \end{equation}
@@ -52,7 +52,7 @@ then $u_n$ defines naturally a point process.
 	This is a probability functions on the space of configuration of eigenvalues in $\R$ if $\pZ{n,\beta}{(G)}$ is a finite normalization function. Moreover, it is simple, as configurations with repeated eigenvalues must have probability $0$. Note also that the function $\p_n$ is invariant under permutations: This is of course the origin of the name Gaussian Unitary, Orthogonal and Symplectic Ensembles mentioned previously.
 \end{exemplo}
 
-The mapping $\mathcal{E} \ni A \mapsto \E[\#(\chi \cap A)]$, that assigns to the the Borel set $A$ the expected value of the number of points in itself under the configuration $\chi$, is a measure on $\R$. 
+The mapping $\mathcal{E} \ni A \mapsto \E[\#(\chi \cap A)]$, that assigns to the Borel set $A$ the expected value of the number of points in itself under the configuration $\chi$, is a measure on $\R$. 
 
 \begin{definicao}
 	The \textbf{mean measure}, or \textbf{first moment}, of a point process on $\Lambda$ is defined by 
@@ -163,7 +163,7 @@ Repulsive random processes are, in general, intractable, that is, they are usual
 		&  \propto {\det\left(\sqrt{\wf(\lambda_i)\wf(\lambda_k)} \sum_{j=1}^{n} q_{j-1}^{(2)}(\lambda_i) q_{j-1}^{(2)}(\lambda_k) \right)}_{i,k=1}^{n}, \\
 		& \propto \det\left[ K_n^{(2)}(\lambda_i, \lambda_k) \right]_{i,k=1}^{n}.
 	\end{align}
-	The orthogonal polynomials $\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$ that compose the kernel are know to satisfy the three-term recurrence (the coefficients depend on the choice of weight)
+	The orthogonal polynomials $\{q_j^{(2)}(\lambda)\}_{j=0}^\infty$ that compose the kernel are known to satisfy the three-term recurrence (the coefficients depend on the choice of weight)
 	\begin{equation}
 		q_{j}^{(2)}(\lambda) = (\lambda + a_j) q_{j-1}^{(2)}(\lambda) - \frac{r_{j-1}^{(2)}}{r_{j-2}^{(2)}} q_{j-2}^{(2)}(\lambda).
 	\end{equation} 
@@ -190,7 +190,7 @@ as long as the right and side is well defined. Important examples of DPPs are co
 	\begin{equation}
 		u_n(\mmany{x}{n}) \deff \frac{1}{n!} \det[K(x_i, x_j)]_{i,j = 1}^n
 	\end{equation}
-	is a probability measure on $\R^n$, invariant under coordinated permutations. The associated point process is a determinantal point process with $K$ as a correlation kernel.
+	is a probability measure on $\R^n$, invariant under coordinate permutations. The associated point process is a determinantal point process with $K$ as a correlation kernel.
 \end{teorema}
 
 \begin{exemplo}
@@ -325,7 +325,7 @@ In particular, if we consider a linear function $f(x) = \alpha (x - x^*),$ for $
 	
 	Consider $n$ independent copies $X_1(t), \cdots, X_n(t)$ of a one-dimensional strong Markov Process with continuous sample paths conditioned so that $X_j(0) = a_j$, where $\mcmany{a}{n}{<}$ are certain given values. Let $p_t(x, y)$ be some transition probability function of the Markov process. Moreover, let \many{E}{n} be Borel sets so that $\sup{E_j} < \inf{E_{j+1}}$ for $j = 1, \cdots, n-1$. Then
 	\begin{equation}
-		\int_{E_1} \dots \int_{E_n} \det{[p_t(a_i, x_j)]^{n}_{i,j=1}}  dx_1 \dots dx_n
+		\int_{E_1} \dots \int_{E_n} \det{[p_t(a_i, x_j)]^{n}_{i,j=1}}  \dd x_1 \dots \dd x_n
 	\end{equation} 
 	is equal to the probability that the paths have not intersected in the time interval $[0,t]$ and $X_j(t) \in E_j$ for $j = 1, \cdots, n.$ This is the Karlin-McGregor theorem. Take now $p_t(a, x) = 1/\sqrt{(2\pi t)} \exp\{-(x-a)^2/2t\}$, a Gaussian transition, and consider that we condition our path to not only start at positions \many{a}{n} but finish at positions \many{b}{n} at some time $T > t$. If we let $a_j \rightarrow a$ and $b_j \rightarrow b$, the new j.p.d.f. can be non-trivially calculated as
 	\begin{align}
