@@ -26,7 +26,7 @@ Suppose a set of $n$ particles at positions $\mmany{x}{n} \in \Sigma$, a \textit
 \end{definicao}
  The measure $\p_n$ models an Coulomb-interacting gas of charged indistinguishable particles under some external field $\Q$. If one wishes $\dd \p_n$ to be a probability measure,  then one must ensure that $\Q$ is such that the normalizing constant $\pZ{n}{\beta}$ is finite for all $n$ and that the measure support $\supp{(\dd \p_n(\chi_n))}$ is compact. This is all to say that the potential should be confining: As the number of particles increases, it must counter the repulsion effect and keep limited the region where particles move around. The function $\g \colon \Sigma \rightarrow (-\infty, \infty]$ is the \textit{Coulomb Interacting Kernel}, solution to the Poisson equation given by $- \nabla g(\vec{x}) = c_n\delta_0$ and is the reason in the first place why the particles may diverge.
 
-Recall the expression for invariant ensembles in Definition c{Definition: polynomial ensemble}, note that, rearranging the terms in Equation \ref{Equation: Coulomb Gas Measure} and considering a logarithm interaction kernel we get
+Recall the expression for invariant ensembles in Definition c{Definition: polynomial ensemble}, note that, rearranging the terms in \eqref{Equation: Coulomb Gas Measure} and considering a logarithm interaction kernel we get
 \begin{equation}
 	\dd \p_n(\mmany{x}{n}) = \frac{1}{\pZ{n}{\beta}}\prod_{1\leq j < k \leq n} |x_j - x_k|^\beta \prod_{j=1}^{n} \ee^{- \beta n \Q(x_j)} \mcmany{\dd x}{n}{}
 \end{equation}
@@ -340,13 +340,13 @@ This logarithmic potential can be interpreted as the equivalent interaction pote
 
 Also, for technical reasons we also state the following Lemma regarding the logarithmic energy that will become useful in a later result although we do not to prove it.
 
-\begin{lema} \cite{saff2024logarithmic}
+\begin{lema} 	\label{Lema: positive kernel}
+	\cite{saff2024logarithmic}
 	Let $\mu = \mu_1 - \mu_2$ be a signed Borel measure with compact support	and total mass $\mu(\C) = 0$. Suppose further that each of the positive measures $\mu_1$ and $\mu_2$ has finite logarithmic energy. Then the logarithmic energy of $\mu$
 	\begin{equation}
 		I(\mu) = \int \int \ln \frac{1}{|z-t|} \dd \mu(z) \dd \mu (t),
 	\end{equation}
 	is non-negative and it is zero if and only if $\mu = 0$.
-	\label{Lema: positive kernel}
 \end{lema}
 
 The energy $V$ can be finite or $+\infty$, and in the finite case there is a unique measure $\mu = \mu_\Sigma \in \M(\Sigma)$ for which the minimum defining energy $V$ is reachable. Such a measure $\mu_\Sigma$ is called the \textit{equilibrium distribution} or \textit{equilibrium measure} of the compact set $\Sigma$. For such a function we have that its logarithm potential is always smaller or equal to the energy $I_\Sigma$. 
@@ -362,14 +362,13 @@ The capacity for an arbitrary Borel set $E$ is defined by the supreme of the cap
 \end{equation} 
 
 We should at this point reintroduce the external potential $Q$. The main difference now is that we can loose the compacity restriction on the sets $\Sigma$ and impose that there is no positive mass around infinity. There is a natural way to introduce this idea. Let $\Sigma \subset \C$ be a closed set and $\wf : \Sigma \rightarrow [0, \infty)$. We call such a function a \textit{weight function} on $\Sigma$.
-\begin{definicao}
+\begin{definicao}	\label{Definition: Weight Admissibility}
 	A weight function $\wf$ is said to be \textbf{admissible} is it satisfies the following three conditions
 	\begin{enumerate}
 		\item $\wf$ is upper semi-continuous;
 		\item $\Sigma_0 \deff \{ z \in \Sigma | \wf(z) > 0 \}$ has positive capacity;
 		\item if $\Sigma$ is unbounded, then $|z| \wf(z) \rightarrow 0$ as $|z| \rightarrow \infty$, $z \in \Sigma$.
 	\end{enumerate} 
-	\label{Definition: Weight Admissibility}
 \end{definicao}
 
 \begin{exemplo}
@@ -381,7 +380,7 @@ We should at this point reintroduce the external potential $Q$. The main differe
 			\lambda^a (1-\lambda)^b \chi_{\{0<\lambda<1\}} & \text{Jacobi}.
 		\end{cases}
 	\end{equation}
-	These are all admissible weights by Definition \ref{Definition: Weight Admissibility}. They are positive continuous functions. The Gaussian and Laguerre have $\Sigma_0$ with positive capacity as $I(\wf)$ is finite and $|z| \wf(z) \rightarrow 0$ as $|z| \rightarrow \infty$, $z \in \Sigma$. Jacobi is direct as $I(\wf)$ is evaluated in a compact interval for a finite function.
+	These are all admissible weights by \autoref{Definition: Weight Admissibility}. They are positive continuous functions. The Gaussian and Laguerre have $\Sigma_0$ with positive capacity as $I(\wf)$ is finite and $|z| \wf(z) \rightarrow 0$ as $|z| \rightarrow \infty$, $z \in \Sigma$. Jacobi is direct as $I(\wf)$ is evaluated in a compact interval for a finite function.
 \end{exemplo}
 
 Assume our weight function to have the form
@@ -402,13 +401,13 @@ is recovered if both integrals exist and are finite. We can now move on to the m
 	Q(x) = t_{2m} x^{2m} + t_{2m-1} x^{2m - 1} + \cdots + t_0, \quad t_{2m} > 0, V(x) \geq 0.
 	\label{Equation: Potential Q}
 \end{equation}
-\begin{teorema} \cite{deiftorthogonal}
-	Let $Q$ be as in Equation \ref{Equation: Potential Q}. Then, there exists a unique probability measure $\mu = \mu^{\wf}$ such that
+\begin{teorema}	\label{Theorem: existence equilibrium}
+	 \cite{deiftorthogonal}
+	Let $Q$ be as in \eqref{Equation: Potential Q}. Then, there exists a unique probability measure $\mu = \mu^{\wf}$ such that
 	\begin{equation}
 		E^{\wf} = \inf_{\mu \in \M^1} I^{\wf}(\mu) = I^{\wf}(\mu^{\wf}).
 	\end{equation}
 	Moreover, $\mu^\wf$ has compact support.
-	\label{Theorem: existence equilibrium}
 \end{teorema}
 \mycomment{
 \begin{proof}
@@ -554,7 +553,7 @@ one could define the so-called \textit{Euler-Lagrange} type variational equation
 \end{teorema}
 
 \begin{proof}
-	($\implies$) We recall that $\mu^\wf$ has compact support by Theorem \ref{Theorem: existence equilibrium} and $I^\wf(\mu^\wf) = E^\wf < \infty$. Suppose $\mu^* \in \M^1(\C)$ has compact support and $I^\wf(\mu^*) < \infty$. Then, defining some convex combination
+	($\implies$) We recall that $\mu^\wf$ has compact support by \autoref{Theorem: existence equilibrium} and $I^\wf(\mu^\wf) = E^\wf < \infty$. Suppose $\mu^* \in \M^1(\C)$ has compact support and $I^\wf(\mu^*) < \infty$. Then, defining some convex combination
 	\begin{equation}
 		\mu_t = t \mu^* + (1-t) \mu^\wf = \mu^\wf + t (\mu^* - \mu^\wf) \in \M^1(\C), \quad 0 \leq t \leq 1,
 	\end{equation}
@@ -565,7 +564,7 @@ one could define the so-called \textit{Euler-Lagrange} type variational equation
 		+ 2t  \int \Q(s) \dd  (\mu^* - \mu^\wf) (s) \\
 		+ t^2 \int \int \ln |t - s|^{-1} \dd (\mu^* - \mu^\wf) \dd (\mu^* - \mu^\wf)(s).
 	\end{multline}
-	This is all well since $\mu^\wf, \mu^*$ have compact support and $I^\wf (\mu^\wf), I^\wf(\mu^*) < \infty$. As $I^\wf(\mu_t) \geq I^\wf (\mu^\wf)$ for $0 \leq t \leq 1$ by assumption of minimality and Lemma \ref{Lema: positive kernel}, is is necessary that
+	This is all well since $\mu^\wf, \mu^*$ have compact support and $I^\wf (\mu^\wf), I^\wf(\mu^*) < \infty$. As $I^\wf(\mu_t) \geq I^\wf (\mu^\wf)$ for $0 \leq t \leq 1$ by assumption of minimality and \autoref{Lema: positive kernel}, is is necessary that
 	\begin{equation}
 		\int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) \right] \dd (\mu^* - \mu^\wf)(x) \geq 0
 		\label{Equation: Proof Euler >0}
@@ -587,7 +586,7 @@ one could define the so-called \textit{Euler-Lagrange} type variational equation
 	\begin{equation}
 		\mu^*_B = \frac{\chi_B}{\mu^*(B)} \mu^*
 	\end{equation}
-	where $\chi_B$ is the characteristic function of the set $B$. Then $\mu^*_B \in \M^1(\C)$ has compact support and $I^\wf(\mu^*) < \infty$. inserting $\dd \mu^*_B$ in Equation \ref{Equation: Proof Euler >l}, we find
+	where $\chi_B$ is the characteristic function of the set $B$. Then $\mu^*_B \in \M^1(\C)$ has compact support and $I^\wf(\mu^*) < \infty$. inserting $\dd \mu^*_B$ in \eqref{Equation: Proof Euler >l}, we find
 	\begin{equation}
 		l \leq \int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) \right] \dd \frac{\chi_B}{\mu^*(B)} \mu^*(x) < l
 	\end{equation}
@@ -613,7 +612,7 @@ one could define the so-called \textit{Euler-Lagrange} type variational equation
 	\begin{equation}
 		\int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu(y) + 2 \Q(x) - l \right] \dd \mu^\wf(x) - l \geq l - l = 0
 	\end{equation}
-	but also the third term is strictly positive by Lemma \ref{Lema: positive kernel} unless it is identically null. If, however, $\mu^\wf - \mu \neq 0$, then we showed that
+	but also the third term is strictly positive by \autoref{Lema: positive kernel} unless it is identically null. If, however, $\mu^\wf - \mu \neq 0$, then we showed that
 	\begin{equation}
 		I^\wf(\mu) \geq I^\wf(\mu^\wf) > I^\wf(\mu),
 	\end{equation}
@@ -632,7 +631,7 @@ for some continuous function $\phi$ of compact support, then
 is continuous and the previous theorem takes the following more simple form
 
 \begin{teorema} (Strong Variational Equations, \cite{deiftorthogonal})
-	Suppose that $\dd \mu^\wf = \phi(x) \dd x$ for some continuous function $\phi$ of compact support. Then the conditions of Theorem \ref{Theorem: existence equilibrium} can be replaced by
+	Suppose that $\dd \mu^\wf = \phi(x) \dd x$ for some continuous function $\phi$ of compact support. Then the conditions of \autoref{Theorem: existence equilibrium} can be replaced by
 	\begin{enumerate}
 		\item
 		\begin{equation}
@@ -647,14 +646,15 @@ is continuous and the previous theorem takes the following more simple form
 	\end{enumerate}
 \end{teorema} 
 
-We mentioned in Equation \ref{Equation: eqmeasure density} the possibility of knowing the density $\phi$ of the equilibrium measure $\mu^\wf$ in relation to the Lebesgue measure. We will know determine $\phi$. As we did many times, assume that $\mu$ is finite and of compact support in the complex plane. For notation, let $A$ denote the two-dimensional Lebesgue measure on $\C$ and $\Delta$ denote the Laplacian operator
+We mentioned in \eqref{Equation: eqmeasure density} the possibility of knowing the density $\phi$ of the equilibrium measure $\mu^\wf$ in relation to the Lebesgue measure. We will know determine $\phi$. As we did many times, assume that $\mu$ is finite and of compact support in the complex plane. For notation, let $A$ denote the two-dimensional Lebesgue measure on $\C$ and $\Delta$ denote the Laplacian operator
 \begin{equation}
 	\Delta F \deff \frac{\partial^2 F}{\partial x^2} + \frac{\partial^2 F}{\partial y^2}.
 \end{equation}
 \mycomment{
 Now, using the following lemma,
 
-\begin{lema} (Unicity Theorem, \cite{saff2024logarithmic})
+\begin{lema} \label{Lema: unicity of measure}
+	(Unicity Theorem, \cite{saff2024logarithmic})
 	Suppose that the positive measures $\mu$ and $\nu$ have compact support and in a region $D \subset \C$ the potentials $U^\mu$ and $U^\nu$ satisfy
 	\begin{equation}
 		U^\mu = U^\nu + u(z)
@@ -663,7 +663,6 @@ Now, using the following lemma,
 	\begin{equation}
 		\mu |_D = \nu |_D
 	\end{equation}
-	\label{Theorem: unicity of measure}
 \end{lema}
 }
 We have the theorem below.
@@ -685,7 +684,7 @@ We have the theorem below.
 	\begin{equation}
 		\int_{R_0} (\Delta U^\mu(t)) \ln \frac{1}{|z-t|} \dd A(t) + 2 \pi U^\mu(z)
 	\end{equation}
-	is harmonic on $R_0$. Then, by Theorem \ref{Theorem: unicity of measure}, the signed measure
+	is harmonic on $R_0$. Then, by \autoref{Lema: unicity of measure}, the signed measure
 	\begin{equation}
 		\frac{1}{2\pi} \Delta U^\mu \dd A|_R + \mu
 	\end{equation}
@@ -750,7 +749,7 @@ where
 	S[\hat{\n}(x) | \n(x)] = \ii \int_{\R^{dn}} \dd x \n(x) \hat{\n}(x) + \log \int_{\R^d} \dd y \ee^{-\ii \hat{\n}(x)}.
 \end{equation}
 
-The most important thing to notice here is that Equation \ref{Equation: logarithmic energyy - entropy} is of the form required for the Laplace asymptotic technique discussed in \autoref{chapter:asymptotics}. This means that t can be estimated, if $S$ has a maxima with strictly negative second derivative, by the evaluation at its maximum point. One can find 
+The most important thing to notice here is that \eqref{Equation: logarithmic energyy - entropy} is of the form required for the Laplace asymptotic technique discussed in \autoref{chapter:asymptotics}. This means that t can be estimated, if $S$ has a maxima with strictly negative second derivative, by the evaluation at its maximum point. One can find 
 \begin{align}
 	0 & = \frac{\partial S}{\partial \hat{\n}(x)} = \ii \n(x) - \ii \frac{\ee^{-\ii \hat{\n}(x)}}{\int_{\R^d} \dd y \ee^{-\ii \hat{\n}(y)}} \\
 	& \implies -\ii \hat{\n}(x) = -\ln(\n(x)) - \log \int_{\R^{d}} \dd y \ee^{-\ii \hat{\n}(y)},
