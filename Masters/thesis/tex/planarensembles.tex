@@ -1,44 +1,44 @@
-We are going to discuss in this chapter the ideas developed in the paper \citeonline{Byun_2023}, where asymptotics were developed for a large class of random matrix ensembles using relatively straightforward asymptotic techniques; taking advantage of the orthogonal polynomials present in these models. In the end, we hope to clarify the origin for the novel limit-behavior expression for the \textit{Partition Function} $\pZ{N}{\beta=2}$ in the shape of the expression
+We are going to discuss in this chapter the ideas developed in the paper \citeonline{Byun_2023}, where asymptotics were developed for a large class of random matrix ensembles using relatively straightforward asymptotic techniques; taking advantage of the orthogonal polynomials present in these models. In the end, we hope to clarify the origin for the novel limit-behavior expression for the \textit{Partition Function} $\pZ{N, \beta=2}{Q}$ in the shape of the expression
 \begin{equation}
 	\ln(\pZ{N, \beta=2}{Q}) = -I_Q N^2+\frac{1}{2} N\ln N+E_Q N+G\ln N+F^Q + o(1).
 \end{equation}
 
-Partition functions perform the role of the normalization for the probability measure relative to the Coulomb gas being worked on - a system of interacting particles confined by some potential as described in \autoref{Section: Coulomb Gas}. In this instance, we deal with complex plane gases. This relates in RMT, to the \textit{random normal matrix} and \textit{planar symplectic ensembles}, depending on the symmetry imposed. If one takes, for example, the quadratic potential $Q(x) = x^2/2$ using the $2-\beta$ regime, one gets the \textit{complex} and \textit{planar} Ginibre ensembles, falling back into the classical models. For the results presented, another restriction is made; the confining potentials must be radially symmetric. For a large class of such potentials $Q$, the first term $I_Q$ in the expression was known for a long time, given by the system's energy when distributed as the associated equilibrium measure. The coefficient $1/2$ of the order $N\ln N$, as well as the entropy term $E_Q$, were described in a recent work of \citeonline{Leble2017-yj}, also for rather large classes of $Q$. The remaining terms in this expansion are new. The term $G$ appears to depend only on whether the limiting spectrum is an annulus or a disk which, surprisingly, seems to not have been observed in the previous literature. 
+Partition functions perform the role of the normalization for the probability measure relative to the Coulomb gas being worked on - a system of interacting particles confined by some potential as described in \autoref{Section: Coulomb Gas}. In this instance, we deal with complex plane gases. This relates in RMT, to the \textit{random normal matrix} and \textit{planar symplectic ensembles}, depending on the symmetry imposed. If one takes, for example, the quadratic potential $Q(x) = x^2/2$ using the $2-\beta$ regime, one gets the \textit{complex} and \textit{planar} Ginibre ensembles, falling back into the classical models. For the results presented, another restriction is made; the confining potentials must be radially symmetric. For a large class of such potentials $Q$, the first term $I_Q$ in the expression was known for a long time, given by the system's energy when distributed as the associated equilibrium measure. The coefficient $1/2$ of the order $N\ln N$, as well as the entropy term $E_Q$, were described in a recent work of \citeonline{Leble2017-yj}, also for rather large classes of $Q$. The remaining terms in this expansion appear firstly at \citeonline{Byun_2023}. The term $G$ appears to depend only on whether the limiting spectrum is an annulus or a disk which, surprisingly, seems to not have been observed in the previous literature. 
 
-Although some recent work, such as in \citeonline{hedenmalm2020planarorthogonalpolynomialsboundary}, may indicate a direction to expand some of these results to larger classes of potentials, this is, so far, still a necessary condition for the techniques presented henceforth.  Once the model is established, the techniques are involved, but should be reasonable: We express the partition function in terms of a summation of norming constants, for which we have a integral representation. Then, the integral can be estimated using the Laplace technique - separating the integral in a central main-contributing region and a bounded error-contributing complement region. Finally, the limit on the summation can be estimated with quadrature techniques, namely the Euler-Maclaurin formula, giving us the final results after computations.
+Although some recent work, such as in \citeonline{hedenmalm2020planarorthogonalpolynomialsboundary}, may indicate a direction to expand some of these results to larger classes of potentials, the symmetry of the external potential is, so far, still a necessary condition for the techniques presented henceforth. Once the model is established, the techniques are involved, but should be reasonable: We express the partition function in terms of a summation of norming constants, for which we have a integral representation. Then, the integral can be estimated using the Laplace technique - separating the integral in a central main-contributing region and a bounded error-contributing complement region. Finally, the limit on the summation can be estimated with quadrature techniques, namely the Euler-Maclaurin formula, giving us the final results after computations.
 
 \section{Working Model}
 \label{Section: Working Model}
 
-In this section we properly define the model and specifics of the working model to which we wish to get the asymptotics from. We have discussed in \autoref{Section: Coulomb Gas} how eigenvalue statistics can be interpret as some Coulomb gas. On the complex plane one could have for example the measure
+In this section we properly define the model and specifics of the working model to which we wish to get the asymptotics from. We have discussed in \autoref{Section: Coulomb Gas} how eigenvalue statistics can be interpreted as a Coulomb gas. On the complex plane one can have for example the measure
 \begin{equation}
 	\dd \p_N^{(\beta)} (z_1, \cdots, z_N) \deff \frac{1}{\pZ{N}{(\beta)}} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta \prod_{j=1}^{N} \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j)
 	\label{Equation: Measure Normal Matrix}
 \end{equation}
-where $\dd A(z) \deff \dd^2 z / \pi$ is the area measure. This measure would imply that the normalization constant - or in our context, the \textit{Partition Function}, is given by
+where $\dd A(z) \deff \dd^2 z / \pi$ is the area measure. For this measure, the \textit{Partition Function} is given by
 \begin{equation}
 	\pZ{N}{(\beta)} \deff \int_{\C^N} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta \prod_{j=1}^{N} \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j).
 \end{equation}
 
 \begin{definicao}
-	Let $\p_N^{(\beta)}$ be as in \eqref{Equation: Measure Normal Matrix}. If $\beta = 2$, $\p_N^{(2)}$ is the measure for the ensemble we call \textbf{random normal matrix}. If, for example, one sets $Q(z) = |z|^2$ this would be called \textbf{complex Ginibre ensemble}.
+	Let $\p_N^{(\beta)}$ be as in \eqref{Equation: Measure Normal Matrix}. If $\beta = 2$, $\p_N^{(2)}$ is the measure for the ensemble we call \textbf{random normal matrix}. If, for example, one sets $Q(z) = |z|^2$ this is called \textbf{complex Ginibre ensemble}.
 \end{definicao}
 
-We could also define the measure for the configurational canonical Coulomb gas ensemble in the upper-half plane  - which has an additional complex conjugation symmetry and is governed by the law 
+We also define the measure for the configurational canonical Coulomb gas ensemble in the upper-half plane  - which has an additional complex conjugation symmetry and is governed by the law 
 \begin{equation}
 	\dd \tilde{\p}_N^{(\beta)} (z_1, \cdots, z_N) \deff \frac{1}{\tilde{\pZ{N}{(beta)}}} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta |z_j - \bar{z}_k|^\beta \prod_{j=1}^{N} |z_j - \bar{z}_j|^\beta  \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j)
 	\label{Equation: Measure Symplectic Matrix}
 \end{equation}
-and would imply the normalization constant
+with normalization constant
 \begin{equation}
 	\tilde{\pZ{N}{(beta)}} \deff \int_{\C^N} \prod_{j > k = 1}^{N} |z_j - z_k|^\beta |z_j - \bar{z}_k|^\beta \prod_{j=1}^{N} |z_j - \bar{z}_j|^\beta  \ee^{- \frac{\beta N}{2} Q(z_j)} \dd A(z_j).
 \end{equation}
 
 \begin{definicao}
-	Let $\p_N^{(\beta)}$ be as in \eqref{Equation: Measure Symplectic Matrix}. If $\beta = 2$, $\p_N^{(2)}$ is the measure for the ensemble we call  \textbf{planar symplectic ensemble}. If, for example, one sets $Q(z) = |z|^2$ this would be called \textbf{symplectic Ginibre ensemble}.
+	Let $\p_N^{(\beta)}$ be as in \eqref{Equation: Measure Symplectic Matrix}. If $\beta = 2$, $\p_N^{(2)}$ is the measure for the ensemble we call  \textbf{planar symplectic ensemble}. If, for example, one sets $Q(z) = |z|^2$ this is called \textbf{symplectic Ginibre ensemble}.
 \end{definicao}
 
-Virtually all results we'll state for the random normal matrix ensemble are valid in the context of the planar symplectic ensemble with only a few adaptions. However, in the name of history telling and simplicity we will omit this measure: Adding this case to our chapter would cloud the point. For now on, we will only consider $\beta = 2$, this has some algebraic advantages that become clear by the Determinantal Point Processes structure (see \autoref{Section: DPP} for details) - because of this, we omit the $\beta$ in the variables ($\pZ{N}{(\beta)} \deff \pZ{N}{}$).
+Virtually all results we'll state for the random normal matrix ensemble are valid in the context of the planar symplectic ensemble with only a few adaptions. However, in the name of history telling and simplicity we will omit this measure: Adding this case to our chapter would cloud the point. For now on, we will only consider $\beta = 2$, this has some algebraic advantages that become clear by the determinantal point processes structure (see \autoref{Section: DPP} for details) - because of this, we omit the $\beta$ in the variables ($\pZ{N}{(\beta)} \deff \pZ{N}{}$).
 
 For the models of random matrices we are interested in, we must consider $\{P_n(z) = \sum_{j=0}^{n} a_j z^j\}_{n}^{(w)}$ a family of orthogonal polynomials in respect to $w$ where $P_m$ has order $m$. We're dealing with weight functions of the type
 \begin{equation}
@@ -95,11 +95,7 @@ This demands are essential for what follows and not all counter-intuitive. To re
 \section{Asymptotics on Droplets}
 
 We will use some radially symmetric potential $Q(z) : \C \rightarrow \R$ 
-which satisfies some nice growth and smoothness conditions, as specified in \autoref{Section: Working Model}. Because of the radial symmetry, one can take some function $q: \R \rightarrow \R$ such that $q(|z|) = Q(z)$; If we say that the $Q$ is sub-harmonic on the plane, i.e., $\Delta Q(z) \geq 0$ for all $z \in \C$, then
-\begin{equation}
-	\Delta Q(z) \geq 0 = \frac{1}{r} (r q'(r))' \geq 0 \implies rq'(r) \ \text{is increasing} \ \forall r \in \R,
-\end{equation}
-and strictly increasing in the droplet by the same reason. We begin by quickly considering the auxiliary result.
+which satisfies some nice growth and smoothness conditions, as specified in \autoref{Section: Working Model}. We begin by quickly considering the auxiliary result.
 \begin{lema}	\label{proposicaoosition: Partition function}
 	When dealing with a p.d.f. of invariant measure, one can write
 	\begin{equation}
@@ -127,13 +123,13 @@ Thus, one can write the free energy as
 	\ln \pZ{N}{} = \ln{N!} + \sum_{j=0}^{N-1} \ln{h_j},  \quad \text{where} \qquad h_k \deff \int_{\C} |z|^{2j} \ee^{-N Q(z)} \dd A(z)
 	\label{Equation: Partition Function}
 \end{equation}
-are the norming constant for the monomial family of orthogonal polynomials in respect to $\wf$ as in \eqref{Equation: Weight Function}. One could also write, for the planar symplectic ensemble 
+are the norming constant for the monomial family of orthogonal polynomials in respect to $\wf$ as in \eqref{Equation: Weight Function}. We also write, for the planar symplectic ensemble 
 \begin{equation}
 	\ln \tilde{\pZ{N}{}} = \ln{N!} +\sum_{j=0}^{N-1} \ln{2 \tilde{h}_{2j + 1}},  \quad \text{where}  \qquad \tilde{h}_k \deff \int_{\C} |z|^{2j} \ee^{- 2 N Q(z)} \dd A(z). 
 \end{equation} 
 The expressions derived for the normal ensemble would be easily adapted for this model, and it is done in \citeonline{Byun_2023}, however we will not follow that computation in name of clarity and storytelling.
 
-In order to derive the asymptotic formulas for the free energy we need to derive the asymptotics for the orthogonal polynomials, specifically for the integral of its norming constants expressed in \eqref{Equation: Partition Function}. The first step in the asymptotics is then to prepare the integral for the Laplace method. Our goal is to identify a region that gives the main contribution, in order, for value of the integral - and consequently to identify a error-contributing region of the integration domain. Let's reformulate our expression to identify the usual integral form for the Laplace method, such as in \autoref{chapter:asymptotics}. We know $Q(z) = q(|z|)$ a radially symmetric potential such that, defining $z \deff r \ee^{\ii \theta}$, that is, $|z| = r$, we would have
+In order to derive the asymptotic formulas for the free energy we need to derive the asymptotics for the orthogonal polynomials, specifically for the integral of its norming constants expressed in \eqref{Equation: Partition Function}. The first step in the asymptotics is then to prepare the integral for the Laplace method. Our goal is to identify a region that gives the main contribution, in order, for value of the integral - and consequently to identify a error-contributing region of the integration domain. Let's reformulate our expression to identify the usual integral form for the Laplace method, such as in \autoref{chapter:asymptotics}. We know $Q(z) = q(|z|)$ a radially symmetric potential such that, defining $z \deff r \ee^{\ii \theta}$, that is, $|z| = r$, we have
 \begin{align}
 	h_j & = \int_{\Theta} \int_{\R_+} r^{2j} \ee^{-N q(r)} \frac{r}{\pi} \dd r \dd \theta \\
 	& = \frac{2 \pi}{\pi} \int_{\R_+} r^{2j+1} \ee^{-N q(r)} \dd r \\
@@ -158,18 +154,28 @@ This is: We can find a critical point of the potential $r_c$, parameterized by t
 		r_ 1, \quad \text{the smallest solution of} \ r_1 q'(r_1) = 2.
 	\end{cases}
 \end{equation}
+
+With this two radius $r_0, r_1$ we defined the droplet as the region composed by every point $z$ such that $r_0 \leq |z| \leq r_1$. Because of the radial symmetry, one can take some function $q: \R \rightarrow \R$ such that $q(|z|) = Q(z)$; If we say that the $Q$ is sub-harmonic on the plane, i.e., $\Delta Q(z) \geq 0$ for all $z \in \C$, then
+\begin{equation}
+	\Delta Q(z) \geq 0 = \frac{1}{r} (r q'(r))' \geq 0 \implies rq'(r) \ \text{is increasing} \ \forall r \in \R,
+\end{equation}
+and strictly increasing in the droplet by the same reason. 
 Our main goal here is to evaluate the integral using the surroundings of the critical point. If this point is unique, then we need no more than to calculate the integral in a single small interval around $r_c(\tau)$. This is, of course, true: We have mentioned that the properties on the potential directly implies that $r q'(r)$ is a strictly increasing function of $[r_0, r_1]$, then the solution must be unique. Now, as outside the droplet the growth is not strict, the definitions of $r_0$ ad $r_1$ had to be as mentioned before: Respectively the largest and smallest solution to the proper instance of $rq'(r) = 2\tau$. An important distinction must be made between the cases when $r_0 = 0$ and $r_0 > 0$, corresponding to \autoref{Subsection: Disk} and \autoref{Subsection: Annulus}, respectively.  We begin noticing that $r_\tau | r_\tau q'(r_\tau) = 2 \tau$ is an increasing function on $\tau$ and that $r_0 \leq r_\tau \leq r_1 \ \forall \tau \in [0,2]$. As we'll be performing the Laplace technique, Gaussian integrals will be a big part of the result, more details on why can be found in \autoref{chapter:asymptotics}. As such, we state the following proposition.
 
 \begin{proposicao}	\label{Prop: Gaussian integrals}
 	The Gaussian integrals below can be evaluated as follows.
 	\begin{equation}
-		\int_{\R} \ee^{-2ar^2} \dd r = \sqrt{\frac{\pi}{2}} \frac{1}{a^{1/2}} \quad \implies \quad \int_{\R} \ee^{- 2 \left( \frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4} \right) y^2} = \sqrt{\frac{\pi}{2}} \left( \frac{4}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{1}{2}},
+			\int_{\R} \ee^{-2ar^2} \dd r = \sqrt{\frac{\pi}{2}} \frac{1}{a^{1/2}}, \quad 	\int_{\R} \ee^{-2ar^2} r^4 \dd r = \sqrt{\frac{\pi}{2}} \frac{3}{16} \frac{1}{a^{5/2}} \quad \text{and} \quad \int_{\R} \ee^{-2ar^2} r^6 \dd r = \sqrt{\frac{\pi}{2}} \frac{15}{64} \frac{1}{a^{7/2}}.
+	\end{equation}
+	Moreover,
+	\begin{equation}
+		 \quad \int_{\R} \ee^{- 2 \left( \frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4} \right) y^2} = \sqrt{\frac{\pi}{2}} \left( \frac{4}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{1}{2}},
 	\end{equation}
 	\begin{equation}
-		\int_{\R} \ee^{-2ar^2} r^4 \dd r = \sqrt{\frac{\pi}{2}} \frac{3}{16} \frac{1}{a^{5/2}} \quad \implies \quad \int_{\R} \ee^{- 2 \left( \frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4} \right) y^2} y^4 = \sqrt{\frac{\pi}{2}} \frac{3}{16} \left(\frac{4}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{5}{2}},
+		\quad \int_{\R} \ee^{- 2 \left( \frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4} \right) y^2} y^4 = \sqrt{\frac{\pi}{2}} \frac{3}{16} \left(\frac{4}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{5}{2}},
 	\end{equation}
 	\begin{equation}
-		\int_{\R} \ee^{-2ar^2} r^6 \dd r = \sqrt{\frac{\pi}{2}} \frac{15}{64} \frac{1}{a^{7/2}} \quad \implies \quad \int_{\R}\ee^{- 2 \left( \frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4} \right) y^2} y^6 = \sqrt{\frac{\pi}{2}} \frac{15}{64} \left( \frac{4}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{7}{2}}.
+		\quad \int_{\R}\ee^{- 2 \left( \frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4} \right) y^2} y^6 = \sqrt{\frac{\pi}{2}} \frac{15}{64} \left( \frac{4}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{7}{2}}.
 	\end{equation}
 \end{proposicao}
 
@@ -266,7 +272,7 @@ As mentioned, the first integral must be somehow controlled and the second estim
 		& = \ee^{-N V_{\tau(j)}(r_{\tau(j)})} \int_{|r - r_j| > \delta_N} 2r \ee^{-N \left( V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)}) \right)}  \ee^{-(M-M) \left( V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)}) \right)} \dd r, \\
 		& = \ee^{-N V_{\tau(j)}(r_{\tau(j)})} \int_{|r - r_j| > \delta_N} 2r \ee^{-M \left( V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)}) \right)}  \ee^{-(N-M) \left( V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)}) \right)} \dd r.
 	\end{align}
-	Now, we need some way to estimate the difference $(V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)})$. If we are able to say that this difference is at least $\Boh(N^{-1})$, we could control the growth of the integral choosing $M$ to be large enough such that
+	Now, we need some way to estimate the difference $(V_{\tau(j)}(r) - V_{\tau(j)}(r_{\tau(j)})$. If we are able to say that this difference is at least $\Boh(N^{-1})$, we control the growth of the integral choosing $M$ to be large enough such that
 	\begin{equation}
 		\int_{|r - r_j| > \delta_N} \left( \ee^{-q(r)} r^{2 \tau(j)} \right)^M r \dd r
 	\end{equation}
@@ -517,7 +523,7 @@ Then, the final expression becomes a question of balancing the results.
 	\begin{multline}
 		\sum_{j=0}^{N-1} \ln\left(\frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4}\right) = \int_{0}^{N} \frac{1}{4} \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) \dd t - \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) + \\ \frac{1}{12} \left[ \partial_t \frac{1}{4} \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=N} - \partial_t \frac{1}{4} \ln V^{(2)}_{\tau(t)}(r_{\tau(t)}) |_{t=0}\right]  + \Boh(N^{-3}).
 	\end{multline}
-	We first tackle the integral on the right hand side, changing variables as $s = r_{\tau(t)}$ we would have
+	We first tackle the integral on the right hand side, changing variables as $s = r_{\tau(t)}$ we have
 	\begin{equation}
 		\int_{0}^{N} \ln \frac{1}{4} V^{(2)}_{\tau(t)}(r_{\tau(t)}) \dd t = \frac{N}{2} \int_{r_0}^{r_1} \ln\left( \frac{1}{4} V^{(2)}(s)\right) (sq'(s))' \dd s.
 	\end{equation}
@@ -540,7 +546,7 @@ Then, the final expression becomes a question of balancing the results.
 	\begin{multline}
 		\sum_{j=0}^{N-1}  \ln(2 \pi r^2_{\tau(j)}) = \ln(2\pi) + 2 \left( \int_{0}^{N} \ln(r_{\tau(t)})  \dd t - \frac{1}{2} \ln\left(\frac{r_1}{r_0}\right) \right. \\ \left. + \frac{1}{12} \left[ \partial_t \ln r_{\tau(t)} |_{\tau=1} - \partial_t \ln r_{\tau(t)} |_{\tau=0}\right] + \Boh(N^{-3}) \right).
 	\end{multline}
-	We first tackle the integral on the right hand side, changing variables as $s = r_{\tau(t)}$ we would have
+	We first tackle the integral on the right hand side, changing variables as $s = r_{\tau(t)}$ we have
 	\begin{equation}
 		\int_{0}^{N} \ln r_{\tau(t)} \dd t = \frac{N}{2} \int_{r_0}^{r_1} \ln(s) (s q'(s))' \dd s.
 	\end{equation}
@@ -1253,7 +1259,7 @@ Finally, we turn our attention to gathering these propositions and proving the o
 		%& =  r_1 \frac{V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \int_{0}^{r_1} \frac{V^{(3)}(s)}{V^{(2)}(s)} \dd s  + \int_{0}^{r_1} \frac{V^{(3)}(s)^2}{V^{(2)}(s)^2} s \dd s \\
 		%& =  r_1 \frac{V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \ln\left( \frac{V^{(2)}_1(r_1)}{V^{(2)}_0(0)}\right) + \int_{0}^{r_1} \frac{V^{(3)}(s)^2}{V^{(2)}(s)^2} s \dd s
 	%\end{align}
-	%we would have
+	%we have
 	%\begin{multline}
 	%	\frac{1}{N} \sum_{j=m_N}^{N-1} \mathfrak{B}(r_{\tau(j)}) %= \frac{1}{6} \ln(r_1) - \frac{1}{12} \ln\left( \frac{4 m_N}{N V^{(2)}_0(0)} \right) - \frac{1}{3} \ln\left( \frac{V^{(2)}_1(r_1)}{V^{(2)}_0(0)} \right) \\ - \frac{r_1}{16} \frac{V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} + \frac{1}{24} \int_{0}^{r_1} \frac{V^{(3)}(s)^2}{V^{(2)}(s)^2} s \dd s
 %	\end{multline}

@@ -806,7 +806,7 @@
 %interacteing coulomb kernel
 \newcommand{\g}{\mathfrak{g}}
 
-\newcommand{\cpct}{cap}
+\DeclareMathOperator{\cpct}{cap}
 
 %------------------------------------------------------------
 % \e ensemble
@@ -849,9 +849,9 @@
 % Generic Set
 \newcommand{\Se}{\mathbb{S}}
 % Variance
-\newcommand{\Var}{\mathbb{V}ar}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
 % volume
-\newcommand{\vol}{Vol}
+\DeclareMathOperator{\vol}{Vol}
 % Jacobian
 \newcommand{\J}{J}
 \newcommand{\Hh}{\mathbb{H}}

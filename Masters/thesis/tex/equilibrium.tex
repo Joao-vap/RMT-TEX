@@ -1,12 +1,12 @@
 
-We have seen that the study of eigenvalues of random matrices is of interest and can be seen as a Point Process. For some specific models, one can further find a more rigid structure related to Determinantal Point Processes. These allow us to see eigenvalue distribution in terms of some correlation Kernel much easier to deal with than the initial formulation. Now, we will see that eigenvalue dynamics for invariant models can be though of as another DPP: The so called \textit{Coulomb gas}. These can be though of as a physical gas of repelling ions restricted to some conductor under some confining potential. Although it may be daunting to have yet another model to work with, these gases lead us directly to some nice interpretations and results. Namely, one can think of \textit{thermodynamic equilibrium} for a large enough number of particles and this makes complete sense in a physical setting. In our matrices, these equilibrium distributions refers to the univariate eigenvalue distribution, a very interesting characterization of a RMT model. On this chapter we will expand on these ideas.
+We have seen that the study of eigenvalues of random matrices is of interest and can be seen as a point process. For some specific models, one can further find a more rigid structure related to determinantal point processes. These allow us to see eigenvalue distributions in terms of some correlation Kernel much easier to deal with than the initial formulation. Now, we will see that eigenvalue dynamics for invariant models can be though of as another DPP: The so called \textit{Coulomb gas}. These can be though of as a physical gas of repelling ions restricted to some conductor under some confining potential. Although it may be daunting to have yet another model to work with, these gases lead us directly to some nice interpretations and results. Namely, one can think of \textit{thermodynamic equilibrium} for a large enough number of particles and this makes complete sense in a physical setting. In our matrices, these equilibrium distributions refer to the eigenvalue distribution, a very interesting characterization of a RMT model. On this chapter we will expand on these ideas.
 
 The section on Equilibrium Measures was based on the works of \citeonline{saff2024logarithmic} and \citeonline{deiftorthogonal}. We will define Coulomb Gases and try to motivate its importance in RMT. Afterwards we will explore the concept of equilibrium measures for these particle systems and state some important results relevant to computations that follows.
 
 \section{Coulomb Gases}
 \label{Section: Coulomb Gas}
 
-We start by describing a familiar distribution or physicists: The Boltzmann-Gibbs distribution. This is a probability distribution that represents the probability of a given state for a system of particles as a function of the system state's \textit{energy} ($\Hf$) and the \textit{temperature} ($1/(\beta n^2)$). This is the distribution that maximizes the entropy: lower energy states have higher probability of being occupied than states with higher energy. 
+We start by describing a familiar distribution for physicists: The Boltzmann-Gibbs distribution. This is a probability distribution that represents the probability of a given state for a system of $n$ particles as a function of the system state's \textit{energy} ($\Hf$) and the \textit{temperature} ($1/(\beta n^2)$). This is the distribution that maximizes the entropy: lower energy states have higher probability of being occupied than states with higher energy. 
 
 Suppose a set of $n$ particles at positions $\mmany{x}{n} \in \Sigma$, a \textit{conductor} of dimension $d$, or some configuration $\xi_n = (\mmany{x}{n})$, embedded in some space $\R^{dn}$.
 \begin{definicao}
@@ -19,28 +19,26 @@ Suppose a set of $n$ particles at positions $\mmany{x}{n} \in \Sigma$, a \textit
 	\begin{equation}
 		\Hf_n(\xi_n) = \frac{1}{n} \sum_{i = 1}^{n} \Q(x_i) + \frac{1}{2n^2} \sum_{i \neq j}^{n} \g(x_i - x_j)	
 	\end{equation}
-	is usually called the \textbf{Hamiltonian}, or more concretely, the \textbf{configurational energy} of the system. The function $\Q \colon \R^d \cong \Sigma \rightarrow \R$ is the external potential and $\pZ{n}{\beta}$ is the \textbf{partition function}, or normalization function, given by
+	is usually called the \textbf{Hamiltonian}, or more concretely, the \textbf{configurational energy} of the system. The function $\g \colon \Sigma \rightarrow (-\infty, \infty]$ is the \textit{Coulomb Interacting Kernel}, solution to the Poisson equation given by 
+	\begin{equation}
+		g_{d-2}(\vec{x})
+		\begin{cases}
+		= - \ln(|\vec{x}|), \quad \text{if} \ d-2 = 0, \\
+		= - \frac{1}{s|\vec{x}|^s}, \quad \text{if} \ d-2 \neq 0.
+		\end{cases}
+	\end{equation}
+	The function $\Q \colon \R^d \cong \Sigma \rightarrow \R$ is the external potential and $\pZ{n}{\beta}$ is the \textbf{partition function}, or normalization function, given by
 	\begin{equation}
 		\pZ{n}{\beta} = C_{n, \beta} \int_{{\R^d}^n}  \prod_{j=1}^{n} \dd x_j e^{-\beta n^2 \Hf_n(\xi_n)}.
 	\end{equation}
 \end{definicao}
- The measure $\p_n$ models an Coulomb-interacting gas of charged indistinguishable particles under some external field $\Q$. If one wishes $\dd \p_n$ to be a probability measure,  then one must ensure that $\Q$ is such that the normalizing constant $\pZ{n}{\beta}$ is finite for all $n$ and that the measure support $\supp{(\dd \p_n(\chi_n))}$ is compact. This is all to say that the potential should be confining: As the number of particles increases, it must counter the repulsion effect and keep limited the region where particles move around. The function $\g \colon \Sigma \rightarrow (-\infty, \infty]$ is the \textit{Coulomb Interacting Kernel}, solution to the Poisson equation given by $- \nabla g(\vec{x}) = c_n\delta_0$ and is the reason in the first place why the particles may diverge.
+ The measure $\p_n$ models an Coulomb-interacting gas of charged indistinguishable particles under some external field $\Q$. If one wishes $\dd \p_n$ to be a probability measure,  then one must ensure that $\Q$ is such that the normalizing constant $\pZ{n}{\beta}$ is finite for all $n$. This is all to say that the potential should be confining: As the number of particles increases, it must counter the repulsion effect and keep limited the region where particles move around.
 
-Recall the expression for invariant ensembles in Definition c{Definition: polynomial ensemble}, note that, rearranging the terms in \eqref{Equation: Coulomb Gas Measure} and considering a logarithm interaction kernel we get
+Recall the expression for invariant ensembles in \autoref{Definition: polynomial ensemble} and note that, for $d = 2$, rearranging the terms in \eqref{Equation: Coulomb Gas Measure} we get the previously discussed expression
 \begin{equation}
-	\dd \p_n(\mmany{x}{n}) = \frac{1}{\pZ{n}{\beta}}\prod_{1\leq j < k \leq n} |x_j - x_k|^\beta \prod_{j=1}^{n} \ee^{- \beta n \Q(x_j)} \mcmany{\dd x}{n}{}
+	\dd \p_n(\mmany{x}{n}) = \frac{e^{-\beta n^2 \Hf_n(\xi_n)}}{\pZ{n}{\beta}} \prod_{i=1}^n \dd x_i = \frac{1}{\pZ{n}{\beta}}\prod_{1\leq j < k \leq n} |x_j - x_k|^\beta \prod_{j=1}^{n} \ee^{- \beta n \Q(x_j)} \dd x_j.
 \end{equation}
-This is to say that for invariant ensembles, their eigenvalues behave as a Coulomb gas. This opens the way for interpretations on the distribution of eigenvalues but also to computations using simulation methods for particle dynamics.
-
-\mycomment{
-\begin{exemplo}
-	For some $\Q \colon \R \rightarrow \R$, we can take the appropriate dimensions for $d=1$ and $n = 2$ to recover the, for example, GUE ensemble density
-	\begin{equation}
-		\p_N(\vec{x}) = \frac{e^{-\beta N^2 \Hf_N(\vec{x})}}{Z_{N,\beta}}, \quad \Hf_N(\vec{x}) = \frac{1}{N} \sum_{i = 1}^{N} \frac{x_i^2}{2} + \frac{1}{N^2} \sum_{i < j}^{N} \ln{\frac{1}{|x_i - x_j|}}.
-	\end{equation}
-	In this case, we would be dealing with particles on the plane confined to move only on the real line. However, the gases measure accepts a natural extension for any potential that we call acceptable - that obeys some growth and smoothness conditions. Together with the dimensions, we can recover other invariant random matrix models.
-\end{exemplo}
-}
+This is to say that eigenvalues from invariant ensembles behave as a Coulomb gas. This opens the way for interpretations on the distribution of eigenvalues but also to computations using simulation methods for particle dynamics.
 
 \begin{exemplo}
 	 As explored in \citeonline{Chafal}, a few classical algorithms of simulation are very successful in replicating the measures for Coulomb gas systems. Equivalently, if one is interested in sampling eigenvalues for $\beta = 2$ invariant ensembles, one can sample from its configuration equilibrium $\p_Q(\lambda)$ in respect to some potential $V$ using simulation of the particles. Consider for example the non-trivial case explored in \citeonline{balogh2016orthogonal}, where, taken $d = 2$ and $n = 2$ we will have $W(x) = g(x) = \log{|x|}$ and impose the potential
@@ -264,14 +262,14 @@ This is to say that for invariant ensembles, their eigenvalues behave as a Coulo
 	\end{figure}
 \end{exemplo}
 
-\section{Equilibrium Measure}
+\section{Equilibrium Measures}
 \label{Section: Equilibrium}
 
-The description of the eigenvalues as a Coulomb gas and as a Point Process lead us to the idea of minimizing some type of energy of the system by finding equilibrium configurations  $\xi_n = \{\mmany{x}{n}\}$. Especially interesting is the case when $n$ tends to a large enough number as it simplifies some structures and the results. 
+Especially interesting is the case when $n$ tends to a large enough number. The description of the eigenvalues as a Coulomb gas and as a point process in such limit lead us to the idea of minimizing some type of energy of the system by finding equilibrium configurations  $\xi_n = \{\mmany{x}{n}\}$; one can think of the thermodynamic idea of equilibrium in gas systems.
 
 To clarify the point, suppose we are dealing with the density
 \begin{equation}
-	\p_n(\xi_n) = \frac{e^{-\beta n^2 \Hf_n(\chi_n)}}{Z_{n,\beta}}, \quad \Hf_n(\chi_n) = \frac{2}{n} \sum_{i = 1}^{n} Q(x_i) + \frac{1}{n^2} \sum_{i < j}^{n} \ln{\frac{1}{|x_i - x_j|}}. 
+	\p_n(\xi_n) = \frac{e^{-\frac{\beta n^2}{2} \Hf_n(\chi_n)}}{Z_{n,\beta}}, \quad \Hf_n(\chi_n) = \frac{2}{n} \sum_{i = 1}^{n} Q(x_i) + \frac{1}{n^2} \sum_{i \neq j}^{n} \ln{\frac{1}{|x_i - x_j|}}. 
 \end{equation}
 For any $n$-configuration $\xi_n = \{\mmany{x}{n}\}$, let $\mu_x$ be the normalized counting measure on $\C$,
 \begin{equation}
@@ -279,7 +277,7 @@ For any $n$-configuration $\xi_n = \{\mmany{x}{n}\}$, let $\mu_x$ be the normali
  \end{equation} 
  Then
 \begin{equation}
-	\frac{1}{n^2} \sum_{i < j} \ln{|x_i - x_j|^{-1}} + \frac{2}{n} \sum_{i=1}^n \Q(x_i)
+	\frac{1}{n^2} \sum_{i \neq j} \ln{|x_i - x_j|^{-1}} + \frac{2}{n} \sum_{i=1}^n \Q(x_i) 
 \end{equation}
 may be written in the form 
 \begin{equation}
@@ -293,7 +291,7 @@ where
 \begin{equation}
 	\M^1(\R) = \left\{ \mu \in \text{Borel measures on} \ \R \ \bigg| \int \dd \mu = 1 \right\}.
 \end{equation}
-The quantity $E^{(Q)}$ is the \textit{equilibrium energy} of the system and $I_Q(\mu_x)$ is the \textit{energy integral}. However, we must step backwards so that we can advance.
+The quantity $E^{(Q)}$ is the \textit{equilibrium energy} of the system and $I_Q(\mu_x)$ is the \textit{energy integral}. However, to analyze this case, we first consider the simplified case without an external potential. 
 
 The classical case for such minimization problems corresponds to the cases when the conductor $\Sigma$ is compact and the external field $\Q$ is zero. Under some mild conditions on the external field, however, the equilibrium measure $\mu_\Q$ - the measure that minimizes such problem - has a unique solution which is a measure of compact support. For it to be compact, $\Q$ the confining potential, must increase sufficiently fast around infinity. Let $\Sigma \subseteq \C$ be a compact subset of the complex plane and $\M(\Sigma)$ be the collection of all positive Borel measure of compact support in $\Sigma$. Let $\mu \in \M(\Sigma)$ be such a measure in the complex plane $\C$.
 \begin{definicao}
@@ -315,7 +313,7 @@ The classical case for such minimization problems corresponds to the cases when 
 This logarithmic potential can be interpreted as the equivalent interaction potential of the system of $n$ identical particles distributed with $\mu$ where the repelling force between two particles is proportional to the distance between them.  There are a few useful properties one can extract about this quantity.
 
 \begin{proposicao} \cite{saff2024logarithmic}
-	The logarithmic potential are super-harmonic on the whole plane, that is, they have the following properties.
+	Let $\mu$ be a finite positive Borel measure of compact support on the complex plane $\C$. Then the logarithmic potential are super-harmonic on the whole plane, that is, they have the following properties.
 	\begin{enumerate}
 		\item $U^{\mu}(z) > -\infty$ for all $z$,
 		\item $U^{\mu}$ is lower semi-continuous,
@@ -323,11 +321,11 @@ This logarithmic potential can be interpreted as the equivalent interaction pote
 	\end{enumerate}
 \end{proposicao}
 \begin{proof}
-	Firstly, property $(1)$ follows directly by the properties of $\mu$, especially the compact support. The property $(2)$ can be proven noticing that
+	Firstly, property $(1)$ follows directly by $(2)$, since a lower semi-continuous function is everywhere $> -\infty$ and $\mu$ has compact support. Property $(2)$ can be proven noticing that
 	\begin{equation}
 		U^\mu(z) = \lim_{M \rightarrow \infty} \int \min\left( M, \ln \frac{1}{|z - t|} \right) \dd \mu (t).
 	\end{equation}
-	The functions on the right-hand side are continuous and increasing with $M$, such limit of an increasing sequence of functions must be lower semi-continuous. To prove $(3)$, note that the kernel $\ln(1/|z-t|)$ is super-harmonic in $\C$ for each $t$. If some $F$ is analytic in a domain $D$ and $\rho > 0$, then $|F(z)|^\rho$ is sub-harmonic in $D$; furthermore, $\ln |F(z)|$ is sub-harmonic in $D$ provided $F$ is not identically zero. Thus, 
+	The functions on the right-hand side are continuous and increasing with $M$, and limit of an increasing sequence of functions must be lower semi-continuous. To prove $(3)$, note that the kernel $\ln(1/|z-t|)$ is super-harmonic in $\C$ for each $t$. If some $F$ is analytic in a domain $D$ and $\rho > 0$, then $|F(z)|^\rho$ is sub-harmonic in $D$; furthermore, $\ln |F(z)|$ is sub-harmonic in $D$ provided $F$ is not identically zero. Thus, 
 	\begin{equation}
 		\frac{1}{2\pi} \int_{-\pi}^{\pi} \ln{\frac{1}{|z - r\ee^{\ii \theta} - t|}} \dd \theta \leq \ln \frac{1}{|z-t|}, \quad z, t \in \C.
 	\end{equation}
@@ -356,7 +354,7 @@ The energy $V$ can be finite or $+\infty$, and in the finite case there is a uni
 		\cpct{(\Sigma)} \deff \ee^{-V}.
 	\end{equation}
 \end{definicao} 
-The capacity for an arbitrary Borel set $E$ is defined by the supreme of the capacity of all the compact subsets $K \subseteq E$. Naturally, the capacity of a subset of a Borel set of capacity zero is said to be zero. The union of zero-capacity Borel sets can also be shown to be a zero-capacity Borel set. A property is said to hold \sigla{q.e.}{\textit{quasi-everywhere}} on a set $E$ if the set of non  conforming points is of capacity zero. Then, we can say that
+The capacity for an arbitrary Borel set $E$ is defined by the supremum of the capacity of all the compact subsets $K \subseteq E$. Naturally, the capacity of a subset of a Borel set of capacity zero is said to be zero. The union of zero-capacity Borel sets can also be shown to be a zero-capacity Borel set. A property is said to hold \sigla{q.e.}{\textit{quasi-everywhere}} on a set $E$ if the set of non  conforming points is of capacity zero. Then, we can say that
 \begin{equation}
 	U^\mu_\Sigma(z) = V, \quad \text{q.e.} \  z \in \Sigma. 
 \end{equation} 
@@ -398,7 +396,7 @@ Let $\M(\Sigma)$ be the collection of all positive unit Borel measures $\mu$ wit
 \end{align}
 is recovered if both integrals exist and are finite. We can now move on to the matter of existence of an \textit{equilibrium measure} $\mu^{\Q}$ for a given external field $\Q$ given by some polynomial
 \begin{equation}
-	Q(x) = t_{2m} x^{2m} + t_{2m-1} x^{2m - 1} + \cdots + t_0, \quad t_{2m} > 0, V(x) \geq 0.
+	Q(x) = t_{2m} x^{2m} + t_{2m-1} x^{2m - 1} + \cdots + t_0, \quad t_{2m} > 0, Q(x) \geq 0.
 	\label{Equation: Potential Q}
 \end{equation}
 \begin{teorema}	\label{Theorem: existence equilibrium}
@@ -427,7 +425,7 @@ is recovered if both integrals exist and are finite. We can now move on to the m
 	\begin{equation}
 		\psi^{\Q}(x) \deff Q(x) - \ln(|x|^2 + 1),
 	\end{equation}
-	and note that $\psi^{\Q}(x) \geq c_Q > - \infty$, we would have
+	and note that $\psi^{\Q}(x) \geq c_Q > - \infty$, we have
 	\begin{equation}
 		k^{\Q}(t,s) \geq \frac{1}{2} \psi^{\Q}(t) + \frac{1}{2} \psi^{\Q}(s) \geq c_Q.
 	\end{equation}
@@ -531,7 +529,7 @@ Associated with the variational problem introduced on \autoref{Section: Equilibr
 	& =   \inf_{\mu \in \M^1} \left[ \int \int \ln |t - s|^{-1} \dd \mu(t) \dd \mu(s) + 2 \int \Q(s) \dd  \mu(s) \right], \\
 	&  = I^{\wf} (\mu^{\wf}),
 \end{align}
-one could define the so-called \textit{Euler-Lagrange} type variational equations. They are important as they provide a tool, for some cases, to solve these equations for the equilibrium measure $\mu^{\wf}$.
+one can define the so-called \textit{Euler-Lagrange} type variational equations. They are important as they provide a tool, for some cases, to solve these equations for the equilibrium measure $\mu^{\wf}$.
 
 \begin{teorema} (Variational Equations, \cite{deiftorthogonal})
 	The equilibrium measure $\mu^\wf$ for the given variational problem in \autoref{Section: Equilibrium} satisfies the following conditions. 
@@ -588,7 +586,7 @@ one could define the so-called \textit{Euler-Lagrange} type variational equation
 	\end{equation}
 	where $\chi_B$ is the characteristic function of the set $B$. Then $\mu^*_B \in \M^1(\C)$ has compact support and $I^\wf(\mu^*) < \infty$. inserting $\dd \mu^*_B$ in \eqref{Equation: Proof Euler >l}, we find
 	\begin{equation}
-		l \leq \int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) \right] \dd \frac{\chi_B}{\mu^*(B)} \mu^*(x) < l
+		l \leq \int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + 2 \Q(x) \right] \dd \mu^*_B(x) < l
 	\end{equation}
 	a contradiction. Therefore, 
 	\begin{equation}
@@ -702,7 +700,7 @@ Remember the expression for the Gibbs-Boltzmann measure of Coulomb gases
 \begin{equation}
 	\dd \p_n (\xi_n) = \frac{1}{\pZ{n}{\beta}} \ee^{-\beta n^2 \Hf_n(\xi_n)} \prod_{i = 1}^{n} \dd x_i.
 \end{equation}
-As discussed, this expression refers to a thermodynamic fluid of particles with positions $\xi_n = \mmany{x}{n}$ on a conductor $\Sigma$, in equilibrium at some inverse temperature $\beta$ an submitted to a confining potential $Q$ and a repulsive logarithmic term of interaction.  Because of the term $\beta n^2$, taking the asymptotic $n \rightarrow \infty$ means at the same time zero temperature and the thermodynamic limit. Physically, understanding the equilibrium positions would be equivalent to minimizing the \textit{Free Energy} $F = - (1/\beta) \ln \pZ{n}{\beta}$. Let's describe the idea behind such minimization. More details can be found in \citeonline{Livan_2018}.
+As discussed, this expression refers to a thermodynamic fluid of particles with positions $\xi_n = \mmany{x}{n}$ on a conductor $\Sigma$, in equilibrium at some inverse temperature $\beta$ an submitted to a confining potential $Q$ and a repulsive logarithmic term of interaction.  Because of the term $\beta n^2$, taking the asymptotic $n \rightarrow \infty$ means at the same time zero temperature and the thermodynamic limit. Physically, understanding the equilibrium positions would be equivalent to minimizing the \textit{Free Energy} $F = - (1/\beta) \ln \pZ{n}{\beta}$. Let's describe the idea behind such minimization. This section \textit{is in no way rigorous}, its only purpose is to connect the idea of equilibrium problems with the asymptotics we will perform on \autoref{chapter: planarensembles} and elucidate where the expression for the free energy comes from. More details can be found in \citeonline{Livan_2018}.
 
 Lets first take the normalized counting measure, already introduced in \autoref{Section: DPP},
 \begin{equation}
@@ -737,7 +735,7 @@ where
 \begin{equation}
 	\Hf_n(\n(x)) = \int_{\R^d} n(x) Q(x) \dd x + \frac{1}{2} \int \int_{\R^{2d}} \dd x \dd y \n(x) \n(y) \ln |x - y| - \frac{1}{2n} \int_{\R^d} \dd x \n(x) \ln \Delta (x). 
 \end{equation}
-There is some interpretations ot me made about $I_n[\n(x)]$.  Physically it is possible to think of it as a count of how many microstates $\xi_n$ are compatible with the macrostate $\n(x)$. The logarithm of this quantity is proportional to the entropy of such system. Rewrite this function as
+There is some interpretations to me made about $I_n[\n(x)]$.  Physically it is possible to think of it as a count of how many microstates $\xi_n$ are compatible with the macrostate $\n(x)$. The logarithm of this quantity is proportional to the entropy of such system. Rewrite this function as
 \begin{align}
 	I_n[\n(x)] & = \int \dd [\n(x)] \int_{\R^{dn}} \prod_{j=1}^{n} \dd x_j \exp{ \left[\ii n \int \dd x \n(x) \hat{\n}(x) - \ii \int \dd x \hat{\n}(x) \sum_{i=1}^{n} \delta(x - x_i) \right]} \\
 	& =  \int \dd [\n(x)]  \exp{\left[ \ii n \int_{\R^{dn}} \dd x \n(x) \hat{\n}(x) \right]} \left[ \int_{\R^d} \dd y \ee ^{\ii \int_{\R^d} \dd x \hat{\n}(x) \delta(x- x_i) } \right]^n \\
@@ -749,7 +747,7 @@ where
 	S[\hat{\n}(x) | \n(x)] = \ii \int_{\R^{dn}} \dd x \n(x) \hat{\n}(x) + \log \int_{\R^d} \dd y \ee^{-\ii \hat{\n}(x)}.
 \end{equation}
 
-The most important thing to notice here is that \eqref{Equation: logarithmic energyy - entropy} is of the form required for the Laplace asymptotic technique discussed in \autoref{chapter:asymptotics}. This means that t can be estimated, if $S$ has a maxima with strictly negative second derivative, by the evaluation at its maximum point. One can find 
+The most important thing to notice here is that \eqref{Equation: logarithmic energyy - entropy} is of the form required for the Laplace asymptotic technique discussed in \autoref{chapter:asymptotics}. This means that it can be estimated, if $S$ has a maxima with strictly negative second derivative, by the evaluation at its maximum point. One can find 
 \begin{align}
 	0 & = \frac{\partial S}{\partial \hat{\n}(x)} = \ii \n(x) - \ii \frac{\ee^{-\ii \hat{\n}(x)}}{\int_{\R^d} \dd y \ee^{-\ii \hat{\n}(y)}} \\
 	& \implies -\ii \hat{\n}(x) = -\ln(\n(x)) - \log \int_{\R^{d}} \dd y \ee^{-\ii \hat{\n}(y)},
@@ -758,7 +756,7 @@ for the critical counting function. Then, substituting,
 \begin{equation}
 	I_n[\n(x)] \approx \exp{\left[ -n \int_{\R^{nd}} \dd x \n(x) \ln(\n(x)) \right]},
 \end{equation}
-which has the form of the Shannon entropy of the density $\n(x)$. there is an classical argument that states that $\Delta(x) \approx c / (n \n(x))$, i.e., the higher the density of particles around a point $x$, the smaller the average distance between them. Thus, 
+which has the form of the Shannon entropy of the density $\n(x)$. There is an classical argument that states that $\Delta(x) \approx c / (n \n(x))$, i.e., the higher the density of particles around a point $x$, the smaller the average distance between them. Thus, 
 \begin{align}
 	\int_{\R^d} \dd x \n(x) \ln \Delta (x) & \approx \int_{\R^d} \dd x \n(x) \ln\left( \frac{c}{n \n(x)}\right)  \\
 	& = \int_{\R^d} \dd x \n(x) \left(\ln c - \ln n + \ln \n(x) \right) \\

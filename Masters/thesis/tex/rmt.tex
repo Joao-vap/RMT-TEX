@@ -4,7 +4,7 @@ There are many instances where one might want to describe the behavior of a set 
 Random matrices can be defined in two ways: As a measurable function from a probability space into a set of matrices or, more concretely, as a matrix whose entries are random variables with some joint distribution. In some cases there is an explicit density formula for the eigenvalues of such random matrix. We will be interested in these cases, which we call \textit{Invariant Ensembles}. Moreover, we will be particularly interested in a subset of ensembles in which this density is expressed as a \textit{Kernel} - a matricial object that contains the statistical characterization of the system. This is called determinantal structure and will lead us to the concept of \sigla{DPP}{Determinantal Point Processes}.
 
 
-What follows is my best attempt in introducing the concepts in \sigla{RMT}{Random Matrix Theory} that are pertinent to the scope of this work and of general interest, albeit inside the limitations of time, effort and experience.  The definitions and some structure in regards to RMT, in the chapter that follows, are heavily based on the incredibly organized and written Thesis by  \citeonline{rahman2023recursivecharacterisationsrandommatrix}. Furthermore, definitions and some ideas for Point Processes and Determinantal Point Processes given in this chapter follow very closely the well structured works of \citeonline{SERFOZO19901}, \citeonline{JOHANSSON20061} and \citeonline{ManuelaGirottiPhD}.
+What follows is my best attempt in introducing the concepts in \sigla{RMT}{Random Matrix Theory} that are pertinent to the scope of this work and of general interest, albeit inside the limitations of time, effort and experience.  The definitions and some structure in regards to RMT, in the chapter that follows, are heavily based on the incredibly organized and written Thesis by  \citeonline{rahman2023recursivecharacterisationsrandommatrix}. Furthermore, definitions and some ideas for point processes and determinantal point processes given in this chapter follow very closely the well structured works of \citeonline{SERFOZO19901}, \citeonline{JOHANSSON20061} and \citeonline{ManuelaGirottiPhD}.
 
 \section{Random Matrix}
 
@@ -242,14 +242,14 @@ This measure will allow us to define the ensembles we are interest in; nominally
 	\begin{equation}
 		\eP^{(G)}(\m{H}) = \frac{1}{\pZ{n,\beta}{(G)}} \exp{\left(-\tr(\m{H}^2)\right)}.
 	\end{equation} 
-	We could also define other ensembles in the so-called class of Classical Ensembles. Let $\m{G}$ be drawn from the $n \times m$ real, complex or quaternionic Ginibre Ensemble. Then, the random matrix $\m{W} = (\m{G}^{\dagger} \m{G})$ represents the corresponding $(m,n)$ \textbf{Laguerre ensemble} (also known as \textit{Wishart}). Furthermore we say $\m{Y}$ an element of the $(m_1, m_2, n)$ real, complex and quaternionic \textbf{Jacobi Ensemble} if it is of the form $\m{Y} = \m{W}_1 (\m{W}_1 + \m{W}_2)^{-1}$ where each $\m{W}_i$ belong to the corresponding $(m_i, n)$ Laguerre ensembles with $m_i \geq n$.
+	We also define other ensembles in the so-called class of Classical Ensembles. Let $\m{G}$ be drawn from the $n \times m$ real, complex or quaternionic Ginibre Ensemble. Then, the random matrix $\m{W} = (\m{G}^{\dagger} \m{G})$ represents the corresponding $(m,n)$ \textbf{Laguerre ensemble} (also known as \textit{Wishart}). Furthermore we say $\m{Y}$ an element of the $(m_1, m_2, n)$ real, complex and quaternionic \textbf{Jacobi Ensemble} if it is of the form $\m{Y} = \m{W}_1 (\m{W}_1 + \m{W}_2)^{-1}$ where each $\m{W}_i$ belong to the corresponding $(m_i, n)$ Laguerre ensembles with $m_i \geq n$.
 \end{exemplo}
 
 To study random matrices, we need to determine which quantities related to the matrix we want to measure. This may be the expectation of some function on the matrices or even on the eigenvalues and eigenvectors, if they exist. Assume a matrix is such that it is determined by a set of eigenvalues and eigenvectors. While eigenvectors may be of interest in some cases, eigenvalue statistics have been noticeably more explored. For some matrix $\m{M}$, one of the quantities one might want to take on are the \textit{average} or \textit{expected characteristic polynomial} 
 \begin{equation}
 	P_n(x) = \E[ \det\left(x \m{I}_n - \m{M}\right)], \quad n \in \N.
 \end{equation}
-The characteristic polynomial have roots that coincide with the eigenvalues. Therefore, morally, roots of an averaged characteristic polynomial could be thought of as the typical set of eigenvalues for the random matrix model chosen for $\m{M}$. For random Hermitian matrices associated with some probability distribution $\det({\wf(\m{M})})$, then the average characteristic polynomial is simply the monic orthogonal polynomial $P_n^\wf(x)$ of degree $n$ with respect to the weight function $\wf(X)$. \cite{EdelmanConditionNumbers}
+The characteristic polynomial have roots that coincide with the eigenvalues. Therefore, morally, roots of an averaged characteristic polynomial can be thought of as the typical set of eigenvalues for the random matrix model chosen for $\m{M}$. For random Hermitian matrices associated with some probability distribution $\det({\wf(\m{M})})$, then the average characteristic polynomial is simply the monic orthogonal polynomial $P_n^\wf(x)$ of degree $n$ with respect to the weight function $\wf(X)$. \cite{EdelmanConditionNumbers}
 
 \begin{exemplo} 	\label{Example: Hermite-GUE}
 	(Expected characteristic polynomial for Gaussian Unitary matrices)
@@ -336,7 +336,7 @@ is the expect number of eigenvalues lying between $a$ and $b$.
 		\dd \p_n^{(\beta)} (z_1, \cdots, z_n) \deff \frac{1}{\pZ{n}{(2)}} \prod_{j > k = 1}^{n} |z_j - z_k|^2 \prod_{j=1}^{n} \ee^{- n Q(z_j)} \dd A(z_j).
 		\label{Equation: Measure Normal Matrix}
 	\end{equation}
-	This is the expression for the measure of the \textit{random normal matrix} ensemble. Setting $Q(z) = |z|^2$ this would be the so-called \textit{complex Ginibre ensemble}. Consider, however, $Q(z) = q(|z|)$ for some $q: \R \mapsto \R$, i.e., $Q$ is a radially symmetric potential. The theory says that the roots of such ensemble should be distributed in a disk or annulus. However, $\set{z^j}_j$ are the family of orthogonal polynomials associated with $\wf =  \ee^{- n Q(z)}$. Clearly its roots, which concentrate at zero, could not agree with the distribution of eigenvalues.
+	This is the expression for the measure of the \textit{random normal matrix} ensemble. Setting $Q(z) = |z|^2$ this is the so-called \textit{complex Ginibre ensemble}. Consider, however, $Q(z) = q(|z|)$ for some $q: \R \mapsto \R$, i.e., $Q$ is a radially symmetric potential. The theory says that the roots of such ensemble should be distributed in a disk or annulus. However, $\set{z^j}_j$ are the family of orthogonal polynomials associated with $\wf =  \ee^{- n Q(z)}$. Clearly its roots, which concentrate at zero, do not agree with the distribution of eigenvalues.
 \end{exemplo}  
 
 \mycomment{
@@ -357,7 +357,7 @@ where $m_k$ is their \textit{spectral moments} defined by
 \begin{equation}
 	m_k \deff \int_{\R} \lambda^k \pe(\lambda) \dd \lambda, \ k \in \N.
 \end{equation} 
-The spectral moments can additionally be expressed as an average with respect ot the eigenvalue j.p.d.f. $\p(\mmany{\lambda}{n})$ and the p.d.f. $\eP(X)$ of the random matrix $\m{X}$ according to
+The spectral moments can additionally be expressed as an average with respect to the eigenvalue j.p.d.f. $\p(\mmany{\lambda}{n})$ and the p.d.f. $\eP(X)$ of the random matrix $\m{X}$ according to
 \begin{equation}
 	m_k = \left\langle \sum_{i=1}^{n} \lambda_i^k \right\rangle = \left\langle \tr(\m{X}^k) \right\rangle_{\eP(\m{X})}
 \end{equation}
@@ -383,7 +383,7 @@ where we define
 \section{Determinantal Point Processes}
 \label{Section: DPP}
 
-Interested in examining the matter of the distribution of eigenvalues we need to understand the previously introduced empirical counting measure $\delta_{\m{M}}$. Then, we define some probability measure over these counting measures - what we call a \textit{Point Process}. For that, suppose there are $m$ points at random locations in some region $\Lambda$, a complete separable metric space, given by some configuration $\chi_m = \set{\mmany{x}{m}}$. We define a quantity $\xi(A)$ that measures the amount of points ($\#\set{\chi_m \cap A}$) for any sub-region $A \subset \Lambda$ in the following way:
+Interested in examining the matter of the distribution of eigenvalues we need to understand the previously introduced empirical counting measure $\delta_{\m{M}}$. Then, we define some probability measure over these counting measures - what we call a \textit{point process}. For that, suppose there are $m$ points at random locations in some region $\Lambda$, a complete separable metric space, given by some configuration $\chi_m = \set{\mmany{x}{m}}$. We define a quantity $\xi(A)$ that measures the amount of points ($\#\set{\chi_m \cap A}$) for any sub-region $A \subset \Lambda$ in the following way:
 \begin{equation}
 	\xi(A) = \sum_{k=1}^{m} \Ind_{A}(x_k).
 \end{equation}
@@ -399,7 +399,7 @@ for some $\chi = \{\mmany{x}{{\xi(B)}}\}$, $x_i \in B \ \forall \ 1 \leq i \leq 
 \end{definicao}
 
 \begin{exemplo}
-	The \textit{Poisson Point Process} $\mathbb{P}^{(P)}$ is defined on $\R$ by some parameter $\Lambda$. This (temporal) point process $\mathbb{P}^{(P)}$ takes value $k$ at some time $t$ (in the interval $(0,t)$) with probability
+	The \textit{Poisson point process} $\mathbb{P}^{(P)}$ is defined on $\R$ by some parameter $\Lambda$. This (temporal) point process $\mathbb{P}^{(P)}$ takes value $k$ at some time $t$ (in the interval $(0,t)$) with probability
 	\begin{equation}
 		\mathbb{P}^{(P)}[\xi^{(P)}(t) = k] = \frac{\Lambda^k e^{-\Lambda}}{k!},
 	\end{equation}
@@ -486,14 +486,14 @@ For simple points processes on $\R$ there is a direct way to understand correlat
 	as given by \eqref{Equation: Symmetric correlation}.
 \end{exemplo}
 
-There is however more structure to the point processes we are interested in: We have repulsion. Repulsive random processes are, in general, hard to study, that is, they are usually difficult to, for example, compute marginals and conditional probabilities. In these cases, their theoretical analysis is a major challenge. However, there is a class of processes that are an exception to this rule: \textit{Determinantal Point Processes}; or Fermionic point processes in the physics literature, are random processes that have the property of being both repulsive and tractable. \cite{Tremblay} This property comes from the fact that their correlation functions can be expressed in a certain determinantal form. We now make this precise.
+There is however more structure to the point processes we are interested in: We have repulsion. Repulsive random processes are, in general, hard to study, that is, they are usually difficult to, for example, compute marginals and conditional probabilities. In these cases, their theoretical analysis is a major challenge. However, there is a class of processes that are an exception to this rule: \textit{determinantal point processes}; or Fermionic point processes in the physics literature, are random processes that have the property of being both repulsive and tractable. \cite{Tremblay} This property comes from the fact that their correlation functions can be expressed in a certain determinantal form. We now make this precise.
 
 \begin{definicao}
 	Consider a point process $\mathbb{P}$ on a complete separable metric space $\Lambda$, with reference measure $\p_n$, all of whose correlation functions $\p_k$ exist. If there is a function $K: \Lambda \times \Lambda \rightarrow \C$ such that 
 	\begin{equation}
 		\p_k(\mmany{x}{k}) = \det(K(x_i, x_j))_{i,j = 1}^{k}
 	\end{equation}
-	for all $\mmany{x}{k} \in \Lambda, \ k \geq 1$, then we say that $\mathbb{P}$ is a \textbf{Determinantal Point Process}. We call $K$ the \textbf{correlation kernel} of the process. 
+	for all $\mmany{x}{k} \in \Lambda, \ k \geq 1$, then we say that $\mathbb{P}$ is a \textbf{determinantal point process}. We call $K$ the \textbf{correlation kernel} of the process. 
 \end{definicao}
 
 \begin{exemplo} 	\label{Exemplo: Kernel GUE}
