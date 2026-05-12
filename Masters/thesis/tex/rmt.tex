@@ -498,7 +498,7 @@ There is however more structure to the point processes we are interested in: We 
 
 \begin{exemplo} 	\label{Exemplo: Kernel GUE}
 	(Eigenvalue for orthogonal polynomial ensembles)
-	We have shown in \autoref{Subsection: Orthogonal Ensembles} that
+	We will show in \autoref{Subsection: Orthogonal Ensembles} that
 	\begin{equation}
 		\p_k^{(w)}(\mmany{\lambda}{k};n;\beta=2)  = \det\left[ K_n^{(2)}(\lambda_i, \lambda_j) \right]_{i,j=1}^{k},
 	\end{equation}
@@ -754,14 +754,14 @@ where $\dd \m{\Lambda}$ is the Lebesgue measure on the space housing the eigenva
 	describes the $n$-sized \sigla{OPE}{\textbf{orthogonal polynomial ensemble}}.
 \end{definicao}
 
-If we stare at \eqref{Equation: orthogonal polynomial ensemble} formula strongly and for long, the terms become less mysterious. One  may notice that this expression is simply given by the normalized product of some weight function $\wf(\lambda) = \ee^{- 2N V(\lambda)}$ and the Jacobian of the transformation $\m{M} \mapsto \m{G} \m{\Lambda} \m{G}^*$ to be given by the Vandermonde determinant (to some exponent $\beta$). This is an interesting observation and it is in accordance to \eqref{Equation: invariance pseudodefinition}. More than that, there is an observation to be made here in terms of the behavior of the eigenvalues. Notice that the Jacobian takes arbitrarily small values if there are equally arbitrarily close eigenvalues in the set. At first instance this means that our set is most likely simple, i.e. without repeated eigenvalues. Moreover it also means that the eigenvalues show some repulsion with each-other. Why then one might not expect the eigenvalues to scatter in the line? This is the role of the weight function. More than characterizing the ensemble, in the formula it has the role of ensuring integrability, i.e., holding the eigenvalues in a compact set. If this feels like some physical repelling system, fear not, this interpretation will be expanded in \autoref{Section: Coulomb Gas}.
+If we stare at \eqref{Equation: orthogonal polynomial ensemble} strongly and for long, the terms become less mysterious. One  may notice that this expression is simply given by the normalized product of some weight function $\wf(\lambda) = \ee^{- 2N V(\lambda)}$ and the Jacobian of the transformation $\m{M} \mapsto \m{G} \m{\Lambda} \m{G}^*$ to be given by the Vandermonde determinant (to some exponent $\beta$). This is an interesting observation and it is in accordance to \eqref{Equation: invariance pseudodefinition}. More than that, there is an observation to be made here in terms of the behavior of the eigenvalues. Notice that the Jacobian takes arbitrarily small values if there are equally arbitrarily close eigenvalues in the set. At first instance this means that our set is most likely simple, i.e. without repeated eigenvalues. Moreover it also means that the eigenvalues show some repulsion with each-other. Why then one might not expect the eigenvalues to scatter in the line? This is the role of the weight function. More than characterizing the ensemble, in the formula it has the role of ensuring integrability, i.e., holding the eigenvalues in a compact set. If this feels like some physical repelling system, fear not, this interpretation will be expanded in \autoref{Section: Coulomb Gas}.
 
 \begin{exemplo}
 	The univariate eigenvalue density for the Gaussian unitary Ensemble is expressed by
 	\begin{equation}
-	\p_n(\mmany{\lambda}{n}) = \frac{1}{\pZ{n, \beta}{}} \exp{\left\{-\frac{1}{2} \sum_{i = 1}^{n} \lambda_i^2\right\}} \prod_{i < j} |\lambda_i - \lambda_j|^2.
+	\p_n(\mmany{\lambda}{n}) = \frac{1}{\pZ{n, \beta}{}} \exp{\left\{-\frac{1}{2} \sum_{i = 1}^{n} \lambda_i^2\right\}} \prod_{i < j} |\lambda_i - \lambda_j|^2,
 	\end{equation}
-	Where naturally we identify
+	where naturally we identify
 	\begin{equation}
 		 \exp{\left\{-\frac{1}{2} \sum_{i = 1}^{n} \lambda_i^2\right\}} \revdeff \prod_{i=1}^{n} \wf(\lambda_i).
 	\end{equation}
@@ -873,7 +873,7 @@ We can use the determinant's multilinearity to subtract from each row $r_i$ the 
 \end{equation}
 Using \textit{Laplace Theorem} for the determinant we know that there is only one co-factor that matters. Which give us
 \begin{equation}
-	|\m{V}| =
+	|\m{V}|^2 =
 	\prod_{i=2}^n |\alpha_i - \alpha_1|^2
 	\begin{vmatrix}
 		1 & \alpha_2 & \dots & \alpha_2^{n-2} \\
@@ -907,7 +907,7 @@ Then, start by putting the weight function inside the determinant in the followi
 This is the so-called \textit{Determinantal Structure} of the $\beta=2$ orthogonal polynomial ensembles. This will be recapitulated in \autoref{Section: DPP}.
 
 \begin{exemplo} (Gaussian Measure)
-	 Let's make it explicit the probability distribution on Gaussian Ensembles. We define $\m{M} = n^{-\frac{1}{2}} \m{M'} \in \mathcal{M}_{n,n}(\mathcal{F})$ to be of the Gaussian Ensemble if the entries of $\m{M'}$ are independent and normally distributed as follows: 
+	 Let us make it explicit the probability distribution on Gaussian Ensembles. We define $\m{M} = n^{-\frac{1}{2}} \m{M'} \in \mathcal{M}_{n,n}(\mathcal{F})$ to be of the Gaussian Ensemble if the entries of $\m{M'}$ are independent and normally distributed as follows: 
 	 \begin{equation}
 	 M'_{i,j} \sim
 	 \begin{cases}
@@ -931,7 +931,7 @@ This is the so-called \textit{Determinantal Structure} of the $\beta=2$ orthogon
 	with $\pZ{n, \beta}{}$ the partition function, or normalizer of the expression.
 \end{exemplo}
 
-Let's retrace these steps with mathematically proper definitions.  We start by properly defining the orthogonality condition on the polynomials.
+Let us retrace these steps with mathematically proper definitions.  We start by properly defining the orthogonality condition on the polynomials.
  
  \begin{definicao}
 	With $\wf(\lambda)$ a suitable function, define the following inner products on polynomial space:

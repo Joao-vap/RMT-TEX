@@ -15,31 +15,14 @@
 \babel@toc {english}{}\relax
 \babel@toc {english}{}\relax
 \contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introduction}}{19}{chapter.1}%
-\babel@toc {english}{}\relax
-\babel@toc {english}{}\relax
-\babel@toc {english}{}\relax
-\babel@toc {english}{}\relax
-\contentsline {section}{\numberline {1.1}Overview of the dissertation}{31}{section.1.1}%
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Random Matrix Theory}}{33}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Random Matrix}{34}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Determinantal Point Processes}{40}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Invariant Ensembles}{47}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Orthogonal Polynomial Ensembles}{49}{subsection.2.3.1}%
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Asymptotics}}{57}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Quadrature Technique}{57}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Asymptotic on Integrals}{59}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Watson's Lemma}{61}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Laplace Method}{65}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Steepest Descent}{70}{subsection.3.2.3}%
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Equilibrium}}{75}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Coulomb Gases}{75}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Equilibrium Measure}{77}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Euler-Lagrange}{82}{subsection.4.2.1}%
-\contentsline {section}{\numberline {4.3}Solving for the Free Energy}{85}{section.4.3}%
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Planar Ensembles}}{89}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Working Model}{90}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Asymptotics on Droplets}{92}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Asymptotics - Annulus}{95}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Asymptotics - Disk}{106}{subsection.5.2.2}%
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Random Matrix Theory}}{21}{chapter.2}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Asymptotics}}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Quadrature Technique}{23}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Asymptotic on Integrals}{25}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Watson's Lemma}{27}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Laplace Method}{31}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Steepest Descent}{36}{subsection.3.2.3}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Equilibrium}}{41}{chapter.4}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Planar Ensembles}}{43}{chapter.5}%
 \vspace {\cftbeforechapterskip }
-\contentsline {chapter}{\MakeTextUppercase []{Bibliography}}{123}{section*.34}%
+\contentsline {chapter}{\MakeTextUppercase []{Bibliography}}{45}{section*.19}%
