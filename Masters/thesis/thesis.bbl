@@ -220,18 +220,10 @@ Available: \url{https://doi.org/10.1090/conm/251/03886}.}
   functions.
 01 2010.}
 
-\bibitem[Pimenta and Silva 2024]{TCCJoaoPimenta}
-\abntrefinfo{Pimenta and Silva}{PIMENTA; SILVA}{2024}
-{PIMENTA, J. V.~A.; SILVA, G. L.~F. \textbf{Matrizes aleatórias e simulação
-  de Gases de Coulomb}. 2024.}
-
-\bibitem[Pozniak, Zyczkowski and Kus 1998]{Marcin_Pozniak_1998}
-\abntrefinfo{Pozniak, Zyczkowski and Kus}{POZNIAK; ZYCZKOWSKI; KUS}{1998}
-{POZNIAK, M.; ZYCZKOWSKI, K.; KUS, M. Composed ensembles of random unitary
-  matrices.
-\textbf{Journal of Physics A: Mathematical and General}, v.~31, n.~3, p.~1059,
-  jan 1998.
-Available: \url{https://doi.org/10.1088/0305-4470/31/3/016}.}
+\bibitem[Pimenta 2024]{TCCJoaoPimenta}
+\abntrefinfo{Pimenta}{PIMENTA}{2024}
+{PIMENTA, J. V.~A. \textbf{Matrizes aleatórias e simulação de Gases de
+  Coulomb}. 2024.}
 
 \bibitem[Rahman 2023]{rahman2023recursivecharacterisationsrandommatrix}
 \abntrefinfo{Rahman}{RAHMAN}{2023}

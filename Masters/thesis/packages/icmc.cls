@@ -136,6 +136,8 @@
 \RequirePackage{multicol}
 \RequirePackage{wrapfig}
 \usepackage{tikzfill}
+\usetikzlibrary{arrows.meta}
+\usepackage{hyperref}
 \usetikzlibrary{calc}
 \usetikzlibrary{plotmarks}
 \usepackage{pgfplots}
@@ -705,15 +707,14 @@
 
 \tcbuselibrary{breakable}
 
-\newtheorem{teorema}{\teoremaname}{}
-\newtheorem{proposicao}{\proposicaoname}
-\newtheorem{lema}{\lemaname}
-\newtheorem{corolario}{\corolarioname}
-\newtheorem{definicao}{\definicaoname}
-
+\newtheorem{teorema}{\teoremaname}[chapter]
+\newtheorem{proposicao}{\proposicaoname}[chapter]
+\newtheorem{lema}{\lemaname}[chapter]
+\newtheorem{corolario}{\corolarioname}[chapter]
+\newtheorem{definicao}{\definicaoname}[chapter]
 \theoremstyle{definition}
-\newtheorem{exemplo}{\exemploname}
-\newtheorem{observacao}{\observacaoname}
+\newtheorem{exemplo}{\exemploname}[chapter]
+\newtheorem{observacao}{\observacaoname}[chapter]
 \newenvironment{demonstracao}{\begin{proof}[\demonstracaoname]}{\end{proof}}
 
 \tcolorboxenvironment{corolario}{
@@ -822,7 +823,7 @@
 %  ensemble measure
 \newcommand{\eP}{\mathcal{P}}
 % eigenvalue measure
-\newcommand{\pe}{\mathfrak{p}} 
+\newcommand{\pe}{\mu} 
 % scaled eigenvalue
 \newcommand{\Spe}{\tilde{\mathfrak{p}}}  
 % measure in 

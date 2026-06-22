@@ -1,21 +1,23 @@
-There is a sense in the previous Chapters that we want to study some distributions when our matrices are large enough - be that for feasibility of computations or approximation of infinite dimension operators. We also have mentioned that our main interest here is the Invariant Ensembles, or specially in Orthogonal Polynomial ones. Because of this, studying large matrices is equivalent, in some sense, to studying the regime of large $n$ for orthogonal polynomials. For some of those polynomials, a integral representation is available, allowing us to use asymptotic methods on integrals to solve for the large $n$ behavior. This is the main discussion of this chapter.
+There is a sense in the previous Chapters that we want to study some distributions when our matrices are large enough - be that for feasibility of computations or approximation of infinite dimension operators. We also have mentioned that our main interest here is the Invariant Ensembles, or specially the Orthogonal Polynomial ones. Because of the expression of the univariate eigenvalue density as the determinant of a orthogonal polynomial kernel function, we will change our focus to the study of these polynomials. Studying the distribution of eigenvalue for large matrices is equivalent, in this sense, to studying the regime of large $n$ for the kernels and consequently, for the orthogonal polynomials. For some of those polynomials, a integral representation is available, allowing us to use asymptotic methods on integrals to solve for the large $n$ behavior. These methods revolve around the idea that we want to integrate a function that accumulates its value in some discrete set of points in the domain as we take some of its parameters to infinity. This is usually an exponential with negative exponent depending on some parameter $n$ that we identify with the size of our initial matrices. Then, as $n$ grows, the approximation of this integral as proportional to the value of the function on these point of maxima decreases in error. This method roughly describes the \textit{Steepest Descent} technique, which will be described in this chapter. The sections that precedes this descriptions are the building blocks for the more sophisticated technique; we go through \textit{Watson's lemma} and the \textit{Laplace technique}.
+
+Before going through asymptotic techniques in integrals, we briefly describe a technical result we will make use of in \autoref{chapter: planarensembles}. This is a quadrature technique or, more specifically, the \textit{Euler-Maclaurin} formula. This formula will later allow us to approximate very complicated summations as integrals that we can compute analytically.
 
 Techniques and structuring here are based on the book by \citeonline{NISTMathFunc} and \citeonline{Trapezoidal-Maclaurin} for quadrature and on the lecture notes by \citeonline{guilhermeasympt} for asymptotics on integrals. 
 
 \section{Quadrature Technique}
+\label{section: quadrature}
 
 Before doing asymptotics on integrals we discuss a technique that will become important when approximating large summations: quadratures, i.e., approximating integrals by summations and vice-versa. One can see that asymptotics on integrals can then also perform a role on discrete summations. We first start briefly introducing a useful tool in the development of the formula we wish to use: the Bernoulli numbers $B_n$, polynomials $B_n(x)$ and periodic polynomials $\tilde{B}_n(x)$. The Bernoulli numbers $B_n$ are a sequence of rational numbers that frequently appears in the Taylor series expansion of trigonometric-type functions. These number can also be seen as special values obtained by the Bernoulli polynomials $B_n(x)$. This is because these polynomials can be written explicitly as
 \begin{equation}
 	B_k(x) = \sum_{n=0}^{k} {k \choose n} B_n x^{k-n},
 \end{equation}
 then, we must have that $B_k(0) = B_k$. More interestingly for us is the fact that these polynomials satisfy the differential equation 
-\begin{equation}
+\begin{equation}	\label{Equation: Differential Bernoulli}
 	B'_n(x) = n B_{n-1}(x), \quad n = 1,2,\cdots
-	\label{Equation: Differential Bernoulli}
 \end{equation}
 Finally, the periodic Bernoulli polynomial is simply the Bernoulli polynomials evaluated at the fractional part of the argument, i.e., $\tilde{B}_n(x) = B_n(x - \floor{x})$. Now, let $B_n$ and $B_n(x)$ denote the $n$th Bernoulli number and polynomial, respectively, and $\tilde{B}_n(x)$ the $n$th Bernoulli periodic function $B_n(x - \floor{x})$. Assume that $a, m$ and $n$ are integers such that $n > a$, $m > 0$, and $f^{(2m)}(x)$ is absolutely integrable over $[a,n]$. Then, 
 
-\begin{teorema} (Euler-Maclaurin Formula,  \cite{NISTMathFunc})
+\begin{teorema} \label{Theorem: Euler-Maclaurin}(Euler-Maclaurin Formula,  \cite{NISTMathFunc})
 	Following the context given above, 
 	\begin{multline}
 		\sum_{j=a}^{n} f(j) = \int_{a}^{n} f(x) \dd x + \frac{1}{2} \left(f(a) + f(n)\right) + \sum_{s=1}^{m-1} \frac{B_{2s}}{(2s)!} \left( f^{(2s-1)}(n) - f^{(2s-1)}(a)\right) \\ + \int_{a}^{n} \frac{B_{2m} - \tilde{B}_{2m}(x)}{(2m)!} f^{(2m)}(x) \dd x.
@@ -80,7 +82,7 @@ where $\Gamma$ is a given contour in the plane and $f, g$ are suitable functions
 	This is the Airy function. For this integral, the techniques applied in this chapter are of great use to understand its behavior as $\omega \rightarrow \infty$.
 \end{exemplo}
 
-Moreover, one can somehow somehow motivate the conditions we imposed on $\phi$. Consider $\phi: \R \rightarrow \R$, $f$ with a single global minima and $\Gamma \equiv \R$ - for simplicity; the argument's idea should hold for other choices given the appropriate considerations. If $\phi$ is as in \eqref{Equation: Integral form phi}, and satisfying the conditions given for such function, then take $x^*$ the single minimal critical point for $f$. We first note that if that is true, then, for any $|\epsilon| > 0$, the following limit should hold:
+Consider $\phi: \R \rightarrow \R$, $f$ with a single global minima and $\Gamma \equiv \R$ - for simplicity; the argument's idea should hold for other choices given the appropriate considerations. If $\phi$ is as in \eqref{Equation: Integral form phi}, and satisfying the conditions given for such function, then take $x^*$ the single minimal critical point for $f$. We first note that if that is true, then, for any $|\epsilon| > 0$, the following limit should hold:
 \begin{equation}
 	\lim_{\lambda \rightarrow \infty} \frac{\ee^{-\lambda(f(x^*))}}{\ee^{-\lambda(f(x^* - \epsilon))}} = \lim_{\lambda \rightarrow \infty} \ee^{-\lambda(f(x^*) - f(x^* - \epsilon))} = \lim_{\lambda \rightarrow \infty} \ee^{\lambda |c|} \rightarrow + \infty. 
 \end{equation}
@@ -504,13 +506,13 @@ where each integral can now be solved by Laplace's method.
 \begin{proof}
 	Fix a parametrization $\gamma : [a,b] \rightarrow \C$ of $\Gamma$ with $\gamma(c) = z_0, a < c < b$, and decompose $\Phi$ as before in \eqref{eq: decomposition}. By the assumptions on the functions $f, g$ we apply Laplace`s method on both equations, and yields, as $\lambda \rightarrow + \infty$,
 	\begin{equation}
-		\int_{a}^{b} (p(\gamma(t))\alpha'(t)-q(\gamma(t))\beta'(t)) \ee^{-\lambda u(\gamma(t))} \dd t = \sqrt{2\pi} \ee^{-\lambda u(z_0)} \left( \frac{p(z_0)\alpha'(c)-q(z_0)\beta'(c)}{\sqrt{|(u \circ \gamma)''(c)|} \lambda^{1/2}} + \Boh \left(\lambda^{3/2}\right) \right)
+		\int_{a}^{b} (p(\gamma(t))\alpha'(t)-q(\gamma(t))\beta'(t)) \ee^{-\lambda u(\gamma(t))} \dd t = \sqrt{2\pi} \ee^{-\lambda u(z_0)} \left( \frac{p(z_0)\alpha'(c)-q(z_0)\beta'(c)}{\sqrt{|(u \circ \gamma)''(c)|} \lambda^{1/2}} + \epsilon \right)
 	\end{equation}
 	and
 	\begin{equation}
-		\int_{a}^{b} (p(\gamma(t))\beta'(t)-q(\gamma(t))\alpha'(t)) \ee^{-\lambda u(\gamma(t))} \dd t = \sqrt{2\pi} \ee^{-\lambda u(z_0)} \left( \frac{p(z_0)\beta'(c)-q(z_0)\alpha'(c)}{\sqrt{|(u \circ \gamma)''(c)|} \lambda^{1/2}} + \Boh \left(\lambda^{3/2}\right) \right)
+		\int_{a}^{b} (p(\gamma(t))\beta'(t)-q(\gamma(t))\alpha'(t)) \ee^{-\lambda u(\gamma(t))} \dd t = \sqrt{2\pi} \ee^{-\lambda u(z_0)} \left( \frac{p(z_0)\beta'(c)-q(z_0)\alpha'(c)}{\sqrt{|(u \circ \gamma)''(c)|} \lambda^{1/2}} + \epsilon \right)
 	\end{equation}
-	Using that $v_0 + u(z_0) = f(z_0)$ and also that,
+	with $ \epsilon = \Boh \left(\lambda^{-3/2}\right)$. Using that $v_0 + u(z_0) = f(z_0)$ and also that,
 	\begin{equation}
 		 (p(z_0)\alpha'(c)-q(z_0)\beta'(c)) + \ii (p(z_0)\beta'(c)-q(z_0)\alpha'(c)) = g(z_0)\gamma'(c),
 	\end{equation}
@@ -528,15 +530,14 @@ where each integral can now be solved by Laplace's method.
 	\end{equation}
 	Hence,
 	\begin{equation}
-		\frac{\gamma'(c)}{\sqrt{|(u \circ \gamma)''(c)|}} = \frac{1}{\sqrt{|f''(z_0)|}} \frac{\gamma'(c)}{|\gamma'(c)|}
+		\frac{\gamma'(c)}{\sqrt{|(u \circ \gamma)''(c)|}} = \frac{1}{\sqrt{|f''(z_0)|}} \frac{\gamma'(c)}{|\gamma'(c)|}.
 	\end{equation}
-	which concludes the proof.
 \end{proof}
 
 We now need do discuss why this assumption of constant value of $\Im(f(z))$ is not an assumption as strong as one might assume at first. Suppose we want to integrate in a arbitrary contour $\Gamma$ of the plane. Of course, our assumption that the functions were analytic permit us to deform the contour keeping the value of the integral. We are going to use this to find a contour $\tilde{\Gamma}$ such that sections of the contour are such that $\Im(f(z))$ is constant. We already know that being analytic means satisfying the \textit{Cauchy-Riemann} equations,
-\begin{equation}
-	u_x(z) = v_y(z), \quad \text{and} \quad u_y(z) = -v_x(z).
-\end{equation}
+$
+	u_x(z) = v_y(z), \text{and} u_y(z) = -v_x(z).
+$
 An immediate result from these equations is that the gradients of $u$ and $v$ must be normal. Indeed, if $\langle \cdot, \cdot \rangle$ is the inner product on $\R^2$,
 $$\langle \nabla u(z), \nabla v(z) \rangle = u_x(z)v_x(z) + u_y(z)v_y(z) = u_x(z)v_x(z) - v_x(z)u_x(z) = 0.$$
 As we are following the curves where  $\Im(f(z))$ is constant, we are also following the path of Steepest Descent of the real part of the integral. As we also are looking to use Laplace's method on the integrals, we may want to have our paths going through the critical points of the function. This fully motivates the method described.
@@ -557,21 +558,18 @@ As we are following the curves where  $\Im(f(z))$ is constant, we are also follo
 			& = \frac{n!}{2\pi \ii} \int_{\Gamma} \ee^{xz-\frac{z^2}{2} - (n+1)\ln{(z)}} \dd z
 		\end{split}
 	\end{equation}
-	where $\Gamma$ is a contour that goes around the origin coming and going from minus infinity such as $\Gamma = \{\lambda - \ii \delta : \lambda < 0 \} \cup \{\delta \ee^{\ii \theta}: -\pi/2 < \theta < \pi/2 \} \cup \{\lambda + \ii \delta : \lambda < 0 \}$. This is equivalent to using $\Gamma = \{\ee^{\ii \theta}: 0 \leq \theta < 2\pi \}$.	To determine $\He_{n}$, set $N = n + 1$ and consider the scaling $x \mapsto N^a \alpha$ and $z = N^b \beta$ 
+	where $\Gamma$ is a contour that goes around the origin coming and going from minus infinity such as $\Gamma = \{\lambda - \ii \delta : \lambda < 0 \} \cup \{\delta \ee^{\ii \theta}: -\pi/2 < \theta < \pi/2 \} \cup \{\lambda + \ii \delta : \lambda < 0 \}$. This is equivalent to using $\Gamma = \{\ee^{\ii \theta}: 0 \leq \theta < 2\pi \}$.	To determine $\He_{n}$, set $N = n + 1$ and consider the scaling $x \mapsto N^{1/2} \alpha$ and $z = N^{1/2} \beta$ 
 	\begin{equation}
 		\begin{split}
-			\He_n(N^a \alpha) & = \frac{(N-1)!}{2\pi \ii} \int_{\Gamma} \ee^{(N^a \alpha)(N^b \beta)- \frac{1}{2}(N^b \beta)^2 - N\ln{(N^b \beta)}} \dd \beta \\
-			& \stackrel{(a = b = 1/2)}{=}   \frac{(N-1)! N^{\frac{1}{2}\left(1-N\right)}}{2\pi \ii} \int_{\Gamma}  \ee^{-N(- \alpha \beta+ \frac{1}{2} \beta^2 + \ln{(\beta)})} \dd \beta,
+			\He_n(N^{\frac{1}{2}} \alpha) & = \frac{(N-1)!}{2\pi \ii} \int_{\Gamma} \ee^{(N^{1/2} \alpha)(N^{1/2} \beta)- \frac{1}{2}(N^{1/2} \beta)^2 - N\ln{(N^{1/2} \beta)}} \dd \beta \\
+			& =  \frac{(N-1)! N^{\frac{1}{2}\left(1-N\right)}}{2\pi \ii} \int_{\Gamma}  \ee^{-N(- \alpha \beta+ \frac{1}{2} \beta^2 + \ln{(\beta)})} \dd \beta,
 		\end{split}
 	\end{equation}
 	so that we have
 	\begin{equation}
-		\He_n(\sqrt{N}\alpha) = C_n^0 \int_{\Gamma}  \ee^{-N \phi_\alpha(\beta) } \dd \beta
-		\label{Equation: Hermite Integral}
-	\end{equation}
-	with 
-	\begin{equation}
+		\He_n(\sqrt{N}\alpha) = C_n^0 \int_{\Gamma}  \ee^{-N \phi_\alpha(\beta) } \dd \beta, \quad
 		\phi_\alpha(\beta) = \frac{1}{2} \beta^2 - \alpha \beta + \ln{(\beta)}.
+		\label{Equation: Hermite Integral}
 	\end{equation}
 	%The same can be done in the second case, using now the re-parametrization, that is
 	%\begin{equation}
@@ -599,17 +597,22 @@ As we are following the curves where  $\Im(f(z))$ is constant, we are also follo
 		\begin{figure}[H]
 		\begin{subfigure}{0.3\textwidth}
 		\centering
-		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm, rotate=-90, auto]
 			\begin{axis}[
-				title={$\alpha > 2$},
+				%title={$\alpha > 2$},
 				xmin=-2, xmax=2,
 				ymin=-2, ymax=2,
-				xlabel={$x$},
-				ylabel={$y$},
+				xlabel={$y$},
+				ylabel={$x$},
+				yticklabel=\empty,
+				xticklabel=\empty,
+				yticklabel pos=right,
+				%xticklabel style={rotate=90},
+				%yticklabel style={rotate=90},
 				trig format plots=rad,
 				axis equal]					
-				\node at (axis cs:0.7,0.7) {$t_{c_+}$};
-				\node at (axis cs:-0.7,0.7) {$t_{c_-}$};
+				\node [rotate=90] at (axis cs:0.7,0.7) {$t_{c_+}$};
+				\node [rotate=90] at (axis cs:-0.7,0.7) {$t_{c_-}$};
 				\node at (axis cs:0.433, 0.25) {\textbullet};
 				\node at (axis cs:-0.433,0.25) {\textbullet};
 				\addplot[line width=1pt,samples=100,domain=pi/3:pi] 
@@ -686,20 +689,79 @@ As we are following the curves where  $\Im(f(z))$ is constant, we are also follo
 				);
 			\end{axis}
 		\end{tikzpicture}
-		\end{subfigure} \hspace{1cm}
-		\begin{subfigure}{0.3\textwidth}
+		\end{subfigure} \hfill
+				\begin{subfigure}{0.3\textwidth}
 			\centering
-			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm, rotate=-90, auto, transform shape ]
 				\begin{axis}[
-					title={$\alpha \in [0,2)$},
+					%title={$\alpha = 2$},
 					xmin=-2, xmax=2,
 					ymin=-2, ymax=2,
-					xlabel={$x$},
+					xlabel=\empty,
+					ylabel={$x$},
 					yticklabel=\empty,
+					xticklabel=\empty,
+					yticklabel pos=right,
 					trig format plots=rad,
 					axis equal]
-					\node at (axis cs:0,1.0) {$t_{c_+}$};
-					\node at (axis cs:0,1/2-0.1) {$t_{c_-}$};
+					\addplot[line width=1pt,samples=100,domain=0.01:pi-0.01] 
+					(
+					{
+						(x/(2*sin(x)))/(1 + sqrt(1 - x*cot(x))) * sin(x)
+					},
+					{
+						(x/(2*sin(x)))/(1 + sqrt(1 - x*cot(x))) *cos(x)
+					}
+					);
+					\addplot[line width=1pt,samples=100,domain=-pi/2:-0.01] 
+					(
+					{
+						(1 + sqrt(1 - x*cot(x)))/(2*cos(x)) * sin(x)
+					},
+					{
+						(1 + sqrt(1 - x*cot(x)))/(2*cos(x)) * cos(x)
+					}
+					);
+					\addplot[line width=1pt,samples=100,domain=-pi+0.01:-0.01] 
+					(
+					{
+						(x/(2*sin(x)))/(1 + sqrt(1 - x*cot(x))) * sin(x)
+					},
+					{
+						(x/(2*sin(x)))/(1 + sqrt(1 - x*cot(x))) *cos(x)
+					}
+					);
+					\addplot[line width=1pt,samples=100,domain=0.01:pi/2-0.01] 
+					(
+					{
+						(1 + sqrt(1 - x*cot(x)))/(2*cos(x)) * sin(x)
+					},
+					{
+						(1 + sqrt(1 - x*cot(x)))/(2*cos(x)) * cos(x)
+					}
+					);
+					\node [rotate=90] at (axis cs:0,1) {$t_{c_{\pm}}$};
+					\node at (axis cs:0,1/2) {\textbullet};
+				\end{axis}
+			\end{tikzpicture}
+		\end{subfigure} \hfill
+		\begin{subfigure}{0.3\textwidth}
+			\centering
+			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm, rotate=-90, auto, transform shape ]
+				\begin{axis}[
+					%title={$\alpha \in [0,2)$},
+					xmin=-2, xmax=2,
+					ymin=-2, ymax=2,
+					xlabel=\empty,
+					ylabel={$x$},
+					yticklabel=\empty,
+					xticklabel=\empty,
+					yticklabel pos=right,
+					trig format plots=rad,
+					axis equal
+					]
+					\node [rotate=90] at (axis cs:0,1.1) {$t_{c_+}$};
+					\node [rotate=90] at (axis cs:0,1/2+0.1) {$t_{c_-}$};
 					\node at (axis cs:0,1.32) {\textbullet};
 					\node at (axis cs:0,0.14) {\textbullet};
 					\addplot[line width=1pt,samples=100,domain=0.01:pi] 
@@ -741,58 +803,6 @@ As we are following the curves where  $\Im(f(z))$ is constant, we are also follo
 				\end{axis}
 			\end{tikzpicture}
 		\end{subfigure} \hfill
-		\begin{subfigure}{0.3\textwidth}
-			\centering
-			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
-				\begin{axis}[
-					title={$\alpha = 2$},
-					xmin=-2, xmax=2,
-					ymin=-2, ymax=2,
-					xlabel={$x$},
-					yticklabel=\empty,
-					trig format plots=rad,
-					axis equal]
-					\addplot[line width=1pt,samples=100,domain=0.01:pi-0.01] 
-					(
-					{
-						(x/(2*sin(x)))/(1 + sqrt(1 - x*cot(x))) * sin(x)
-					},
-					{
-						(x/(2*sin(x)))/(1 + sqrt(1 - x*cot(x))) *cos(x)
-					}
-					);
-					\addplot[line width=1pt,samples=100,domain=-pi/2:-0.01] 
-					(
-					{
-						(1 + sqrt(1 - x*cot(x)))/(2*cos(x)) * sin(x)
-					},
-					{
-						(1 + sqrt(1 - x*cot(x)))/(2*cos(x)) * cos(x)
-					}
-					);
-					\addplot[line width=1pt,samples=100,domain=-pi+0.01:-0.01] 
-					(
-					{
-						(x/(2*sin(x)))/(1 + sqrt(1 - x*cot(x))) * sin(x)
-					},
-					{
-						(x/(2*sin(x)))/(1 + sqrt(1 - x*cot(x))) *cos(x)
-					}
-					);
-					\addplot[line width=1pt,samples=100,domain=0.01:pi/2-0.01] 
-					(
-					{
-						(1 + sqrt(1 - x*cot(x)))/(2*cos(x)) * sin(x)
-					},
-					{
-						(1 + sqrt(1 - x*cot(x)))/(2*cos(x)) * cos(x)
-					}
-					);
-					\node at (axis cs:0,1) {$t_{c_{\pm}}$};
-					\node at (axis cs:0,1/2) {\textbullet};
-				\end{axis}
-			\end{tikzpicture}
-		\end{subfigure} \hfill
-		\caption{The lines represent the solution to $\Im[f(z) - f(t_c)] = 0$ for the three possible cases of the Hermite Polynomial. These are the curves we use to perform the asymptotic analysis on the integral. Note the case $\alpha = 2$; the coalescence of critical point gives origin to the Airy function.}
+		\caption{The lines represent the solution to $\Im[f(z) - f(t_c)] = 0$ for the three possible cases of the Hermite Polynomial. the cases are from left to right $\alpha \in [0,2)$, $\alpha = 2$ and $\alpha > 2$. Only for the first case the critical points are complex. These are the curves we use to perform the asymptotic analysis on the integral. Note the case $\alpha = 2$; the coalescence of critical point gives origin to the Airy function.}
 	\end{figure}
 \end{exemplo}
