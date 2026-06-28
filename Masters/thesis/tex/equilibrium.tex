@@ -1,13 +1,15 @@
 
-We have seen that the study of the distribution of eigenvalues of random matrices is of interest and can be seen as a point process. For specific models, we further find a more rigid structure related to determinantal point processes. These allow us to see eigenvalue correlation functions as a determinant of an orthogonal polynomial Kernel. Now, with these correlation functions, we check that eigenvalue statistics for invariant models can be though of as another point process: The so called \textit{Coulomb gas}. These can be though of as a physical gas of repelling ions restricted to some conductor under a confining potential. Although it may be daunting to have yet another model to work with, these gases lead us directly to some nice interpretations and results. Namely, one can think of what happens to these gases in the \textit{thermodynamic limit}. Under the appropriate conditions that will be developed in this chapter, these particles should converge to a limit equilibrium configuration. Physically, this is the regimen we are used to work with; in thermodynamics we often study macroscopic properties of gases such as \textit{entropy} or \textit{temperature}. In our matrices, these equilibrium configurations will refer to the eigenvalue univariate density function and, as mentioned, expresses by the correlation kernel. On this chapter we will expand on the usual formulation of minimization problems for the system energy. We beign discussing \textit{equilibrium measures} of eigenvalues - the unique measure that minimizes our functional problem. This type of problem can be solved by considering the \textit{Euler-Lagrange}, or \textit{Variational}, \textit{Equations}. These give us a way to calculate the equilibrium measures for the ensemble of random matrices we treat on \autoref{chapter: planarensembles}. Moreover, we finish this chapter doing some informal calculations that intend to motivate the asymptotic expression we get for the partition function on \autoref{chapter: planarensembles}. This also gives a basis estimate to which we compare the order of approximation gotten in \citeonline{Byun_2023} and explored on \autoref{chapter: planarensembles}. 
+We have seen in \ref{Chapter 2} that the j.p.d.f. of eigenvalues of certain random matrices define determinantal point processes. Not only that, but it has the same correlation functions as another point process: The so called \textit{Coulomb gas}. These can be though of as a physical gas of repelling ions restricted to some conductor under a confining potential. With this interpretation one can think of what happens to these gases in the \textit{thermodynamic limit}. Under the appropriate conditions that will be developed in this chapter, these particles are known to converge to a limit equilibrium configuration. Physically, this is the regime we are used to work with; in thermodynamics we often study macroscopic properties of gases such as \textit{entropy} or \textit{temperature}. In our matrices, these equilibrium configurations will refer to the eigenvalue univariate density function and, as mentioned, expressed by the correlation kernel.
 
-The section on equilibrium measures was based on the works of \citeonline{saff2024logarithmic} and \citeonline{deiftorthogonal}. We will explore the concept of equilibrium measures for these particle systems and state some important results relevant to computations that follows.
+In this chapter we will expand on the usual formulation of minimization problems for the system energy. We begin discussing \textit{equilibrium measures} of eigenvalues - the unique measure that minimizes our functional problem. This type of problem can be solved by considering the \textit{Euler-Lagrange}, or \textit{Variational}, \textit{Equations}. These give us a way to calculate the equilibrium measures for the ensemble of random matrices we treat in \autoref{chapter: planarensembles}. Moreover, we finish this chapter doing some informal calculations that intend to motivate the asymptotic expression we get for the partition function on \autoref{chapter: planarensembles}. This also gives a basis estimate to which we compare the order of approximation obtained in \citeonline{Byun_2023} and explored in \autoref{chapter: planarensembles}. 
+
+We based \autoref{Section: Equilibrium}, on equilibrium measures, on the works of \citeonline{saff2024logarithmic} and \citeonline{deiftorthogonal}. The argument to derive an expression for the free energy in \autoref{Section: Free eenrgy} is presented in \citeonline{Livan_2018}. We will explore the concept of equilibrium measures for these particle systems and state some important results relevant to computations that follows.
 
 \section{Equilibrium Measures}
 \label{Section: Equilibrium}
 
-The description of the eigenvalues as a \textit{Coulomb gas} discussed in \autoref{Section: Coulomb Gas} and as a \textit{point process} in \autoref{Section: RMT} raises some ways to think of this system of particles. Especially, when dealing with the large $n$ limit, the physical interpretation of this system as a interacting gas lead us to the idea of minimizing the energy of the system. In such minimization the particles should find themselves in what we call an equilibrium configuration  $\xi = \{\mmany{x}{n}\}$. In the large $n$ limit, under some mild conditions to be discussed, the counting measure defined in relation to this configuration converges to some continuous measure with compact support. This limit object is what we call an \textit{equilibrium measure}. To clarify the point, suppose we are dealing with the j.p.d.f.
-\begin{equation}
+The description of the eigenvalues as a \textit{Coulomb gas} discussed in \autoref{Section: Coulomb Gas} and as a \textit{point process} in \autoref{Section: RMT} raises some ways to think of this system of particles. Especially, when dealing with the large $n$ limit, the physical interpretation of this system as a interacting gas lead us to the idea of minimizing the energy of the system. In such minimization the particles should find themselves in what we call an equilibrium configuration  $\xi = \{\mmany{x}{n}\}$. In the large $n$ limit, under some mild conditions to be discussed, the counting measure defined with respect to this configuration converges to a continuous measure with compact support. This limit object is what we call an \textit{equilibrium measure}. To clarify the point, suppose we are dealing with the j.p.d.f.
+\begin{equation} \label{Equation: Equilibrium gas}
 	\p_n(\xi) = \frac{\ee^{- n^2 \Hf_n(\xi)}}{\pZ{n}{\beta}}, \quad \Hf_n(\xi) = \frac{1}{n} \sum_{i = 1}^{n} Q(x_i) + \frac{1}{n^2} \sum_{i \neq j}^{n} \ln{\frac{1}{|x_i - x_j|}}. 
 \end{equation}
 For any $n$-configuration $\xi = \{\mmany{x}{n}\}$, let $\mu_\xi$ be the normalized counting measure on $\C$,
@@ -31,11 +33,9 @@ where
 	\M^1(\C) = \left\{ \mu \in \text{Borel measures on} \ \C \ \bigg| \int \dd \mu = 1 \right\}.
 \end{equation}
 
-The quantity $E^{(Q)}$ is the \textit{equilibrium energy} of the system and $I_Q(\mu_x)$ is the \textit{energy integral}. For $\mu_Q^*$, the equilibrium measure for the minimization problem above, to be compact, $\Q$ the confining potential, must increase sufficiently fast around infinity. However, to analyze this case, we first consider the simplified version without an external potential. 
-
-The classical case for such minimization problems corresponds to the cases when the conductor $\Sigma$ is compact and the external field $\Q$ is zero. Under some mild conditions on the external field, however, the equilibrium measure $\mu_\Sigma$ - the measure that minimizes the problem for $\Q = 0$ - has a unique solution which is a measure of compact support. Let $\Sigma \subseteq \C$ be a compact subset of the complex plane and $\M(\Sigma)$ be the collection of all positive Borel measure of compact support in $\Sigma$. Let $\mu \in \M(\Sigma)$ be such a measure in the complex plane $\C$.
+The quantity $E^{(Q)}$ is the \textit{equilibrium energy} of the system and $I_Q(\mu_\xi)$ is the \textit{energy integral}. For $\mu_Q^*$, the equilibrium measure for the minimization problem above, to be compact, $\Q$ the confining potential, must increase sufficiently fast around infinity. However, to analyze this case, we first consider the simplified version without an external potential. Let $\Sigma \subseteq \C$ be a compact subset of the complex plane and $\M(\Sigma)$ be the collection of all positive Borel measure of compact support in $\Sigma$. Let $\mu \in \M(\Sigma)$ be such a measure in the complex plane $\C$.
 \begin{definicao}
-	 The associated \textbf{logarithmic potential} is defined by 
+	 The associated \textbf{logarithmic potential} of a finite measure $\mu$ is defined by 
 	\begin{equation}
 		U^{\mu}(z) \deff \int \ln \frac{1}{|z - t|} \dd \mu(t).
 	\end{equation}
@@ -45,19 +45,23 @@ The classical case for such minimization problems corresponds to the cases when 
 	\end{equation}
 	the \textbf{energy} $V$ of $\Sigma$ is
 	\begin{equation}
-		V \deff \inf\{ I(\mu) | \mu \in \M(\Sigma)\}
+		V \deff \inf\{ I(\mu) | \mu \in \M(\Sigma)\}.
 	\end{equation}
-	and the measure $\mu^V_\Sigma$, if $V$ is finite, which defines the energy is the \textbf{equilibrium measure}.
+	If $V$ is finite, then the measure $\mu^V_\Sigma$ which minimizes the energy, is called the \textbf{equilibrium measure}.
 \end{definicao}
 
-This logarithmic potential is interpreted as the equivalent interaction potential of the system of $n$ identical particles distributed with $\mu$ where the repelling force between two particles is proportional to the distance between them.  There are a few useful properties one can extract about this quantity.
+This logarithmic potential can be easily interpreted if one reconsiders the Coulomb gas analogy discussed in \autoref{Section: Coulomb Gas}. Note that the interaction between two particles of gas we considered is logarithmic. Then, taking the empirical counting measure $\delta_\Lambda = 1/n \sum_{i=1}^n \delta_{\lambda_i}$ introduced in \eqref{Equation: empirical measure} we can write
+\begin{equation}
+	U^{\delta_\Lambda}(z) = \int \ln \frac{1}{|z - t|} \dd \delta_\Lambda(t) = \sum_{i=1}^n \ln \frac{1}{|z  - \lambda_i|}.
+\end{equation}
+This is precisely the potential energy exerted by the particles on the point $z$. There are a few useful properties one can extract about this quantity.
 
 \begin{proposicao} \cite{saff2024logarithmic}
-	Let $\mu$ be a finite positive Borel measure of compact support on the complex plane $\C$. Then the logarithmic potential are super-harmonic on the whole plane, that is, they have the following properties.
+	Let $\mu$ be a finite positive Borel measure of compact support on the complex plane $\C$. Then the logarithmic potential is super-harmonic on the whole plane, that is, it have the following properties.
 	\begin{enumerate}
 		\item $U^{\mu}(z) > -\infty$ for all $z$,
 		\item $U^{\mu}$ is lower semi-continuous,
-		\item $U^{\mu}(z) \geq \frac{1}{2\pi} \int_{-\pi}^{\pi} U^{\mu}(zNN + r \ee^{\ii \theta}) \dd \theta$ for all $z$ and all $r \geq 0$. 
+		\item $U^{\mu}(z) \geq \frac{1}{2\pi} \int_{-\pi}^{\pi} U^{\mu}(z + r \ee^{\ii \theta}) \dd \theta$ for all $z$ and all $r \geq 0$. 
 	\end{enumerate}
 \end{proposicao}
 \begin{proof}
@@ -76,7 +80,7 @@ This logarithmic potential is interpreted as the equivalent interaction potentia
 	\end{align}
 \end{proof}
 
-Also, for technical reasons we also state the following Lemma regarding the logarithmic energy that will become useful in a later result although we do not to prove it.
+For technical reasons we also state \autoref{Lema: positive kernel} regarding the logarithmic energy that will become useful in a later result although we do not to prove it.
 
 \begin{lema} 	\label{Lema: positive kernel}
 	\cite{saff2024logarithmic}
@@ -87,21 +91,24 @@ Also, for technical reasons we also state the following Lemma regarding the loga
 	is non-negative and it is zero if and only if $\mu = 0$.
 \end{lema}
 
-The energy $V$ can be finite or $+\infty$, and in the finite case there is a unique measure $\mu = \mu_\Sigma \in \M(\Sigma)$ for which the minimum defining energy $V$ is reachable. Such a measure $\mu_\Sigma$ is called the \textit{equilibrium distribution} or \textit{equilibrium measure} of the compact set $\Sigma$. For such a function we have that its logarithm potential is always smaller or equal to the energy $I_\Sigma$. 
-\begin{definicao}
-	Define also the \textit{logarithmic capacity}
-	\begin{equation}
-		\cpct{(\Sigma)} \deff \ee^{-V}.
-	\end{equation}
-\end{definicao} 
-The capacity for an arbitrary Borel set $E$ is defined by the supremum of the capacity of all the compact subsets $K \subseteq E$. Naturally, the capacity of a subset of a Borel set of capacity zero is said to be zero. The union of zero-capacity Borel sets can also be shown to be a zero-capacity Borel set. A property is said to hold \sigla{q.e.}{\textit{quasi-everywhere}} on a set $E$ if the set of non  conforming points is of capacity zero. Then, we say that
-\begin{equation}
-	U^\mu_\Sigma(z) = V, \quad \text{q.e.} \  z \in \Sigma. 
-\end{equation} 
+If the energy $V$ is finite, there is a unique measure $\mu = \mu_\Sigma \in \M(\Sigma)$ for which the minimum energy $V = \inf\{ I(\mu) | \mu \in \M(\Sigma)\}$ is reachable. \cite{saff2024logarithmic} Such a measure $\mu_\Sigma$ is called the \textit{equilibrium distribution} or \textit{equilibrium measure} of the compact set $\Sigma$. These concepts have a natural electrostatic interpretation. Suppose $\Sigma$ is a conductor and charged particles are placed on it. If the force between the particles is proportional to the reciprocal of their distance, then $\mu_\Sigma$ is their equilibrium configuration.
 
-We should at this point reintroduce the external potential $Q$. The main difference now is that we loose the compacity restriction on the sets $\Sigma$ and impose that there is no positive mass around infinity. There is a natural way to introduce this idea. Let $\Sigma \subset \C$ be a closed set and $\wf : \Sigma \rightarrow [0, \infty)$. We call such a function a \textit{weight function} on $\Sigma$.
+
+% For such a function we have that its logarithm potential is always smaller or equal to the energy $I_\Sigma$. 
+%\begin{definicao}
+%	Define also the \textit{logarithmic capacity}%
+%	\begin{equation}
+%		\cpct{(\Sigma)} \deff \ee^{-V}.
+%	\end{equation}
+%\end{definicao} 
+%The capacity for an arbitrary Borel set $E$ is defined by the supremum of the capacity of all the compact subsets $K \subseteq E$. Naturally, the capacity of a subset of a Borel set of capacity zero is said to be zero. The union of zero-capacity Borel sets can also be shown to be a zero-capacity Borel set. A property is said to hold \sigla{q.e.}{\textit{quasi-everywhere}} on a set $E$ if the set of non  conforming points is of capacity zero. Then, we say that
+%\begin{equation}
+%	U^\mu_\Sigma(z) = V, \quad \text{q.e.} \  z \in \Sigma. 
+%\end{equation} 
+We should at this point reintroduce the external potential $Q$. Surely an external force will change the minimum energy state and equilibrium configurations. For this case, a weighted version of the problem was developed. The main difference now is that $\Sigma$ is not required to be compact and it is imposed that there is no positive mass around infinity. There is a natural way to enforce these conditions. Let $\Sigma \subset \C$ be a closed set and $\wf : \Sigma \rightarrow [0, \infty)$. This function $\wf$ is called a \textit{weight function} on $\Sigma$. Certain weight functions make it so that there is no positive mass around infinity; we call such function \textit{admissible}.
+
 \begin{definicao}	\label{Definition: Weight Admissibility}
-	A weight function $\wf$ is said to be \textbf{admissible} is it satisfies the following three conditions
+	Define also the \textit{logarithmic capacity} to be	$\cpct{(\Sigma)} = \ee^{-V}$, $V = \inf\{ I(\mu) | \mu \in \M(\Sigma)\}$. A weight function $\wf$ is said to be \textbf{admissible} is it satisfies the following three conditions
 	\begin{enumerate}
 		\item $\wf$ is upper semi-continuous;
 		\item $\Sigma_0 \deff \{ z \in \Sigma | \wf(z) > 0 \}$ has positive capacity;
@@ -109,33 +116,42 @@ We should at this point reintroduce the external potential $Q$. The main differe
 	\end{enumerate} 
 \end{definicao}
 
+\mycomment{
 \begin{exemplo}
 	(Classical weights) The Gaussian ensemble weight function is
 		\begin{equation}
-		\wf(\lambda) = \ee^{-n \lambda^2}.
+		\wf(\lambda) = \ee^{-\lambda^2}.
 	\end{equation}
-	This say this is an admissible weight by \autoref{Definition: Weight Admissibility}. Firstly, it is positive continuous functions in $\R$. For the second condition, we say the Gaussian weight function to have $\Sigma_0$ with positive capacity because $I(\wf)$ is finite such that the energy $V$ is positive.
+	We say this is an admissible weight function, ot do so we must prove that it satisfies all three conditions in \autoref{Definition: Weight Admissibility.} Firstly, it is positive continuous functions in $\R$. Because its positive, $\Sigma_0 = \R$. Since there is a 
+	For the second condition, $I(\wf)$ is finite such that the energy $V$ is positive.
 	Finally, even with $\Sigma$ unbounded, we have $|z| \wf(z) \rightarrow 0$ as $|z| \rightarrow \infty$, $z \in \Sigma$.
 \end{exemplo}
+}
 
 Assume our weight function to have the form
 \begin{equation}
-	\wf(z) \deff \ee^{-n Q(z)}.
+	\wf(z) \deff \ee^{-\frac{Q(z)}{2}}.
 \end{equation}
 Then, for the weight to be admissible, $Q : \Sigma \rightarrow (\infty, \infty]$ must be lower semi-continuous, $Q(z) < \infty$ on a set of positive capacity and if $\Sigma$ is unbounded, then
 \begin{equation}
-	\lim_{|z| \rightarrow \infty, z \in \Sigma} \{ Q(z) - \ln |z| \} = \infty.
+	\lim_{|z| \rightarrow \infty, z \in \Sigma} \{ Q(z) - 2 \ln |z| \} = \infty.
 \end{equation}
 Let $\M(\Sigma)$ be the collection of all positive unit Borel measures $\mu$ with support in $\Sigma$. Our definition for the weighted energy integral
 \begin{align}
-	I_\wf(\mu) & = \int \int \ln |t - s|^{-1} \dd \mu(t) \dd \mu(s) + \int \Q(s) \dd  \mu(s) \\
-	& = \int U^\mu(s)  \dd \mu(s) + \int \Q(s) \dd  \mu(s)
+	I^\wf(\mu) & = \int \int \log \left[ |t - s| \wf(t) \wf(s) \right]^{-1} \mu(t) \dd \mu(s), \\
+	& = \int \int \ln |t - s|^{-1} \dd \mu(t) \dd \mu(s) + \int \Q(s) \dd  \mu(s), \\
+	& = \int U^\mu(s)  \dd \mu(s) + \int \Q(s) \dd  \mu(s),
 \end{align}
-is recovered if both integrals exist and are finite. We now move on to the matter of existence of an \textit{equilibrium measure} $\mu^{\wf}$ for a given external field $\Q$ given by some polynomial
+is recovered if both integrals exist and are finite. 
+
+On the next section we move on to the matter of existence of an \textit{equilibrium measure} and unicity of $\mu^{\wf}$ for a given external field $\Q$ given by some polynomial
+
 \begin{equation}
 	Q(x) = t_{2m} x^{2m} + t_{2m-1} x^{2m - 1} + \cdots + t_0, \quad t_{2m} > 0, Q(x) \geq 0.
 	\label{Equation: Potential Q}
 \end{equation}
+
+\mycomment{
 \begin{teorema}	\label{Theorem: existence equilibrium}
 	 \cite{deiftorthogonal}
 	Let $Q$ be as in \eqref{Equation: Potential Q}. Then, there exists a unique probability measure $\mu = \mu^{\wf}$ such that
@@ -144,6 +160,7 @@ is recovered if both integrals exist and are finite. We now move on to the matte
 	\end{equation}
 	Moreover, $\mu^\wf$ has compact support.
 \end{teorema}
+}
 \mycomment{
 \begin{proof}
 	Let 
@@ -171,11 +188,11 @@ is recovered if both integrals exist and are finite. We now move on to the matte
 }
 
 \begin{exemplo}
-	For example, take the invariant ensemble correspondent to taking the Coulomb gas restricted to the line on some two dimensional conductor and under the potential
+	Take the Coulomb gas measure described in \autoref{Section: Coulomb Gas}, restricted to the real line under the external potential
 	\begin{equation}
 		Q(x) = t x^{2m}.
 	\end{equation}
-	One determine that for such system there is an unique $\mu^*_Q$ that minimizes the logarithmic energy. This measure is defined by
+	By finding configurations that minimizes the Hamiltonian, one also finds the more likely configurations. These configurations, when $n \rightarrow \infty$ converges to a measure $\mu^*_Q$ that minimizes the logarithmic energy. It can be shown that this measure is given by
 	\begin{equation}
 		\supp \mu^*_Q(x) = [-a, a], \ \ \mu^*_Q(x) = \frac{mt}{\pi} \sqrt{a^2 - x^2} h(x),
 		\label{Equation: Monic external potential}
@@ -260,7 +277,7 @@ is recovered if both integrals exist and are finite. We now move on to the matte
 
 \subsection{Euler-Lagrange}
 
-Associated with the variational problem introduced on \autoref{Section: Equilibrium} defined by
+Associated with the variational problem introduced in \autoref{Section: Equilibrium} defined by
 \begin{align}
 	E^{\wf} & = \inf_{\mu \in \M^1} I^{\wf} (\mu), \\
 	& =   \inf_{\mu \in \M^1} \left[ \int \int \ln |t - s|^{-1} \dd \mu(t) \dd \mu(s) + \int \Q(s) \dd  \mu(s) \right], \\
@@ -268,10 +285,8 @@ Associated with the variational problem introduced on \autoref{Section: Equilibr
 \end{align}
 one defines the so-called \textit{Euler-Lagrange} type variational equations. They are important as they provide a tool to solve these equations for the equilibrium measure $\mu^{\wf}$.
 
-\begin{teorema} (Variational Equations, \cite{deiftorthogonal})
-	The equilibrium measure $\mu^\wf$ for the given variational problem in \autoref{Section: Equilibrium} satisfies the following conditions. 
-	
-	There exists a real constant $l$ such that 
+\begin{teorema} (Variational Equations)
+	The equilibrium measure $\mu^\wf$ for the given variational problem in \autoref{Section: Equilibrium} satisfies the following conditions. There exists a real constant $l$ such that 
 	\begin{enumerate}
 		\item
 		\begin{equation}
@@ -288,18 +303,20 @@ one defines the so-called \textit{Euler-Lagrange} type variational equations. Th
 \end{teorema}
 
 \begin{proof}
-	($\implies$) We recall that $\mu^\wf$ has compact support by \autoref{Theorem: existence equilibrium} and $I^\wf(\mu^\wf) = E^\wf < \infty$. Suppose $\mu^* \in \M^1(\C)$ has compact support and $I^\wf(\mu^*) < \infty$. Then, defining some convex combination
+	The argument of the proof is based on  \cite{deiftorthogonal}. 
+	
+	($\implies$) We recall that $\mu^\wf$ has compact support by \autoref{Theorem: existence equilibrium} and $I^\wf(\mu^\wf) = E^\wf < \infty$. Suppose $\mu^* \in \M^1(\C)$ has compact support and $I^\wf(\mu^*) < \infty$. Then, defining a convex combination
 	\begin{equation}
 		\mu_t = t \mu^* + (1-t) \mu^\wf = \mu^\wf + t (\mu^* - \mu^\wf) \in \M^1(\C), \quad 0 \leq t \leq 1,
 	\end{equation}
-	we should have
+	we have
 	\begin{multline}
 		I^\wf(\mu_t) = \int \int \ln |t - s|^{-1} \dd \mu^\wf(t) \dd \mu^\wf(s) + \int \Q(s) \dd  \mu^\wf(s) \\
 		+ 2t \int \int \ln |t - s|^{-1} \dd \mu^\wf(t) \dd (\mu^* - \mu^\wf)(s) \\
 		+ t  \int \Q(s) \dd  (\mu^* - \mu^\wf) (s) \\
 		+ t^2 \int \int \ln |t - s|^{-1} \dd (\mu^* - \mu^\wf) \dd (\mu^* - \mu^\wf)(s).
 	\end{multline}
-	This is all well since $\mu^\wf, \mu^*$ have compact support and $I^\wf (\mu^\wf), I^\wf(\mu^*) < \infty$. As $I^\wf(\mu_t) \geq I^\wf (\mu^\wf)$ for $0 \leq t \leq 1$ by assumption of minimality and \autoref{Lema: positive kernel}, is is necessary that
+	Each term on the right is finite since $\mu^\wf, \mu^*$ have compact support and $I^\wf (\mu^\wf), I^\wf(\mu^*) < \infty$. As $I^\wf(\mu_t) \geq I^\wf (\mu^\wf)$ for $0 \leq t \leq 1$ by assumption of minimality and \autoref{Lema: positive kernel}, is is necessary that
 	\begin{equation}
 		\int \left[ 2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + \Q(x) \right] \dd (\mu^* - \mu^\wf)(x) \geq 0
 		\label{Equation: Proof Euler >0}
@@ -354,36 +371,37 @@ one defines the so-called \textit{Euler-Lagrange} type variational equations. Th
 	a contradiction. Thus, if $\mu$ satisfies $(1), (2)$, then it must be $\mu^\wf$.
 \end{proof}
 
-Moreover, if there is the knowledge that 
+If, in addition we assume that 
 \begin{equation}
-	\dd \mu^\wf = \phi(x) \dd x 
+	\dd \mu^\wf(z) = \phi(z) \dd A 
 	\label{Equation: eqmeasure density}
 \end{equation}
-for some continuous function $\phi$ of compact support, then
-\begin{equation}
-	\int \ln{|x-y|^{-1}} \dd \mu(y) + \Q(x)
-\end{equation}
-is continuous and the previous theorem takes the following simpler form.
+for some continuous function $\phi$ of compact support and $\dd A = \dd^2 z/\pi$ the area measure, then
+%\begin{equation}
+	%2 \int \ln{|x-y|^{-1}} \dd \mu(y) + \Q(x)
+%\end{equation}
+%is continuous and 
+the previous theorem takes the following simpler form.
 
-\begin{teorema} \label{Theorem: Euler-Lagrange} (Strong Variational Equations, \cite{deiftorthogonal})
-	Suppose that $\dd \mu^\wf = \phi(x) \dd x$ for some continuous function $\phi$ of compact support. Then the conditions of \autoref{Theorem: existence equilibrium} is replaced by
+\begin{teorema} \label{Theorem: Euler-Lagrange} (Strong Variational Equations)
+	Suppose that $\dd \mu^\wf = \phi(z) \dd A$ for some continuous function $\phi$ of compact support. Then the conditions of \autoref{Theorem: existence equilibrium} is replaced by
 	\begin{enumerate}
 		\item
 		\begin{equation}
-			2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + \Q(x) \geq l
+			2 \int \ln{|z-t|^{-1}} \dd \mu^\wf(t) + \Q(z) \geq l
 		\end{equation}
 		for all $z \in \C$.
 		\item
 		\begin{equation}
-			2 \int \ln{|x-y|^{-1}} \dd \mu^\wf(y) + \Q(x) = l
+			2 \int \ln{|z-t|^{-1}} \dd \mu^\wf(t) + \Q(z) = l
 		\end{equation}
 		on $\{z : \phi(z) > 0\}$.
 	\end{enumerate}
 \end{teorema} 
 
-We mentioned in \eqref{Equation: eqmeasure density} the possibility of knowing the density $\phi$ of the equilibrium measure $\mu^\wf$ with respect to the Lebesgue measure. We will now determine $\phi$. The support the equilibrium measure is an important quantity in determining the equilibrium measure corresponding to a weight function $\wf$. Suppose for example this support to be a bounded with a smooth nice border and $\wf$ to be a continuous function. Then, by the previous theorem, inside of the support $U^{\mu_\wf}$ coincides with $-Q$ plus some constant. Thus, we get a way of determining the the equilibrium logarithmic potential. From this potential, there is a way to recover the equilibrium measure. Let $A = \dd^2 z /\pi$ denote the two-dimensional area measure on $\C$ and $\Delta$ denote the quarter of the usual Laplacian operator
+We mentioned in \eqref{Equation: eqmeasure density} the possibility of knowing the density $\phi$ of the equilibrium measure $\mu^\wf$ with respect to the Lebesgue measure. We will now determine $\phi$. The support the equilibrium measure is an important quantity in determining the equilibrium measure corresponding to a weight function $\wf$. Suppose for example this support to be a bounded with a smooth nice border and $\wf$ to be a continuous function. Then, by the previous theorem, inside of the support $U^{\mu_\wf}$ coincides with $-Q$ plus some constant. Thus, we get a way of determining the the equilibrium logarithmic potential. From this potential, there is a way to recover the equilibrium measure. Let $\dd A = \dd^2 z /\pi$ denote the two-dimensional area measure on $\C$ and $\Delta$ denote the quarter of the usual Laplacian operator
 \begin{equation}
-	4 \Delta F \deff \frac{\partial^2 F}{\partial x^2} + \frac{\partial^2 F}{\partial y^2}.
+	4 \Delta F = \frac{\partial^2 F}{\partial x^2} + \frac{\partial^2 F}{\partial y^2}.
 \end{equation}
 \mycomment{
 Then, we state the following lemma.
@@ -430,13 +448,12 @@ We have the theorem below.
 \end{proof}
 }
 
-
-
-
 \subsection{Random Normal Ensembles}
 \label{Subsection: Planar Ensembles}
 
-In this section we will calculate the equilibrium measure for the \textit{random normal ensemble of matrices}.  This is especially helpful as in \autoref{chapter: planarensembles} we will need this measure to perform asymptotic calculation on its partition function. We begin by defining our ensemble. 
+In this section we will calculate the equilibrium measure for the \textit{random normal ensemble of matrices}.  This is especially helpful as in \autoref{chapter: planarensembles} we will need this measure to perform asymptotic calculation on its partition function. 
+
+We begin by defining our ensemble. 
 
 \begin{definicao}
 	The \textbf{random normal matrix} ensemble $(\eS, \eP)$ is constructed by considering the set of $n$-sized normal matrices with complex entries $\eS = \mathcal{N}_n(\C)$ equipped with a p.d.f. 
@@ -452,7 +469,7 @@ We first note that because we are dealing with random matrices we rewrite this p
 	& = \ee^{-n \tr{Q(\m{M})}}, \\
 	& = \ee^{-n \tr{\left(\alpha_k \m{M}^k + \alpha_{k-1} \m{M}^{k-1} + \dots + \alpha_{1} \m{M} + \alpha_0 \right)}}, \\
 	& = \ee^{-n \tr{\left(\alpha_k \m{M}^k\right)}} \ee^{-n\tr{\left(\alpha_k \m{M}^k\right)}} \cdots \ee^{-n\tr{\left(\alpha_1 \m{M}\right)}} \ee^{-n\tr{\left(\alpha_0\right)}}, \\
-	& = \ee^{-n\alpha_k \tr{\left(\m{U}\m{\Lambda}^k \m{U^*}\right)}} \ee^{-n\alpha_{k-1} \tr{\left(\m{U}\m{\Lambda}^{k-1} \m{U^*}\right)}} \cdots 	\ee^{-n\alpha_{1} \tr{\left(\m{U}\m{\Lambda} \m{U^*}\right)}} \ee^{-n\alpha_{0}}, \\
+	& = \ee^{-n\alpha_k \tr{\left(\m{P}\m{\Lambda}^k \m{P^{-1}}\right)}} \ee^{-n\alpha_{k-1} \tr{\left(\m{P}\m{\Lambda}^{k-1} \m{P^{-1}}\right)}} \cdots 	\ee^{-n\alpha_{1} \tr{\left(\m{P}\m{\Lambda} \m{P^{-1}}\right)}} \ee^{-n\alpha_{0}}, \\
 	& = \ee^{-n\alpha_k \tr{\left(\m{\Lambda}^k\right)}} \ee^{-n\alpha_{k-1} \tr{\left(\m{\Lambda}^{k-1} \right)}} \cdots 	\ee^{-n\alpha_{1} \tr{\left(\m{\Lambda}\right)}} \ee^{-n\alpha_{0}}, \\
 	& = \ee^{-n\alpha_k \tr{\left(\sum_{i=1}^n \lambda_i^k \right)}} \ee^{-n\alpha_{k-1} \tr{\left(\sum_{i=1}^n \lambda_i^{k-1} \right)}} \cdots 	\ee^{-n\alpha_{1} \tr{\left(\sum_{i=1}^n \lambda_i\right)}} \ee^{-n\alpha_{0}}, \\
 	& = \ee^{-n \sum_{i=1}^n{\left(\alpha_k \lambda_i^k + \alpha_{k-1} \lambda_i^{k-1} + \dots + \alpha_{1} \lambda_i + \alpha_0 \right)}}, \\
@@ -466,13 +483,13 @@ Together with \autoref{Theorem: Weyls}, we say that, on the complex plane we are
 \end{equation}
 where $\dd A(z) \deff \dd^2 z / \pi$ is the area measure. The weight function $\wf$ for such ensembles are given by 
 \begin{equation}
-	w(z) = \ee^{-n Q(z)}.
+	w(z) = \ee^{-Q(z)}.
 \end{equation}
 We now define the potential $Q$ to further specify the working model.
 
 \begin{definicao}
 	\label{Definicao: weight-function}
-	The \textbf{planar normal ensembles} are a normal ensemble where $Q$ is some complex polynomial potential that satisfies
+	We deal with $\eE = (\eS, \eP)$ a \textbf{normal ensemble} in which $Q$, which defines the weight function $\wf(x) = \ee^{-Q(x)/2}$ is some complex potential that satisfies
 	\begin{enumerate}
 		\item The potential $Q$ is radially symmetric, i.e.
 		\begin{equation}
@@ -487,37 +504,40 @@ We now define the potential $Q$ to further specify the working model.
 	\end{enumerate}
 \end{definicao}
 
-These assumptions are essential for what follows. To require radial symmetric is to say that the integral of a function of $Q$ in relation to the area measure can be exchanged by an angle component and a line component, as all directions would be homogeneous. The growth requirement comes from the need for the confinement of particles in the system - note that the interaction energy has logarithmic behavior. Smoothness makes sure we can expand the potential in a series without worrying about the continuity and existence of derivatives. The conditions on sub-harmonicity may not be as clear but are requirements that can be though of as convexity and will ensure uniqueness of the minima and connectedness of the support of the equilibrium measure. We will be dealing mainly with the real potential $q$ as we make use of the symmetry of $Q$. Therefore, we also state the following proposition.
+These assumptions are essential for what follows. To require radial symmetric is to say that the integral of a function of $Q$ with respect to the area measure can be exchanged by an angle component and a line component, as all directions are homogeneous. The growth requirement comes from the need for the confinement of particles in the system - note that the interaction energy has logarithmic behavior. The conditions on sub-harmonicity can be though of as convexity and will ensure uniqueness of the minima and connectedness of the support of the equilibrium measure. We will be dealing mainly with the real potential $q$ as we make use of the symmetry of $Q$. Therefore, we also state the following proposition.
 
 \begin{proposicao}
 	The real potential $q \colon \R \rightarrow \R$ defined as in \autoref{Definicao: weight-function} is such that $rq'(r)$ is \textbf{increasing} in the complex plane and \textbf{strictly increasing} in the support of the equilibrium measure $\mu_Q$.
 \end{proposicao}
 \begin{proof}
-	Because of the radial symmetry, one take some function $q: \R \rightarrow \R$ such that $q(|z|) = Q(z)$; If we say that the $Q$ is sub-harmonic on the plane, i.e. $\Delta Q(z) \geq 0$ for all $z \in \C$, then
+	Because $Q$ is sub-harmonic on the plane, i.e. $\Delta Q(z) \geq 0$ for all $z \in \C$, then
 	\begin{equation}
 		\Delta Q(z) \geq 0 = \frac{1}{r} (r q'(r))' \geq 0 \implies rq'(r) \ \text{is increasing},
 	\end{equation}
 	and strictly increasing in the support of the equilibrium measure $\mu_Q$ by the same relation with a strict inequality. 
 \end{proof}
 
-We want to determine the support of the equilibrium measure for the eigenvalues of the planar normal ensembles. We will start on the \textit{ansatz} that this support has two profiles; it can either be a disk centered at the origin with radius $r_1$ denoted by $D(r_1)$ or it can be an annulus centered at the origin with internal radius $r_0$ and external radius $r_1$ denoted by $A(r_0, r_1)$. We have the following theorem. 
+We want to determine the support of the equilibrium measure for the eigenvalues of the planar normal ensembles.
 
 \begin{teorema}
 	Let $\wf$ be as in \autoref{Definicao: weight-function}. If	$r_0$ is the largest solution of $r q'(r) = 0$ and $r_ 1$ is the smallest solution of $r q'(r) = 2$ then the support of $\mu_Q$ is given by the ring $\mathcal{S} = \{z | r_0 \leq |z| \leq r_1\}$ and $\dd \mu_Q$ is given by
 	\begin{equation}
 		\dd \mu_Q(z) = \frac{1}{4\pi} (r q'(r))' \Ind_{\mathcal{S}} \dd r \dd \phi, \quad z = r \ee^{\ii \phi}.
 	\end{equation}
+	The set $\mathcal{S}$ can be either an annulus (if $r_0 > 0$) or a disk (if $r_0 = 0$).
 \end{teorema}
 \begin{proof}
-	Let $\mu = \frac{1}{4\pi} (r q'(r))' \Ind_{\mathcal{S}} \in  \M^1(\C)$. Consider the reason for $r_0$ and $r_1$ to be defined in such a way. We want that 
+	We will start on the \textit{ansatz} that this support has two profiles; it can either be a disk centered at the origin with radius $r_1$ denoted by $D(r_1)$ or it can be an annulus centered at the origin with internal radius $r_0$ and external radius $r_1$ denoted by $A(r_0, r_1)$. We have the following theorem. 
+	
+	Let $\mu = \frac{1}{4\pi} (r q'(r))' \Ind_{\mathcal{S}} \in  \M^1(\C)$. We want that 
 	\begin{equation}
-		\int_{\C} \dd \mu = 1
+		\int_{\C} \dd \mu = 1,
 	\end{equation}
 	that is, 
 	\begin{equation}
 		r_1 q'(r_1) - r_0 q'(r_0) = 2.
 	\end{equation}
-	Naturally, with $r_0, r_1$ defined as in the theorem, we have that the relation is satisfied. Now, by \autoref{Theorem: Euler-Lagrange}, if $\mu$ satisfies that
+	Naturally, with $r_0, r_1$ as in the theorem, we have that this relation is satisfied. Now, by \autoref{Theorem: Euler-Lagrange}, if $\mu$ satisfies that
 	\begin{align}
 		2 U^{\mu}(z) & \geq l - Q(z), \quad z \in \C  \\
 		2 U^{\mu}(z) & = l - Q(z), \quad z \in \{z \ | \ r_0 \leq |z| \leq r_1\}.
@@ -557,14 +577,14 @@ We want to determine the support of the equilibrium measure for the eigenvalues 
 	\end{align}
 	Define $l = - (2 \ln(r_1) - q(r_1))$, then
 	\begin{equation}
-		2 U^{\mu}(z)
+		2 U^{\mu}(z) =
 		\begin{cases}
 			l - q(r_0),  \quad |z| < r_0, \\
 			\ln \frac{1}{z}, \quad |z| > r_1, \\
 			l - q(|z|), \quad r_0 \leq |z| \leq r_1.
 		\end{cases}
 	\end{equation}
-	By the definition for $r_0, r_1$, $2 U^{\mu}(z) \geq l - q(|z|)$ for $z \in \C$ but  $2 U^{\mu}(z) = l - mq(|z|)$ for $r_0 \leq |z| \leq r_1$. Therefore, $\mu_Q = \mu$ and we have found our support for the equilibrium measure.
+	By the definition for $r_0, r_1$, $2 U^{\mu}(z) \geq l - q(|z|)$ for $z \in \C$ but  $2 U^{\mu}(z) = l - mq(|z|)$ for $r_0 \leq |z| \leq r_1$. Therefore, $\mu_Q = \mu$ and we have found our equilibrium measure.
 \end{proof}
 
 \begin{figure}[h!]
@@ -625,18 +645,19 @@ We want to determine the support of the equilibrium measure for the eigenvalues 
 \end{figure}
 
 \begin{definicao} \label{Definition: Droplet}
-	We call \textbf{Droplet} the set of all complex values $z$ such that $r_0 \leq |z| \leq r_1$.
+	We call \textbf{Droplet} the support of $\mu_Q$, which in our case is the set of all complex values $z$ such that $r_0 \leq |z| \leq r_1$.
 \end{definicao}
 
 \section{Solving for the Free Energy}
+\label{Section: Free eenrgy}
 
 Remember the expression for the Gibbs-Boltzmann measure of Coulomb gases 
 \begin{equation}
 	\dd \p_n (\xi) = \frac{1}{\pZ{n}{\beta}} \ee^{-\beta n^2 \Hf_n(\xi)} \prod_{i = 1}^{n} \dd x_i.
 \end{equation}
-As discussed, this expression refers to a thermodynamic fluid of particles with positions $\xi = \mmany{x}{n}$ on a conductor $\Sigma$, in equilibrium at some inverse temperature $\beta$ an submitted to a confining potential $Q$ and a repulsive logarithmic term of interaction.  Because of the term $\beta n^2$, taking the asymptotic $n \rightarrow \infty$ means at the same time zero temperature and the thermodynamic limit. Physically, understanding the equilibrium positions would be equivalent to minimizing the \textit{Free Energy} $F = - (1/\beta) \ln \pZ{n}{\beta}$. Let's describe the idea behind such minimization. This section \textit{is in no way rigorous}, its only purpose is to connect the idea of equilibrium problems with the asymptotics we will perform on \autoref{chapter: planarensembles} and elucidate where the expression for the free energy comes from. This argument, in more detail, can be found in \citeonline{Livan_2018}.
+As discussed, this expression refers to a thermodynamic fluid of particles with positions $\xi = \mmany{x}{n}$ on a conductor $\Sigma$, in equilibrium at some inverse temperature $\beta$ an submitted to a confining potential $Q$ and a repulsive logarithmic term of interaction.  Because of the term $\beta n^2$, taking the asymptotic $n \rightarrow \infty$ means at the same time zero temperature and the thermodynamic limit. Physically, understanding the equilibrium positions would be equivalent to minimizing the \textit{Free Energy} $F = - (1/\beta) \ln \pZ{n}{\beta}$. Let's describe the idea behind such minimization. This section \textit{is in not rigorous}, its only purpose is to connect the idea of equilibrium problems with the asymptotics we will perform in \autoref{chapter: planarensembles} and elucidate where the expression for the free energy comes from. This argument, in more detail, can be found in \citeonline{Livan_2018}.
 
-Lets first take the normalized counting measure, already introduced in \autoref{Section: DPP},
+Lets first take the normalized counting measure, already introduced in \autoref{Section: RMT},
 \begin{equation}
 	\n(x) = \frac{1}{n} \sum_{i = 1}^{n} \delta(x - x_i).
 \end{equation}
@@ -644,7 +665,7 @@ Note that using this function we write the unity as
 \begin{equation}
 	1 = \int \dd [\n(x)] \delta \left[ \n(x) - \frac{1}{n} \sum_{i=1}^{n} \delta(x - x_i) \right],
 \end{equation}
-and with this we also rewrite our partition function to be written as
+we rewrite our partition function from \eqref{Equation: Equilibrium gas} as
 \begin{equation}
 	\pZ{n}{\beta} = C_{n, \beta} \int \dd [\n(x)] \int_{\R^{dn}} \prod_{j=1}^{n} \dd x_j \ee^{-\beta n^2 \Hf_n(\xi_n)} \delta  \left[ \n(x) - \frac{1}{n} \sum_{i=1}^{n} \delta(x - x_i) \right].
 \end{equation}
@@ -669,7 +690,8 @@ where
 \begin{equation}
 	\Hf_n(\n(x)) = \int_{\R^d} n(x) Q(x) \dd x + \frac{1}{2} \int \int_{\R^{2d}} \dd x \dd y \n(x) \n(y) \ln |x - y| - \frac{1}{2n} \int_{\R^d} \dd x \n(x) \ln \Delta (x). 
 \end{equation}
-There is some interpretations to me made about $I_n[\n(x)]$.  Physically it is possible to think of it as a count of how many microstates $\xi_n$ are compatible with the macrostate $\n(x)$. The logarithm of this quantity is proportional to the entropy of such system. Rewrite this function as
+
+Physically it is possible to think of  $I_n[\n(x)]$ as a count of how many microstates $\xi_n$ are compatible with the macrostate $\n(x)$. The logarithm of this quantity is proportional to the entropy of such system. Rewrite this function as
 \begin{align}
 	I_n[\n(x)] & = \int \dd [\n(x)] \int_{\R^{dn}} \prod_{j=1}^{n} \dd x_j \exp{ \left[\ii n \int \dd x \n(x) \hat{\n}(x) - \ii \int \dd x \hat{\n}(x) \sum_{i=1}^{n} \delta(x - x_i) \right]} \\
 	& =  \int \dd [\n(x)]  \exp{\left[ \ii n \int_{\R^{dn}} \dd x \n(x) \hat{\n}(x) \right]} \left[ \int_{\R^d} \dd y \ee ^{\ii \int_{\R^d} \dd x \hat{\n}(x) \delta(x- x_i) } \right]^n \\
@@ -681,7 +703,7 @@ where
 	S[\hat{\n}(x) | \n(x)] = \ii \int_{\R^{dn}} \dd x \n(x) \hat{\n}(x) + \ln \int_{\R^d} \dd y \ee^{-\ii \hat{\n}(x)}.
 \end{equation}
 
-The most important thing to notice here is that \eqref{Equation: logarithmic energyy - entropy} is of a similar form from the one required by the Laplace asymptotic technique discussed in \autoref{chapter:asymptotics}. We estimate it, if $S$ has a maxima with strictly negative second derivative, by the evaluation at its maximum point. We find
+Notice here that \eqref{Equation: logarithmic energyy - entropy} is of a similar form from the one required by the Laplace asymptotic technique discussed in \autoref{chapter:asymptotics}. We estimate it, if $S$ has a maxima with strictly negative second derivative, by the evaluation at its maximum point. We find
 \begin{align}
 	0 & = \frac{\partial S}{\partial \hat{\n}(x)} = \ii \n(x) - \ii \frac{\ee^{-\ii \hat{\n}(x)}}{\int_{\R^d} \dd y \ee^{-\ii \hat{\n}(y)}} \\
 	& \implies -\ii \hat{\n}(x) = -\ln(\n(x)) - \ln \int_{\R^{d}} \dd y \ee^{-\ii \hat{\n}(y)},
@@ -690,7 +712,7 @@ for the critical counting function. Then, substituting,
 \begin{equation}
 	I_n[\n(x)] \approx \exp{\left[ -n \int_{\R^{nd}} \dd x \n(x) \ln(\n(x)) \right]},
 \end{equation}
-which has the form of the Shannon entropy of the density $\n(x)$. There is an classical argument that states that $\Delta(x) \approx c / (n \n(x))$, i.e., the higher the density of particles around a point $x$, the smaller the average distance between them. Thus, 
+which has the form of the Shannon entropy of the density $\n(x)$. There is a classical argument that states that $\Delta(x) \approx c / (n \n(x))$, i.e., the higher the density of particles around a point $x$, the smaller the average distance between them. Thus, 
 \begin{align}
 	\int_{\R^d} \dd x \n(x) \ln \Delta (x) & \approx \int_{\R^d} \dd x \n(x) \ln\left( \frac{c}{n \n(x)}\right)  \\
 	& = \int_{\R^d} \dd x \n(x) \left(\ln c - \ln n + \ln \n(x) \right) \\
@@ -715,4 +737,4 @@ and finally for the Free Energy
 \begin{equation}
 	\ln(\pZ{n}{\beta}) = -\beta n^2 \mathfrak{F}_0[\n^*(x)] + \frac{\beta}{2} n \ln(n) + n \left(\frac{\beta}{2} - 1\right) \mathfrak{F}_1[\n^*(x)] - \frac{\beta}{2} n \ln (c) + \Boh(n).
 \end{equation}
-This expression for the Free Energy is the main goal for \autoref{chapter: planarensembles}. 
+Obtaining a expression for the Free Energy rigorously is the main goal for \autoref{chapter: planarensembles}. 

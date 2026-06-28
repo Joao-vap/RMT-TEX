@@ -3,10 +3,9 @@
 \nomenclatureentry{aRMT@[{RMT}]\begingroup Random Matrix Theory\nomeqref {2.0}|nompageref}{21}
 \nomenclatureentry{aRMT@[{RMT}]\begingroup Random Matrix Theory\nomeqref {2.0}|nompageref}{22}
 \nomenclatureentry{ap.d.f.@[{p.d.f.}]\begingroup probability density function\nomeqref {2.0}|nompageref}{22}
-\nomenclatureentry{aGUE@[{GUE}]\begingroup Gaussian Unitary Ensemble\nomeqref {2.1}|nompageref}{26}
-\nomenclatureentry{ap.d.f.@[{p.d.f.}]\begingroup probability density function\nomeqref {2.1}|nompageref}{27}
-\nomenclatureentry{aj.p.d.f.@[{j.p.d.f.}]\begingroup joint probability density function\nomeqref {2.1}|nompageref}{27}
-\nomenclatureentry{aGOE@[{GOE}]\begingroup Orthogonal\nomeqref {2.2}|nompageref}{29}
-\nomenclatureentry{aGUE@[{GUE}]\begingroup Unitary\nomeqref {2.2}|nompageref}{29}
-\nomenclatureentry{aGSE@[{GSE}]\begingroup Symplectic\nomeqref {2.2}|nompageref}{29}
-\nomenclatureentry{aOPE@[{OPE}]\begingroup \textbf {orthogonal polynomial ensemble}\nomeqref {2.3}|nompageref}{34}
+\nomenclatureentry{aGOE@[{GOE}]\begingroup Orthogonal\nomeqref {2.1}|nompageref}{25}
+\nomenclatureentry{aGUE@[{GUE}]\begingroup Unitary\nomeqref {2.1}|nompageref}{25}
+\nomenclatureentry{aGSE@[{GSE}]\begingroup Symplectic\nomeqref {2.1}|nompageref}{25}
+\nomenclatureentry{aj.p.d.f.@[{j.p.d.f.}]\begingroup joint probability density function\nomeqref {2.3}|nompageref}{29}
+\nomenclatureentry{aOPE@[{OPE}]\begingroup \textbf {orthogonal polynomial ensemble}\nomeqref {2.5}|nompageref}{33}
+\nomenclatureentry{aGUE@[{GUE}]\begingroup Gaussian Unitary Ensemble\nomeqref {2.7}|nompageref}{37}

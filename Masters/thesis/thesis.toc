@@ -17,12 +17,13 @@
 \contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introduction}}{19}{chapter.1}%
 \contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Random Matrix Theory}}{21}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Random Matrix}{22}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Invariant Ensembles}{30}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Orthogonal Polynomial Ensembles}{33}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Coulomb Gases}{35}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Determinantal Structure}{37}{section.2.5}%
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Asymptotics}}{47}{chapter.3}%
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Equilibrium Problems}}{49}{chapter.4}%
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Normal Ensembles}}{51}{chapter.5}%
+\contentsline {section}{\numberline {2.2}Invariant Ensembles}{26}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Eigenvalue Statistics}{29}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Orthogonal Polynomial Ensembles}{32}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Coulomb Gases}{34}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Determinantal Structure}{36}{section.2.6}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Asymptotics}}{45}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Equilibrium Problems}}{47}{chapter.4}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Normal Matrix Ensembles}}{49}{chapter.5}%
 \vspace {\cftbeforechapterskip }
-\contentsline {chapter}{\MakeTextUppercase []{Bibliography}}{53}{section*.25}%
+\contentsline {chapter}{\MakeTextUppercase []{Bibliography}}{51}{section*.25}%

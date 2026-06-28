@@ -66,31 +66,30 @@ We have stated a few properties of the model surrounding the potential $Q(z) = q
 	%\end{align}
 \end{proof}
 
-A very important feature of the partition function of normal ensembles is that it can be expressed as a summation of norming constants of the correspondent orthogonal polynomial.
-\begin{lema}	\label{proposicaoosition: Partition function}
-	When dealing with a p.d.f. of the invariant measure given in \autoref{Definition: polynomial ensemble}, is holds that
-	\begin{equation}
-		\pZ{N}{} = N! \prod_{k=0}^{N-1} h_k,
-	\end{equation}
-	where $h_k$ is the norming constant as in $\langle q_j^{(2)}, q_k^{(2)} \rangle^{(2)} = h_j^{(2)} \chi_{j=k}$.
-\end{lema}
-\begin{proof}
-	We start stating the following equality which follows from \autoref{Theorem: Kernel} that
-	\begin{align}
-		\det\left[ K_N(\lambda_i, \lambda_j) \right]_{i,j=1}^{N} & =  p^{(w)}(\mmany{\lambda}{N}), \\
-		\prod_{k=0}^{N-1} h_k^{-1}  \det\left[ \sqrt{\wf(x) \wf(y)} \sum_{k=0}^{N-1} q_k(x) q_k(y) \right]_{i,j=1}^{N} & = \prod_{1 < i \leq j < N} (\lambda_j - \lambda_i)^2 \prod_{k=0}^{N} w(\lambda_k).
-	\end{align}
-	Therefore, rearranging the terms
-	\begin{equation}
-		N! \det\left[ \tilde{K}_N(\lambda_i, \lambda_j) \right]_{i,j=1}^{N} = N! \prod_{k=0}^{N-1} h_k \prod_{1 < i \leq j < N} (\lambda_j - \lambda_i)^2 \prod_{k=0}^{N} w(\lambda_k)
-	\end{equation}
-	where we we can check from the definition the correlation functions that
-	\begin{equation}
-		\pZ{N}{} = N! \prod_{k=0}^{N-1} h_k.
-	\end{equation}
-\end{proof}
-
-Thus, we write the free energy as
+A very important feature of the partition function of normal ensembles is that it can be expressed as a summation of norming constants of the correspondent orthogonal polynomial. This was proved on \ref{Theorem: Kernel}.
+%\begin{lema}	\label{proposicaoosition: Partition function}
+%	When dealing with a p.d.f. of the invariant measure given in \autoref{Definition: polynomial ensemble}, is holds that
+%	\begin{equation}
+%		\pZ{N}{} = N! \prod_{k=0}^{N-1} h_k,
+%	\end{equation}
+%	where $h_k$ is the norming constant as in $\langle q_j^{(2)}, q_k^{(2)} \rangle^{(2)} = h_j^{(2)} \chi_{j=k}$.
+%\end{lema}
+%\begin{proof}
+%	We start stating the following equality which follows from \autoref{Theorem: Kernel} that
+%	\begin{align}
+%		\det\left[ K_N(\lambda_i, \lambda_j) \right]_{i,j=1}^{N} & =  p^{(w)}(\mmany{\lambda}{N}), \\
+%		\prod_{k=0}^{N-1} h_k^{-1}  \det\left[ \sqrt{\wf(x) \wf(y)} \sum_{k=0}^{N-1} q_k(x) q_k(y) \right]_{i,j=1}^{N} & = \prod_{1 < i \leq j < N} (\lambda_j - \lambda_i)^2 \prod_{k=0}^{N} w(\lambda_k).
+%	\end{align}
+%	Therefore, rearranging the terms
+%	\begin{equation}
+%		N! \det\left[ \tilde{K}_N(\lambda_i, \lambda_j) \right]_{i,j=1}^{N} = N! \prod_{k=0}^{N-1} h_k \prod_{1 < i \leq j < N} (\lambda_j - \lambda_i)^2 \prod_{k=0}^{N} w(\lambda_k)
+%	\end{equation}
+%	where we we can check from the definition the correlation functions that
+%	\begin{equation}
+%		\pZ{N}{} = N! \prod_{k=0}^{N-1} h_k.
+%	\end{equation}
+%\end{proof}
+Thus, using the expression, we write the free energy as
 \begin{equation}
 	\ln \pZ{N}{} = \ln{N!} + \sum_{j=0}^{N-1} \ln{h_j},  \quad \text{where} \qquad h_k \deff \int_{\C} |z|^{2j} \ee^{-N Q(z)} \dd A(z)
 	\label{Equation: Partition Function}

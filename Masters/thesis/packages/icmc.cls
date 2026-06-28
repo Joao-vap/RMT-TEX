@@ -769,6 +769,13 @@
 	sharp corners,
 	before skip=10pt,after skip=10pt,
 }
+\tcolorboxenvironment{observacao}{
+	breakable,
+	colback=black!2!white,
+	boxrule=0pt,
+	sharp corners,
+	before skip=10pt,after skip=10pt,
+}
 
 %=====================================================
 % My personal math commands
@@ -845,6 +852,7 @@
 \newcommand{\normL}[3]{||#2||_{L^#1 #3}}
 % support for function
 \DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\sgn}{sgn}
 % Genereric Field
 \newcommand{\F}{\mathbb{F}}
 % Generic Set
