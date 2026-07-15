@@ -1,0 +1,15 @@
+\babel@toc {portuguese}{}\relax 
+\beamer@sectionintoc {1}{Random Matrices}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Why is a Random Matrix}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{What is a Random Matrix}{10}{0}{1}
+\beamer@subsectionintoc {1}{3}{Normal Matrix Density}{17}{0}{1}
+\beamer@sectionintoc {2}{Modeling our Model}{29}{0}{2}
+\beamer@subsectionintoc {2}{1}{Coulomb Gas}{30}{0}{2}
+\beamer@subsectionintoc {2}{2}{Point Process}{39}{0}{2}
+\beamer@subsectionintoc {2}{3}{Equilibrium Problem}{55}{0}{2}
+\beamer@sectionintoc {3}{Asymptotics on the Partition Function}{71}{0}{3}
+\beamer@subsectionintoc {3}{1}{Sketch of Asymptotic Analysis}{80}{0}{3}
+\beamer@subsectionintoc {3}{2}{Partition Function of Norming Constants}{83}{0}{3}
+\beamer@subsectionintoc {3}{3}{Asymptotic of Norming Constants}{90}{0}{3}
+\beamer@subsectionintoc {3}{4}{Asymptotic of the Summation}{107}{0}{3}
+\beamer@subsectionintoc {3}{5}{Final results}{119}{0}{3}

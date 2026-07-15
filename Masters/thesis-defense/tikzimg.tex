@@ -1,0 +1,32 @@
+\documentclass[tikz, border=5pt]{standalone}
+\usepackage{tikzfill}
+\usetikzlibrary{arrows.meta}
+\usepackage{hyperref}
+\usetikzlibrary{calc}
+\usetikzlibrary{plotmarks}
+\usepackage{pgfplots}
+\usepackage{float}
+\usepackage{csquotes}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}% <- added
+\pgfplotsset{width=6cm,compat=1.9}
+
+\begin{document}
+		\begin{tikzpicture}
+			\begin{axis}[axis line style={opacity=0}, ticks=none,
+					xmin=-1.5, xmax=1.5,
+					ymin=-1.5, ymax=1.5,
+					xticklabel=\empty,
+					yticklabel=\empty,
+					xticklabel pos=top,
+					scatter/classes={%
+							a={ mark size=0.5pt}}
+					]
+					\addplot[skip coords between index={70}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./media/aesthetics/5lines/a2t0.csv};
+					\addplot[opacity=0.07, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./media/aesthetics/5lines/a2t0.csv};
+				\end{axis}
+			\end{tikzpicture}
+\end{document}

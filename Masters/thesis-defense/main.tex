@@ -1,0 +1,47 @@
+\input{preamble.tex}
+
+\newcommand{\secimage}{./media/aesthetics/S1}
+
+\begin{document}
+
+%The next statement creates the title page.
+\frame{\titlepage}
+
+%---------------------------------------------------------
+%This block of code is for the table of contents after
+%the title page
+{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{./media/aesthetics/AstecDiamond.png}}
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+}
+
+\input{./sections/S1.tex}
+
+\input{./sections/S2.tex}
+
+\input{./sections/S3.tex}
+
+%\input{./sections/S4.tex}
+
+\begin{frame}
+	\begin{center}
+		Obrigado!
+		
+		\vspace{0.5cm}
+		
+		Projeto realizado com auxílio da FAPESP sob processo \#  2024/06997-1.
+		
+		\begin{tikzpicture}[remember picture, overlay]
+			\node[above=0.2cm] at (current page.south) 
+			{
+				\includegraphics[width=0.9\textwidth]{./media/aesthetics/mealt}	
+			};
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+
+\end{document}

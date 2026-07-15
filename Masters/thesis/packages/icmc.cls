@@ -80,7 +80,7 @@
 }
 
 % Repassa os tres idiomas principais para o pacote Babel
-\PassOptionsToPackage{english}{babel}
+\PassOptionsToPackage{english, brazil}{babel}
 
 \ProcessOptions\relax
 
@@ -165,7 +165,7 @@
 
 % Configuracao do texto do preambulo
 \addto\captionsenglish{% ingles
-    \renewcommand{\exam}{ in partial fulfillment of the requirements for the degree}
+    \renewcommand{\exam}{ in partial fulfillment of the requirements}
 }
 \addto\captionsbrazil{% portugues-brasil
     \renewcommand{\exam}{ como parte dos requisitos para obten{\c c}{\~a}o do t{\'i}tulo de}
@@ -202,7 +202,7 @@
     }
 }{
     \addto\captionsenglish{% ingles
-        \renewcommand{\degree}{of the Master}
+        \renewcommand{\degree}{of the Mathematics Graduate}
         \renewcommand{\tipodocurso}{Master student}
         \tipotrabalho{Master dissertation}
     }
@@ -505,7 +505,7 @@
 }
 \addto\captionsenglish{% ingles
     \universidade{USP}
-    \instituicao{Institute of Mathematics and Computer Sciences -- ICMC-USP}
+    \instituicao{Instituto de Ci{\^e}ncias Matem{\'a}ticas e de Computa{\c c}{\~a}o -- ICMC-USP}
 }
 
 % CCMC ==========================================================================
@@ -529,7 +529,7 @@
             }
             \addto\captionsenglish{% ingles
                 \area{Mathematics}
-                \especialidade{Program in Mathematics}
+                \especialidade{Program, for the degree of Master in Science}
             }
         }{
 % PIPGES ========================================================================
@@ -764,7 +764,7 @@
 }
 \tcolorboxenvironment{exemplo}{
 	breakable,
-	colback=black!2!white,
+	colback=black!4!white,
 	boxrule=0pt,
 	sharp corners,
 	before skip=10pt,after skip=10pt,
@@ -853,6 +853,8 @@
 % support for function
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\pv}{P.V.}
+\DeclareMathOperator{\Ct}{\mathcal{C}}
 % Genereric Field
 \newcommand{\F}{\mathbb{F}}
 % Generic Set
@@ -907,7 +909,7 @@
 \newcommand{\M}{\mathcal{M}}
 % Expectation
 \DeclareMathOperator{\E}{\mathbb{E}}
-
+\DeclareMathOperator{\res}{Res}
 
 % Defintions
 \newcommand*{\deff}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
@@ -1327,7 +1329,7 @@
                     \begin{otherlanguage}{brazil}
                     \IfEndWith{\ABNTautorreferencia}{.}{\MakeUppercase{\ABNTautorreferencia}}{\MakeUppercase{\ABNTautorreferencia}.}~%
                     \textbf{\IfEq{\imprimirlanguage}{english}{\imprimirtituloEN}{\imprimirtituloPT}}. %
-                    \@year. \pageref{LastPage} p. \imprimirtipotrabalho~(\tipodocurso~\imprimirespecialidade) -- Instituto de Ci{\^e}ncias Matem{\'a}ticas e de Computa{\c c}{\~a}o, Universidade de S\~ao Paulo, \imprimirlocal, \@year.
+                    \@year. 130 p. \imprimirtipotrabalho~(\tipodocurso~\imprimirespecialidade) -- Instituto de Ci{\^e}ncias Matem{\'a}ticas e de Computa{\c c}{\~a}o, Universidade de S\~ao Paulo, \imprimirlocal, \@year.
                     \end{otherlanguage}
                 \end{SingleSpace}
                 
@@ -1596,7 +1598,7 @@
     {
       \@icmcLocalData
       \imprimiruniversidade~-- S{\~a}o Carlos\\ 
-      \IfLangPortuguese{\Monthname[\@month] de \@year\\}{\Monthname[\@month]~\@year\\}
+      \IfLangPortuguese{\Monthname[\@month] \@year\\}{\Monthname[\@month]~\@year\\}
     }
     \vspace*{1.2cm}
   \end{center}
@@ -1784,7 +1786,13 @@
 \addto\extrasenglish{%
   \def\chapterautorefname{Chapter}%
 }
+\addto\extrasenglish{%
+	\def\sectionautorefname{Section}%
+}
 
+\addto\extrasenglish{%
+	\def\subsectionautorefname{Subsection}%
+}
 
 %================================================================================
 % Configuracoes ao iniciar documento

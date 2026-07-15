@@ -14,16 +14,34 @@
 \babel@toc {english}{}\relax
 \babel@toc {english}{}\relax
 \babel@toc {english}{}\relax
-\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introduction}}{19}{chapter.1}%
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Random Matrix Theory}}{21}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Random Matrix}{22}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Invariant Ensembles}{26}{section.2.2}%
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introduction}}{17}{chapter.1}%
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Random Matrix Theory}}{19}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Random Matrix}{20}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Invariant Ensembles}{24}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Orthogonal Polynomial Ensembles}{27}{subsection.2.2.1}%
 \contentsline {section}{\numberline {2.3}Eigenvalue Statistics}{29}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Orthogonal Polynomial Ensembles}{32}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Coulomb Gases}{34}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Determinantal Structure}{36}{section.2.6}%
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Asymptotics}}{45}{chapter.3}%
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Equilibrium Problems}}{47}{chapter.4}%
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Normal Matrix Ensembles}}{49}{chapter.5}%
+\contentsline {subsection}{\numberline {2.3.1}Determinantal Structure}{32}{subsection.2.3.1}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Equilibrium Problems}}{41}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Coulomb Gases}{42}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Equilibrium Measures}{44}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Euler-Lagrange}{49}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Radially Symmetric Potentials}{52}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Solving for the Free Energy}{56}{section.3.3}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Asymptotics}}{61}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Quadrature Technique}{62}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Asymptotic on Integrals}{64}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Watson's Lemma}{65}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Laplace Method}{69}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Steepest Descent}{74}{subsection.4.2.3}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Free Energy}}{79}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Outline of the Technique}{80}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Norming Constants}{81}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Approximating the Summation}{82}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Annulus}{84}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Asymptotics of the Norming Constant}{85}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Asymptotics of the Summation}{89}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Disk}{96}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Asymptotics of the Norming Constant}{97}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Asymptotics of the Summation}{104}{subsection.5.3.2}%
 \vspace {\cftbeforechapterskip }
-\contentsline {chapter}{\MakeTextUppercase []{Bibliography}}{51}{section*.25}%
+\contentsline {chapter}{\MakeTextUppercase []{Bibliography}}{113}{section*.31}%

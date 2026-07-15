@@ -1,8 +1,8 @@
-There is a sense in the previous Chapters that we want to study some distributions when our matrices are large enough - be that for feasibility of computations or approximation of infinite dimension operators. We also have mentioned that our main interest here is the Invariant Ensembles, or specially the Orthogonal Polynomial ones. Because of the expression of the univariate eigenvalue density as the determinant of a orthogonal polynomial kernel function, we will change our focus to the study of these polynomials. Studying the distribution of eigenvalue for large matrices is equivalent, in this sense, to studying the regime of large $n$ for the kernels and consequently, for the orthogonal polynomials. For some of those polynomials, a integral representation is available, allowing us to use asymptotic methods on integrals to solve for the large $n$ behavior. These methods revolve around the idea that we want to integrate a function that accumulates its value in some discrete set of points in the domain as we take some of its parameters to infinity. This is usually an exponential with negative exponent depending on some parameter $n$ that we identify with the size of our initial matrices. Then, as $n$ grows, the approximation of this integral as proportional to the value of the function on these point of maxima decreases in error. This method roughly describes the \textit{Steepest Descent} technique, which will be described in this chapter. The sections that precedes this descriptions are the building blocks for the more sophisticated technique; we go through \textit{Watson's lemma} and the \textit{Laplace technique}.
+There is a sense in the previous chapters that we want to study distributions of eigenvalues when our matrices are large enough - be that for feasibility of computations or approximation of infinite dimension operators. We also have mentioned that our main interest here is the invariant ensembles, specially the orthogonal polynomial ensemble. Because of the expression of the univariate eigenvalue density as the determinant of a orthogonal polynomial kernel function, we change our focus to the study of these polynomials. Studying the distribution of eigenvalue for large matrices is equivalent, in this sense, to studying the regime of large $n$ for the kernels and consequently, for the orthogonal polynomials. 
 
-Before going through asymptotic techniques in integrals, we briefly describe a technical result we will make use of in \autoref{chapter: planarensembles}. This is a quadrature technique or, more specifically, the \textit{Euler-Maclaurin} formula. This formula will later allow us to approximate very complicated summations as integrals that we can compute analytically.
+For some of those polynomials, a integral representation is available, allowing us to use asymptotic methods on integrals to solve for the large $n$ behavior. These methods revolve around the idea that we want to integrate a function that accumulates its value in some discrete set of points in the domain as we take some of its parameters to infinity. This is usually an exponential with negative exponent depending on some parameter $n$ that we identify with the size of our initial matrices. Then, as $n$ grows, the approximation of this integral as proportional to the value of the function on these point of maxima decreases in error. This method roughly describes the \textit{Steepest Descent} technique, which will be described in this chapter. The sections that precedes this descriptions are the building blocks for the more sophisticated technique; we go through \textit{Watson's lemma} and the \textit{Laplace technique}.
 
-Techniques and structuring here are based on the book by \citeonline{NISTMathFunc} and \citeonline{Trapezoidal-Maclaurin} for quadrature and on the lecture notes by \citeonline{guilhermeasympt} for asymptotics on integrals. 
+Before going through asymptotic techniques in integrals, we briefly describe a technical result we will make use of in \autoref{chapter: planarensembles}. This is a quadrature technique or, more specifically, the \textit{Euler-Maclaurin} formula. This formula will later allow us to approximate very complicated summations as integrals that we can compute analytically. Techniques and structuring here are based on the book by \citeonline{NISTMathFunc} and \citeonline{Trapezoidal-Maclaurin} for quadrature and on the lecture notes by \citeonline{guilhermeasympt} for asymptotics on integrals. 
 
 \section{Quadrature Technique}
 \label{section: quadrature}
@@ -15,7 +15,7 @@ then, we must have that $B_k(0) = B_k$. More interestingly for us is the fact th
 \begin{equation}	\label{Equation: Differential Bernoulli}
 	B'_n(x) = n B_{n-1}(x), \quad n = 1,2,\cdots
 \end{equation}
-Finally, the periodic Bernoulli polynomial is simply the Bernoulli polynomials evaluated at the fractional part of the argument, i.e., $\tilde{B}_n(x) = B_n(x - \floor{x})$. Now, let $B_n$ and $B_n(x)$ denote the $n$th Bernoulli number and polynomial, respectively, and $\tilde{B}_n(x)$ the $n$th Bernoulli periodic function $B_n(x - \floor{x})$. Assume that $a, m$ and $n$ are integers such that $n > a$, $m > 0$, and $f^{(2m)}(x)$ is absolutely integrable over $[a,n]$. Then, 
+Finally, the periodic Bernoulli polynomial is simply the Bernoulli polynomials evaluated at the fractional part of the argument, i.e., $\tilde{B}_n(x) = B_n(x - \floor{x})$. Now, let $B_n$ and $B_n(x)$ denote the $n$-th Bernoulli number and polynomial, respectively, and $\tilde{B}_n(x)$ the $n$-th Bernoulli periodic function $B_n(x - \floor{x})$. Assume that $a, m$ and $n$ are integers such that $n > a$, $m > 0$, and $f^{(2m)}(x)$ is absolutely integrable over $[a,n]$. Then, 
 
 \begin{teorema} \label{Theorem: Euler-Maclaurin}(Euler-Maclaurin Formula,  \cite{NISTMathFunc})
 	Following the context given above, 
@@ -31,7 +31,7 @@ The trapezoidal rule, for example, is a Riemann sum where $x_i^*$ is chosen to b
 	\int_{a}^{n} f(x) \dd x & \approx \sum_{j = 0}^{n} f(x_j^*) = \sum_{j = 0}^{n} \frac{f(x_{i} + x_{i-1})}{2}, \\
 	& = \sum_{j = 1}^{n-1} f(x_j^*) + \frac{1}{2} \left( f(n) + f(0) \right) = \sum_{j = 0}^{n-1} f(x_j^*) + \frac{1}{2} \left( f(n) - f(n) \right) .
 \end{align}
-Of course, this has some error term. Suppose that for some $(x_i, x_{i-1})$ we have the same $k$-derivatives at both extreme points for every $k\geq 1$, i.e., the function is constant. Then, there is no error in the approximation. If however, the two extreme points differ only on the $k$th derivative, there is some curvature defined by this difference where the error comes from. Therefore, there is indication of some error function given in respect to higher order derivatives.
+Of course, this has some error term. Suppose that for some $(x_i, x_{i-1})$ we have the same $k$-derivatives at both extreme points for every $k\geq 1$, i.e., the function is constant. Then, there is no error in the approximation. If however, the two extreme points differ only on the $k$-th derivative, there is some curvature defined by this difference where the error comes from. Therefore, there is indication of some error function given in respect to higher order derivatives.
 
 \begin{proof}
 Following the computations in \citeonline{Trapezoidal-Maclaurin}, take a function $f \in C^p(\R)$ for $p \geq 1$. To derive the Euler-Maclaurin for the interval $[a,b]$, let $h = (b - a)/n$ and $c = a + j h$, then we express
@@ -94,7 +94,7 @@ That is, the main contribution for the integral comes from a single point. The m
 	\begin{equation}
 		\int_{x^*-\frac{c}{\sqrt{\lambda}}}^{x^*+\frac{c}{\sqrt{\lambda}}} g(s) \ee^{-\lambda f(s)} \dd(s) = \frac{\ee^{-\lambda f(x^*)}}{\sqrt{\lambda}} \int_{-c}^c g\left(x^* + \frac{x}{\sqrt{\lambda}}\right) \ee^{\frac{1}{2} |f''(x^*)|x^2 - \epsilon \left(\frac{x^3}{\sqrt{\lambda}}\right)} \dd x.
 	\end{equation}
-	Now, using the technical assumption of regularity on the function $f$, one can argue that the error term $\epsilon$ goes to zero sufficiently fast, leaving a Gaussian Integral. Moreover, one needs to argue that the integral outside this small neighborhood of $x^*$ is exponentially smaller then $\ee^{-\lambda f(x^*)}$. This should follow by an argument where the asymptotic for the integral 
+	Now, using the technical assumption of regularity on the function $f$, one can argue that the error term $\epsilon$ goes to zero sufficiently fast, leaving a Gaussian Integral. Moreover, one needs to argue that the integral outside this small neighborhood of $x^*$ is exponentially smaller then $\ee^{-\lambda f(x^*)}$. This should follow by an argument where the asymptotic of the integral 
 	\begin{equation}
 			\int_{x^*+ \frac{c}{\sqrt{\lambda}}}^{\infty} |g(s)| \ee^{-\lambda f(s)} \dd(s) \leq \ee^{-\lambda f(x^*+ c/\sqrt{\lambda})} \normL{1}{g}{}
 	\end{equation}
@@ -262,6 +262,7 @@ In the estimation above, the Gamma function and the factor of $\lambda^{-1}$ is 
 \end{exemplo}
 
 \subsection{Laplace Method}
+\label{subsection: Laplace}
 
 A seemly extension of the type of function we were dealing with are functions of the type
 \begin{equation}
@@ -462,6 +463,7 @@ Now we turn to our main interest.
 		& = \sqrt{2} \ee^{n \ln{(\sqrt{n})}} \ee^{\frac{1}{2}(x^2 - n)} \cos{\left(n\frac{\pi}{2} - \sqrt{n}x\right)} (1+\boh(1)), \\
 		& \sqrt{2} \left(\frac{n}{\ee}\right)^{n/2} \ee^{x^2/2} \cos{\left(\frac{n\pi}{2} - x \sqrt{n}\right)} (1 + \boh(1)).
 	\end{align}
+	Remember that in \autoref{Example: Hermite-GUE} we mentioned the possibility of studying the distributions of eigenvalues from the asymptotic of the orthogonal polynomial. Not only that but in \autoref{Example: HermitePol} we said that the Hermite polynomials are the orthogonal polynomials with respect to the Gaussian weight. Therefore, this asymptotic is directly related to the asymptotic of the distribution of eigenvalues of the GUE.
 \end{exemplo}
 
 \subsection{Steepest Descent}
