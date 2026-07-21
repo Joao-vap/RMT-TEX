@@ -2,62 +2,75 @@
 
 \subsection{Why is a Random Matrix}
 
-\begin{frame}
-	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\includegraphics[width=\textwidth]{./media/aesthetics/nuclearscattering.jpg}
-		\end{column}
-		\visible<2-3>{
-			\begin{column}{0.5\textwidth} 
-				\vspace{1cm}
-				\begin{equation*}
-					\Hf \phi_i = E_i \phi_i
-				\end{equation*}
-				\visible<3>{
-					\hspace{0.1cm}
-					\includegraphics[width=0.8\textwidth]{./media/aesthetics/computer.jpg}
-				}
-			\end{column}
-		}
-	\end{columns}	
-	
-\end{frame}
+%\begin{frame}
+%%	\begin{columns}
+%%		\begin{column}{0.5\textwidth}
+%%			\includegraphics[width=\textwidth]{./media/aesthetics/nuclearscattering.jpg}
+%%		\end{column}
+%%		\visible<2-3>{
+%%			\begin{column}{0.5\textwidth} 
+%%				\vspace{1cm}
+%%				\begin{equation*}
+%%					\Hf \phi_i = E_i \phi_i
+%%				\end{equation*}
+%%				\visible<3>{
+%%					\hspace{0.1cm}
+%%					\includegraphics[width=0.8\textwidth]{./media/aesthetics/computer.jpg}
+%%				}
+%%			\end{column}
+%%		}
+%%	\end{columns}	
+%%	
+%\end{frame}
 
-\begin{frame}
-	\begin{block}{Eugene Wigner - \textit{On the Wigner Surmise} (1956)}
-		``\textit{Perhaps I am now too courageous when I try to guess the distribution of the distances between successive levels (of energies of heavy nuclei) [...] The question is simply what are the distances of the characteristic values of a symmetric matrix with random coefficients.}''
-	\end{block}
-	\vspace{1cm}
-	\visible<2-3>{
-		\begin{columns}
-			\begin{column}{0.25\textwidth} 
-				\visible<3>{
-					\includegraphics[width=\textwidth]{./media/aesthetics/aztecdiamond.jpg}
-					
-					\includegraphics[width=\textwidth]{./media/aesthetics/matching.jpg}
-				}
-			\end{column}
-			\begin{column}{0.5\textwidth}
-				\hspace{0.2cm}
-				\includegraphics[width=0.9\textwidth]{./media/aesthetics/modelling.jpg}
-			\end{column}
-			\begin{column}{0.25\textwidth} 
-				\visible<3>{
-					\includegraphics[width=0.8\textwidth]{./media/aesthetics/nucleii.jpg}
-					
-					\includegraphics[width=\textwidth]{./media/aesthetics/sequences.jpg}
-				}
-			\end{column}
-		\end{columns}
-	}	
-\end{frame}
+%\begin{frame}
+%	\begin{block}{Eugene Wigner - \textit{On the Wigner Surmise} (1956)}
+%		``\textit{Perhaps I am now too courageous when I try to guess the distribution of the distances between successive levels (of energies of heavy nuclei) [...] The question is simply what are the distances of the characteristic values of a symmetric matrix with random coefficients.}''
+%	\end{block}
+%	\vspace{5.5cm}
+%	\visible<2-3>{
+%		\begin{columns}
+%			\begin{column}{0.25\textwidth} 
+%				\visible<3>{
+%					\includegraphics[width=\textwidth]{./media/aesthetics/aztecdiamond.jpg}
+%					
+%					\includegraphics[width=\textwidth]{./media/aesthetics/matching.jpg}
+%				}
+%			\end{column}
+%			\begin{column}{0.5\textwidth}
+%				\hspace{0.2cm}
+%				\includegraphics[width=0.9\textwidth]{./media/aesthetics/modelling.jpg}
+%			\end{column}
+%			\begin{column}{0.25\textwidth} 
+%				\visible<3>{
+%					\includegraphics[width=0.8\textwidth]{./media/aesthetics/nucleii.jpg}
+%					
+%					\includegraphics[width=\textwidth]{./media/aesthetics/sequences.jpg}
+%				}
+%			\end{column}
+%		\end{columns}
+%	}	
+%\end{frame}
+
+{
+	\setbeamercolor{background canvas}{bg=}
+	\includepdf[pages={1-}]{why.pdf}
+}
+
+\addtocounter{framenumber}{+1}
 
 \subsection{What is a Random Matrix}
 
 \begin{frame}
 	\vspace{-0.5cm}
+	\only<8->{
+		We can think of the matrix itself as a random variable, a measurable map from a probability measure space to $\mathcal{M}_n$.
+		\vspace{-0.7cm}
+	}
 	\only<1-2>{\vspace{-0.25cm}}
+	\only<1-7>{
 	A \textit{random matrix} is a matrix with \textit{random variables} as entries. 
+	}
 	\vfill
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
@@ -130,7 +143,7 @@
 				\vspace{0.8cm}
 			\end{center}
 			}
-			\only<7>{
+			\only<7-9>{
 				\begin{center}
 					$
 					\left[\begin{smallmatrix}
@@ -237,7 +250,7 @@
 					\end{tabular}
 				\end{table}
 			}
-			\only<7>{
+			\only<7-8>{
 				\begin{table}
 					\centering
 					\begin{tabular}{l | c | c }
@@ -253,6 +266,24 @@
 							Gaussian Unitary Ensemble} 
 					\end{tabular}
 				\end{table}
+			}
+			\only<9>{
+			\vspace{-0.15cm}
+				\begin{table}
+					\centering
+					\begin{tabular}{l | c | c }
+						$\eP(\m{X})$ & $\Se$ & $\M_n$ \\
+						\hline \hline
+						\cellcolor{blue!10}$\ee^{-n \tr(\m{X}^2)}$ &$\R$  & General\\ 
+						$\ee^{-n \tr{(\m{X}^* \m{X})}}$ &  \cellcolor{red!10}$\C$ &  \cellcolor{green!10}Hermitian \\
+						$\ee^{-n \tr{(Q(\m{X}))}}$ & $\mathbb{H}$ & Normal \\
+						\vdots  & \vdots  &  \vdots \\
+						\hline
+						\multicolumn{3}{c}{	\fcolorbox{white}{blue!10}{} \!\!\!\! \fcolorbox{white}{red!10}{}  \!\!\!\! \fcolorbox{white}{green!10}{}} \\
+						\multicolumn{3}{c}{Gaussian Unitary Ensemble} 
+					\end{tabular}
+				\end{table}
+			\vspace{-0.15cm}
 			}
 		\end{column}
 	\end{columns}
@@ -271,17 +302,22 @@
 	}
 	\only<5>{
 		\begin{equation*}
-			\eP(\m{X}) = \prod_{i,j=1}^{n} \ee^{-x_{i,j}^2}
+			\eP(\m{X}) = \prod_{i,j=1}^{n} \ee^{-n x_{i,j}^2}
 		\end{equation*}
 	}
 	\only<6>{
 		\begin{equation*}
-			\eP(\m{X}) = \prod_{i,j=1}^{n} \ee^{-x_{i,j}^2} \ee^{-y_{i,j}^2}
+			\eP(\m{X}) = \prod_{i,j=1}^{n} \ee^{-n x_{i,j}^2} \ee^{-n y_{i,j}^2}
 		\end{equation*}
 	}
-	\only<7>{
+	\only<7-8>{
 		\begin{equation*}
-			\eP(\m{X}) = \prod_{i=1}^{n} \ee^{\frac{z_{i,j}^2}{2}} \prod_{i>j}^{n} \ee^{z_{i,j}^2}
+			\eP(\m{X}) = \prod_{i=1}^{n} \ee^{-n z_{i,j}^2} \prod_{i>j}^{n} \ee^{-2n z_{i,j}^2}
+		\end{equation*}
+	}
+	\only<9>{
+		\begin{equation*}
+			\eP(\m{X}) = \prod_{i=1}^{n} \ee^{-n z_{i,j}^2} \prod_{i>j}^{n} \ee^{-2n z_{i,j}^2} \propto \ee^{-n \tr(\m{X}^2)}
 		\end{equation*}
 	}
 \end{frame}
@@ -289,20 +325,20 @@
 \subsection{Normal Matrix Density}
 
 \begin{frame}
-	\only<1>{\vspace{0.2cm}}
+	\only<1->{\vspace{0.1cm}}
 	\only<1->{
-	We can think of the matrix itself as a random variable, a measurable map from the a probability measure space to $\mathcal{M}_n$.
+	We can think of the matrix itself as a random variable, a measurable map from a probability measure space to $\mathcal{M}_n$.
 	}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
-		\only<3-4>{
+		\only<2-3>{
 			Normal matrices are similar to diagonal matrices, i.e.
 			\begin{equation*}
 				\m{X} = \m{U} \m{\Lambda} \m{U}^*.
 			\end{equation*}
 			Moreover, the spectra is typically simple. 
 		}
-		\only<5->{
+		\only<4->{
 			Invariance by unitary conjugation means independence of coordinates. 
 			\begin{equation*}
 				\dd\eP(\m{X}_1) = \dd\eP(\m{X}_2) \iff \m{X}_1 = \m{U} \m{X}_2 \m{U}^*
@@ -311,62 +347,30 @@
 		}
 		\end{column}
 		\begin{column}{0.5\textwidth}  %%<--- here
-		\only<1>{
-			\vspace{0.2cm}
-			\begin{table}
-				\centering
-				\begin{tabular}{l | c | c }
-					$\p(x_{i,j})$ & $\Se$ & $\M_n$ \\
-					\hline \hline
-					Discrete& $\R$  & General\\ 
-					Uniform & \cellcolor{red!10}$\C$ &  \cellcolor{green!10}Hermitian \\
-					\cellcolor{blue!10}Gaussian & $\mathbb{H}$ & Normal \\
-					\vdots  & \vdots  &  \vdots \\
-					\hline
-					\multicolumn{3}{c}{	\fcolorbox{white}{blue!10}{} \!\!\!\! \fcolorbox{white}{red!10}{}  \!\!\!\! \fcolorbox{white}{green!10}{}} \\
-					\multicolumn{3}{c}{Gaussian Unitary Ensemble} 
-				\end{tabular}
-			\end{table}
-		}
-		\only<2>{
+		\only<1-5>{
 			\begin{table}
 				\centering
 				\begin{tabular}{l | c | c }
 					$\eP(\m{X})$ & $\Se$ & $\M_n$ \\
 					\hline \hline
-					$\ee^{-n \Tr(\m{M}^2)}$ &$\R$  & General\\ 
-					$\ee^{-n \Tr{(\m{X}^* \m{X})}}$ &  \cellcolor{red!10}$\C$ & \cellcolor{green!10}Hermitian \\
-					$\ee^{-n \Tr{(Q(\m{X}))}}$ & $\mathbb{H}$ & Normal \\
+					$\ee^{-n \tr(\m{X}^2)}$ &$\R$  & General\\ 
+					$\ee^{-n \tr{(\m{X}^* \m{X})}}$ &  \cellcolor{red!10}$\C$ &  Hermitian \\
+					$\ee^{-n \tr{(Q(\m{X}))}}$ & $\mathbb{H}$ & \cellcolor{green!10}Normal \\
 					\vdots  & \vdots  &  \vdots \\
 					\hline
 					\multicolumn{3}{c}{ \fcolorbox{white}{red!10}{}  \!\!\!\! \fcolorbox{white}{green!10}{}} \\
 				\end{tabular}
 			\end{table}
 		}
-		\only<3-6>{
+		\only<6->{
 			\begin{table}
 				\centering
 				\begin{tabular}{l | c | c }
 					$\eP(\m{X})$ & $\Se$ & $\M_n$ \\
 					\hline \hline
-					$\ee^{-n \Tr(\m{M}^2)}$ &$\R$  & General\\ 
-					$\ee^{-n \Tr{(\m{X}^* \m{X})}}$ &  \cellcolor{red!10}$\C$ &  Hermitian \\
-					$\ee^{-n \Tr{(Q(\m{X}))}}$ & $\mathbb{H}$ & \cellcolor{green!10}Normal \\
-					\vdots  & \vdots  &  \vdots \\
-					\hline
-					\multicolumn{3}{c}{ \fcolorbox{white}{red!10}{}  \!\!\!\! \fcolorbox{white}{green!10}{}} \\
-				\end{tabular}
-			\end{table}
-		}
-		\only<7->{
-			\begin{table}
-				\centering
-				\begin{tabular}{l | c | c }
-					$\eP(\m{X})$ & $\Se$ & $\M_n$ \\
-					\hline \hline
-					$\ee^{-n \Tr(\m{M}^2)}$ &$\R$  & General\\ 
-					$\ee^{-n \Tr{(\m{X}^* \m{X})}}$ &  \cellcolor{red!10}$\C$ &  Hermitian \\
-					\cellcolor{blue!10}$\ee^{-n \Tr{(Q(\m{X}))}}$ & $\mathbb{H}$ & \cellcolor{green!10}Normal \\
+					$\ee^{-n \tr(\m{X}^2)}$ &$\R$  & General\\ 
+					$\ee^{-n \tr{(\m{X}^* \m{X})}}$ &  \cellcolor{red!10}$\C$ &  Hermitian \\
+					\cellcolor{blue!10}$\ee^{-n \tr{(Q(\m{X}))}}$ & $\mathbb{H}$ & \cellcolor{green!10}Normal \\
 					\vdots  & \vdots  &  \vdots \\
 					\hline
 					\multicolumn{3}{c}{	\fcolorbox{white}{blue!10}{} \!\!\!\! \fcolorbox{white}{red!10}{}  \!\!\!\! \fcolorbox{white}{green!10}{}} \\
@@ -376,26 +380,19 @@
 		\end{column}
 	\end{columns}
 	\visible<2->{
-		\only<6->{
+		\only<5->{
 			We want that $\dd \eP(\m{X}) = \eP(\m{X}) \dd \m{X}$ is invariant.
 		}
-		\only<1-3>{
-			\vspace{3.165cm}
+		\only<1-2>{
+			\vspace{3.27cm}
 		}
-		\only<6,7>{
-			\vspace{2.7cm}
+		\only<5,6>{
+			\vspace{2.8cm}
 		}
-		\only<4-5>{
-	\begin{columns}
-		\begin{column}{0.1\textwidth}  %%<--- here
-			\begin{center}
-				$ \m{X} \mapsto
-				$
-			\end{center}
-		\end{column}
-		\begin{column}{0.4\textwidth}  %%<--- here
-			\begin{center}
-				\begin{tikzpicture}[scale=0.70]
+		\only<3-4>{
+			\begin{equation*}
+				\m{X} \mapsto (\m{\Lambda}, \m{U}) = \left(
+					\begin{tikzpicture}[baseline=8ex, scale=0.70]
 					\begin{axis}[axis line style={opacity=1}, ticks=none,
 						xmin=-1.5, xmax=1.5,
 						ymin=-1.5, ymax=1.5,
@@ -411,12 +408,8 @@
 						]
 						\addplot[skip coords between index={10}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./media/aesthetics/5lines/a2t0.csv};
 					\end{axis}
-				\end{tikzpicture}
-			\end{center}
-		\end{column}
-		\begin{column}{0.4\textwidth}
-			\begin{center}
-				\begin{tikzpicture}[line cap=round]
+				\end{tikzpicture} \hspace{0.3cm},
+				\begin{tikzpicture}[baseline=0ex, line cap=round]
 					\coordinate (O) at (0,0);
 					\coordinate (A) at ( -5:1.1);
 					\coordinate (B) at ( 55:1.4);
@@ -438,23 +431,79 @@
 					\draw[vector,black] (O) -- (H) node[left=-1] {};
 					\draw[vector,black] (O) -- (I) node[left=-1] {};
 					\draw[vector,black] (O) -- (J) node[left=-1] {};
-				\end{tikzpicture}
-			\end{center}
-		\end{column}
-	\end{columns}
+				\end{tikzpicture} \hspace{-1cm}
+				\right)
+			\end{equation*}
+%	\begin{columns}
+%		\begin{column}{0.1\textwidth}  %%<--- here
+%			\begin{center}
+%				$ \m{X} \mapsto
+%				$
+%			\end{center}
+%		\end{column}
+%		\begin{column}{0.4\textwidth}  %%<--- here
+%			\begin{center}
+%				\begin{tikzpicture}[scale=0.70]
+%					\begin{axis}[axis line style={opacity=1}, ticks=none,
+%						xmin=-1.5, xmax=1.5,
+%						ymin=-1.5, ymax=1.5,
+%						axis x line=middle,
+%						axis y line=middle,
+%						xticklabel=\empty,
+%						yticklabel=\empty,
+%						xticklabel pos=top,
+%						xlabel=$\R$,
+%						ylabel=$\ii$,
+%						scatter/classes={%
+%							a={ mark size=0.5pt}}
+%						]
+%						\addplot[skip coords between index={10}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./media/aesthetics/5lines/a2t0.csv};
+%					\end{axis}
+%				\end{tikzpicture}
+%			\end{center}
+%		\end{column}
+%		\begin{column}{0.4\textwidth}
+%			\begin{center}
+%				\begin{tikzpicture}[line cap=round]
+%					\coordinate (O) at (0,0);
+%					\coordinate (A) at ( -5:1.1);
+%					\coordinate (B) at ( 55:1.4);
+%					\coordinate (C) at (130:1.2);
+%					\coordinate (D) at (210:2.0);
+%					\coordinate (E) at (65:1.60);
+%					\coordinate (F) at (-110:1.2);
+%					\coordinate (G) at (30:1.3);
+%					\coordinate (H) at (200:1.2);
+%					\coordinate (I) at (-30:1.4);
+%					\coordinate (J) at (123:0.4);
+%					\draw[vector,black] (O) -- (A) node[right=-2] {};
+%					\draw[vector,black] (O) -- (B) node[above right=-3] {};
+%					\draw[vector,black] (O) -- (C) node[above left=-3] {};
+%					\draw[vector,black] (O) -- (D) node[left=-1] {};
+%					\draw[vector,black] (O) -- (E) node[left=-1] {};
+%					\draw[vector,black] (O) -- (F) node[left=-1] {};
+%					\draw[vector,black] (O) -- (G) node[left=-1] {};
+%					\draw[vector,black] (O) -- (H) node[left=-1] {};
+%					\draw[vector,black] (O) -- (I) node[left=-1] {};
+%					\draw[vector,black] (O) -- (J) node[left=-1] {};
+%				\end{tikzpicture}
+%			\end{center}
+%		\end{column}
+%	\end{columns}
 		}
-	\only<8>{
+	\only<7>{
 	\vspace{0.1cm}
 	\begin{align*}
-		\exp\left(-n\tr{Q(\m{U}\m{X_1}\m{U}^*)}\right) &= \exp\left(-n\tr{Q(\m{U}^*\m{U}\m{\Lambda})}\right) = \exp\left(-n\tr{Q(\m{X_1})}\right) \\ & \exp\left(-n\tr{Q(\m{U}\m{\Lambda}\m{U}^*)}\right) = \exp\left(-n\sum_i^n {Q(\lambda_i)} \right).
+		\exp\left(-n\tr{Q(\m{U}\m{X_1}\m{U}^*)}\right) &= \exp\left(-n\tr{Q(\m{U}^*\m{U}\m{X_1})}\right) = \exp\left(-n\tr{Q(\m{X_1})}\right) \\ & = \exp\left(-n\tr{Q(\m{U}\m{\Lambda}\m{U}^*)}\right) = \exp\left(-n\sum_i^n {Q(\lambda_i)} \right).
 	\end{align*}
+	\vspace{0.1cm}
 	}
-	\only<9>{
+	\only<8>{
 	\begin{equation*}
 		\dd \m{X} = \prod_{1 \leq i < j \leq n} |z_i - z_j|^2 \dd \m{U}  \prod_{i=1}^{n} \dd^2 z_i,
 	\end{equation*}
 	where $\dd \m{U}$ is the Haar measure on eigenvectors and $\dd^2 z$ is Lebesgue.
-	\vspace{0.45cm}
+	\vspace{0.5cm}
 	}
 	}
 \end{frame}
@@ -481,7 +530,7 @@
 		\eE = (\eS, \eP) \quad \text{with} \quad 
 		\begin{cases}
 			\eS = \mathcal{N}_n(\C) \\
-			\eP(\m{X}) = \exp\left\{- n \Tr(Q(\m{X}))\right\}
+			\eP(\m{X}) = \exp\left\{- n \tr(Q(\m{X}))\right\}
 		\end{cases}
 	\end{equation*}
 	such that 
@@ -490,11 +539,11 @@
 	\end{equation*}
 	\visible<2->{
 	\begin{align*}
-		\int_{\mathcal{M}_n} \dd \eP(\m{X}) & = \int_{\C^n} \int_{\tilde{U}(n)}  \prod_ {i < j}^n |z_i - z_j|^2 \prod_{j=i}^{n} \ee^{- n \Q(z_i)} \dd^2 z_i \dd \m{U} \\ & = \int_{\C^n} \frac{\prod_ {i < j}^n |z_i - z_j|^2 \prod_{j=i}^{n} \ee^{- n \Q(z_i)}}{\pZ{n}{Q}}  \dd^2 z_i
+		\int_{\mathcal{M}_n} \dd \eP(\m{X}) & = \int_{\C^n} \int_{\tilde{U}(n)}  \prod_ {i < j}^n |z_i - z_j|^2 \prod_{j=1}^{n} \ee^{- n \Q(z_j)} \dd^2 z_j \dd \m{U} \\ & = \int_{\C^n} \frac{\prod_ {i < j}^n |z_i - z_j|^2 \prod_{j=1}^{n} \ee^{- n \Q(z_j)}}{\pZ{n}{Q}}  \dd^2 z_j
 	\end{align*}
 } \visible<3->{ we have
 	\begin{equation*}
-		p_n(\{\lambda_i\}_{i=1}^n) = \frac{1}{\pZ{n}{Q}} \prod_ {i < j}^n |z_i - z_j|^2 \prod_{j=i}^{n} \ee^{- n \Q(z_i)} 
+		p_n(\{z_i\}_{i=1}^n) = \frac{1}{\pZ{n}{Q}} \prod_ {i < j}^n |z_i - z_j|^2 \prod_{j=1}^{n} \ee^{- n \Q(z_j)} 
 	\end{equation*}
 }
 \end{frame}

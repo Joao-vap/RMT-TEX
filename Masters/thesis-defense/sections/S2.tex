@@ -12,7 +12,7 @@
 	We know that
 	\only<1-4>{
 		\begin{equation*}
-			p_n(\{\lambda_i\}_{i=1}^n) = p\left( \eigenvalues \right) = \frac{1}{\pZ{n}{Q}} \prod_ {i < j}^n |z_i - z_j|^2 \prod_{j=i}^{n} \ee^{- n \Q(z_i)} 
+			p_n(\{z_i\}_{i=1}^n) = p\left( \eigenvalues \right) = \frac{1}{\pZ{n}{Q}} \prod_ {i < j}^n |z_i - z_j|^2 \prod_{j=1}^{n} \ee^{- n \Q(z_j)} 
 		\end{equation*}
 	}
 	\only<1-4>{
@@ -35,7 +35,7 @@
 	\only<5->{
 		\vspace{0.159cm}
 		\begin{align*}
-			& p_n(\{\lambda_i\}_{i=1}^n) = p\left( \eigenvalues \right) = \frac{1}{\pZ{n}{Q}} \prod_ {i < j}^n |z_i - z_j|^2 \prod_{j=i}^{n} \ee^{- n \Q(z_i)}  \\
+			& p_n(\{z_i\}_{i=1}^n) = p\left( \eigenvalues \right) = \frac{1}{\pZ{n}{Q}} \prod_ {i < j}^n |z_i - z_j|^2 \prod_{j=1}^{n} \ee^{- n \Q(z_j)}  \\
 			\visible<6->{& = \frac{1}{\pZ{n}{Q}} \exp\left\{- n^2 \left( \frac{1}{n} \sum_{i = 1}^{n} \Q(z_i) + \frac{1}{n^2} \sum_{i \neq j} \ln |z_i - z_j| \right) \right\} \\}
 			\visible<7->{& = \frac{\ee^{-n^2 \Hf(\chi_n)}}{\pZ{n}{Q}}, \quad  \Hf(\chi_n) = \frac{1}{n} \sum_{i = 1}^{n} \Q(z_i) + \frac{1}{n^2} \sum_{i \neq j}^{n} \ln |z_i - z_j| }
 		\end{align*}
@@ -78,9 +78,9 @@
 	\end{tikzpicture}
 	\vspace{-0.9cm}
 	\end{center}	
-	\visible<2->{Define a quantity \only<2,6->{$\xi(A)$}\only<3>{$\xi(\textcolor{red}{A})$}\only<4>{$\xi(\textcolor{blue}{A})$}\only<5>{$\xi(\textcolor{teal}{A})$} s.t.
+	\visible<2->{Define a quantity \only<2,6->{$\xi(A)$}\only<3>{$\xi(\textcolor{red}{A_1})$}\only<4>{$\xi(\textcolor{blue}{A_2})$}\only<5>{$\xi(\textcolor{teal}{A_3})$} s.t.
 	\begin{equation*}
-		\only<2,6->{\xi(A)}\only<3>{\xi(\textcolor{red}{A})}\only<4>{\xi(\textcolor{blue}{A})}\only<5>{\xi(\textcolor{teal}{A})}=\sum_{k=1}^{n}\delta_{\only<3>{\textcolor{red}{A}}\only<4>{\textcolor{blue}{A}}\only<5>{\textcolor{teal}{A}}}(z_k)\only<3>{=\textcolor{red}{21}}\only<4>{=\textcolor{blue}{9}}\only<5>{=\textcolor{teal}{10}}
+		\only<2,6->{\xi(A)}\only<3>{\xi(\textcolor{red}{A_1})}\only<4>{\xi(\textcolor{blue}{A_2})}\only<5>{\xi(\textcolor{teal}{A_3})}=\sum_{k=1}^{n}\delta_{\only<3>{\textcolor{red}{A_1}}\only<4>{\textcolor{blue}{A_2}}\only<5>{\textcolor{teal}{A_3}}}(z_k)\only<3>{=\textcolor{red}{21}}\only<4>{=\textcolor{blue}{9}}\only<5>{=\textcolor{teal}{10}}
 	\end{equation*}
 	\visible<6->{
 	This defines a \textit{random counting measure} in the usual sense. \visible<7->{A \textbf{point process} $\mathbb{P}$ on $\C$ is a probability measure on the space of all counting measures $\mathcal{N}(\C)$.}
@@ -128,7 +128,7 @@
 	\end{column}
 		\begin{column}{0.6\textwidth}  %%<--- here
 		\begin{equation*}
-			\only<2->{\only<2,6->{\xi}\only<3>{\xi^{(1)}}\only<4>{\xi^{(2)}}\only<5>{\xi^{(3)}} (\textcolor{red}{A}) = \sum_{k=1}^{n} \delta_{\textcolor{red}{A}}(\only<2,6->{z_k}\only<3>{z^{(1)}_k}\only<4>{z^{(2)}_k}\only<5>{z^{(3)}_k})}
+			\only<2->{\only<2,6->{\xi}\only<3>{\xi^{(1)}}\only<4>{\xi^{(2)}}\only<5>{\xi^{(3)}} (\textcolor{red}{A_1}) = \sum_{k=1}^{n} \delta_{\textcolor{red}{A_1}}(\only<2,6->{z_k}\only<3>{z^{(1)}_k}\only<4>{z^{(2)}_k}\only<5>{z^{(3)}_k})}
 		\end{equation*}
 	\end{column}
 	\end{columns}
@@ -137,12 +137,11 @@
 	\begin{equation*}
 		\mathfrak{p}(A) = \E[\xi(A)] \deff \E[\#(\chi_n \cap A)], \quad A \in \mathcal{E}.
 	\end{equation*} 
-	\visible<7->{We can assume the existence of a density $\p_1(z)$. \visible<8->{Then
+	\visible<7->{We can assume the existence of a function $\p_1(z)$ s.t.
 		\begin{equation*}
 			\mathfrak{p}(A) = \int_A \p_1(z) \dd^2 z
 		\end{equation*}
-		where $\dd^2 z$ is the area measure.} \visible<9->{The \textbf{$1$-point correlation function} $\p_1$  represents the infinitesimal probability of a point of the process being at a location $z$, i.e. $\mathbb{P}(\xi(\dd^2 z) = 1) = \p_1(z) \dd^2 z$.}
-	}
+		where $\dd^2 z$ is the usual area measure.} \visible<8->{The \textbf{$1$-point correlation function} $\p_1$  represents the infinitesimal probability of a point of the process being at a location $z$, i.e. $\mathbb{P}(\xi(\dd^2 z) = 1) = \p_1(z) \dd^2 z$.}
 	}
 \end{frame}
 
@@ -207,12 +206,12 @@
 	}
 	\only<5->{
 		\begin{equation*}
-			\Hf(\chi_n) =  \int \int_{t \neq s} \ln |t - s|^{-1} \dd \mu(t) \dd \mu(s) + \int \Q(s) \dd  \mu(s).
+			\Hf(\chi) =  \int \int_{t \neq s} \ln |t - s|^{-1} \dd \mu(t) \dd \mu(s) + \int \Q(s) \dd  \mu(s).
 		\end{equation*}
 	}
 	\visible<6->{Associated with the variational problem defined by
 	\begin{equation*} \label{Equation: minimization problem}
-		E^{\wf} = \inf_{\mu \in \M^1} \left[ \int \int_{t \neq s} \ln |t - s|^{-1} \dd \mu(t) \dd \mu(s) + \int \Q(s) \dd  \mu(s) \right] = I_Q (\mu_Q),
+		E^Q = \inf_{\mu \in \M^1} \left[ \int \int_{t \neq s} \ln |t - s|^{-1} \dd \mu(t) \dd \mu(s) + \int \Q(s) \dd  \mu(s) \right] = I_Q (\mu_Q),
 	\end{equation*}
 	one defines the so-called \textit{Euler-Lagrange} type variational equations.}
 \end{frame}
@@ -223,16 +222,19 @@
 		There exists a real constant $l$ such that 
 		\begin{enumerate}
 			\item
-			\begin{equation}
+			\begin{equation*}
 				2 \int \ln{|z-t|^{-1}} \dd \mu_Q(t) + \Q(z) \geq l
-			\end{equation}
+			\end{equation*}
 			for all $z \in \C$.
 			\item
-			\begin{equation}
+			\begin{equation*}
 				2 \int \ln{|z-t|^{-1}} \dd \mu_Q(t) + \Q(z) = l
-			\end{equation}
+			\end{equation*}
 			on $\{z : \mu(z) > 0\}$.
 		\end{enumerate}
+		
+		
+		We define $U^\mu(z) =  \int \ln{|z-t|^{-1}} \dd \mu_Q(t)$.
 	\end{theorem} 
 \end{frame}
 
@@ -255,13 +257,13 @@
 \end{frame}
 
 \begin{frame}
-	\begin{theorem}
+		\begin{colorblock}{Corollary}{bg=Mahogany,fg=white}
 		If	$r_0$ is the largest solution of $r q'(r) = 0$ and $r_ 1$ is the smallest solution of $r q'(r) = 2$ then the support of $\mu_Q$ is given by the ring $\mathcal{S} = \{z | r_0 \leq |z| \leq r_1\}$ and $\dd \mu_Q$ is given by
-		\begin{equation}
+		\begin{equation*}
 			\dd \mu_Q(z) = \frac{1}{4\pi} (r q'(r))' \delta_{\mathcal{S}} \dd r \dd \phi, \quad z = r \ee^{\ii \phi}.
-		\end{equation}
+		\end{equation*}
 		The set $\mathcal{S}$ can be either an annulus (if $r_0 > 0$) or a disk (if $r_0 = 0$).
-	\end{theorem}
+	\end{colorblock}
 	\visible<2>{
 		\begin{figure}[h!]
 		\begin{subfigure}[t]{0.45\textwidth}
@@ -322,83 +324,106 @@
 	}
 \end{frame}
 
-\begin{frame}[allowframebreaks]
+\begin{frame}
+	\only<1-3>{
 	Let $\mu \in  \M^1(\C)$ be a measure such that $\dd \mu = \frac{1}{4\pi} (r q'(r))' \delta_{\mathcal{S}} \dd \phi \dd r$.
-	\begin{equation}
+	\begin{equation*}
 		\int_{\C} \dd \mu = 1,
-	\end{equation}
+	\end{equation*}
 	that is, 
-	\begin{equation}
+	\begin{equation*}
 		r_1 q'(r_1) - r_0 q'(r_0) = 2.
-	\end{equation}
-	but $r_0$ is the largest solution of $r q'(r) = 0$ and $r_ 1$ is the smallest solution of $r q'(r) = 2$. Now, by Euler-Lagrange Theorem, if $\mu$ satisfies that
-	\begin{align}
+	\end{equation*}
+	but $r_0$ is the largest solution of $r q'(r) = 0$ and $r_ 1$ is the smallest solution of $r q'(r) = 2$.\visible<2->{Now, by Euler-Lagrange Theorem, if $\mu$ satisfies that
+	\begin{align*}
 		2 U^{\mu}(z) & \geq l - Q(z), \quad z \in \C  \\
 		2 U^{\mu}(z) & = l - Q(z), \quad z \in \{z \ | \ r_0 \leq |z| \leq r_1\}.
-	\end{align}
+	\end{align*}
 	with $I_Q(\mu) < \infty$, then $\mu_Q = \mu$.
-	We use the formula
-	\begin{equation}
-		\int_{\pi}^{-\pi} \ln \frac{1}{|z - r\ee^{\ii \phi}|} \dd \phi =
+	\visible<3>{We must compute
+	\begin{equation*}
+		U^{\mu}(z) =  \int \ln{|z-t|^{-1}} \dd \mu_Q(t) = \frac{1}{4\pi} \int_{r_0}^{r_1} (r q'(r))'  \int_{-\pi}^{\pi} \ln \frac{1}{|z - r\ee^{\ii \phi}|} \dd \phi \dd r.
+	\end{equation*}
+	}
+	}
+	}
+	\only<4-7>{
+	With the formula
+	\begin{equation*}
+		\int_{-\pi}^{\pi} \ln \frac{1}{|z - r\ee^{\ii \phi}|} \dd \phi =
 		\begin{cases}
 			2\pi \ln \frac{1}{r},  \quad |z| \leq r, \\
 			2\pi \ln \frac{1}{|z|}, \quad |z| > r.
 		\end{cases}
-	\end{equation}
-	With this, we calculate that
-	\begin{equation*}
-		U^{\mu}(z) = \frac{1}{4\pi} \int_{r_0}^{r_1} (r q'(r))'  \int_{-\pi}^{\pi} \ln \frac{1}{|z - r\ee^{\ii \phi}|} \dd \phi \dd r.
 	\end{equation*}
-	And, for $|z| < r_0$
+	we can compute $U^\mu(z)$ \visible<5->{for $|z| < r_0$
 	\begin{equation*}
 		U^{\mu}(z) =  \frac{1}{2} \int_{r_0}^{r_1} (r q'(r))'  \ln \left(\frac{1}{r}\right) \dd r = -\frac{1}{2}(2\ln(r_1) - q(r_1)) - \frac{1}{2}q(r_0),
-	\end{equation*}
+	\end{equation*} \visible<6->{
 	for  $|z| > r_1$
 	\begin{equation*}
 		U^{\mu}(z) =  \frac{1}{2} \int_{r_0}^{r_1} (r q'(r))'  \ln \left(\frac{1}{z}\right) \dd r = \ln \frac{1}{|z|},
-	\end{equation*}
+	\end{equation*} \visible<7->{
 	 for $r_0 \leq |z| \leq r_1$ 
-	\begin{align}
+	\begin{align*}
 		U^{\mu}(z) & =  \frac{1}{2} \int_{r_0}^{|z|} (r q'(r))'  \ln \left(\frac{1}{r}\right) \dd r + \frac{1}{2} \int_{|z|}^{r_1} (r q'(r))'  \ln \left(\frac{1}{z}\right) \dd r, \\
 		& = -\frac{1}{2}(2 \ln(r_1) - q(r_1)) - \frac{1}{2} q(|z|).
-	\end{align}
+	\end{align*}
+	}}}}
+	\only<8->{
 	Define $l = - (2 \ln(r_1) - q(r_1))$, then
-	\begin{equation}
+	\begin{equation*}
 		2 U^{\mu}(z) =
 		\begin{cases}
 			l - q(r_0),  \quad |z| < r_0, \\
 			2 \ln \frac{1}{|z|}, \quad |z| > r_1, \\
 			l - q(|z|), \quad r_0 \leq |z| \leq r_1.
 		\end{cases}
-	\end{equation}
+	\end{equation*}
 	We need to prove that for $z \in \C$, we have $2 U^{\mu}(z) \geq l - q(|z|)$ while on $r_0 \leq |z| \leq r_1$ we have $2 U^{\mu}(z) = l - q(|z|)$.
-	
-	\begin{center}
-	\begin{tikzpicture}[scale=1]
-		% circles and line
-		\draw (0,0) circle (1);
-		\draw (0,0) circle (2);
-		%\draw (0,0) -- (2,2);
-		%\node[thick] at (0,0) {\pgfuseplotmark{o}};
-		%markings fro interval
-		%\draw[thick] (0.8,0.8) -- (1.6,1.6);
-		%\node[rotate=45, thick] at (0.8,0.8) {\pgfuseplotmark{|}};
-		%\node[rotate=45, thick] at (1.6,1.6) {\pgfuseplotmark{|}};
-		%\node[thick] at (1.2,1.2) {\pgfuseplotmark{*}};
-		% labels
-		%\node at (1.0,1.4) {$r_\tau$};
-		\node at (1.3,0) {$r_0$};
-		\node at (2.3,0) {$r_1$};
-		% random points
-		\foreach \x in {1,...,300}{
-			\pgfmathsetmacro{\r}{sqrt(random(100,400)/100)}%
-			\pgfmathsetmacro{\a}{random(0,360)}%
-			\pgfmathsetmacro{\x}{\r*sin(\a)}
-			\pgfmathsetmacro{\y}{\r*cos(\a)}
-			\node[fill,circle,inner sep=0pt,minimum size=1pt] at (\x ,\y) {};
-		}
-	\end{tikzpicture}
-	\end{center}	
+	\visible<9->{
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+					\begin{center}
+					\begin{tikzpicture}[scale=1]
+						% circles and line
+						\draw (0,0) circle (1);
+						\draw (0,0) circle (2);
+						%\draw (0,0) -- (2,2);
+						%\node[thick] at (0,0) {\pgfuseplotmark{o}};
+						%markings fro interval
+						%\draw[thick] (0.8,0.8) -- (1.6,1.6);
+						%\node[rotate=45, thick] at (0.8,0.8) {\pgfuseplotmark{|}};
+						%\node[rotate=45, thick] at (1.6,1.6) {\pgfuseplotmark{|}};
+						%\node[thick] at (1.2,1.2) {\pgfuseplotmark{*}};
+						% labels
+						%\node at (1.0,1.4) {$r_\tau$};
+						\node at (1.3,0) {$r_0$};
+						\node at (2.3,0) {$r_1$};
+						% random points
+						\foreach \x in {1,...,300}{
+							\pgfmathsetmacro{\r}{sqrt(random(100,400)/100)}%
+							\pgfmathsetmacro{\a}{random(0,360)}%
+							\pgfmathsetmacro{\x}{\r*sin(\a)}
+							\pgfmathsetmacro{\y}{\r*cos(\a)}
+							\node[fill,circle,inner sep=0pt,minimum size=1pt] at (\x ,\y) {};
+						}
+					\end{tikzpicture}
+				\end{center}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				$r_0$ is the biggest $r$ s.t. $q'(r_0) = 0$. 
+				\begin{align*}
+					 q(r_0) \leq q(|z|), \quad |z| < r_0.
+				\end{align*}
+				$r_1$ is the smallest $r$ s.t. $r_1 q'(r_1) = 2$. Then,  for $|z| > r_1$ 
+				\begin{align*}
+					& q(|z|) - 2 \log(|z|) \geq q(r_1) - 2 \log(r_1) \\
+					& \implies 2 \ln \frac{1}{|z|} \geq l - q(|z|)
+				\end{align*}
+			\end{column}
+		\end{columns}
+	}}
 %	Firstly, for $0 < |z| < r_0$ we need that $q(r_0) - q(|z|) \geq 0$ such that $2 U^{\mu}(z) = l - q(r_0)$ is less than or equal to $l - q(|z|)$. This is true because of the growing condition on $q$. Moreover, we need for $|z| > r_1$, that $- 2 \ln |z| + q(|z|) \geq - 2 \ln(r_1) + q(r_1)$. The same argument on the growing of $q$ and $\ln$ holds to state that this is also true. Therefore, $\mu_Q = \mu$ and we have found our equilibrium measure.
 \end{frame}
 
