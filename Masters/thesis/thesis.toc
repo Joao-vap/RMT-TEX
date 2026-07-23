@@ -17,21 +17,12 @@
 \contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introduction}}{17}{chapter.1}%
 \contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Random Matrix Theory}}{19}{chapter.2}%
 \contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Equilibrium Problems}}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Coulomb Gases}{22}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Equilibrium Measures}{24}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Euler-Lagrange}{29}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Radially Symmetric Potentials}{32}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Solving for the Free Energy}{36}{section.3.3}%
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Asymptotics}}{41}{chapter.4}%
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Free Energy}}{43}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Outline of the Technique}{44}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Norming Constants}{45}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Approximating the Summation}{46}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Annulus}{48}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Asymptotics of the Norming Constant}{49}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Asymptotics of the Summation}{53}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Disk}{60}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Asymptotics of the Norming Constant}{61}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Asymptotics of the Summation}{68}{subsection.5.3.2}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Asymptotics}}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Quadrature Technique}{24}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Asymptotic on Integrals}{26}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Watson's Lemma}{28}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Laplace Method}{31}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Steepest Descent}{37}{subsection.4.2.3}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Free Energy}}{41}{chapter.5}%
 \vspace {\cftbeforechapterskip }
-\contentsline {chapter}{\MakeTextUppercase []{Bibliography}}{77}{section*.24}%
+\contentsline {chapter}{\MakeTextUppercase []{Bibliography}}{43}{section*.18}%

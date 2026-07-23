@@ -22,24 +22,68 @@
 \input{./sections/S2.tex}
 \input{./sections/S3.tex}
 
-%\input{./sections/S4.tex}
+%%\input{./sections/S4.tex}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{./media/aesthetics/dissertationimg}}
+%
+%\begin{frame}
+%	\begin{center}
+%		
+%		Obrigado!
+%		
+%		\vspace{0.5cm}
+%		
+%		This study was financed, in part, by the São Paulo Research Foundation (FAPESP), Brasil. Process Number \#  2024/06997-1.
+%		
+%		\begin{tikzpicture}[remember picture, overlay]
+%			\node[above=0.01cm] at (current page.south) 
+%			{
+%				\includegraphics[width=1\textwidth]{./media/aesthetics/mealt}	
+%			};
+%		\end{tikzpicture}
+%	\end{center}
+%\end{frame}
+
+%\begin{frame}
+%	\begin{tikzpicture}%
+%	\node[anchor=south west, inner sep=0] (X) at (-5cm,1cm){\includegraphics[width=1\textwidth]{./media/aesthetics/dissertationimg}};%
+%	\begin{scope}[x={(X.south east)},y={(X.north west)}]%
+%		%% This makes all measurements with no units into fractions of the width
+%		%% and height of the graphic contained in the node.
+%		\fill[fill = white,fill opacity=0.6] ($(X.south west) + (0,1in)$) rectangle ($(X.north east) - (0,1in)$);%
+%		\node[text width=\textwidth] (Z) at (0.5,0.5) {%
+%			\sffamily\centering\Huge Obrigado!\\[5pt]
+%			\normalsize This study was financed, in part, by the São Paulo Research Foundation (FAPESP), Brasil. Process Number \#  2024/06997-1.\\[15pt]
+%		};
+%	\end{scope}%
+%	\end{tikzpicture}
+%\end{frame}
+
+
+%\usebackgroundtemplate{\includegraphics[width=1.08\paperwidth]{./media/aesthetics/dissertationimg}} 
 
 \begin{frame}
-	\begin{center}
-		Obrigado!
-		
-		\vspace{0.5cm}
-		
-		This study was financed, in part, by the São Paulo Research Foundation (FAPESP), Brasil. Process Number \#  2024/06997-1.
-		
-		\begin{tikzpicture}[remember picture, overlay]
-			\node[above=0.2cm] at (current page.south) 
-			{
-				\includegraphics[width=0.9\textwidth]{./media/aesthetics/mealt}	
+	\noindent\begin{tikzpicture}%
+		%% Size the graphic as you require (in this case \textwidth):
+		\node[anchor=south west, inner sep=0] (X) at (0in,0in){\includegraphics[width=0.98\textwidth]{./media/aesthetics/dissertationimg}};
+		%% This makes all measurements with no units into fractions of the width
+		%% and height of the graphic contained in the node.
+		\begin{scope}[x={(X.south east)},y={(X.north west)}]%
+			%% Note in the following \fill command, that the coordinates of the rectangle are
+			%% such that its bottom is three-quarters inch from the bottom of the graphic, and its top
+			%% is three-quarters inch from the top of the graphic. Change this to suit.
+			%% You can change the opacity as well: As it approaches 1.0 the rectangle becomes more opaque.
+			\fill[fill = white,fill opacity=0.7] ($(X.south west) + (0in,1in)$) rectangle ($(X.north east) - (0,1in)$);%
+			%% The coordinates of the \node -- (0.5,0.5) -- containing the text place the text at the
+			%% horizontal and vertical center of the graphic.
+			%% You can change this to suit.
+			%% Also note that the width of the graphic and the width of the node containing
+			%% the text should be the same.
+			\node[text width=\textwidth] (Z) at (0.5,0.5) {%
+			\sffamily\centering\Huge Obrigado!\\[5pt]
+			\normalsize This study was financed, in part, by the São Paulo Research Foundation (FAPESP), Brasil. Process Number \#  2024/06997-1.\\[15pt]
 			};
-		\end{tikzpicture}
-	\end{center}
+		\end{scope}%
+	\end{tikzpicture}
 \end{frame}
-
 
 \end{document}

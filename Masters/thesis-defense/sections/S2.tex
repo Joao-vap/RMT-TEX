@@ -17,7 +17,7 @@
 	}
 	\only<1-4>{
 		\visible<2-4>{
-	We can notice two effects, one coming from the Jacobian and other from $Q$.	
+	We can notice two effects, one coming from the Jacobian and the other one from $Q$.	
 		\begin{equation*}
 			p_n\left( \eigenvalues \right) >
 			\begin{cases}
@@ -133,15 +133,63 @@
 	\end{column}
 	\end{columns}
 	\visible<6->{
-	What is
+	We define
 	\begin{equation*}
-		\mathfrak{p}(A) = \E[\xi(A)] \deff \E[\#(\chi_n \cap A)], \quad A \in \mathcal{E}.
+		\mathfrak{p}(A) \deff \E[\xi(A)] = \E[\#(\chi_n \cap A)], \quad A \in \mathcal{E}.
 	\end{equation*} 
-	\visible<7->{We can assume the existence of a function $\p_1(z)$ s.t.
+	\visible<7->{We will assume the existence of a function $\p_1(z)$ s.t.
 		\begin{equation*}
 			\mathfrak{p}(A) = \int_A \p_1(z) \dd^2 z
 		\end{equation*}
 		where $\dd^2 z$ is the usual area measure.} \visible<8->{The \textbf{$1$-point correlation function} $\p_1$  represents the infinitesimal probability of a point of the process being at a location $z$, i.e. $\mathbb{P}(\xi(\dd^2 z) = 1) = \p_1(z) \dd^2 z$.}
+	}
+\end{frame}
+
+\begin{frame}
+	\only<1>{
+	\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[axis line style={opacity=0}, ticks=none,
+			xmin=-1.5, xmax=1.5,
+			ymin=-1.5, ymax=1.5,
+			xticklabel pos=top,
+			scatter/classes={%
+				a={ mark size=0.5pt}}
+			]
+			\addplot[skip coords between index={100}{500}, opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./media/aesthetics/5lines/a2t0.csv};
+		\end{axis}
+	\end{tikzpicture}
+	\end{center}
+	}
+	\only<2>{
+		\begin{center}
+			\begin{tikzpicture}
+				\begin{axis}[axis line style={opacity=0}, ticks=none,
+					xmin=-1.5, xmax=1.5,
+					ymin=-1.5, ymax=1.5,
+					xticklabel pos=top,
+					scatter/classes={%
+						a={ mark size=0.5pt}}
+					]
+					\addplot[opacity=1, scatter, mark=x, black, only marks] table [col sep=comma] {./media/aesthetics/5lines/a2t0.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
+	}
+	\only<3>{
+		\begin{center}
+			\begin{tikzpicture}
+				\begin{axis}[axis line style={opacity=0}, ticks=none,
+					xmin=-1.5, xmax=1.5,
+					ymin=-1.5, ymax=1.5,
+					xticklabel pos=top,
+					scatter/classes={%
+						a={ mark size=0.5pt}}
+					]
+					\addplot[opacity=0.07, scatter, mark=*,draw opacity=0,black, only marks] table [col sep=comma] {./media/aesthetics/5lines/a2t0.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
 	}
 \end{frame}
 
@@ -211,7 +259,7 @@
 	}
 	\visible<6->{Associated with the variational problem defined by
 	\begin{equation*} \label{Equation: minimization problem}
-		E^Q = \inf_{\mu \in \M^1} \left[ \int \int_{t \neq s} \ln |t - s|^{-1} \dd \mu(t) \dd \mu(s) + \int \Q(s) \dd  \mu(s) \right] = I_Q (\mu_Q),
+		E_Q = \inf_{\mu \in \M^1} \left[ \int \int_{t \neq s} \ln |t - s|^{-1} \dd \mu(t) \dd \mu(s) + \int \Q(s) \dd  \mu(s) \right] = I_Q (\mu_Q),
 	\end{equation*}
 	one defines the so-called \textit{Euler-Lagrange} type variational equations.}
 \end{frame}
@@ -230,11 +278,11 @@
 			\begin{equation*}
 				2 \int \ln{|z-t|^{-1}} \dd \mu_Q(t) + \Q(z) = l
 			\end{equation*}
-			on $\{z : \mu(z) > 0\}$.
+			on $\supp(\mu)$.
 		\end{enumerate}
 		
 		
-		We define $U^\mu(z) =  \int \ln{|z-t|^{-1}} \dd \mu_Q(t)$.
+		We define $U^{\mu_Q}(z) =  \int \ln{|z-t|^{-1}} \dd \mu_Q(t)$.
 	\end{theorem} 
 \end{frame}
 
@@ -412,11 +460,11 @@
 				\end{center}
 			\end{column}
 			\begin{column}{0.5\textwidth}
-				$r_0$ is the biggest $r$ s.t. $q'(r_0) = 0$. 
+				$r_0$ is the biggest $r$ s.t. $rq'(r) = 0$. 
 				\begin{align*}
 					 q(r_0) \leq q(|z|), \quad |z| < r_0.
 				\end{align*}
-				$r_1$ is the smallest $r$ s.t. $r_1 q'(r_1) = 2$. Then,  for $|z| > r_1$ 
+				$r_1$ is the smallest $r$ s.t. $r q'(r) = 2$. Then,  for $|z| > r_1$ 
 				\begin{align*}
 					& q(|z|) - 2 \log(|z|) \geq q(r_1) - 2 \log(r_1) \\
 					& \implies 2 \ln \frac{1}{|z|} \geq l - q(|z|)

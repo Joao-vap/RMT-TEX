@@ -1,7 +1,7 @@
 
 {
 	\renewcommand{\secimage}{./media/aesthetics/S3}
-	\section{Asymptotics on the Partition Function}
+	\section{Asymptotics of the Partition Function}
 }
 
 \begin{frame}{Quick recap}
@@ -62,7 +62,7 @@
 						yticklabel=\empty,
 						xticklabel pos=top,
 						xlabel=$\R$,
-						ylabel=$\ii$,
+						ylabel=$\ii \R$,
 						scatter/classes={%
 							a={ mark size=0.5pt}}
 						]
@@ -83,7 +83,7 @@
 							yticklabel=\empty,
 							xticklabel pos=top,
 							xlabel=$\R$,
-							ylabel=$\ii$,
+							ylabel=$\ii \R$,
 							scatter/classes={%
 								a={ mark size=0.5pt}}
 							]
@@ -94,6 +94,7 @@
 			}
 		\end{column}
 	\end{columns}
+	\only<7->{\vspace{-0.3cm}}
 	\visible<7->{
 	\begin{align*}
 			& p_n(\{z_i\}_{i=1}^n) = \frac{\ee^{-n^2 \Hf(\chi_n)}}{\pZ{n}{Q}}, \quad \text{with}\\
@@ -102,9 +103,10 @@
 	\vspace{0.1cm}
 	\visible<8>{
 	\begin{equation*}
-		\ln(\pZ{n}{Q}) = -I_Q n^2+\frac{1}{2} n\ln n+E_Q n+G\ln n+F_Q + o(1).
+		\ln(\pZ{n}{Q}) = -I_Q n^2+\frac{1}{2} n\ln n+E_Q n+G\ln n+F_Q + o(1), \quad n \rightarrow \infty.
 		\label{Equation: asymptotic for free energy}
 	\end{equation*}
+	Result derived in Byun, Sung-Soo and Kang, Nam-Gyu and Seo, Seong-Mi article.
 	}
 	}
 \end{frame}
@@ -140,7 +142,7 @@
 			p_n(\mmany{z}{n}) = \frac{1}{\pZ{n}{Q}} \prod_ {i < j}^n |z_i - z_j|^2 \prod_{i=1}^{n} \wf(z_i)
 		}
 		\only<5-7>{
-			p_n(\mmany{z}{n}) = \frac{\prod_{l=1}^{n} h_{n,l}}{\pZ{n}{Q}} \det\left[ K(z_i, z_j) \right]_{n\times n} 
+			p_n(\mmany{z}{n}) = \frac{\prod_{l=1}^{n}h_l}{\pZ{n}{Q}} \det\left[ K_n(z_i, z_j) \right]_{n\times n} 
 		}
 	\end{equation*}
 	\only<1>{\vspace{2cm}}
@@ -148,20 +150,20 @@
 		\vspace{0.5cm}
 		
 		\visible<2-5>{
-			With $\prod_{i<j}^{n} |z_i - z_j| = {\det\left(q_{j-1}(z_i)\right)}_{n\times n}$ and $(\det(A))^2 = \det(\sum_{j=1}^{n} \overline{A_{ji}} A_{jk})$,
+			With $\prod_{i<j}^{n} |z_i - z_j| = |{\det\left(q_{j-1}(z_i)\right)}_{n\times n}|$ and $|\det(A)|^2 = \det(\sum_{j=1}^{n} \overline{A_{ji}} A_{jk})$,
 			\only<2>{
 				\begin{equation*}
-					\prod_{i<j}^{n} |z_i - z_j|^2 = \det\left(\sum_{l=1}^{n} \overline{q_{l-1,n}(z_i)} q_{l-1,n}(z_j) \right)_{n\times n}
+					\prod_{i<j}^{n} |z_i - z_j|^2 = \det\left(\sum_{l=1}^{n} \overline{q_{l-1}(z_i)} q_{l-1}(z_j) \right)_{n\times n}
 				\end{equation*}
 			}
 			\only<3>{
 				\begin{equation*}
-					\frac{\prod_{i=1}^{n}\wf(z_i)}{\prod_{l=1}^{n} h_{n,l} }\prod_{i<j}^{n} |z_i - z_j|^2 = \det\left(\sqrt{\wf(z_i)\wf(z_j)}\sum_{l=1}^{n} \frac{1}{h_{k, n}} \overline{q_{l-1,n}(z_i)} q_{l-1,n}(z_j) \right)_{n\times n}
+					\frac{\prod_{i=1}^{n}\wf(z_i)}{\prod_{l=1}^{n}h_l }\prod_{i<j}^{n} |z_i - z_j|^2 = \det\left(\sqrt{\wf(z_i)\wf(z_j)}\sum_{l=1}^{n} \frac{1}{h_l} \overline{q_{l-1}(z_i)} q_{l-1}(z_j) \right)_{n\times n}
 				\end{equation*}
 			}
 			\only<4->{
 				\begin{equation*}
-					\frac{\wf(z_i)}{\prod_{l=1}^{n} h_{n,l} } \prod_{i<j}^{n} |z_i - z_j|^2 = \det\left( K(z_i, z_j) \right)_{n\times n}
+					\frac{\wf(z_i)}{\prod_{l=1}^{n}h_l } \prod_{i<j}^{n} |z_i - z_j|^2 = \det\left( K_n(z_i, z_j) \right)_{n\times n}
 				\end{equation*}
 			}
 			where $q_i$ form a polynomial basis for the space.
@@ -170,13 +172,13 @@
 	\only<6>{
 		\vspace{-0.4cm}
 		\begin{theorem}
-			Let $\{q_{j,n}\}_{j=0}^\infty$ be a family of monic polynomials such that each $q_j(\lambda)$ is of degree $j$. Impose also that exists finite positive constants $\{h_{j,n}\}_{j=0}^\infty$ s.t.
+			Let $\{q_j\}_{j=0}^\infty$ be a family of monic polynomials such that each $q_j(\lambda)$ is of degree $j$. Impose also that exists finite positive constants $\{h_{j,n}\}_{j=0}^\infty$ s.t.
 			\begin{equation*}
-				\langle q_{j,n}, q_{k,n} \rangle_{\wf} = \int_{\C} q_{j,n}(z) \overline{q_{k,n}(z)} \ee^{-nQ(z)} \dd^2 z = h_{j,n} \delta_{\{j=k\}}
+				\langle q_j, q_k \rangle_{\wf} = \int_{\C} q_j(z) \overline{q_k(z)} \ee^{-nQ(z)} \dd^2 z =h_j \delta_{\{j=k\}}
 			\end{equation*}	
-			for any $j,k>0$. Then, $K_n(x,y)$ has reproducing properties, i.e.
+			for any $j,k>0$. Then, $K_n(x,y)$ has the reproducing property, i.e.
 			\begin{equation*}
-				\int_{\C} \det\left[ K(\lambda_i, \lambda_j) \right]_{i,j=1}^{k+1} \dd^2 \lambda_{k+1} = (n-k) \det\left[ K(\lambda_i, \lambda_j) \right]_{i,j=1}^{k}.
+				\int_{\C} \det\left[ K_n(\lambda_i, \lambda_j) \right]_{i,j=1}^{k+1} \dd^2 \lambda_{k+1} = (n-k) \det\left[ K_n(\lambda_i, \lambda_j) \right]_{i,j=1}^{k}.
 			\end{equation*}
 		\end{theorem}
 	}
@@ -184,11 +186,11 @@
 		\begin{colorblock}{Corollary}{bg=Mahogany,fg=white}
 			Because of
 			\begin{equation*}
-				\int_{\C} \det\left[ K(\lambda_i, \lambda_j) \right]_{i,j=1}^{k+1} \dd^2 \lambda_{k+1} = (n-k) \det\left[ K(\lambda_i, \lambda_j) \right]_{i,j=1}^{k},
+				\int_{\C} \det\left[ K_n(\lambda_i, \lambda_j) \right]_{i,j=1}^{k+1} \dd^2 \lambda_{k+1} = (n-k) \det\left[ K_n(\lambda_i, \lambda_j) \right]_{i,j=1}^{k},
 			\end{equation*}
 			the partition function $\pZ{n}{Q}$ can be written as
 			\begin{equation*}
-				\pZ{n}{Q} = \prod_{l=1}^n h_{n,l}  \int_{\C^n} \det\left[ K(\lambda_i, \lambda_j) \right]_{i,j=1}^{n} \prod_{i=1}^{n} \dd^2 \lambda_i = n! \prod_{l=1}^n h_{n,l}
+				\pZ{n}{Q} = \prod_{l=1}^nh_l  \int_{\C^n} \det\left[ K_n(\lambda_i, \lambda_j) \right]_{i,j=1}^{n} \prod_{i=1}^{n} \dd^2 \lambda_i = n! \prod_{l=1}^nh_l
 			\end{equation*}
 		\end{colorblock}
 	}
@@ -202,12 +204,12 @@
 		\begin{equation*}
 		\int_{\C} P_k(x) \overline{P}_m(x) \wf(x) \dd^2 z = \langle P_k, P_m \rangle_w = 
 		\begin{cases}
-			h_{n,m} & \text{if $m = k$}, \\
+			h_{m} & \text{if $m = k$}, \\
 			0 & \text{if $m \neq k$}.
 		\end{cases}
 	\end{equation*} 
 	\visible<2->{
-	Notice that
+	Notice that, because of radial symmetry
 	\begin{align*}
 		\langle z^m , z^j \rangle_w & = \int_{\C} z^{m}\bar{z}^{j} \ee^{-n Q(z)} \dd^2 z, \\
 		\visible<3->{
@@ -240,6 +242,64 @@
 	\end{equation*}
 	}
 	}
+\end{frame}
+
+
+\begin{frame}
+	\begin{equation*}
+		h_j = \int_{\R_+} 2r \ee^{-n V_{\tau(j)}(r)} \dd r
+	\end{equation*}
+	\begin{figure}[h!]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[axis line style={opacity=1},
+				width=\textwidth, height=6cm,
+				legend style={draw=none},
+				enlarge x limits = false,
+				enlarge y limits = false,
+				axis x line=bottom,
+				axis y line=none,
+				xtick={0},
+				xticklabels = {$r^*$},
+				xmin=-3,ymin=0,ymax=1.1,xmax=3
+				]
+				\path[name path=axis] (axis cs:-3,0) -- (axis cs:3,0);
+				\only<1->{
+					\addplot[name path=f1, domain=-3:3,smooth] {e^(-1*(cosh(x)-1))} ;
+					\addplot [thick,color=black,fill=black, fill opacity=0.05] fill between[of=f1 and axis,soft clip={domain=-3:3}];
+				}				\only<2->{
+					\addplot[name path=f2, domain=-3:3,smooth] {e^(-2*(cosh(x)-1))} ;
+					\addplot [thick,color=black,fill=black, fill opacity=0.05] fill between[of=f2 and axis,soft clip={domain=-3:3}];
+				}				\only<3->{
+					\addplot[name path=f3, domain=-3:3,smooth] {e^(-10*(cosh(x)-1)};
+					\addplot [thick,color=black,fill=black, fill opacity=0.05] fill between[of=f3 and axis,soft clip={domain=-3:3}];
+				}				\only<4->{
+					\addplot[name path=f4, domain=-3:3,smooth] {e^(-70*(cosh(x)-1))};
+					\addplot [thick,color=black,fill=black, fill opacity=0.05] fill between[of=f4 and axis,soft clip={domain=-3:3}];
+				}
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+	\visible<5>{
+		\begin{equation*}
+			\lim_{n \rightarrow \infty} \frac{\ee^{-n(V_{\tau(j)}(r^*))}}{\ee^{-n(V_{\tau(j)}(r^* - \epsilon))}} = \lim_{n \rightarrow \infty} \ee^{-n(V_{\tau(j)}(r^*) - V_{\tau(j)}(r^* - \epsilon))} = \lim_{n \rightarrow \infty} \ee^{n |c|} \rightarrow + \infty. 
+		\end{equation*}
+	}
+\end{frame}
+
+\begin{frame}
+	\begin{theorem}
+		(Laplace's Method) Let $\Phi$ be
+		\begin{equation*}
+			\Phi(n) = \int_{a}^{b} g(t) \ee^{-n \phi(t)} \dd t
+			\label{equation: Laplace}
+		\end{equation*}
+		where $g(t) \ee^{-n \phi(t)}$ is absolutely integrable over $[a,b]$ for every $n$, the function $\phi(t)$ attains its maximum only at the point $c$ in $(a, b)$, the second derivative $\phi''(t)$ exists in a neighborhood of and is negative on $c$. Finally, $g(t)$ is non-zero and continuous at $c$. Then the function $\Phi$ satisfies an estimate of the form
+		\begin{equation*}
+			\Phi(n) = \ee^{-n \phi(c)} \left( \frac{\sqrt{2\pi} g(c)}{\sqrt{|\phi''(c)|}n^{1/2}} + \Boh(n^{-3/2})\right)
+		\end{equation*}
+		as $n \rightarrow \infty$.
+	\end{theorem}
 \end{frame}
 
 \begin{frame}
@@ -322,77 +382,20 @@
 	}}
 \end{frame}
 
-\begin{frame}
-	\begin{equation*}
-		h_j = \int_{\R_+} 2r \ee^{-n V_{\tau(j)}(r)} \dd r
-	\end{equation*}
-	\begin{figure}[h!]
-		\centering
-		\begin{tikzpicture}
-			\begin{axis}[axis line style={opacity=1},
-				width=\textwidth, height=6cm,
-				legend style={draw=none},
-				enlarge x limits = false,
-				enlarge y limits = false,
-				axis x line=bottom,
-				axis y line=none,
-				xtick={0},
-				xticklabels = {$r^*$},
-				xmin=-3,ymin=0,ymax=1.1,xmax=3
-				]
-				\path[name path=axis] (axis cs:-3,0) -- (axis cs:3,0);
-				\only<1->{
-				\addplot[name path=f1, domain=-3:3,smooth] {e^(-1*(cosh(x)-1))} ;
-				\addplot [thick,color=black,fill=black, fill opacity=0.05] fill between[of=f1 and axis,soft clip={domain=-3:3}];
-				}				\only<2->{
-				\addplot[name path=f2, domain=-3:3,smooth] {e^(-2*(cosh(x)-1))} ;
-				\addplot [thick,color=black,fill=black, fill opacity=0.05] fill between[of=f2 and axis,soft clip={domain=-3:3}];
-				}				\only<3->{
-				\addplot[name path=f3, domain=-3:3,smooth] {e^(-10*(cosh(x)-1)};
-				\addplot [thick,color=black,fill=black, fill opacity=0.05] fill between[of=f3 and axis,soft clip={domain=-3:3}];
-				}				\only<4->{
-				\addplot[name path=f4, domain=-3:3,smooth] {e^(-70*(cosh(x)-1))};
-				\addplot [thick,color=black,fill=black, fill opacity=0.05] fill between[of=f4 and axis,soft clip={domain=-3:3}];
-				}
-			\end{axis}
-		\end{tikzpicture}
-	\end{figure}
-	\visible<5>{
-		\begin{equation*}
-		\lim_{n \rightarrow \infty} \frac{\ee^{-n(V_{\tau(j)}(r^*))}}{\ee^{-n(V_{\tau(j)}(r^* - \epsilon))}} = \lim_{n \rightarrow \infty} \ee^{-n(V_{\tau(j)}(r^*) - V_{\tau(j)}(r^* - \epsilon))} = \lim_{n \rightarrow \infty} \ee^{n |c|} \rightarrow + \infty. 
-		\end{equation*}
-	}
-\end{frame}
-
-\begin{frame}{Laplace Technique}
-	We start by approximating $V_{\tau(j)}$ around its global minima by Taylor's theorem 
-	\begin{equation*}
-		V_{\tau(j)}(r) = V_{\tau(j)}(r^*) - \frac{1}{2} |V^{(2)}_{\tau(j)}(r^*)|(r-r^*)^2 + \epsilon((r-r^*)^3)
-	\end{equation*}
-	and then perform a change of variables $\frac{r}{\sqrt{n}} = s - r^*$, \pause so that 
-	\begin{equation*}
-	\!\!	\int_{r^*-\frac{\ln(n)}{\sqrt{n}}}^{r^*+\frac{\ln(n)}{\sqrt{n}}} 2s \ee^{-n V_{\tau(j)}(s)} \dd s \approx \frac{\ee^{-n  V_{\tau(j)}(r^*)}}{\sqrt{n}} \int_{-\ln(n)}^{\ln(n)} 2 \left(r^* + \frac{r}{\sqrt{n}}\right) \ee^{-\frac{1}{2} |V^{(2)}_{\tau(j)}(r^*)|r^2} \dd r
-	\end{equation*}
-	and
-	\begin{equation*}
-	\!\!	\int_{r^*+ \frac{\ln(n)}{\sqrt{n}}}^{\infty} |2s| \ee^{-n V_{\tau(j)}(s)} \dd(s) \leq \ee^{-n V_{\tau(j)}(r^*)} \epsilon_n
-	\end{equation*}
-\end{frame}
-
-\begin{frame}
-	\begin{theorem}
-	(Laplace's Method) Let $\Phi$ be
-	\begin{equation*}
-		\Phi(n) = \int_{a}^{b} g(t) \ee^{-n \phi(t)} \dd t
-			\label{equation: Laplace}
-	\end{equation*}
-	where $g(t) \ee^{-n \phi(t)}$ is absolutely integrable over $[a,b]$ for every $n$, the function $\phi(t)$ attains its maximum only at the point $c$ in $(a, b)$, the second derivative $\phi''(t)$ exists in a neighborhood of and is negative on $c$. Finally, $g(t)$ is non-zero and continuous at $c$. Then the function $\Phi$ satisfies an estimate of the form
-	\begin{equation*}
-		\Phi(n) = \ee^{-n \phi(c)} \left( \frac{\sqrt{2\pi} g(c)}{\sqrt{|\phi''(c)|}n^{1/2}} + \Boh(n^{-3/2})\right)
-	\end{equation*}
-	as $n \rightarrow \infty$.
-	\end{theorem}
-\end{frame}
+%\begin{frame}{Laplace Technique}
+%	We start by approximating $V_{\tau(j)}$ around its global minimum by Taylor's theorem 
+%	\begin{equation*}
+%		V_{\tau(j)}(r) = V_{\tau(j)}(r^*) - \frac{1}{2} |V^{(2)}_{\tau(j)}(r^*)|(r-r^*)^2 + \epsilon((r-r^*)^3)
+%	\end{equation*}
+%	and then perform a change of variables $\frac{r}{\sqrt{n}} = s - r^*$, \pause so that 
+%	\begin{equation*}
+%	\!\!	\int_{r^*-\frac{\ln(n)}{\sqrt{n}}}^{r^*+\frac{\ln(n)}{\sqrt{n}}} 2s \ee^{-n V_{\tau(j)}(s)} \dd s \approx \frac{\ee^{-n  V_{\tau(j)}(r^*)}}{\sqrt{n}} \int_{-\ln(n)}^{\ln(n)} 2 r^* \ee^{-\frac{1}{2} |V^{(2)}_{\tau(j)}(r^*)|r^2} \dd r
+%	\end{equation*}
+%	and
+%	\begin{equation*}
+%	\!\!	\int_{r^*+ \frac{\ln(n)}{\sqrt{n}}}^{\infty} |2s| \ee^{-n V_{\tau(j)}(s)} \dd(s) = \frac{\ee^{-n V_{\tau(j)}(r^*)}}{\sqrt{n}} \Boh(n^{-2})
+%	\end{equation*}
+%\end{frame}
 
 \begin{frame}
 	\begin{colorblock}{Theorem}{bg=Mahogany,fg=white}
@@ -487,22 +490,23 @@
 %		\end{multlined}
 %	\end{align}
 %	where one can start to notice, for instance, the trapezoidal rule creeping out on the first term. Notice that it was necessary to use that $ - B_1(0) = B_1(1) = 1/2$ and $B_n(0) = B_n(1) = B_n$ for $n\neq1$. 
-We begin with $h  = (b - a)/n$, s.t.
+We begin with $\Delta_n  = (b - a)/n$, s.t.
 \begin{align*}
-	\int_{a}^{b} f(x) \dd x & \approx h \sum_{j = 0}^{n} f(x_j^*), \\
-	& = h \sum_{j = 0}^{n} \frac{f(x_{j}) + f(x_{j-1})}{2}, \\
-	& = h \left[ \frac{f(a)}{2} + f(a+h) + \cdots + f(b-h) + \frac{f(b)}{2} \right], \\
-	& = h \sum_{j = 1}^{n-1} f(x_j^*) + \frac{h}{2} \left( f(b) + f(a) \right), \\
-	& = h \sum_{j = 0}^{n-1} f(x_j^*) + \frac{h}{2} \left( f(b) - f(a) \right).
+	\int_{a}^{b} f(x) \dd x & \approx \Delta_n \sum_{j = 0}^{n} \frac{f(a + j \Delta_n) + f(a + (j+1) \Delta_n)}{2}, \\
+	& = \Delta_n \left[ \frac{f(a)}{2} + f(a+\Delta_n) + \cdots + f(b-\Delta_n) + \frac{f(b)}{2} \right], \\
+	& = \Delta_n \sum_{j = 1}^{n-1} f(x_j^*) + \frac{\Delta_n}{2} \left( f(b) + f(a) \right), \\
+	& = \Delta_n \sum_{j = 0}^{n-1} f(x_j^*) + \frac{\Delta_n}{2} \left( f(b) - f(a) \right).
 \end{align*}
 \end{frame}
 
 \begin{frame}
 	\begin{theorem} (Euler-Maclaurin Formula)
-		If $m$ and $n$ are natural numbers and $f(x)$ is a real or complex valued continuous function for real numbers $x$ in the interval $[m,n]$, then the integral can be approximated by the sum (or vice versa) 
+		For some function $f \in C^p(\R)$ and $p \geq 1$ let $\Delta_n = (b - a)/n$. Then, the Euler-Maclaurin formula for the interval $[a,b]$ is given by
+		\small
 		\begin{multline*}
-			\! \! \! \! \! \sum_{i=m+1}^{n} f(i) = \int_{m}^{n} f(x) \dd x + \frac{f(n) - f(m)}{2} + \sum_{k=1}^{\lfloor \frac{p}{2} \rfloor} \frac{B_{2k}}{(2k)!} \left( f^{(2k-1)}(n) - f^{(2k-1)}(m)\right) +  R_p
+		\!\!\!\!	\Delta_n \sum_{j=1}^{n-1} f(a + j \Delta_n) = \int_{a}^{b} f(x) \dd x - \frac{\Delta_n}{2} (f(b) - f(a)) + \sum_{r = 1}^{p-1} \frac{\Delta_n^{r+1} B_{r+1}}{(r+1)!} \left[ f^{(r)}(b) - f^{(r)}(a) \right] + R_p
 		\end{multline*}
+		\normalsize
 	\end{theorem}
 		\begin{center}
 		\begin{tikzpicture}[scale=0.45]
@@ -546,17 +550,17 @@ We begin with $h  = (b - a)/n$, s.t.
 	\scriptsize
 	\only<1>{
 	\begin{equation*}
-		= \sum_{j=0}^{n-1} \ln\left[ \frac{\ee^{-n V_{\tau(j)}(r_{\tau(j)})}}{\sqrt{n}} \left( \frac{8\pi r_{\tau(j)}^2}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{1}{2}} \left[ 1 + \frac{1}{n} \mathfrak{B}(r_{\tau(j)}) + \Boh(n^{-2}) \right] \right], 
+		\sum_{j=0}^{n-1} \ln\left[ \frac{\ee^{-n V_{\tau(j)}(r_{\tau(j)})}}{\sqrt{n}} \left( \frac{8\pi r_{\tau(j)}^2}{V^{(2)}_{\tau(j)}(r_{\tau(j)})} \right)^{\frac{1}{2}} \left[ 1 + \frac{1}{n} \mathfrak{B}(r_{\tau(j)}) + \Boh(n^{-2}) \right] \right], 
 	\end{equation*}
 	}
 	\only<2-3>{
 	\begin{equation*}
-		= \sum_{j=0}^{n-1} \left[-n V_{\tau(j)}(r_{\tau(j)}) + \frac{1}{2} \left(\ln(2\pi r^2_{\tau(j)}) - \ln n - \ln\left(\frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4}\right)  \right) + \frac{1}{n} \mathfrak{B}(r_{\tau(j)}) + \Boh(n^{-2})\right]
+		\sum_{j=0}^{n-1} \left[-n V_{\tau(j)}(r_{\tau(j)}) + \frac{1}{2} \left(\ln(2\pi r^2_{\tau(j)}) - \ln n - \ln\left(\frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4}\right)  \right) + \frac{1}{n} \mathfrak{B}(r_{\tau(j)}) + \Boh(n^{-2})\right]
 	\end{equation*}
 	}
 	\only<4-5>{
 	\begin{multline*}
-		= - n^2 I_Q[\mu_Q] + n U_{\mu_Q}(0) - 	\frac{1}{6} \ln{\left( \frac{r_0}{r_1}\right)} \\ + \sum_{j=0}^{n-1} \left[\frac{1}{2} \left(\ln(2\pi r^2_{\tau(j)}) - \ln n - \ln\left(\frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4}\right)  \right) + \frac{1}{n} \mathfrak{B}(r_{\tau(j)}) + \Boh(n^{-2})\right]
+		- n^2 I_Q[\mu_Q] + n U_{\mu_Q}(0) - 	\frac{1}{6} \ln{\left( \frac{r_0}{r_1}\right)} \\ + \sum_{j=0}^{n-1} \left[\frac{1}{2} \left(\ln(2\pi r^2_{\tau(j)}) - \ln n - \ln\left(\frac{V^{(2)}_{\tau(j)}(r_{\tau(j)})}{4}\right)  \right) + \frac{1}{n} \mathfrak{B}(r_{\tau(j)}) + \Boh(n^{-2})\right]
 %		\sum_{j=0}^{n-1} \ln{h_j} = - n^2 I_Q[\mu_Q] + n U_{\mu_Q}(0) - \frac{1}{6} \ln{\left( \frac{r_0}{r_1}\right)}  - \frac{n}{2} \ln(n) - \frac{1}{2}  \left( n E_Q[\mu_Q] -  \frac{1}{2} \ln \left( \frac{V^{(2)}_{1}(r_1)}{V^{(2)}_{0}(r_{0})} \right) \right)	\\ + \frac{1}{2} \left( n \ln(2\pi) + 2 \left( - n U_{\mu_Q}(0) - \frac{1}{2} \ln\left(\frac{r_1}{r_0}\right) \right) \right)
 %		- \frac{3}{32} \ln\left( \frac{V^{(2)}_1(r_1)}{V^{(2)}_0(r_0)} \right) \\ - \frac{1}{32} \left( \frac{r_1  V^{(3)}_1(r_1)}{V^{(2)}_1(r_1)} - \frac{r_0 V^{(3)}_0(r_0)}{V^{(2)}_0(r_0)}\right) - \frac{1}{12} \int_{r_0}^{r_1} \frac{V^{(3)}(r)^2}{V^{(2)}(r)^{2}} r \dd r +  \Boh(n^{-1})
 	\end{multline*}

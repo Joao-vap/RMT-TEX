@@ -6,10 +6,10 @@
 \beamer@sectionintoc {2}{Modeling our Model}{34}{0}{2}
 \beamer@subsectionintoc {2}{1}{Coulomb Gas}{35}{0}{2}
 \beamer@subsectionintoc {2}{2}{Point Process}{44}{0}{2}
-\beamer@subsectionintoc {2}{3}{Equilibrium Problem}{59}{0}{2}
-\beamer@sectionintoc {3}{Asymptotics on the Partition Function}{81}{0}{3}
-\beamer@subsectionintoc {3}{1}{Sketch of Asymptotic Analysis}{90}{0}{3}
-\beamer@subsectionintoc {3}{2}{Partition Function of Norming Constants}{93}{0}{3}
-\beamer@subsectionintoc {3}{3}{Asymptotic of Norming Constants}{100}{0}{3}
-\beamer@subsectionintoc {3}{4}{Asymptotic of the Summation}{118}{0}{3}
-\beamer@subsectionintoc {3}{5}{Final results}{130}{0}{3}
+\beamer@subsectionintoc {2}{3}{Equilibrium Problem}{62}{0}{2}
+\beamer@sectionintoc {3}{Asymptotics of the Partition Function}{84}{0}{3}
+\beamer@subsectionintoc {3}{1}{Sketch of Asymptotic Analysis}{93}{0}{3}
+\beamer@subsectionintoc {3}{2}{Partition Function of Norming Constants}{96}{0}{3}
+\beamer@subsectionintoc {3}{3}{Asymptotic of Norming Constants}{103}{0}{3}
+\beamer@subsectionintoc {3}{4}{Asymptotic of the Summation}{119}{0}{3}
+\beamer@subsectionintoc {3}{5}{Final results}{131}{0}{3}

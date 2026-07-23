@@ -7,29 +7,32 @@ Before going through asymptotic techniques in integrals, we briefly describe a t
 \section{Quadrature Technique}
 \label{section: quadrature}
 
-Before doing asymptotics on integrals we discuss a technique that will become important when approximating large summations: quadratures, i.e., approximating integrals by summations and vice-versa. One can see that asymptotics on integrals can then also perform a role on discrete summations. We first start briefly introducing a useful tool in the development of the formula we wish to use: the Bernoulli numbers $B_n$, polynomials $B_n(x)$ and periodic polynomials $\tilde{B}_n(x)$. The Bernoulli numbers $B_n$ are a sequence of rational numbers that frequently appears in the Taylor series expansion of trigonometric-type functions. These number can also be seen as special values obtained by the Bernoulli polynomials $B_n(x)$. This is because these polynomials can be written explicitly as
+Before doing asymptotics on integrals we discuss a technique that will become important when approximating large summations: quadratures, i.e. approximating integrals by summations and vice-versa. One can see that asymptotics on integrals can then also perform a role on discrete summations. We first start briefly introducing a useful tool in the development of the formula we wish to use: the Bernoulli numbers $B_n$, polynomials $B_n(x)$ and periodic polynomials $\tilde{B}_n(x)$. The Bernoulli numbers $B_n$ are a sequence of rational numbers that frequently appears in the Taylor series expansion of trigonometric-type functions. These number can also be seen as special values obtained by the Bernoulli polynomials $B_n(x)$ when evaluated at $0$, i.e. $B_n(0) = B_n$ . We also can express the expansion formula for these polynomials given by
 \begin{equation}
-	B_k(x) = \sum_{n=0}^{k} {k \choose n} B_n x^{k-n},
+	B_n(x + h) = \sum_{k=0}^{n} {n \choose k} B_{k}(x) h^{n-k},
 \end{equation}
-then, we must have that $B_k(0) = B_k$. More interestingly for us is the fact that these polynomials satisfy the differential equation 
+that give us that $B_0(x) = 1$. More interestingly for us is the fact that these polynomials satisfy the differential equation 
 \begin{equation}	\label{Equation: Differential Bernoulli}
 	B'_n(x) = n B_{n-1}(x), \quad n = 1,2,\cdots
 \end{equation}
-Finally, the periodic Bernoulli polynomial is simply the Bernoulli polynomials evaluated at the fractional part of the argument, i.e., $\tilde{B}_n(x) = B_n(x - \floor{x})$. Now, let $B_n$ and $B_n(x)$ denote the $n$-th Bernoulli number and polynomial, respectively, and $\tilde{B}_n(x)$ the $n$-th Bernoulli periodic function $B_n(x - \floor{x})$. Assume that $a, m$ and $n$ are integers such that $n > a$, $m > 0$, and $f^{(2m)}(x)$ is absolutely integrable over $[a,n]$. Then, 
+Finally, the periodic Bernoulli polynomial is simply the Bernoulli polynomials evaluated at the fractional part of the argument, i.e., $\tilde{B}_n(x) = B_n(x - \floor{x})$. Now, let $B_n$ and $B_n(x)$ denote the $n$-th Bernoulli number and polynomial, respectively, and $\tilde{B}_n(x)$ the $n$-th Bernoulli periodic function $B_n(x - \floor{x})$. Assume that $a, b$ are reals and $p$ is an integer such that $b > a$, $p > 0$, and $f^{(2k)}(x)$ is absolutely integrable over $[a,b]$. Then, 
 
-\begin{teorema} \label{Theorem: Euler-Maclaurin}(Euler-Maclaurin Formula,  \cite{NISTMathFunc})
-	Following the context given above, 
+\begin{teorema} \label{Theorem: Euler-Maclaurin}(Euler-Maclaurin Formula,  \cite{Trapezoidal-Maclaurin})
+	For some function $f \in C^p(\R)$ and $p \geq 1$ let $h = (b - a)/n$. Then, the Euler-Maclaurin formula for the interval $[a,b]$ is given by
 	\begin{multline}
-		\sum_{j=a}^{n} f(j) = \int_{a}^{n} f(x) \dd x + \frac{1}{2} \left(f(a) + f(n)\right) + \sum_{s=1}^{m-1} \frac{B_{2s}}{(2s)!} \left( f^{(2s-1)}(n) - f^{(2s-1)}(a)\right) \\ + \int_{a}^{n} \frac{B_{2m} - \tilde{B}_{2m}(x)}{(2m)!} f^{(2m)}(x) \dd x.
+		h \sum_{j=1}^{n-1} f(a + j h) = \int_{a}^{b} f(x) \dd x - \frac{h}{2} (f(b) - f(a)) + \sum_{r = 1}^{p-1} \frac{h^{r+1} B_{r+1}}{(r+1)!} \left[ f^{(r)}(b) - f^{(r)}(a) \right] \\- h^{p+1} \int_0^1 \frac{B_{p}(1-x)}{(p)!} f^{(p)}(c+xh) \dd x
 	\end{multline}
+%	\begin{multline}
+%		\sum_{j=m}^{n} f(j) = \int_{m}^{n} f(x) \dd x + \frac{1}{2} \left(f(m) + f(n)\right) + \sum_{s=1}^{k-1} \frac{B_{2s}}{(2s)!} \left( f^{(2s-1)}(n) - f^{(2s-1)}(m)\right) \\ + \int_{m}^{n} \frac{B_{2k} - \tilde{B}_{2k}(x)}{(2k)!} f^{(2k)}(x) \dd x.
+%	\end{multline}
 \end{teorema}
 
 This identity is called the \textit{Euler-Maclaurin} formula. It can be extremely useful when estimating the asymptotic of the summation on the function $f$ when its integral can be more easily evaluate. In essence, this is a quadrature technique; a numerical integration: the approximation of an integral $\int f(x) \dd x$ of some function $f$ by a discrete summation $\sum w_i f(x_i)$ over a set of points $x_i$ with some weight function $w_i$. For example, in the classical Riemann sums, one approximates the integral $\int f(x) \dd x$ over some interval $[a,b]$ with the limit of the summation $\sum f(x_i^*) \Delta x_i$, where $x_i^* \in [x_{i-1}, x_i]$ and $ \Delta x_i = x_i - x_{i-1}$. Different methods can be generated by choosing $x_i^*$ differently.
 
-The trapezoidal rule, for example, is a Riemann sum where $x_i^*$ is chosen to be the mean point $x_i^* = (x_{i-1} + x_i)/2$. In this way, we would estimate the area using trapezoids, as the name suggests. Then, we write
+The trapezoidal rule, for example, is a Riemann sum where $x_i^*$ is chosen to be the mean point $x_i^*$ is such that $f(x_i^*) = (f(x_{i-1}) + f(x_i))/2$. In this way, we would estimate the area using trapezoids, as the name suggests. Then,  if $h = (b-a)/2$, we write
 \begin{align}
-	\int_{a}^{n} f(x) \dd x & \approx \sum_{j = 0}^{n} f(x_j^*) = \sum_{j = 0}^{n} \frac{f(x_{i} + x_{i-1})}{2}, \\
-	& = \sum_{j = 1}^{n-1} f(x_j^*) + \frac{1}{2} \left( f(n) + f(0) \right) = \sum_{j = 0}^{n-1} f(x_j^*) + \frac{1}{2} \left( f(n) - f(n) \right) .
+	\int_{a}^{b} f(x) \dd x & \approx h \sum_{j = m}^{n-1} f(j^*) = h \sum_{j = m}^{n-1} \frac{f(j+1) + f(j)}{2}, \\
+	& = h \sum_{j = m+1}^{n-1} f(j) + \frac{h}{2} \left( f(n) + f(m) \right) = h \sum_{j = m}^{n-1} f(j) + \frac{h}{2} \left( f(n) - f(m) \right) .
 \end{align}
 Of course, this has some error term. Suppose that for some $(x_i, x_{i-1})$ we have the same $k$-derivatives at both extreme points for every $k\geq 1$, i.e., the function is constant. Then, there is no error in the approximation. If however, the two extreme points differ only on the $k$-th derivative, there is some curvature defined by this difference where the error comes from. Therefore, there is indication of some error function given in respect to higher order derivatives.
 
@@ -46,14 +49,14 @@ where we use \eqref{Equation: Differential Bernoulli} and integration by parts t
 	& = - \sum_{r = 0}^{p-1} \frac{h^{r+1} B_{r+1}(1-x)}{(r+1)!} f^{(r)}(c+xh) |_0^1 + h^{p+1} \int_0^1 \frac{h^{r+1} B_{p}(1-x)}{(p)!} f^{(p)}(c+xh) \dd x, \\
 	& 
 	\begin{multlined}
-		= h \frac{f(c) + f(c+h)}{2} - \sum_{r = 0}^{p-1} \frac{h^{r+1} B_{r+1}(1-x)}{(r+1)!} \left[ f^{(r)}(c+h) - f^{(r)}(c) \right] \\
+		= h \frac{f(c) + f(c+h)}{2} - \sum_{r = 1}^{p-1} \frac{h^{r+1} B_{r+1}}{(r+1)!} \left[ f^{(r)}(c+h) - f^{(r)}(c) \right] \\
 		+ h^{p+1} \int_0^1 \frac{B_{p}(1-x)}{(p)!} f^{(p)}(c+xh) \dd x. 
 	\end{multlined}
 \end{align}
 where one can start to notice, for instance, the trapezoidal rule creeping out on the first term. Notice that it was necessary to use that $ - B_1(0) = B_1(1) = 1/2$ and $B_n(0) = B_n(1) = B_n$ for $n\neq1$. Returning to the summation, we rearrange terms as
 \begin{align}
-	h & \left[ \frac{f(a)}{2} + f(a+h) + \cdots + f(b-h) + \frac{f(b)}{2} \right] = \frac{1}{2} (f(b) - f(a)) + \sum_{j=0}^{n-1} f(a + j h), \\
-	& = \int_{a}^{b} f(x) \dd x + \sum_{r = 0}^{p-1} \frac{h^{r+1} B_{r+1}(1-x)}{(r+1)!} \left[ f^{(r)}(b) - f^{(r)}(a) \right] - h^{p+1} \int_0^1 \frac{B_{p}(1-x)}{(p)!} f^{(p)}(c+xh) \dd x. 
+	h & \left[ \frac{f(a)}{2} + f(a+h) + \cdots + f(b-h) + \frac{f(b)}{2} \right] = \frac{h}{2} (f(b) - f(a)) + h \sum_{j=1}^{n-1} f(a + j h), \\
+	& = \int_{a}^{b} f(x) \dd x + \sum_{r = 1}^{p-1} \frac{h^{r+1} B_{r+1}}{(r+1)!} \left[ f^{(r)}(b) - f^{(r)}(a) \right] - h^{p+1} \int_0^1 \frac{B_{p}(1-x)}{(p)!} f^{(p)}(c+xh) \dd x. 
 \end{align}
 \end{proof}
 
